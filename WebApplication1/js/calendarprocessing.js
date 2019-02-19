@@ -329,6 +329,7 @@ $(document).ready(function () {
                 $('.fc-applyFilters-button').hide();
                 $('.fc-changeJobType-button').hide();
                 $('.fc-changeShippingType-button').hide();
+                $('#calendar').fullCalendar('changeView', 'month');
                 $.ajax({
                     url: 'data.svc/GetInstallationEvents',
                     dataType: 'json',
@@ -352,7 +353,7 @@ $(document).ready(function () {
                 $('.fc-applyFilters-button').show();
                 $('.fc-changeJobType-button').show();
                 $('.fc-changeShippingType-button').show();
-              
+                $('#calendar').fullCalendar('changeView', 'month');
                 $.ajax({
                     url: 'data.svc/GetEvents',
                     dataType: 'json',
