@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/09/policy/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://flowfinity.com/ServiceContract" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsap10="http://www.w3.org/2005/08/addressing" targetNamespace="http://flowfinity.com/ServiceContract" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://flowfinity.com/ServiceContract/Imports">
+      <xsd:import schemaLocation="/fa/integration/Public?xsd=xsd0" namespace="http://flowfinity.com/ServiceContract" />
+      <xsd:import schemaLocation="/fa/integration/Public?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="/fa/integration/Public?xsd=xsd2" namespace="http://flowfinity.com/contract" />
+      <xsd:import schemaLocation="/fa/integration/Public?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Flowfinity" />
+      <xsd:import schemaLocation="/fa/integration/Public?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IIntegration_Execute_InputMessage">
+    <wsdl:part name="parameters" element="tns:Execute" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_Execute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IBackOrderCalloutService_Callout_BackOrder_AddRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_BackOrder_AddRecord" />
+  </wsdl:message>
+  <wsdl:message name="IBackOrderCalloutService_Callout_BackOrder_AddRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_BackOrder_AddRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IEstimationCalloutService_Callout_Estimation_AddRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_Estimation_AddRecord" />
+  </wsdl:message>
+  <wsdl:message name="IEstimationCalloutService_Callout_Estimation_AddRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_Estimation_AddRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimesheetCalloutService_Callout_Timesheet_AddRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_Timesheet_AddRecord" />
+  </wsdl:message>
+  <wsdl:message name="ITimesheetCalloutService_Callout_Timesheet_AddRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_Timesheet_AddRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITimesheetCalloutService_Callout_Timesheet_EditRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_Timesheet_EditRecord" />
+  </wsdl:message>
+  <wsdl:message name="ITimesheetCalloutService_Callout_Timesheet_EditRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_Timesheet_EditRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlantProductionCalloutService_Callout_PlantProduction_GetWindowmaker_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_PlantProduction_GetWindowmaker" />
+  </wsdl:message>
+  <wsdl:message name="IPlantProductionCalloutService_Callout_PlantProduction_GetWindowmaker_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_PlantProduction_GetWindowmakerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlantProductionCalloutService_Callout_PlantProduction_UpdateOldWindowmaker_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_PlantProduction_UpdateOldWindowmaker" />
+  </wsdl:message>
+  <wsdl:message name="IPlantProductionCalloutService_Callout_PlantProduction_UpdateOldWindowmaker_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_PlantProduction_UpdateOldWindowmakerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPlantProductionCalloutService_Callout_PlantProduction_delete_1_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_PlantProduction_delete_1" />
+  </wsdl:message>
+  <wsdl:message name="IPlantProductionCalloutService_Callout_PlantProduction_delete_1_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_PlantProduction_delete_1Response" />
+  </wsdl:message>
+  <wsdl:message name="IPlantProductionCalloutService_Callout_PlantProduction_AddRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_PlantProduction_AddRecord" />
+  </wsdl:message>
+  <wsdl:message name="IPlantProductionCalloutService_Callout_PlantProduction_AddRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_PlantProduction_AddRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCalloutService_Callout_Service_EditService_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_Service_EditService" />
+  </wsdl:message>
+  <wsdl:message name="IServiceCalloutService_Callout_Service_EditService_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_Service_EditServiceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHomeInstallationsCalloutService_Callout_HomeInstallations_AddRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_HomeInstallations_AddRecord" />
+  </wsdl:message>
+  <wsdl:message name="IHomeInstallationsCalloutService_Callout_HomeInstallations_AddRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_HomeInstallations_AddRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHomeInstallationsCalloutService_Callout_HomeInstallations_CreateServiceRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_HomeInstallations_CreateServiceRequest" />
+  </wsdl:message>
+  <wsdl:message name="IHomeInstallationsCalloutService_Callout_HomeInstallations_CreateServiceRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_HomeInstallations_CreateServiceRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IHomeInstallationsCalloutService_Callout_HomeInstallations_EditSold_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_HomeInstallations_EditSold" />
+  </wsdl:message>
+  <wsdl:message name="IHomeInstallationsCalloutService_Callout_HomeInstallations_EditSold_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_HomeInstallations_EditSoldResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryManagerCalloutService_Callout_InventoryManager_GetBOMItems_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_InventoryManager_GetBOMItems" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryManagerCalloutService_Callout_InventoryManager_GetBOMItems_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_InventoryManager_GetBOMItemsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryManagerCalloutService_Callout_InventoryManager_DeleteBOM_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_InventoryManager_DeleteBOM" />
+  </wsdl:message>
+  <wsdl:message name="IInventoryManagerCalloutService_Callout_InventoryManager_DeleteBOM_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_InventoryManager_DeleteBOMResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISupplyOnlyCalloutService_Callout_SupplyOnly_AddRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_SupplyOnly_AddRecord" />
+  </wsdl:message>
+  <wsdl:message name="ISupplyOnlyCalloutService_Callout_SupplyOnly_AddRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_SupplyOnly_AddRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICHIPurchaseOrderCalloutService_Callout_CHIPurchaseOrder_AddRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_CHIPurchaseOrder_AddRecord" />
+  </wsdl:message>
+  <wsdl:message name="ICHIPurchaseOrderCalloutService_Callout_CHIPurchaseOrder_AddRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_CHIPurchaseOrder_AddRecordResponse" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="IIntegration">
+    <wsdl:operation name="Execute">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IIntegration/Execute" message="tns:IIntegration_Execute_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IIntegration/ExecuteResponse" message="tns:IIntegration_Execute_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="false" name="IBackOrderCalloutService">
+    <wsdl:operation name="Callout_BackOrder_AddRecord">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IBackOrderCalloutService/Callout_BackOrder_AddRecord" message="tns:IBackOrderCalloutService_Callout_BackOrder_AddRecord_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IBackOrderCalloutService/Callout_BackOrder_AddRecordResponse" message="tns:IBackOrderCalloutService_Callout_BackOrder_AddRecord_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="false" name="IEstimationCalloutService">
+    <wsdl:operation name="Callout_Estimation_AddRecord">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IEstimationCalloutService/Callout_Estimation_AddRecord" message="tns:IEstimationCalloutService_Callout_Estimation_AddRecord_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IEstimationCalloutService/Callout_Estimation_AddRecordResponse" message="tns:IEstimationCalloutService_Callout_Estimation_AddRecord_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="false" name="ITimesheetCalloutService">
+    <wsdl:operation name="Callout_Timesheet_AddRecord">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/ITimesheetCalloutService/Callout_Timesheet_AddRecord" message="tns:ITimesheetCalloutService_Callout_Timesheet_AddRecord_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/ITimesheetCalloutService/Callout_Timesheet_AddRecordResponse" message="tns:ITimesheetCalloutService_Callout_Timesheet_AddRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Callout_Timesheet_EditRecord">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/ITimesheetCalloutService/Callout_Timesheet_EditRecord" message="tns:ITimesheetCalloutService_Callout_Timesheet_EditRecord_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/ITimesheetCalloutService/Callout_Timesheet_EditRecordResponse" message="tns:ITimesheetCalloutService_Callout_Timesheet_EditRecord_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="false" name="IPlantProductionCalloutService">
+    <wsdl:operation name="Callout_PlantProduction_GetWindowmaker">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IPlantProductionCalloutService/Callout_PlantProduction_GetWindowmaker" message="tns:IPlantProductionCalloutService_Callout_PlantProduction_GetWindowmaker_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IPlantProductionCalloutService/Callout_PlantProduction_GetWindowmakerResponse" message="tns:IPlantProductionCalloutService_Callout_PlantProduction_GetWindowmaker_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Callout_PlantProduction_UpdateOldWindowmaker">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IPlantProductionCalloutService/Callout_PlantProduction_UpdateOldWindowmaker" message="tns:IPlantProductionCalloutService_Callout_PlantProduction_UpdateOldWindowmaker_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IPlantProductionCalloutService/Callout_PlantProduction_UpdateOldWindowmakerResponse" message="tns:IPlantProductionCalloutService_Callout_PlantProduction_UpdateOldWindowmaker_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Callout_PlantProduction_delete_1">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IPlantProductionCalloutService/Callout_PlantProduction_delete_1" message="tns:IPlantProductionCalloutService_Callout_PlantProduction_delete_1_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IPlantProductionCalloutService/Callout_PlantProduction_delete_1Response" message="tns:IPlantProductionCalloutService_Callout_PlantProduction_delete_1_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Callout_PlantProduction_AddRecord">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IPlantProductionCalloutService/Callout_PlantProduction_AddRecord" message="tns:IPlantProductionCalloutService_Callout_PlantProduction_AddRecord_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IPlantProductionCalloutService/Callout_PlantProduction_AddRecordResponse" message="tns:IPlantProductionCalloutService_Callout_PlantProduction_AddRecord_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="false" name="IScheduleDraftCalloutService" />
+  <wsdl:portType msc:usingSession="false" name="IServiceCalloutService">
+    <wsdl:operation name="Callout_Service_EditService">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IServiceCalloutService/Callout_Service_EditService" message="tns:IServiceCalloutService_Callout_Service_EditService_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IServiceCalloutService/Callout_Service_EditServiceResponse" message="tns:IServiceCalloutService_Callout_Service_EditService_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="false" name="IHomeInstallationsCalloutService">
+    <wsdl:operation name="Callout_HomeInstallations_AddRecord">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_AddRecord" message="tns:IHomeInstallationsCalloutService_Callout_HomeInstallations_AddRecord_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_AddRecordResponse" message="tns:IHomeInstallationsCalloutService_Callout_HomeInstallations_AddRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Callout_HomeInstallations_CreateServiceRequest">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_CreateServiceRequest" message="tns:IHomeInstallationsCalloutService_Callout_HomeInstallations_CreateServiceRequest_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_CreateServiceRequestResponse" message="tns:IHomeInstallationsCalloutService_Callout_HomeInstallations_CreateServiceRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Callout_HomeInstallations_EditSold">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_EditSold" message="tns:IHomeInstallationsCalloutService_Callout_HomeInstallations_EditSold_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_EditSoldResponse" message="tns:IHomeInstallationsCalloutService_Callout_HomeInstallations_EditSold_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="false" name="IMaterialsInformationCalloutService" />
+  <wsdl:portType msc:usingSession="false" name="IInventoryManagerCalloutService">
+    <wsdl:operation name="Callout_InventoryManager_GetBOMItems">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IInventoryManagerCalloutService/Callout_InventoryManager_GetBOMItems" message="tns:IInventoryManagerCalloutService_Callout_InventoryManager_GetBOMItems_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IInventoryManagerCalloutService/Callout_InventoryManager_GetBOMItemsResponse" message="tns:IInventoryManagerCalloutService_Callout_InventoryManager_GetBOMItems_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Callout_InventoryManager_DeleteBOM">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IInventoryManagerCalloutService/Callout_InventoryManager_DeleteBOM" message="tns:IInventoryManagerCalloutService_Callout_InventoryManager_DeleteBOM_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IInventoryManagerCalloutService/Callout_InventoryManager_DeleteBOMResponse" message="tns:IInventoryManagerCalloutService_Callout_InventoryManager_DeleteBOM_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="false" name="ISupplyOnlyCalloutService">
+    <wsdl:operation name="Callout_SupplyOnly_AddRecord">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/ISupplyOnlyCalloutService/Callout_SupplyOnly_AddRecord" message="tns:ISupplyOnlyCalloutService_Callout_SupplyOnly_AddRecord_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/ISupplyOnlyCalloutService/Callout_SupplyOnly_AddRecordResponse" message="tns:ISupplyOnlyCalloutService_Callout_SupplyOnly_AddRecord_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="false" name="ISchedulePublishedCalloutService" />
+  <wsdl:portType msc:usingSession="false" name="ICHIPurchaseOrderCalloutService">
+    <wsdl:operation name="Callout_CHIPurchaseOrder_AddRecord">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/ICHIPurchaseOrderCalloutService/Callout_CHIPurchaseOrder_AddRecord" message="tns:ICHIPurchaseOrderCalloutService_Callout_CHIPurchaseOrder_AddRecord_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/ICHIPurchaseOrderCalloutService/Callout_CHIPurchaseOrder_AddRecordResponse" message="tns:ICHIPurchaseOrderCalloutService_Callout_CHIPurchaseOrder_AddRecord_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

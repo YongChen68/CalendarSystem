@@ -1,0 +1,273 @@
+﻿function addEvent(event) {
+    var id = PageMethods.GetEvent(event);
+    if (id != -1)
+        event.id = id;
+    else
+        window.alert('Failed to record event data');
+}
+function eventUpdate(event, dayDelta, minuteDelta, allDay, revertFunc) {
+    sendUpdateToServer(event);
+    $(this).remove();
+}
+function sendUpdateToServer(event) {
+    var eventToUpdate = {
+        id: event.id,
+        start: event.start,
+        title: event.title,
+        description: event.description,
+        doors: event.doors
+
+    };
+    if (event.end === null) {
+        eventToUpdate.end = eventToUpdate.start;
+    }
+    else {
+        eventToUpdate.end = event.end;
+    }
+    var endDate;
+    if (!event.allDay) {
+        endDate = new Date(eventToUpdate.end + 60 * 60000);
+        endDate = endDate.toJSON();
+    }
+    else {
+        endDate = eventToUpdate.end.toJSON();
+    }
+
+    eventToUpdate.start = eventToUpdate.start.toJSON();
+    eventToUpdate.end = eventToUpdate.end.toJSON(); //endDate;
+    eventToUpdate.allDay = event.allDay;
+    eventToUpdate.eventDurationEditable = true;
+
+    PageMethods.UpdateEventTime(eventToUpdate);
+}
+
+function getBlankTotal() {
+    return [GetBlankDayData('sun'), GetBlankDayData('mon'), GetBlankDayData('tue'), GetBlankDayData('wed'), GetBlankDayData('thu'), GetBlankDayData('fri'), GetBlankDayData('sat')];
+}
+function GetBlankDayData(day) {
+    return { day: day, doors: 0, windows: 0, boxes: 0, glass: 0, value: 0, min: 0, max: 0, rush: 0, float: 0, TotalBoxQty: 0, TotalGlassQty: 0, TotalPrice: 0, TotalLBRMin: 0, F6CA: 0, F27DS: 0, F27TS: 0, F27TT: 0, F29CA: 0, F29CM: 0, F52PD: 0, F68CA: 0, F68SL: 0, F68VS: 0 };
+}
+
+function ToWDString(event) {
+    return "Glass Ordered\r\n" +
+    event.CardinalOrderedDate + "\r\n\n" +
+    'Product Mix\r\n' +
+     '26CA: ' + event.F6CA + '\r\n' +
+
+     '27DS: ' + event.F27DS + '\r\n' +
+     '27TS: ' + event.F27TS + '\r\n' +
+     '27TT: ' + event.F27TT + '\r\n' +
+
+     '29CA: ' + event.F29CA + '\r\n' +
+     '29CM: ' + event.F29CM + '\r\n' +
+
+     '68CA: ' + event.F68CA + '\r\n' +
+     '68SL: ' + event.F68SL + '\r\n' +
+     '68VS: ' + event.F68VS;
+}
+
+function ToPDString(event) {
+    return '52PD: ' + event.F52PD;
+
+}
+
+function ToDString(event) {
+    return 'Doors: ' + event.doors;
+
+}
+
+var totals = getBlankTotal();
+
+$(document).ready(function () {
+    $.getJSON("data.svc/GetBufferJobs", function (data) {
+        $.each(data.GetBufferJobsResult, function (key, val) {
+            var img = "";
+            if (event.PaintIcon != undefined && event.PaintIcon != '' && event.PaintIcon == "Yes")
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/color.png\" />&nbsp;");
+
+            if (event.windows > 0)
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/window.png\" title= \"" + ToWDString(event) + "\" />&nbsp;");
+
+            if (event.F52PD > 0) // Patio Doors
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/patiodoor.png\" title= \"" + ToPDString(event) + "\" />&nbsp;");
+
+            if (event.doors > 0)
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/door.png\" title= \"" + ToDString(event) + "\" />&nbsp;");
+
+            if (event.FlagOrder != undefined && event.FlagOrder == 1) // Rush Order
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/flag.png\" />&nbsp;");
+
+            if (event.M2000Icon != undefined && event.M2000Icon == 1) // M2000
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/M2000.png\" />&nbsp;");
+
+            $('#external-events').append("<div class='fc-event' id=\"" + val.id + "\">" + img + val.title + "</div>");
+            $('#' + val.id).data('event', {
+                title: val.title, id: val.id, description: val.description, doors: val.doors, windows: val.windows, type: val.type
+            });
+        });
+        /* initialize the external events
+        -----------------------------------------------------------------*/
+
+        $('#external-events .fc-event').each(function () {
+
+            // make the event draggable using jQuery UI
+            $(this).draggable({
+                zIndex: 999,
+                revert: true,      // will cause the event to go back to its
+                revertDuration: 0  //  original position after the drag
+            });
+        });
+    });
+
+
+    /* initialize the calendar
+    -----------------------------------------------------------------*/
+
+    $('#calendar').fullCalendar({
+        aspectRatio : 1.7,
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay',
+        },
+        events: function (start, end, timezone, callback) {
+            $.ajax({
+                url: 'data.svc/GetEvents',
+                dataType: 'json',
+                data: { start: start.format(), end: end.format() },
+                success: function (data) {
+                    var events = [];
+                    $.each(data.GetEventsResult, function (pos, item) {
+                        //console.log("start:", start._d, "end:", end._d, "start = end:", (start._d == end._d),"new item:", item.title);
+                        events.push(item);
+                    });
+                    callback(events);
+                }, error: function () {
+                    console.log('Error');
+                    $('#script-warning').show();
+                }
+            });
+        },
+        editable: true,
+        eventDurationEditable: true,
+        droppable: true, // this allows things to be dropped onto the calendar
+        weekNumbers: true,
+        businessHours: { start: '8:00', end: '17:00', dow: [1, 2, 3, 4, 5, 6] },
+        eventDrop: eventUpdate,
+        eventResize: eventUpdate,
+        eventRender: function (event, element, view) {
+            //console.log("eventRender", "event id: " + event.id + ", title: " + event.title + ", state: " + event.color, event.start._d, "day:", event.start._d.getDay(), event.start._d.getUTCDay(), "doors:", event.doors, "windows:", event.windows);
+            console.log("eventRender", "event: ", event);
+            var dom = ""
+            if (event.allDay) dom = 'span:first'; else {
+                dom = '.fc-time';
+                $(element).find(dom).empty();
+            }
+            if (view.name == "agendaDay") {
+                element.text(element.text() + ", Duration: " + (event.min !== undefined ? event.min : 0)+ " - other day view content");
+            }
+            if (event.PaintIcon != undefined && event.PaintIcon != '' && event.PaintIcon == "Yes")
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/color.png\" />&nbsp;");
+
+            if (event.windows > 0)
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/window.png\" title= \"" + ToWDString(event) + "\" />&nbsp;");
+
+            if (event.F52PD > 0) // Patio Doors
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/patiodoor.png\" title= \"" + ToPDString(event) + "\" />&nbsp;");
+
+            if (event.doors > 0)
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/door.png\" title= \"" + ToDString(event) + "\" />&nbsp;");
+
+
+            if (event.FlagOrder != undefined && event.FlagOrder == 1) // Rush Order
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/flag.png\" />&nbsp;");
+
+            if (event.M2000Icon != undefined && event.M2000Icon == 1) // M2000
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/M2000.png\" />&nbsp;");
+
+            element.backgroundColor = event.State;
+            totals[event.start._d.getUTCDay()].doors += event.doors !== undefined ? event.doors : 0;
+            totals[event.start._d.getUTCDay()].windows += event.windows !== undefined ? event.windows : 0;
+            //totals[event.start._d.getUTCDay()].float += even.float !== undefined ? event.float : 0
+            totals[event.start._d.getUTCDay()].boxes += event.TotalBoxQty !== undefined ? event.TotalBoxQty : 0
+            totals[event.start._d.getUTCDay()].glass += event.TotalGlassQty !== undefined ? event.TotalGlassQty : 0
+            totals[event.start._d.getUTCDay()].value += event.TotalPrice !== undefined ? event.TotalPrice : 0
+            totals[event.start._d.getUTCDay()].rush += event.FlagOrder !== undefined ? event.FlagOrder : 0
+            totals[event.start._d.getUTCDay()].min += event.TotalLBRMin !== undefined ? event.TotalLBRMin : 0
+            totals[event.start._d.getUTCDay()].max += event.max !== undefined ? event.max : 0
+            totals[event.start._d.getUTCDay()].F6CA += event.F6CA !== undefined ? event.F6CA : 0
+            totals[event.start._d.getUTCDay()].F68VS += event.F68VS !== undefined ? event.F68VS : 0
+            totals[event.start._d.getUTCDay()].F68SL += event.F68SL !== undefined ? event.F68SL : 0
+            totals[event.start._d.getUTCDay()].F68CA += event.F68CA !== undefined ? event.F68CA : 0
+            totals[event.start._d.getUTCDay()].F52PD += event.F52PD !== undefined ? event.F52PD : 0
+            totals[event.start._d.getUTCDay()].F29CM += event.F29CM !== undefined ? event.F29CM : 0
+            totals[event.start._d.getUTCDay()].F29CA += event.F29CA !== undefined ? event.F29CA : 0
+            totals[event.start._d.getUTCDay()].F27TT += event.F27TT !== undefined ? event.F27TT : 0
+            totals[event.start._d.getUTCDay()].F27TS += event.F27TS !== undefined ? event.F27TS : 0
+            totals[event.start._d.getUTCDay()].F27DS += event.F27DS !== undefined ? event.F27DS : 0
+        },
+        eventDragStop: function (event, jsEvent, ui, view) {
+            console.log("eventDragStop", event);
+            totals = getBlankTotal();
+        },
+        eventResizeStop: function (event, jsEvent, ui, view) {
+            console.log("eventResizeStop", event);
+            totals = getBlankTotal();
+        },
+        eventReceive: function (event) {
+            console.log('eventReceived', 'event.title=' + event.title, "id: " + event.id, "doors: " + event.doors, "PaintIcon: + " + event.PaintIcon);
+            totals[event.start._d.getUTCDay()].doors += event.doors !== 'undefined' ? event.doors : 0;
+            totals[event.start._d.getUTCDay()].windows += event.windows !== 'undefined' ? event.windows : 0;
+            sendUpdateToServer(event);
+        },
+        drop: function (date, jsEvent, ui, resourceId) {
+            console.log("drop id: " + $(this).attr("id") + " resourceID: " + resourceId.id);
+            $(this).remove();
+        },
+        eventAfterAllRender: function (view) {
+            if (view.name != "agendaMonth") {
+                console.log("eventAfterAllRender", view.name, totals);
+                for (var i = 0; i < totals.length; i++) {
+                    SetData('Doors', totals[i].day, totals[i].doors);
+                    SetData('Rush', totals[i].day, totals[i].rush);
+                    SetData('Windows', totals[i].day, totals[i].windows);
+                    SetData('Boxes', totals[i].day, totals[i].boxes);
+                    SetData('Glass', totals[i].day, totals[i].glass);
+                    SetData('Value', totals[i].day, totals[i].value.formatMoney(2, "$", ",", "."));
+                    SetData('Min', totals[i].day, totals[i].min.formatMoney(0,"", ",", "."));
+                    SetData('Max', totals[i].day, totals[i].max.formatMoney(0, "", ",", "."));
+                    SetData('Float', totals[i].day, totals[i].float.formatMoney(0, "", ",", "."));
+                    SetData('27DS', totals[i].day, totals[i].F27DS);
+                    SetData('27TS', totals[i].day, totals[i].F27TS);
+                    SetData('27TT', totals[i].day, totals[i].F27TT);
+                    SetData('29CA', totals[i].day, totals[i].F29CA);
+                    SetData('29CM', totals[i].day, totals[i].F29CM);
+                    SetData('52PD', totals[i].day, totals[i].F52PD);
+                    SetData('68CA', totals[i].day, totals[i].F68CA);
+                    SetData('68VS', totals[i].day, totals[i].F68VS);
+                    SetData('68SL', totals[i].day, totals[i].F68SL);
+                    SetData('26CA', totals[i].day, totals[i].F6CA);
+                }
+            }
+            totals = getBlankTotal();
+        }
+    });
+});
+
+function SetData(target, day, value) {
+    $('.centra-'+target).find('.fc-' + day).html(value);
+}
+// Extend the default Number object with a formatMoney() method:
+// usage: someVar.formatMoney(decimalPlaces, symbol, thousandsSeparator, decimalSeparator)
+// defaults: (2, "$", ",", ".")
+Number.prototype.formatMoney = function (places, symbol, thousand, decimal) {
+    places = !isNaN(places = Math.abs(places)) ? places : 2;
+    symbol = symbol !== undefined ? symbol : "$";
+    thousand = thousand || ",";
+    decimal = decimal || ".";
+    var number = this,
+        negative = number < 0 ? "-" : "",
+        i = parseInt(number = Math.abs(+number || 0).toFixed(places), 10) + "",
+        j = (j = i.length) > 3 ? j % 3 : 0;
+    return symbol + negative + (j ? i.substr(0, j) + thousand : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousand) + (places ? decimal + Math.abs(number - i).toFixed(places).slice(2) : "");
+};

@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://flowfinity.com/ServiceContract" elementFormDefault="qualified" targetNamespace="http://flowfinity.com/ServiceContract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="/fa/integration/Public?xsd=xsd2" namespace="http://flowfinity.com/contract" />
+  <xs:complexType name="Execute">
+    <xs:sequence>
+      <xs:element xmlns:q61="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q61:ExecuteRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Execute" nillable="true" type="tns:Execute" />
+  <xs:complexType name="ExecuteResponse">
+    <xs:sequence>
+      <xs:element xmlns:q62="http://flowfinity.com/contract" minOccurs="0" name="ExecuteResult" nillable="true" type="q62:ExecuteResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExecuteResponse" nillable="true" type="tns:ExecuteResponse" />
+  <xs:complexType name="Callout_BackOrder_AddRecord">
+    <xs:sequence>
+      <xs:element xmlns:q3="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q3:BackOrder_AddRecord_Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_BackOrder_AddRecord" nillable="true" type="tns:Callout_BackOrder_AddRecord" />
+  <xs:complexType name="Callout_BackOrder_AddRecordResponse">
+    <xs:sequence>
+      <xs:element xmlns:q4="http://flowfinity.com/contract" minOccurs="0" name="Callout_BackOrder_AddRecordResult" nillable="true" type="q4:CalloutResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_BackOrder_AddRecordResponse" nillable="true" type="tns:Callout_BackOrder_AddRecordResponse" />
+  <xs:complexType name="Callout_Estimation_AddRecord">
+    <xs:sequence>
+      <xs:element xmlns:q7="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q7:Estimation_AddRecord_Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_Estimation_AddRecord" nillable="true" type="tns:Callout_Estimation_AddRecord" />
+  <xs:complexType name="Callout_Estimation_AddRecordResponse">
+    <xs:sequence>
+      <xs:element xmlns:q8="http://flowfinity.com/contract" minOccurs="0" name="Callout_Estimation_AddRecordResult" nillable="true" type="q8:CalloutResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_Estimation_AddRecordResponse" nillable="true" type="tns:Callout_Estimation_AddRecordResponse" />
+  <xs:complexType name="Callout_Timesheet_AddRecord">
+    <xs:sequence>
+      <xs:element xmlns:q11="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q11:Timesheet_AddRecord_Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_Timesheet_AddRecord" nillable="true" type="tns:Callout_Timesheet_AddRecord" />
+  <xs:complexType name="Callout_Timesheet_AddRecordResponse">
+    <xs:sequence>
+      <xs:element xmlns:q12="http://flowfinity.com/contract" minOccurs="0" name="Callout_Timesheet_AddRecordResult" nillable="true" type="q12:CalloutResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_Timesheet_AddRecordResponse" nillable="true" type="tns:Callout_Timesheet_AddRecordResponse" />
+  <xs:complexType name="Callout_Timesheet_EditRecord">
+    <xs:sequence>
+      <xs:element xmlns:q15="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q15:Timesheet_EditRecord_Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_Timesheet_EditRecord" nillable="true" type="tns:Callout_Timesheet_EditRecord" />
+  <xs:complexType name="Callout_Timesheet_EditRecordResponse">
+    <xs:sequence>
+      <xs:element xmlns:q16="http://flowfinity.com/contract" minOccurs="0" name="Callout_Timesheet_EditRecordResult" nillable="true" type="q16:CalloutResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_Timesheet_EditRecordResponse" nillable="true" type="tns:Callout_Timesheet_EditRecordResponse" />
+  <xs:complexType name="Callout_PlantProduction_GetWindowmaker">
+    <xs:sequence>
+      <xs:element xmlns:q19="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q19:PlantProduction_GetWindowmaker_Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_PlantProduction_GetWindowmaker" nillable="true" type="tns:Callout_PlantProduction_GetWindowmaker" />
+  <xs:complexType name="Callout_PlantProduction_GetWindowmakerResponse">
+    <xs:sequence>
+      <xs:element xmlns:q20="http://flowfinity.com/contract" minOccurs="0" name="Callout_PlantProduction_GetWindowmakerResult" nillable="true" type="q20:CalloutResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_PlantProduction_GetWindowmakerResponse" nillable="true" type="tns:Callout_PlantProduction_GetWindowmakerResponse" />
+  <xs:complexType name="Callout_PlantProduction_UpdateOldWindowmaker">
+    <xs:sequence>
+      <xs:element xmlns:q23="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q23:PlantProduction_UpdateOldWindowmaker_Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_PlantProduction_UpdateOldWindowmaker" nillable="true" type="tns:Callout_PlantProduction_UpdateOldWindowmaker" />
+  <xs:complexType name="Callout_PlantProduction_UpdateOldWindowmakerResponse">
+    <xs:sequence>
+      <xs:element xmlns:q24="http://flowfinity.com/contract" minOccurs="0" name="Callout_PlantProduction_UpdateOldWindowmakerResult" nillable="true" type="q24:CalloutResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_PlantProduction_UpdateOldWindowmakerResponse" nillable="true" type="tns:Callout_PlantProduction_UpdateOldWindowmakerResponse" />
+  <xs:complexType name="Callout_PlantProduction_delete_1">
+    <xs:sequence>
+      <xs:element xmlns:q27="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q27:PlantProduction_delete_1_Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_PlantProduction_delete_1" nillable="true" type="tns:Callout_PlantProduction_delete_1" />
+  <xs:complexType name="Callout_PlantProduction_delete_1Response">
+    <xs:sequence>
+      <xs:element xmlns:q28="http://flowfinity.com/contract" minOccurs="0" name="Callout_PlantProduction_delete_1Result" nillable="true" type="q28:CalloutResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_PlantProduction_delete_1Response" nillable="true" type="tns:Callout_PlantProduction_delete_1Response" />
+  <xs:complexType name="Callout_PlantProduction_AddRecord">
+    <xs:sequence>
+      <xs:element xmlns:q31="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q31:PlantProduction_AddRecord_Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_PlantProduction_AddRecord" nillable="true" type="tns:Callout_PlantProduction_AddRecord" />
+  <xs:complexType name="Callout_PlantProduction_AddRecordResponse">
+    <xs:sequence>
+      <xs:element xmlns:q32="http://flowfinity.com/contract" minOccurs="0" name="Callout_PlantProduction_AddRecordResult" nillable="true" type="q32:CalloutResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_PlantProduction_AddRecordResponse" nillable="true" type="tns:Callout_PlantProduction_AddRecordResponse" />
+  <xs:complexType name="Callout_Service_EditService">
+    <xs:sequence>
+      <xs:element xmlns:q35="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q35:Service_EditService_Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_Service_EditService" nillable="true" type="tns:Callout_Service_EditService" />
+  <xs:complexType name="Callout_Service_EditServiceResponse">
+    <xs:sequence>
+      <xs:element xmlns:q36="http://flowfinity.com/contract" minOccurs="0" name="Callout_Service_EditServiceResult" nillable="true" type="q36:CalloutResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_Service_EditServiceResponse" nillable="true" type="tns:Callout_Service_EditServiceResponse" />
+  <xs:complexType name="Callout_HomeInstallations_AddRecord">
+    <xs:sequence>
+      <xs:element xmlns:q39="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q39:HomeInstallations_AddRecord_Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_HomeInstallations_AddRecord" nillable="true" type="tns:Callout_HomeInstallations_AddRecord" />
+  <xs:complexType name="Callout_HomeInstallations_AddRecordResponse">
+    <xs:sequence>
+      <xs:element xmlns:q40="http://flowfinity.com/contract" minOccurs="0" name="Callout_HomeInstallations_AddRecordResult" nillable="true" type="q40:CalloutResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_HomeInstallations_AddRecordResponse" nillable="true" type="tns:Callout_HomeInstallations_AddRecordResponse" />
+  <xs:complexType name="Callout_HomeInstallations_CreateServiceRequest">
+    <xs:sequence>
+      <xs:element xmlns:q43="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q43:HomeInstallations_CreateServiceRequest_Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_HomeInstallations_CreateServiceRequest" nillable="true" type="tns:Callout_HomeInstallations_CreateServiceRequest" />
+  <xs:complexType name="Callout_HomeInstallations_CreateServiceRequestResponse">
+    <xs:sequence>
+      <xs:element xmlns:q44="http://flowfinity.com/contract" minOccurs="0" name="Callout_HomeInstallations_CreateServiceRequestResult" nillable="true" type="q44:CalloutResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_HomeInstallations_CreateServiceRequestResponse" nillable="true" type="tns:Callout_HomeInstallations_CreateServiceRequestResponse" />
+  <xs:complexType name="Callout_HomeInstallations_EditSold">
+    <xs:sequence>
+      <xs:element xmlns:q47="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q47:HomeInstallations_EditSold_Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_HomeInstallations_EditSold" nillable="true" type="tns:Callout_HomeInstallations_EditSold" />
+  <xs:complexType name="Callout_HomeInstallations_EditSoldResponse">
+    <xs:sequence>
+      <xs:element xmlns:q48="http://flowfinity.com/contract" minOccurs="0" name="Callout_HomeInstallations_EditSoldResult" nillable="true" type="q48:CalloutResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_HomeInstallations_EditSoldResponse" nillable="true" type="tns:Callout_HomeInstallations_EditSoldResponse" />
+  <xs:complexType name="Callout_InventoryManager_GetBOMItems">
+    <xs:sequence>
+      <xs:element xmlns:q51="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q51:InventoryManager_GetBOMItems_Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_InventoryManager_GetBOMItems" nillable="true" type="tns:Callout_InventoryManager_GetBOMItems" />
+  <xs:complexType name="Callout_InventoryManager_GetBOMItemsResponse">
+    <xs:sequence>
+      <xs:element xmlns:q52="http://flowfinity.com/contract" minOccurs="0" name="Callout_InventoryManager_GetBOMItemsResult" nillable="true" type="q52:CalloutResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_InventoryManager_GetBOMItemsResponse" nillable="true" type="tns:Callout_InventoryManager_GetBOMItemsResponse" />
+  <xs:complexType name="Callout_InventoryManager_DeleteBOM">
+    <xs:sequence>
+      <xs:element xmlns:q55="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q55:InventoryManager_DeleteBOM_Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_InventoryManager_DeleteBOM" nillable="true" type="tns:Callout_InventoryManager_DeleteBOM" />
+  <xs:complexType name="Callout_InventoryManager_DeleteBOMResponse">
+    <xs:sequence>
+      <xs:element xmlns:q56="http://flowfinity.com/contract" minOccurs="0" name="Callout_InventoryManager_DeleteBOMResult" nillable="true" type="q56:CalloutResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_InventoryManager_DeleteBOMResponse" nillable="true" type="tns:Callout_InventoryManager_DeleteBOMResponse" />
+  <xs:complexType name="Callout_SupplyOnly_AddRecord">
+    <xs:sequence>
+      <xs:element xmlns:q59="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q59:SupplyOnly_AddRecord_Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_SupplyOnly_AddRecord" nillable="true" type="tns:Callout_SupplyOnly_AddRecord" />
+  <xs:complexType name="Callout_SupplyOnly_AddRecordResponse">
+    <xs:sequence>
+      <xs:element xmlns:q60="http://flowfinity.com/contract" minOccurs="0" name="Callout_SupplyOnly_AddRecordResult" nillable="true" type="q60:CalloutResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_SupplyOnly_AddRecordResponse" nillable="true" type="tns:Callout_SupplyOnly_AddRecordResponse" />
+  <xs:complexType name="Callout_CHIPurchaseOrder_AddRecord">
+    <xs:sequence>
+      <xs:element xmlns:q65="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q65:CHIPurchaseOrder_AddRecord_Request" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_CHIPurchaseOrder_AddRecord" nillable="true" type="tns:Callout_CHIPurchaseOrder_AddRecord" />
+  <xs:complexType name="Callout_CHIPurchaseOrder_AddRecordResponse">
+    <xs:sequence>
+      <xs:element xmlns:q66="http://flowfinity.com/contract" minOccurs="0" name="Callout_CHIPurchaseOrder_AddRecordResult" nillable="true" type="q66:CalloutResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Callout_CHIPurchaseOrder_AddRecordResponse" nillable="true" type="tns:Callout_CHIPurchaseOrder_AddRecordResponse" />
+</xs:schema>

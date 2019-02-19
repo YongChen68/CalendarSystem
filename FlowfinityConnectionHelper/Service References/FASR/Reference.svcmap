@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="1157203c-9c57-45f7-b732-a5596721a7c3" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://centratest.centrawindows.com:8102/fa/integration/Public" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="BasicHttpBinding_IIntegration1.wsdl" MetadataType="Wsdl" ID="1ed91e25-2660-4daa-913e-608f81a99a11" SourceId="1" SourceUrl="http://centratest.centrawindows.com:8102/fa/integration/Public?wsdl" />
+    <MetadataFile FileName="Public1.wsdl" MetadataType="Wsdl" ID="b2efc669-ec58-45b4-a431-be780908f463" SourceId="1" SourceUrl="http://centratest.centrawindows.com:8102/fa/integration/Public?wsdl=wsdl1" />
+    <MetadataFile FileName="Public5.xsd" MetadataType="Schema" ID="ea3469a6-2bb2-4dd5-a552-45e578d9db83" SourceId="1" SourceUrl="http://centratest.centrawindows.com:8102/fa/integration/Public?xsd=xsd4" />
+    <MetadataFile FileName="Public6.xsd" MetadataType="Schema" ID="c38bb4b6-d717-4b6b-9e7d-e15e72f435be" SourceId="1" SourceUrl="http://centratest.centrawindows.com:8102/fa/integration/Public?xsd=xsd1" />
+    <MetadataFile FileName="Public7.xsd" MetadataType="Schema" ID="6fc00f33-0e86-473c-8b1f-1032467080b5" SourceId="1" SourceUrl="http://centratest.centrawindows.com:8102/fa/integration/Public?xsd=xsd3" />
+    <MetadataFile FileName="Public1.disco" MetadataType="Disco" ID="fa873f0d-1521-4819-95f9-54e76f1dea59" SourceId="1" SourceUrl="http://centratest.centrawindows.com:8102/fa/integration/Public?disco" />
+    <MetadataFile FileName="Public8.xsd" MetadataType="Schema" ID="83113460-0143-49b2-82ce-3dfe15632f28" SourceId="1" SourceUrl="http://centratest.centrawindows.com:8102/fa/integration/Public?xsd=xsd2" />
+    <MetadataFile FileName="Public9.xsd" MetadataType="Schema" ID="6f952a0d-2dcd-4872-ba75-1f512244860d" SourceId="1" SourceUrl="http://centratest.centrawindows.com:8102/fa/integration/Public?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

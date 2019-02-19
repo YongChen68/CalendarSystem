@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/09/policy/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://flowfinity.com/ServiceContract" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsap10="http://www.w3.org/2005/08/addressing" targetNamespace="http://flowfinity.com/ServiceContract" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://flowfinity.com/ServiceContract/Imports">
+      <xsd:import schemaLocation="/fa/integration/CentraWindows?xsd=xsd0" namespace="http://flowfinity.com/ServiceContract" />
+      <xsd:import schemaLocation="/fa/integration/CentraWindows?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="/fa/integration/CentraWindows?xsd=xsd2" namespace="http://flowfinity.com/contract" />
+      <xsd:import schemaLocation="/fa/integration/CentraWindows?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Flowfinity" />
+      <xsd:import schemaLocation="/fa/integration/CentraWindows?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IIntegration_Execute_InputMessage">
+    <wsdl:part name="parameters" element="tns:Execute" />
+  </wsdl:message>
+  <wsdl:message name="IIntegration_Execute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ExecuteResponse" />
+  </wsdl:message>
+  <wsdl:portType msc:usingSession="false" name="IIntegration">
+    <wsdl:operation name="Execute">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IIntegration/Execute" message="tns:IIntegration_Execute_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IIntegration/ExecuteResponse" message="tns:IIntegration_Execute_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

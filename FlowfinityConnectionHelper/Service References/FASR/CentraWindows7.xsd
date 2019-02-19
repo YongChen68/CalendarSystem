@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Flowfinity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Flowfinity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="OperationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PlantProduction_UpdateWindowMakerData" />
+      <xs:enumeration value="PlantProduction_GetWindowmaker" />
+      <xs:enumeration value="PlantProduction_AddRecord" />
+      <xs:enumeration value="Service_EditService" />
+      <xs:enumeration value="Service_UpdateCrew" />
+      <xs:enumeration value="Service_AddRecord" />
+      <xs:enumeration value="Service_ScheduleService" />
+      <xs:enumeration value="Service_rescheduleservice" />
+      <xs:enumeration value="Service_ReturnToBuffer" />
+      <xs:enumeration value="MaterialsInformation_AddProduct" />
+      <xs:enumeration value="MaterialsInformation_EditRecord" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OperationType" nillable="true" type="tns:OperationType" />
+  <xs:simpleType name="TransactionStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESS" />
+      <xs:enumeration value="REJECT" />
+      <xs:enumeration value="VALIDATION_FAILED" />
+      <xs:enumeration value="ERROR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TransactionStatus" nillable="true" type="tns:TransactionStatus" />
+  <xs:complexType name="ArrayOfOperationType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="OperationType" type="tns:OperationType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperationType" nillable="true" type="tns:ArrayOfOperationType" />
+  <xs:simpleType name="State">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Scheduled Work Order" />
+      <xs:enumeration value="Rejected Service Quote" />
+      <xs:enumeration value="Buffered Service Quote" />
+      <xs:enumeration value="New Service Draft" />
+      <xs:enumeration value="Ready To Ship " />
+      <xs:enumeration value="On Hold" />
+      <xs:enumeration value="Service Place Holder" />
+      <xs:enumeration value="Service Quote in Progress" />
+      <xs:enumeration value="Ready To Invoice" />
+      <xs:enumeration value="Buffered Service" />
+      <xs:enumeration value="Scheduled Service Quote" />
+      <xs:enumeration value="Scheduled Service" />
+      <xs:enumeration value="Approved Service Quote" />
+      <xs:enumeration value="Shipped " />
+      <xs:enumeration value="Cancelled Service" />
+      <xs:enumeration value="Service Job Costing" />
+      <xs:enumeration value="In-Progress " />
+      <xs:enumeration value="Closed Service Order" />
+      <xs:enumeration value="Default State" />
+      <xs:enumeration value="Rejected Service Draft" />
+      <xs:enumeration value="Called Service" />
+      <xs:enumeration value="Rejected Service" />
+      <xs:enumeration value="New Service" />
+      <xs:enumeration value="Draft Work Order" />
+      <xs:enumeration value="Rejected Service Costing" />
+      <xs:enumeration value="Closed Service Quote" />
+      <xs:enumeration value="Service in Progress" />
+      <xs:enumeration value="Un-reviewed Service Costing" />
+      <xs:enumeration value="Service Complete" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="State" nillable="true" type="tns:State" />
+  <xs:simpleType name="CalloutReturnStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OPERATION_OK" />
+      <xs:enumeration value="TRANSACTION_OK" />
+      <xs:enumeration value="ERROR_REPEAT_LATER" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="CalloutReturnStatus" nillable="true" type="tns:CalloutReturnStatus" />
+</xs:schema>

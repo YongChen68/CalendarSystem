@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/09/policy/addressing" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://flowfinity.com/ServiceContract" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsap10="http://www.w3.org/2005/08/addressing" xmlns:i0="http://flowfinity.com/ServiceContract" name="BasicHttpBinding_IIntegration" targetNamespace="http://flowfinity.com/ServiceContract" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IBackOrderCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IEstimationCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_ITimesheetCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IPlantProductionCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IStationTargetCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IScheduleDraftCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IServiceCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IHomeInstallationsCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IManufacturerTrackingCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IMaterialsInformationCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IInventoryManagerCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IMMSCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_ISupplyOnlyCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IIntegration_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IWindowsItemTrackerCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_ItestappCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IJobSiteReviewCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_IInstallationTrackingCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_ISchedulePublishedCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:Policy wsu:Id="BasicHttpBinding_ICHIPurchaseOrderCalloutService_policy">
+    <wsp:ExactlyOne>
+      <wsp:All>
+        <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
+        </wspe:Utf816FFFECharacterEncoding>
+      </wsp:All>
+    </wsp:ExactlyOne>
+  </wsp:Policy>
+  <wsp:UsingPolicy>
+  </wsp:UsingPolicy>
+  <wsdl:import namespace="http://flowfinity.com/ServiceContract" location="/fa/integration/Public?wsdl=wsdl1" />
+  <wsdl:types />
+  <wsdl:binding name="BasicHttpBinding_IBackOrderCalloutService" type="i0:IBackOrderCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IBackOrderCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_BackOrder_AddRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IBackOrderCalloutService/Callout_BackOrder_AddRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IEstimationCalloutService" type="i0:IEstimationCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IEstimationCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_Estimation_AddRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IEstimationCalloutService/Callout_Estimation_AddRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ITimesheetCalloutService" type="i0:ITimesheetCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ITimesheetCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_Timesheet_AddRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/ITimesheetCalloutService/Callout_Timesheet_AddRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_Timesheet_EditRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/ITimesheetCalloutService/Callout_Timesheet_EditRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IPlantProductionCalloutService" type="i0:IPlantProductionCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IPlantProductionCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_PlantProduction_GetWindowmaker">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IPlantProductionCalloutService/Callout_PlantProduction_GetWindowmaker" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_PlantProduction_delete_1">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IPlantProductionCalloutService/Callout_PlantProduction_delete_1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_PlantProduction_AddRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IPlantProductionCalloutService/Callout_PlantProduction_AddRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_PlantProduction_startanorder">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IPlantProductionCalloutService/Callout_PlantProduction_startanorder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IStationTargetCalloutService" type="i0:IStationTargetCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IStationTargetCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_StationTarget_Legacy_Add">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_StationTarget_Legacy_Edit">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_Edit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_StationTarget_Legacy_Transition">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_Transition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_StationTarget_Legacy_Delete">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_StationTarget_Legacy_Duplicate">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_Duplicate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_StationTarget_Legacy_TriggerAdd">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TriggerAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_StationTarget_Legacy_TriggerEdit">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TriggerEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IScheduleDraftCalloutService" type="i0:IScheduleDraftCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IScheduleDraftCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IServiceCalloutService" type="i0:IServiceCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IServiceCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_Service_EditService">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IServiceCalloutService/Callout_Service_EditService" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IHomeInstallationsCalloutService" type="i0:IHomeInstallationsCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IHomeInstallationsCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_HomeInstallations_AddRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_AddRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_HomeInstallations_CreateServiceRequest">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_CreateServiceRequest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_HomeInstallations_EditSold">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_EditSold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IManufacturerTrackingCalloutService" type="i0:IManufacturerTrackingCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IManufacturerTrackingCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_ManufacturerTracking_AddRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IManufacturerTrackingCalloutService/Callout_ManufacturerTracking_AddRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IMaterialsInformationCalloutService" type="i0:IMaterialsInformationCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IMaterialsInformationCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IInventoryManagerCalloutService" type="i0:IInventoryManagerCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IInventoryManagerCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_InventoryManager_GetBOMItems">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IInventoryManagerCalloutService/Callout_InventoryManager_GetBOMItems" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_InventoryManager_DeleteBOM">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IInventoryManagerCalloutService/Callout_InventoryManager_DeleteBOM" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IMMSCalloutService" type="i0:IMMSCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IMMSCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_MMS_EditRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_EditRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_MMS_Legacy_Add">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_Add" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_MMS_Legacy_Edit">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_Edit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_MMS_Legacy_Transition">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_Transition" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_MMS_Legacy_Delete">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_MMS_Legacy_Duplicate">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_Duplicate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_MMS_Legacy_TriggerAdd">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TriggerAdd" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_MMS_Legacy_TriggerEdit">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TriggerEdit" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ISupplyOnlyCalloutService" type="i0:ISupplyOnlyCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ISupplyOnlyCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_SupplyOnly_AddRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/ISupplyOnlyCalloutService/Callout_SupplyOnly_AddRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IIntegration" type="i0:IIntegration">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IIntegration_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Execute">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IIntegration/Execute" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Query">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IIntegration/Query" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransaction">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IIntegration/GetTransaction" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTransactions">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IIntegration/GetTransactions" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IWindowsItemTrackerCalloutService" type="i0:IWindowsItemTrackerCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IWindowsItemTrackerCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_WindowsItemTracker_MoveToWelding">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IWindowsItemTrackerCalloutService/Callout_WindowsItemTracker_MoveToWelding" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_WindowsItemTracker_MovetoGlaze">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IWindowsItemTrackerCalloutService/Callout_WindowsItemTracker_MovetoGlaze" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_WindowsItemTracker_MovetoReadyToShip1">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IWindowsItemTrackerCalloutService/Callout_WindowsItemTracker_MovetoReadyToShip1" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_WindowsItemTracker_UpdateItemStatus">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IWindowsItemTrackerCalloutService/Callout_WindowsItemTracker_UpdateItemStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_WindowsItemTracker_MovetoOnhold">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IWindowsItemTrackerCalloutService/Callout_WindowsItemTracker_MovetoOnhold" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_WindowsItemTracker_AddRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IWindowsItemTrackerCalloutService/Callout_WindowsItemTracker_AddRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_WindowsItemTracker_MovetoAssembly">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IWindowsItemTrackerCalloutService/Callout_WindowsItemTracker_MovetoAssembly" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_WindowsItemTracker_DeleteRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IWindowsItemTrackerCalloutService/Callout_WindowsItemTracker_DeleteRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_WindowsItemTracker_MovetoInProgress">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IWindowsItemTrackerCalloutService/Callout_WindowsItemTracker_MovetoInProgress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_WindowsItemTracker_MovetoQC">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IWindowsItemTrackerCalloutService/Callout_WindowsItemTracker_MovetoQC" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_WindowsItemTracker_EditRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IWindowsItemTrackerCalloutService/Callout_WindowsItemTracker_EditRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ItestappCalloutService" type="i0:ItestappCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ItestappCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_testapp_AddRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/ItestappCalloutService/Callout_testapp_AddRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IJobSiteReviewCalloutService" type="i0:IJobSiteReviewCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IJobSiteReviewCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_JobSiteReview_AddRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IJobSiteReviewCalloutService/Callout_JobSiteReview_AddRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_IInstallationTrackingCalloutService" type="i0:IInstallationTrackingCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IInstallationTrackingCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_InstallationTracking_DeleteRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IInstallationTrackingCalloutService/Callout_InstallationTracking_DeleteRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_InstallationTracking_AddRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IInstallationTrackingCalloutService/Callout_InstallationTracking_AddRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_InstallationTracking_EditRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IInstallationTrackingCalloutService/Callout_InstallationTracking_EditRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ISchedulePublishedCalloutService" type="i0:ISchedulePublishedCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ISchedulePublishedCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ICHIPurchaseOrderCalloutService" type="i0:ICHIPurchaseOrderCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ICHIPurchaseOrderCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_CHIPurchaseOrder_AddRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/ICHIPurchaseOrderCalloutService/Callout_CHIPurchaseOrder_AddRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="BasicHttpBinding_IIntegration">
+    <wsdl:port name="BasicHttpBinding_IBackOrderCalloutService" binding="i0:BasicHttpBinding_IBackOrderCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IEstimationCalloutService" binding="i0:BasicHttpBinding_IEstimationCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ITimesheetCalloutService" binding="i0:BasicHttpBinding_ITimesheetCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IPlantProductionCalloutService" binding="i0:BasicHttpBinding_IPlantProductionCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IStationTargetCalloutService" binding="i0:BasicHttpBinding_IStationTargetCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IScheduleDraftCalloutService" binding="i0:BasicHttpBinding_IScheduleDraftCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IServiceCalloutService" binding="i0:BasicHttpBinding_IServiceCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IHomeInstallationsCalloutService" binding="i0:BasicHttpBinding_IHomeInstallationsCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IManufacturerTrackingCalloutService" binding="i0:BasicHttpBinding_IManufacturerTrackingCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IMaterialsInformationCalloutService" binding="i0:BasicHttpBinding_IMaterialsInformationCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IInventoryManagerCalloutService" binding="i0:BasicHttpBinding_IInventoryManagerCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IMMSCalloutService" binding="i0:BasicHttpBinding_IMMSCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ISupplyOnlyCalloutService" binding="i0:BasicHttpBinding_ISupplyOnlyCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IIntegration" binding="i0:BasicHttpBinding_IIntegration">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IWindowsItemTrackerCalloutService" binding="i0:BasicHttpBinding_IWindowsItemTrackerCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ItestappCalloutService" binding="i0:BasicHttpBinding_ItestappCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IJobSiteReviewCalloutService" binding="i0:BasicHttpBinding_IJobSiteReviewCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_IInstallationTrackingCalloutService" binding="i0:BasicHttpBinding_IInstallationTrackingCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ISchedulePublishedCalloutService" binding="i0:BasicHttpBinding_ISchedulePublishedCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ICHIPurchaseOrderCalloutService" binding="i0:BasicHttpBinding_ICHIPurchaseOrderCalloutService">
+      <soap:address location="http://centratest.centrawindows.com:8102/fa/integration/Public" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

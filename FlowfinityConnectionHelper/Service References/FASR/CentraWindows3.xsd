@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://flowfinity.com/contract" elementFormDefault="qualified" targetNamespace="http://flowfinity.com/contract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="/fa/integration/CentraWindows?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/Flowfinity" />
+  <xs:import schemaLocation="/fa/integration/CentraWindows?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:complexType name="ExecuteRequest">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ExternalTransactionId" type="xs:string" />
+      <xs:element minOccurs="1" name="OperationCalls" nillable="true" type="tns:ArrayOfOperationCall" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExecuteRequest" nillable="true" type="tns:ExecuteRequest" />
+  <xs:complexType name="ExecuteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Transaction" nillable="true" type="tns:Transaction" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExecuteResponse" nillable="true" type="tns:ExecuteResponse" />
+  <xs:complexType name="Transaction">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
+      <xs:element minOccurs="1" name="InitiationTime" type="xs:dateTime" />
+      <xs:element minOccurs="1" name="DetailMessage" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" name="Operations" nillable="true" type="tns:ArrayOfAbstractOperation" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="Status" type="q1:TransactionStatus" />
+      <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Transaction" nillable="true" type="tns:Transaction" />
+  <xs:complexType name="ArrayOfOperationCall">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="OperationCall" nillable="true" type="tns:OperationCall" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperationCall" nillable="true" type="tns:ArrayOfOperationCall" />
+  <xs:complexType name="OperationCall">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="OperationCall" nillable="true" type="tns:OperationCall" />
+  <xs:complexType name="ArrayOfAbstractOperation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="AbstractOperation" nillable="true" type="tns:AbstractOperation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfAbstractOperation" nillable="true" type="tns:ArrayOfAbstractOperation" />
+  <xs:complexType name="AbstractOperation">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="0" name="Type" type="q2:OperationType" />
+      <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" name="CreatedOn" type="xs:dateTime" />
+      <xs:element minOccurs="1" name="CreatedBy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="1" name="ModifiedOn" type="xs:dateTime" />
+      <xs:element minOccurs="1" name="ModifiedBy" nillable="true" type="xs:string" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="State" type="q3:State" />
+      <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q4:ArrayOfstring" />
+      <xs:element minOccurs="1" name="ClientLocation" nillable="true" type="tns:LocationValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AbstractOperation" nillable="true" type="tns:AbstractOperation" />
+  <xs:complexType name="PlantProductionRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BatchNo" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="CompleteDate" nillable="true" type="tns:DateTimeValue" />
+      <xs:element minOccurs="0" name="DeliveryDate" nillable="true" type="tns:DateTimeValue" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="tns:ArrayOfPlantProduction_.NotesRecord" />
+      <xs:element minOccurs="0" name="ProductionDate" nillable="true" type="tns:ArrayOfPlantProduction_.ProductionDateRecord" />
+      <xs:element minOccurs="0" name="WorkOrderNumber" nillable="true" type="tns:StringValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlantProductionRecord" nillable="true" type="tns:PlantProductionRecord" />
+  <xs:complexType name="LocationValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Latitude" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="Longitude" nillable="true" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="LocationValue" nillable="true" type="tns:LocationValue" />
+  <xs:complexType name="StringValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="StringValue" nillable="true" type="tns:StringValue" />
+  <xs:complexType name="DateTimeValue">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DateTimeValue" nillable="true" type="tns:DateTimeValue" />
+  <xs:complexType name="ArrayOfPlantProduction_.NotesRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlantProduction_.NotesRecord" nillable="true" type="tns:PlantProduction_.NotesRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlantProduction_.NotesRecord" nillable="true" type="tns:ArrayOfPlantProduction_.NotesRecord" />
+  <xs:complexType name="PlantProduction_.NotesRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="input9" nillable="true" type="tns:StringValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlantProduction_.NotesRecord" nillable="true" type="tns:PlantProduction_.NotesRecord" />
+  <xs:complexType name="ArrayOfPlantProduction_.ProductionDateRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="PlantProduction_.ProductionDateRecord" nillable="true" type="tns:PlantProduction_.ProductionDateRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPlantProduction_.ProductionDateRecord" nillable="true" type="tns:ArrayOfPlantProduction_.ProductionDateRecord" />
+  <xs:complexType name="PlantProduction_.ProductionDateRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="EndTime" nillable="true" type="tns:DateTimeValue" />
+      <xs:element minOccurs="0" name="StartDate" nillable="true" type="tns:DateTimeValue" />
+      <xs:element minOccurs="0" name="StartTime" nillable="true" type="tns:DateTimeValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="PlantProduction_.ProductionDateRecord" nillable="true" type="tns:PlantProduction_.ProductionDateRecord" />
+  <xs:complexType name="PlantProduction_EditRecord_Call">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationCall">
+        <xs:sequence>
+          <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q5:ArrayOfstring" />
+          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:PlantProductionRecord" />
+          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PlantProduction_EditRecord_Call" nillable="true" type="tns:PlantProduction_EditRecord_Call" />
+  <xs:complexType name="PlantProduction_EditRecord">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractOperation">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:PlantProductionRecord" />
+          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

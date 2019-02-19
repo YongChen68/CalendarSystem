@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://flowfinity.com/ServiceContract" elementFormDefault="qualified" targetNamespace="http://flowfinity.com/ServiceContract" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="/fa/integration/CentraWindows?xsd=xsd2" namespace="http://flowfinity.com/contract" />
+  <xs:complexType name="Execute">
+    <xs:sequence>
+      <xs:element xmlns:q1="http://flowfinity.com/contract" minOccurs="0" name="Request" nillable="true" type="q1:ExecuteRequest" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Execute" nillable="true" type="tns:Execute" />
+  <xs:complexType name="ExecuteResponse">
+    <xs:sequence>
+      <xs:element xmlns:q2="http://flowfinity.com/contract" minOccurs="0" name="ExecuteResult" nillable="true" type="q2:ExecuteResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ExecuteResponse" nillable="true" type="tns:ExecuteResponse" />
+</xs:schema>

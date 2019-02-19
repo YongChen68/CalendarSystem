@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/Flowfinity" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/Flowfinity" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="OperationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="PlantProduction_EditRecord" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="OperationType" nillable="true" type="tns:OperationType" />
+  <xs:simpleType name="TransactionStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="SUCCESS" />
+      <xs:enumeration value="REJECT" />
+      <xs:enumeration value="VALIDATION_FAILED" />
+      <xs:enumeration value="ERROR" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TransactionStatus" nillable="true" type="tns:TransactionStatus" />
+  <xs:complexType name="ArrayOfOperationType">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="unbounded" name="OperationType" type="tns:OperationType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfOperationType" nillable="true" type="tns:ArrayOfOperationType" />
+  <xs:simpleType name="State">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Default State" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="State" nillable="true" type="tns:State" />
+</xs:schema>

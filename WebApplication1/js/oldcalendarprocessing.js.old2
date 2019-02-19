@@ -1,0 +1,428 @@
+﻿var displayType = "Windows";
+var GlobalParams = [];
+var debug = true;
+
+Date.prototype.Equals = function (pDate) {
+    return (
+      this.getFullYear() === pDate.getFullYear() &&
+      this.getMonth() === pDate.getMonth() &&
+      this.getDate() === pDate.getDate()
+    );
+}
+
+function addEvent(event) {
+    var id = PageMethods.GetEvent(event);
+    if (id != -1)
+        event.id = id;
+    else
+        window.alert('Failed to record event data');
+}
+function eventUpdate(event, dayDelta, minuteDelta, allDay, revertFunc) {
+    sendUpdateToServer(event);
+    $(this).remove();
+}
+function sendUpdateToServer(event) {
+    var eventToUpdate = {
+        id: event.id,
+        start: event.start,
+        title: event.title,
+        description: event.description,
+        doors: event.doors
+
+    };
+    if (event.end === null) {
+        eventToUpdate.end = eventToUpdate.start;
+    }
+    else {
+        eventToUpdate.end = event.end;
+    }
+    var endDate;
+    if (!event.allDay) {
+        endDate = new Date(eventToUpdate.end + 60 * 60000);
+        endDate = endDate.toJSON();
+    }
+    else {
+        endDate = eventToUpdate.end.toJSON();
+    }
+
+    eventToUpdate.start = eventToUpdate.start.toJSON();
+    eventToUpdate.end = eventToUpdate.end.toJSON(); //endDate;
+    eventToUpdate.allDay = event.allDay;
+    eventToUpdate.eventDurationEditable = true;
+
+    PageMethods.UpdateEventTime(displayType, eventToUpdate);
+}
+
+function getBlankTotal() {
+    var view = $('#calendar').fullCalendar('getView');
+    if (view.start !== undefined) {
+        if (debug) console.log("getBlankTotal", "view.start:", view.start.format(), "view.intervalStart:", view.intervalStart.format(), "view.end:", view.end.format(), "view.intervalEnd:", view.intervalEnd.format());
+        var start = view.start === undefined ? new Date(new Date().getFullYear(), new Date().getMonth(), 1) : new Date(view.start._d.getFullYear(), view.start._d.getMonth(), view.start._d.getDate()+1);
+        var end = view.start === undefined ? new Date(start.getFullYear(), start.getMonth() + 1, 0) : new Date(view.end._d.getFullYear(), view.end._d.getMonth(), view.end._d.getDate()+1);
+
+        var retValue = [];
+        if (end < start) { var tmp = start; start = end; end = tmp; }
+        else if (start.Equals(end)) { start.setDate(start.getDate() - 1); }
+        while (start < end) {
+            retValue.push(GetBlankDayData(start));
+            start.setDate(start.getDate() + 1);
+        }
+        return retValue;
+    } else
+        return [];
+}
+function GetBlankDayData(day) {
+    //console.log("GetBlankDayData", "new date:", day);
+    return { day: ["sun","mon","tue","wed","thu","fri","sat"][day.getUTCDay()], date:new Date(day.getFullYear(), day.getMonth(), day.getDate()+1), doors: 0, windows: 0, boxes: 0, glass: 0, value: 0, min: 0, max: 0, Available_Time: 0, rush: 0, float: 0, TotalBoxQty: 0, TotalGlassQty: 0, TotalPrice: 0, TotalLBRMin: 0, F6CA: 0, F27DS: 0, F27TS: 0, F27TT: 0, F29CA: 0, F29CM: 0, F52PD: 0, F68CA: 0, F68SL: 0, F68VS: 0 };
+}
+
+function ToWDString(event) {
+    return "Glass Ordered\r\n" +
+    event.CardinalOrderedDate + "\r\n" +
+
+    'Date Completed\r\n' +
+    event.CompleteDate + "\r\n" +
+    'Product Mix\r\n' +
+     '26CA: ' + event.F6CA + '\r\n' +
+
+     '27DS: ' + event.F27DS + '\r\n' +
+     '27TS: ' + event.F27TS + '\r\n' +
+     '27TT: ' + event.F27TT + '\r\n' +
+
+     '29CA: ' + event.F29CA + '\r\n' +
+     '29CM: ' + event.F29CM + '\r\n' +
+
+     '68CA: ' + event.F68CA + '\r\n' +
+     '68SL: ' + event.F68SL + '\r\n' +
+     '68VS: ' + event.F68VS;
+}
+
+function ToPDString(event) {
+    return '52PD: ' + event.F52PD;
+}
+
+function ToDString(event) {
+    return 'Doors: ' + event.doors;
+}
+
+var totals = getBlankTotal();
+
+function LoadBufferedJobs() {
+    $.getJSON("data.svc/GetBufferJobs", { type: displayType }, function (data) {
+        $.each(data.GetBufferJobsResult, function (key, val) {
+            var img = "";
+            if (val.PaintIcon != undefined && val.PaintIcon != '' && val.PaintIcon == "Yes")
+                img += "<img alt=\"#\" src=\"images/color.png\" />&nbsp;";
+
+            if (val.windows > 0)
+                img += "<img alt=\"#\" src=\"images/window.png\" title= \"" + ToWDString(val) + "\" />&nbsp;";
+
+            if (val.F52PD > 0) // Patio Doors
+                img += "<img alt=\"#\" src=\"images/patiodoor.png\" title= \"" + ToPDString(val) + "\" />&nbsp;";
+
+            if (val.doors > 0)
+                img += "<img alt=\"#\" src=\"images/door.png\" title= \"" + ToDString(val) + "\" />&nbsp;";
+
+            if (val.FlagOrder != undefined && val.FlagOrder == 1) // Rush Order
+                img += "<img alt=\"#\" src=\"images/flag.png\" />&nbsp;";
+
+            if (val.M2000Icon != undefined && val.M2000Icon == 1) // M2000
+                img += "<img alt=\"#\" src=\"images/M2000.png\" />&nbsp;";
+
+            $('#external-events').append("<div class='fc-event" + (val.JobType == "RES" ? " reservation" : "") + "' id=\"" + val.id + "\" style=\"background-color:" + val.color + "\">" + img + val.title + "</div>");
+            $('#' + val.id).data('event', {
+                title: val.title, id: val.id, description: val.description, doors: val.doors, windows: val.windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS
+            });
+        });
+        /* initialize the external events
+        -----------------------------------------------------------------*/
+
+        $('#external-events .fc-event').each(function () {
+
+            // make the event draggable using jQuery UI
+            $(this).draggable({
+                zIndex: 999,
+                revert: true,      // will cause the event to go back to its
+                revertDuration: 0  //  original position after the drag
+            });
+        });
+    });
+}
+function JsonDateToDate(dateString) {
+    var currentTime = new Date(parseInt(dateString.substr(6)));
+    var month = currentTime.getMonth() + 1;
+    var day = currentTime.getDate();
+    var year = currentTime.getFullYear();
+    var date = day + "/" + month + "/" + year;
+    return new Date(date);
+}
+function LoadGlobalValues() {
+    var date = new Date();
+    var firstDay = new Date(date.getFullYear(), date.getMonth(), 1);
+    var lastDay = new Date((new Date(date.getFullYear(), date.getMonth()+1, 1)) - 1);
+    var pars = { type: displayType, start: firstDay.format("MM/dd/yyyy"), end: lastDay.format("MM/dd/yyyy") };
+    $.getJSON("data.svc/GetSystemParameters", pars, function (data) {
+        GlobalParams = data.GetSystemParametersResult;
+        });
+}
+$(document).ready(function () {
+    LoadGlobalValues();
+    LoadBufferedJobs();
+
+    /* initialize the calendar
+    -----------------------------------------------------------------*/
+
+    $('#calendar').fullCalendar({
+        aspectRatio: 1.7,
+        customButtons: {
+            changeType: {
+                text: displayType,
+                click: function () {
+                    $('#typeChange').removeClass('hidden');                 
+                }
+            },
+            refresh: {
+                text: "Refresh",
+                click: function () {
+                    totals = getBlankTotal();
+                    LoadGlobalValues();
+                    $('#calendar').fullCalendar('refetchEvents');
+                }
+            }
+        },
+        header: {
+            left: 'prev,next today, changeType',
+            center: 'title',
+            right: 'refresh, month,agendaWeek,agendaDay',
+        },
+        events: function (start, end, timezone, callback) {
+            if (debug) console.log("events", "start:", start.format(), "end:", end.format());
+            $.ajax({
+                url: 'data.svc/GetEvents',
+                dataType: 'json',
+                data: { start: start.format(), end: end.format(), type: displayType },
+                success: function (data) {
+                    if (debug) console.log("events.success", "data.GetEventsResult:", data.GetEventsResult === undefined ? "NULL" : data.GetEventsResult.length);
+                    var events = [];
+                    $.each(data.GetEventsResult, function (pos, item) {
+                        item.allDay = true;
+                        events.push(item);
+                    });
+                    callback(events);
+                }, error: function (error) {
+                    console.log('Error', error);
+                    $('#script-warning').show();
+                }
+            });
+        },
+        editable: true,
+        eventDurationEditable: true,
+        droppable: true, // this allows things to be dropped onto the calendar
+        weekNumbers: true,
+        businessHours: { start: '8:00', end: '17:00', dow: [1, 2, 3, 4, 5, 6] },
+        eventDrop: eventUpdate,
+        eventResize: eventUpdate,
+        eventRender: function (event, element, view) {            
+            if (debug) console.log("eventRender", "event: ", event);
+            if (event.JobType == "RES") {
+                var myCss = $(element).attr('style');
+                if (myCss !== undefined) {
+                    myCss = myCss.replace('background-color:#999999;', '');
+                    if (myCss == '') {
+                        $(element).removeAttr('style');
+                    } else {
+                        $(element).attr('style', myCss);
+                    }
+                }
+                element.addClass("reservation");
+            }
+            var dom = ""
+            if (event.allDay) dom = 'span:first'; else {
+                dom = '.fc-time';
+                $(element).find(dom).empty();
+            }
+            if (view.name == "agendaDay") {
+                $(element).find(dom).text(element.text() + " - LBR Min: " + (event.TotalLBRMin !== undefined ? event.TotalLBRMin : 0) + ", Bundle: " + event.BatchNo);
+            }
+            if (event.PaintIcon != undefined && event.PaintIcon != '' && event.PaintIcon == "Yes") {// Paint Icon
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/color.png\" />&nbsp;");
+            }
+            if (event.windows > 0) {// Windows
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/window.png\" title= \"" + ToWDString(event) + "\" />&nbsp;");
+            }
+
+            if (event.F52PD > 0) // Patio Doors
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/patiodoor.png\" title= \"" + ToPDString(event) + "\" />&nbsp;");
+
+            if (event.doors > 0) // Doors
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/door.png\" title= \"" + ToDString(event) + "\" />&nbsp;");
+
+            if (event.CustomFlag > 0) // Custom
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/custom.png\" />&nbsp;");
+
+            if (event.HighRiskFlag > 0) // High Risk
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/risk.png\" />&nbsp;");
+
+            if (event.FlagOrder != undefined && event.FlagOrder == 1) // Rush Order
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/flag.png\" />&nbsp;");
+
+            if (event.M2000Icon != undefined && event.M2000Icon == 1) // M2000
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/M2000.png\" />&nbsp;");
+            // element.backgroundColor = event.State;
+            if (view.name !== "agendaMonth" && view.name !== "month") {
+                var dayId = view.name == "agendaDay" ? 0 : event.start._d.getUTCDay();
+                if (totals.length < dayId) console.log("eventRender", "dayId exceeds totals", dayId, totals.length);
+                totals[dayId].doors += event.doors !== undefined ? event.doors : 0;
+                totals[dayId].windows += event.windows !== undefined ? event.windows : 0;
+                totals[dayId].boxes += event.TotalBoxQty !== undefined ? event.TotalBoxQty : 0;
+                totals[dayId].glass += event.TotalGlassQty !== undefined ? event.TotalGlassQty : 0;
+                totals[dayId].value += event.TotalPrice !== undefined ? event.TotalPrice : 0;
+                totals[dayId].rush += event.FlagOrder !== undefined ? event.FlagOrder : 0;
+                totals[dayId].min += event.TotalLBRMin !== undefined ? event.TotalLBRMin : 0;
+                totals[dayId].F6CA += event.F6CA !== undefined ? event.F6CA : 0;
+                totals[dayId].F68VS += event.F68VS !== undefined ? event.F68VS : 0;
+                totals[dayId].F68SL += event.F68SL !== undefined ? event.F68SL : 0;
+                totals[dayId].F68CA += event.F68CA !== undefined ? event.F68CA : 0;
+                totals[dayId].F52PD += event.F52PD !== undefined ? event.F52PD : 0;
+                totals[dayId].F29CM += event.F29CM !== undefined ? event.F29CM : 0;
+                totals[dayId].F29CA += event.F29CA !== undefined ? event.F29CA : 0;
+                totals[dayId].F27TT += event.F27TT !== undefined ? event.F27TT : 0;
+                totals[dayId].F27TS += event.F27TS !== undefined ? event.F27TS : 0;
+                totals[dayId].F27DS += event.F27DS !== undefined ? event.F27DS : 0;
+            }
+        },
+        eventDragStop: function (event, jsEvent, ui, view) {
+            if (debug) console.log("eventDragStop", event);
+            totals = getBlankTotal();
+        },
+        eventResizeStop: function (event, jsEvent, ui, view) {
+            if (debug) console.log("eventResizeStop", event);
+            totals = getBlankTotal();
+        },
+        eventReceive: function (event) {
+            if (debug) console.log('eventReceived', 'event.title=' + event.title, "id: " + event.id, "doors: " + event.doors, "PaintIcon: + " + event.PaintIcon);
+            totals[event.start._d.getUTCDay()].doors += event.doors !== 'undefined' ? event.doors : 0;
+            totals[event.start._d.getUTCDay()].windows += event.windows !== 'undefined' ? event.windows : 0;
+            sendUpdateToServer(event);
+        },
+        drop: function (date, jsEvent, ui, resourceId) {
+            if (debug) console.log("drop id: " + $(this).attr("id") + " resourceID: " + resourceId.id);
+            $(this).remove();
+        },
+        eventAfterAllRender: function (view) {
+            if (debug) console.log("eventAfterAllRender", "view.start:", view.start.format(), "view.intervalStart:", view.intervalStart.format(), "view.end:", view.end.format(), "view.intervalEnd:", view.intervalEnd.format());
+            if (view.name !== "agendaMonth" && view.name !== "month") {
+                if (debug) console.log("eventAfterAllRender", "view configuration:", view.title, view.intervalStart._d);
+                var startDate = view.start._d;
+                var endDate = view.end._d;
+                for (var i = 0; i < totals.length; i++) {
+                    SetDayValue(i, totals[i]);
+                }
+            }
+        }, viewRender: function (view, element) {
+            totals = getBlankTotal();
+            ControlHeaderVisibility(GetDisplayItemList(displayType));
+        }
+    });
+});
+function SetDayValue(key, dayTotals) {
+    if (debug) console.log("SetDayValue", key, "added", "date:", dayTotals.date, "data:", dayTotals);
+    var maxTime = parseInt(FindByValue("max", dayTotals.date).Value);
+    var maxStaff = parseInt(FindByValue("manpower", dayTotals.date).Value);
+    SetData('Doors', dayTotals.day, dayTotals.doors);
+    SetData('Rush', dayTotals.day, dayTotals.rush);
+    SetData('Windows', dayTotals.day, dayTotals.windows);
+    SetData('Boxes', dayTotals.day, dayTotals.boxes);
+    SetData('Glass', dayTotals.day, dayTotals.glass);
+    SetData('Value', dayTotals.day, dayTotals.value.formatMoney(2, "$", ",", "."));
+    SetData('Min', dayTotals.day, dayTotals.min.formatMoney(0, "", ",", "."));
+    SetData('Max', dayTotals.day, maxTime.formatMoney(0, "", ",", "."));
+    SetData('Available_Time', dayTotals.day, (maxTime - dayTotals.min).formatMoney(0, "", ",", "."));
+    SetData('Available_Staff', dayTotals.day, maxStaff);
+    SetData('Float', dayTotals.day, dayTotals.float.formatMoney(0, "", ",", "."));
+    SetData('27DS', dayTotals.day, dayTotals.F27DS);
+    SetData('27TS', dayTotals.day, dayTotals.F27TS);
+    SetData('27TT', dayTotals.day, dayTotals.F27TT);
+    SetData('29CA', dayTotals.day, dayTotals.F29CA);
+    SetData('29CM', dayTotals.day, dayTotals.F29CM);
+    SetData('52PD', dayTotals.day, dayTotals.F52PD);
+    SetData('68CA', dayTotals.day, dayTotals.F68CA);
+    SetData('68VS', dayTotals.day, dayTotals.F68VS);
+    SetData('68SL', dayTotals.day, dayTotals.F68SL);
+    SetData('26CA', dayTotals.day, dayTotals.F6CA);
+}
+function GetOffset(day) {
+    if (day == "sun") return 0;
+    else if (day == "mon") return 1;
+    else if (day == "tue") return 2;
+    else if (day == "wed") return 3;
+    else if (day == "thu") return 4;
+    else if (day == "fri") return 5;
+    else if (day == "sat") return 6;
+}
+function FindByValue(target, val) {
+    for (var i = 0; i < GlobalParams.length; i++) {
+        var date = new Date(parseInt(GlobalParams[i].Date.substr(6)));
+        if (GlobalParams[i].Name == target && val.Equals(date)) {
+            return GlobalParams[i];
+        }
+    }
+    return { Value: "0" };
+}
+function SetData(target, day, value) {
+    $('#' + target).find('.fc-' + day).html(value);
+}
+// Extend the default Number object with a formatMoney() method:
+// usage: someVar.formatMoney(decimalPlaces, symbol, thousandsSeparator, decimalSeparator)
+// defaults: (2, "$", ",", ".")
+Number.prototype.formatMoney = function (places, symbol, thousand, decimal) {
+    places = !isNaN(places = Math.abs(places)) ? places : 2;
+    symbol = symbol !== undefined ? symbol : "$";
+    thousand = thousand || ",";
+    decimal = decimal || ".";
+    var number = this,
+        negative = number < 0 ? "-" : "",
+        i = parseInt(number = Math.abs(+number || 0).toFixed(places), 10) + "",
+        j = (j = i.length) > 3 ? j % 3 : 0;
+    return symbol + negative + (j ? i.substr(0, j) + thousand : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + thousand) + (places ? decimal + Math.abs(number - i).toFixed(places).slice(2) : "");
+};
+
+
+function ChangeType(type){
+    displayType = type;
+    $('.fc-changeType-button').html(displayType);
+    $('#calendar').fullCalendar('refetchEvents');
+    $('#external-events').find(".fc-event").remove();
+    ControlHeaderVisibility(GetDisplayItemList(displayType));
+    LoadBufferedJobs();
+    $('#typeChange').addClass('hidden');
+}
+
+function ControlHeaderVisibility(elements) {
+       for (var i = 0; i < elements.length; i++) {
+        var element = $("#" + elements[i].Id);
+        if (elements[i].Display && element.hasClass('hidden')) {
+            //console.log("ControlHeaderVisibility", "display", elements[i]);
+            element.removeClass('hidden');
+        }
+        else if (!elements[i].Display && !element.hasClass('hidden')) {
+            //console.log("ControlHeaderVisibility", "hide", elements[i]);
+            element.addClass('hidden');
+        }
+        //else
+            //console.log("ControlHeaderVisibility", "do nothing", elements[i]);
+    }
+}
+
+function GetDisplayItemList(type) {
+    if (type == "Windows")
+        return [{ Id: 'Windows', Display: true }, { Id: 'Doors', Display: true }, { Id: 'Boxes', Display: true }, { Id: 'Glass', Display: true }, { Id: 'Rush', Display: true }, { Id: 'Min', Display: true }, { Id: 'Max', Display: true }, { Id: 'Available_Time', Display: true }, { Id: 'Available_Staff', Display: true }, { Id: '26CA', Display: true }, { Id: '27DS', Display: true }, { Id: '27TS', Display: true }, { Id: '27TT', Display: true }, { Id: '29CA', Display: true }, { Id: '29CM', Display: true }, { Id: '68CA', Display: true }, { Id: '68SL', Display: true }, { Id: '68VS', Display: true }, { Id: '52PD', Display: true }];
+	else if (type == "Customer")
+        return [{ Id: 'Windows', Display: true }, { Id: 'Doors', Display: true }, { Id: 'Boxes', Display: true }, { Id: 'Glass', Display: true }, { Id: 'Rush', Display: true }, { Id: 'Min', Display: true }, { Id: 'Max', Display: true }, { Id: 'Available_Time', Display: true }, { Id: 'Available_Staff', Display: true }, { Id: '26CA', Display: true }, { Id: '27DS', Display: true }, { Id: '27TS', Display: true }, { Id: '27TT', Display: true }, { Id: '29CA', Display: true }, { Id: '29CM', Display: true }, { Id: '68CA', Display: true }, { Id: '68SL', Display: true }, { Id: '68VS', Display: true }, { Id: '52PD', Display: true }];
+    else if (type == "Doors")
+        return [{ Id: 'Windows', Display: false }, { Id: 'Doors', Display: true }, { Id: 'Boxes', Display: false }, { Id: 'Glass', Display: false }, { Id: 'Rush', Display: true }, { Id: 'Min', Display: true }, { Id: 'Max', Display: true }, { Id: 'Available_Time', Display: true }, { Id: 'Available_Staff', Display: true }, { Id: '26CA', Display: false }, { Id: '27DS', Display: false }, { Id: '27TS', Display: false }, { Id: '27TT', Display: false }, { Id: '29CA', Display: false }, { Id: '29CM', Display: false }, { Id: '68CA', Display: false }, { Id: '68SL', Display: false }, { Id: '68VS', Display: false }, { Id: '52PD', Display: false }];
+    else if (type == "Paint")
+        return [{ Id: 'Windows', Display: true }, { Id: 'Doors', Display: true }, { Id: 'Boxes', Display: true }, { Id: 'Glass', Display: true }, { Id: 'Rush', Display: true }, { Id: 'Min', Display: true }, { Id: 'Max', Display: true }, { Id: 'Available_Time', Display: true }, { Id: 'Available_Staff', Display: true }, { Id: '26CA', Display: false }, { Id: '27DS', Display: false }, { Id: '27TS', Display: false }, { Id: '27TT', Display: false }, { Id: '29CA', Display: false }, { Id: '29CM', Display: false }, { Id: '68CA', Display: false }, { Id: '68SL', Display: false }, { Id: '68VS', Display: false }, { Id: '52PD', Display: false }];
+    else
+        return [{ Id: 'Windows', Display: true }, { Id: 'Doors', Display: true }, { Id: 'Boxes', Display: true }, { Id: 'Glass', Display: true }, { Id: 'Rush', Display: true }, { Id: 'Min', Display: true }, { Id: 'Max', Display: true }, { Id: 'Available_Time', Display: true }, { Id: 'Available_Staff', Display: false }, { Id: '26CA', Display: false }, { Id: '27DS', Display: false }, { Id: '27TS', Display: false }, { Id: '27TT', Display: false }, { Id: '29CA', Display: false }, { Id: '29CM', Display: false }, { Id: '68CA', Display: false }, { Id: '68SL', Display: false }, { Id: '68VS', Display: false }, { Id: '52PD', Display: false }];
+}

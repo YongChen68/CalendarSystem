@@ -1,0 +1,136 @@
+﻿function addEvent(event) {
+    var id = PageMethods.GetEvent(event);
+    if (id != -1)
+        event.id = id;
+    else
+        window.alert('Failed to record event data');
+}
+function eventUpdate(event, dayDelta, minuteDelta, allDay, revertFunc) {
+    sendUpdateToServer(event);
+    $(this).remove();
+}
+function sendUpdateToServer(event) {
+    var eventToUpdate = {
+        id: event.id,
+        start: event.start,
+        title: event.title,
+        description: event.description,
+        doors: event.doors
+
+    };
+    if (event.end === null) {
+        eventToUpdate.end = eventToUpdate.start;
+    }
+    else {
+        eventToUpdate.end = event.end;
+    }
+    var endDate;
+    if (!event.allDay) {
+        endDate = new Date(eventToUpdate.end + 60 * 60000);
+        endDate = endDate.toJSON();
+    }
+    else {
+        endDate = eventToUpdate.end.toJSON();
+    }
+
+    eventToUpdate.start = eventToUpdate.start.toJSON();
+    eventToUpdate.end = eventToUpdate.end.toJSON(); //endDate;
+    eventToUpdate.allDay = event.allDay;
+    eventToUpdate.eventDurationEditable = true;
+
+    PageMethods.UpdateEventTime(eventToUpdate);
+}
+$(document).ready(function () {
+    $.getJSON("/data.svc/GetBufferJobs", function (data) {
+        $.each(data.GetBufferJobsResult, function (key, val) {
+            //$('#external-events').append("<div class='fc-event' id=\"" + val.id + "\">" + val.title + "</div>");
+            var img = "";
+            if (val.PaintIcon != undefined && val.PaintIcon != '' && val.PaintIcon == "Yes")
+                img = "<img alt=\"#\" src=\"images/color.png\" />&nbsp;";
+            if (val.WindowIcon != undefined && val.WindowIcon != '' && val.WindowIcon == "Yes")
+                img += "<img alt=\"#\" src=\"images/window.png\" />&nbsp;";
+            if (val.DoorIcon != undefined && val.DoorIcon != '' && val.DoorIcon == "Yes")
+                img += "<img alt=\"#\" src=\"images/door.png\" />&nbsp;";
+            if (val.FlagOrder != undefined && val.FlagOrder != '' && val.FlagOrder == "Yes")
+                img += "<img alt=\"#\" src=\"images/flag.png\" />&nbsp;";
+            $('#external-events').append("<div class='fc-event' id=\"" + val.id + "\">" + img + val.title + "</div>");
+            $('#' + val.id).data('event', { title: val.title, id: val.id, description: val.description, doors: val.doors, type: val.type });
+        });
+        /* initialize the external events
+        -----------------------------------------------------------------*/
+
+        $('#external-events .fc-event').each(function () {
+
+            // make the event draggable using jQuery UI
+            $(this).draggable({
+                zIndex: 999,
+                revert: true,      // will cause the event to go back to its
+                revertDuration: 0  //  original position after the drag
+            });
+        });
+    });
+
+
+    /* initialize the calendar
+    -----------------------------------------------------------------*/
+
+    $('#calendar').fullCalendar({
+        header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,agendaWeek,agendaDay',
+        },
+        events: function (start, end, timezone, callback) {
+            $.ajax({
+                url: 'data.svc/GetEvents',
+                dataType: 'json',
+                data: { start: start.format(), end: end.format() },
+                success: function (data) {
+                    var events = [];
+                    $.each(data.GetEventsResult, function (pos, item) {
+                        console.log("event id: " + item.id + ", title: " + item.title + ", state: " + item.color);
+                        events.push(item);
+                    });
+                    callback(events);
+                }, error: function () {
+                    console.log('Error');
+                    $('#script-warning').show();
+                }
+            });
+        },
+        editable: true,
+        eventDurationEditable: true,
+        droppable: true, // this allows things to be dropped onto the calendar
+        weekNumbers: true,
+        businessHours: {start:'7:00', end:'18:00', dow: [1,2,3,4,5,6]},
+        eventDrop: eventUpdate,
+        eventResize: eventUpdate,
+        eventRender: function (event, element) {
+            var title = element.title;
+            element.title = "";
+            var dom = ""
+            if (event.allDay) dom = 'span:first'; else {
+                dom = '.fc-time';
+                $(element).find(dom).empty();
+            }
+            element.title = title;
+            if (event.PaintIcon != undefined && event.PaintIcon != '' && event.PaintIcon == "Yes")
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/color.png\" />&nbsp;");
+            if (event.WindowIcon != undefined && event.WindowIcon != '' && event.WindowIcon == "Yes")
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/window.png\" />&nbsp;");
+            if (event.DoorIcon != undefined && event.DoorIcon != '' && event.DoorIcon == "Yes")
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/door.png\" />&nbsp;");
+            if (event.FlagOrder != undefined && event.FlagOrder != '' && event.FlagOrder == "Yes")
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/flag.png\" />&nbsp;");
+            element.backgroundColor = event.State;
+        },
+        eventReceive: function (event) {
+            console.log('eventReceived triggered. event.title=' + event.title + ", id: " + event.id + ", doors: " + event.doors + ", PaintIcon: + " + event.PaintIcon);
+            sendUpdateToServer(event);
+        },
+        drop: function (date, jsEvent, ui, resourceId) {
+            console.log("drop id: " + $(this).attr("id") + " resourceID: " + resourceId.id);
+            $(this).remove();
+        }
+    });
+});

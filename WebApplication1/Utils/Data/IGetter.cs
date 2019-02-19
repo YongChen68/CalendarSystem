@@ -1,0 +1,18 @@
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using Generics.Utils.Data;
+
+namespace CalendarSystem.Utils.Data
+{
+    /// <summary>
+    /// Summary description for IGetter
+    /// </summary>
+    public interface IGetter
+    {
+        List<Generics.Utils.CalendarEvent> GetData(Generics.Utils.ContentType type);
+        List<Generics.Utils.Data.InstallationEvent> GetData();
+    }
+}
