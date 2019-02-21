@@ -213,7 +213,8 @@ function AddBufferEvent(key, val) {
         revertDuration: 0  //  original position after the drag
     });
     $('#' + val.id).data('event', {
-        title: val.title, id: val.id, description: val.description, doors: val.doors, windows: val.windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
+       // title: val.title, id: val.id, description: val.description, doors: val.doors, windows: val.windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
+        title: val.title, id: val.id, description: val.description, doors: val.Doors, windows: val.Windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
     });
 }
 function JsonDateToDate(dateString) {
@@ -530,8 +531,8 @@ $(document).ready(function () {
         },
         eventReceive: function (event, delta, revertFunc) {
             if (debug) console.log('eventReceived', 'event.title=' + event.title, "id: " + event.id, "doors: " + event.doors, "PaintIcon: + " + event.PaintIcon);
-            totals[event.start._d.getUTCDay()].doors += event.Doors !== 'undefined' ? event.Doors : 0;
-            totals[event.start._d.getUTCDay()].windows += event.Windows !== 'undefined' ? event.Windows : 0;
+            totals[event.start._d.getUTCDay()].doors += event.doors !== 'undefined' ? event.doors : 0;
+            totals[event.start._d.getUTCDay()].windows += event.windows !== 'undefined' ? event.windows : 0;
 
             if (displayType != "Installation") {
 
@@ -595,12 +596,17 @@ function GetDayLabourValue(view, pDate) {
 function SetDayValue(key, dayTotals) {
     if (debug) console.log("SetDayValue", key, "added", "date:", dayTotals.date, "data:", dayTotals);
     if (displayType == "Installation") {
+    //    SetData('Doors', 0);
         SetData('Doors', dayTotals.day, dayTotals.doors);
     
         SetData('Windows', dayTotals.day, dayTotals.windows);
+      //  SetData('Work Orders', dayTotals.day, 0);
+      //  SetData('Installation Min', dayTotals.day, 0);
+      //  SetData('Asbestos Jobs', dayTotals.day, 0);
+      //  SetData('High Risk Jobss', dayTotals.day, 0);
 
 
-        SetData('Sales Amount($)', dayTotals.day, dayTotals.SalesAmmount);
+      //SetData('Sales Amount($)', dayTotals.day, dayTotals.SalesAmmount);
     }
     else {
         var maxTime = parseInt(FindByValue("max", dayTotals.date).Value);

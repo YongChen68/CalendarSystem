@@ -3662,8 +3662,8 @@
                     retValue += '<tbody>' +
                         RenderDayRow('Work Orders', dayIDs[cell.start.day()]) +
                         RenderDayRow('Windows', dayIDs[cell.start.day()]) +
-                        RenderDayRow('Patio Doors', dayIDs[cell.start.day()]) +
-                        RenderDayRow('Codel Doors', dayIDs[cell.start.day()]) +
+                     //   RenderDayRow('Codel Doors', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Doors', dayIDs[cell.start.day()]) +
                         RenderDayRow('Sales Amount($)', dayIDs[cell.start.day()]) +
                         RenderDayRow('Installation Min', dayIDs[cell.start.day()]) +
                         RenderDayRow('Asbestos Jobs', dayIDs[cell.start.day()]) +
@@ -3709,16 +3709,16 @@
             if (this.view.type == 'agendaWeek') {
                 if (displayType == "Installation") {
                     retValue += '<tbody>' +
-                        RenderDayRow('Work Orders') +
-                        RenderDayRow('Windows') +
-                        RenderDayRow('Patio Doors') +
-                        RenderDayRow('Codel Doors') +
-                        RenderDayRow('Sales Amount($)') +
-                        RenderDayRow('Installation Min') +
-                        RenderDayRow('Asbestos Jobs') +
-                        RenderDayRow('High Risk Jobs') +
-                        '</tbody>';
 
+                        RenderWeekRow('Work Orders') +
+                        RenderWeekRow('Windows') +
+                        RenderWeekRow('Patio Doors') +
+                        RenderWeekRow('Doors') +
+                        RenderWeekRow('Sales Amount($)') +
+                        RenderWeekRow('Installation Min') +
+                        RenderWeekRow('Asbestos Jobs') +
+                        RenderWeekRow('High Risk Jobs') +
+                        '</tbody>';
                 }
                 else {
                     retValue += '<tbody>' +
@@ -3752,8 +3752,12 @@
                         RenderWeekRow('Rakes') +
                         RenderWeekRow('Customs') +
                         '</tbody>';
-
                 }
+
+              
+                 
+                       
+             
                }
             retValue += '</table>' +
                 '</div>';
