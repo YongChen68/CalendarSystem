@@ -27,6 +27,13 @@ namespace CalendarSystem
            BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<Generics.Utils.Data.InstallationEvent> GetInstallationEvents(string start, string end, string branch, string installationStates);
 
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+       UriTemplate = "GetHolidayEvents?start={start}&end={end}",
+       ResponseFormat = WebMessageFormat.Json,
+       BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<Generics.Utils.Holiday> GetHolidayEvents(string start, string end);
+
 
         [OperationContract]
         [WebInvoke(Method = "GET",

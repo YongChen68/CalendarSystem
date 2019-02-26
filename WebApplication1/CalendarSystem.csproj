@@ -21,6 +21,7 @@
     <IISExpressUseClassicPipelineMode />
     <WcfConfigValidationEnabled>True</WcfConfigValidationEnabled>
     <UseGlobalApplicationHostFile />
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -81,6 +82,7 @@
     <Content Include="images\color.png" />
     <Content Include="images\door.png" />
     <Content Include="images\flag.png" />
+    <Content Include="images\holiday-icon.png" />
     <Content Include="images\patiodoor.png" />
     <Content Include="images\m2000.png" />
     <Content Include="images\risk.png" />

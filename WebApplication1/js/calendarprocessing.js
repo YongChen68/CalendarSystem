@@ -325,6 +325,26 @@ $(document).ready(function () {
             });
             console.log("checked shippingType: ", shippingType.join(","));
 
+
+          
+            $.ajax({
+                url: 'data.svc/GetHolidayEvents',
+                dataType: 'json',
+                data: { start: start.format(), end: end.format() },
+                success: function (data) {
+                    if (debug) console.log("events.success", "data.GetHolidayEvents:", data.GetHolidayEventsResult === undefined ? "NULL" : data.GetHolidayEventsResult.length);
+                    var events = [];
+                    $.each(data.GetHolidayEventsResult, function (pos, item) {
+                       item.allDay = true;
+                        events.push(item);
+                    });
+                    callback(events);
+                }, error: function (error) {
+                    console.log('Error', error);
+                    $('#script-warning').show();
+                }
+            });
+           
             if (displayType == "Installation") {
                 $('.fc-applyInstallationFilters-button').show();
                 $('.fc-applyFilters-button').hide();
@@ -421,10 +441,21 @@ $(document).ready(function () {
                 element.addClass("reservation");
             }
             var dom = ""
+
+
             if (event.allDay) dom = 'span:first'; else {
                 dom = '.fc-time';
                 $(element).find(dom).empty();
             }
+
+            if (event.HolidayName !== undefined) {
+                var ret = "<img src=\"images/holiday-icon.png\" title=\"" + "\">" +
+                    "&nbsp;" + (event.HolidayName);
+                    $(element).find(dom).prepend(ret);
+            }
+          
+
+
             if (view.name == "agendaDay") {
                 if (displayType != "Installation") {
                     $(element).find(dom).text(element.text() + " - LBR Min: " + (event.TotalLBRMin !== undefined ? event.TotalLBRMin : 0) + ", Bundle: " + event.BatchNo);
@@ -436,8 +467,6 @@ $(document).ready(function () {
             if (event.windows > 0) {// Windows
                
                     $(element).find(dom).prepend("<img alt=\"#\" src=\"images/window.png\" title= \"" + ToWDString(event) + "\" />&nbsp;");
-               
-               
             }
 
             if (displayType == "Installation") {
@@ -732,5 +761,5 @@ function GetDisplayItemList(type) {
 
 // Over Capacity Error
 function ShowWarning(allocatedDayLabour, eventLabourMin, maxDayLabour) {
-    window.alert("Ther are already " + allocatedDayLabour + " minutes on the target day. Adding requested event with Labour minutes of " + eventLabourMin + " will exceed maximum available minutes (" + maxDayLabour + ") for the day.");
+    window.alert("There are already " + allocatedDayLabour + " minutes on the target day. Adding requested event with Labour minutes of " + eventLabourMin + " will exceed maximum available minutes (" + maxDayLabour + ") for the day.");
 }

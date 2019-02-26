@@ -220,5 +220,15 @@ and p.CurrentStateName <> 'Duplicated Work Order' and p.CurrentStateName <> 'Com
         {
             throw new NotImplementedException();
         }
+
+        List<InstallationEvent> IGetter.GetData()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Holiday> IGetter.GetHolidayData()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

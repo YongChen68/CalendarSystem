@@ -37,6 +37,12 @@ namespace CalendarSystem.Utils.Data
             this.stateList = stateList;
         }
 
+        public EventDataGetter(string start, string end)
+        {
+            this.startDate = DateTime.ParseExact(start.Trim(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
+            this.endDate = DateTime.ParseExact(end.Trim(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
+        }
+
 
         private string GetInstallationSQL()
         {
@@ -318,7 +324,27 @@ drop table #Subtrade", this.startDate.ToShortDateString(),this.endDate.ToShortDa
             return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.CalendarEvent>(SQL, pars.ToArray());
         }
 
-        private string GetSQL(Generics.Utils.ContentType type)
+        List<Generics.Utils.Holiday> IGetter.GetHolidayData()
+        {
+            string SQL = GetHolidaySQL();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("pStart", startDate));
+            pars.Add(new System.Data.SqlClient.SqlParameter("pEnd", endDate));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.Holiday>(SQL, pars.ToArray());
+        }
+
+
+        private string GetHolidaySQL()
+        {
+            string SQL = string.Format(@"select HolidayName, HolidayDate from Holidays
+where HolidayDate >= '{0}' and HolidayDate <= '{1}'", this.startDate,this.endDate);
+            return SQL;
+        }
+
+
+            private string GetSQL(Generics.Utils.ContentType type)
         {
             switch (type)
             {
