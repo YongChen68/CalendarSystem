@@ -110,6 +110,11 @@ namespace Generics.Utils.Data
         [DataMember]
         public string EstInstallerCnt { get; set; }
 
+
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public bool allDay { get; set; }
+
         [DataMember]
         public int Windows
         {
@@ -223,5 +228,15 @@ namespace Generics.Utils.Data
         {
             return val.ToString("yyyy-MM-ddTHH:mm:00Z");
         }
+
+
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public DateTime HolidayDate { get; set; }
+        [Lift.Database.DbIgnore]
+        [DataMember]
+        public string HolidayName { get; set; }
+
+
     }
 }

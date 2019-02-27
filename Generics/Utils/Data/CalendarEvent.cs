@@ -14,6 +14,9 @@ namespace Generics.Utils
     {
 
         public string CurrentStateName { get; set; }
+
+        public bool isHoliday = false;
+
         [Lift.Database.DbIgnore]
         [DataMember]
         public string color
@@ -145,6 +148,14 @@ namespace Generics.Utils
         {
             return val.ToString("yyyy-MM-ddTHH:mm:00Z");
         }
+
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public DateTime HolidayDate { get; set; }
+        [Lift.Database.DbIgnore]
+        [DataMember]
+        public string HolidayName { get; set; }
+
     }
 
 

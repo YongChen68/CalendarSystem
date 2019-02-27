@@ -17,10 +17,28 @@ namespace CalendarSystem
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Entering GetEvents({0},'{1}','{2}','{3}','{4}','{5}', '{6}' )", start, end, type, states??"NULL", branch??"NULL", jobType??"NULL", shippingType??"NULL");
             List<CalendarEvent> retValue = null;
-
+            List<Holiday> retValue1 = null;
             try {
                 Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(start, end, new List<string>(states.Split(',')), new List<string>(branch.Split(',')), new List<string>(jobType.Split(',')), new List<string>(shippingType.Split(',')));
                 retValue = getter.GetData(Utils.ContentTypeParser.GetType(type));
+
+                Utils.Data.IGetter getter1 = new Utils.Data.EventDataGetter(start, end);
+                retValue1 = getter1.GetHolidayData();
+              
+                CalendarEvent myEvent = null;
+                foreach (Holiday holiday in retValue1)
+                {
+                    myEvent = new CalendarEvent();
+                    myEvent.allDay = true;
+                    myEvent.HolidayDate = holiday.HolidayDate;
+                    myEvent.startDateTime = holiday.HolidayDate;
+                    myEvent.endDateTime = holiday.HolidayDate;
+                    myEvent.HolidayName = holiday.HolidayName;
+                    myEvent.title = holiday.HolidayName;
+                    myEvent.CurrentStateName = "Duplicated Work Order";
+                    retValue.Add(myEvent);
+                }
+
                 Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetEvents() = {0}", retValue.Count.ToString());
             } catch(Exception ex)
             {
@@ -33,10 +51,31 @@ namespace CalendarSystem
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Entering InstallationEvent({0},'{1}','{2}' )", start, end, branch ?? "NULL", state ?? "NULL");
             List<InstallationEvent> retValue = null;
+            List<Holiday> retValue1 = null;
             try
             {
                 Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(start, end,  new List<string>(branch.Split(',')), new List<string>(state.Split(',')));
                 retValue = getter.GetData();
+
+                Utils.Data.IGetter getter1 = new Utils.Data.EventDataGetter(start, end);
+                retValue1 = getter1.GetHolidayData();
+
+                InstallationEvent myEvent = null;
+                foreach (Holiday holiday in retValue1)
+                {
+                    myEvent = new InstallationEvent();
+                    myEvent.allDay = true;
+                    myEvent.HolidayDate = holiday.HolidayDate;
+                    myEvent.start = holiday.HolidayDate.ToShortDateString();
+                    myEvent.end = holiday.HolidayDate.ToShortDateString();
+                    myEvent.HolidayName = holiday.HolidayName;
+                    myEvent.LastName ="";
+                    myEvent.City = "";
+                    myEvent.title1 = holiday.HolidayName;
+                    myEvent.CurrentStateName = "Rejected Scheduled Work";
+                    retValue.Add(myEvent);
+                }
+
                 Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetEvents() = {0}", retValue.Count.ToString());
             }
             catch (Exception ex)

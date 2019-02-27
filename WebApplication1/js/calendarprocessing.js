@@ -5,14 +5,14 @@ var renderingComplete = false;
 
 Date.prototype.Equals = function (pDate) {
     var retValue = (this.getUTCFullYear() === pDate.getUTCFullYear() &&
-      this.getUTCMonth() === pDate.getUTCMonth() &&
-      this.getUTCDate() === pDate.getUTCDate());
+        this.getUTCMonth() === pDate.getUTCMonth() &&
+        this.getUTCDate() === pDate.getUTCDate());
     return retValue;
 }
 
 function addEvent(event) {
     var id = PageMethods.GetEvent(event);
-    
+
     if (id != -1)
         event.id = id;
     else
@@ -58,7 +58,7 @@ function sendUpdateToServer(event) {
 
         PageMethods.UpdateEventTime(displayType, eventToUpdate);
     }
-  
+
 }
 
 function GetDatefromMoment(val) {
@@ -90,34 +90,34 @@ function getBlankTotal() {
 function GetBlankDayData(day) {
     var dayName = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"][day.getUTCDay()];
     if (displayType == "Installation") {
-        return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount:0};
+        return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount: 0 };
     }
     else {
         return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, boxes: 0, glass: 0, value: 0, min: 0, max: 0, Available_Time: 0, rush: 0, float: 0, TotalBoxQty: 0, TotalGlassQty: 0, TotalPrice: 0, TotalLBRMin: 0, F6CA: 0, F27DS: 0, F27TS: 0, F27TT: 0, F29CA: 0, F29CM: 0, F52PD: 0, F68CA: 0, F68SL: 0, F68VS: 0, Transom: 0, Sidelite: 0, SingleDoor: 0, DoubleDoor: 0, Simple: 0, Complex: 0, Over_Size: 0, Arches: 0, Rakes: 0, Customs: 0, };
     }
 
-    
+
 }
 
 function ToWDString(event) {
     return "Glass Ordered\r\n" +
-    event.CardinalOrderedDate + "\r\n" +
+        event.CardinalOrderedDate + "\r\n" +
 
-    'Date Completed\r\n' +
-    event.CompleteDate + "\r\n" +
-    'Product Mix\r\n' +
-     '26CA: ' + event.F6CA + '\r\n' +
+        'Date Completed\r\n' +
+        event.CompleteDate + "\r\n" +
+        'Product Mix\r\n' +
+        '26CA: ' + event.F6CA + '\r\n' +
 
-     '27DS: ' + event.F27DS + '\r\n' +
-     '27TS: ' + event.F27TS + '\r\n' +
-     '27TT: ' + event.F27TT + '\r\n' +
+        '27DS: ' + event.F27DS + '\r\n' +
+        '27TS: ' + event.F27TS + '\r\n' +
+        '27TT: ' + event.F27TT + '\r\n' +
 
-     '29CA: ' + event.F29CA + '\r\n' +
-     '29CM: ' + event.F29CM + '\r\n' +
+        '29CA: ' + event.F29CA + '\r\n' +
+        '29CM: ' + event.F29CM + '\r\n' +
 
-     '68CA: ' + event.F68CA + '\r\n' +
-     '68SL: ' + event.F68SL + '\r\n' +
-     '68VS: ' + event.F68VS;
+        '68CA: ' + event.F68CA + '\r\n' +
+        '68SL: ' + event.F68SL + '\r\n' +
+        '68VS: ' + event.F68VS;
 }
 
 function ToInstallationEventString(event) {
@@ -175,13 +175,13 @@ function LoadBufferedJobs() {
     console.log("checked shippingType: ", shippingType.join(","));
     $.getJSON("data.svc/GetBufferJobs", { type: displayType, branch: branches.join(","), jobType: jobTypes.join(","), shippingType: shippingType.join(",") }, function (data) {
         $.each(data.GetBufferJobsResult, function (key, val) {
-           AddBufferEvent(key, val);
+            AddBufferEvent(key, val);
         });
         /* initialize the external events
         -----------------------------------------------------------------*/
     });
 
-    
+
 
 }
 
@@ -213,7 +213,7 @@ function AddBufferEvent(key, val) {
         revertDuration: 0  //  original position after the drag
     });
     $('#' + val.id).data('event', {
-       // title: val.title, id: val.id, description: val.description, doors: val.doors, windows: val.windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
+        // title: val.title, id: val.id, description: val.description, doors: val.doors, windows: val.windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
         title: val.title, id: val.id, description: val.description, doors: val.Doors, windows: val.Windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
     });
 }
@@ -295,7 +295,7 @@ $(document).ready(function () {
         events: function (start, end, timezone, callback) {
             if (debug) console.log("events", "start:", start.format(), "end:", end.format());
             LoadGlobalValues(start, end);
-           
+
             var states = [];
             $.each($("input[name='state']:checked"), function () {
                 states.push($(this).val());
@@ -326,25 +326,25 @@ $(document).ready(function () {
             console.log("checked shippingType: ", shippingType.join(","));
 
 
-          
-            $.ajax({
-                url: 'data.svc/GetHolidayEvents',
-                dataType: 'json',
-                data: { start: start.format(), end: end.format() },
-                success: function (data) {
-                    if (debug) console.log("events.success", "data.GetHolidayEvents:", data.GetHolidayEventsResult === undefined ? "NULL" : data.GetHolidayEventsResult.length);
-                    var events = [];
-                    $.each(data.GetHolidayEventsResult, function (pos, item) {
-                       item.allDay = true;
-                        events.push(item);
-                    });
-                    callback(events);
-                }, error: function (error) {
-                    console.log('Error', error);
-                    $('#script-warning').show();
-                }
-            });
-           
+
+            //$.ajax({
+            //    url: 'data.svc/GetHolidayEvents',
+            //    dataType: 'json',
+            //    data: { start: start.format(), end: end.format() },
+            //    success: function (data) {
+            //        if (debug) console.log("events.success", "data.GetHolidayEvents:", data.GetHolidayEventsResult === undefined ? "NULL" : data.GetHolidayEventsResult.length);
+            //        var events = [];
+            //        $.each(data.GetHolidayEventsResult, function (pos, item) {
+            //            item.allDay = true;
+            //            events.push(item);
+            //        });
+            //        callback(events);
+            //    }, error: function (error) {
+            //        console.log('Error', error);
+            //        $('#script-warning').show();
+            //    }
+            //});
+
             if (displayType == "Installation") {
                 $('.fc-applyInstallationFilters-button').show();
                 $('.fc-applyFilters-button').hide();
@@ -354,15 +354,16 @@ $(document).ready(function () {
                 $.ajax({
                     url: 'data.svc/GetInstallationEvents',
                     dataType: 'json',
-                    data: { start: start.format(), end: end.format(), branch: branches.join(","), installationStates: installationStates.join(",")},
+                    data: { start: start.format(), end: end.format(), branch: branches.join(","), installationStates: installationStates.join(",") },
                     success: function (data) {
                         if (debug) console.log("events.success", "data.GetInstallationEventsResult:", data.GetInstallationEventsResult === undefined ? "NULL" : data.GetInstallationEventsResult.length);
                         var events = [];
                         $.each(data.GetInstallationEventsResult, function (pos, item) {
                             item.allDay = true;
+                            item.editable = (item.HolidayName != null) ? false : true;
                             events.push(item);
                         });
-                       callback(events);
+                        callback(events);
                     }, error: function (error) {
                         console.log('Error', error);
                         $('#script-warning').show();
@@ -378,16 +379,17 @@ $(document).ready(function () {
                 $.ajax({
                     url: 'data.svc/GetEvents',
                     dataType: 'json',
-                   data: { start: start.format(), end: end.format(), type: displayType, states: states.join(","), branch: branches.join(","), jobType: jobTypes.join(","), shippingType: shippingType.join(",") },
-                  //  data: { start: start.format(), end: end.format(), branch: branches.join(",") },
+                    data: { start: start.format(), end: end.format(), type: displayType, states: states.join(","), branch: branches.join(","), jobType: jobTypes.join(","), shippingType: shippingType.join(",") },
+                    //  data: { start: start.format(), end: end.format(), branch: branches.join(",") },
                     success: function (data) {
                         if (debug) console.log("events.success", "data.GetEventsResult:", data.GetEventsResult === undefined ? "NULL" : data.GetEventsResult.length);
                         var events = [];
                         $.each(data.GetEventsResult, function (pos, item) {
                             item.allDay = true;
+                            item.editable = (item.HolidayName != null) ? false : true;
                             events.push(item);
                         });
-                       callback(events);
+                        callback(events);
                     }, error: function (error) {
                         console.log('Error', error);
                         $('#script-warning').show();
@@ -395,9 +397,9 @@ $(document).ready(function () {
                 });
             }
 
-          
+
         },
-        editable: readonly == "True" ? false:true,
+        editable: readonly == "True" ? false : true,
         nowIndicator: true,
         eventDurationEditable: readonly == "True" ? false : true,
         droppable: readonly == "True" ? false : true, // this allows things to be dropped onto the calendar
@@ -420,7 +422,7 @@ $(document).ready(function () {
             {
                 eventUpdate(event);
             }
-          
+
         },//: eventUpdate,
         eventResize: eventUpdate,
         eventRender: function (event, element, view) {
@@ -448,12 +450,16 @@ $(document).ready(function () {
                 $(element).find(dom).empty();
             }
 
-            if (event.HolidayName !== undefined) {
+            if ((event.HolidayName != undefined) && (event.HolidayName != null)) {
                 var ret = "<img src=\"images/holiday-icon.png\" title=\"" + "\">" +
-                    "&nbsp;" + (event.HolidayName);
-                    $(element).find(dom).prepend(ret);
+                    "&nbsp;";
+                if (displayType == "Installation") {
+                    ret += event.HolidayName;
+                }
+                $(element).find(dom).prepend(ret);
+                
             }
-          
+
 
 
             if (view.name == "agendaDay") {
@@ -465,23 +471,23 @@ $(document).ready(function () {
                 $(element).find(dom).prepend("<img alt=\"#\" src=\"images/color.png\" />&nbsp;");
             }
             if (event.windows > 0) {// Windows
-               
-                    $(element).find(dom).prepend("<img alt=\"#\" src=\"images/window.png\" title= \"" + ToWDString(event) + "\" />&nbsp;");
+
+                $(element).find(dom).prepend("<img alt=\"#\" src=\"images/window.png\" title= \"" + ToWDString(event) + "\" />&nbsp;");
             }
 
-            if (displayType == "Installation") {
+            if ((displayType == "Installation") && (event.HolidayName == null)){
                 var ret = "<img src=\"images/home.png\" title=\"" + ToInstallationEventString(event) + "\">" +
                     "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
                     event.EstInstallerCnt +
                     (event.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + event.Windows + "Status: " + event.WindowState + "\" src=\"images/window.PNG\" />" : "") +
-                    (event.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + event.Doors + "Status: " + event.DoorState + "\" src=\"images/door.PNG\" />" : "")+ "&nbsp;" +
+                    (event.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + event.Doors + "Status: " + event.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
                     ("WO: " + event.WorkOrderNumber) + "&nbsp;" +
                     ("Name: " + event.LastName.trim().Length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
                     "&nbsp;" + (event.City.trim().Length > 5 ? event.City.trim().toLowerCase().Substring(0, 5) : event.City.trim().toLowerCase());
-                  
-                $(element).find(dom).prepend(ret );
 
-              }
+                $(element).find(dom).prepend(ret);
+
+            }
 
 
             if (event.F52PD > 0) // Patio Doors
@@ -511,7 +517,7 @@ $(document).ready(function () {
                 totals[dayId].doors += event.Doors !== undefined ? event.Doors : 0;
 
                 totals[dayId].SalesAmmount += event.SalesAmmount !== undefined ? event.SalesAmmount : 0;
-               
+
 
             }
             else {
@@ -547,7 +553,7 @@ $(document).ready(function () {
             totals[dayId].Arches += event.Arches !== undefined ? event.Arches : 0;
             totals[dayId].Rakes += event.Rakes !== undefined ? event.Rakes : 0;
             totals[dayId].Customs += event.Customs !== undefined ? event.Customs : 0;
-           //console.log(dayId, "totals[dayId].Transom:", totals[dayId].Transom, "totals[dayId].Sidelite:", totals[dayId].Sidelite, "totals[dayId].SingleDoor:", totals[dayId].SingleDoor, "totals[dayId].DoubleDoor:", totals[dayId].DoubleDoor, "event.Transom:", event.Transom, "event.Sidelite:", event.Sidelite, "event.SingleDoor:", event.SingleDoor, "event.DoubleDoor:", event.DoubleDoor);
+            //console.log(dayId, "totals[dayId].Transom:", totals[dayId].Transom, "totals[dayId].Sidelite:", totals[dayId].Sidelite, "totals[dayId].SingleDoor:", totals[dayId].SingleDoor, "totals[dayId].DoubleDoor:", totals[dayId].DoubleDoor, "event.Transom:", event.Transom, "event.Sidelite:", event.Sidelite, "event.SingleDoor:", event.SingleDoor, "event.DoubleDoor:", event.DoubleDoor);
             //}
         },
         eventDragStop: function (event, jsEvent, ui, view) {
@@ -580,9 +586,9 @@ $(document).ready(function () {
             }
             else {
                 sendUpdateToServer(event);
-            } 
+            }
 
-        
+
         },
         drop: function (date, jsEvent, ui, resourceId) {
             $(this).remove();
@@ -625,17 +631,17 @@ function GetDayLabourValue(view, pDate) {
 function SetDayValue(key, dayTotals) {
     if (debug) console.log("SetDayValue", key, "added", "date:", dayTotals.date, "data:", dayTotals);
     if (displayType == "Installation") {
-    //    SetData('Doors', 0);
+        //    SetData('Doors', 0);
         SetData('Doors', dayTotals.day, dayTotals.doors);
-    
+
         SetData('Windows', dayTotals.day, dayTotals.windows);
-      //  SetData('Work Orders', dayTotals.day, 0);
-      //  SetData('Installation Min', dayTotals.day, 0);
-      //  SetData('Asbestos Jobs', dayTotals.day, 0);
-      //  SetData('High Risk Jobss', dayTotals.day, 0);
+        //  SetData('Work Orders', dayTotals.day, 0);
+        //  SetData('Installation Min', dayTotals.day, 0);
+        //  SetData('Asbestos Jobs', dayTotals.day, 0);
+        //  SetData('High Risk Jobss', dayTotals.day, 0);
 
 
-      //SetData('Sales Amount($)', dayTotals.day, dayTotals.SalesAmmount);
+        //SetData('Sales Amount($)', dayTotals.day, dayTotals.SalesAmmount);
     }
     else {
         var maxTime = parseInt(FindByValue("max", dayTotals.date).Value);
@@ -729,7 +735,7 @@ function ChangeType(type) {
     $('#typeChange').addClass('hidden');
 
 
-    
+
 }
 
 function ControlHeaderVisibility(elements) {
