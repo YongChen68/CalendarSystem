@@ -41,4 +41,18 @@ namespace Generics.Utils
         public string end { get; set; }
 
     }
+
+    public class InstallationEventWeekends
+    {
+        [DataMember]
+        public string id { get; set; }
+
+
+        [DataMember]
+        public string Saturday { get; set; }
+        [DataMember]
+        public string Sunday { get; set; }
+
+
+    }
 }

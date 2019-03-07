@@ -2,6 +2,7 @@
 var GlobalParams = [];
 var debug = true;
 var renderingComplete = false;
+var eventid;
 
 
 Date.prototype.Equals = function (pDate) {
@@ -30,7 +31,6 @@ function sendUpdateToServer(event) {
         title: event.title,
         description: event.description,
         doors: event.doors
-
     };
     if (event.end === null) {
         eventToUpdate.end = eventToUpdate.start;
@@ -513,6 +513,8 @@ $(document).ready(function () {
                     $("#homePhone").html(event.HomePhoneNumber);
                     $("#cellPhone").html(event.CellPhone);
                     $("#branch").html(event.Branch);
+
+                    eventid = event.id;
                   
                     if (event.Saturday == "Yes") {
                         document.getElementsByName('saturday')[0].checked = true;
@@ -797,6 +799,38 @@ function GetOffset(day) {
     else if (day == "thu") return 4;
     else if (day == "fri") return 5;
     else if (day == "sat") return 6;
+}
+
+function UpdateEventWeekends() {
+    var i = eventid;
+    var SaturdaySunday;
+    var isSaturdayChecked = document.getElementsByName('saturday')[0].checked;
+    var isSundayChecked  = document.getElementsByName('sunday')[0].checked;
+
+    if ((isSaturdayChecked == true) && (isSaturdayChecked == true)) {
+        SaturdaySunday = "both";
+    }
+    else if (isSaturdayChecked == true) {
+        SaturdaySunday = "saturday";
+    }
+    else if (isSundayChecked == true) {
+        SaturdaySunday = "sunday";
+    }
+    else {
+        SaturdaySunday = "none";
+    }
+
+    $.ajax({
+        url: 'data.svc/UpdateInstallationWeekends?id=' + eventid + '&SaturdaySunday=' + SaturdaySunday ,
+        type: "POST",
+        success: function (data) {
+            if (debug) console.log("events.success", "data.UpdateEventWeekends:");
+            }, error: function (error) {
+                console.log('Error', error);
+                $('#script-warning').show();
+            }
+    });
+    
 }
 function FindByValue(target, val) {
     if (debug) console.log("FindByValue", val);

@@ -85,7 +85,48 @@ namespace CalendarSystem
             return retValue;
         }
 
-      
+        public bool UpdateInstallationWeekends(string id, string SaturdaySunday)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateInstallationWeekends('{0}','{1}' )", id, SaturdaySunday);
+            InstallationEventWeekends eventData = null;
+            bool retValue = false;
+            try
+            {
+                eventData = new InstallationEventWeekends();
+                eventData.id = id;
+                if (SaturdaySunday=="both")
+                { 
+                    eventData.Saturday = "Yes";
+                    eventData.Sunday = "Yes";
+                }
+                else if (SaturdaySunday == "none")
+                {
+                    eventData.Saturday = "No";
+                    eventData.Sunday = "No";
+                }
+                else if (SaturdaySunday == "saturday")
+                {
+                    eventData.Saturday = "Yes";
+                    eventData.Sunday = "No";
+                }
+                else if (SaturdaySunday == "sunday")
+                {
+                    eventData.Saturday = "No";
+                    eventData.Sunday = "Yes";
+                }
+                               
+                RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
+                retValue =  runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), eventData);
+
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateInstallationWeekends id= {0}", id);
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
         List<Holiday> Idata.GetHolidayEvents(string start, string end)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting HolidayEvent({0},'{1}' )", start, end);

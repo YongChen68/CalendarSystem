@@ -105,9 +105,9 @@
                         <Div ><b>Home Phone: </b><span id="homePhone"></span> </Div><br>
                         <Div ><b>Cell Phone: </b><span id="cellPhone"></span></Div><br>
                         <Div ><b>Branch: </b><span id="branch"></span></Div><br>
-                        <Div ><b>Saturday: </b><input type="checkbox" name="saturday"> &nbsp;&nbsp; <input type="button" name="btnSaturday" id="btnSaturday" style="text-decoration-line:underline; border-style:none; "  value="Update" ></Div>
+                        <Div ><b>Saturday: </b><input type="checkbox" name="saturday"> &nbsp;&nbsp; </Div>
                         <br>
-                        <Div> <b>Sunday: </b> <input type="checkbox" name="sunday">  &nbsp;&nbsp; <input type="button" name="btnSunday" id="btnSunday"  style="text-decoration-line:underline;border-style:none;"  value="Update" ></Div>
+                        <Div> <b>Sunday: </b> <input type="checkbox" name="sunday">  &nbsp;&nbsp; <input type="button" name="btnSunday" id="btnSunday"  style="text-decoration-line:underline;border-style:none;"  value="Update"  onclick="UpdateEventWeekends()"></Div>
                    </Div>
             <br>
 

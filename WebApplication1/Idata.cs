@@ -28,6 +28,11 @@ namespace CalendarSystem
         List<Generics.Utils.Data.InstallationEvent> GetInstallationEvents(string start, string end, string branch, string installationStates);
 
         [OperationContract]
+        [WebInvoke(Method = "POST",UriTemplate = "UpdateInstallationWeekends?id={id}&SaturdaySunday={SaturdaySunday}")]
+       bool UpdateInstallationWeekends(string id, string SaturdaySunday);
+
+
+        [OperationContract]
         [WebInvoke(Method = "GET",
        UriTemplate = "GetHolidayEvents?start={start}&end={end}",
        ResponseFormat = WebMessageFormat.Json,

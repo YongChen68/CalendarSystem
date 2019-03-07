@@ -42,6 +42,17 @@ namespace FlowfinityConnectionHelper
             return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
         }
 
+        bool Generics.RecordUpdate.IUpdateHelper.UpdateRecord(Generics.Utils.ContentType type, Generics.Utils.InstallationEventWeekends data)
+        {
+            FASR.HomeInstallations_EditSold_Call call = new FASR.HomeInstallations_EditSold_Call()
+            {
+                OnBehalfOf = Owner,
+                RecordID = data.id,
+                Record = GetRecord(type, data)
+            };
+            return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
+        }
+
         private static FASR.HomeInstallationsRecord GetRecord(Generics.Utils.ContentType type, Generics.Utils.ImproperInstallationEvent data)
         {
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
@@ -59,6 +70,13 @@ namespace FlowfinityConnectionHelper
             return record;
         }
 
+        private static FASR.HomeInstallationsRecord GetRecord(Generics.Utils.ContentType type, Generics.Utils.InstallationEventWeekends data)
+        {
+            FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
+            record.Saturday = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>(data.Saturday);
+            record.Sunday = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>(data.Sunday);
+            return record;
+        }
 
         private static FASR.PlantProductionRecord GetRecord(Generics.Utils.ContentType type, Generics.Utils.ImproperCalendarEvent data)
         {
@@ -112,6 +130,11 @@ namespace FlowfinityConnectionHelper
             return string.Format("{0} {1} {2}", "update", data.id, DateTime.Now.Ticks.ToString());
         }
 
+        private static string PrepareTransactionId(Generics.Utils.InstallationEventWeekends data)
+        {
+            return string.Format("{0} {1} {2}", "update", data.id, DateTime.Now.Ticks.ToString());
+        }
+
         private static string PrepareTransactionId(Generics.Utils.ImproperInstallationEvent data)
         {
             return string.Format("{0} {1} {2}", "update", data.id, DateTime.Now.Ticks.ToString());
@@ -143,6 +166,8 @@ namespace FlowfinityConnectionHelper
                 });
             return returnValue.ToArray();
         }
+
+
 
         private static FASR.PlantProduction_ProductionDateRecord[] PrepareWindowProductionDateList(Generics.Utils.ImproperCalendarEvent data)
         {

@@ -10,5 +10,7 @@ namespace Generics.RecordUpdate
     {
         bool UpdateRecord(Utils.ContentType type, Utils.ImproperCalendarEvent data);
         bool UpdateRecord(Utils.ContentType type, Utils.ImproperInstallationEvent data);
+        bool UpdateRecord(Utils.ContentType type, Utils.InstallationEventWeekends data);
     }
 }
+
