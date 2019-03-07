@@ -6,13 +6,16 @@
     <meta charset='utf-8' />
     <link href='js/fullcalendar.css' rel='stylesheet' />
     <link href='css/application.css' rel='stylesheet' />
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <link href='js/fullcalendar.print.css' rel='stylesheet' media='print' />
     <script src='lib/moment.min.js'></script>
     <script src='lib/jquery-2.1.4.min.js'></script>
     <script src='lib/jquery-ui.custom.min.js'></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src='js/fullcalendar.js'></script>
     <script src="js/calendarprocessing.js"></script>
+   
     <script>
         var readonly = "<%= ReadOnly %>";
     </script>
@@ -23,6 +26,11 @@
             font-size: 14px;
             font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
         }
+
+        
+        #map { float:left;width:45%;}
+        #center { float:none;width:10%;}
+        #content {float:right;width:45%;  vertical-align: middle; }
 
         #wrap {
             width: 100%;
@@ -70,6 +78,54 @@
     <form id="main" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
         </asp:ScriptManager>
+       
+        <div id="eventContent" title="Installation Details" style="display: none; text-align: left;width:800px;height:1000px;">
+           
+                <div  id="map" style="height:400px;"></div>
+                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBspoEtc4kjoRkvnuVk0bnV9G3NUb1N8Kk"></script>
+                 <script>
+                    var locationRio = { lat: 49.181520, lng: -122.664260 };
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 16,
+                        center: locationRio,
+                        gestureHandling: 'cooperative'
+                    });
+                    var marker = new google.maps.Marker({
+                        position: locationRio,
+                        map: map
+                        
+                     });
+                   </script>
+              <Div id="center"></Div>
+              <Div id="content">
+                       <br>
+                       <br>
+                       <br>
+                        <Div><b>Work Order: </b><span id="workOrder"></span> </Div><br>
+                        <Div ><b>Home Phone: </b><span id="homePhone"></span> </Div><br>
+                        <Div ><b>Cell Phone: </b><span id="cellPhone"></span></Div><br>
+                        <Div ><b>Branch: </b><span id="branch"></span></Div><br>
+                        <Div ><b>Saturday: </b><input type="checkbox" name="saturday"> &nbsp;&nbsp; <input type="button" name="btnSaturday" id="btnSaturday" style="text-decoration-line:underline; border-style:none; "  value="Update" ></Div>
+                        <br>
+                        <Div> <b>Sunday: </b> <input type="checkbox" name="sunday">  &nbsp;&nbsp; <input type="button" name="btnSunday" id="btnSunday"  style="text-decoration-line:underline;border-style:none;"  value="Update" ></Div>
+                   </Div>
+            <br>
+
+         
+            <br>
+           
+            
+           
+            <br>
+        </div>
+        <div id="openviewWeather">
+            <a class="weatherwidget-io" href="https://forecast7.com/en/49d28n123d12/vancouver/" data-label_1="Vancouver" data-label_2="Weather" data-font="Roboto" data-icons="Climacons Animated" data-theme="original" data-accent="rgba(1, 1, 1, 0.0)"></a>
+        </div>
+        <script>
+            !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = 'https://weatherwidget.io/js/widget.min.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'weatherwidget-io-js');
+        </script>
+        <br />
+
         <div id="typeChange" class="modal hidden">
             <div class="modal-content">
                 <span id="closeTypeChange" class="close" onclick="$('#typeChange').addClass('hidden');">×</span>
@@ -134,8 +190,8 @@
                                 <input type="checkbox" name="InstallationState" value="Pending Install Completion" checked>Pending Install Completion<br />
 
                                 <input type="checkbox" name="InstallationState" value="Ready for Invoicing" checked>Ready for Invoicing<br />
-                                
-                                
+
+
                                 <input type="checkbox" name="InstallationState" value="ReMeasure Scheduled" checked>ReMeasure Scheduled<br />
 
 
@@ -233,7 +289,9 @@
                     <input id="ApplyBranchChange" class="typeButton" type="submit" value="Apply" onclick="ApplyFilters('Branch'); return false;" />
                 </p>
             </div>
+
         </div>
+
         <div id='wrap'>
 
             <div id='external-events'>

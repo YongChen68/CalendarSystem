@@ -215,6 +215,16 @@ namespace Generics.Utils.Data
         {
             get; set;
         }
+        [DataMember]
+        public string Saturday
+        {
+            get; set;
+        }
+        [DataMember]
+        public string Sunday
+        {
+            get; set;
+        }
         //[DataMember]
         //public bool ShowServices
         //{

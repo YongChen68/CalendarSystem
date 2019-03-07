@@ -16,7 +16,7 @@ namespace CalendarSystem.Utils.Data
         private readonly List<string> branchList;
         private readonly List<string> jobTypeList;
         private readonly List<string> shippingTypeList;
-
+       
         private EventDataGetter() { }
 
         public EventDataGetter(string start, string end, List<string> stateList, List<string> branchList, List<string> jobType, List<string> shippingType)
@@ -168,7 +168,6 @@ where d.ScheduledDate >= '{0} 12:00' and d.ScheduledDate <= '{1} 11:59'
 
 select i.* into #installs from HomeInstallations i 
 where CurrentStateName in ({3}) and Branch in ({2})  and i.Recordid in (select ParentRecordId from #dates group by ParentRecordId)
-
 insert into #installs select i.* from HomeInstallations i
 where CurrentStateName in ('Unreviewed Buffered Work', 'Buffered Work') and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or 
 (PlannedInstallWeek >= 1 and PlannedInstallWeek <= 7)) and RecordId not in (select ParentRecordId from #dates d group by ParentRecordId) and 
@@ -179,7 +178,7 @@ select t.* into #Doors from HomeInstallations_TypeofWork t inner join #installs 
 select t.* into #Other from HomeInstallations_TypeofWork t inner join #installs i on i.RecordId = t.ParentRecordId where t.Type_1 = 'Other'
 select s.* into #Subtrade from HomeInstallations_SubtradeReqired s inner join #installs i on i.RecordId = s.ParentRecordId 
 
-select WorkOrderNumber, LastName, City, SalesAmmount,DetailRecordId,ParentRecordId,id, CurrentStateName,case when windows > 0 then WindowState else 'notordered' end as WindowState,
+select WorkOrderNumber, LastName, City, SalesAmmount,DetailRecordId,ParentRecordId,id,saturday, sunday, CurrentStateName,case when windows > 0 then WindowState else 'notordered' end as WindowState,
                     case when doors > 0 then DoorState else 'notordered' end as DoorState, case when other > 0 then OtherState else 'notordered' end as OtherState,
 null as Hours, case when ElectricalSubtrade is not null then ElectricalSubtrade else 'Electrical: Unspecified' end  + ',
 ' + 
@@ -192,7 +191,7 @@ HomePhoneNumber, CellPhone, WorkPhoneNumber, CrewNames, SeniorInstaller,
 case when ElectricalSubtrade is null and SidingSubtrade is null and InsulationSubtrade is null and OtherSubtrade is null then 0 else 1 end as ShowSubtrades,
 EstInstallerCnt, StreetAddress, ScheduledDate, case when ScheduledDate is null then PlannedInstallWeek else null end as PlannedInstallWeek, PaintedProduct, Branch 
 from (
-SELECT   i.Branch_Display as Branch, i.PaintedProduct, i.SalesAmmount,DetailRecordId ,ParentRecordId, ActionItemId as id,i.streetAddress, i.EstInstallerCnt, i.WorkOrderNumber, i.LastName, i.City, i.CurrentStateName,PlannedInstallWeek,
+SELECT   i.Branch_Display as Branch, i.PaintedProduct, i.SalesAmmount,DetailRecordId ,ParentRecordId,saturday, sunday, ActionItemId as id,i.streetAddress, i.EstInstallerCnt, i.WorkOrderNumber, i.LastName, i.City, i.CurrentStateName,PlannedInstallWeek,
                           case when (SELECT     count(ManufacturingStatus)
                             FROM          #Windows AS ms
                             WHERE      (ParentRecordId = i.RecordId)) > 1 then 'Undetermined' else (SELECT     ManufacturingStatus
@@ -305,6 +304,9 @@ drop table #Subtrade", this.startDate.ToShortDateString(),this.endDate.ToShortDa
                 newEvent.WindowState = eventx.WindowState;
                 newEvent.WorkOrderNumber = eventx.WorkOrderNumber;
                 newEvent.WorkPhoneNumber= eventx.WorkPhoneNumber;
+
+                newEvent.Saturday = eventx.Saturday;
+                newEvent.Sunday = eventx.Sunday;
 
                 woList.Add(eventx.WorkOrderNumber);
                 returnEventList.Add(newEvent);

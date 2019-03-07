@@ -3,6 +3,7 @@ var GlobalParams = [];
 var debug = true;
 var renderingComplete = false;
 
+
 Date.prototype.Equals = function (pDate) {
     var retValue = (this.getUTCFullYear() === pDate.getUTCFullYear() &&
         this.getUTCMonth() === pDate.getUTCMonth() &&
@@ -242,6 +243,9 @@ $(document).ready(function () {
 
     $('#calendar').fullCalendar({
         aspectRatio: 1.7,
+
+      
+
         customButtons: {
             changeType: {
                 text: displayType,
@@ -282,16 +286,39 @@ $(document).ready(function () {
             refresh: {
                 text: "Refresh",
                 click: function () {
+                    for (i = 0; i < document.getElementsByName('InstallationState').length; i++) {
+                        document.getElementsByName('InstallationState')[i].checked = true;
+                    }
                     totals = getBlankTotal();
                     $('#calendar').fullCalendar('refetchEvents');
                 }
-            }
+            },
+            ShowWIP: {
+                text: "WIP",
+                click: function () {
+                  
+                    var i ;
+                    for (i = 0; i < document.getElementsByName('InstallationState').length; i++) {
+                        document.getElementsByName('InstallationState')[i].checked = false;
+                    }
+                    document.getElementsByName('InstallationState')[7].checked = true;
+                    
+                   // totals = getBlankTotal();
+                    $('#calendar').fullCalendar('refetchEvents');
+                }
+            },
+           
         },
         header: {
             left: 'prev,next today, changeType,applyFilters,applyInstallationFilters,changeBranch,changeJobType,changeShippingType',
             center: 'title',
-            right: 'refresh, month,agendaWeek,agendaDay',
+            right: 'refresh,ShowWIP,month,agendaWeek,agendaDay',
         },
+
+       //hiddenDays: [0, 6],
+
+      //  weekends: false,
+
         events: function (start, end, timezone, callback) {
             if (debug) console.log("events", "start:", start.format(), "end:", end.format());
             LoadGlobalValues(start, end);
@@ -302,12 +329,78 @@ $(document).ready(function () {
             });
             console.log("checked states: ", states.join(","));
 
+            //var checkboxContainer = $("<div class='checkboxContainer'><input type='checkbox' id='allowWeekends' class='showHideWeekend'  name='allowWeekends'><label for='checkme'>Allow Weekends</label></div>");
 
+            //// Append it to FullCalendar.
+            //$(".fc-right").append(checkboxContainer);
+
+            //var activeInactiveWeekends = false;
+            //checkCalendarWeekends();
+
+            //$('.showHideWeekend').on('change', function () {
+            //    //checkCalendarWeekends();
+            //    alert("test");
+            //});
+
+            //function checkCalendarWeekends() {
+
+            //    if ($('.showHideWeekend').is(':checked')) {
+            //        activeInactiveWeekends = true;
+            //        $('#calendar').fullCalendar('option', {
+            //           // weekends: activeInactiveWeekends
+            //            weekends:true
+            //        });
+            //    } else {
+            //        activeInactiveWeekends = false;
+            //        $('#calendar').fullCalendar('option', {
+            //           // weekends: activeInactiveWeekends
+            //            weekends: true
+            //        });
+            //    }
+
+            //}
+
+            //$("#btnSaturday").click(function () {
+            //   // alert("Handler for .click() called.");
+            //    $.ajax({
+            //        url: 'data.svc/UpdateInstallationEventsForSaturday',
+            //        type: "POST",
+            //        data: { colID: e.target.id },
+            //        success: function (data) {
+            //            data = JSON.parse(data);
+            //    });
+            //});
+
+          
+            //$(document).on("click", "#allowWeekends", function () {
+            //    if ($(this).is(":checked")) {
+                 
+            //     //   hiddenDays[0, 6];
+            //        $('#calendar').fullCalendar( {
+            //            hiddenDays: [0, 6]
+            //        });
+            //        $("#calendar").fullCalendar("refetchEvents");
+            //    } else {
+                 
+            //        $('#calendar').fullCalendar( {
+            //            hiddenDays: [1,2,3]
+            //        });
+            //        $("#calendar").fullCalendar("refetchEvents");
+            //    }
+            //});
+           
             var installationStates = [];
             $.each($("input[name='InstallationState']:checked"), function () {
                 installationStates.push($(this).val());
             });
             console.log("checked states: ", installationStates.join(","));
+
+            //var allowWeekendJobs = [];
+            //$.each($("input[name='allowWeekends']:checked"), function () {
+            //    allowWeekendJobs.push($(this).val());
+            //});
+           // console.log("allowWeekends: ", allowWeekends.join(","));
+
 
             var branches = [];
             $.each($("input[name='branch']:checked"), function () {
@@ -325,28 +418,9 @@ $(document).ready(function () {
             });
             console.log("checked shippingType: ", shippingType.join(","));
 
-
-
-            //$.ajax({
-            //    url: 'data.svc/GetHolidayEvents',
-            //    dataType: 'json',
-            //    data: { start: start.format(), end: end.format() },
-            //    success: function (data) {
-            //        if (debug) console.log("events.success", "data.GetHolidayEvents:", data.GetHolidayEventsResult === undefined ? "NULL" : data.GetHolidayEventsResult.length);
-            //        var events = [];
-            //        $.each(data.GetHolidayEventsResult, function (pos, item) {
-            //            item.allDay = true;
-            //            events.push(item);
-            //        });
-            //        callback(events);
-            //    }, error: function (error) {
-            //        console.log('Error', error);
-            //        $('#script-warning').show();
-            //    }
-            //});
-
             if (displayType == "Installation") {
                 $('.fc-applyInstallationFilters-button').show();
+                $('.fc-ShowWIP-button').show();
                 $('.fc-applyFilters-button').hide();
                 $('.fc-changeJobType-button').hide();
                 $('.fc-changeShippingType-button').hide();
@@ -372,10 +446,12 @@ $(document).ready(function () {
             }
             else {
                 $('.fc-applyInstallationFilters-button').hide();
+                $('.fc-ShowWIP-button').hide();
                 $('.fc-applyFilters-button').show();
                 $('.fc-changeJobType-button').show();
                 $('.fc-changeShippingType-button').show();
                 $('#calendar').fullCalendar('changeView', 'month');
+
                 $.ajax({
                     url: 'data.svc/GetEvents',
                     dataType: 'json',
@@ -430,6 +506,38 @@ $(document).ready(function () {
                 renderingComplete = false;
                 totals = getBlankTotal();
             }
+            element.attr('href', 'javascript:void(0);');
+            element.click(function () {
+                if (displayType == "Installation") {
+                    $("#workOrder").html(event.WorkOrderNumber);
+                    $("#homePhone").html(event.HomePhoneNumber);
+                    $("#cellPhone").html(event.CellPhone);
+                    $("#branch").html(event.Branch);
+                  
+                    if (event.Saturday == "Yes") {
+                        document.getElementsByName('saturday')[0].checked = true;
+                    }
+                    else {
+                        document.getElementsByName('saturday')[0].checked = false;
+                    }
+                    if (event.Sunday == "Yes") {
+                        document.getElementsByName('sunday')[0].checked = true;
+                    }
+                    else {
+                        document.getElementsByName('sunday')[0].checked = false;
+                    }
+                  
+                    $("#eventLink").attr('href', event.url);
+                    $("#eventContent").dialog({ modal: true, title: event.LastName, width: 800 });
+
+                }
+                else {
+                    $("#eventContent").dialog({ modal: true, title: event.title, width: 800 });
+                }
+              
+                
+            });
+
             if (event.JobType == "RES") {
                 var myCss = $(element).attr('style');
                 if (myCss !== undefined) {
@@ -611,6 +719,8 @@ $(document).ready(function () {
             ControlHeaderVisibility(GetDisplayItemList(displayType));
         }
     });
+
+  
 });
 function FindDayIdfromTotals(dayValue) {
     for (var i = 0; i < totals.length; i++) {
@@ -733,10 +843,10 @@ function ChangeType(type) {
 
     LoadBufferedJobs();
     $('#typeChange').addClass('hidden');
-
-
-
 }
+
+
+
 
 function ControlHeaderVisibility(elements) {
     for (var i = 0; i < elements.length; i++) {

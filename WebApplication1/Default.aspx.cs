@@ -51,6 +51,20 @@ namespace CalendarSystem
             return runner.ProcessUpdate(Utils.ContentTypeParser.GetType(type), eventData);
         }
 
+        [System.Web.Services.WebMethod(true)]
+        public static bool UpdateInstallationEventForSaturday(string type, Generics.Utils.ImproperInstallationEvent eventData)
+        {
+            RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
+            return runner.ProcessUpdate(Utils.ContentTypeParser.GetType(type), eventData);
+        }
+
+        [System.Web.Services.WebMethod(true)]
+        public static bool UpdateInstallationEventForSunday(string type, Generics.Utils.ImproperInstallationEvent eventData)
+        {
+            RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
+            return runner.ProcessUpdate(Utils.ContentTypeParser.GetType(type), eventData);
+        }
+
 
 
         [System.Web.Services.WebMethod(true)]
