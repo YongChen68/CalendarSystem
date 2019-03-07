@@ -312,7 +312,7 @@ $(document).ready(function () {
         header: {
             left: 'prev,next today, changeType,applyFilters,applyInstallationFilters,changeBranch,changeJobType,changeShippingType',
             center: 'title',
-            right: 'refresh,ShowWIP,month,agendaWeek,agendaDay',
+            right: 'ShowWIP,month,agendaWeek,agendaDay',
         },
 
        //hiddenDays: [0, 6],
@@ -328,79 +328,12 @@ $(document).ready(function () {
                 states.push($(this).val());
             });
             console.log("checked states: ", states.join(","));
-
-            //var checkboxContainer = $("<div class='checkboxContainer'><input type='checkbox' id='allowWeekends' class='showHideWeekend'  name='allowWeekends'><label for='checkme'>Allow Weekends</label></div>");
-
-            //// Append it to FullCalendar.
-            //$(".fc-right").append(checkboxContainer);
-
-            //var activeInactiveWeekends = false;
-            //checkCalendarWeekends();
-
-            //$('.showHideWeekend').on('change', function () {
-            //    //checkCalendarWeekends();
-            //    alert("test");
-            //});
-
-            //function checkCalendarWeekends() {
-
-            //    if ($('.showHideWeekend').is(':checked')) {
-            //        activeInactiveWeekends = true;
-            //        $('#calendar').fullCalendar('option', {
-            //           // weekends: activeInactiveWeekends
-            //            weekends:true
-            //        });
-            //    } else {
-            //        activeInactiveWeekends = false;
-            //        $('#calendar').fullCalendar('option', {
-            //           // weekends: activeInactiveWeekends
-            //            weekends: true
-            //        });
-            //    }
-
-            //}
-
-            //$("#btnSaturday").click(function () {
-            //   // alert("Handler for .click() called.");
-            //    $.ajax({
-            //        url: 'data.svc/UpdateInstallationEventsForSaturday',
-            //        type: "POST",
-            //        data: { colID: e.target.id },
-            //        success: function (data) {
-            //            data = JSON.parse(data);
-            //    });
-            //});
-
-          
-            //$(document).on("click", "#allowWeekends", function () {
-            //    if ($(this).is(":checked")) {
-                 
-            //     //   hiddenDays[0, 6];
-            //        $('#calendar').fullCalendar( {
-            //            hiddenDays: [0, 6]
-            //        });
-            //        $("#calendar").fullCalendar("refetchEvents");
-            //    } else {
-                 
-            //        $('#calendar').fullCalendar( {
-            //            hiddenDays: [1,2,3]
-            //        });
-            //        $("#calendar").fullCalendar("refetchEvents");
-            //    }
-            //});
-           
+                       
             var installationStates = [];
             $.each($("input[name='InstallationState']:checked"), function () {
                 installationStates.push($(this).val());
             });
             console.log("checked states: ", installationStates.join(","));
-
-            //var allowWeekendJobs = [];
-            //$.each($("input[name='allowWeekends']:checked"), function () {
-            //    allowWeekendJobs.push($(this).val());
-            //});
-           // console.log("allowWeekends: ", allowWeekends.join(","));
-
 
             var branches = [];
             $.each($("input[name='branch']:checked"), function () {
@@ -498,6 +431,7 @@ $(document).ready(function () {
             {
                 eventUpdate(event);
             }
+            $('#calendar').fullCalendar('refetchEvents');
 
         },//: eventUpdate,
         eventResize: eventUpdate,
