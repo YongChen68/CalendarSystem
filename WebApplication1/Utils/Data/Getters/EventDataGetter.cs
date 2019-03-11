@@ -163,8 +163,12 @@ namespace CalendarSystem.Utils.Data
 
             //drop table #Subtrade", this.startDate.ToString("MM/dd/yyyy"), this.endDate.ToString("MM/dd/yyyy"), branchList, sPlanedCheck);
 
-           string SQL = string.Format(@"select * into #dates from HomeInstallations_InstallationDates d
+           string SQL = string.Format(@"select d.ScheduledDate,d.ParentRecordId, d.detailrecordid,count(c.detailrecordid) as detailrecordCount
+into #dates from HomeInstallations_InstallationDates d
+join HomeInstallations_InstallationDates c
+on d.ParentRecordId= c.ParentRecordId
 where d.ScheduledDate >= '{0} 12:00' and d.ScheduledDate <= '{1} 11:59'
+group by d.ScheduledDate,d.ParentRecordId, d.detailrecordid
 
 select i.* into #installs from HomeInstallations i 
 where CurrentStateName in ({3}) and Branch in ({2})  and i.Recordid in (select ParentRecordId from #dates group by ParentRecordId)
@@ -178,7 +182,7 @@ select t.* into #Doors from HomeInstallations_TypeofWork t inner join #installs 
 select t.* into #Other from HomeInstallations_TypeofWork t inner join #installs i on i.RecordId = t.ParentRecordId where t.Type_1 = 'Other'
 select s.* into #Subtrade from HomeInstallations_SubtradeReqired s inner join #installs i on i.RecordId = s.ParentRecordId 
 
-select WorkOrderNumber, LastName, City, SalesAmmount,DetailRecordId,ParentRecordId,id,saturday, sunday, jobtype,CurrentStateName,case when windows > 0 then WindowState else 'notordered' end as WindowState,
+select WorkOrderNumber, LastName, City, SalesAmmount,DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, jobtype,CurrentStateName,case when windows > 0 then WindowState else 'notordered' end as WindowState,
                     case when doors > 0 then DoorState else 'notordered' end as DoorState, case when other > 0 then OtherState else 'notordered' end as OtherState,
 null as Hours, case when ElectricalSubtrade is not null then ElectricalSubtrade else 'Electrical: Unspecified' end  + ',
 ' + 
@@ -191,7 +195,7 @@ HomePhoneNumber, CellPhone, WorkPhoneNumber, CrewNames, SeniorInstaller,
 case when ElectricalSubtrade is null and SidingSubtrade is null and InsulationSubtrade is null and OtherSubtrade is null then 0 else 1 end as ShowSubtrades,
 EstInstallerCnt, StreetAddress, ScheduledDate, case when ScheduledDate is null then PlannedInstallWeek else null end as PlannedInstallWeek, PaintedProduct, Branch 
 from (
-SELECT   i.Branch_Display as Branch, i.PaintedProduct, i.SalesAmmount,DetailRecordId ,ParentRecordId,saturday, sunday, jobtype,ActionItemId as id,i.streetAddress, i.EstInstallerCnt, i.WorkOrderNumber, i.LastName, i.City, i.CurrentStateName,PlannedInstallWeek,
+SELECT   i.Branch_Display as Branch, i.PaintedProduct, i.SalesAmmount,DetailRecordId ,ParentRecordId,detailrecordCount,saturday, sunday, jobtype,ActionItemId as id,i.streetAddress, i.EstInstallerCnt, i.WorkOrderNumber, i.LastName, i.City, i.CurrentStateName,PlannedInstallWeek,
                           case when (SELECT     count(ManufacturingStatus)
                             FROM          #Windows AS ms
                             WHERE      (ParentRecordId = i.RecordId)) > 1 then 'Undetermined' else (SELECT     ManufacturingStatus
@@ -207,15 +211,15 @@ SELECT   i.Branch_Display as Branch, i.PaintedProduct, i.SalesAmmount,DetailReco
                             WHERE      (ParentRecordId = i.RecordId)) > 1 then 'Undetermined' else (SELECT     ManufacturingStatus
                             FROM          #Other AS ms
                             WHERE      (ParentRecordId = i.RecordId)) end AS OtherState, d.ScheduledDate, 
-                          (SELECT     SUM(Number_1) AS Number
+                          (SELECT     round(SUM(Number_1) /detailrecordCount,0) AS Number
                             FROM          #Windows
                             WHERE      (ParentRecordId = i.RecordId)
                             GROUP BY Type_1) AS Windows,
-                          (SELECT     SUM(Number_1) AS Number
+                          (SELECT     round(SUM(Number_1)/detailrecordCount,0)  AS Number
                             FROM          #Doors AS HomeInstallations_TypeofWork_2
                             WHERE      (ParentRecordId = i.RecordId)
                             GROUP BY Type_1) AS Doors,
-                          (SELECT     SUM(Number_1) AS Number
+                          (SELECT      round(SUM(Number_1)/detailrecordCount,0) AS Number
                             FROM          #Other AS HomeInstallations_TypeofWork_1
                             WHERE      (ParentRecordId = i.RecordId)
                             GROUP BY Type_1) AS Other, 
@@ -265,10 +269,10 @@ drop table #Subtrade", this.startDate.ToShortDateString(),this.endDate.ToShortDa
             List<string> woList = new List<string>();
             foreach (InstallationEvent eventx in installationEventList)
             {
-                if (woList.Contains(eventx.WorkOrderNumber))
-                 {
-                    continue;
-                }
+                //if (woList.Contains(eventx.WorkOrderNumber))
+                //{
+                //    continue;
+                //}
                 newEvent = new InstallationEvent();
                 newEvent.Branch = eventx.Branch;
                 newEvent.CellPhone= eventx.CellPhone;

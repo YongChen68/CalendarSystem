@@ -1,8 +1,11 @@
 ﻿var displayType = "Windows";
 var GlobalParams = [];
+var eventArray = [];
 var debug = true;
 var renderingComplete = false;
 var eventid;
+var eventWO = [];
+var eventWODict = [];
 
 
 Date.prototype.Equals = function (pDate) {
@@ -439,7 +442,16 @@ $(document).ready(function () {
             if (renderingComplete) {
                 renderingComplete = false;
                 totals = getBlankTotal();
+                eventArray = [];
             }
+           
+            //if (eventWO.includes(event.WorkOrderNumber)) {
+            //    break;
+            //}
+            //else {
+            //    eventWO.push(event.WorkOrderNumber);
+            //}
+               
             element.attr('href', 'javascript:void(0);');
             element.click(function () {
                 if (displayType == "Installation") {
@@ -520,17 +532,24 @@ $(document).ready(function () {
             }
 
             if ((displayType == "Installation") && (event.HolidayName == null)){
-                var ret = "<img src=\"images/home.png\" title=\"" + ToInstallationEventString(event) + "\">" +
-                    "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
-                    event.EstInstallerCnt +
-                    (event.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + event.Windows + "Status: " + event.WindowState + "\" src=\"images/window.PNG\" />" : "") +
-                    (event.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + event.Doors + "Status: " + event.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
-                    ("WO: " + event.WorkOrderNumber) + "&nbsp;" +
-                    ("Name: " + event.LastName.trim().Length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
-                    "&nbsp;" + (event.City.trim().Length > 5 ? event.City.trim().toLowerCase().Substring(0, 5) : event.City.trim().toLowerCase());
+                if (!eventWODict.includes(event.WorkOrderNumber)) {
+                    eventWODict.push(event.WorkOrderNumber);
+                    var ret = "<img src=\"images/home.png\" title=\"" + ToInstallationEventString(event) + "\">" +
+                        "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
+                        event.EstInstallerCnt +
+                        (event.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + event.Windows + "Status: " + event.WindowState + "\" src=\"images/window.PNG\" />" : "") +
+                        (event.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + event.Doors + "Status: " + event.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
+                        ("WO: " + event.WorkOrderNumber) + "&nbsp;" +
+                        ("Name: " + event.LastName.trim().Length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
+                        "&nbsp;" + (event.City.trim().Length > 5 ? event.City.trim().toLowerCase().Substring(0, 5) : event.City.trim().toLowerCase());
 
-                $(element).find(dom).prepend(ret);
+                    $(element).find(dom).prepend(ret);
+                }
+                else {
+                    //$(element).find(dom)[0].hidden = true;
+                    $(element).find(dom)[0].style.display ="none";
 
+                }
             }
 
 
@@ -552,17 +571,28 @@ $(document).ready(function () {
             if (event.M2000Icon != undefined && event.M2000Icon == 1) // M2000
                 $(element).find(dom).prepend("<img alt=\"#\" src=\"images/M2000.png\" />&nbsp;");
 
-            var dayId = FindDayIdfromTotals(GetDatefromMoment(event.start));
+            //var dayId = FindDayIdfromTotals(GetDatefromMoment(event.start));
+          
+            var dayId = FindDayIdfromTotals(GetDatefromMoment(event.ScheduledDate));
             if (totals.length < dayId) console.log("eventRender", "dayId exceeds totals", dayId, totals.length);
 
+            
+            //if ((displayType == "Installation") && (event.HolidayName != null )){
+            if (displayType == "Installation")  {
 
-            if (displayType == "Installation") {
+                var date = new Date(GetDatefromMoment(event.ScheduledDate));
+                var InstallationEvent = {
+                    InstallationDate: date.toDateString(),WO: event.WorkOrderNumber, windows: event.Windows, doors: event.Doors
+                };
+              
+                eventArray.push(InstallationEvent);
+
+                
                 totals[dayId].windows += event.Windows !== undefined ? event.Windows : 0;
                 totals[dayId].doors += event.Doors !== undefined ? event.Doors : 0;
 
                 totals[dayId].SalesAmmount += event.SalesAmmount !== undefined ? event.SalesAmmount : 0;
-
-
+               
             }
             else {
                 totals[dayId].doors += event.doors !== undefined ? event.doors : 0;
@@ -644,9 +674,47 @@ $(document).ready(function () {
                 if (debug) console.log("eventAfterAllRender", "view configuration:", view.title, view.intervalStart._d);
                 var startDate = view.start._d;
                 var endDate = view.end._d;
-                for (var i = 0; i < totals.length; i++) {
-                    SetDayValue(i, totals[i]);
+               // var xx = eventArray;
+                var i;
+               
+                var doors;
+                var windows;
+                //for (i = 0; i < eventArray.length; i++) {
+                    
+                //}
+                var results;
+                var dayId;
+                for (var i = 0; i < eventArray.length-1; i++) {
+                    for (var j = 1; j < eventArray.length - 1; j++) {
+                        if (eventArray[i]["InstallationDate"] == eventArray[j]["InstallationDate"]) {
+                            eventArray[i]["windows"] = eventArray[i]["windows"] + eventArray[j]["windows"];
+                            eventArray[i]["doors"] = eventArray[i]["doors"] + eventArray[j]["doors"];
+                        }
+                    }
+                   
                 }
+                var str = "test";
+                for (var i = 0; i < 6; i++) {
+                    
+                  
+                }
+
+                for (var i = 0; i < totals.length; i++) {
+                  //  SetDayValue(i, totals[i]);
+                    for (var j = 0; j < eventArray.length - 1; j++) {
+                        dayId = FindDayIdfromTotals(GetDatefromMoment(eventArray[j]["InstallationDate"]));
+                        if (dayId == i) {
+                            totals[i]["windows"] = eventArray[j]["windows"];
+                            totals[i]["doors"] = eventArray[j]["doors"];
+                            SetDayValue(i, totals[i]);
+                        }
+
+                    }
+                }
+
+                //for (var i = 0; i < eventArray.length; i++) {
+                //    SetDayValue(i, eventArray[i]);
+                //}
             }
         },
         viewRender: function (view, element) {
@@ -678,9 +746,11 @@ function SetDayValue(key, dayTotals) {
     if (debug) console.log("SetDayValue", key, "added", "date:", dayTotals.date, "data:", dayTotals);
     if (displayType == "Installation") {
         //    SetData('Doors', 0);
+       // SetData('Doors', dayTotals.day, dayTotals.doors);
         SetData('Doors', dayTotals.day, dayTotals.doors);
 
-        SetData('Windows', dayTotals.day, dayTotals.windows);
+     SetData('Windows', dayTotals.day, dayTotals.windows);
+       // SetData('Windows', dayTotals.day, 3);
         //  SetData('Work Orders', dayTotals.day, 0);
         //  SetData('Installation Min', dayTotals.day, 0);
         //  SetData('Asbestos Jobs', dayTotals.day, 0);
