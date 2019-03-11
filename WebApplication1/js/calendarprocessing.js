@@ -368,11 +368,15 @@ $(document).ready(function () {
                     success: function (data) {
                         if (debug) console.log("events.success", "data.GetInstallationEventsResult:", data.GetInstallationEventsResult === undefined ? "NULL" : data.GetInstallationEventsResult.length);
                         var events = [];
+                        eventWODict = [];
+                        var con;
                         $.each(data.GetInstallationEventsResult, function (pos, item) {
                             item.allDay = true;
                             item.editable = (item.HolidayName != null) ? false : true;
-                            events.push(item);
+                            eventWODict.push(item);
+
                         });
+                        events = removeDuplicates(eventWODict, "WorkOrderNumber");
                         callback(events);
                     }, error: function (error) {
                         console.log('Error', error);
@@ -444,14 +448,7 @@ $(document).ready(function () {
                 totals = getBlankTotal();
                 eventArray = [];
             }
-           
-            //if (eventWO.includes(event.WorkOrderNumber)) {
-            //    break;
-            //}
-            //else {
-            //    eventWO.push(event.WorkOrderNumber);
-            //}
-               
+         
             element.attr('href', 'javascript:void(0);');
             element.click(function () {
                 if (displayType == "Installation") {
@@ -532,24 +529,18 @@ $(document).ready(function () {
             }
 
             if ((displayType == "Installation") && (event.HolidayName == null)){
-                if (!eventWODict.includes(event.WorkOrderNumber)) {
-                    eventWODict.push(event.WorkOrderNumber);
-                    var ret = "<img src=\"images/home.png\" title=\"" + ToInstallationEventString(event) + "\">" +
-                        "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
-                        event.EstInstallerCnt +
-                        (event.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + event.Windows + "Status: " + event.WindowState + "\" src=\"images/window.PNG\" />" : "") +
-                        (event.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + event.Doors + "Status: " + event.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
-                        ("WO: " + event.WorkOrderNumber) + "&nbsp;" +
-                        ("Name: " + event.LastName.trim().Length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
-                        "&nbsp;" + (event.City.trim().Length > 5 ? event.City.trim().toLowerCase().Substring(0, 5) : event.City.trim().toLowerCase());
+               
+                var ret = "<img src=\"images/home.png\" title=\"" + ToInstallationEventString(event) + "\">" +
+                    "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
+                    event.EstInstallerCnt +
+                    (event.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + event.Windows + "Status: " + event.WindowState + "\" src=\"images/window.PNG\" />" : "") +
+                    (event.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + event.Doors + "Status: " + event.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
+                    ("WO: " + event.WorkOrderNumber) + "&nbsp;" +
+                    ("Name: " + event.LastName.trim().Length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
+                    "&nbsp;" + (event.City.trim().Length > 5 ? event.City.trim().toLowerCase().Substring(0, 5) : event.City.trim().toLowerCase());
 
-                    $(element).find(dom).prepend(ret);
-                }
-                else {
-                    //$(element).find(dom)[0].hidden = true;
-                    $(element).find(dom)[0].style.display ="none";
-
-                }
+                $(element).find(dom).prepend(ret);
+              
             }
 
 
@@ -577,21 +568,7 @@ $(document).ready(function () {
             if (totals.length < dayId) console.log("eventRender", "dayId exceeds totals", dayId, totals.length);
 
             
-            //if ((displayType == "Installation") && (event.HolidayName != null )){
-            if (displayType == "Installation")  {
-
-                var date = new Date(GetDatefromMoment(event.ScheduledDate));
-                var InstallationEvent = {
-                    InstallationDate: date.toDateString(),WO: event.WorkOrderNumber, windows: event.Windows, doors: event.Doors
-                };
-              
-                eventArray.push(InstallationEvent);
-
-                
-                totals[dayId].windows += event.Windows !== undefined ? event.Windows : 0;
-                totals[dayId].doors += event.Doors !== undefined ? event.Doors : 0;
-
-                totals[dayId].SalesAmmount += event.SalesAmmount !== undefined ? event.SalesAmmount : 0;
+            if ((displayType == "Installation") && (event.HolidayName != null )){
                
             }
             else {
@@ -674,47 +651,34 @@ $(document).ready(function () {
                 if (debug) console.log("eventAfterAllRender", "view configuration:", view.title, view.intervalStart._d);
                 var startDate = view.start._d;
                 var endDate = view.end._d;
-               // var xx = eventArray;
+              
                 var i;
                
                 var doors;
                 var windows;
-                //for (i = 0; i < eventArray.length; i++) {
-                    
-                //}
+              
                 var results;
                 var dayId;
-                for (var i = 0; i < eventArray.length-1; i++) {
-                    for (var j = 1; j < eventArray.length - 1; j++) {
-                        if (eventArray[i]["InstallationDate"] == eventArray[j]["InstallationDate"]) {
-                            eventArray[i]["windows"] = eventArray[i]["windows"] + eventArray[j]["windows"];
-                            eventArray[i]["doors"] = eventArray[i]["doors"] + eventArray[j]["doors"];
+                             
+                var date1,date2;
+                
+                for (var i = 0; i < totals.length; i++) {
+                    date1 = new Date(totals[i]["date"]).toLocaleDateString('en-US');
+                    for (var j = 0; j < eventWODict.length; j++) {
+                        date2 = new Date(GetDatefromMoment(eventWODict[j]["ScheduledDate"])).toLocaleDateString('en-US');
+                        if  (date1 == date2){
+
+                            totals[i].windows += eventWODict[j]["Windows"];
+                            totals[i].doors += eventWODict[j]["Doors"];
+                            totals[i].SalesAmmount += eventWODict[j]["SalesAmmount"];
                         }
+                       
                     }
-                   
-                }
-                var str = "test";
-                for (var i = 0; i < 6; i++) {
-                    
-                  
                 }
 
                 for (var i = 0; i < totals.length; i++) {
-                  //  SetDayValue(i, totals[i]);
-                    for (var j = 0; j < eventArray.length - 1; j++) {
-                        dayId = FindDayIdfromTotals(GetDatefromMoment(eventArray[j]["InstallationDate"]));
-                        if (dayId == i) {
-                            totals[i]["windows"] = eventArray[j]["windows"];
-                            totals[i]["doors"] = eventArray[j]["doors"];
-                            SetDayValue(i, totals[i]);
-                        }
-
-                    }
+                    SetDayValue(i, totals[i]);
                 }
-
-                //for (var i = 0; i < eventArray.length; i++) {
-                //    SetDayValue(i, eventArray[i]);
-                //}
             }
         },
         viewRender: function (view, element) {
@@ -745,11 +709,9 @@ function GetDayLabourValue(view, pDate) {
 function SetDayValue(key, dayTotals) {
     if (debug) console.log("SetDayValue", key, "added", "date:", dayTotals.date, "data:", dayTotals);
     if (displayType == "Installation") {
-        //    SetData('Doors', 0);
-       // SetData('Doors', dayTotals.day, dayTotals.doors);
+     
         SetData('Doors', dayTotals.day, dayTotals.doors);
-
-     SetData('Windows', dayTotals.day, dayTotals.windows);
+        SetData('Windows', dayTotals.day, dayTotals.windows);
        // SetData('Windows', dayTotals.day, 3);
         //  SetData('Work Orders', dayTotals.day, 0);
         //  SetData('Installation Min', dayTotals.day, 0);
@@ -757,7 +719,8 @@ function SetDayValue(key, dayTotals) {
         //  SetData('High Risk Jobss', dayTotals.day, 0);
 
 
-        //SetData('Sales Amount($)', dayTotals.day, dayTotals.SalesAmmount);
+      //SetData('Sales Amount($)', dayTotals.day, dayTotals.SalesAmmount);
+        SetData('Amount', dayTotals.day, dayTotals.SalesAmmount.formatMoney(2, "$", ",", "."));
     }
     else {
         var maxTime = parseInt(FindByValue("max", dayTotals.date).Value);
@@ -916,4 +879,17 @@ function GetDisplayItemList(type) {
 // Over Capacity Error
 function ShowWarning(allocatedDayLabour, eventLabourMin, maxDayLabour) {
     window.alert("There are already " + allocatedDayLabour + " minutes on the target day. Adding requested event with Labour minutes of " + eventLabourMin + " will exceed maximum available minutes (" + maxDayLabour + ") for the day.");
+}
+function removeDuplicates(originalArray, prop) {
+    var newArray = [];
+    var lookupObject = {};
+
+    for (var i in originalArray) {
+        lookupObject[originalArray[i][prop]] = originalArray[i];
+    }
+
+    for (i in lookupObject) {
+        newArray.push(lookupObject[i]);
+    }
+    return newArray;
 }

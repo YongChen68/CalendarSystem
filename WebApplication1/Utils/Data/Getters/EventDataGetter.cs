@@ -195,7 +195,7 @@ HomePhoneNumber, CellPhone, WorkPhoneNumber, CrewNames, SeniorInstaller,
 case when ElectricalSubtrade is null and SidingSubtrade is null and InsulationSubtrade is null and OtherSubtrade is null then 0 else 1 end as ShowSubtrades,
 EstInstallerCnt, StreetAddress, ScheduledDate, case when ScheduledDate is null then PlannedInstallWeek else null end as PlannedInstallWeek, PaintedProduct, Branch 
 from (
-SELECT   i.Branch_Display as Branch, i.PaintedProduct, i.SalesAmmount,DetailRecordId ,ParentRecordId,detailrecordCount,saturday, sunday, jobtype,ActionItemId as id,i.streetAddress, i.EstInstallerCnt, i.WorkOrderNumber, i.LastName, i.City, i.CurrentStateName,PlannedInstallWeek,
+SELECT   i.Branch_Display as Branch, i.PaintedProduct,  i.SalesAmmount/detailrecordCount as SalesAmmount,DetailRecordId ,ParentRecordId,detailrecordCount,saturday, sunday, jobtype,ActionItemId as id,i.streetAddress, i.EstInstallerCnt, i.WorkOrderNumber, i.LastName, i.City, i.CurrentStateName,PlannedInstallWeek,
                           case when (SELECT     count(ManufacturingStatus)
                             FROM          #Windows AS ms
                             WHERE      (ParentRecordId = i.RecordId)) > 1 then 'Undetermined' else (SELECT     ManufacturingStatus
