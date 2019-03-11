@@ -3714,7 +3714,7 @@
                         RenderWeekRow('Windows') +
                         RenderWeekRow('Patio Doors') +
                         RenderWeekRow('Doors') +
-                        RenderWeekRow('Amount') +
+                        RenderWeekRow('Sales_Amount') +
                         RenderWeekRow('Installation Min') +
                         RenderWeekRow('Asbestos Jobs') +
                         RenderWeekRow('High Risk Jobs') +

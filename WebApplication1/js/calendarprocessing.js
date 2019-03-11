@@ -717,10 +717,7 @@ function SetDayValue(key, dayTotals) {
         //  SetData('Installation Min', dayTotals.day, 0);
         //  SetData('Asbestos Jobs', dayTotals.day, 0);
         //  SetData('High Risk Jobss', dayTotals.day, 0);
-
-
-      //SetData('Sales Amount($)', dayTotals.day, dayTotals.SalesAmmount);
-        SetData('Amount', dayTotals.day, dayTotals.SalesAmmount.formatMoney(2, "$", ",", "."));
+        SetData('Sales_Amount', dayTotals.day, dayTotals.SalesAmmount.formatMoney(2, "$", ",", "."));
     }
     else {
         var maxTime = parseInt(FindByValue("max", dayTotals.date).Value);
