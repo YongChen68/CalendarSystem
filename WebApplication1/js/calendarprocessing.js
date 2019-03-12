@@ -456,6 +456,12 @@ $(document).ready(function () {
                     $("#homePhone").html(event.HomePhoneNumber);
                     $("#cellPhone").html(event.CellPhone);
                     $("#branch").html(event.Branch);
+                    $("#Address").html(event.StreetAddress + "\r\n" +"," +
+                        event.City + "\r\n\r\n" );
+                    $("#SalesAmmount").html(event.SalesAmmount.formatMoney(2, "$", ",", "."));
+                    $("#SeniorInstaller").html(event.SeniorInstaller != null && event.SeniorInstaller.trim().length > 0 ? event.SeniorInstaller : "Unspecified");
+                    $("#CrewNames").html(event.CrewNames != null && event.CrewNames.trim().length > 0 ? event.CrewNames : "Un assigned");
+               
 
                     eventid = event.id;
                   
@@ -710,14 +716,14 @@ function SetDayValue(key, dayTotals) {
     if (debug) console.log("SetDayValue", key, "added", "date:", dayTotals.date, "data:", dayTotals);
     if (displayType == "Installation") {
      
-        SetData('Doors', dayTotals.day, dayTotals.doors);
+        SetData('Codel-Doors', dayTotals.day, dayTotals.doors);
         SetData('Windows', dayTotals.day, dayTotals.windows);
        // SetData('Windows', dayTotals.day, 3);
         //  SetData('Work Orders', dayTotals.day, 0);
         //  SetData('Installation Min', dayTotals.day, 0);
         //  SetData('Asbestos Jobs', dayTotals.day, 0);
         //  SetData('High Risk Jobss', dayTotals.day, 0);
-        SetData('Sales_Amount', dayTotals.day, dayTotals.SalesAmmount.formatMoney(2, "$", ",", "."));
+        SetData('Sales-Amount', dayTotals.day, dayTotals.SalesAmmount.formatMoney(2, "$", ",", "."));
     }
     else {
         var maxTime = parseInt(FindByValue("max", dayTotals.date).Value);

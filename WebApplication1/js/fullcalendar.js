@@ -3660,14 +3660,15 @@
                 var cell = this.getCell(0, 0);
                 if (displayType == "Installation") {
                     retValue += '<tbody>' +
-                        RenderDayRow('Work Orders', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Work-Orders', dayIDs[cell.start.day()]) +
                         RenderDayRow('Windows', dayIDs[cell.start.day()]) +
-                     //   RenderDayRow('Codel Doors', dayIDs[cell.start.day()]) +
-                        RenderDayRow('Doors', dayIDs[cell.start.day()]) +
-                        RenderDayRow('Sales Amount($)', dayIDs[cell.start.day()]) +
-                        RenderDayRow('Installation Min', dayIDs[cell.start.day()]) +
-                        RenderDayRow('Asbestos Jobs', dayIDs[cell.start.day()]) +
-                        RenderDayRow('High Risk Jobs', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Codel-Doors', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Patio-Doors', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Sales-Amount', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Installation-Min', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Asbestos-Jobs', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Wood-DropOff-Jobs', dayIDs[cell.start.day()]) +
+                        RenderDayRow('HighRisk-Jobs', dayIDs[cell.start.day()]) +
                         '</tbody>';
 
                 }
@@ -3710,14 +3711,15 @@
                 if (displayType == "Installation") {
                     retValue += '<tbody>' +
 
-                        RenderWeekRow('Work Orders') +
+                        RenderWeekRow('Work-Orders') +
                         RenderWeekRow('Windows') +
-                        RenderWeekRow('Patio Doors') +
-                        RenderWeekRow('Doors') +
-                        RenderWeekRow('Sales_Amount') +
-                        RenderWeekRow('Installation Min') +
-                        RenderWeekRow('Asbestos Jobs') +
-                        RenderWeekRow('High Risk Jobs') +
+                        RenderWeekRow('Codel-Doors') +
+                        RenderWeekRow('Patio-Doors') +
+                        RenderWeekRow('Sales-Amount') +
+                        RenderWeekRow('Installation-Min') +
+                        RenderWeekRow('Asbestos-Jobs') +
+                        RenderWeekRow('Wood-DropOff-Jobs') +
+                        RenderWeekRow('HighRisk-Jobs') +
                         '</tbody>';
                 }
                 else {

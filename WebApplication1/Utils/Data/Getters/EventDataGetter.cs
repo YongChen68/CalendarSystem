@@ -242,6 +242,7 @@ FROM         Employees AS e INNER JOIN
 where ParentRecordId = i.RecordId) as SeniorInstaller, i.HVAC
 FROM         #installs AS i LEFT OUTER JOIN
                       #dates AS d ON i.RecordId = d.ParentRecordId
+where jobtype<>'Multi Family'
 ) x order by ScheduledDate, Branch
 
 drop table #dates
