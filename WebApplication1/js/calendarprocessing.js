@@ -94,7 +94,7 @@ function getBlankTotal() {
 function GetBlankDayData(day) {
     var dayName = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"][day.getUTCDay()];
     if (displayType == "Installation") {
-        return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount: 0 };
+        return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount: 0,WOCount:0 };
     }
     else {
         return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, boxes: 0, glass: 0, value: 0, min: 0, max: 0, Available_Time: 0, rush: 0, float: 0, TotalBoxQty: 0, TotalGlassQty: 0, TotalPrice: 0, TotalLBRMin: 0, F6CA: 0, F27DS: 0, F27TS: 0, F27TT: 0, F29CA: 0, F29CM: 0, F52PD: 0, F68CA: 0, F68SL: 0, F68VS: 0, Transom: 0, Sidelite: 0, SingleDoor: 0, DoubleDoor: 0, Simple: 0, Complex: 0, Over_Size: 0, Arches: 0, Rakes: 0, Customs: 0, };
@@ -666,10 +666,12 @@ $(document).ready(function () {
                 var results;
                 var dayId;
                              
-                var date1,date2;
+                var date1, date2;
+                var WOCount;
                 
                 for (var i = 0; i < totals.length; i++) {
                     date1 = new Date(totals[i]["date"]).toLocaleDateString('en-US');
+                    WOCount = 0;
                     for (var j = 0; j < eventWODict.length; j++) {
                         date2 = new Date(GetDatefromMoment(eventWODict[j]["ScheduledDate"])).toLocaleDateString('en-US');
                         if  (date1 == date2){
@@ -677,6 +679,8 @@ $(document).ready(function () {
                             totals[i].windows += eventWODict[j]["Windows"];
                             totals[i].doors += eventWODict[j]["Doors"];
                             totals[i].SalesAmmount += eventWODict[j]["SalesAmmount"];
+                            totals[i].WOCount = WOCount + 1;
+                            WOCount++;
                         }
                        
                     }
@@ -718,6 +722,7 @@ function SetDayValue(key, dayTotals) {
      
         SetData('Codel-Doors', dayTotals.day, dayTotals.doors);
         SetData('Windows', dayTotals.day, dayTotals.windows);
+        SetData('Work-Orders', dayTotals.day, dayTotals.WOCount);
        // SetData('Windows', dayTotals.day, 3);
         //  SetData('Work Orders', dayTotals.day, 0);
         //  SetData('Installation Min', dayTotals.day, 0);
