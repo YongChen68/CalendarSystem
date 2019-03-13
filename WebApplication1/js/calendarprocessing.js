@@ -189,6 +189,72 @@ function LoadBufferedJobs() {
 
 }
 
+function LoadInstallationBufferedJobs() {
+    var branches = [];
+    $.each($("input[name='branch']:checked"), function () {
+        branches.push($(this).val());
+    });
+    console.log("checked branches: ", branches.join(","));
+    
+    //$.getJSON("data.svc/GetInstallationBufferJobs", { branch: branches.join(",")}, function (data) {
+    //    //$.each(data, function (key, val) {
+    //    //    AddInstallationBufferEvent(key, val);
+    //    //});
+    //    var events = [];
+    //    $.each(data, function (pos, item) {
+    //        item.editable = (item.HolidayName != null) ? false : true;
+    //        events.push(item);
+    //    });
+    //    /* initialize the external events
+    //    -----------------------------------------------------------------*/
+    //});
+    $.ajax({
+        url: 'data.svc/GetInstallationBufferJobs',
+        dataType: 'json',
+        data: {  branch: branches.join(",") },
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetInstallationBufferJobsResult:", data.GetInstallationBufferJobsResult === undefined ? "NULL" : data.GetInstallationBufferJobsResult.length);
+            var events = [];
+           
+            var con;
+            $.each(data.GetInstallationBufferJobsResult, function (pos, item) {
+                AddInstallationBufferEvent(pos, item);
+            });
+           
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+
+
+}
+
+function AddInstallationBufferEvent(key, val) {
+    var ret = "<img src=\"images/home.png\" title=\"" + ToInstallationEventString(val) + "\">" +
+        "<img src=\"images/installer" + val.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
+        val.EstInstallerCnt +
+        (val.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + val.Windows + "Status: " + val.WindowState + "\" src=\"images/window.PNG\" />" : "") +
+        (val.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + val.Doors + "Status: " + val.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
+        ("WO: " + val.WorkOrderNumber) + "&nbsp;" +
+        ("Name: " + val.LastName.trim().Length > 10 ? val.LastName.trim().Substring(0, 10) : val.LastName.trim()) +
+        "&nbsp;" + (val.City.trim().Length > 5 ? val.City.trim().toLowerCase().Substring(0, 5) : val.City.trim().toLowerCase());
+   // $(element).find(dom).prepend(ret);
+
+    var el = $("<div class='fc-event" + (val.JobType == "RES" ? " reservation" : "") +
+        "' id=\"" + val.id + "\" style=\"background-color:" + val.color + "\">" + ret + "</div>").appendTo('#external-events');
+    el.draggable({
+        zIndex: 999,
+        revert: true,      // will cause the event to go back to its
+        revertDuration: 0  //  original position after the drag
+    });
+    $('#' + val.id).data('event', {
+        // title: val.title, id: val.id, description: val.description, doors: val.doors, windows: val.windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
+        title: val.title, id: val.id, doors: val.Doors, windows: val.Windows
+    });
+}
+
 
 function AddBufferEvent(key, val) {
     var img = "";
@@ -240,6 +306,7 @@ function LoadGlobalValues(firstDay, lastDay) {
 }
 $(document).ready(function () {
     LoadBufferedJobs();
+   // LoadInstallationBufferedJobs();
 
     /* initialize the calendar
     -----------------------------------------------------------------*/
@@ -361,6 +428,9 @@ $(document).ready(function () {
                 $('.fc-changeJobType-button').hide();
                 $('.fc-changeShippingType-button').hide();
                 $('#calendar').fullCalendar('changeView', 'month');
+              //  document.getElementById('external-InstallationEvents').style.display = "block";
+              //  document.getElementById('external-events').style.display = "none";
+                LoadInstallationBufferedJobs();
                 $.ajax({
                     url: 'data.svc/GetInstallationEvents',
                     dataType: 'json',
@@ -391,7 +461,8 @@ $(document).ready(function () {
                 $('.fc-changeJobType-button').show();
                 $('.fc-changeShippingType-button').show();
                 $('#calendar').fullCalendar('changeView', 'month');
-
+             //   document.getElementById('external-InstallationEvents').style.display = "none";
+              //  document.getElementById('external-events').style.display = "block";
                 $.ajax({
                     url: 'data.svc/GetEvents',
                     dataType: 'json',
@@ -461,8 +532,9 @@ $(document).ready(function () {
                     $("#SalesAmmount").html(event.SalesAmmount.formatMoney(2, "$", ",", "."));
                     $("#SeniorInstaller").html(event.SeniorInstaller != null && event.SeniorInstaller.trim().length > 0 ? event.SeniorInstaller : "Unspecified");
                     $("#CrewNames").html(event.CrewNames != null && event.CrewNames.trim().length > 0 ? event.CrewNames : "Un assigned");
-               
 
+                  
+                  
                     eventid = event.id;
                   
                     if (event.Saturday == "Yes") {
@@ -484,6 +556,7 @@ $(document).ready(function () {
                 }
                 else {
                     $("#eventContent").dialog({ modal: true, title: event.title, width: 800 });
+                  
                 }
               
                 
@@ -658,14 +731,11 @@ $(document).ready(function () {
                 var startDate = view.start._d;
                 var endDate = view.end._d;
               
-                var i;
-               
                 var doors;
                 var windows;
               
                 var results;
-                var dayId;
-                             
+               
                 var date1, date2;
                 var WOCount;
                 

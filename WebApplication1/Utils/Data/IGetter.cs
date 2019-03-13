@@ -14,6 +14,7 @@ namespace CalendarSystem.Utils.Data
     {
         List<Generics.Utils.CalendarEvent> GetData(Generics.Utils.ContentType type);
         List<Generics.Utils.Data.InstallationEvent> GetData();
+        List<Generics.Utils.Data.InstallationEvent> GetInstallationBufferData();
         List<Generics.Utils.Holiday> GetHolidayData();
     }
 }

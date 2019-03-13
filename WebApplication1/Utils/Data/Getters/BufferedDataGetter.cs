@@ -5,6 +5,8 @@ using System.Linq;
 using System.Web;
 using Generics.Utils;
 using Generics.Utils.Data;
+using System.Globalization;
+
 
 namespace CalendarSystem.Utils.Data
 {
@@ -13,7 +15,7 @@ namespace CalendarSystem.Utils.Data
         private readonly List<string> branchList;
         private readonly List<string> jobTypeList;
         private readonly List<string> shippingTypeList;
-
+     
         public BufferedDataGetter(List<string> branchList, List<string> jobType, List<string> shippingType)
         {
             this.branchList = branchList;
@@ -26,11 +28,14 @@ namespace CalendarSystem.Utils.Data
             this.branchList = branchList;
          }
 
-        public List<InstallationEvent> GetData()
+        public List<InstallationEvent> GetInstallationBufferData()
         {
             string SQL = GetInstallationSQL();
+            List<InstallationEvent> returnEventList = new List<InstallationEvent>();
+           
             Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
-            return Lift.LiftManager.DbHelper.ReadObjects<InstallationEvent>(SQL);
+            returnEventList = Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.Data.InstallationEvent>(SQL);
+            return returnEventList;
         }
 
         public List<InstallationEvent> GetInstallationEventData(ContentType type)
@@ -38,107 +43,202 @@ namespace CalendarSystem.Utils.Data
             throw new NotImplementedException();
         }
 
+    
         private string GetInstallationSQL()
         {
-            return "sql";
+
+            string sPlanedCheck = @"";
+            // Create an instance of Norwegian culture
+            System.Globalization.CultureInfo Culture =
+            System.Globalization.CultureInfo.CreateSpecificCulture("ca");
+            // Get the Norwegian calendar from the culture object
+            System.Globalization.Calendar cal = Culture.Calendar;
+
+            //string SQL = string.Format(@"select * into #dates from HomeInstallations_InstallationDates d
+            //where d.ScheduledDate >= '{0} 12:00' and d.ScheduledDate <= '{1} 11:59'
+
+            //select i.* into #installs from HomeInstallations i 
+            //where CurrentStateName in ('Pending Install Completion', 'VP Installation Approval', 'Installation Manager Review', 'ReMeasure Scheduled', 'Work Scheduled', 'Unreviewed Work Scheduled', 'Install in Progress', 'Install Completed', 'Ready for Invoicing', 'Job Completed', 
+            //         'Installation Confirmed', 'Installation inprogress rejected', 'Rejected Remeasure', 'Rejected Scheduled Work', 
+            //        'Rejected Installation', 'Job Costing', 'Unreviewed Job Costing', 'Rejected Job Costing', 'VP Installation Approval', 'Rejected Manager Review', 
+            //'Pending Install Completion') and Branch in ('{2}') and i.Recordid in (select ParentRecordId from #dates group by ParentRecordId)
+
+            //insert into #installs select i.* from HomeInstallations i
+            //where CurrentStateName in ('Unreviewed Buffered Work', 'Buffered Work') and PlannedInstallWeek = {3} and RecordId not in (select ParentRecordId from #dates d group by ParentRecordId) and Branch in ('{2')
+
+            //select t.* into #Windows from HomeInstallations_TypeofWork t inner join #installs i on i.RecordId = t.ParentRecordId where t.Type_1 = 'Windows'
+            //select t.* into #Doors from HomeInstallations_TypeofWork t inner join #installs i on i.RecordId = t.ParentRecordId where t.Type_1 = 'Doors'
+            //select t.* into #Other from HomeInstallations_TypeofWork t inner join #installs i on i.RecordId = t.ParentRecordId where t.Type_1 = 'Other'
+            //select s.* into #Subtrade from HomeInstallations_SubtradeReqired s inner join #installs i on i.RecordId = s.ParentRecordId 
+
+            //select WorkOrderNumber, LastName, City, CurrentStateName, case when windows > 0 then WindowState else 'notordered' end as WindowState,
+            //                    case when doors > 0 then DoorState else 'notordered' end as DoorState, case when other > 0 then OtherState else 'notordered' end as OtherState,
+            //null as Hours, case when ElectricalSubtrade is not null then ElectricalSubtrade else 'Electrical: Unspecified' end  + ',
+            //' + 
+            //case when SidingSubtrade is not null then SidingSubtrade else 'Siding: Unspecified' end  + ',
+            //' + 
+            //case when InsulationSubtrade is not null then InsulationSubtrade else 'Insulation: Unspecified' end  + ',
+            //' + 
+            //case when OtherSubtrade is not null then OtherSubtrade else 'Other: Unspecified' end as Subtrades, Windows, Doors, Other, null as hours, 
+            //HomePhoneNumber, CellPhone, WorkPhoneNumber, CrewNames, SeniorInstaller, 
+            //case when ElectricalSubtrade is null and SidingSubtrade is null and InsulationSubtrade is null and OtherSubtrade is null then 0 else 1 end as ShowSubtrades,
+            //EstInstallerCnt, StreetAddress, ScheduledDate, case when ScheduledDate is null then PlannedInstallWeek else null end as PlannedInstallWeek, PaintedProduct, Branch 
+            //from (
+            //SELECT  i.Branch_Display as Branch, i.PaintedProduct, i.streetAddress, i.EstInstallerCnt, i.WorkOrderNumber, i.LastName, i.City, i.CurrentStateName,PlannedInstallWeek,
+            //                          case when (SELECT     count(ManufacturingStatus)
+            //                            FROM          #Windows AS ms
+            //                            WHERE      (ParentRecordId = i.RecordId)) > 1 then 'Undetermined' else (SELECT     ManufacturingStatus
+            //                            FROM          #Windows AS ms
+            //                            WHERE      (ParentRecordId = i.RecordId)) end AS WindowState,
+            //                          case when (SELECT    count(ManufacturingStatus)
+            //                            FROM          #Doors AS ms
+            //                            WHERE      (ParentRecordId = i.RecordId)) > 1 then 'Undetermined' else (SELECT    ManufacturingStatus
+            //                            FROM          #Doors AS ms
+            //                            WHERE      (ParentRecordId = i.RecordId)) end  AS DoorState,
+            //                          case when (SELECT     count(ManufacturingStatus)
+            //                            FROM          #Other AS ms
+            //                            WHERE      (ParentRecordId = i.RecordId)) > 1 then 'Undetermined' else (SELECT     ManufacturingStatus
+            //                            FROM          #Other AS ms
+            //                            WHERE      (ParentRecordId = i.RecordId)) end AS OtherState, d.ScheduledDate, 
+            //                          (SELECT     SUM(Number_1) AS Number
+            //                            FROM          #Windows
+            //                            WHERE      (ParentRecordId = i.RecordId)
+            //                            GROUP BY Type_1) AS Windows,
+            //                          (SELECT     SUM(Number_1) AS Number
+            //                            FROM          #Doors AS HomeInstallations_TypeofWork_2
+            //                            WHERE      (ParentRecordId = i.RecordId)
+            //                            GROUP BY Type_1) AS Doors,
+            //                          (SELECT     SUM(Number_1) AS Number
+            //                            FROM          #Other AS HomeInstallations_TypeofWork_1
+            //                            WHERE      (ParentRecordId = i.RecordId)
+            //                            GROUP BY Type_1) AS Other, 
+            //case when (select count(SubTrade)from #Subtrade sr
+            //where SubTrade = 'Electrical' and sr.ParentRecordId = i.RecordId) > 1 then 'Undetermined' else (select top 1 SubTrade + ': ' + Status as SubTrade from #Subtrade sr
+            //where SubTrade = 'Electrical' and sr.ParentRecordId = i.RecordId) end  as ElectricalSubtrade, 
+            //case when (select count(SubTrade)from #Subtrade sr
+            //where SubTrade = 'Siding' and sr.ParentRecordId = i.RecordId) > 1 then 'Undetermined' else (select top 1 SubTrade + ': ' + Status as SubTrade from #Subtrade sr
+            //where SubTrade = 'Siding' and sr.ParentRecordId = i.RecordId) end as SidingSubtrade, 
+            //case when (select count(SubTrade)from #Subtrade sr
+            //where SubTrade = 'Insulation' and sr.ParentRecordId = i.RecordId) > 1 then 'Undetermined' else (select top 1 SubTrade + ': ' + Status as SubTrade from #Subtrade sr
+            //where SubTrade = 'Insulation' and sr.ParentRecordId = i.RecordId) end as InsulationSubtrade, 
+            //case when (select count(SubTrade) from #Subtrade sr
+            //where SubTrade = 'Other' and sr.ParentRecordId = i.RecordId) > 1 then 'Undetermined' else (select SubTrade + ': ' + Status as SubTrade from #Subtrade sr
+            //where SubTrade = 'Other' and sr.ParentRecordId = i.RecordId) end as OtherSubtrade, HomePhoneNumber, CellPhone, WorkPhoneNumber, 
+            //dbo.fGetCrewNames(i.RecordId) as CrewNames, (SELECT     e.InstallerName
+            //FROM         Employees AS e INNER JOIN
+            //                      Users AS u ON e.Account_1 = u.Account INNER JOIN
+            //                      HomeInstallations_SeniorInstaller AS si ON u.UserId = si.userId
+            //where ParentRecordId = i.RecordId) as SeniorInstaller, i.HVAC
+            //FROM         #installs AS i LEFT OUTER JOIN
+            //                      #dates AS d ON i.RecordId = d.ParentRecordId
+            //) x order by ScheduledDate, Branch
+
+            //drop table #dates
+            //drop table #installs
+            //drop table #Windows
+            //drop table #Doors
+            //drop table #Other
+
+            //drop table #Subtrade", this.startDate.ToString("MM/dd/yyyy"), this.endDate.ToString("MM/dd/yyyy"), branchList, sPlanedCheck);
+
+            string SQL = string.Format(@"select d.ScheduledDate,d.ParentRecordId, d.detailrecordid,count(c.detailrecordid) as detailrecordCount
+into #dates from HomeInstallations_InstallationDates d
+join HomeInstallations_InstallationDates c
+on d.ParentRecordId= c.ParentRecordId
+group by d.ScheduledDate,d.ParentRecordId, d.detailrecordid
+
+select i.* into #installs from HomeInstallations i 
+where CurrentStateName in ('Unreviewed Work Scheduled') and Branch in ({0})  and i.Recordid in (select ParentRecordId from #dates group by ParentRecordId)
+insert into #installs select i.* from HomeInstallations i
+where CurrentStateName in ('Unreviewed Work Scheduled') and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or 
+(PlannedInstallWeek >= 1 and PlannedInstallWeek <= 7)) and RecordId not in (select ParentRecordId from #dates d group by ParentRecordId) and 
+Branch in ({0})
+
+select t.* into #Windows from HomeInstallations_TypeofWork t inner join #installs i on i.RecordId = t.ParentRecordId where t.Type_1 = 'Windows'
+select t.* into #Doors from HomeInstallations_TypeofWork t inner join #installs i on i.RecordId = t.ParentRecordId where t.Type_1 = 'Doors'
+select t.* into #Other from HomeInstallations_TypeofWork t inner join #installs i on i.RecordId = t.ParentRecordId where t.Type_1 = 'Other'
+select s.* into #Subtrade from HomeInstallations_SubtradeReqired s inner join #installs i on i.RecordId = s.ParentRecordId 
+
+select WorkOrderNumber, LastName, City, SalesAmmount,DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, 
+jobtype,CurrentStateName,case when windows > 0 then WindowState else 'notordered' end as WindowState,
+                    case when doors > 0 then DoorState else 'notordered' end as DoorState, case when other > 0 
+then OtherState else 'notordered' end as OtherState,
+null as Hours, case when ElectricalSubtrade is not null then ElectricalSubtrade else 'Electrical: Unspecified' end  + ',
+' + 
+case when SidingSubtrade is not null then SidingSubtrade else 'Siding: Unspecified' end  + ',
+' + 
+case when InsulationSubtrade is not null then InsulationSubtrade else 'Insulation: Unspecified' end  + ',
+' + 
+case when OtherSubtrade is not null then OtherSubtrade else 'Other: Unspecified' end as Subtrades, Windows, Doors, Other, null as hours, 
+HomePhoneNumber, CellPhone, WorkPhoneNumber, CrewNames, SeniorInstaller, 
+case when ElectricalSubtrade is null and SidingSubtrade is null and InsulationSubtrade is null and OtherSubtrade is null 
+then 0 else 1 end as ShowSubtrades,
+EstInstallerCnt, StreetAddress, ScheduledDate, case when ScheduledDate is null then PlannedInstallWeek else null end as PlannedInstallWeek, PaintedProduct, Branch 
+from (
+SELECT   i.Branch_Display as Branch, i.PaintedProduct,  i.SalesAmmount/detailrecordCount as SalesAmmount,DetailRecordId ,ParentRecordId,detailrecordCount,saturday, sunday, jobtype,ActionItemId as id,i.streetAddress, i.EstInstallerCnt, i.WorkOrderNumber, i.LastName, i.City, i.CurrentStateName,PlannedInstallWeek,
+                          case when (SELECT     count(ManufacturingStatus)
+                            FROM          #Windows AS ms
+                            WHERE      (ParentRecordId = i.RecordId)) > 1 then 'Undetermined' else (SELECT     ManufacturingStatus
+                            FROM          #Windows AS ms
+                            WHERE      (ParentRecordId = i.RecordId)) end AS WindowState,
+                          case when (SELECT    count(ManufacturingStatus)
+                            FROM          #Doors AS ms
+                            WHERE      (ParentRecordId = i.RecordId)) > 1 then 'Undetermined' else (SELECT    ManufacturingStatus
+                            FROM          #Doors AS ms
+                            WHERE      (ParentRecordId = i.RecordId)) end  AS DoorState,
+                          case when (SELECT     count(ManufacturingStatus)
+                            FROM          #Other AS ms
+                            WHERE      (ParentRecordId = i.RecordId)) > 1 then 'Undetermined' else (SELECT     ManufacturingStatus
+                            FROM          #Other AS ms
+                            WHERE      (ParentRecordId = i.RecordId)) end AS OtherState, d.ScheduledDate, 
+                          (SELECT     round(SUM(Number_1) /detailrecordCount,0) AS Number
+                            FROM          #Windows
+                            WHERE      (ParentRecordId = i.RecordId)
+                            GROUP BY Type_1) AS Windows,
+                          (SELECT     round(SUM(Number_1)/detailrecordCount,0)  AS Number
+                            FROM          #Doors AS HomeInstallations_TypeofWork_2
+                            WHERE      (ParentRecordId = i.RecordId)
+                            GROUP BY Type_1) AS Doors,
+                          (SELECT      round(SUM(Number_1)/detailrecordCount,0) AS Number
+                            FROM          #Other AS HomeInstallations_TypeofWork_1
+                            WHERE      (ParentRecordId = i.RecordId)
+                            GROUP BY Type_1) AS Other, 
+case when (select count(SubTrade)from #Subtrade sr
+where SubTrade = 'Electrical' and sr.ParentRecordId = i.RecordId) > 1 then 'Undetermined' else (select top 1 SubTrade + ': ' + Status as SubTrade from #Subtrade sr
+where SubTrade = 'Electrical' and sr.ParentRecordId = i.RecordId) end  as ElectricalSubtrade, 
+case when (select count(SubTrade)from #Subtrade sr
+where SubTrade = 'Siding' and sr.ParentRecordId = i.RecordId) > 1 then 'Undetermined' else (select top 1 SubTrade + ': ' + Status as SubTrade from #Subtrade sr
+where SubTrade = 'Siding' and sr.ParentRecordId = i.RecordId) end as SidingSubtrade, 
+case when (select count(SubTrade)from #Subtrade sr
+where SubTrade = 'Insulation' and sr.ParentRecordId = i.RecordId) > 1 then 'Undetermined' else (select top 1 SubTrade + ': ' + Status as SubTrade from #Subtrade sr
+where SubTrade = 'Insulation' and sr.ParentRecordId = i.RecordId) end as InsulationSubtrade, 
+case when (select count(SubTrade) from #Subtrade sr
+where SubTrade = 'Other' and sr.ParentRecordId = i.RecordId) > 1 then 'Undetermined' else (select SubTrade + ': ' + Status as SubTrade from #Subtrade sr
+where SubTrade = 'Other' and sr.ParentRecordId = i.RecordId) end as OtherSubtrade, HomePhoneNumber, CellPhone, WorkPhoneNumber, 
+dbo.fGetCrewNames(i.RecordId) as CrewNames, (SELECT     e.InstallerName
+FROM         Employees AS e INNER JOIN
+                      Users AS u ON e.Account_1 = u.Account INNER JOIN
+                      HomeInstallations_SeniorInstaller AS si ON u.UserId = si.userId
+where ParentRecordId = i.RecordId) as SeniorInstaller, i.HVAC
+FROM         #installs AS i LEFT OUTER JOIN
+                      #dates AS d ON i.RecordId = d.ParentRecordId
+where jobtype<>'Multi Family'
+) x order by ScheduledDate, Branch
+
+drop table #dates
+drop table #installs
+drop table #Windows
+drop table #Doors
+drop table #Other
+drop table #Subtrade", "'" + String.Join("','", branchList) + "'", "'");
+            return SQL;
+
         }
-        //private string GetInstallationSQL()
-        //{
-        //    string SQL = string.Format(@"select * into #dates from HomeInstallations_InstallationDates d
-        //where d.ScheduledDate >= '{0} 12:00' and d.ScheduledDate <= '{0} 11:59'
 
-        //select i.* into #installs from HomeInstallations i 
-        //where CurrentStateName in ('Pending Install Completion', 'VP Installation Approval', 'Installation Manager Review', 'ReMeasure Scheduled', 'Work Scheduled', 'Unreviewed Work Scheduled', 'Install in Progress', 'Install Completed', 'Ready for Invoicing', 'Job Completed', 
-        //         'Installation Confirmed', 'Installation inprogress rejected', 'Rejected Remeasure', 'Rejected Scheduled Work', 
-        //        'Rejected Installation', 'Job Costing', 'Unreviewed Job Costing', 'Rejected Job Costing', 'VP Installation Approval', 'Rejected Manager Review', 
-        //'Pending Install Completion') and Branch in ('{1}') and i.Recordid in (select ParentRecordId from #dates group by ParentRecordId)
-
-        //insert into #installs select i.* from HomeInstallations i
-        //where CurrentStateName in ('Unreviewed Buffered Work', 'Buffered Work') and PlannedInstallWeek = {2} and RecordId not in (select ParentRecordId from #dates d group by ParentRecordId) and Branch in ('{1}')
-
-        //select t.* into #Windows from HomeInstallations_TypeofWork t inner join #installs i on i.RecordId = t.ParentRecordId where t.Type_1 = 'Windows'
-        //select t.* into #Doors from HomeInstallations_TypeofWork t inner join #installs i on i.RecordId = t.ParentRecordId where t.Type_1 = 'Doors'
-        //select t.* into #Other from HomeInstallations_TypeofWork t inner join #installs i on i.RecordId = t.ParentRecordId where t.Type_1 = 'Other'
-        //select s.* into #Subtrade from HomeInstallations_SubtradeReqired s inner join #installs i on i.RecordId = s.ParentRecordId 
-
-        //select WorkOrderNumber, LastName, City, CurrentStateName, case when windows > 0 then WindowState else 'notordered' end as WindowState,
-        //                    case when doors > 0 then DoorState else 'notordered' end as DoorState, case when other > 0 then OtherState else 'notordered' end as OtherState,
-        //null as Hours, case when ElectricalSubtrade is not null then ElectricalSubtrade else 'Electrical: Unspecified' end  + ',
-        //' + 
-        //case when SidingSubtrade is not null then SidingSubtrade else 'Siding: Unspecified' end  + ',
-        //' + 
-        //case when InsulationSubtrade is not null then InsulationSubtrade else 'Insulation: Unspecified' end  + ',
-        //' + 
-        //case when OtherSubtrade is not null then OtherSubtrade else 'Other: Unspecified' end as Subtrades, Windows, Doors, Other, null as hours, 
-        //HomePhoneNumber, CellPhone, WorkPhoneNumber, CrewNames, SeniorInstaller, 
-        //case when ElectricalSubtrade is null and SidingSubtrade is null and InsulationSubtrade is null and OtherSubtrade is null then 0 else 1 end as ShowSubtrades,
-        //EstInstallerCnt, StreetAddress, ScheduledDate, case when ScheduledDate is null then PlannedInstallWeek else null end as PlannedInstallWeek, PaintedProduct, Branch 
-        //from (
-        //SELECT  i.Branch_Display as Branch, i.PaintedProduct, i.streetAddress, i.EstInstallerCnt, i.WorkOrderNumber, i.LastName, i.City, i.CurrentStateName,PlannedInstallWeek,
-        //                          case when (SELECT     count(ManufacturingStatus)
-        //                            FROM          #Windows AS ms
-        //                            WHERE      (ParentRecordId = i.RecordId)) > 1 then 'Undetermined' else (SELECT     ManufacturingStatus
-        //                            FROM          #Windows AS ms
-        //                            WHERE      (ParentRecordId = i.RecordId)) end AS WindowState,
-        //                          case when (SELECT    count(ManufacturingStatus)
-        //                            FROM          #Doors AS ms
-        //                            WHERE      (ParentRecordId = i.RecordId)) > 1 then 'Undetermined' else (SELECT    ManufacturingStatus
-        //                            FROM          #Doors AS ms
-        //                            WHERE      (ParentRecordId = i.RecordId)) end  AS DoorState,
-        //                          case when (SELECT     count(ManufacturingStatus)
-        //                            FROM          #Other AS ms
-        //                            WHERE      (ParentRecordId = i.RecordId)) > 1 then 'Undetermined' else (SELECT     ManufacturingStatus
-        //                            FROM          #Other AS ms
-        //                            WHERE      (ParentRecordId = i.RecordId)) end AS OtherState, d.ScheduledDate, 
-        //                          (SELECT     SUM(Number_1) AS Number
-        //                            FROM          #Windows
-        //                            WHERE      (ParentRecordId = i.RecordId)
-        //                            GROUP BY Type_1) AS Windows,
-        //                          (SELECT     SUM(Number_1) AS Number
-        //                            FROM          #Doors AS HomeInstallations_TypeofWork_2
-        //                            WHERE      (ParentRecordId = i.RecordId)
-        //                            GROUP BY Type_1) AS Doors,
-        //                          (SELECT     SUM(Number_1) AS Number
-        //                            FROM          #Other AS HomeInstallations_TypeofWork_1
-        //                            WHERE      (ParentRecordId = i.RecordId)
-        //                            GROUP BY Type_1) AS Other, 
-        //case when (select count(SubTrade)from #Subtrade sr
-        //where SubTrade = 'Electrical' and sr.ParentRecordId = i.RecordId) > 1 then 'Undetermined' else (select top 1 SubTrade + ': ' + Status as SubTrade from #Subtrade sr
-        //where SubTrade = 'Electrical' and sr.ParentRecordId = i.RecordId) end  as ElectricalSubtrade, 
-        //case when (select count(SubTrade)from #Subtrade sr
-        //where SubTrade = 'Siding' and sr.ParentRecordId = i.RecordId) > 1 then 'Undetermined' else (select top 1 SubTrade + ': ' + Status as SubTrade from #Subtrade sr
-        //where SubTrade = 'Siding' and sr.ParentRecordId = i.RecordId) end as SidingSubtrade, 
-        //case when (select count(SubTrade)from #Subtrade sr
-        //where SubTrade = 'Insulation' and sr.ParentRecordId = i.RecordId) > 1 then 'Undetermined' else (select top 1 SubTrade + ': ' + Status as SubTrade from #Subtrade sr
-        //where SubTrade = 'Insulation' and sr.ParentRecordId = i.RecordId) end as InsulationSubtrade, 
-        //case when (select count(SubTrade) from #Subtrade sr
-        //where SubTrade = 'Other' and sr.ParentRecordId = i.RecordId) > 1 then 'Undetermined' else (select SubTrade + ': ' + Status as SubTrade from #Subtrade sr
-        //where SubTrade = 'Other' and sr.ParentRecordId = i.RecordId) end as OtherSubtrade, HomePhoneNumber, CellPhone, WorkPhoneNumber, 
-        //dbo.fGetCrewNames(i.RecordId) as CrewNames, (SELECT     e.InstallerName
-        //FROM         Employees AS e INNER JOIN
-        //                      Users AS u ON e.Account_1 = u.Account INNER JOIN
-        //                      HomeInstallations_SeniorInstaller AS si ON u.UserId = si.userId
-        //where ParentRecordId = i.RecordId) as SeniorInstaller, i.HVAC
-        //FROM         #installs AS i LEFT OUTER JOIN
-        //                      #dates AS d ON i.RecordId = d.ParentRecordId
-        //) x order by ScheduledDate, Branch
-
-        //drop table #dates
-        //drop table #installs
-        //drop table #Windows
-        //drop table #Doors
-        //drop table #Other
-        //drop table #Subtrade", this.startDate.ToShortDateString(), this.endDate.ToShortDateString(), "'" + String.Join("','", branchList) + "'", "'" + String.Join("','", stateList) + "'");
-
-
-        //    return SQL;
-
-        //        }
-
-                public List<InstallationEvent> GetInstallationEventData(ArrayList branch)
-                {
-                    throw new NotImplementedException();
-                }
+        public List<InstallationEvent> GetInstallationEventData(ArrayList branch)
+        {
+            throw new NotImplementedException();
+        }
 
         List<Generics.Utils.CalendarEvent> IGetter.GetData(Generics.Utils.ContentType type)
         {

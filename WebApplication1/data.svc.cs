@@ -165,13 +165,13 @@ namespace CalendarSystem
 
         List<InstallationEvent> Idata.GetInstallationBufferJobs(string branch)
         {
-            Lift.LiftManager.Logger.Write(this.GetType().Name, "Entering GetBufferJobs({0}')", branch ?? "NULL");
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Entering InstallationBufferJob");
             List<InstallationEvent> retValue = null;
             try
             {
                 Utils.Data.IGetter getter = new Utils.Data.BufferedDataGetter(new List<string>(branch.Split(',')));
-                retValue = getter.GetData();
-                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetBufferJobs() = {0}", retValue.Count.ToString());
+                retValue = getter.GetInstallationBufferData();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetInstallationBufferJobs() = {0}", retValue.Count.ToString());
             }
             catch (Exception ex)
             {

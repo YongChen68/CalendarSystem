@@ -521,6 +521,11 @@ where p.currentstatename in ({0}) and p.Branch in ({1}) and p.JobType in ({2}) a
         {
             throw new NotImplementedException();
         }
+
+        List<InstallationEvent> IGetter.GetInstallationBufferData()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 
