@@ -168,7 +168,7 @@ namespace Generics.Utils.Data
 
         [DataMember]
         [Lift.Database.DbIgnore]
-        public string title1 { get { return WorkOrderNumber; } set { } }
+        public string title { get { return WorkOrderNumber; } set { } }
 
         [DataMember]
         public string LastName

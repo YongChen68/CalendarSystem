@@ -71,7 +71,7 @@ namespace CalendarSystem
                     myEvent.HolidayName = holiday.HolidayName;
                     myEvent.LastName ="";
                     myEvent.City = "";
-                    myEvent.title1 = holiday.HolidayName;
+                    myEvent.title = holiday.HolidayName;
                     myEvent.CurrentStateName = "Rejected Scheduled Work";
                     retValue.Add(myEvent);
                 }

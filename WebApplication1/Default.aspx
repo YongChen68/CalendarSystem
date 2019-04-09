@@ -137,7 +137,7 @@
                 <h2>Select Type</h2>
                 <p>
                     <input id="typeWindow" class="typeButton" type="submit" name="type" value="Windows" onclick="ChangeType('Windows'); return false;"><br />
-                    <input id="typeDoor" class="typeButton" type="submit" name="type" value="Doors" onclick="ChangeType('Doors'); return false;"><br />
+                  
                     <input id="typePaint" class="typeButton" type="submit" name="type" value="Paint" onclick="ChangeType('Paint'); return false;"><br />
                     <input id="typeShipping" class="typeButton" type="submit" name="type" value="Shipping" onclick="ChangeType('Shipping'); return false;"><br />
                     <input id="typeCustomer" class="typeButton" type="submit" name="type" value="Customer" onclick="ChangeType('Customer'); return false;"><br />

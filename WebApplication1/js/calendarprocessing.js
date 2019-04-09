@@ -78,13 +78,13 @@ function getBlankTotal() {
 
         var retValue = [];
         if (end < start) { var tmp = start; start = end; end = tmp; }
-        else if (start.Equals(end)) { start.setDate(start.getUTCDate() - 1); }
+        else if (start.Equals(end)) { start.setDate(start.getUTCDate()-1  ); }
         var numDays = (end - start) / 1000 / 60 / 60 / 24;
         for (var i = 0; i < numDays; i++) {
             if (debug) console.log("getBlankTotal", "adding date", start);
             var newDate = new Date(start);
             retValue.push(GetBlankDayData(newDate));
-            start = new Date(Date.UTC(newDate.getUTCFullYear(), newDate.getUTCMonth(), newDate.getUTCDate() + 1));
+            start = new Date(Date.UTC(newDate.getUTCFullYear(), newDate.getUTCMonth(), newDate.getUTCDate()+1 ));
         }
         return retValue;
     } else
@@ -234,7 +234,7 @@ function LoadInstallationBufferedJobs() {
 function AddInstallationBufferEvent(key, val) {
     var ret = "<img src=\"images/home.png\" title=\"" + ToInstallationEventString(val) + "\">" +
         "<img src=\"images/installer" + val.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
-        val.EstInstallerCnt +
+        val.EstInstallerCnt + "\">" +
         (val.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + val.Windows + "Status: " + val.WindowState + "\" src=\"images/window.PNG\" />" : "") +
         (val.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + val.Doors + "Status: " + val.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
         ("WO: " + val.WorkOrderNumber) + "&nbsp;" +
@@ -427,7 +427,7 @@ $(document).ready(function () {
                 $('.fc-applyFilters-button').hide();
                 $('.fc-changeJobType-button').hide();
                 $('.fc-changeShippingType-button').hide();
-                $('#calendar').fullCalendar('changeView', 'month');
+            //    $('#calendar').fullCalendar('changeView', 'month');
               //  document.getElementById('external-InstallationEvents').style.display = "block";
               //  document.getElementById('external-events').style.display = "none";
                 LoadInstallationBufferedJobs();
@@ -460,7 +460,7 @@ $(document).ready(function () {
                 $('.fc-applyFilters-button').show();
                 $('.fc-changeJobType-button').show();
                 $('.fc-changeShippingType-button').show();
-                $('#calendar').fullCalendar('changeView', 'month');
+              //  $('#calendar').fullCalendar('changeView', 'month');
              //   document.getElementById('external-InstallationEvents').style.display = "none";
               //  document.getElementById('external-events').style.display = "block";
                 $.ajax({

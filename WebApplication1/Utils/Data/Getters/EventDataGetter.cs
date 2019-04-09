@@ -304,7 +304,7 @@ drop table #Subtrade", this.startDate.ToShortDateString(),this.endDate.ToShortDa
                 newEvent.StreetAddress= eventx.StreetAddress;
                 newEvent.Subtrades = eventx.Subtrades;
 
-                newEvent.title1 = eventx.title1;
+                newEvent.title = eventx.title;
                 newEvent.Windows = eventx.Windows;
                 newEvent.WindowState = eventx.WindowState;
                 newEvent.WorkOrderNumber = eventx.WorkOrderNumber;
