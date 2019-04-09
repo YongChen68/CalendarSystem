@@ -215,7 +215,7 @@
                                 <input type="checkbox" name="InstallationState" value="Unreviewed Work Scheduled" checked>Unreviewed Work Scheduled<br />
                                 <input type="checkbox" name="InstallationState" value="VP Installation Approval" checked>VP Installation Approval<br />
 
-                                <input type="checkbox" name="Work Scheduled" value="Work Scheduled" checked>Work Scheduled
+                                <input type="checkbox" name="InstallationState" value="Work Scheduled" checked>Work Scheduled
                                 
 
                             </td>

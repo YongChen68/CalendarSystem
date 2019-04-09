@@ -148,9 +148,9 @@ on d.ParentRecordId= c.ParentRecordId
 group by d.ScheduledDate,d.ParentRecordId, d.detailrecordid
 
 select i.* into #installs from HomeInstallations i 
-where CurrentStateName in ('Unreviewed Work Scheduled') and Branch in ({0})  and i.Recordid in (select ParentRecordId from #dates group by ParentRecordId)
+where CurrentStateName in ('Unreviewed Work Scheduled','ReMeasure Scheduled') and Branch in ({0})  and i.Recordid in (select ParentRecordId from #dates group by ParentRecordId)
 insert into #installs select i.* from HomeInstallations i
-where CurrentStateName in ('Unreviewed Work Scheduled') and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or 
+where CurrentStateName in ('Unreviewed Work Scheduled','ReMeasure Scheduled') and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or 
 (PlannedInstallWeek >= 1 and PlannedInstallWeek <= 7)) and RecordId not in (select ParentRecordId from #dates d group by ParentRecordId) and 
 Branch in ({0})
 

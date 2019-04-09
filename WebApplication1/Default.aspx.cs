@@ -23,7 +23,9 @@ namespace CalendarSystem
 
         private static List<Branch> GetBranchList()
         {
-            return Lift.LiftManager.DbHelper.ReadObjects<Branch>(@"select BranchName as Name, ActionItemId as Id from Branch b with(nolock,noexpand) Where BranchName NOT IN('CEL Branch', 'CRL Branch', 'Unknown', 'Langley HVAC') order by b.BranchName");
+            return Lift.LiftManager.DbHelper.ReadObjects<Branch>
+            //    (@"select BranchName as Name, ActionItemId as Id from Branch b with(nolock,noexpand) Where BranchName NOT IN('CEL Branch', 'CRL Branch', 'Unknown', 'Langley HVAC') order by b.BranchName");
+            (@"select BranchName as Name, ActionItemId as Id from Branch b with(nolock,noexpand) Where Showincalendar = 'Yes' order by b.BranchName");
         }
 
         private string PrepareBranchHTMLfromList(List<Branch> branchList)

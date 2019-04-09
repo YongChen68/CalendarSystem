@@ -371,7 +371,10 @@ $(document).ready(function () {
                     for (i = 0; i < document.getElementsByName('InstallationState').length; i++) {
                         document.getElementsByName('InstallationState')[i].checked = false;
                     }
+                    document.getElementsByName('InstallationState')[0].checked = true;
+                    document.getElementsByName('InstallationState')[3].checked = true;
                     document.getElementsByName('InstallationState')[7].checked = true;
+                   // document.getElementsByName('InstallationState')[18].checked = false;
                     
                    // totals = getBlankTotal();
                     $('#calendar').fullCalendar('refetchEvents');
@@ -611,7 +614,7 @@ $(document).ready(function () {
                
                 var ret = "<img src=\"images/home.png\" title=\"" + ToInstallationEventString(event) + "\">" +
                     "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
-                    event.EstInstallerCnt +
+                    event.EstInstallerCnt+ "\">" +
                     (event.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + event.Windows + "Status: " + event.WindowState + "\" src=\"images/window.PNG\" />" : "") +
                     (event.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + event.Doors + "Status: " + event.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
                     ("WO: " + event.WorkOrderNumber) + "&nbsp;" +
