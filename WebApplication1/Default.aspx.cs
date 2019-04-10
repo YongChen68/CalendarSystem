@@ -49,7 +49,9 @@ namespace CalendarSystem
         [System.Web.Services.WebMethod(true)]
         public static bool UpdateInstallationEventTime(string type, Generics.Utils.ImproperInstallationEvent eventData)
         {
-            eventData.end = Convert.ToString(Convert.ToInt16(eventData.end) - 1);
+           // eventData.end =Convert.ToDateTime(eventData.end).AddDays(-1).ToShortDateString();
+            eventData.end = Convert.ToDateTime(eventData.end).AddDays(-1).ToString("yyyy-MM-ddT00:00:00.000Z");
+
             RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
             return runner.ProcessUpdate(Utils.ContentTypeParser.GetType(type), eventData);
         }
