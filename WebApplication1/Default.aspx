@@ -106,7 +106,7 @@
                         <Div ><b>Cell Phone: </b><span id="cellPhone"></span></Div><br>
                         <Div ><b>Branch: </b><span id="branch"></span></Div><br>
                         <Div ><b>Address: </b><span id="Address"></span></Div><br>
-                        <Div ><b>SalesAmmount: </b><span id="SalesAmmount"></span></Div><br>
+                        <Div ><b>SalesAmount: </b><span id="SalesAmmount"></span></Div><br>
                         <Div ><b>Senior Installer: </b><span id="SeniorInstaller"></span></Div><br>
                         <Div ><b>CrewNames </b><span id="CrewNames"></span></Div><br>
 
