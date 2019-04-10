@@ -224,6 +224,10 @@
                     </table>
                 </div>
                 <p>
+					<input id="SelectAllState" class="typeButton"  type="submit" value="SelectAll" onclick="SelectAll('InstallationState'); return false;" />
+
+                </p>
+                <p>
                     <input id="ApplyInstallationStateChange" class="typeButton" type="submit" value="Apply" onclick="ApplyFilters('InstallationState'); return false;" />
                 </p>
             </div>

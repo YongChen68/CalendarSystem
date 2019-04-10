@@ -916,6 +916,16 @@ function ApplyFilters(target) {
     $('#calendar').fullCalendar('refetchEvents');
     $('#calendar').fullCalendar('rerenderEvents');
 }
+
+function SelectAll(target) {
+    console.log("SelectAll", "target: ", target);
+    for (i = 0; i < document.getElementsByName('InstallationState').length; i++) {
+            document.getElementsByName('InstallationState')[i].checked = true;
+        }
+    $('#' + target + 'Filter').addClass('hidden');
+    $('#calendar').fullCalendar('refetchEvents');
+    $('#calendar').fullCalendar('rerenderEvents');
+}
 function ChangeType(type) {
     displayType = type;
     $('.fc-changeType-button').html(displayType);
