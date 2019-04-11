@@ -49,8 +49,17 @@ namespace CalendarSystem
         [System.Web.Services.WebMethod(true)]
         public static bool UpdateInstallationEventTime(string type, Generics.Utils.ImproperInstallationEvent eventData)
         {
-           // eventData.end =Convert.ToDateTime(eventData.end).AddDays(-1).ToShortDateString();
-            eventData.end = Convert.ToDateTime(eventData.end).AddDays(-1).ToString("yyyy-MM-ddT00:00:00.000Z");
+            // eventData.end =Convert.ToDateTime(eventData.end).AddDays(-1).ToShortDateString();
+            //eventData.end = Convert.ToDateTime(eventData.end).AddDays(0).ToString("yyyy-MM-ddT00:00:00.000Z");
+            if (eventData.end== eventData.start)
+            {
+                eventData.end = Convert.ToDateTime(eventData.end).AddDays(2).ToString("yyyy-MM-ddT00:00:00.000Z");
+            }
+            else
+            {
+                eventData.end = Convert.ToDateTime(eventData.end).AddDays(1).ToString("yyyy-MM-ddT00:00:00.000Z");
+            }
+            
 
             RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
             return runner.ProcessUpdate(Utils.ContentTypeParser.GetType(type), eventData);
@@ -75,7 +84,7 @@ namespace CalendarSystem
         [System.Web.Services.WebMethod(true)]
         public static int AddEvent(Generics.Utils.ImproperCalendarEvent eventData)
         {
-            return -1;
+             return -1;
         }
     }
 }

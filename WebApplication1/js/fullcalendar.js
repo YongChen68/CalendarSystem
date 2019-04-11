@@ -5097,7 +5097,16 @@
 
             range = this.view.computeDayRange(range); // make whole-day range, considering nextDayThreshold
             first = this.dateToCellOffset(range.start);
-            last = this.dateToCellOffset(range.end.subtract(1, 'days')); // offset of inclusive end date
+           // last = this.dateToCellOffset(range.end.subtract(1, 'days')); // offset of inclusive end date
+
+
+            if (displayType == "Installation") {
+                last = this.dateToCellOffset(range.end.subtract(0, 'days')); // offset of inclusive end date
+            }
+            else {
+                last = this.dateToCellOffset(range.end.subtract(1, 'days')); // offset of inclusive end date
+            }
+            
 
             for (row = 0; row < rowCnt; row++) {
                 rowFirst = row * colCnt;

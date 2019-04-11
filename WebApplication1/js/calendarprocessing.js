@@ -536,8 +536,6 @@ $(document).ready(function () {
                     $("#SeniorInstaller").html(event.SeniorInstaller != null && event.SeniorInstaller.trim().length > 0 ? event.SeniorInstaller : "Unspecified");
                     $("#CrewNames").html(event.CrewNames != null && event.CrewNames.trim().length > 0 ? event.CrewNames : "Un assigned");
 
-                  
-                  
                     eventid = event.id;
                   
                     if (event.Saturday == "Yes") {
