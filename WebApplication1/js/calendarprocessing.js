@@ -615,9 +615,10 @@ $(document).ready(function () {
                     event.EstInstallerCnt+ "\">" +
                     (event.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + event.Windows + "Status: " + event.WindowState + "\" src=\"images/window.PNG\" />" : "") +
                     (event.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + event.Doors + "Status: " + event.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
-                    ("WO: " + event.WorkOrderNumber) + "&nbsp;" +
+                  //  ("WO: " + event.WorkOrderNumber) + "&nbsp;" +
                     ("Name: " + event.LastName.trim().Length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
-                    "&nbsp;" + (event.City.trim().Length > 5 ? event.City.trim().toLowerCase().Substring(0, 5) : event.City.trim().toLowerCase());
+                    "&nbsp;" + (event.City.trim().Length > 5 ? event.City.trim().toLowerCase().Substring(0, 5) : event.City.trim().toLowerCase()) + "&nbsp;" +
+                    ("WO: ") + "&nbsp;" ;
 
                 $(element).find(dom).prepend(ret);
               
