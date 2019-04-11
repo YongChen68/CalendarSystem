@@ -556,7 +556,7 @@ $(document).ready(function () {
 
                 }
                 else {
-                    $("#eventContent").dialog({ modal: true, title: event.title, width: 800 });
+                  //  $("#eventContent").dialog({ modal: true, title: event.title, width: 800 });
                   
                 }
               
