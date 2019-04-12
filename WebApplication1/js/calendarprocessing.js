@@ -73,6 +73,8 @@ function getBlankTotal() {
     var view = $('#calendar').fullCalendar('getView');
     if (view.start !== undefined) {
         var start = GetDatefromMoment(view.start);
+        var firstDay = new Date(start);
+        
         var end = GetDatefromMoment(view.end);
         if (debug) console.log("getBlankTotal", "view.start:", view.start.format(), "start:", start, "view.end:", view.end.format(), "end:", end);
 
@@ -92,9 +94,15 @@ function getBlankTotal() {
 }
 
 function GetBlankDayData(day) {
-    var dayName = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"][day.getUTCDay()];
+   // var dayName = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"][day.getUTCDay()+6];
+    var dayName = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"][day.getUTCDay() ];
+    //var dayName = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
+  //  var dayName = ["sat", "sun", "mon", "tue", "wed", "thu", "fri"][day.getUTCDay()];
     if (displayType == "Installation") {
-        return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount: 0,WOCount:0 };
+        //return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount: 0,WOCount:0 };
+        var installationDay = new Date(Date.UTC(day.getUTCFullYear(), day.getUTCMonth(), day.getUTCDate()+1 ));
+     //  return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount: 0, WOCount: 0 };
+        return { day: dayName, date: installationDay, doors: 0, windows: 0, SalesAmmount: 0, WOCount: 0 };
     }
     else {
         return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, boxes: 0, glass: 0, value: 0, min: 0, max: 0, Available_Time: 0, rush: 0, float: 0, TotalBoxQty: 0, TotalGlassQty: 0, TotalPrice: 0, TotalLBRMin: 0, F6CA: 0, F27DS: 0, F27TS: 0, F27TT: 0, F29CA: 0, F29CM: 0, F52PD: 0, F68CA: 0, F68SL: 0, F68VS: 0, Transom: 0, Sidelite: 0, SingleDoor: 0, DoubleDoor: 0, Simple: 0, Complex: 0, Over_Size: 0, Arches: 0, Rakes: 0, Customs: 0, };
@@ -313,7 +321,7 @@ $(document).ready(function () {
 
     $('#calendar').fullCalendar({
         aspectRatio: 1.7,
-
+       // locale: 'es',
       
 
         customButtons: {
@@ -450,6 +458,7 @@ $(document).ready(function () {
 
                         });
                         events = removeDuplicates(eventWODict, "WorkOrderNumber");
+                      //  eventWODict = removeDuplicates(eventWODict, "WorkOrderNumber");
                         callback(events);
                     }, error: function (error) {
                         console.log('Error', error);
@@ -761,6 +770,8 @@ $(document).ready(function () {
                 for (var i = 0; i < totals.length; i++) {
                     SetDayValue(i, totals[i]);
                 }
+
+              //  eventWODict = [];
             }
         },
         viewRender: function (view, element) {
@@ -983,3 +994,5 @@ function removeDuplicates(originalArray, prop) {
     }
     return newArray;
 }
+
+
