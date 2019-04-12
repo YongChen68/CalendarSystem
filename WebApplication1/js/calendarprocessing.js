@@ -945,6 +945,7 @@ function ChangeType(type) {
 
     LoadBufferedJobs();
     $('#typeChange').addClass('hidden');
+    $('#calendar').fullCalendar('changeView', 'month');
 }
 
 
