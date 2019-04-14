@@ -167,13 +167,14 @@ namespace CalendarSystem.Utils.Data
 into #dates from HomeInstallations_InstallationDates d
 join HomeInstallations_InstallationDates c
 on d.ParentRecordId= c.ParentRecordId
-where d.ScheduledDate >= '{0} 12:00' and d.ScheduledDate <= '{1} 11:59'
+where d.ScheduledDate >= '{0} ' and d.ScheduledDate <= '{1} '
 group by d.ScheduledDate,d.ParentRecordId, d.detailrecordid
 
 select i.* into #installs from HomeInstallations i 
 where CurrentStateName in ({3}) and Branch in ({2})  and i.Recordid in (select ParentRecordId from #dates group by ParentRecordId)
 insert into #installs select i.* from HomeInstallations i
-where CurrentStateName in ('Unreviewed Buffered Work', 'Buffered Work') and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or 
+where CurrentStateName not in ('Unreviewed Buffered Work', 'Buffered Work') 
+and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or 
 (PlannedInstallWeek >= 1 and PlannedInstallWeek <= 7)) and RecordId not in (select ParentRecordId from #dates d group by ParentRecordId) and 
 Branch in ({2})
 
@@ -243,6 +244,7 @@ where ParentRecordId = i.RecordId) as SeniorInstaller, i.HVAC
 FROM         #installs AS i LEFT OUTER JOIN
                       #dates AS d ON i.RecordId = d.ParentRecordId
 where jobtype<>'Multi Family'
+and ScheduledDate >= '{0} ' and ScheduledDate <= '{1} '
 ) x order by ScheduledDate, Branch
 
 drop table #dates
