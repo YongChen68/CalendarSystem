@@ -22,6 +22,7 @@ namespace Generics.Utils
         public bool allDay { get; set; }
 
 
+
         [DataMember]
         [Lift.Database.DbIgnore]
         public string start { get { return FormatDateTime(HolidayDate); } set { } }

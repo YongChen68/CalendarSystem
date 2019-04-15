@@ -183,8 +183,10 @@ select t.* into #Doors from HomeInstallations_TypeofWork t inner join #installs 
 select t.* into #Other from HomeInstallations_TypeofWork t inner join #installs i on i.RecordId = t.ParentRecordId where t.Type_1 = 'Other'
 select s.* into #Subtrade from HomeInstallations_SubtradeReqired s inner join #installs i on i.RecordId = s.ParentRecordId 
 
-select WorkOrderNumber, LastName, City, SalesAmmount,DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, jobtype,CurrentStateName,case when windows > 0 then WindowState else 'notordered' end as WindowState,
-                    case when doors > 0 then DoorState else 'notordered' end as DoorState, case when other > 0 then OtherState else 'notordered' end as OtherState,
+select WorkOrderNumber, LastName, City, SalesAmmount,TotalSalesAmount,DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, 
+jobtype,CurrentStateName,case when windows > 0 then WindowState else 'notordered' end as WindowState,
+                    case when doors > 0 then DoorState else 'notordered' end as DoorState, case when other > 0 then 
+OtherState else 'notordered' end as OtherState,
 null as Hours, case when ElectricalSubtrade is not null then ElectricalSubtrade else 'Electrical: Unspecified' end  + ',
 ' + 
 case when SidingSubtrade is not null then SidingSubtrade else 'Siding: Unspecified' end  + ',
@@ -193,10 +195,14 @@ case when InsulationSubtrade is not null then InsulationSubtrade else 'Insulatio
 ' + 
 case when OtherSubtrade is not null then OtherSubtrade else 'Other: Unspecified' end as Subtrades, Windows, Doors, Other, null as hours, 
 HomePhoneNumber, CellPhone, WorkPhoneNumber, CrewNames, SeniorInstaller, 
-case when ElectricalSubtrade is null and SidingSubtrade is null and InsulationSubtrade is null and OtherSubtrade is null then 0 else 1 end as ShowSubtrades,
-EstInstallerCnt, StreetAddress, ScheduledDate, case when ScheduledDate is null then PlannedInstallWeek else null end as PlannedInstallWeek, PaintedProduct, Branch 
+case when ElectricalSubtrade is null and SidingSubtrade is null and InsulationSubtrade is null and
+OtherSubtrade is null then 0 else 1 end as ShowSubtrades,
+EstInstallerCnt, StreetAddress, ScheduledDate, case when ScheduledDate is null
+then PlannedInstallWeek else null end as PlannedInstallWeek, PaintedProduct, Branch 
 from (
-SELECT   i.Branch_Display as Branch, i.PaintedProduct,  i.SalesAmmount/detailrecordCount as SalesAmmount,DetailRecordId ,ParentRecordId,detailrecordCount,saturday, sunday, jobtype,ActionItemId as id,i.streetAddress, i.EstInstallerCnt, i.WorkOrderNumber, i.LastName, i.City, i.CurrentStateName,PlannedInstallWeek,
+SELECT   i.Branch_Display as Branch, i.PaintedProduct,  i.SalesAmmount/detailrecordCount as SalesAmmount,i.SalesAmmount as TotalSalesAmount,DetailRecordId ,
+ParentRecordId,detailrecordCount,saturday, sunday, jobtype,ActionItemId as id,i.streetAddress, i.EstInstallerCnt,
+i.WorkOrderNumber, i.LastName, i.City, i.CurrentStateName,PlannedInstallWeek,
                           case when (SELECT     count(ManufacturingStatus)
                             FROM          #Windows AS ms
                             WHERE      (ParentRecordId = i.RecordId)) > 1 then 'Undetermined' else (SELECT     ManufacturingStatus
@@ -301,6 +307,7 @@ drop table #Subtrade", this.startDate.ToShortDateString(),this.endDate.ToShortDa
                 newEvent.OtherState = eventx.OtherState;
 
                 newEvent.SalesAmmount= eventx.SalesAmmount;
+                newEvent.TotalSalesAmount = eventx.TotalSalesAmount;
                 newEvent.ScheduledDate = eventx.ScheduledDate;
                 newEvent.SeniorInstaller= eventx.SeniorInstaller;
                 newEvent.StreetAddress= eventx.StreetAddress;

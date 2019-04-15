@@ -144,8 +144,9 @@ function ToInstallationEventString(event) {
         'Cell Phone Number:\r\n' +
         event.CellPhone + "\r\n\r\n" +
 
-        'Sales Amount:\r\n' +
-        event.SalesAmmount + "\r\n" +
+        'Sales Amount:\r\n $' +
+      //  event.SalesAmmount + "\r\n" +
+        event.TotalSalesAmount + "\r\n" +
 
         'Address:\r\n' +
         event.StreetAddress + "\r\n" +
@@ -458,7 +459,6 @@ $(document).ready(function () {
 
                         });
                         events = removeDuplicates(eventWODict, "WorkOrderNumber");
-                      //  eventWODict = removeDuplicates(eventWODict, "WorkOrderNumber");
                         callback(events);
                     }, error: function (error) {
                         console.log('Error', error);

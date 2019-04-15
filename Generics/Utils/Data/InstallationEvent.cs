@@ -108,6 +108,10 @@ namespace Generics.Utils.Data
         public decimal SalesAmmount { get; set; }
 
         [DataMember]
+        public decimal TotalSalesAmount { get; set; }
+
+
+        [DataMember]
         public string EstInstallerCnt { get; set; }
 
 
