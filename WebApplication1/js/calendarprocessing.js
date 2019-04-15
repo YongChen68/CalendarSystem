@@ -760,6 +760,7 @@ $(document).ready(function () {
                             totals[i].windows += eventWODict[j]["Windows"];
                             totals[i].doors += eventWODict[j]["Doors"];
                             totals[i].SalesAmmount += eventWODict[j]["SalesAmmount"];
+                            totals[i].TotalAsbestos += eventWODict[j]["TotalAsbestos"];
                             totals[i].WOCount = WOCount + 1;
                             WOCount++;
                         }
@@ -778,6 +779,10 @@ $(document).ready(function () {
             if (debug) console.log("viewRender", "view configuration:", view.title, view.intervalStart._d);
             totals = getBlankTotal();
             ControlHeaderVisibility(GetDisplayItemList(displayType));
+            if (view.type == 'agendaWeek') {
+                $('#calendar').fullCalendar('refetchEvents');
+            }
+            
         }
     });
 
@@ -806,6 +811,9 @@ function SetDayValue(key, dayTotals) {
         SetData('Codel-Doors', dayTotals.day, dayTotals.doors);
         SetData('Windows', dayTotals.day, dayTotals.windows);
         SetData('Work-Orders', dayTotals.day, dayTotals.WOCount);
+        SetData('Asbestos_Jobs', dayTotals.day, dayTotals.TotalAsbestos);
+        
+      //  SetData('Asbestos-Jobs', dayTotals.day, dayTotals.total .WOCount);
        // SetData('Windows', dayTotals.day, 3);
         //  SetData('Work Orders', dayTotals.day, 0);
         //  SetData('Installation Min', dayTotals.day, 0);
