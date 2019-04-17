@@ -5102,11 +5102,19 @@
 
             if (displayType == "Installation") {
                 last = this.dateToCellOffset(range.end.subtract(0, 'days')); // offset of inclusive end date
+
+                //if ((range.end) == (range.start)) {
+    //            if (new Date(moment(range.start).add(1, 'days')).toDateString()) == (new Date(range.end).add(1, 'days')).toDateString())
+                if ((new Date(moment(range.start).add(1, 'days')).toDateString()) == (new Date(moment(range.end).add(0, 'days')).toDateString())) {
+                    last = this.dateToCellOffset(range.end.subtract(1, 'days')); // offset of in
+                }
+                   
+             
             }
             else {
                 last = this.dateToCellOffset(range.end.subtract(1, 'days')); // offset of inclusive end date
             }
-            
+          
 
             for (row = 0; row < rowCnt; row++) {
                 rowFirst = row * colCnt;
@@ -5139,6 +5147,7 @@
                         seg.leftCol = segFirst;
                         seg.rightCol = segLast;
                     }
+                    //seg.rightCol = segFirst;
                     segs.push(seg);
                 }
             }

@@ -113,6 +113,12 @@ namespace Generics.Utils.Data
         [DataMember]
         public int TotalAsbestos { get; set; }
 
+        [DataMember]
+        public int TotalWoodDropOff { get; set; }
+
+        [DataMember]
+        public int TotalHighRisk { get; set; }
+
 
         [DataMember]
         public string EstInstallerCnt { get; set; }

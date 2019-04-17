@@ -159,7 +159,7 @@ select t.* into #Doors from HomeInstallations_TypeofWork t inner join #installs 
 select t.* into #Other from HomeInstallations_TypeofWork t inner join #installs i on i.RecordId = t.ParentRecordId where t.Type_1 = 'Other'
 select s.* into #Subtrade from HomeInstallations_SubtradeReqired s inner join #installs i on i.RecordId = s.ParentRecordId 
 
-select WorkOrderNumber, LastName, City, SalesAmmount,TotalSalesAmount,TotalAsbestos,DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, 
+select WorkOrderNumber, LastName, City, SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, 
 jobtype,CurrentStateName,case when windows > 0 then WindowState else 'notordered' end as WindowState,
                     case when doors > 0 then DoorState else 'notordered' end as DoorState, case when other > 0 
 then OtherState else 'notordered' end as OtherState,
@@ -205,7 +205,13 @@ SELECT   i.Branch_Display as Branch, i.PaintedProduct,  i.SalesAmmount/detailrec
                             GROUP BY Type_1) AS Other, 
 (SELECT count(*) 
           FROM HomeInstallations
+         WHERE WoodDropOff='Yes' and i.RecordId = RecordId) TotalWoodDropOff,
+(SELECT count(*) 
+          FROM HomeInstallations
          WHERE Asbestos='Yes' and i.RecordId = RecordId) TotalAsbestos,
+(SELECT count(*) 
+          FROM HomeInstallations
+         WHERE HighRisk='Yes' and i.RecordId = RecordId) TotalHighRisk,
 case when (select count(SubTrade)from #Subtrade sr
 where SubTrade = 'Electrical' and sr.ParentRecordId = i.RecordId) > 1 then 'Undetermined' else (select top 1 SubTrade + ': ' + Status as SubTrade from #Subtrade sr
 where SubTrade = 'Electrical' and sr.ParentRecordId = i.RecordId) end  as ElectricalSubtrade, 

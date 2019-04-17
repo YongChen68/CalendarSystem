@@ -102,7 +102,7 @@ function GetBlankDayData(day) {
         //return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount: 0,WOCount:0 };
         var installationDay = new Date(Date.UTC(day.getUTCFullYear(), day.getUTCMonth(), day.getUTCDate()+1 ));
      //  return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount: 0, WOCount: 0 };
-        return { day: dayName, date: installationDay, doors: 0, windows: 0, SalesAmmount: 0, TotalAsbestos:0, WOCount: 0 };
+        return { day: dayName, date: installationDay, doors: 0, windows: 0, SalesAmmount: 0, TotalAsbestos: 0, TotalWoodDropOff: 0, TotalHighRisk: 0,  WOCount: 0 };
     }
     else {
         return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, boxes: 0, glass: 0, value: 0, min: 0, max: 0, Available_Time: 0, rush: 0, float: 0, TotalBoxQty: 0, TotalGlassQty: 0, TotalPrice: 0, TotalLBRMin: 0, F6CA: 0, F27DS: 0, F27TS: 0, F27TT: 0, F29CA: 0, F29CM: 0, F52PD: 0, F68CA: 0, F68SL: 0, F68VS: 0, Transom: 0, Sidelite: 0, SingleDoor: 0, DoubleDoor: 0, Simple: 0, Complex: 0, Over_Size: 0, Arches: 0, Rakes: 0, Customs: 0, };
@@ -323,7 +323,7 @@ $(document).ready(function () {
     $('#calendar').fullCalendar({
         aspectRatio: 1.7,
        // locale: 'es',
-      
+       // Duration, default: "00:00:00"
 
         customButtons: {
             changeType: {
@@ -443,6 +443,7 @@ $(document).ready(function () {
               //  document.getElementById('external-InstallationEvents').style.display = "block";
               //  document.getElementById('external-events').style.display = "none";
                 LoadInstallationBufferedJobs();
+                $('.fc-event').remove();
                 $.ajax({
                     url: 'data.svc/GetInstallationEvents',
                     dataType: 'json',
@@ -761,6 +762,8 @@ $(document).ready(function () {
                             totals[i].doors += eventWODict[j]["Doors"];
                             totals[i].SalesAmmount += eventWODict[j]["SalesAmmount"];
                             totals[i].TotalAsbestos += eventWODict[j]["TotalAsbestos"];
+                            totals[i].TotalWoodDropOff += eventWODict[j]["TotalWoodDropOff"];
+                            totals[i].TotalHighRisk += eventWODict[j]["TotalHighRisk"];
                             totals[i].WOCount = WOCount + 1;
                             WOCount++;
                         }
@@ -811,8 +814,8 @@ function SetDayValue(key, dayTotals) {
         SetData('Codel-Doors', dayTotals.day, dayTotals.doors);
         SetData('Patio-Doors', dayTotals.day, 0);
         SetData('Installation-Min', dayTotals.day, 0);
-        SetData('Wood-DropOff-Jobs', dayTotals.day, 0);
-        SetData('HighRisk-Jobs', dayTotals.day, 0);
+        SetData('Wood-DropOff-Jobs', dayTotals.day, dayTotals.TotalWoodDropOff);
+        SetData('HighRisk-Jobs', dayTotals.day, dayTotals.TotalHighRisk);
         SetData('Windows', dayTotals.day, dayTotals.windows);
         SetData('Work-Orders', dayTotals.day, dayTotals.WOCount);
         SetData('Asbestos-Jobs', dayTotals.day, dayTotals.TotalAsbestos);
