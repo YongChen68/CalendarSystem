@@ -550,7 +550,7 @@ $(document).ready(function () {
                     $("#branch").html(event.Branch);
                     $("#Address").html(event.StreetAddress + "\r\n" +"," +
                         event.City + "\r\n\r\n" );
-                    $("#SalesAmmount").html(event.SalesAmmount.formatMoney(2, "$", ",", "."));
+                    $("#SalesAmmount").html(event.TotalSalesAmount.formatMoney(2, "$", ",", "."));
                     $("#SeniorInstaller").html(event.SeniorInstaller != null && event.SeniorInstaller.trim().length > 0 ? event.SeniorInstaller : "Unspecified");
                     $("#CrewNames").html(event.CrewNames != null && event.CrewNames.trim().length > 0 ? event.CrewNames : "Un assigned");
 
