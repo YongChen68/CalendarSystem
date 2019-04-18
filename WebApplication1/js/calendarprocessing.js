@@ -27,6 +27,8 @@ function eventUpdate(event, dayDelta, minuteDelta, allDay, revertFunc) {
     sendUpdateToServer(event);
     $(this).remove();
 }
+
+
 function sendUpdateToServer(event) {
     var eventToUpdate = {
         id: event.id,
@@ -39,7 +41,12 @@ function sendUpdateToServer(event) {
         eventToUpdate.end = eventToUpdate.start;
     }
     else {
-        eventToUpdate.end = event.end;
+        if (event.end._i == event.start._i) {
+            eventToUpdate.end = new Date(event.end - 24 * 60 * 60000);
+        } else {
+            eventToUpdate.end = event.end;
+        }
+        
     }
     var endDate;
     if (!event.allDay) {
@@ -285,7 +292,8 @@ function AddBufferEvent(key, val) {
     if (val.M2000Icon != undefined && val.M2000Icon == 1) // M2000
         img += "<img alt=\"#\" src=\"images/M2000.png\" />&nbsp;";
 
-    var el = $("<div class='fc-event" + (val.JobType == "RES" ? " reservation" : "") + "' id=\"" + val.id + "\" style=\"background-color:" + val.color + "\">" + img + val.title + "</div>").appendTo('#external-events');
+    var el = $("<div class='fc-event" + (val.JobType == "RES" ? " reservation" : "") + "' id=\"" + val.id + "\" style=\"background-color:" + val.color + "\">" + val.title + img +  + "</div>").appendTo('#external-events');
+    
     el.draggable({
         zIndex: 999,
         revert: true,      // will cause the event to go back to its
@@ -587,7 +595,7 @@ $(document).ready(function () {
             }
             var dom = ""
 
-
+            
             if (event.allDay) dom = 'span:first'; else {
                 dom = '.fc-time';
                 $(element).find(dom).empty();
@@ -619,18 +627,22 @@ $(document).ready(function () {
             }
 
             if ((displayType == "Installation") && (event.HolidayName == null)){
-               
+
+                dom = '.fc-title';
+                $(element).find(dom).empty();
+                
+
                 var ret = "<img src=\"images/home.png\" title=\"" + ToInstallationEventString(event) + "\">" +
                     "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
-                    event.EstInstallerCnt+ "\">" +
+                    event.EstInstallerCnt + "\">" +
                     (event.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + event.Windows + "Status: " + event.WindowState + "\" src=\"images/window.PNG\" />" : "") +
                     (event.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + event.Doors + "Status: " + event.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
-                  //  ("WO: " + event.WorkOrderNumber) + "&nbsp;" +
-                    ("Name: " + event.LastName.trim().Length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
-                    "&nbsp;" + (event.City.trim().Length > 5 ? event.City.trim().toLowerCase().Substring(0, 5) : event.City.trim().toLowerCase()) + "&nbsp;" +
-                    ("WO: ") + "&nbsp;" ;
+                    ("WO: " + event.WorkOrderNumber) + "&nbsp;" +
+                    (",Name: " + event.LastName.trim().Length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
+                    "&nbsp;" + (event.City.trim().Length > 5 ? event.City.trim().toLowerCase().Substring(0, 5) : event.City.trim().toLowerCase()) + "&nbsp;";
+                  //  ("WO: ") + "&nbsp;" ;
 
-                $(element).find(dom).prepend(ret);
+                $(element).find(dom).append(ret);
               
             }
 
@@ -778,6 +790,21 @@ $(document).ready(function () {
               //  eventWODict = [];
             }
         },
+
+        //dateToCellOffset: function (date) {
+        //    var offsets = this.dayToCellOffsets;
+        //    var day = date.diff(this.start, 'days');
+
+        //    if (day < 0) {
+        //        return offsets[0] - 1;
+        //    }
+        //    else if (day >= offsets.length) {
+        //        return offsets[offsets.length - 1] + 1;
+        //    }
+        //    else {
+        //        return offsets[day];
+        //    }
+        //},
         viewRender: function (view, element) {
             if (debug) console.log("viewRender", "view configuration:", view.title, view.intervalStart._d);
             totals = getBlankTotal();

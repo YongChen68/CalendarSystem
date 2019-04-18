@@ -5103,9 +5103,8 @@
             if (displayType == "Installation") {
                 last = this.dateToCellOffset(range.end.subtract(0, 'days')); // offset of inclusive end date
 
-                //if ((range.end) == (range.start)) {
-    //            if (new Date(moment(range.start).add(1, 'days')).toDateString()) == (new Date(range.end).add(1, 'days')).toDateString())
-                if ((new Date(moment(range.start).add(1, 'days')).toDateString()) == (new Date(moment(range.end).add(0, 'days')).toDateString())) {
+              //range.end._i ==range.start._i
+                if (range.end._i ==range.start._i) {
                     last = this.dateToCellOffset(range.end.subtract(1, 'days')); // offset of in
                 }
                    

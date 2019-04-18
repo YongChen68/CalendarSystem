@@ -53,11 +53,12 @@ namespace CalendarSystem
             //eventData.end = Convert.ToDateTime(eventData.end).AddDays(0).ToString("yyyy-MM-ddT00:00:00.000Z");
             if (eventData.end== eventData.start)
             {
-                eventData.end = Convert.ToDateTime(eventData.end).AddDays(2).ToString("yyyy-MM-ddT00:00:00.000Z");
+                eventData.end = Convert.ToDateTime(eventData.end).AddDays(1).ToString("yyyy-MM-ddT00:00:00.000Z");
             }
             else
             {
-                eventData.end = Convert.ToDateTime(eventData.end).AddDays(1).ToString("yyyy-MM-ddT00:00:00.000Z");
+                // eventData.end = Convert.ToDateTime(eventData.end).AddDays(1).ToString("yyyy-MM-ddT00:00:00.000Z");
+               // eventData.end = Convert.ToDateTime(eventData.end).AddDays(0).ToString("yyyy-MM-ddT00:00:00.000Z");
             }
             
 
