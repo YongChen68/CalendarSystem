@@ -1049,16 +1049,18 @@ function SelectAll(target) {
         for (i = 0; i < document.getElementsByName('InstallationState').length; i++) {
             document.getElementsByName('InstallationState')[i].checked = true;
         }
+        $('#' + target + 'Filter').addClass('hidden');
     }
     else (target == "branch")
     {
-        for (i = 0; i < document.getElementsByName('InstallationState').length; i++)
+        for (i = 0; i < document.getElementsByName('branch').length; i++)
         {
             document.getElementsByName('branch')[i].checked = true;
         }
+        $('#' + 'BranchFilter').addClass('hidden');
     }
    
-    $('#' + target + 'Filter').addClass('hidden');
+  
     $('#calendar').fullCalendar('refetchEvents');
     $('#calendar').fullCalendar('rerenderEvents');
 }
