@@ -397,12 +397,73 @@ $(document).ready(function () {
                     $('#calendar').fullCalendar('refetchEvents');
                 }
             },
+            ShowKelownaBranch: {
+                text: "Kelowna",
+                click: function () {
+
+                    var i;
+                    for (i = 0; i < document.getElementsByName('branch').length; i++) {
+                        document.getElementsByName('branch')[i].checked = false;
+                    }
+                    document.getElementsByName('branch')[0].checked = true;
+                    // document.getElementsByName('InstallationState')[18].checked = false;
+
+                    // totals = getBlankTotal();
+                    $('#calendar').fullCalendar('refetchEvents');
+                }
+            },
+
+            ShowLowerMainlandBranch: {
+                text: "LowerMainland",
+                click: function () {
+
+                    var i;
+                    for (i = 0; i < document.getElementsByName('branch').length; i++) {
+                        document.getElementsByName('branch')[i].checked = false;
+                    }
+                    document.getElementsByName('branch')[1].checked = true;
+                    // document.getElementsByName('InstallationState')[18].checked = false;
+
+                    // totals = getBlankTotal();
+                    $('#calendar').fullCalendar('refetchEvents');
+                }
+            },
+            ShowNanaimoBranch: {
+                text: "Nanaimo",
+                click: function () {
+
+                    var i;
+                    for (i = 0; i < document.getElementsByName('branch').length; i++) {
+                        document.getElementsByName('branch')[i].checked = false;
+                    }
+                    document.getElementsByName('branch')[2].checked = true;
+                    // document.getElementsByName('InstallationState')[18].checked = false;
+
+                    // totals = getBlankTotal();
+                    $('#calendar').fullCalendar('refetchEvents');
+                }
+            },
+            ShowVictoriaBranch: {
+                text: "Victoria",
+                click: function () {
+
+                    var i;
+                    for (i = 0; i < document.getElementsByName('branch').length; i++) {
+                        document.getElementsByName('branch')[i].checked = false;
+                    }
+                    document.getElementsByName('branch')[3].checked = true;
+                    // document.getElementsByName('InstallationState')[18].checked = false;
+
+                    // totals = getBlankTotal();
+                    $('#calendar').fullCalendar('refetchEvents');
+                }
+            },
            
         },
         header: {
             left: 'prev,next today, changeType,applyFilters,applyInstallationFilters,changeBranch,changeJobType,changeShippingType',
             center: 'title',
-            right: 'ShowWIP,month,agendaWeek,agendaDay',
+            right: 'ShowKelownaBranch,ShowLowerMainlandBranch,ShowNanaimoBranch,ShowVictoriaBranch,ShowWIP,month,agendaWeek,agendaDay',
         },
 
        //hiddenDays: [0, 6],
@@ -443,6 +504,12 @@ $(document).ready(function () {
 
             if (displayType == "Installation") {
                 $('.fc-applyInstallationFilters-button').show();
+                
+                $('.fc-ShowKelownaBranch-button').show();
+                $('.fc-ShowLowerMainlandBranch-button').show();
+                $('.fc-ShowNanaimoBranch-button').show();
+                $('.fc-ShowVictoriaBranch-button').show();
+
                 $('.fc-ShowWIP-button').show();
                 $('.fc-applyFilters-button').hide();
                 $('.fc-changeJobType-button').hide();
@@ -478,6 +545,12 @@ $(document).ready(function () {
             else {
                 $('.fc-applyInstallationFilters-button').hide();
                 $('.fc-ShowWIP-button').hide();
+
+                $('.fc-ShowKelownaBranch-button').hide();
+                $('.fc-ShowLowerMainlandBranch-button').hide();
+                $('.fc-ShowNanaimoBranch-button').hide();
+                $('.fc-ShowVictoriaBranch-button').hide();
+
                 $('.fc-applyFilters-button').show();
                 $('.fc-changeJobType-button').show();
                 $('.fc-changeShippingType-button').show();
@@ -971,9 +1044,20 @@ function ApplyFilters(target) {
 
 function SelectAll(target) {
     console.log("SelectAll", "target: ", target);
-    for (i = 0; i < document.getElementsByName('InstallationState').length; i++) {
+
+    if (target == "InstallationState") {
+        for (i = 0; i < document.getElementsByName('InstallationState').length; i++) {
             document.getElementsByName('InstallationState')[i].checked = true;
         }
+    }
+    else (target == "branch")
+    {
+        for (i = 0; i < document.getElementsByName('InstallationState').length; i++)
+        {
+            document.getElementsByName('branch')[i].checked = true;
+        }
+    }
+   
     $('#' + target + 'Filter').addClass('hidden');
     $('#calendar').fullCalendar('refetchEvents');
     $('#calendar').fullCalendar('rerenderEvents');

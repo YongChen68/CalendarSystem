@@ -295,6 +295,10 @@
                     </table>
                 </div>
                 <p>
+					<input id="SelectAllBranch" class="typeButton"  type="submit" value="SelectAll" onclick="SelectAll('branch'); return false;" />
+
+                </p>
+                <p>
                     <input id="ApplyBranchChange" class="typeButton" type="submit" value="Apply" onclick="ApplyFilters('Branch'); return false;" />
                 </p>
             </div>
