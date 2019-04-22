@@ -35,7 +35,13 @@ namespace CalendarSystem.Utils.Data
            
             Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
             returnEventList = Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.Data.InstallationEvent>(SQL);
+
+            returnEventList =  returnEventList.GroupBy(o => new { o.WorkOrderNumber })
+                              .Select(o => o.FirstOrDefault()).ToList();
             return returnEventList;
+            //  return returnEventList;
+            // return returnEventList.Select(x => x.WorkOrderNumber).Distinct().;
+            // return returnEventList.GroupBy(x => x.WorkOrderNumber).Select(y=>y.First());
         }
 
         public List<InstallationEvent> GetInstallationEventData(ContentType type)
