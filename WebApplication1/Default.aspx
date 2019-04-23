@@ -39,11 +39,13 @@
 
         #external-events {
             float: left;
-            width: 150px;
+            width: 200px;
             padding: 0 10px;
             border: 1px solid #ccc;
             background: #eee;
             text-align: left;
+            overflow-y: auto;
+            height: 900px;
         }
 
             #external-events h4 {

@@ -323,7 +323,7 @@ function LoadGlobalValues(firstDay, lastDay) {
 }
 $(document).ready(function () {
     LoadBufferedJobs();
-   // LoadInstallationBufferedJobs();
+   
 
     /* initialize the calendar
     -----------------------------------------------------------------*/
@@ -1071,7 +1071,13 @@ function ChangeType(type) {
     $('#external-events').find(".fc-event").remove();
     ControlHeaderVisibility(GetDisplayItemList(displayType));
 
-    LoadBufferedJobs();
+    if (type == "Installation") {
+        LoadInstallationBufferedJobs();
+    }
+    else {
+        LoadBufferedJobs();
+    }
+ 
     $('#typeChange').addClass('hidden');
     $('#calendar').fullCalendar('changeView', 'month');
 }
