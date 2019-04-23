@@ -40,19 +40,28 @@ namespace FlowfinityConnectionHelper.Utils
             request.ExternalTransactionId = transactionid;
 
             string serverURL = Lift.LiftManager.ConfigProvider.GetValue("wsdl_url");
-            FASR.ExecuteResponse response = Lift.LiftManager.RemoteClient.ExecuteRequest<FASR.IntegrationClient, FASR.ExecuteRequest, FASR.ExecuteResponse>(request,
-                new Lift.II.RemoteClientInfo()
+            try
+            {
+                FASR.ExecuteResponse response = Lift.LiftManager.RemoteClient.ExecuteRequest<FASR.IntegrationClient, FASR.ExecuteRequest, FASR.ExecuteResponse>(request,
+               new Lift.II.RemoteClientInfo()
+               {
+                   Url = serverURL,
+                   User = Lift.LiftManager.ConfigProvider.GetValue("wsdl_user"),
+                   Password = Lift.LiftManager.ConfigProvider.GetValue("wsdl_password")
+               }
+               );
+
+                if (response.Transaction.Status == FASR.TransactionStatus.SUCCESS)
                 {
-                    Url = serverURL,
-                    User = Lift.LiftManager.ConfigProvider.GetValue("wsdl_user"),
-                    Password = Lift.LiftManager.ConfigProvider.GetValue("wsdl_password")
+                    ret = new ExecuteReturnValue() { ReturnValue = true, RecordId = null };
                 }
-                );
 
-            if (response.Transaction.Status == FASR.TransactionStatus.SUCCESS)  {
-                ret = new ExecuteReturnValue() { ReturnValue = true, RecordId = null };
             }
+            catch (Exception e)
+            {
 
+            }
+         
             return ret;
         }
     }

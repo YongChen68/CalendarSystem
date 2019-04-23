@@ -980,7 +980,7 @@ function UpdateEventWeekends() {
     var isSaturdayChecked = document.getElementsByName('saturday')[0].checked;
     var isSundayChecked  = document.getElementsByName('sunday')[0].checked;
 
-    if ((isSaturdayChecked == true) && (isSaturdayChecked == true)) {
+    if ((isSaturdayChecked == true) && (isSundayChecked == true)) {
         SaturdaySunday = "both";
     }
     else if (isSaturdayChecked == true) {
