@@ -165,7 +165,7 @@ select t.* into #Doors from HomeInstallations_TypeofWork t inner join #installs 
 select t.* into #Other from HomeInstallations_TypeofWork t inner join #installs i on i.RecordId = t.ParentRecordId where t.Type_1 = 'Other'
 select s.* into #Subtrade from HomeInstallations_SubtradeReqired s inner join #installs i on i.RecordId = s.ParentRecordId 
 
-select WorkOrderNumber, LastName, City, SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, 
+select WorkOrderNumber, LastName, City, SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,TotalDoors,TotalWindows,DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, 
 jobtype,CurrentStateName,case when windows > 0 then WindowState else 'notordered' end as WindowState,
                     case when doors > 0 then DoorState else 'notordered' end as DoorState, case when other > 0 
 then OtherState else 'notordered' end as OtherState,
@@ -201,10 +201,18 @@ SELECT   i.Branch_Display as Branch, i.PaintedProduct,  i.SalesAmmount/detailrec
                             FROM          #Windows
                             WHERE      (ParentRecordId = i.RecordId)
                             GROUP BY Type_1) AS Windows,
+                         (SELECT     round(SUM(Number_1) ,2) AS Number
+                            FROM          #Windows
+                            WHERE      (ParentRecordId = i.RecordId)
+                            GROUP BY Type_1) AS TotalWindows,
                           (SELECT     round(SUM(Number_1)/detailrecordCount,0)  AS Number
                             FROM          #Doors AS HomeInstallations_TypeofWork_2
                             WHERE      (ParentRecordId = i.RecordId)
                             GROUP BY Type_1) AS Doors,
+                         (SELECT     round(SUM(Number_1),2)  AS Number
+                            FROM          #Doors AS HomeInstallations_TypeofWork_2
+                            WHERE      (ParentRecordId = i.RecordId)
+                            GROUP BY Type_1) AS TotalDoors,
                           (SELECT      round(SUM(Number_1)/detailrecordCount,0) AS Number
                             FROM          #Other AS HomeInstallations_TypeofWork_1
                             WHERE      (ParentRecordId = i.RecordId)

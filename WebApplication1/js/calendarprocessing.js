@@ -33,9 +33,16 @@ function sendUpdateToServer(event) {
     var eventToUpdate = {
         id: event.id,
         start: event.start,
+        end: event.end,
         title: event.title,
         description: event.description,
-        doors: event.doors
+        doors: event.doors,
+        Doors: event.Doors,
+        Windows: event.Windows,
+        Amount: event.TotalSalesAmount,
+        totalWindows: event.TotalWindows,
+        totalDoors:event.TotalDoors
+
     };
     if (event.end === null) {
         eventToUpdate.end = eventToUpdate.start;
@@ -63,6 +70,41 @@ function sendUpdateToServer(event) {
     eventToUpdate.eventDurationEditable = true;
 
     if (displayType == "Installation") {
+      //  eventWODict = [];
+
+        //for (j = 0; j < eventWODict.length; j++) {
+        //    if (eventWODict[j].WorkOrderNumber == event.WorkOrderNumber) {
+        //        eventWODict.splice(j);
+        //    }
+        //}
+
+        eventWODict = eventWODict.filter(el => el.WorkOrderNumber !== event.WorkOrderNumber);
+        var date1, date2,day;
+        date1 = new Date(eventToUpdate.end);
+        date2 = new Date(eventToUpdate.start);
+        day = date1.getDay() - date2.getDay()
+        var obj;
+        var k =1;
+
+        if (date1 == date2) {
+
+        }
+        else {
+            day = day + 1;
+            for (i = 0; i < day ; i++) {
+                obj = new Object();
+                obj.Doors = parseFloat(eventToUpdate.totalDoors / day).toFixed(2);
+                obj.Windows = parseFloat(eventToUpdate.totalWindows / day).toFixed(2);
+                obj.SalesAmmount = eventToUpdate.Amount / day;
+                obj.ScheduledDate = new Date(event.start + k * 24 * 60 * 60000)
+                k++;
+               
+                //eventWODict[j]["ScheduledDate"]
+                eventWODict.push(obj);
+            }
+        }
+
+
         PageMethods.UpdateInstallationEventTime(displayType, eventToUpdate);
     }
     else {
@@ -911,12 +953,12 @@ function SetDayValue(key, dayTotals) {
     if (debug) console.log("SetDayValue", key, "added", "date:", dayTotals.date, "data:", dayTotals);
     if (displayType == "Installation") {
      
-        SetData('Codel-Doors', dayTotals.day, dayTotals.doors);
+        SetData('Codel-Doors', dayTotals.day, parseFloat(dayTotals.doors).toFixed(2));
         SetData('Patio-Doors', dayTotals.day, 0);
         SetData('Installation-Min', dayTotals.day, 0);
         SetData('Wood-DropOff-Jobs', dayTotals.day, dayTotals.TotalWoodDropOff);
         SetData('HighRisk-Jobs', dayTotals.day, dayTotals.TotalHighRisk);
-        SetData('Windows', dayTotals.day, dayTotals.windows);
+        SetData('Windows', dayTotals.day, parseFloat(dayTotals.windows).toFixed(2));
         SetData('Work-Orders', dayTotals.day, dayTotals.WOCount);
         SetData('Asbestos-Jobs', dayTotals.day, dayTotals.TotalAsbestos);
         

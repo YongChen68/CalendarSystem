@@ -129,12 +129,22 @@ namespace Generics.Utils.Data
         public bool allDay { get; set; }
 
         [DataMember]
-        public int Windows
+        public decimal Windows
         {
             get; set;
         }
         [DataMember]
-        public int Doors
+        public decimal TotalWindows
+        {
+            get; set;
+        }
+        [DataMember]
+        public decimal Doors
+        {
+            get; set;
+        }
+        [DataMember]
+        public decimal TotalDoors
         {
             get; set;
         }

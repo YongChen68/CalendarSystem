@@ -22497,6 +22497,9 @@ namespace FlowfinityConnectionHelper.FASR {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.SingleSelection HighRiskField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue CheckRoleField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -23621,6 +23624,19 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.HighRiskField, value) != true)) {
                     this.HighRiskField = value;
                     this.RaisePropertyChanged("HighRisk");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=86)]
+        public FlowfinityConnectionHelper.FASR.StringValue CheckRole {
+            get {
+                return this.CheckRoleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CheckRoleField, value) != true)) {
+                    this.CheckRoleField = value;
+                    this.RaisePropertyChanged("CheckRole");
                 }
             }
         }

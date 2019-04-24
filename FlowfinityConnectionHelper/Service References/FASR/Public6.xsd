@@ -989,6 +989,7 @@
       <xs:element minOccurs="0" name="Asbestos" nillable="true" type="tns:SingleSelection" />
       <xs:element minOccurs="0" name="WoodDropOff" nillable="true" type="tns:SingleSelection" />
       <xs:element minOccurs="0" name="HighRisk" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="CheckRole" nillable="true" type="tns:StringValue" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HomeInstallationsRecord" nillable="true" type="tns:HomeInstallationsRecord" />
