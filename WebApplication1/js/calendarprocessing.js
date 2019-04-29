@@ -895,10 +895,10 @@ $(document).ready(function () {
                 
                 for (var i = 0; i < totals.length; i++) {
                     date1 = new Date(totals[i]["date"]).toLocaleDateString('en-US');
-                    WOCount = 0;
+                    WOCount = 0; //ReturnedJob
                     for (var j = 0; j < eventWODict.length; j++) {
                         date2 = new Date(GetDatefromMoment(eventWODict[j]["ScheduledDate"])).toLocaleDateString('en-US');
-                        if  (date1 == date2){
+                        if ((date1 == date2) && (eventWODict[j].ReturnedJob!=1)){
 
                             totals[i].windows += eventWODict[j]["Windows"];
                             totals[i].doors += eventWODict[j]["Doors"];
