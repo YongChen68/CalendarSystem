@@ -175,7 +175,7 @@
                             <b>Return Scheduled Date:</b> 
                             <Div >   From:  <input id="from_date" style="width:160px;text-align:center;" class="form-control" data-toggle="tooltip" title="Start Date" >
                             To:   &nbsp;&nbsp;<input id="end_date" style="width:160px; text-align:center; " class="form-control" data-toggle="tooltip" title="End Date" >
-                             &nbsp;&nbsp;<input type="button" name="btnReturnedJob" id="btnReturnedJob"  style="text-decoration-line:underline;border-style:none;"  value="Update"  onclick="UpdateReturnedJobSchedule()">
+                             &nbsp;&nbsp;<input type="button" name="btnReturnedJob" id="btnReturnedJob"  style="text-decoration-line:underline;border-style:none;"  value="Save"  onclick="UpdateReturnedJobSchedule()">
                              </Div >
                         </div>                         
                    </Div>
