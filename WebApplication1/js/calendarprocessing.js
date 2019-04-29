@@ -677,14 +677,15 @@ $(document).ready(function () {
 
 
                        //$("#ReturnedJob").hide();
+                    $("#from_date").val('');
+                    $("#end_date").val('');
                     if (event.ReturnedJob == 1) {
-                       // $("#ReturnedJob").show(); 
-                        $("#from_date").val(new Date(GetDatefromMoment(event.start)).toLocaleDateString('en-US')); 
-                        $("#end_date").val(new Date(GetDatefromMoment(event.end)).toLocaleDateString('en-US')); 
+                        // $("#ReturnedJob").show(); 
+                        $("#from_date").val(new Date(GetDatefromMoment(event.start)).toLocaleDateString('en-US'));
+                        $("#end_date").val(new Date(GetDatefromMoment(event.end)).toLocaleDateString('en-US'));
 
                     }
-
-              
+                                  
                     eventid = event.id;
                   
                     if (event.Saturday == "Yes") {
