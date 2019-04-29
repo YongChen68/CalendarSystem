@@ -22500,6 +22500,9 @@ namespace FlowfinityConnectionHelper.FASR {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.StringValue CheckRoleField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_ReturnTripRecord[] ReturnTripField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -23641,6 +23644,19 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=87)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_ReturnTripRecord[] ReturnTrip {
+            get {
+                return this.ReturnTripField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReturnTripField, value) != true)) {
+                    this.ReturnTripField = value;
+                    this.RaisePropertyChanged("ReturnTrip");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -24638,6 +24654,51 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.PictureField, value) != true)) {
                     this.PictureField = value;
                     this.RaisePropertyChanged("Picture");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.ReturnTripRecord", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class HomeInstallations_ReturnTripRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.DateTimeValue ScheduledDate1Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.DateTimeValue ScheduledDate1 {
+            get {
+                return this.ScheduledDate1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ScheduledDate1Field, value) != true)) {
+                    this.ScheduledDate1Field = value;
+                    this.RaisePropertyChanged("ScheduledDate1");
                 }
             }
         }

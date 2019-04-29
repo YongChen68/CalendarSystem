@@ -204,6 +204,35 @@ namespace CalendarSystem
             return retValue;
         }
 
-       
+        public bool UpdateReturnedJobSchedule(string id, string scheduledStartDate, string scheduledEndDate)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateInstallationWeekends('{0}','{1}',{2} )", id, scheduledStartDate, scheduledEndDate);
+            ImproperInstallationEvent eventData = null;
+            bool retValue = false;
+            try
+            {
+                eventData = new ImproperInstallationEvent();
+                eventData.id = id;
+
+                eventData.start = scheduledStartDate;
+                eventData.end = scheduledEndDate;
+
+                //if (SaturdaySunday == "both")
+                //{
+                //    eventData..Saturday = "Yes";
+                //    eventData.Sunday = "Yes";
+                //}
+
+                RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
+                retValue = runner.ProcessUpdateReturnedJob(Utils.ContentTypeParser.GetType("Installation"), eventData);
+
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateReturnedJobSchedule id= {0}", id);
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
     }
 }

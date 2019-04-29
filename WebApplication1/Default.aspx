@@ -4,11 +4,26 @@
 <html>
 <head>
     <meta charset='utf-8' />
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link href='js/fullcalendar.css' rel='stylesheet' />
     <link href='css/application.css' rel='stylesheet' />
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
     <link href='js/fullcalendar.print.css' rel='stylesheet' media='print' />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+
     <script src='lib/moment.min.js'></script>
     <script src='lib/jquery-2.1.4.min.js'></script>
     <script src='lib/jquery-ui.custom.min.js'></script>
@@ -19,6 +34,43 @@
     <script>
         var readonly = "<%= ReadOnly %>";
     </script>
+    <%--<script type="text/javascript">
+        $(function () 
+        {
+            $("#<%=this.txtStart.ClientID %>").datepicker({
+                maxDate: new Date(),
+                dateFormat: "dd-M-yy",
+                orientation: "top right",
+                numberOfMonths: 1,
+                onSelect: function (selected) {
+                    alert("test");
+                    var sd = new Date(selected);
+                    sd.setDate(sd.getDate() + 1);
+                    $("#<%=this.txtEnd.ClientID %>").datepicker("option", "minDate", sd);
+                }
+            });
+
+              $("#<%=this.txtEnd.ClientID %>").datepicker({
+                maxDate: new Date(),
+                  dateFormat: "dd-M-yy",
+                orientation: "top right",
+                numberOfMonths: 1,
+                onSelect: function (selected) {
+                    var ed = new Date(selected);
+                    sd.setDate(sd.getDate() - 1);
+                    $("#<%=this.txtStart.ClientID %>").datepicker("option", "maxDate", ed);
+                }
+            });
+
+        });
+    </script>--%>
+
+    <script>
+    $(function () {
+        $("#from_date").datepicker();
+        $("#end_date").datepicker();
+    });
+</script>
     <style>
         body {
             margin-top: 40px;
@@ -81,9 +133,9 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
         </asp:ScriptManager>
        
-        <div id="eventContent" title="Installation Details" style="display: none; text-align: left;width:800px;height:1000px;">
+        <div id="eventContent" title="Installation Details" style="display: none; text-align: left;height:900px;">
            
-                <div  id="map" style="height:400px;"></div>
+                <div  id="map" ></div>
                  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBspoEtc4kjoRkvnuVk0bnV9G3NUb1N8Kk"></script>
                  <script>
                     var locationRio = { lat: 49.181520, lng: -122.664260 };
@@ -112,9 +164,20 @@
                         <Div ><b>Senior Installer: </b><span id="SeniorInstaller"></span></Div><br>
                         <Div ><b>CrewNames </b><span id="CrewNames"></span></Div><br>
 
-                        <Div ><b>Saturday: </b><input type="checkbox" name="saturday"> &nbsp;&nbsp; </Div>
+                      <div style=" background-color:#D3D3D3">
+                            <Div ><b>Saturday: </b><input type="checkbox" name="saturday"> &nbsp;&nbsp; </Div>
                         <br>
-                        <Div> <b>Sunday: </b> <input type="checkbox" name="sunday">  &nbsp;&nbsp; <input type="button" name="btnSunday" id="btnSunday"  style="text-decoration-line:underline;border-style:none;"  value="Update"  onclick="UpdateEventWeekends()"></Div>
+                        <Div> <b>Sunday: </b> &nbsp;&nbsp;<input type="checkbox" name="sunday">  &nbsp;&nbsp;&nbsp;&nbsp; <input type="button" name="btnSunday" id="btnSunday"  style="text-decoration-line:underline;border-style:none;"  value="Update"  onclick="UpdateEventWeekends()"></Div>
+                        </div>
+                        <br>
+                      
+                        <div class ="form-group" style=" background-color:#D3D3D3" id="ReturnedJob">
+                            <b>Return Scheduled Date:</b> 
+                            <Div >   From:  <input id="from_date" style="width:160px;text-align:center;" class="form-control" data-toggle="tooltip" title="Start Date" >
+                            To:   &nbsp;&nbsp;<input id="end_date" style="width:160px; text-align:center; " class="form-control" data-toggle="tooltip" title="End Date" >
+                             &nbsp;&nbsp;<input type="button" name="btnReturnedJob" id="btnReturnedJob"  style="text-decoration-line:underline;border-style:none;"  value="Update"  onclick="UpdateReturnedJobSchedule()">
+                             </Div >
+                        </div>                         
                    </Div>
             <br>
 

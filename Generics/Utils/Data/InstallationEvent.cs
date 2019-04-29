@@ -46,8 +46,16 @@ namespace Generics.Utils.Data
         {
 
         }
+
+        [DataMember]
+        public int ReturnedJob { get; set; }
+
         [DataMember]
         public DateTime ScheduledDate { get; set; }
+
+
+        //[DataMember]
+        //public DateTime ReturnEventDate { get; set; }
         [DataMember]
         [Lift.Database.DbIgnore]
         //   public string start { get { return FormatDateTime(ScheduledDate); } set { } }
@@ -189,6 +197,7 @@ namespace Generics.Utils.Data
             get; set;
         }
 
+      
         [DataMember]
         [Lift.Database.DbIgnore]
         public string title { get { return WorkOrderNumber; } set { } }

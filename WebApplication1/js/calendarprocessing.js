@@ -69,7 +69,7 @@ function sendUpdateToServer(event) {
     eventToUpdate.allDay = event.allDay;
     eventToUpdate.eventDurationEditable = true;
 
-    if (displayType == "Installation") {
+    if ((displayType == "Installation") && (event.ReturnedJob != 1)) {
       //  eventWODict = [];
 
         //for (j = 0; j < eventWODict.length; j++) {
@@ -573,6 +573,7 @@ $(document).ready(function () {
                         $.each(data.GetInstallationEventsResult, function (pos, item) {
                             item.allDay = true;
                             item.editable = (item.HolidayName != null) ? false : true;
+                            item.editable = (item.ReturnedJob == 1) ? false : true;
                             eventWODict.push(item);
 
                         });
@@ -655,7 +656,12 @@ $(document).ready(function () {
                 totals = getBlankTotal();
                 eventArray = [];
             }
-         
+            if (event.ReturnedJob == 1) {
+                element.css({
+                    'background-color': '#DAA520'
+                    // 'border-color': '#333333'
+                });
+            }
             element.attr('href', 'javascript:void(0);');
             element.click(function () {
                 if (displayType == "Installation") {
@@ -683,9 +689,15 @@ $(document).ready(function () {
                     else {
                         document.getElementsByName('sunday')[0].checked = false;
                     }
-                  
+
+                    $("#ReturnedJob").hide();
+                    if (event.ReturnedJob == 1) {
+                        $("#ReturnedJob").show();
+                    }
+
+
                     $("#eventLink").attr('href', event.url);
-                    $("#eventContent").dialog({ modal: true, title: event.LastName, width: 800 });
+                    $("#eventContent").dialog({ modal: true, title: event.LastName, width: 900 });
 
                 }
                 else {
@@ -827,6 +839,9 @@ $(document).ready(function () {
         },
         eventDragStop: function (event, jsEvent, ui, view) {
             if (debug) console.log("eventDragStop", event);
+            if (event.ReturnedJob == 1) {
+                alert("This is returned job!");
+            }
             //totals = getBlankTotal();
         },
         eventResizeStop: function (event, jsEvent, ui, view) {
@@ -1158,12 +1173,74 @@ function GetDisplayItemList(type) {
 function ShowWarning(allocatedDayLabour, eventLabourMin, maxDayLabour) {
     window.alert("There are already " + allocatedDayLabour + " minutes on the target day. Adding requested event with Labour minutes of " + eventLabourMin + " will exceed maximum available minutes (" + maxDayLabour + ") for the day.");
 }
+
+function UpdateReturnedJobSchedule() {
+    var i = eventid;
+    var scheduledStartDate, scheduledEndDate;
+    var scheduledStartDate = $("#from_date").val();
+    var scheduledEndDate = $("#end_date").val();
+    $.ajax({
+        url: 'data.svc/UpdateReturnedJobSchedule?id=' + eventid + '&ScheduledStartDate=' + scheduledStartDate + '&scheduledEndDate=' + scheduledEndDate,
+        type: "POST",
+        success: function (data) {
+            if (debug) console.log("events.success", "data.UpdateReturnedJobSchedule:");
+            $("#from_date").val('');
+            $("#end_date").val('');
+          
+            $('#eventContent').dialog("close");
+            $('#calendar').fullCalendar('refetchEvents');
+            $('#calendar').fullCalendar('rerenderEvents');
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
+
+
+function findDuplicatedObjects(originalObjectArray, newObject) {
+    var isDuplicated = false;
+    for (i = 0; i < originalObjectArray.length; i++) {
+        if (originalObjectArray[i] == newObject) {
+            isDuplicated = true;
+        }
+    }
+    return isDuplicated;
+
+}
+
 function removeDuplicates(originalArray, prop) {
     var newArray = [];
     var lookupObject = {};
+    var returnedObjectArray = {};
+    var modifiedObjectArray = {};
+    var addedObjectArray = [];
 
-    for (var i in originalArray) {
-        lookupObject[originalArray[i][prop]] = originalArray[i];
+    if (displayType == "Installation") {
+        modifiedObjectArray = originalArray.filter(el => el.ReturnedJob != 1);
+
+        for (var i in modifiedObjectArray) {
+            lookupObject[modifiedObjectArray[i][prop]] = modifiedObjectArray[i];
+        }
+
+        returnedObjectArray = originalArray.filter(el => el.ReturnedJob == 1);
+        for (i in returnedObjectArray) {
+
+            if (findDuplicatedObjects(addedObjectArray, returnedObjectArray[i]["WorkOrderNumber"]) == false) {
+                addedObjectArray[i] = returnedObjectArray[i]["WorkOrderNumber"];
+                newArray.push(returnedObjectArray[i]);
+            }
+
+
+        }
+    }
+    else {
+        for (var i in originalArray) {
+            lookupObject[originalArray[i][prop]] = originalArray[i];
+        }
+
     }
 
     for (i in lookupObject) {
@@ -1171,5 +1248,3 @@ function removeDuplicates(originalArray, prop) {
     }
     return newArray;
 }
-
-

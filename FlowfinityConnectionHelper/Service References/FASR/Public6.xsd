@@ -990,6 +990,7 @@
       <xs:element minOccurs="0" name="WoodDropOff" nillable="true" type="tns:SingleSelection" />
       <xs:element minOccurs="0" name="HighRisk" nillable="true" type="tns:SingleSelection" />
       <xs:element minOccurs="0" name="CheckRole" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="ReturnTrip" nillable="true" type="tns:ArrayOfHomeInstallations_.ReturnTripRecord" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HomeInstallationsRecord" nillable="true" type="tns:HomeInstallationsRecord" />
@@ -1175,6 +1176,18 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HomeInstallations_.TakePictureRecord" nillable="true" type="tns:HomeInstallations_.TakePictureRecord" />
+  <xs:complexType name="ArrayOfHomeInstallations_.ReturnTripRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.ReturnTripRecord" nillable="true" type="tns:HomeInstallations_.ReturnTripRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHomeInstallations_.ReturnTripRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.ReturnTripRecord" />
+  <xs:complexType name="HomeInstallations_.ReturnTripRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ScheduledDate1" nillable="true" type="tns:DateTimeValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HomeInstallations_.ReturnTripRecord" nillable="true" type="tns:HomeInstallations_.ReturnTripRecord" />
   <xs:complexType name="SalesReviewRecord">
     <xs:sequence>
       <xs:element minOccurs="0" name="CentraRating1" nillable="true" type="tns:StringValue" />
