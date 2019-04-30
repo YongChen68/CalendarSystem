@@ -651,6 +651,10 @@ $(document).ready(function () {
         },//: eventUpdate,
         eventResize: eventUpdate,
         eventRender: function (event, element, view) {
+            element.attr('data-toggle', "modal");
+            element.attr('data-target', "#eventContent");
+            element.attr('href', "/details");
+
             if (renderingComplete) {
                 renderingComplete = false;
                 totals = getBlankTotal();
@@ -666,6 +670,8 @@ $(document).ready(function () {
             element.click(function () {
                 if (displayType == "Installation") {
                     $("#workOrder").html(event.WorkOrderNumber);
+                    $("#WorkOrderTitle").html(event.WorkOrderNumber);
+                    
                     $("#homePhone").html(event.HomePhoneNumber);
                     $("#cellPhone").html(event.CellPhone);
                     $("#branch").html(event.Branch);
@@ -705,7 +711,8 @@ $(document).ready(function () {
 
 
                     $("#eventLink").attr('href', event.url);
-                    $("#eventContent").dialog({ modal: true, title: event.LastName, width: 900 });
+                   // $("#eventContent").dialog({ modal: true, title: event.LastName, width: 900 });
+                    //$("#eventContent").modal("show");
 
                 }
                 else {
@@ -1195,7 +1202,7 @@ function UpdateReturnedJobSchedule() {
             $("#from_date").val('');
             $("#end_date").val('');
           
-            $('#eventContent').dialog("close");
+            $("#eventContent .close").click();
             $('#calendar').fullCalendar('refetchEvents');
             $('#calendar').fullCalendar('rerenderEvents');
 

@@ -4,14 +4,14 @@
 <html>
 <head>
     <meta charset='utf-8' />
-     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link href='js/fullcalendar.css' rel='stylesheet' />
@@ -20,7 +20,7 @@
 
     <link href='js/fullcalendar.print.css' rel='stylesheet' media='print' />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
 
@@ -30,7 +30,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src='js/fullcalendar.js'></script>
     <script src="js/calendarprocessing.js"></script>
-   
+
     <script>
         var readonly = "<%= ReadOnly %>";
     </script>
@@ -70,7 +70,7 @@
         $("#from_date").datepicker();
         $("#end_date").datepicker();
     });
-</script>
+    </script>
     <style>
         body {
             margin-top: 40px;
@@ -81,9 +81,10 @@
 
         
         #map { float:left;width:45%;}
-        #center { float:none;width:10%;}
-        #content {float:right;width:45%;  vertical-align: middle; }
-
+       
+        #content {float:left;width:55%;  vertical-align: top; text-align:left ; padding-left:20px; }
+        #installationContent {float:left;width:55%;  vertical-align: top; text-align:left ; padding-left:20px; }
+        
         #wrap {
             width: 100%;
             margin: 0 auto;
@@ -126,67 +127,156 @@
             float: right;
             width: 85%;
         }
+        #eventContent {
+
+            z-index: 214748367;
+        }
+       
+        .modal-header {
+       
+            background-color: #9FB6CD;
+             color:white;
+            font-weight:400;
+            
+            }
+
+        .close {
+             color: #fff; 
+             opacity: 1;
+            }
+        .modal-header {
+    width: 100%; /* respsonsive width */
+    /* width/2) */ 
+}
+        
     </style>
 </head>
 <body>
     <form id="main" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
         </asp:ScriptManager>
-       
-        <div id="eventContent" title="Installation Details" style="display: none; text-align: left;height:900px;">
-           
-                <div  id="map" ></div>
-                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBspoEtc4kjoRkvnuVk0bnV9G3NUb1N8Kk"></script>
-                 <script>
-                    var locationRio = { lat: 49.181520, lng: -122.664260 };
-                    var map = new google.maps.Map(document.getElementById('map'), {
-                        zoom: 16,
-                        center: locationRio,
-                        gestureHandling: 'cooperative'
-                    });
-                    var marker = new google.maps.Marker({
-                        position: locationRio,
-                        map: map
+
+        <div id="eventContent" style="display: none;"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true"   class="modal fade" >
+            <div class="modal-dialog modal-lg"   role="document">
+                <div class="modal-content">
+                    <div class="modal-header ">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+
+                        </button>
+                        <h4 class="modal-title" id="WorkOrderTitle"></h4>
+
+                    </div>
+
+                    <div class="modal-body">
+                        <div role="tabpanel">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                 <li role="presentation" class="active">
+                                    <a href="#CustomerTab" aria-controls="customerTab" role="tab" data-toggle="tab">CUSTOMER</a>
+
+                                </li>
+                                  <li role="presentation">
+                                    <a href="#InstallTab" aria-controls="uploadTab" role="tab" data-toggle="tab">INSTALL</a>
+
+                                </li>
+                                <li role="presentation"  >
+                                    <a href="#ProductTab" aria-controls="productTab" role="tab" data-toggle="tab">PRODUCT</a>
+
+                                </li>
+                               
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="CustomerTab">
+                                    <div id="map"></div>
+                                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBspoEtc4kjoRkvnuVk0bnV9G3NUb1N8Kk"></script>
+                                        <script>
+                                            var locationRio = { lat: 49.181520, lng: -122.664260 };
+                                            var map = new google.maps.Map(document.getElementById('map'), {
+                                                zoom: 16,
+                                                center: locationRio,
+                                                gestureHandling: 'cooperative'
+                                            });
+                                            var marker = new google.maps.Marker({
+                                                position: locationRio,
+                                                map: map
                         
-                     });
-                   </script>
-              <Div id="center"></Div>
-              <Div id="content">
-                       <br>
-                       <br>
-                       <br>
-                        <Div><b>Work Order: </b><span id="workOrder"></span> </Div><br>
-                        <Div ><b>Home Phone: </b><span id="homePhone"></span> </Div><br>
-                        <Div ><b>Cell Phone: </b><span id="cellPhone"></span></Div><br>
-                        <Div ><b>Branch: </b><span id="branch"></span></Div><br>
-                        <Div ><b>Address: </b><span id="Address"></span></Div><br>
-                        <Div ><b>SalesAmount: </b><span id="SalesAmmount"></span></Div><br>
-                        <Div ><b>Senior Installer: </b><span id="SeniorInstaller"></span></Div><br>
-                        <Div ><b>CrewNames </b><span id="CrewNames"></span></Div><br>
+                                                });
+                                        </script>
+                                     <div id="content" >
+                                   <br>
+                                    <br>
+                                    <div><b>Work Order: </b><span id="workOrder"></span></div>
+                                    <br>
+                                    <div><b>Home Phone: </b><span id="homePhone"></span></div>
+                                    <br>
+                                    <div><b>Cell Phone: </b><span id="cellPhone"></span></div>
+                                    <br>
+                                    <div><b>Branch: </b><span id="branch"></span></div>
+                                    <br>
+                                    <div><b>Address: </b><span id="Address"></span></div>
+                                    <br>
+                                    <div><b>SalesAmount: </b><span id="SalesAmmount"></span></div>
+                                    <br>
+                                   
+                                 
+                                </div>
+                                </div>
+                                 <div role="tabpanel" class="tab-pane" id="InstallTab">
+                                     <div id="installationContent">
+                                    <br>
+                                    <br>
+                                    
+                                  
+                                    <div><b>Senior Installer: </b><span id="SeniorInstaller"></span></div>
+                                    <br>
+                                    <div><b>CrewNames: </b><span id="CrewNames"></span></div>
+                                    <br>
 
-                      <div style=" background-color:#D3D3D3">
-                            <Div ><b>Saturday: </b><input type="checkbox" name="saturday"> &nbsp;&nbsp; </Div>
-                        <br>
-                        <Div> <b>Sunday: </b> &nbsp;&nbsp;<input type="checkbox" name="sunday">  &nbsp;&nbsp;&nbsp;&nbsp; <input type="button" name="btnSunday" id="btnSunday"  style="text-decoration-line:underline;border-style:none;"  value="Update"  onclick="UpdateEventWeekends()"></Div>
-                        </div>
-                        <br>
-                      
-                        <div class ="form-group" style=" background-color:#D3D3D3" id="ReturnedJob">
-                            <b>Return Scheduled Date:</b> 
-                            <Div >   From:  <input id="from_date" style="width:160px;text-align:center;" class="form-control" data-toggle="tooltip" title="Start Date" >
-                            To:   &nbsp;&nbsp;<input id="end_date" style="width:160px; text-align:center; " class="form-control" data-toggle="tooltip" title="End Date" >
-                             &nbsp;&nbsp;<input type="button" name="btnReturnedJob" id="btnReturnedJob"  style="text-decoration-line:underline;border-style:none;"  value="Save"  onclick="UpdateReturnedJobSchedule()">
-                             </Div >
-                        </div>                         
-                   </Div>
-            <br>
+                                    <div style="background-color: #D3D3D3">
+                                        <div>
+                                            <b>Saturday: </b>
+                                            <input type="checkbox" name="saturday">
+                                            &nbsp;&nbsp;
+                                        </div>
+                                        <br>
+                                        <div>
+                                            <b>Sunday: </b>&nbsp;&nbsp;<input type="checkbox" name="sunday">
+                                            &nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="button" name="btnSunday" id="btnSunday" style="text-decoration-line: underline; border-style: none;" value="Update" onclick="UpdateEventWeekends()">
+                                        </div>
+                                    </div>
+                                    <br>
 
-         
-            <br>
-           
-            
-           
-            <br>
+                                    <div class="form-group" style="background-color: #D3D3D3" id="ReturnedJob">
+                                        <b>Return Scheduled Date:</b>
+                                        <div>
+                                            From: 
+                                                <input id="from_date" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
+                                            To:   &nbsp;&nbsp;<input id="end_date" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
+                                            &nbsp;&nbsp;<input type="button" name="btnReturnedJob" id="btnReturnedJob" style="text-decoration-line: underline; border-style: none;" value="Save" onclick="UpdateReturnedJobSchedule()">
+                                        </div>
+                                    </div>
+                                </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane " id="ProductTab">
+                                    
+                                </div>
+                               
+                            </div>
+                       </div>
+                    </div>
+
+                   <div class="modal-footer">
+                           
+                    </div>
+
+                </div>
+           </div>
+       
+        <br>
         </div>
         <div id="openviewWeather">
             <a class="weatherwidget-io" href="https://forecast7.com/en/49d28n123d12/vancouver/" data-label_1="Vancouver" data-label_2="Weather" data-font="Roboto" data-icons="Climacons Animated" data-theme="original" data-accent="rgba(1, 1, 1, 0.0)"></a>
@@ -202,7 +292,7 @@
                 <h2>Select Type</h2>
                 <p>
                     <input id="typeWindow" class="typeButton" type="submit" name="type" value="Windows" onclick="ChangeType('Windows'); return false;"><br />
-                  
+
                     <input id="typePaint" class="typeButton" type="submit" name="type" value="Paint" onclick="ChangeType('Paint'); return false;"><br />
                     <input id="typeShipping" class="typeButton" type="submit" name="type" value="Shipping" onclick="ChangeType('Shipping'); return false;"><br />
                     <input id="typeCustomer" class="typeButton" type="submit" name="type" value="Customer" onclick="ChangeType('Customer'); return false;"><br />
@@ -289,7 +379,7 @@
                     </table>
                 </div>
                 <p>
-					<input id="SelectAllState" class="typeButton"  type="submit" value="SelectAll" onclick="SelectAll('InstallationState'); return false;" />
+                    <input id="SelectAllState" class="typeButton" type="submit" value="SelectAll" onclick="SelectAll('InstallationState'); return false;" />
 
                 </p>
                 <p>
@@ -360,7 +450,7 @@
                     </table>
                 </div>
                 <p>
-					<input id="SelectAllBranch" class="typeButton"  type="submit" value="SelectAll" onclick="SelectAll('branch'); return false;" />
+                    <input id="SelectAllBranch" class="typeButton" type="submit" value="SelectAll" onclick="SelectAll('branch'); return false;" />
 
                 </p>
                 <p>
