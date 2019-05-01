@@ -651,9 +651,7 @@ $(document).ready(function () {
         },//: eventUpdate,
         eventResize: eventUpdate,
         eventRender: function (event, element, view) {
-            element.attr('data-toggle', "modal");
-            element.attr('data-target', "#eventContent");
-            element.attr('href', "/details");
+          
 
             if (renderingComplete) {
                 renderingComplete = false;
@@ -669,9 +667,21 @@ $(document).ready(function () {
             element.attr('href', 'javascript:void(0);');
             element.click(function () {
                 if (displayType == "Installation") {
+                    element.attr('data-toggle', "modal");
+                    element.attr('data-target', "#eventContent");
+                    element.attr('href', "/details");
+                    $("#Customer").html(event.LastName);
                     $("#workOrder").html(event.WorkOrderNumber);
                     $("#WorkOrderTitle").html(event.WorkOrderNumber);
-                    
+                    $("#InstallScheduledStartDate").html(new Date(GetDatefromMoment(event.start)).toLocaleDateString('en-US'));
+
+                    if (event.end == null) {
+                        $("#InstallScheduledEndDate").html(new Date(GetDatefromMoment(event.start)).toLocaleDateString('en-US'));
+                    }
+                    else {
+                        $("#InstallScheduledEndDate").html(new Date(GetDatefromMoment(event.end)).toLocaleDateString('en-US'));
+                    }
+                                  
                     $("#homePhone").html(event.HomePhoneNumber);
                     $("#cellPhone").html(event.CellPhone);
                     $("#branch").html(event.Branch);

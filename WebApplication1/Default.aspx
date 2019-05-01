@@ -228,6 +228,8 @@
                                     <div id="content">
                                         <br>
                                         <br>
+                                         <div><b>Customer: </b><span id="Customer"></span></div>
+                                        <br>
                                         <div><b>Work Order: </b><span id="workOrder"></span></div>
                                         <br>
                                         <div><b>Home Phone: </b><span id="homePhone"></span></div>
@@ -247,7 +249,18 @@
                                         <br>
                                         <br>
 
+                                        <div><b>Installation Scheduled Date </b>
+                                            <div>
+                                              &nbsp;&nbsp; &nbsp;&nbsp;   &nbsp;&nbsp; &nbsp;&nbsp;  From:  <span id="InstallScheduledStartDate"></span>
+                                            </div>
+                                           <div>
+                                             &nbsp;&nbsp; &nbsp;&nbsp;    &nbsp;&nbsp; &nbsp;&nbsp;  To:  <span id="InstallScheduledEndDate"></span>
+                                            </div>
 
+                                         
+                                        </div>
+                                       
+                                        <br>
                                         <div><b>Senior Installer: </b><span id="SeniorInstaller"></span></div>
                                         <br>
                                         <div><b>CrewNames: </b><span id="CrewNames"></span></div>
