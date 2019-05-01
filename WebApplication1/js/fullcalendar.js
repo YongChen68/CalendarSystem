@@ -3746,13 +3746,8 @@
                         RenderWeekRow('Transom') +
                         RenderWeekRow('Sidelite') +
                         RenderWeekRow('SingleDoor') +
-                        RenderWeekRow('DoubleDoor') +
-                        RenderWeekRow('Simple') +
-                        RenderWeekRow('Complex') +
-                        RenderWeekRow('Over_Size') +
-                        RenderWeekRow('Arches') +
-                        RenderWeekRow('Rakes') +
-                        RenderWeekRow('Customs') +
+                        RenderWeekRow('DoubleDoor') 
+                      
                         '</tbody>';
                 }
 

@@ -155,20 +155,17 @@
         }
 
         .modal-ku {
-  width: 1400px;
-  margin: auto;
-}
+            width: 1400px;
+            margin: auto;
+        }
 
         .close {
             color: #fff;
             opacity: 1;
         }
 
-        .table-condensed{
-
-}
-
-       
+        .table-condensed {
+        }
     </style>
 </head>
 <body>
@@ -205,6 +202,10 @@
                                     <a href="#ProductTab" aria-controls="productTab" role="tab" data-toggle="tab">PRODUCT</a>
 
                                 </li>
+                                <li role="presentation">
+                                    <a href="#JobAnalysisTab" aria-controls="JobAnalysisTab" role="tab" data-toggle="tab">JOB ANALYSIS</a>
+
+                                </li>
 
                             </ul>
                             <!-- Tab panes -->
@@ -228,7 +229,7 @@
                                     <div id="content">
                                         <br>
                                         <br>
-                                         <div><b>Customer: </b><span id="Customer"></span></div>
+                                        <div><b>Customer: </b><span id="Customer"></span></div>
                                         <br>
                                         <div><b>Work Order: </b><span id="workOrder"></span></div>
                                         <br>
@@ -249,17 +250,18 @@
                                         <br>
                                         <br>
 
-                                        <div><b>Installation Scheduled Date </b>
+                                        <div>
+                                            <b>Installation Scheduled Date </b>
                                             <div>
-                                              &nbsp;&nbsp; &nbsp;&nbsp;   &nbsp;&nbsp; &nbsp;&nbsp;  From:  <span id="InstallScheduledStartDate"></span>
+                                                &nbsp;&nbsp; &nbsp;&nbsp;   &nbsp;&nbsp; &nbsp;&nbsp;  From:  <span id="InstallScheduledStartDate"></span>
                                             </div>
-                                           <div>
-                                             &nbsp;&nbsp; &nbsp;&nbsp;    &nbsp;&nbsp; &nbsp;&nbsp;  To:  <span id="InstallScheduledEndDate"></span>
+                                            <div>
+                                                &nbsp;&nbsp; &nbsp;&nbsp;    &nbsp;&nbsp; &nbsp;&nbsp;  To:  <span id="InstallScheduledEndDate"></span>
                                             </div>
 
-                                         
+
                                         </div>
-                                       
+
                                         <br>
                                         <div><b>Senior Installer: </b><span id="SeniorInstaller"></span></div>
                                         <br>
@@ -293,9 +295,16 @@
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane " id="ProductTab">
-                                    <div style="overflow: auto; height:600px;">
-                                    <table id="dataTable" class="table table-striped table-bordered table-hover table-condensed" ></table>
-                                   </div>
+                                    <div style="overflow: auto; height: 600px;">
+                                        <table id="dataTable" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                    </div>
+
+                                </div>
+
+                                <div role="tabpanel" class="tab-pane " id="JobAnalysisTab">
+                                    <div >
+                                         test
+                                    </div>
 
                                 </div>
 

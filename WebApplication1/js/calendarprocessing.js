@@ -154,7 +154,8 @@ function GetBlankDayData(day) {
         return { day: dayName, date: installationDay, doors: 0, windows: 0, SalesAmmount: 0, TotalAsbestos: 0, TotalWoodDropOff: 0, TotalHighRisk: 0,  WOCount: 0 };
     }
     else {
-        return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, boxes: 0, glass: 0, value: 0, min: 0, max: 0, Available_Time: 0, rush: 0, float: 0, TotalBoxQty: 0, TotalGlassQty: 0, TotalPrice: 0, TotalLBRMin: 0, F6CA: 0, F27DS: 0, F27TS: 0, F27TT: 0, F29CA: 0, F29CM: 0, F52PD: 0, F68CA: 0, F68SL: 0, F68VS: 0, Transom: 0, Sidelite: 0, SingleDoor: 0, DoubleDoor: 0, Simple: 0, Complex: 0, Over_Size: 0, Arches: 0, Rakes: 0, Customs: 0, };
+      //  return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, boxes: 0, glass: 0, value: 0, min: 0, max: 0, Available_Time: 0, rush: 0, float: 0, TotalBoxQty: 0, TotalGlassQty: 0, TotalPrice: 0, TotalLBRMin: 0, F6CA: 0, F27DS: 0, F27TS: 0, F27TT: 0, F29CA: 0, F29CM: 0, F52PD: 0, F68CA: 0, F68SL: 0, F68VS: 0, Transom: 0, Sidelite: 0, SingleDoor: 0, DoubleDoor: 0, Simple: 0, Complex: 0, Over_Size: 0, Arches: 0, Rakes: 0, Customs: 0, };
+        return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, boxes: 0, glass: 0, value: 0, min: 0, max: 0, Available_Time: 0, rush: 0, float: 0, TotalBoxQty: 0, TotalGlassQty: 0, TotalPrice: 0, TotalLBRMin: 0, F6CA: 0, F27DS: 0, F27TS: 0, F27TT: 0, F29CA: 0, F29CM: 0, F52PD: 0, F68CA: 0, F68SL: 0, F68VS: 0, Transom: 0, Sidelite: 0, SingleDoor: 0, DoubleDoor: 0 };
     }
 
 
@@ -365,7 +366,23 @@ function LoadGlobalValues(firstDay, lastDay) {
 }
 $(document).ready(function () {
     LoadBufferedJobs();
-   
+    
+
+    //$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    //    var currentTab = $(e.target).text(); // get current tab
+    //    var LastTab = $(e.relatedTarget).text(); // get last tab
+    // //   alert(currentTab);
+    //    $(".current-tab span").html(currentTab);
+    //    $(".last-tab span").html(LastTab);
+
+    //    if (currentTab == "JOB ANALYSIS") {
+    //        GetJobAnalysys("11231");
+    //    }
+    //});
+    //$(document).on('shown.bs.tab', 'a[data-toggle="tab"]', function (e) {
+
+    //    alert(e.target.href);
+    //})
 
     /* initialize the calendar
     -----------------------------------------------------------------*/
@@ -573,7 +590,7 @@ $(document).ready(function () {
                         $.each(data.GetInstallationEventsResult, function (pos, item) {
                             item.allDay = true;
                             item.editable = (item.HolidayName != null) ? false : true;
-                            item.editable = (item.ReturnedJob == 1) ? false : true;
+                         //   item.editable = (item.ReturnedJob == 1) ? false : true;
                             eventWODict.push(item);
 
                         });
@@ -720,6 +737,7 @@ $(document).ready(function () {
                     //retrieve product info
                  
                     GetProducts(event.WorkOrderNumber);
+                    //GetJobAnalysys(event.WorkOrderNumber);
 
                     $("#eventLink").attr('href', event.url);
                    // $("#eventContent").dialog({ modal: true, title: event.LastName, width: 900 });
@@ -1039,12 +1057,12 @@ function SetDayValue(key, dayTotals) {
         SetData('Sidelite', dayTotals.day, dayTotals.Sidelite);
         SetData('SingleDoor', dayTotals.day, dayTotals.SingleDoor);
         SetData('DoubleDoor', dayTotals.day, dayTotals.DoubleDoor);
-        SetData('Simple', dayTotals.day, dayTotals.Simple);
-        SetData('Complex', dayTotals.day, dayTotals.Complex);
-        SetData('Over_Size', dayTotals.day, dayTotals.Over_Size);
-        SetData('Arches', dayTotals.day, dayTotals.Arches);
-        SetData('Rakes', dayTotals.day, dayTotals.Rakes);
-        SetData('Customs', dayTotals.day, dayTotals.Customs);
+        //SetData('Simple', dayTotals.day, dayTotals.Simple);
+        //SetData('Complex', dayTotals.day, dayTotals.Complex);
+        //SetData('Over_Size', dayTotals.day, dayTotals.Over_Size);
+        //SetData('Arches', dayTotals.day, dayTotals.Arches);
+        //SetData('Rakes', dayTotals.day, dayTotals.Rakes);
+        //SetData('Customs', dayTotals.day, dayTotals.Customs);
     }
 }
 function GetOffset(day) {
@@ -1184,7 +1202,7 @@ function ControlHeaderVisibility(elements) {
 // Week Header for Windows Doors Paint True / False to Enable or Disable
 function GetDisplayItemList(type) {
     if (type == "Windows")
-        return [{ Id: 'Windows', Display: true }, { Id: 'Doors', Display: true }, { Id: 'Boxes', Display: true }, { Id: 'Glass', Display: true }, { Id: 'Rush', Display: true }, { Id: 'Min', Display: true }, { Id: 'Max', Display: true }, { Id: 'Available_Time', Display: true }, { Id: 'Available_Staff', Display: true }, { Id: '26CA', Display: true }, { Id: '27DS', Display: true }, { Id: '27TS', Display: true }, { Id: '27TT', Display: true }, { Id: '29CA', Display: true }, { Id: '29CM', Display: true }, { Id: '68CA', Display: false }, { Id: '68SL', Display: true }, { Id: '68VS', Display: true }, { Id: '52PD', Display: true }, { Id: 'Transom', Display: false }, { Id: 'Sidelite', Display: false }, { Id: 'SingleDoor', Display: false }, { Id: 'DoubleDoor', Display: false }/**/, { Id: 'Simple', Display: true }, { Id: 'Complex', Display: true }, { Id: 'Over_Size', Display: true }, { Id: 'Arches', Display: true }, { Id: 'Rakes', Display: true }, { Id: 'Customs', Display: true }];
+        return [{ Id: 'Windows', Display: true }, { Id: 'Doors', Display: true }, { Id: 'Boxes', Display: true }, { Id: 'Glass', Display: true }, { Id: 'Rush', Display: true }, { Id: 'Min', Display: true }, { Id: 'Max', Display: true }, { Id: 'Available_Time', Display: true }, { Id: 'Available_Staff', Display: true }, { Id: '26CA', Display: true }, { Id: '27DS', Display: true }, { Id: '27TS', Display: true }, { Id: '27TT', Display: true }, { Id: '29CA', Display: true }, { Id: '29CM', Display: true }, { Id: '68CA', Display: false }, { Id: '68SL', Display: true }, { Id: '68VS', Display: true }, { Id: '52PD', Display: true }, { Id: 'Transom', Display: false }, { Id: 'Sidelite', Display: false }, { Id: 'SingleDoor', Display: false }, { Id: 'DoubleDoor', Display: false }/**/];
     else if (type == "Shipping")
         return [{ Id: 'Windows', Display: true }, { Id: 'Doors', Display: true }, { Id: 'Boxes', Display: true }, { Id: 'Glass', Display: true }, { Id: 'Rush', Display: false }, { Id: 'Min', Display: false }, { Id: 'Max', Display: false }, { Id: 'Available_Time', Display: false }, { Id: 'Available_Staff', Display: false }, { Id: '26CA', Display: true }, { Id: '27DS', Display: true }, { Id: '27TS', Display: true }, { Id: '27TT', Display: true }, { Id: '29CA', Display: true }, { Id: '29CM', Display: true }, { Id: '68CA', Display: false }, { Id: '68SL', Display: true }, { Id: '68VS', Display: true }, { Id: '52PD', Display: true }, { Id: 'Transom', Display: false }, { Id: 'Sidelite', Display: false }, { Id: 'SingleDoor', Display: false }, { Id: 'DoubleDoor', Display: false }/**/, { Id: 'Simple', Display: false }, { Id: 'Complex', Display: false }, { Id: 'Over_Size', Display: false }, { Id: 'Arches', Display: false }, { Id: 'Rakes', Display: false }, { Id: 'Customs', Display: false }];
     else if (type == "Doors")
@@ -1225,6 +1243,51 @@ function UpdateReturnedJobSchedule() {
 
 }
 
+
+function GetJobAnalysys(workOrder) {
+    //var test;
+    //var tab = $("a[href='#JobAnalysisTab']");
+    //if (tab.innerText == "JOB ANALYSIS") {
+    //    alert("asdfasd");
+    //}
+    //if 
+    //$("a[href='#JobAnalysisTab']").on('shown.bs.tab', function (e) {
+       
+    //});
+
+    //$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    //    var target = $(e.target).attr("href") // activated tab
+    //    alert(target);
+
+    //    $.ajax({
+    //        //type: "POST",  
+    //        url: 'data.svc/GetJobAnalysis?workOrderNumber=' + workOrder,
+    //        dataType: 'json',
+    //        success: function (data) {
+    //            if (debug) console.log("events.success", "data.GetProducts:");
+
+    //            $("#dataTable tr").remove();
+    //            if (data.GetProductsResult.length > 0) {
+    //                $("#dataTable").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
+    //                for (var i = 0; i < data.GetProductsResult.length; i++) {
+    //                    $("#dataTable").append("<tr><td>" +
+    //                        data.GetProductsResult[i].Item + "</td> <td>" +
+    //                        data.GetProductsResult[i].Size + "</td> <td>" +
+    //                        data.GetProductsResult[i].Quantity + "</td> <td>" +
+    //                        data.GetProductsResult[i].SubQty + "</td> <td>" +
+    //                        data.GetProductsResult[i].System + "</td> <td>" +
+    //                        data.GetProductsResult[i].Description + "</td> <td>" +
+    //                        data.GetProductsResult[i].Status + "</td></tr>");
+    //                }
+    //            }
+
+    //        }, error: function (error) {
+    //            console.log('Error', error);
+    //            $('#script-warning').show();
+    //        }
+    //    });
+    //});
+}
 
 
 function GetProducts(workOrder) {
@@ -1273,6 +1336,7 @@ function GetProducts(workOrder) {
     });
 
 }
+
 
 
 function findDuplicatedObjects(originalObjectArray, newObject) {
