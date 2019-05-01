@@ -217,12 +217,6 @@ namespace CalendarSystem
                 eventData.start = scheduledStartDate;
                 eventData.end = scheduledEndDate;
 
-                //if (SaturdaySunday == "both")
-                //{
-                //    eventData..Saturday = "Yes";
-                //    eventData.Sunday = "Yes";
-                //}
-
                 RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
                 retValue = runner.ProcessUpdateReturnedJob(Utils.ContentTypeParser.GetType("Installation"), eventData);
 
@@ -234,5 +228,25 @@ namespace CalendarSystem
             }
             return retValue;
         }
+
+
+        List<Product> Idata.GetProducts(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetProducts({0})", workOrderNumber);
+            List<Product> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetProducts();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetProducts() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+
     }
 }

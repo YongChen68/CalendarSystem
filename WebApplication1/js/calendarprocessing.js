@@ -286,7 +286,7 @@ function LoadInstallationBufferedJobs() {
     });
 
 
-
+   
 }
 
 function AddInstallationBufferEvent(key, val) {
@@ -707,8 +707,9 @@ $(document).ready(function () {
                         document.getElementsByName('sunday')[0].checked = false;
                     }
 
+                    //retrieve product info
                  
-
+                    GetProducts(event.WorkOrderNumber);
 
                     $("#eventLink").attr('href', event.url);
                    // $("#eventContent").dialog({ modal: true, title: event.LastName, width: 900 });
@@ -1205,6 +1206,55 @@ function UpdateReturnedJobSchedule() {
             $("#eventContent .close").click();
             $('#calendar').fullCalendar('refetchEvents');
             $('#calendar').fullCalendar('rerenderEvents');
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
+
+
+
+function GetProducts(workOrder) {
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetProducts?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetProducts:");
+            //$.each(data.Result, function (pos, item) {
+            //    AddInstallationBufferEvent(pos, item);
+            //});
+           // $('#grd').append("<tr><th>Item </th><th>Quantity </th></tr>")  
+            //var r = new Array(), j = -1;
+            //for (var key = 0, size = data.GetProductsResult.length; key < size; key++) {
+            //    r[++j] = '<tr><td>';
+            //    r[++j] = data.GetProductsResult[key]["Description"];
+            //    r[++j] = '</td><td class="whatever1">';
+            //    r[++j] = data.GetProductsResult[key]["Item"];
+            //    r[++j] = '</td><td class="whatever2">';
+            //    r[++j] = data.GetProductsResult[key]["Quantity"];
+            //    r[++j] = '</td><td class="whatever3">';
+            //    //r[++j] = data[key][2];
+            //    r[++j] = '</td></tr>';
+            //}
+            
+            $("#dataTable tr").remove(); 
+            if (data.GetProductsResult.length > 0) {
+                $("#dataTable").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
+                for (var i = 0; i < data.GetProductsResult.length; i++) {
+                    $("#dataTable").append("<tr><td>" +
+                          data.GetProductsResult[i].Item + "</td> <td>" +
+                          data.GetProductsResult[i].Size + "</td> <td>" +
+                            data.GetProductsResult[i].Quantity + "</td> <td>" +
+                        data.GetProductsResult[i].SubQty + "</td> <td>" +
+                        data.GetProductsResult[i].System + "</td> <td>" +
+                        data.GetProductsResult[i].Description + "</td> <td>" +
+                        data.GetProductsResult[i].Status + "</td></tr>");
+                }
+            }
 
         }, error: function (error) {
             console.log('Error', error);

@@ -17,6 +17,8 @@ namespace CalendarSystem.Utils.Data
         private readonly List<string> jobTypeList;
         private readonly List<string> shippingTypeList;
 
+        private readonly string workOrderNumber;
+
         private EventDataGetter() { }
 
         public EventDataGetter(string start, string end, List<string> stateList, List<string> branchList, List<string> jobType, List<string> shippingType)
@@ -43,7 +45,12 @@ namespace CalendarSystem.Utils.Data
             this.endDate = DateTime.ParseExact(end.Trim(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
         }
 
-        
+        public EventDataGetter(string workOrderNumber)
+        {
+            this.workOrderNumber = workOrderNumber;
+        }
+
+
         private string GetInstallationSQL()
         {
 
@@ -702,6 +709,33 @@ where p.currentstatename in ({0}) and p.Branch in ({1}) and p.JobType in ({2}) a
         {
             throw new NotImplementedException();
         }
+
+        public List<Product> GetProducts()
+        {
+            string SQL = GetProductSQL();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("pWorkOrderNumber", this.workOrderNumber));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.Product>(SQL, pars.ToArray());
+        }
+
+        private string GetProductSQL()
+        {
+            string SQL = string.Format(@"select  p.WorkOrderNumber
+         ,i.[Item] 
+      ,i.[Size_1] as Size
+         ,i.[Quantity]
+      ,i.[SubQty]
+      ,i.[System_1] as System
+      ,i.[Description]
+      ,i.[Status]
+  FROM [flowserv_flowfinityapps].[dbo].[PlantProduction_items] as i INNER JOIN
+       [flowserv_flowfinityapps].[dbo].[PlantProduction] as p ON i.ParentRecordId = p.RecordId
+where p.WorkOrderNumber = '{0}' ", this.workOrderNumber);
+            return SQL;
+        }
+
     }
 
 

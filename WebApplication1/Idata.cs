@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using Generics.Utils;
 using Generics.Utils.Data;
 
 namespace CalendarSystem
@@ -65,6 +66,12 @@ namespace CalendarSystem
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<Generics.Utils.Data.GlobalValues> GetSystemParameters(string type, DateTime start, DateTime end);
-        
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+                   UriTemplate = "GetProducts?workOrderNumber={workOrderNumber}",
+                   ResponseFormat = WebMessageFormat.Json,
+                   BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<Product> GetProducts(string workOrderNumber);
     }
 }

@@ -66,10 +66,10 @@
     </script>--%>
 
     <script>
-    $(function () {
-        $("#from_date").datepicker();
-        $("#end_date").datepicker();
-    });
+        $(function () {
+            $("#from_date").datepicker();
+            $("#end_date").datepicker();
+        });
     </script>
     <style>
         body {
@@ -79,12 +79,28 @@
             font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
         }
 
-        
-        #map { float:left;width:45%;}
-       
-        #content {float:left;width:55%;  vertical-align: top; text-align:left ; padding-left:20px; }
-        #installationContent {float:left;width:55%;  vertical-align: top; text-align:left ; padding-left:20px; }
-        
+
+        #map {
+            float: left;
+            width: 45%;
+        }
+
+        #content {
+            float: left;
+            width: 55%;
+            vertical-align: top;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        #installationContent {
+            float: left;
+            width: 55%;
+            vertical-align: top;
+            text-align: left;
+            padding-left: 20px;
+        }
+
         #wrap {
             width: 100%;
             margin: 0 auto;
@@ -127,28 +143,32 @@
             float: right;
             width: 85%;
         }
-        #eventContent {
 
+        #eventContent {
             z-index: 214748367;
         }
-       
+
         .modal-header {
-       
             background-color: #9FB6CD;
-             color:white;
-            font-weight:400;
-            
-            }
+            color: white;
+            font-weight: 400;
+        }
+
+        .modal-ku {
+  width: 1400px;
+  margin: auto;
+}
 
         .close {
-             color: #fff; 
-             opacity: 1;
-            }
-        .modal-header {
-    width: 100%; /* respsonsive width */
-    /* width/2) */ 
+            color: #fff;
+            opacity: 1;
+        }
+
+        .table-condensed{
+
 }
-        
+
+       
     </style>
 </head>
 <body>
@@ -156,9 +176,9 @@
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
         </asp:ScriptManager>
 
-        <div id="eventContent" style="display: none;"  tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true"   class="modal fade" >
-            <div class="modal-dialog modal-lg"   role="document">
+        <div id="eventContent" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true" class="modal fade">
+            <div class="modal-dialog modal-ku" role="document">
                 <div class="modal-content">
                     <div class="modal-header ">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -173,110 +193,110 @@
                         <div role="tabpanel">
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
-                                 <li role="presentation" class="active">
+                                <li role="presentation" class="active">
                                     <a href="#CustomerTab" aria-controls="customerTab" role="tab" data-toggle="tab">CUSTOMER</a>
 
                                 </li>
-                                  <li role="presentation">
+                                <li role="presentation">
                                     <a href="#InstallTab" aria-controls="uploadTab" role="tab" data-toggle="tab">INSTALL</a>
 
                                 </li>
-                                <li role="presentation"  >
+                                <li role="presentation">
                                     <a href="#ProductTab" aria-controls="productTab" role="tab" data-toggle="tab">PRODUCT</a>
 
                                 </li>
-                               
+
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="CustomerTab">
                                     <div id="map"></div>
-                                        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBspoEtc4kjoRkvnuVk0bnV9G3NUb1N8Kk"></script>
-                                        <script>
-                                            var locationRio = { lat: 49.181520, lng: -122.664260 };
-                                            var map = new google.maps.Map(document.getElementById('map'), {
-                                                zoom: 16,
-                                                center: locationRio,
-                                                gestureHandling: 'cooperative'
-                                            });
-                                            var marker = new google.maps.Marker({
-                                                position: locationRio,
-                                                map: map
-                        
-                                                });
-                                        </script>
-                                     <div id="content" >
-                                   <br>
-                                    <br>
-                                    <div><b>Work Order: </b><span id="workOrder"></span></div>
-                                    <br>
-                                    <div><b>Home Phone: </b><span id="homePhone"></span></div>
-                                    <br>
-                                    <div><b>Cell Phone: </b><span id="cellPhone"></span></div>
-                                    <br>
-                                    <div><b>Branch: </b><span id="branch"></span></div>
-                                    <br>
-                                    <div><b>Address: </b><span id="Address"></span></div>
-                                    <br>
-                                    <div><b>SalesAmount: </b><span id="SalesAmmount"></span></div>
-                                    <br>
-                                   
-                                 
-                                </div>
-                                </div>
-                                 <div role="tabpanel" class="tab-pane" id="InstallTab">
-                                     <div id="installationContent">
-                                    <br>
-                                    <br>
-                                    
-                                  
-                                    <div><b>Senior Installer: </b><span id="SeniorInstaller"></span></div>
-                                    <br>
-                                    <div><b>CrewNames: </b><span id="CrewNames"></span></div>
-                                    <br>
+                                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBspoEtc4kjoRkvnuVk0bnV9G3NUb1N8Kk"></script>
+                                    <script>
+                                        var locationRio = { lat: 49.181520, lng: -122.664260 };
+                                        var map = new google.maps.Map(document.getElementById('map'), {
+                                            zoom: 16,
+                                            center: locationRio,
+                                            gestureHandling: 'cooperative'
+                                        });
+                                        var marker = new google.maps.Marker({
+                                            position: locationRio,
+                                            map: map
 
-                                    <div style="background-color: #D3D3D3">
-                                        <div>
-                                            <b>Saturday: </b>
-                                            <input type="checkbox" name="saturday">
-                                            &nbsp;&nbsp;
+                                        });
+                                    </script>
+                                    <div id="content">
+                                        <br>
+                                        <br>
+                                        <div><b>Work Order: </b><span id="workOrder"></span></div>
+                                        <br>
+                                        <div><b>Home Phone: </b><span id="homePhone"></span></div>
+                                        <br>
+                                        <div><b>Cell Phone: </b><span id="cellPhone"></span></div>
+                                        <br>
+                                        <div><b>Branch: </b><span id="branch"></span></div>
+                                        <br>
+                                        <div><b>Address: </b><span id="Address"></span></div>
+                                        <br>
+                                        <div><b>SalesAmount: </b><span id="SalesAmmount"></span></div>
+                                        <br>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="InstallTab">
+                                    <div id="installationContent">
+                                        <br>
+                                        <br>
+
+
+                                        <div><b>Senior Installer: </b><span id="SeniorInstaller"></span></div>
+                                        <br>
+                                        <div><b>CrewNames: </b><span id="CrewNames"></span></div>
+                                        <br>
+
+                                        <div style="background-color: #D3D3D3">
+                                            <div>
+                                                <b>Saturday: </b>
+                                                <input type="checkbox" name="saturday">
+                                                &nbsp;&nbsp;
+                                            </div>
+                                            <br>
+                                            <div>
+                                                <b>Sunday: </b>&nbsp;&nbsp;<input type="checkbox" name="sunday">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="button" name="btnSunday" id="btnSunday" style="text-decoration-line: underline; border-style: none;" value="Update" onclick="UpdateEventWeekends()">
+                                            </div>
                                         </div>
                                         <br>
-                                        <div>
-                                            <b>Sunday: </b>&nbsp;&nbsp;<input type="checkbox" name="sunday">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;
-                                                <input type="button" name="btnSunday" id="btnSunday" style="text-decoration-line: underline; border-style: none;" value="Update" onclick="UpdateEventWeekends()">
-                                        </div>
-                                    </div>
-                                    <br>
 
-                                    <div class="form-group" style="background-color: #D3D3D3" id="ReturnedJob">
-                                        <b>Return Scheduled Date:</b>
-                                        <div>
-                                            From: 
+                                        <div class="form-group" style="background-color: #D3D3D3" id="ReturnedJob">
+                                            <b>Return Scheduled Date:</b>
+                                            <div>
+                                                From: 
                                                 <input id="from_date" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
-                                            To:   &nbsp;&nbsp;<input id="end_date" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
-                                            &nbsp;&nbsp;<input type="button" name="btnReturnedJob" id="btnReturnedJob" style="text-decoration-line: underline; border-style: none;" value="Save" onclick="UpdateReturnedJobSchedule()">
+                                                To:   &nbsp;&nbsp;<input id="end_date" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
+                                                &nbsp;&nbsp;<input type="button" name="btnReturnedJob" id="btnReturnedJob" style="text-decoration-line: underline; border-style: none;" value="Save" onclick="UpdateReturnedJobSchedule()">
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane " id="ProductTab">
-                                    
+                                    <div style="overflow: auto; height:600px;">
+                                    <table id="dataTable" class="table table-striped table-bordered table-hover table-condensed" ></table>
+                                   </div>
+
                                 </div>
-                               
+
                             </div>
-                       </div>
+                        </div>
                     </div>
 
-                   <div class="modal-footer">
-                           
+                    <div class="modal-footer">
                     </div>
 
                 </div>
-           </div>
-       
-        <br>
+            </div>
+
+            <br>
         </div>
         <div id="openviewWeather">
             <a class="weatherwidget-io" href="https://forecast7.com/en/49d28n123d12/vancouver/" data-label_1="Vancouver" data-label_2="Weather" data-font="Roboto" data-icons="Climacons Animated" data-theme="original" data-accent="rgba(1, 1, 1, 0.0)"></a>
