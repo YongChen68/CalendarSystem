@@ -318,7 +318,7 @@
 
                                 <div role="tabpanel" class="tab-pane " id="JobAnalysisTab">
                                     <div >
-                                         test
+                                         
                                     </div>
 
                                 </div>

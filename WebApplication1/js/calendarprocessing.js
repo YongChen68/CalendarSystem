@@ -820,7 +820,8 @@ $(document).ready(function () {
                     (event.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + event.Windows + "Status: " + event.WindowState + "\" src=\"images/window.PNG\" />" : "") +
                     (event.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + event.Doors + "Status: " + event.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
                     (event.TotalWoodDropOff == 1 ? "&nbsp;<img src=\"images/delivery.PNG\" />" : "") +
-                    (event.TotalAsbestos== 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
+                    (event.TotalAsbestos == 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
+                    (event.TotalHighRisk == 1 ? "&nbsp;<img src=\"images/risk.PNG\" />" : "") +
                     ("WO: " + event.WorkOrderNumber) + "&nbsp;" +
                     (",Name: " + event.LastName.trim().Length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
                     "&nbsp;" + (event.City.trim().Length > 5 ? event.City.trim().toLowerCase().Substring(0, 5) : event.City.trim().toLowerCase()) + "&nbsp;";
