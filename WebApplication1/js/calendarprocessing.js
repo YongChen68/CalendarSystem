@@ -704,6 +704,9 @@ $(document).ready(function () {
 
                     $("#branch").html(event.Branch);
 
+                    $("#TotalWindows1").html(event.TotalWindows);
+                    $("#TotalDoors1").html(event.TotalDoors);
+                    
 
                     $("#Asbestos-Jobs1").html(event.TotalAsbestos == 1 ? "Yes" : "No");
                     $("#Wood-DropOff-Jobs1").html(event.TotalWoodDropOff == 1 ? "Yes" : "No");

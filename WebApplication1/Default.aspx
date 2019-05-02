@@ -240,8 +240,14 @@
                                         <div><b>Branch: </b><span id="branch"></span></div>
                                         <br>
                                         <div><b>Address: </b><span id="Address"></span></div>
+                                                      <br>
+                                        <div><b>Total Windows: </b><span id="TotalWindows1"></span></div>
+
+                                         <br>
+                                        <div><b>Total Doors: </b><span id="TotalDoors1"></span></div>
                                         <br>
                                         <div><b>SalesAmount: </b><span id="SalesAmmount"></span></div>
+                          
                                         <br>
                                     </div>
                                 </div>
