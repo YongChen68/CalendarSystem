@@ -701,7 +701,15 @@ $(document).ready(function () {
                                   
                     $("#homePhone").html(event.HomePhoneNumber);
                     $("#cellPhone").html(event.CellPhone);
+
                     $("#branch").html(event.Branch);
+
+
+                    $("#Asbestos-Jobs1").html(event.TotalAsbestos == 1 ? "Yes" : "No");
+                    $("#Wood-DropOff-Jobs1").html(event.TotalWoodDropOff == 1 ? "Yes" : "No");
+                    $("#HighRisk-Jobs1").html(event.TotalHighRisk == 1 ? "Yes" : "No");
+
+
                     $("#Address").html(event.StreetAddress + "\r\n" +"," +
                         event.City + "\r\n\r\n" );
                     $("#SalesAmmount").html(event.TotalSalesAmount.formatMoney(2, "$", ",", "."));
@@ -808,6 +816,8 @@ $(document).ready(function () {
                     event.EstInstallerCnt + "\">" +
                     (event.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + event.Windows + "Status: " + event.WindowState + "\" src=\"images/window.PNG\" />" : "") +
                     (event.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + event.Doors + "Status: " + event.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
+                    (event.TotalWoodDropOff == 1 ? "&nbsp;<img src=\"images/delivery.PNG\" />" : "") +
+                    (event.TotalAsbestos== 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
                     ("WO: " + event.WorkOrderNumber) + "&nbsp;" +
                     (",Name: " + event.LastName.trim().Length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
                     "&nbsp;" + (event.City.trim().Length > 5 ? event.City.trim().toLowerCase().Substring(0, 5) : event.City.trim().toLowerCase()) + "&nbsp;";
@@ -1020,13 +1030,6 @@ function SetDayValue(key, dayTotals) {
         SetData('Windows', dayTotals.day, parseFloat(dayTotals.windows).toFixed(2));
         SetData('Work-Orders', dayTotals.day, dayTotals.WOCount);
         SetData('Asbestos-Jobs', dayTotals.day, dayTotals.TotalAsbestos);
-        
-      //  SetData('Asbestos-Jobs', dayTotals.day, dayTotals.total .WOCount);
-       // SetData('Windows', dayTotals.day, 3);
-        //  SetData('Work Orders', dayTotals.day, 0);
-        //  SetData('Installation Min', dayTotals.day, 0);
-        //  SetData('Asbestos Jobs', dayTotals.day, 0);
-        //  SetData('High Risk Jobss', dayTotals.day, 0);
         SetData('Sales-Amount', dayTotals.day, dayTotals.SalesAmmount.formatMoney(2, "$", ",", "."));
     }
     else {

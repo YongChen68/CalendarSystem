@@ -246,14 +246,14 @@
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="InstallTab">
-                                    <div id="installationContent">
+                                    <div id="installationContent" style="width:600px; margin-left:40px;">
                                         <br>
                                         <br>
 
                                         <div>
                                             <b>Installation Scheduled Date </b>
                                             <div>
-                                                &nbsp;&nbsp; &nbsp;&nbsp;   &nbsp;&nbsp; &nbsp;&nbsp;  From:  <span id="InstallScheduledStartDate"></span>
+                                           &nbsp;&nbsp; &nbsp;&nbsp;   &nbsp;&nbsp; &nbsp;&nbsp;      &nbsp;&nbsp; &nbsp;&nbsp;   &nbsp;&nbsp; &nbsp;&nbsp;  From:  <span id="InstallScheduledStartDate"></span>
                                             </div>
                                             <div>
                                                 &nbsp;&nbsp; &nbsp;&nbsp;    &nbsp;&nbsp; &nbsp;&nbsp;  To:  <span id="InstallScheduledEndDate"></span>
@@ -267,6 +267,15 @@
                                         <br>
                                         <div><b>CrewNames: </b><span id="CrewNames"></span></div>
                                         <br>
+
+                                        <div><b>Asbestos-Jobs: </b><span id="Asbestos-Jobs1"></span></div>
+
+                                         <br>
+                                        <div><b>Wood-DropOff-Jobs: </b><span id="Wood-DropOff-Jobs1"></span></div>
+
+                                          <br>
+                                        <div><b>HighRisk-Jobs: </b><span id="HighRisk-Jobs1"></span></div>
+
 
                                         <div style="background-color: #D3D3D3">
                                             <div>

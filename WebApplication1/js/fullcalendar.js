@@ -43,7 +43,7 @@
                     }
                 }
             }
-                // a new calendar initialization
+            // a new calendar initialization
             else if (!calendar) { // don't initialize twice
                 calendar = new Calendar(element, options);
                 element.data('fullCalendar', calendar);
@@ -494,8 +494,8 @@
             if (typeof token === 'string') {
                 specs.push(
                     token.charAt(0) == '-' ?
-					{ field: token.substring(1), order: -1 } :
-					{ field: token, order: 1 }
+                        { field: token.substring(1), order: -1 } :
+                        { field: token, order: 1 }
                 );
             }
             else if (typeof token === 'function') {
@@ -612,9 +612,9 @@
             return "<tr><td colspan='2' class='centra-separator'><hr></td></tr>";
         else
             return '<tr id=' + type + ' class="centra-' + type + ' centra-row">' +
-                            '<th class="fc-axis fc-week-number fc-widget-header">' + type + ':</th>' +
-                            '<th class="fc-day-header fc-widget-header fc-' + style + '"></th>' +
-                            '</tr>';
+                '<th class="fc-axis fc-week-number fc-widget-header">' + type + ':</th>' +
+                '<th class="fc-day-header fc-widget-header fc-' + style + '"></th>' +
+                '</tr>';
     }
 
     function RenderWeekRow(type) {
@@ -622,14 +622,14 @@
         //       return "<tr><td colspan='8' class='centra-separator'><hr></td></tr>";
         //   else
         return '<tr id=' + type + ' class="centra-' + type + ' centra-row">' +
-        '<th class="fc-axis fc-week-number fc-widget-header" style="width:120px">' + type + ':</th>' +
-        '<th class="fc-day-header fc-widget-header fc-sun"></th>' +
-        '<th class="fc-day-header fc-widget-header fc-mon"></th>' +
-        '<th class="fc-day-header fc-widget-header fc-tue"></th>' +
-        '<th class="fc-day-header fc-widget-header fc-wed"></th>' +
-        '<th class="fc-day-header fc-widget-header fc-thu"></th>' +
-        '<th class="fc-day-header fc-widget-header fc-fri"></th>' +
-        '<th class="fc-day-header fc-widget-header fc-sat"></th></tr>'
+            '<th class="fc-axis fc-week-number fc-widget-header" style="width:120px">' + type + ':</th>' +
+            '<th class="fc-day-header fc-widget-header fc-sun"></th>' +
+            '<th class="fc-day-header fc-widget-header fc-mon"></th>' +
+            '<th class="fc-day-header fc-widget-header fc-tue"></th>' +
+            '<th class="fc-day-header fc-widget-header fc-wed"></th>' +
+            '<th class="fc-day-header fc-widget-header fc-thu"></th>' +
+            '<th class="fc-day-header fc-widget-header fc-fri"></th>' +
+            '<th class="fc-day-header fc-widget-header fc-sat"></th></tr>'
     }
 
     // Diffs the two moments into a Duration where full-days are recorded first, then the remaining time.
@@ -2828,9 +2828,9 @@
                         top: this.top0,
                         left: this.left0
                     }, {
-                        duration: revertDuration,
-                        complete: complete
-                    });
+                            duration: revertDuration,
+                            complete: complete
+                        });
                 }
                 else {
                     complete();
@@ -3651,11 +3651,11 @@
         headHtml: function () {
             var widgetClass = this.view.widgetHeaderClass;
             var retValue = '' +
-               '<div class="fc-row ' + this.view.widgetHeaderClass + '">' +
-                   '<table>' +
-                       '<thead>' +
-                           this.rowHtml('head') + // leverages RowRenderer
-                       '</thead>'
+                '<div class="fc-row ' + this.view.widgetHeaderClass + '">' +
+                '<table>' +
+                '<thead>' +
+                this.rowHtml('head') + // leverages RowRenderer
+                '</thead>'
             if (this.view.type == 'agendaDay') {
                 var cell = this.getCell(0, 0);
                 if (displayType == "Installation") {
@@ -3705,7 +3705,7 @@
                         RenderDayRow('Customs', dayIDs[cell.start.day()]) +
                         '</tbody>';
                 }
-               
+
             }
             if (this.view.type == 'agendaWeek') {
                 if (displayType == "Installation") {
@@ -3746,16 +3746,16 @@
                         RenderWeekRow('Transom') +
                         RenderWeekRow('Sidelite') +
                         RenderWeekRow('SingleDoor') +
-                        RenderWeekRow('DoubleDoor') 
-                      
-                        '</tbody>';
+                        RenderWeekRow('DoubleDoor') +
+
+                    '</tbody>';
                 }
 
-              
-                 
-                       
-             
-               }
+
+
+
+
+            }
             retValue += '</table>' +
                 '</div>';
             return retValue;
@@ -3770,7 +3770,7 @@
 
             return '' +
                 '<th class="fc-day-header ' + view.widgetHeaderClass + ' fc-' + dayIDs[date.day()] + '">' +
-                    htmlEscape(date.format(this.colHeadFormat)) +
+                htmlEscape(date.format(this.colHeadFormat)) +
                 '</th>';
         },
 
@@ -4192,7 +4192,7 @@
                     };
                     calendar.normalizeEventRangeTimes(dropLocation);
                 }
-                    // othewise, work off existing values
+                // othewise, work off existing values
                 else {
                     dropLocation = {
                         start: event.start.clone(),
@@ -4382,7 +4382,7 @@
                             disableCursor();
                             resizeLocation = null;
                         }
-                            // no change? (TODO: how does this work with timezones?)
+                        // no change? (TODO: how does this work with timezones?)
                         else if (resizeLocation.start.isSame(event.start) && resizeLocation.end.isSame(eventEnd)) {
                             resizeLocation = null;
                         }
@@ -4920,21 +4920,21 @@
 
             return '' +
                 '<div class="' + classes.join(' ') + '">' +
-                    '<div class="fc-bg">' +
-                        '<table>' +
-                            this.rowHtml('day', row) + // leverages RowRenderer. calls dayCellHtml()
-                        '</table>' +
-                    '</div>' +
-                    '<div class="fc-content-skeleton">' +
-                        '<table>' +
-                            (this.numbersVisible ?
-                                '<thead>' +
-                                    this.rowHtml('number', row) + // leverages RowRenderer. View will define render method
-                                '</thead>' :
-                                ''
-                                ) +
-                        '</table>' +
-                    '</div>' +
+                '<div class="fc-bg">' +
+                '<table>' +
+                this.rowHtml('day', row) + // leverages RowRenderer. calls dayCellHtml()
+                '</table>' +
+                '</div>' +
+                '<div class="fc-content-skeleton">' +
+                '<table>' +
+                (this.numbersVisible ?
+                    '<thead>' +
+                    this.rowHtml('number', row) + // leverages RowRenderer. View will define render method
+                    '</thead>' :
+                    ''
+                ) +
+                '</table>' +
+                '</div>' +
                 '</div>';
         },
 
@@ -5092,23 +5092,23 @@
 
             range = this.view.computeDayRange(range); // make whole-day range, considering nextDayThreshold
             first = this.dateToCellOffset(range.start);
-           // last = this.dateToCellOffset(range.end.subtract(1, 'days')); // offset of inclusive end date
+            // last = this.dateToCellOffset(range.end.subtract(1, 'days')); // offset of inclusive end date
 
 
             if (displayType == "Installation") {
                 last = this.dateToCellOffset(range.end.subtract(0, 'days')); // offset of inclusive end date
 
-              //range.end._i ==range.start._i
-                if (range.end._i ==range.start._i) {
+                //range.end._i ==range.start._i
+                if (range.end._i == range.start._i) {
                     last = this.dateToCellOffset(range.end.subtract(1, 'days')); // offset of in
                 }
-                   
-             
+
+
             }
             else {
                 last = this.dateToCellOffset(range.end.subtract(1, 'days')); // offset of inclusive end date
             }
-          
+
 
             for (row = 0; row < rowCnt; row++) {
                 rowFirst = row * colCnt;
@@ -5248,7 +5248,7 @@
 
                 skeletonEl.css('top', skeletonTop)
                     .find('table')
-                        .append(rowStructs[row].tbodyEl);
+                    .append(rowStructs[row].tbodyEl);
 
                 rowEl.append(skeletonEl);
                 helperNodes.push(skeletonEl[0]);
@@ -5308,7 +5308,7 @@
 
             skeletonEl = $(
                 '<div class="fc-' + className + '-skeleton">' +
-                    '<table><tr/></table>' +
+                '<table><tr/></table>' +
                 '</div>'
             );
             trEl = skeletonEl.find('tr');
@@ -5450,33 +5450,33 @@
 
             titleHtml =
                 '<span class="fc-title">' +
-                    (htmlEscape(event.title || '') || '&nbsp;') + // we always want one line of height
+                (htmlEscape(event.title || '') || '&nbsp;') + // we always want one line of height
                 '</span>';
 
             return '<a class="' + classes.join(' ') + '"' +
-                    (event.url ?
-                        ' href="' + htmlEscape(event.url) + '"' :
-                        ''
-                        ) +
-                    (skinCss ?
-                        ' style="' + skinCss + '"' :
-                        ''
-                        ) +
+                (event.url ?
+                    ' href="' + htmlEscape(event.url) + '"' :
+                    ''
+                ) +
+                (skinCss ?
+                    ' style="' + skinCss + '"' :
+                    ''
+                ) +
                 '>' +
-                    '<div class="fc-content">' +
-                        (this.isRTL ?
-                            titleHtml + ' ' + timeHtml : // put a natural space in between
-                            timeHtml + ' ' + titleHtml   //
-                            ) +
-                    '</div>' +
-                    (isResizableFromStart ?
-                        '<div class="fc-resizer fc-start-resizer" />' :
-                        ''
-                        ) +
-                    (isResizableFromEnd ?
-                        '<div class="fc-resizer fc-end-resizer" />' :
-                        ''
-                        ) +
+                '<div class="fc-content">' +
+                (this.isRTL ?
+                    titleHtml + ' ' + timeHtml : // put a natural space in between
+                    timeHtml + ' ' + titleHtml   //
+                ) +
+                '</div>' +
+                (isResizableFromStart ?
+                    '<div class="fc-resizer fc-start-resizer" />' :
+                    ''
+                ) +
+                (isResizableFromEnd ?
+                    '<div class="fc-resizer fc-end-resizer" />' :
+                    ''
+                ) +
                 '</a>';
         },
 
@@ -5927,16 +5927,16 @@
             var title = cell.start.format(view.opt('dayPopoverFormat'));
             var content = $(
                 '<div class="fc-header ' + view.widgetHeaderClass + '">' +
-                    '<span class="fc-close ' +
-                        (isTheme ? 'ui-icon ui-icon-closethick' : 'fc-icon fc-icon-x') +
-                    '"></span>' +
-                    '<span class="fc-title">' +
-                        htmlEscape(title) +
-                    '</span>' +
-                    '<div class="fc-clear"/>' +
+                '<span class="fc-close ' +
+                (isTheme ? 'ui-icon ui-icon-closethick' : 'fc-icon fc-icon-x') +
+                '"></span>' +
+                '<span class="fc-title">' +
+                htmlEscape(title) +
+                '</span>' +
+                '<div class="fc-clear"/>' +
                 '</div>' +
                 '<div class="fc-body ' + view.widgetContentClass + '">' +
-                    '<div class="fc-event-container"></div>' +
+                '<div class="fc-event-container"></div>' +
                 '</div>'
             );
             var segContainer = content.find('.fc-event-container');
@@ -6071,14 +6071,14 @@
         renderHtml: function () {
             return '' +
                 '<div class="fc-bg">' +
-                    '<table>' +
-                        this.rowHtml('slotBg') + // leverages RowRenderer, which will call slotBgCellHtml
-                    '</table>' +
+                '<table>' +
+                this.rowHtml('slotBg') + // leverages RowRenderer, which will call slotBgCellHtml
+                '</table>' +
                 '</div>' +
                 '<div class="fc-slats">' +
-                    '<table>' +
-                        this.slatRowHtml() +
-                    '</table>' +
+                '<table>' +
+                this.slatRowHtml() +
+                '</table>' +
                 '</div>';
         },
 
@@ -6107,19 +6107,19 @@
 
                 axisHtml =
                     '<td class="fc-axis fc-time ' + view.widgetContentClass + '" ' + view.axisStyleAttr() + '>' +
-                        (isLabeled ?
-                            '<span>' + // for matchCellWidths
-                                htmlEscape(slotDate.format(this.labelFormat)) +
-                            '</span>' :
-                            ''
-                            ) +
+                    (isLabeled ?
+                        '<span>' + // for matchCellWidths
+                        htmlEscape(slotDate.format(this.labelFormat)) +
+                        '</span>' :
+                        ''
+                    ) +
                     '</td>';
 
                 html +=
                     '<tr ' + (isLabeled ? '' : 'class="fc-minor"') + '>' +
-                        (!isRTL ? axisHtml : '') +
-                        '<td class="' + view.widgetContentClass + '"/>' +
-                        (isRTL ? axisHtml : '') +
+                    (!isRTL ? axisHtml : '') +
+                    '<td class="' + view.widgetContentClass + '"/>' +
+                    (isRTL ? axisHtml : '') +
                     "</tr>";
 
                 slotTime.add(this.slotDuration);
@@ -6461,7 +6461,7 @@
 
             this.helperEl = $('<div class="fc-helper-skeleton"/>')
                 .append(tableEl)
-                    .appendTo(this.el);
+                .appendTo(this.el);
         },
 
 
@@ -6520,7 +6520,7 @@
                 className = className || type.toLowerCase();
                 skeletonEl = $(
                     '<div class="fc-' + className + '-skeleton">' +
-                        '<table><tr/></table>' +
+                    '<table><tr/></table>' +
                     '</div>'
                 );
                 trEl = skeletonEl.find('tr');
@@ -6761,40 +6761,40 @@
                 (event.url ?
                     ' href="' + htmlEscape(event.url) + '"' :
                     ''
-                    ) +
+                ) +
                 (skinCss ?
                     ' style="' + skinCss + '"' :
                     ''
-                    ) +
+                ) +
                 '>' +
-                    '<div class="fc-content">' +
-                        (timeText ?
-                            '<div class="fc-time"' +
-                            ' data-start="' + htmlEscape(startTimeText) + '"' +
-                            ' data-full="' + htmlEscape(fullTimeText) + '"' +
-                            '>' +
-                                '<span>' + htmlEscape(timeText) + '</span>' +
-                            '</div>' :
-                            ''
-                            ) +
-                        (event.title ?
-                            '<div class="fc-title">' +
-                                htmlEscape(event.title) +
-                            '</div>' :
-                            ''
-                            ) +
-                    '</div>' +
-                    '<div class="fc-bg"/>' +
-                    /* TODO: write CSS for this
-                    (isResizableFromStart ?
-                        '<div class="fc-resizer fc-start-resizer" />' :
-                        ''
-                        ) +
-                    */
-                    (isResizableFromEnd ?
-                        '<div class="fc-resizer fc-end-resizer" />' :
-                        ''
-                        ) +
+                '<div class="fc-content">' +
+                (timeText ?
+                    '<div class="fc-time"' +
+                    ' data-start="' + htmlEscape(startTimeText) + '"' +
+                    ' data-full="' + htmlEscape(fullTimeText) + '"' +
+                    '>' +
+                    '<span>' + htmlEscape(timeText) + '</span>' +
+                    '</div>' :
+                    ''
+                ) +
+                (event.title ?
+                    '<div class="fc-title">' +
+                    htmlEscape(event.title) +
+                    '</div>' :
+                    ''
+                ) +
+                '</div>' +
+                '<div class="fc-bg"/>' +
+                /* TODO: write CSS for this
+                (isResizableFromStart ?
+                    '<div class="fc-resizer fc-start-resizer" />' :
+                    ''
+                    ) +
+                */
+                (isResizableFromEnd ?
+                    '<div class="fc-resizer fc-end-resizer" />' :
+                    ''
+                ) +
                 '</a>';
         },
 
@@ -7259,11 +7259,11 @@
             return this.clear().then(function () { // clear the content first (async)
                 return (
                     _this.displaying =
-                        $.when(_this.displayView(date)) // displayView might return a promise
-                            .then(function () {
-                                _this.forceScroll(_this.computeInitialScroll(scrollState));
-                                _this.triggerRender();
-                            })
+                    $.when(_this.displayView(date)) // displayView might return a promise
+                        .then(function () {
+                            _this.forceScroll(_this.computeInitialScroll(scrollState));
+                            _this.triggerRender();
+                        })
                 );
             });
         },
@@ -8982,7 +8982,7 @@
             // Make an alias so the language can be referenced either way.
             $.datepicker.regional[dpLangCode] =
                 $.datepicker.regional[langCode] = // alias
-                    dpOptions;
+                dpOptions;
 
             // Alias 'en' to the default language data. Do this every time.
             $.datepicker.regional.en = $.datepicker.regional[''];
@@ -9281,9 +9281,9 @@
 
                                 button = $( // type="button" so that it doesn't submit a form
                                     '<button type="button" class="' + classes.join(' ') + '">' +
-                                        innerHtml +
+                                    innerHtml +
                                     '</button>'
-                                    )
+                                )
                                     .click(function (ev) {
                                         // don't process clicks for disabled buttons
                                         if (!button.hasClass(tm + '-state-disabled')) {
@@ -9707,7 +9707,7 @@
                     (source.origArray || source.googleCalendarId || source.url || source.events) : // get the primitive
                     null
             ) ||
-            source; // the given argument *is* the primitive
+                source; // the given argument *is* the primitive
         }
 
 
@@ -10405,7 +10405,7 @@
                     if (overlap === false) {
                         return false;
                     }
-                        // if the event's overlap is a test function, pass the peer event in question as the first param
+                    // if the event's overlap is a test function, pass the peer event in question as the first param
                     else if (typeof overlap === 'function' && !overlap(peerEvent, event)) {
                         return false;
                     }
@@ -10597,22 +10597,22 @@
         renderHtml: function () {
             return '' +
                 '<table>' +
-                    '<thead class="fc-head">' +
-                        '<tr>' +
-                            '<td class="' + this.widgetHeaderClass + '">' +
-                                this.dayGrid.headHtml() + // render the day-of-week headers
-                            '</td>' +
-                        '</tr>' +
-                    '</thead>' +
-                    '<tbody class="fc-body">' +
-                        '<tr>' +
-                            '<td class="' + this.widgetContentClass + '">' +
-                                '<div class="fc-day-grid-container">' +
-                                    '<div class="fc-day-grid"/>' +
-                                '</div>' +
-                            '</td>' +
-                        '</tr>' +
-                    '</tbody>' +
+                '<thead class="fc-head">' +
+                '<tr>' +
+                '<td class="' + this.widgetHeaderClass + '">' +
+                this.dayGrid.headHtml() + // render the day-of-week headers
+                '</td>' +
+                '</tr>' +
+                '</thead>' +
+                '<tbody class="fc-body">' +
+                '<tr>' +
+                '<td class="' + this.widgetContentClass + '">' +
+                '<div class="fc-day-grid-container">' +
+                '<div class="fc-day-grid"/>' +
+                '</div>' +
+                '</td>' +
+                '</tr>' +
+                '</tbody>' +
                 '</table>';
         },
 
@@ -10623,9 +10623,9 @@
             if (this.weekNumbersVisible) {
                 return '' +
                     '<th class="fc-week-number ' + this.widgetHeaderClass + '" ' + this.weekNumberStyleAttr() + '>' +
-                        '<span>' + // needed for matchCellWidths
-                            htmlEscape(this.opt('weekNumberTitle')) +
-                        '</span>' +
+                    '<span>' + // needed for matchCellWidths
+                    htmlEscape(this.opt('weekNumberTitle')) +
+                    '</span>' +
                     '</th>';
             }
         },
@@ -10637,9 +10637,9 @@
             if (this.weekNumbersVisible) {
                 return '' +
                     '<td class="fc-week-number" ' + this.weekNumberStyleAttr() + '>' +
-                        '<span>' + // needed for matchCellWidths
-                            this.dayGrid.getCell(row, 0).start.format('w') +
-                        '</span>' +
+                    '<span>' + // needed for matchCellWidths
+                    this.dayGrid.getCell(row, 0).start.format('w') +
+                    '</span>' +
                     '</td>';
             }
         },
@@ -10679,7 +10679,7 @@
 
             return '' +
                 '<td class="' + classes.join(' ') + '" data-date="' + date.format() + '">' +
-                    date.date() +
+                date.date() +
                 '</td>';
         },
 
@@ -11002,27 +11002,27 @@
         renderHtml: function () {
             return '' +
                 '<table>' +
-                    '<thead class="fc-head">' +
-                        '<tr>' +
-                            '<td class="' + this.widgetHeaderClass + '">' +
-                                this.timeGrid.headHtml() + // render the day-of-week headers
-                            '</td>' +
-                        '</tr>' +
-                    '</thead>' +
-                    '<tbody class="fc-body">' +
-                        '<tr>' +
-                            '<td class="' + this.widgetContentClass + '">' +
-                                (this.dayGrid ?
-                                    '<div class="fc-day-grid"/>' +
-                                    '<hr class="fc-divider ' + this.widgetHeaderClass + '"/>' :
-                                    ''
-                                    ) +
-                                '<div class="fc-time-grid-container">' +
-                                    '<div class="fc-time-grid"/>' +
-                                '</div>' +
-                            '</td>' +
-                        '</tr>' +
-                    '</tbody>' +
+                '<thead class="fc-head">' +
+                '<tr>' +
+                '<td class="' + this.widgetHeaderClass + '">' +
+                this.timeGrid.headHtml() + // render the day-of-week headers
+                '</td>' +
+                '</tr>' +
+                '</thead>' +
+                '<tbody class="fc-body">' +
+                '<tr>' +
+                '<td class="' + this.widgetContentClass + '">' +
+                (this.dayGrid ?
+                    '<div class="fc-day-grid"/>' +
+                    '<hr class="fc-divider ' + this.widgetHeaderClass + '"/>' :
+                    ''
+                ) +
+                '<div class="fc-time-grid-container">' +
+                '<div class="fc-time-grid"/>' +
+                '</div>' +
+                '</td>' +
+                '</tr>' +
+                '</tbody>' +
                 '</table>';
         },
 
@@ -11039,9 +11039,9 @@
 
                 return '' +
                     '<th class="fc-axis fc-week-number ' + this.widgetHeaderClass + '" ' + this.axisStyleAttr() + ' style="width:120px;">' +
-                        '<span>' + // needed for matchCellWidths
-                            htmlEscape(weekText) +
-                        '</span>' +
+                    '<span>' + // needed for matchCellWidths
+                    htmlEscape(weekText) +
+                    '</span>' +
                     '</th>';
             }
             else {
@@ -11055,9 +11055,9 @@
         dayIntroHtml: function () {
             return '' +
                 '<td class="fc-axis ' + this.widgetContentClass + '" ' + this.axisStyleAttr() + ' style="width:120px;">' +
-                    '<span>' + // needed for matchCellWidths
-                        (this.opt('allDayHtml') || htmlEscape(this.opt('allDayText'))) +
-                    '</span>' +
+                '<span>' + // needed for matchCellWidths
+                (this.opt('allDayHtml') || htmlEscape(this.opt('allDayText'))) +
+                '</span>' +
                 '</td>';
         },
 
