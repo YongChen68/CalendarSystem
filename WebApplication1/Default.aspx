@@ -265,7 +265,7 @@
                                                 &nbsp;&nbsp; &nbsp;&nbsp;    &nbsp;&nbsp; &nbsp;&nbsp;  To:  <span id="InstallScheduledEndDate"></span>
                                             </div>
 
-
+                                             <input type="button" name="btnUpdateScheduleDate" id="btnUpdateScheduleDate" style="text-decoration-line: underline; border-style: none;" value="Update Scheduled Date" onclick="UpdateEventSchedule()">
                                         </div>
 
                                         <br>

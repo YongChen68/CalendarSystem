@@ -28,7 +28,9 @@ function eventUpdate(event, dayDelta, minuteDelta, allDay, revertFunc) {
     $(this).remove();
 }
 
+function UpdateEventSchedule() {
 
+}
 function sendUpdateToServer(event) {
     var eventToUpdate = {
         id: event.id,
@@ -335,7 +337,7 @@ function AddBufferEvent(key, val) {
     if (val.M2000Icon != undefined && val.M2000Icon == 1) // M2000
         img += "<img alt=\"#\" src=\"images/M2000.png\" />&nbsp;";
 
-    var el = $("<div class='fc-event" + (val.JobType == "RES" ? " reservation" : "") + "' id=\"" + val.id + "\" style=\"background-color:" + val.color + "\">" + val.title + img +  + "</div>").appendTo('#external-events');
+    var el = $("<div class='fc-event" + (val.JobType == "RES" ? " reservation" : "") + "' id=\"" + val.id + "\" style=\"background-color:" + val.color + "\">" + val.title + img +   "</div>").appendTo('#external-events');
     
     el.draggable({
         zIndex: 999,
@@ -814,8 +816,7 @@ $(document).ready(function () {
                 $(element).find(dom).empty();
                 
 
-                var ret = "<img src=\"images/home.png\" title=\"" + ToInstallationEventString(event) + "\">" +
-                    "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
+                var ret ="<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
                     event.EstInstallerCnt + "\">" +
                     (event.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + event.Windows + "Status: " + event.WindowState + "\" src=\"images/window.PNG\" />" : "") +
                     (event.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + event.Doors + "Status: " + event.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
