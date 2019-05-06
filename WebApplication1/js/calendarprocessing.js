@@ -823,6 +823,7 @@ $(document).ready(function () {
                     (event.TotalWoodDropOff == 1 ? "&nbsp;<img src=\"images/delivery.PNG\" />" : "") +
                     (event.TotalAsbestos == 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
                     (event.TotalHighRisk == 1 ? "&nbsp;<img src=\"images/risk.PNG\" />" : "") +
+                    (event.ReturnedJob == 1 ? "&nbsp;<img src=\"images/fire.PNG\" />" : "") +
                     ("WO: " + event.WorkOrderNumber) + "&nbsp;" +
                     (",Name: " + event.LastName.trim().Length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
                     "&nbsp;" + (event.City.trim().Length > 5 ? event.City.trim().toLowerCase().Substring(0, 5) : event.City.trim().toLowerCase()) + "&nbsp;";
