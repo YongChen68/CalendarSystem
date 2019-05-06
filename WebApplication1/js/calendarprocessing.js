@@ -853,7 +853,15 @@ $(document).ready(function () {
 
             //var dayId = FindDayIdfromTotals(GetDatefromMoment(event.start));
           
-            var dayId = FindDayIdfromTotals(GetDatefromMoment(event.ScheduledDate));
+            var dayId;
+            if (displayType == "Installation") {
+              dayId = FindDayIdfromTotals(GetDatefromMoment(event.ScheduledDate));
+            }
+            else
+            {
+                dayId = FindDayIdfromTotals(GetDatefromMoment(event.start));
+            }
+                
             if (totals.length < dayId) console.log("eventRender", "dayId exceeds totals", dayId, totals.length);
 
             
@@ -887,12 +895,12 @@ $(document).ready(function () {
             totals[dayId].SingleDoor += event.SingleDoor !== undefined ? event.SingleDoor : 0;
             totals[dayId].DoubleDoor += event.DoubleDoor !== undefined ? event.DoubleDoor : 0;
             // Window Info
-            totals[dayId].Complex += event.Complex !== undefined ? event.Complex : 0;
-            totals[dayId].Simple += event.Simple !== undefined ? event.Simple : 0;
-            totals[dayId].Over_Size += event.Over_Size !== undefined ? event.Over_Size : 0;
-            totals[dayId].Arches += event.Arches !== undefined ? event.Arches : 0;
-            totals[dayId].Rakes += event.Rakes !== undefined ? event.Rakes : 0;
-            totals[dayId].Customs += event.Customs !== undefined ? event.Customs : 0;
+            //totals[dayId].Complex += event.Complex !== undefined ? event.Complex : 0;
+            //totals[dayId].Simple += event.Simple !== undefined ? event.Simple : 0;
+            //totals[dayId].Over_Size += event.Over_Size !== undefined ? event.Over_Size : 0;
+            //totals[dayId].Arches += event.Arches !== undefined ? event.Arches : 0;
+            //totals[dayId].Rakes += event.Rakes !== undefined ? event.Rakes : 0;
+            //totals[dayId].Customs += event.Customs !== undefined ? event.Customs : 0;
             //console.log(dayId, "totals[dayId].Transom:", totals[dayId].Transom, "totals[dayId].Sidelite:", totals[dayId].Sidelite, "totals[dayId].SingleDoor:", totals[dayId].SingleDoor, "totals[dayId].DoubleDoor:", totals[dayId].DoubleDoor, "event.Transom:", event.Transom, "event.Sidelite:", event.Sidelite, "event.SingleDoor:", event.SingleDoor, "event.DoubleDoor:", event.DoubleDoor);
             //}
         },
@@ -951,26 +959,29 @@ $(document).ready(function () {
                
                 var date1, date2;
                 var WOCount;
-                
-                for (var i = 0; i < totals.length; i++) {
-                    date1 = new Date(totals[i]["date"]).toLocaleDateString('en-US');
-                    WOCount = 0; //ReturnedJob
-                    for (var j = 0; j < eventWODict.length; j++) {
-                        date2 = new Date(GetDatefromMoment(eventWODict[j]["ScheduledDate"])).toLocaleDateString('en-US');
-                        if ((date1 == date2) && (eventWODict[j].ReturnedJob!=1)){
 
-                            totals[i].windows += eventWODict[j]["Windows"];
-                            totals[i].doors += eventWODict[j]["Doors"];
-                            totals[i].SalesAmmount += eventWODict[j]["SalesAmmount"];
-                            totals[i].TotalAsbestos += eventWODict[j]["TotalAsbestos"];
-                            totals[i].TotalWoodDropOff += eventWODict[j]["TotalWoodDropOff"];
-                            totals[i].TotalHighRisk += eventWODict[j]["TotalHighRisk"];
-                            totals[i].WOCount = WOCount + 1;
-                            WOCount++;
+                if (displayType == "Installation" ) {
+                    for (var i = 0; i < totals.length; i++) {
+                        date1 = new Date(totals[i]["date"]).toLocaleDateString('en-US');
+                        WOCount = 0; //ReturnedJob
+                        for (var j = 0; j < eventWODict.length; j++) {
+                            date2 = new Date(GetDatefromMoment(eventWODict[j]["ScheduledDate"])).toLocaleDateString('en-US');
+                            if ((date1 == date2) && (eventWODict[j].ReturnedJob != 1)) {
+
+                                totals[i].windows += eventWODict[j]["Windows"];
+                                totals[i].doors += eventWODict[j]["Doors"];
+                                totals[i].SalesAmmount += eventWODict[j]["SalesAmmount"];
+                                totals[i].TotalAsbestos += eventWODict[j]["TotalAsbestos"];
+                                totals[i].TotalWoodDropOff += eventWODict[j]["TotalWoodDropOff"];
+                                totals[i].TotalHighRisk += eventWODict[j]["TotalHighRisk"];
+                                totals[i].WOCount = WOCount + 1;
+                                WOCount++;
+                            }
+
                         }
-                       
                     }
                 }
+               
 
                 for (var i = 0; i < totals.length; i++) {
                     SetDayValue(i, totals[i]);
