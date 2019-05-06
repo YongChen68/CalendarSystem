@@ -29,6 +29,27 @@ function eventUpdate(event, dayDelta, minuteDelta, allDay, revertFunc) {
 }
 
 function UpdateEventSchedule() {
+    var i = eventid;
+    var scheduledStartDate, scheduledEndDate;
+    var scheduledStartDate = $("#InstallScheduledStartDate").val();
+    var scheduledEndDate = $("#InstallScheduledEndDate").val();
+    $.ajax({
+        url: 'data.svc/UpdateInstallationSchedule?id=' + eventid + '&ScheduledStartDate=' + scheduledStartDate + '&scheduledEndDate=' + scheduledEndDate,
+        type: "POST",
+        success: function (data) {
+            if (debug) console.log("events.success", "data.UpdateInstallationSchedule:");
+            $("#InstallScheduledStartDate").val('');
+            $("#InstallScheduledEndDate").val('');
+
+            $("#eventContent .close").click();
+            $('#calendar').fullCalendar('refetchEvents');
+            $('#calendar').fullCalendar('rerenderEvents');
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
 
 }
 function sendUpdateToServer(event) {
@@ -692,13 +713,13 @@ $(document).ready(function () {
                     $("#Customer").html(event.LastName);
                     $("#workOrder").html(event.WorkOrderNumber);
                     $("#WorkOrderTitle").html(event.WorkOrderNumber);
-                    $("#InstallScheduledStartDate").html(new Date(GetDatefromMoment(event.start)).toLocaleDateString('en-US'));
+                    $("#InstallScheduledStartDate").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
 
                     if (event.end == null) {
-                        $("#InstallScheduledEndDate").html(new Date(GetDatefromMoment(event.start)).toLocaleDateString('en-US'));
+                        $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
                     }
                     else {
-                        $("#InstallScheduledEndDate").html(new Date(GetDatefromMoment(event.end)).toLocaleDateString('en-US'));
+                        $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(event.end + 24 * 60 * 60000)).toLocaleDateString('en-US'));
                     }
                                   
                     $("#homePhone").html(event.HomePhoneNumber);
@@ -727,8 +748,8 @@ $(document).ready(function () {
                     $("#end_date").val('');
                     if (event.ReturnedJob == 1) {
                         // $("#ReturnedJob").show(); 
-                        $("#from_date").val(new Date(GetDatefromMoment(event.start)).toLocaleDateString('en-US'));
-                        $("#end_date").val(new Date(GetDatefromMoment(event.end)).toLocaleDateString('en-US'));
+                        $("#from_date").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+                        $("#end_date").val(new Date(GetDatefromMoment(event.end + 24 * 60 * 60000)).toLocaleDateString('en-US'));
 
                     }
                                   

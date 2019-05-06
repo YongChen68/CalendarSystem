@@ -230,6 +230,31 @@ namespace CalendarSystem
         }
 
 
+        public bool UpdateInstallationSchedule(string id, string scheduledStartDate, string scheduledEndDate)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateInstallationSchedule('{0}','{1}',{2} )", id, scheduledStartDate, scheduledEndDate);
+            ImproperInstallationEvent eventData = null;
+            bool retValue = false;
+            try
+            {
+                eventData = new ImproperInstallationEvent();
+                eventData.id = id;
+                
+                eventData.start = Convert.ToDateTime(scheduledStartDate).ToString("yyyy-MM-ddT00:00:00.000Z");
+                eventData.end = Convert.ToDateTime(scheduledEndDate).ToString("yyyy-MM-ddT00:00:00.000Z");
+
+                RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
+                retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), eventData);
+
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateReturnedJobSchedule id= {0}", id);
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
         List<Product> Idata.GetProducts(string workOrderNumber)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetProducts({0})", workOrderNumber);

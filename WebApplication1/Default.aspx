@@ -69,6 +69,9 @@
         $(function () {
             $("#from_date").datepicker();
             $("#end_date").datepicker();
+
+            $("#InstallScheduledStartDate").datepicker();
+            $("#InstallScheduledEndDate").datepicker();
         });
     </script>
     <style>
@@ -259,13 +262,11 @@
                                         <div>
                                             <b>Installation Scheduled Date </b>
                                             <div>
-                                           &nbsp;&nbsp; &nbsp;&nbsp;   &nbsp;&nbsp; &nbsp;&nbsp;      &nbsp;&nbsp; &nbsp;&nbsp;   &nbsp;&nbsp; &nbsp;&nbsp;  From:  <span id="InstallScheduledStartDate"></span>
+	                                            From: 
+	                                            <input id="InstallScheduledStartDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
+	                                            To:   &nbsp;&nbsp;<input id="InstallScheduledEndDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
+	                                            &nbsp;&nbsp;<input type="button" name="btnReturnedJob" id="btnUpdateInstallationEventSchedule" style="text-decoration-line: underline; border-style: none;" value="Save" onclick="UpdateEventSchedule()">
                                             </div>
-                                            <div>
-                                                &nbsp;&nbsp; &nbsp;&nbsp;    &nbsp;&nbsp; &nbsp;&nbsp;  To:  <span id="InstallScheduledEndDate"></span>
-                                            </div>
-
-                                             <input type="button" name="btnUpdateScheduleDate" id="btnUpdateScheduleDate" style="text-decoration-line: underline; border-style: none;" value="Update Scheduled Date" onclick="UpdateEventSchedule()">
                                         </div>
 
                                         <br>
