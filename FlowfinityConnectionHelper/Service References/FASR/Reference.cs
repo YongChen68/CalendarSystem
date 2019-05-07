@@ -22503,6 +22503,9 @@ namespace FlowfinityConnectionHelper.FASR {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.HomeInstallations_ReturnTripRecord[] ReturnTripField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.SingleSelection LeadPaintField;
+        
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
             get {
@@ -23653,6 +23656,19 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.ReturnTripField, value) != true)) {
                     this.ReturnTripField = value;
                     this.RaisePropertyChanged("ReturnTrip");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=88)]
+        public FlowfinityConnectionHelper.FASR.SingleSelection LeadPaint {
+            get {
+                return this.LeadPaintField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LeadPaintField, value) != true)) {
+                    this.LeadPaintField = value;
+                    this.RaisePropertyChanged("LeadPaint");
                 }
             }
         }

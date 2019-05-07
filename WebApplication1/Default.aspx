@@ -232,18 +232,29 @@
                                     <div id="content">
                                         <br>
                                         <br>
-                                        <div><b>Customer: </b><span id="Customer"></span></div>
+                                        <div><b>First Name: </b><span id="FirstName"></span></div>
+                                        <br>
+                                         <div><b>Last Name: </b><span id="LastName"></span></div>
                                         <br>
                                         <div><b>Work Order: </b><span id="workOrder"></span></div>
                                         <br>
+                                         <div><b>Street Address: </b><span id="Address"></span></div>
+                                                      <br>
+                                         <div><b>City: </b><span id="City"></span></div>
+                                        <br>
+                                         <div><b>Postal Code: </b><span id="postalCode"></span></div>
+                                        <br>
                                         <div><b>Home Phone: </b><span id="homePhone"></span></div>
+                                        <br>
+                                         <div><b>Work Phone: </b><span id="workPhone"></span></div>
                                         <br>
                                         <div><b>Cell Phone: </b><span id="cellPhone"></span></div>
                                         <br>
-                                        <div><b>Branch: </b><span id="branch"></span></div>
+                                         <div><b>Email: </b><span id="email"></span></div>
                                         <br>
-                                        <div><b>Address: </b><span id="Address"></span></div>
-                                                      <br>
+                                          <div><b>Sales Rep: </b><span id="salesRep"></span></div>
+                                        <br>
+                                       
                                         <div><b>Total Windows: </b><span id="TotalWindows1"></span></div>
 
                                          <br>
@@ -276,6 +287,12 @@
                                         <br>
 
                                         <div><b>Asbestos-Jobs: </b><span id="Asbestos-Jobs1"></span></div>
+
+
+                                         <br>
+
+                                          <div><b>Lead-Paint : </b><span id="Lead-Paint1"></span></div>
+
 
                                          <br>
                                         <div><b>Wood-DropOff-Jobs: </b><span id="Wood-DropOff-Jobs1"></span></div>

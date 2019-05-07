@@ -320,7 +320,7 @@ function AddInstallationBufferEvent(key, val) {
         (val.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + val.Windows + "Status: " + val.WindowState + "\" src=\"images/window.PNG\" />" : "") +
         (val.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + val.Doors + "Status: " + val.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
         ("WO: " + val.WorkOrderNumber) + "&nbsp;" +
-        ("Name: " + val.LastName.trim().Length > 10 ? val.LastName.trim().Substring(0, 10) : val.LastName.trim()) +
+        ("Name: " + val.LastName.trim().Length > 10 ? val.LastName.trim().Substring(0, 10) : val.LastName.trim() + "&nbsp;" + val.FirstName.trim().Length > 10 ? val.FirstName.trim().Substring(0, 10) : val.FirstName.trim()) + 
         "&nbsp;" + (val.City.trim().Length > 5 ? val.City.trim().toLowerCase().Substring(0, 5) : val.City.trim().toLowerCase());
    // $(element).find(dom).prepend(ret);
 
@@ -710,7 +710,9 @@ $(document).ready(function () {
                     element.attr('data-toggle', "modal");
                     element.attr('data-target', "#eventContent");
                     element.attr('href', "/details");
-                    $("#Customer").html(event.LastName);
+                    $("#FirstName").html(event.FirstName);
+                    $("#LastName").html(event.LastName);
+                    $("#postalCode").html(event.PostCode);
                     $("#workOrder").html(event.WorkOrderNumber);
                     $("#WorkOrderTitle").html(event.WorkOrderNumber);
                     $("#InstallScheduledStartDate").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
@@ -723,15 +725,20 @@ $(document).ready(function () {
                     }
                                   
                     $("#homePhone").html(event.HomePhoneNumber);
+                    $("#workPhone").html(event.WorkPhoneNumber);
                     $("#cellPhone").html(event.CellPhone);
 
-                    $("#branch").html(event.Branch);
+                    $("#email").html(event.Email);
+                    $("#salesRep").html(event.SalesRep);
+
+                    $("#City").html(event.City);
 
                     $("#TotalWindows1").html(event.TotalWindows);
                     $("#TotalDoors1").html(event.TotalDoors);
                     
 
                     $("#Asbestos-Jobs1").html(event.TotalAsbestos == 1 ? "Yes" : "No");
+                    $("#Lead-Paint1").html(event.LeadPaint);
                     $("#Wood-DropOff-Jobs1").html(event.TotalWoodDropOff == 1 ? "Yes" : "No");
                     $("#HighRisk-Jobs1").html(event.TotalHighRisk == 1 ? "Yes" : "No");
 
@@ -842,11 +849,12 @@ $(document).ready(function () {
                     (event.Windows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.Windows + ";&nbsp;Status: " + event.WindowState + "\" src=\"images/window.PNG\" />" : "") +
                     (event.Doors != "0" ? "&nbsp;<img title=\"# of Doors: " + event.Doors + ";&nbsp;Status: " + event.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
                     (event.TotalWoodDropOff == 1 ? "&nbsp;<img src=\"images/delivery.PNG\" />" : "") +
-                    (event.TotalAsbestos == 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
+                    //(event.TotalAsbestos == 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
+                    ((event.TotalAsbestos == 1) || (event.LeadPaint=='Yes') ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
                     (event.TotalHighRisk == 1 ? "&nbsp;<img src=\"images/risk.PNG\" />" : "") +
                     (event.ReturnedJob == 1 ? "&nbsp;<img src=\"images/fire.PNG\" />" : "") +
                     ("WO: " + event.WorkOrderNumber) + "&nbsp;" +
-                    (",Name: " + event.LastName.trim().Length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
+                    (",Name: " + event.LastName.trim().Length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim() + "&nbsp;" + event.FirstName.trim().Length > 10 ? event.FirstName.trim().Substring(0, 10) : event.FirstName.trim())
                     "&nbsp;" + (event.City.trim().Length > 5 ? event.City.trim().toLowerCase().Substring(0, 5) : event.City.trim().toLowerCase()) + "&nbsp;";
                   //  ("WO: ") + "&nbsp;" ;
 

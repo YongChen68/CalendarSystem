@@ -193,6 +193,34 @@ namespace Generics.Utils.Data
             get; set;
         }
 
+      
+        [DataMember]
+        public string PostCode
+        {
+            get; set;
+        }
+
+
+        [DataMember]
+        public string Email
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public string SalesRep
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public  string LeadPaint
+        {
+            get; set;
+        }
+
+
+
         //[DataMember]
         //public OrderState OtherState
         //{
@@ -225,6 +253,13 @@ namespace Generics.Utils.Data
         {
             get; set;
         }
+
+        [DataMember]
+        public string FirstName
+        {
+            get; set;
+        }
+
         [DataMember]
         public string City
         {

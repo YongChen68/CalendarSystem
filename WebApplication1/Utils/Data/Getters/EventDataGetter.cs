@@ -199,7 +199,7 @@ select t.* into #Doors from HomeInstallations_TypeofWork t inner join #installs 
 select t.* into #Other from HomeInstallations_TypeofWork t inner join #installs i on i.RecordId = t.ParentRecordId where t.Type_1 = 'Other'
 select s.* into #Subtrade from HomeInstallations_SubtradeReqired s inner join #installs i on i.RecordId = s.ParentRecordId 
 
-select WorkOrderNumber, LastName, City, ReturnedJob,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,TotalDoors,TotalWindows,
+select WorkOrderNumber, LastName,FirstName, City,PostCode, Email,SalesRep,LeadPaint,ReturnedJob,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,TotalDoors,TotalWindows,
 DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, 
 jobtype,CurrentStateName,case when windows > 0 then WindowState else 'notordered' end as WindowState,
                     case when doors > 0 then DoorState else 'notordered' end as DoorState, case when other > 0 then 
@@ -219,7 +219,8 @@ then PlannedInstallWeek else null end as PlannedInstallWeek, PaintedProduct, Bra
 from (
 SELECT   i.Branch_Display as Branch, i.PaintedProduct, ReturnedJob, i.SalesAmmount/detailrecordCount as SalesAmmount,i.SalesAmmount as TotalSalesAmount,DetailRecordId ,
 ParentRecordId,detailrecordCount,saturday, sunday, jobtype,ActionItemId as id,i.streetAddress, i.EstInstallerCnt,
-i.WorkOrderNumber, i.LastName, i.City, i.CurrentStateName,PlannedInstallWeek,
+i.WorkOrderNumber, i.LastName, i.FirstName,i.City, i.PostalCode as PostCode,i.Email,i.Rep_display as SalesRep,i.LeadPaint ,
+i.CurrentStateName,PlannedInstallWeek,
                           case when (SELECT     count(ManufacturingStatus)
                             FROM          #Windows AS ms
                             WHERE      (ParentRecordId = i.RecordId)) > 1 then 'Undetermined' else (SELECT     ManufacturingStatus
@@ -340,6 +341,7 @@ drop table #Subtrade", this.startDate.ToShortDateString(), this.endDate.ToShortD
                 newEvent.Hours = eventx.Hours;
                 newEvent.id = eventx.id;
                 newEvent.LastName = eventx.LastName;
+                newEvent.FirstName = eventx.FirstName;
                 newEvent.Other = eventx.Other;
                 newEvent.OtherState = eventx.OtherState;
 
@@ -366,6 +368,11 @@ drop table #Subtrade", this.startDate.ToShortDateString(), this.endDate.ToShortD
 
                 newEvent.ReturnedJob = eventx.ReturnedJob;
 
+                newEvent.PostCode= eventx.PostCode;
+                newEvent.Email = eventx.Email;
+                newEvent.SalesRep = eventx.SalesRep;
+                newEvent.LeadPaint = eventx.LeadPaint;
+               
                 woList.Add(eventx.WorkOrderNumber);
                 returnEventList.Add(newEvent);
 
@@ -393,6 +400,8 @@ drop table #Subtrade", this.startDate.ToShortDateString(), this.endDate.ToShortD
                 newEvent.Hours = returnedEvent.Hours;
                 newEvent.id = returnedEvent.id;
                 newEvent.LastName = returnedEvent.LastName;
+                newEvent.FirstName = returnedEvent.FirstName;
+
                 newEvent.Other = returnedEvent.Other;
                 newEvent.OtherState = returnedEvent.OtherState;
 
@@ -418,6 +427,10 @@ drop table #Subtrade", this.startDate.ToShortDateString(), this.endDate.ToShortD
                 newEvent.Sunday = returnedEvent.Sunday;
 
                 newEvent.ReturnedJob = returnedEvent.ReturnedJob;
+                newEvent.PostCode = returnedEvent.PostCode;
+                newEvent.Email = returnedEvent.Email;
+                newEvent.SalesRep = returnedEvent.SalesRep;
+                newEvent.LeadPaint = returnedEvent.LeadPaint;
 
                 woList.Add(returnedEvent.WorkOrderNumber);
                 returnEventList.Add(newEvent);

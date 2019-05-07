@@ -991,6 +991,7 @@
       <xs:element minOccurs="0" name="HighRisk" nillable="true" type="tns:SingleSelection" />
       <xs:element minOccurs="0" name="CheckRole" nillable="true" type="tns:StringValue" />
       <xs:element minOccurs="0" name="ReturnTrip" nillable="true" type="tns:ArrayOfHomeInstallations_.ReturnTripRecord" />
+      <xs:element minOccurs="0" name="LeadPaint" nillable="true" type="tns:SingleSelection" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HomeInstallationsRecord" nillable="true" type="tns:HomeInstallationsRecord" />
