@@ -171,21 +171,39 @@ namespace Generics.Utils.Data
         {
             get; set;
         }
+        //[DataMember]
+        //public OrderState WindowState
+        //{
+        //    get; set;
+        //}
         [DataMember]
-        public OrderState WindowState
+        public string WindowState
         {
             get; set;
         }
+        //[DataMember]
+        //public OrderState DoorState
+        //{
+        //    get; set;
+        //}
+
         [DataMember]
-        public OrderState DoorState
+        public string DoorState
         {
             get; set;
         }
+
+        //[DataMember]
+        //public OrderState OtherState
+        //{
+        //    get; set;
+        //}
         [DataMember]
-        public OrderState OtherState
+        public string OtherState
         {
             get; set;
         }
+
         //[DataMember]
         //public OrderState PaintedState
         //{
