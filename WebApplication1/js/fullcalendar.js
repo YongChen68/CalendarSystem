@@ -3669,6 +3669,7 @@
                         RenderDayRow('Asbestos-Jobs', dayIDs[cell.start.day()]) +
                         RenderDayRow('Wood-DropOff-Jobs', dayIDs[cell.start.day()]) +
                         RenderDayRow('HighRisk-Jobs', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Lead-Paint', dayIDs[cell.start.day()]) +
                         '</tbody>';
 
                 }
@@ -3720,6 +3721,7 @@
                         RenderWeekRow('Asbestos-Jobs') +
                         RenderWeekRow('Wood-DropOff-Jobs') +
                         RenderWeekRow('HighRisk-Jobs') +
+                        RenderWeekRow('Lead-Paint') +
                         '</tbody>';
                 }
                 else {

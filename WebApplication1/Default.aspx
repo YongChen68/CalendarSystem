@@ -240,8 +240,7 @@
                                         <br>
                                          <div><b>Street Address: </b><span id="Address"></span></div>
                                                       <br>
-                                         <div><b>City: </b><span id="City"></span></div>
-                                        <br>
+                                        
                                          <div><b>Postal Code: </b><span id="postalCode"></span></div>
                                         <br>
                                         <div><b>Home Phone: </b><span id="homePhone"></span></div>
