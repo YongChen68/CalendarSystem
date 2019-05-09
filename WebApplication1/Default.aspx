@@ -74,27 +74,28 @@
 
             $("#InstallScheduledStartDate").datepicker();
             $("#InstallScheduledEndDate").datepicker();
+
         });
 
-            function initialize() {
-                geocoder = new google.maps.Geocoder();
-                var latlng = new google.maps.LatLng(-34.397, 150.644);
-                var mapOptions = {
-                    zoom: 16,
-                        center: latlng,
-                        mapTypeId: google.maps.MapTypeId.ROADMAP,
-                        mapTypeControl: false
-                }
-                map = new google.maps.Map(document.getElementById('map'), mapOptions);
+        function initialize() {
+            geocoder = new google.maps.Geocoder();
+            var latlng = new google.maps.LatLng(-34.397, 150.644);
+            var mapOptions = {
+                zoom: 16,
+                center: latlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                mapTypeControl: false
+            }
+            map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
-                var marker = new google.maps.Marker({
-                    position: latlng,
-                    map: map,
-                    title: "location"
-                });
+            var marker = new google.maps.Marker({
+                position: latlng,
+                map: map,
+                title: "location"
+            });
         }
 
-         function codeAddress() {
+        function codeAddress() {
             var address = document.getElementById('Address').innerHTML;
             alert(address);
             geocoder.geocode({ 'address': address }, function (results, status) {
@@ -113,13 +114,13 @@
     </script>
 
     <script>
-          
-        
-                                            
-                                       
+
+
+
+
         function codeAddress() {
             var address = document.getElementById('Address').innerHTML;
-                                          
+
             geocoder.geocode({ 'address': address }, function (results, status) {
                 if (status == 'OK') {
                     map.setCenter(results[0].geometry.location);
@@ -229,6 +230,11 @@
 
         .table-condensed {
         }
+
+        #FromDate, #ToDate {
+            width: 50%;
+            float: left;
+        }
     </style>
 </head>
 <body onload="initialize()">
@@ -275,59 +281,66 @@
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="CustomerTab">
                                     <div id="map"></div>
-                                   
+
                                     <div id="content">
                                         <br>
                                         <br>
                                         <div><b>First Name: </b><span id="FirstName"></span></div>
                                         <br>
-                                         <div><b>Last Name: </b><span id="LastName"></span></div>
+                                        <div><b>Last Name: </b><span id="LastName"></span></div>
                                         <br>
                                         <div><b>Work Order: </b><span id="workOrder"></span></div>
                                         <br>
-                                         <div><b>Street Address: </b><span id="Address"></span></div>
-                                                      <br>
-                                         <div><b>City: </b><span id="City"></span></div>
+                                        <div><b>Street Address: </b><span id="Address"></span></div>
                                         <br>
-                                         <div><b>Postal Code: </b><span id="postalCode"></span></div>
+                                        <div><b>City: </b><span id="City"></span></div>
+                                        <br>
+                                        <div><b>Postal Code: </b><span id="postalCode"></span></div>
                                         <br>
                                         <div><b>Home Phone: </b><span id="homePhone"></span></div>
                                         <br>
-                                         <div><b>Work Phone: </b><span id="workPhone"></span></div>
+                                        <div><b>Work Phone: </b><span id="workPhone"></span></div>
                                         <br>
                                         <div><b>Cell Phone: </b><span id="cellPhone"></span></div>
                                         <br>
-                                         <div><b>Email: </b><span id="email"></span></div>
+                                        <div><b>Email: </b><span id="email"></span></div>
                                         <br>
-                                          <div><b>Sales Rep: </b><span id="salesRep"></span></div>
+                                        <div><b>Sales Rep: </b><span id="salesRep"></span></div>
                                         <br>
-                                       
+
                                         <div><b>Total Windows: </b><span id="TotalWindows1"></span></div>
 
-                                         <br>
+                                        <br>
                                         <div><b>Total Doors: </b><span id="TotalDoors1"></span></div>
                                         <br>
                                         <div><b>SalesAmount: </b><span id="SalesAmmount"></span></div>
-                          
+
                                         <br>
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="InstallTab">
-                                    <div id="installationContent" style="width:600px; margin-left:40px;">
+                                    <div id="installationContent" style="width: 600px; margin-left: 40px; padding-left: 150px;">
                                         <br>
                                         <br>
+                                        <span><b>Installation Scheduled Date: </b></span>
+                                        <div style="width: 400px;padding-left: 30px;">
+                                            
+                                            <div  >
+                                                <span >From: </span>
+                                                <input id="InstallScheduledStartDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
+                                            </div>
+                                            <span>To:  </span>
+                                            <div >
 
-                                        <div>
-                                            <b>Installation Scheduled Date </b>
-                                            <div>
-	                                            From: 
-	                                            <input id="InstallScheduledStartDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
-	                                            To:   &nbsp;&nbsp;<input id="InstallScheduledEndDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
-	                                            &nbsp;&nbsp;<input type="button" name="btnReturnedJob" id="btnUpdateInstallationEventSchedule" style="text-decoration-line: underline; border-style: none;" value="Save" onclick="UpdateEventSchedule()">
+                                                <input id="InstallScheduledEndDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
+                                            </div>
+                                            <div  id="Button">
+                                                <input type="button" name="btnUpdateInstallationEventSchedule" id="btnUpdateInstallationEventSchedule" class="btn btn-success" value="Save" onclick="UpdateEventSchedule()">
                                             </div>
                                         </div>
 
                                         <br>
+
                                         <div><b>Senior Installer: </b><span id="SeniorInstaller"></span></div>
                                         <br>
                                         <div><b>CrewNames: </b><span id="CrewNames"></span></div>
@@ -336,40 +349,49 @@
                                         <div><b>Asbestos-Jobs: </b><span id="Asbestos-Jobs1"></span></div>
 
 
-                                         <br>
+                                        <br>
 
-                                          <div><b>Lead-Paint : </b><span id="Lead-Paint1"></span></div>
+                                        <div><b>Lead-Paint : </b><span id="Lead-Paint1"></span></div>
 
 
-                                         <br>
+                                        <br>
                                         <div><b>Wood-DropOff-Jobs: </b><span id="Wood-DropOff-Jobs1"></span></div>
 
-                                          <br>
+                                        <br>
                                         <div><b>HighRisk-Jobs: </b><span id="HighRisk-Jobs1"></span></div>
 
+                                        <br>
+                                        <div style="width: 800px;">
+                                            <b>Weekends Setting: </b>
+                                            <div style="padding-left:30px; width: 500px;">
+                                                <div>
+                                                    <b>Saturday: </b>
+                                                    <input type="checkbox" name="saturday">
+                                                    &nbsp;&nbsp;
+                                                </div>
+                                                <br>
+                                                <div>
+                                                    <b>Sunday: </b>&nbsp;&nbsp;<input type="checkbox" name="sunday">
+                                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                                <input type="button" name="btnSunday" id="btnSunday" class="btn btn-success" value="Save" onclick="UpdateEventWeekends()">
+                                                </div>
+                                            </div>
 
-                                        <div style="background-color: #D3D3D3">
-                                            <div>
-                                                <b>Saturday: </b>
-                                                <input type="checkbox" name="saturday">
-                                                &nbsp;&nbsp;
-                                            </div>
-                                            <br>
-                                            <div>
-                                                <b>Sunday: </b>&nbsp;&nbsp;<input type="checkbox" name="sunday">
-                                                &nbsp;&nbsp;&nbsp;&nbsp;
-                                                <input type="button" name="btnSunday" id="btnSunday" style="text-decoration-line: underline; border-style: none;" value="Update" onclick="UpdateEventWeekends()">
-                                            </div>
+
                                         </div>
                                         <br>
 
-                                        <div class="form-group" style="background-color: #D3D3D3" id="ReturnedJob">
+                                        <div class="form-group" style="width: 800px;" id="ReturnedJob">
+
                                             <b>Return Scheduled Date:</b>
-                                            <div>
-                                                From: 
+                                            <div style="padding-left: 30px; width: 800px;">
+
+                                                <div>
+                                                    From: 
                                                 <input id="from_date" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
-                                                To:   &nbsp;&nbsp;<input id="end_date" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
-                                                &nbsp;&nbsp;<input type="button" name="btnReturnedJob" id="btnReturnedJob" style="text-decoration-line: underline; border-style: none;" value="Save" onclick="UpdateReturnedJobSchedule()">
+                                                    To:   &nbsp;&nbsp;<input id="end_date" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
+                                                    &nbsp;&nbsp;<input type="button" name="btnReturnedJob" id="btnReturnedJob" class="btn btn-success" value="Save" onclick="UpdateReturnedJobSchedule()">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -382,8 +404,7 @@
                                 </div>
 
                                 <div role="tabpanel" class="tab-pane " id="JobAnalysisTab">
-                                    <div >
-                                         
+                                    <div>
                                     </div>
 
                                 </div>
