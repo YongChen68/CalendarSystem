@@ -30,7 +30,7 @@
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src='js/fullcalendar.js'></script>
     <script src="js/calendarprocessing.js"></script>
-
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhsQnBPh07vYae9Oakwczkyv8gTDY9j-U"></script>
     <script>
         var readonly = "<%= ReadOnly %>";
     </script>
@@ -66,6 +66,8 @@
     </script>--%>
 
     <script>
+        var geocoder;
+        var map;
         $(function () {
             $("#from_date").datepicker();
             $("#end_date").datepicker();
@@ -73,6 +75,64 @@
             $("#InstallScheduledStartDate").datepicker();
             $("#InstallScheduledEndDate").datepicker();
         });
+
+            function initialize() {
+                geocoder = new google.maps.Geocoder();
+                var latlng = new google.maps.LatLng(-34.397, 150.644);
+                var mapOptions = {
+                    zoom: 16,
+                        center: latlng,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP,
+                        mapTypeControl: false
+                }
+                map = new google.maps.Map(document.getElementById('map'), mapOptions);
+
+                var marker = new google.maps.Marker({
+                    position: latlng,
+                    map: map,
+                    title: "location"
+                });
+        }
+
+         function codeAddress() {
+            var address = document.getElementById('Address').innerHTML;
+            alert(address);
+            geocoder.geocode({ 'address': address }, function (results, status) {
+                if (status == 'OK') {
+                    map.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+
+        }
+    </script>
+
+    <script>
+          
+        
+                                            
+                                       
+        function codeAddress() {
+            var address = document.getElementById('Address').innerHTML;
+                                          
+            geocoder.geocode({ 'address': address }, function (results, status) {
+                if (status == 'OK') {
+                    map.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: map,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                }
+            });
+
+        }
     </script>
     <style>
         body {
@@ -171,7 +231,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="initialize()">
     <form id="main" runat="server">
         <asp:ScriptManager ID="ScriptManager1" runat="server" EnablePageMethods="true">
         </asp:ScriptManager>
@@ -215,20 +275,7 @@
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="CustomerTab">
                                     <div id="map"></div>
-                                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBspoEtc4kjoRkvnuVk0bnV9G3NUb1N8Kk"></script>
-                                    <script>
-                                        var locationRio = { lat: 49.181520, lng: -122.664260 };
-                                        var map = new google.maps.Map(document.getElementById('map'), {
-                                            zoom: 16,
-                                            center: locationRio,
-                                            gestureHandling: 'cooperative'
-                                        });
-                                        var marker = new google.maps.Marker({
-                                            position: locationRio,
-                                            map: map
-
-                                        });
-                                    </script>
+                                   
                                     <div id="content">
                                         <br>
                                         <br>
@@ -240,7 +287,8 @@
                                         <br>
                                          <div><b>Street Address: </b><span id="Address"></span></div>
                                                       <br>
-                                        
+                                         <div><b>City: </b><span id="City"></span></div>
+                                        <br>
                                          <div><b>Postal Code: </b><span id="postalCode"></span></div>
                                         <br>
                                         <div><b>Home Phone: </b><span id="homePhone"></span></div>

@@ -314,8 +314,7 @@ function LoadInstallationBufferedJobs() {
 }
 
 function AddInstallationBufferEvent(key, val) {
-    var ret = "<img src=\"images/home.png\" title=\"" + ToInstallationEventString(val) + "\">" +
-        "<img src=\"images/installer" + val.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
+    var ret =  "<img src=\"images/installer" + val.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
         val.EstInstallerCnt + "\">" +
         (val.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + val.Windows + "Status: " + val.WindowState + "\" src=\"images/window.PNG\" />" : "") +
         (val.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + val.Doors + "Status: " + val.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
@@ -731,7 +730,7 @@ $(document).ready(function () {
                     $("#email").html(event.Email);
                     $("#salesRep").html(event.SalesRep);
 
-                   // $("#City").html(event.City);
+                    $("#City").html(event.City);
 
                     $("#TotalWindows1").html(event.TotalWindows);
                     $("#TotalDoors1").html(event.TotalDoors);
@@ -743,13 +742,12 @@ $(document).ready(function () {
                     $("#HighRisk-Jobs1").html(event.TotalHighRisk == 1 ? "Yes" : "No");
 
 
-                    $("#Address").html(event.StreetAddress + "\r\n" +"," +
-                        event.City + "\r\n\r\n" );
+                    $("#Address").html(event.StreetAddress);
                     $("#SalesAmmount").html(event.TotalSalesAmount.formatMoney(2, "$", ",", "."));
                     $("#SeniorInstaller").html(event.SeniorInstaller != null && event.SeniorInstaller.trim().length > 0 ? event.SeniorInstaller : "Unspecified");
                     $("#CrewNames").html(event.CrewNames != null && event.CrewNames.trim().length > 0 ? event.CrewNames : "Un assigned");
 
-
+                    codeAddress();
                        //$("#ReturnedJob").hide();
                     $("#from_date").val('');
                     $("#end_date").val('');
