@@ -5,8 +5,6 @@ var debug = true;
 var renderingComplete = false;
 var eventid;
 var eventWO = [];
-var eventWODict = [];
-
 
 Date.prototype.Equals = function (pDate) {
     var retValue = (this.getUTCFullYear() === pDate.getUTCFullYear() &&
@@ -277,7 +275,7 @@ function LoadInstallationBufferedJobs() {
         branches.push($(this).val());
     });
     console.log("checked branches: ", branches.join(","));
-    
+    var eventBufferWODict = [];
     //$.getJSON("data.svc/GetInstallationBufferJobs", { branch: branches.join(",")}, function (data) {
     //    //$.each(data, function (key, val) {
     //    //    AddInstallationBufferEvent(key, val);
@@ -297,7 +295,9 @@ function LoadInstallationBufferedJobs() {
         success: function (data) {
             if (debug) console.log("events.success", "data.GetInstallationBufferJobsResult:", data.GetInstallationBufferJobsResult === undefined ? "NULL" : data.GetInstallationBufferJobsResult.length);
             var events = [];
-           
+         
+
+            var found = false;
             var con;
             $.each(data.GetInstallationBufferJobsResult, function (pos, item) {
                 AddInstallationBufferEvent(pos, item);
@@ -1225,7 +1225,7 @@ function ChangeType(type) {
     ControlHeaderVisibility(GetDisplayItemList(displayType));
 
     if (type == "Installation") {
-        LoadInstallationBufferedJobs();
+       // LoadInstallationBufferedJobs();
     }
     else {
         LoadBufferedJobs();
