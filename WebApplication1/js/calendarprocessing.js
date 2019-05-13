@@ -319,21 +319,34 @@ function AddInstallationBufferEvent(key, val) {
         (val.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + val.Windows + "Status: " + val.WindowState + "\" src=\"images/window.PNG\" />" : "") +
         (val.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + val.Doors + "Status: " + val.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
         ("WO: " + val.WorkOrderNumber) + "&nbsp;" +
-        ("Name: " + val.LastName.trim().Length > 10 ? val.LastName.trim().Substring(0, 10) : val.LastName.trim() + "&nbsp;" + val.FirstName.trim().Length > 10 ? val.FirstName.trim().Substring(0, 10) : val.FirstName.trim()) + 
+        ("Name: " + val.LastName.trim().length > 10 ? val.LastName.trim().Substring(0, 10) : val.LastName.trim() + "&nbsp;" + val.FirstName.trim().length > 10 ? val.FirstName.trim().Substring(0, 10) : val.FirstName.trim()) + 
         "&nbsp;" + (val.City.trim().Length > 5 ? val.City.trim().toLowerCase().Substring(0, 5) : val.City.trim().toLowerCase());
    // $(element).find(dom).prepend(ret);
 
-    var el = $("<div class='fc-event" + (val.JobType == "RES" ? " reservation" : "") +
+    var el = $("<div class='fc-event " + (val.JobType == "RES" ? " reservation" : "") +
         "' id=\"" + val.id + "\" style=\"background-color:" + val.color + "\">" + ret + "</div>").appendTo('#external-events');
     el.draggable({
-        zIndex: 999,
-        revert: true,      // will cause the event to go back to its
+        zIndex: 996,
+        revert: true,
         revertDuration: 0  //  original position after the drag
     });
     $('#' + val.id).data('event', {
         // title: val.title, id: val.id, description: val.description, doors: val.doors, windows: val.windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
-        title: val.title, id: val.id, doors: val.Doors, windows: val.Windows
+      //  title: val.title, id: val.id, doors: val.Doors, windows: val.Windows, WorkOrderNumber: title.WorkOrderNumber, Branch: val.Branch, City: val.City, CellPhone: val.CellPhone, CrewNames: val.CrewNames, CurrentStateName: val.CurrentStateName, LastName: val.LastName, FirstName: val.FirstName
+        title: val.title, id: val.id, doors: val.Doors, City: val.City, windows: val.Windows, WorkOrderNumber: val.WorkOrderNumber, LastName: val.LastName, FirstName: val.FirstName,
+        EstInstallerCnt: val.EstInstallerCnt, WindowState: val.WindowState, DoorState: val.DoorState, TotalWoodDropOff: val.TotalWoodDropOff,
+        TotalAsbestos: val.TotalAsbestos, TotalAsbestos: val.TotalAsbestos, LeadPaint: val.LeadPaint,
+        TotalHighRisk: val.TotalHighRisk, ReturnedJob: val.ReturnedJob
+
     });
+
+    //new Draggable(val.id, {
+    //    eventData: {
+    //        title: 'my event',
+    //        duration: '02:00'
+    //    }
+    //});
+
 }
 
 
@@ -852,7 +865,7 @@ $(document).ready(function () {
                     (event.TotalHighRisk == 1 ? "&nbsp;<img src=\"images/risk.PNG\" />" : "") +
                     (event.ReturnedJob == 1 ? "&nbsp;<img src=\"images/fire.PNG\" />" : "") +
                     ("WO: " + event.WorkOrderNumber) + "&nbsp;" +
-                    (",Name: " + event.LastName.trim().Length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim() + "&nbsp;" + event.FirstName.trim().Length > 10 ? event.FirstName.trim().Substring(0, 10) : event.FirstName.trim())
+                    (",Name: " + event.LastName.trim().length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim() + "&nbsp;" + event.FirstName.trim().length > 10 ? event.FirstName.trim().Substring(0, 10) : event.FirstName.trim())
                     "&nbsp;" + (event.City.trim().Length > 5 ? event.City.trim().toLowerCase().Substring(0, 5) : event.City.trim().toLowerCase()) + "&nbsp;";
                   //  ("WO: ") + "&nbsp;" ;
 
