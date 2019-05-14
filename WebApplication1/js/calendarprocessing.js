@@ -324,7 +324,7 @@ function AddInstallationBufferEvent(key, val) {
    // $(element).find(dom).prepend(ret);
 
     var el = $("<div class='fc-event " + (val.JobType == "RES" ? " reservation" : "") +
-        "' id=\"" + val.id + "\" style=\"background-color:" + val.color + "\">" + ret + "</div>").appendTo('#external-events');
+        "' id=\"" + val.id + "\" style=\"background-color:" + val.color + "\">" + ret + "</div>").appendTo('#external-events1');
     el.draggable({
         zIndex: 996,
         revert: true,
@@ -401,7 +401,8 @@ function LoadGlobalValues(firstDay, lastDay) {
 }
 $(document).ready(function () {
     LoadBufferedJobs();
-    
+    LoadInstallationBufferedJobs();
+    $('#external-events1').hide();
 
     //$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
     //    var currentTab = $(e.target).text(); // get current tab
@@ -611,8 +612,8 @@ $(document).ready(function () {
             //    $('#calendar').fullCalendar('changeView', 'month');
               //  document.getElementById('external-InstallationEvents').style.display = "block";
               //  document.getElementById('external-events').style.display = "none";
-                LoadInstallationBufferedJobs();
-                $('.fc-event').remove();
+               // LoadInstallationBufferedJobs();
+             //   $('.fc-event').remove();
                 $.ajax({
                     url: 'data.svc/GetInstallationEvents',
                     dataType: 'json',
@@ -1235,13 +1236,18 @@ function ChangeType(type) {
     $('.fc-changeType-button').html(displayType);
     $('#calendar').fullCalendar('refetchEvents');
     $('#external-events').find(".fc-event").remove();
+   $('#external-events1').find(".fc-event").remove();
     ControlHeaderVisibility(GetDisplayItemList(displayType));
 
     if (type == "Installation") {
-       // LoadInstallationBufferedJobs();
+        LoadInstallationBufferedJobs();
+        $('#external-events1').show();
+        $('#external-events').hide();
     }
     else {
         LoadBufferedJobs();
+        $('#external-events').show();
+        $('#external-events1').hide();
     }
  
     $('#typeChange').addClass('hidden');

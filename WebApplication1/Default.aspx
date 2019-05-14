@@ -170,7 +170,7 @@
             margin: 0 auto;
         }
 
-        #external-events {
+        #external-events, #external-events1 {
             float: left;
             width: 200px;
             padding: 0 10px;
@@ -181,7 +181,7 @@
             height: 900px;
         }
 
-            #external-events h4 {
+            #external-events, #external-events1 h4 {
                 font-size: 16px;
                 margin-top: 0;
                 padding-top: 1em;
@@ -191,14 +191,27 @@
                 margin: 10px 0;
                 cursor: pointer;
             }
-
+                #external-events1 .fc-event {
+                margin: 10px 0;
+                cursor: pointer;
+            }
             #external-events p {
                 margin: 1.5em 0;
                 font-size: 11px;
                 color: #666;
             }
 
+             #external-events1 p {
+                margin: 1.5em 0;
+                font-size: 11px;
+                color: #666;
+            }
+
                 #external-events p input {
+                    margin: 0;
+                    vertical-align: middle;
+                }
+                  #external-events1 p input {
                     margin: 0;
                     vertical-align: middle;
                 }
@@ -608,12 +621,16 @@
             <div id='external-events'>
                 <h4>New Work Orders</h4>
             </div>
+           <div id='external-events1'>
+                <h4>New Work Orders</h4>
+            </div>
 
             <div id='calendar'></div>
 
             <div style='clear: both'></div>
 
         </div>
+
 
         <div id="updatedialog" style="font: 70% 'Trebuchet MS', sans-serif; margin: 50px; display: none;"
             title="Update Event">
