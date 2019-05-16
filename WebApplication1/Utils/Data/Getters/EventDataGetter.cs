@@ -301,6 +301,9 @@ drop table #Subtrade", this.startDate.ToShortDateString(), this.endDate.ToShortD
         List<Generics.Utils.Data.InstallationEvent> IGetter.GetData()
         {
             string SQL = GetInstallationSQL();
+
+            DayOfWeek thisDate;
+            int count,total,diff;
             List<InstallationEvent> installationEventList = new List<InstallationEvent>();
 
             //  List<InstallationEvent> returnEventList = new List<InstallationEvent>();
@@ -327,7 +330,6 @@ drop table #Subtrade", this.startDate.ToShortDateString(), this.endDate.ToShortD
                 newEvent.City = eventx.City;
                 newEvent.CrewNames = eventx.CrewNames;
                 newEvent.CurrentStateName = eventx.CurrentStateName;
-                newEvent.Doors = eventx.Doors;
                 newEvent.DoorState = eventx.DoorState;
 
                 newEvent.start = installationEventList.Where(a => a.WorkOrderNumber == eventx.WorkOrderNumber).Min(b => b.ScheduledDate).
@@ -345,18 +347,51 @@ drop table #Subtrade", this.startDate.ToShortDateString(), this.endDate.ToShortD
                 newEvent.Other = eventx.Other;
                 newEvent.OtherState = eventx.OtherState;
 
-                newEvent.SalesAmmount = eventx.SalesAmmount;
+                
+                newEvent.ScheduledDate = eventx.ScheduledDate;
+
+
                 newEvent.TotalSalesAmount = eventx.TotalSalesAmount;
                 newEvent.TotalAsbestos = eventx.TotalAsbestos;
                 newEvent.TotalWoodDropOff = eventx.TotalWoodDropOff;
                 newEvent.TotalHighRisk = eventx.TotalHighRisk;
-                newEvent.ScheduledDate = eventx.ScheduledDate;
+
+                total = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber) ;
+                count = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber && bt.ScheduledDate.DayOfWeek != DayOfWeek.Sunday && bt.ScheduledDate.DayOfWeek != DayOfWeek.Saturday);
+                //    (bt.Saturday=="No") || (bt.Sunday == "No"));
+                //check sat/sun logic
+                diff = total - count;
+                if ((eventx.Saturday=="Yes") && (eventx.Sunday=="Yes"))
+                {
+                    newEvent.Windows = eventx.Windows;
+                    newEvent.Doors = eventx.Doors;
+                    newEvent.SalesAmmount = eventx.SalesAmmount;
+                }
+                else
+                {
+                    if ((eventx.ScheduledDate.DayOfWeek != DayOfWeek.Sunday) && 
+                            (eventx.ScheduledDate.DayOfWeek != DayOfWeek.Saturday) )
+                    {
+                        if (diff==0)
+                        {
+                            diff = total;
+                        }
+                        newEvent.Windows = eventx.Windows * total / diff;
+                        newEvent.Doors = eventx.Doors * total / diff;
+                        newEvent.SalesAmmount = eventx.SalesAmmount * total / diff;
+
+                    }
+                }
+      
+
+                
+
                 newEvent.SeniorInstaller = eventx.SeniorInstaller;
                 newEvent.StreetAddress = eventx.StreetAddress;
                 newEvent.Subtrades = eventx.Subtrades;
 
                 newEvent.title = eventx.title;
-                newEvent.Windows = eventx.Windows;
+          
                 newEvent.TotalWindows = eventx.TotalWindows;
                 newEvent.TotalDoors = eventx.TotalDoors;
                 newEvent.WindowState = eventx.WindowState;

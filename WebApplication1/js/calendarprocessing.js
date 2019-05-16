@@ -6,6 +6,15 @@ var renderingComplete = false;
 var eventid;
 var eventWO = [];
 
+var is_weekend = function (date1) {
+    var dt = new Date(date1);
+
+    if (dt.getDay() == 6 || dt.getDay() == 0) {
+        return "weekend";
+    }
+}
+
+
 Date.prototype.Equals = function (pDate) {
     var retValue = (this.getUTCFullYear() === pDate.getUTCFullYear() &&
         this.getUTCMonth() === pDate.getUTCMonth() &&
@@ -31,6 +40,18 @@ function UpdateEventSchedule() {
     var scheduledStartDate, scheduledEndDate;
     var scheduledStartDate = $("#InstallScheduledStartDate").val();
     var scheduledEndDate = $("#InstallScheduledEndDate").val();
+    var isSaturdayChecked = document.getElementsByName('saturday')[0].checked;
+    var isSundayChecked = document.getElementsByName('sunday')[0].checked;
+    var xDate;
+    if ((scheduledStartDate == scheduledEndDate) && (isSaturdayChecked == false) || (isSundayChecked == false)) 
+    {
+        xDate = is_weekend(scheduledStartDate);
+        if (xDate == "weekend") {
+            alert("This event has Saturday/Sunday disabled!");
+        //    revertFunc();
+            return;
+        }
+    }
     $.ajax({
         url: 'data.svc/UpdateInstallationSchedule?id=' + eventid + '&ScheduledStartDate=' + scheduledStartDate + '&scheduledEndDate=' + scheduledEndDate,
         type: "POST",
@@ -106,7 +127,8 @@ function sendUpdateToServer(event) {
         day = date1.getDay() - date2.getDay()
         var obj;
         var k =1;
-
+        var xDate;
+       
         if (date1 == date2) {
 
         }
@@ -119,7 +141,13 @@ function sendUpdateToServer(event) {
                 obj.SalesAmmount = eventToUpdate.Amount / day;
                 obj.ScheduledDate = new Date(event.start + k * 24 * 60 * 60000)
                 k++;
-               
+                if (day == 1) {
+                    xDate = is_weekend(obj.ScheduledDate);
+                    if ((event.Sunday == "No" || event.Saturday == "No") && (xDate == "weekend")) {
+                         alert("This event has Saturday/Sunday disabled!");
+                         revertFunc();
+                    }
+                }
                 //eventWODict[j]["ScheduledDate"]
                 eventWODict.push(obj);
             }
@@ -951,6 +979,7 @@ $(document).ready(function () {
             if (event.ReturnedJob == 1) {
                 alert("This is returned job!");
             }
+            //if (event.)
             //totals = getBlankTotal();
         },
         eventResizeStop: function (event, jsEvent, ui, view) {
@@ -1001,6 +1030,7 @@ $(document).ready(function () {
                
                 var date1, date2;
                 var WOCount;
+                var xDate;
 
                 if (displayType == "Installation" ) {
                     for (var i = 0; i < totals.length; i++) {
@@ -1009,19 +1039,25 @@ $(document).ready(function () {
                         for (var j = 0; j < eventWODict.length; j++) {
                             date2 = new Date(GetDatefromMoment(eventWODict[j]["ScheduledDate"])).toLocaleDateString('en-US');
                             if ((date1 == date2) && (eventWODict[j].ReturnedJob != 1)) {
+                                xDate = is_weekend(date2);
+                                if ((eventWODict[j].Sunday == "No" || eventWODict[j].Saturday == "No") && (xDate == "weekend")) {
 
-                                totals[i].windows += eventWODict[j]["Windows"];
-                                totals[i].doors += eventWODict[j]["Doors"];
-                                totals[i].SalesAmmount += eventWODict[j]["SalesAmmount"];
-                                totals[i].TotalAsbestos += eventWODict[j]["TotalAsbestos"];
-                                totals[i].TotalWoodDropOff += eventWODict[j]["TotalWoodDropOff"];
-                                totals[i].TotalHighRisk += eventWODict[j]["TotalHighRisk"];
-                                if (eventWODict[j]["LeadPaint"] == "Yes") {
-                                    totals[i].TotalLeadPaint ++;
                                 }
-                                
-                                totals[i].WOCount = WOCount + 1;
-                                WOCount++;
+                                else {
+                                    totals[i].windows += eventWODict[j]["Windows"];
+                                    totals[i].doors += eventWODict[j]["Doors"];
+                                    totals[i].SalesAmmount += eventWODict[j]["SalesAmmount"];
+                                    totals[i].TotalAsbestos += eventWODict[j]["TotalAsbestos"];
+                                    totals[i].TotalWoodDropOff += eventWODict[j]["TotalWoodDropOff"];
+                                    totals[i].TotalHighRisk += eventWODict[j]["TotalHighRisk"];
+                                    if (eventWODict[j]["LeadPaint"] == "Yes") {
+                                        totals[i].TotalLeadPaint++;
+                                    }
+
+                                    totals[i].WOCount = WOCount + 1;
+                                    WOCount++;
+                                }
+
                             }
 
                         }
