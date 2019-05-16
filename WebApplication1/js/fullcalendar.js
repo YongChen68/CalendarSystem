@@ -3670,6 +3670,10 @@
                         RenderDayRow('Wood-DropOff-Jobs', dayIDs[cell.start.day()]) +
                         RenderDayRow('HighRisk-Jobs', dayIDs[cell.start.day()]) +
                         RenderDayRow('Lead-Paint', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Window-LBR', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Patio-Door-LBR', dayIDs[cell.start.day()]) +
+                        RenderDayRow('EXT-Door-LBR', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Total-LBR', dayIDs[cell.start.day()]) +
                         '</tbody>';
 
                 }
@@ -3722,6 +3726,11 @@
                         RenderWeekRow('Wood-DropOff-Jobs') +
                         RenderWeekRow('HighRisk-Jobs') +
                         RenderWeekRow('Lead-Paint') +
+                        RenderWeekRow('Window-LBR') +
+                        RenderWeekRow('Patio-Door-LBR') +
+                        RenderWeekRow('EXT-Door-LB') +
+                        RenderWeekRow('Total-LBR') +
+
                         '</tbody>';
                 }
                 else {
