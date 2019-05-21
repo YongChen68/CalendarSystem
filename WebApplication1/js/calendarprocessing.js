@@ -15,6 +15,23 @@ var is_weekend = function (date1) {
 }
 
 
+var is_saturday = function (date1) {
+    var dt = new Date(date1);
+
+    if (dt.getDay() == 6) {
+        return "saturday";
+    }
+}
+
+var is_sunday = function (date1) {
+    var dt = new Date(date1);
+
+    if (dt.getDay() == 0) {
+        return "sunday";
+    }
+}
+
+
 Date.prototype.Equals = function (pDate) {
     var retValue = (this.getUTCFullYear() === pDate.getUTCFullYear() &&
         this.getUTCMonth() === pDate.getUTCMonth() &&
@@ -40,18 +57,36 @@ function UpdateEventSchedule() {
     var scheduledStartDate, scheduledEndDate;
     var scheduledStartDate = $("#InstallScheduledStartDate").val();
     var scheduledEndDate = $("#InstallScheduledEndDate").val();
+  
     var isSaturdayChecked = document.getElementsByName('saturday')[0].checked;
     var isSundayChecked = document.getElementsByName('sunday')[0].checked;
     var xDate;
-    if ((scheduledStartDate == scheduledEndDate) && (isSaturdayChecked == false) || (isSundayChecked == false)) 
+    if ((scheduledStartDate == scheduledEndDate) && (isSaturdayChecked == false) && (isSundayChecked == false)) 
     {
         xDate = is_weekend(scheduledStartDate);
         if (xDate == "weekend") {
-            alert("This event has Saturday/Sunday disabled!");
-        //    revertFunc();
+            alert("This event has Saturday & Sunday disabled!");
             return;
         }
     }
+
+    if ((scheduledStartDate == scheduledEndDate) && (isSaturdayChecked == false) ) {
+        xDate = is_saturday(scheduledStartDate);
+        if (xDate == "saturday") {
+            alert("This event has Saturday disabled!");
+            return;
+        }
+    }
+
+    if ((scheduledStartDate == scheduledEndDate) && (isSundayChecked == false)) {
+        xDate = is_sunday(scheduledStartDate);
+        if (xDate == "sunday") {
+            alert("This event has Sunday disabled!");
+            return;
+        }
+    }
+
+
     $.ajax({
         url: 'data.svc/UpdateInstallationSchedule?id=' + eventid + '&ScheduledStartDate=' + scheduledStartDate + '&scheduledEndDate=' + scheduledEndDate,
         type: "POST",

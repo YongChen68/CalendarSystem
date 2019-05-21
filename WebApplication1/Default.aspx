@@ -69,11 +69,26 @@
         var geocoder;
         var map;
         $(function () {
-            $("#from_date").datepicker();
-            $("#end_date").datepicker();
-
-            $("#InstallScheduledStartDate").datepicker();
-            $("#InstallScheduledEndDate").datepicker();
+           // $("#from_date").datepicker();
+             $('#from_date').datepicker({
+                dateFormat: "m/d/yy"
+               
+            });
+         //   $("#end_date").datepicker();
+            $('#end_date').datepicker({
+                dateFormat: "m/d/yy"
+               
+            });
+           // $("#InstallScheduledStartDate").datepicker();
+            $('#InstallScheduledStartDate').datepicker({
+                dateFormat: "m/d/yy"
+               
+            });
+           // $("#InstallScheduledEndDate").datepicker();
+             $('#InstallScheduledEndDate').datepicker({
+                dateFormat: "m/d/yy"
+               
+            });
 
         });
 
