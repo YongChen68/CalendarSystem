@@ -690,6 +690,9 @@ $(document).ready(function () {
                             item.allDay = true;
                             item.editable = (item.HolidayName != null) ? false : true;
                          //   item.editable = (item.ReturnedJob == 1) ? false : true;
+
+                            item.editable  = (readonly == "True" )? false : true;
+
                             eventWODict.push(item);
 
                         });
@@ -817,6 +820,10 @@ $(document).ready(function () {
                     $("#Lead-Paint1").html(event.LeadPaint);
                     $("#Wood-DropOff-Jobs1").html(event.TotalWoodDropOff == 1 ? "Yes" : "No");
                     $("#HighRisk-Jobs1").html(event.TotalHighRisk == 1 ? "Yes" : "No");
+
+                    document.getElementById("btnUpdateInstallationEventSchedule").disabled = (readonly == "True") ? true : false;
+                    document.getElementById("btnSunday").disabled = (readonly == "True") ? true : false;
+                    document.getElementById("btnReturnedJob").disabled = (readonly == "True") ? true : false;
 
 
                     $("#Address").html(event.StreetAddress);
