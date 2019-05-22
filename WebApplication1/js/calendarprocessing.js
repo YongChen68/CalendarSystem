@@ -178,9 +178,23 @@ function sendUpdateToServer(event) {
                 k++;
                 if (day == 1) {
                     xDate = is_weekend(obj.ScheduledDate);
-                    if ((event.Sunday == "No" || event.Saturday == "No") && (xDate == "weekend")) {
+                    if ((event.Sunday == "No") && (event.Saturday == "No") && (xDate == "weekend")) {
                          alert("This event has Saturday/Sunday disabled!");
                          revertFunc();
+                    }
+                    else if ((event.Saturday == "No") && (event.Sunday == "Yes")) {
+                        xDate = is_saturday(obj.ScheduledDate);
+                        if (xDate == "saturday") {
+                            alert("This event has Saturday disabled!");
+                            revertFunc();
+                        }
+                    }
+                    else if ((event.Saturday == "Yes") && (event.Sunday == "No")) {
+                        xDate = is_sunday(obj.ScheduledDate);
+                        if (xDate == "sunday") {
+                            alert("This event has Sunday disabled!");
+                            revertFunc();
+                        }
                     }
                 }
                 //eventWODict[j]["ScheduledDate"]
@@ -322,7 +336,9 @@ function LoadBufferedJobs() {
     console.log("checked shippingType: ", shippingType.join(","));
     $.getJSON("data.svc/GetBufferJobs", { type: displayType, branch: branches.join(","), jobType: jobTypes.join(","), shippingType: shippingType.join(",") }, function (data) {
         $.each(data.GetBufferJobsResult, function (key, val) {
+            val.editable = (readonly == "True") ? false : true;
             AddBufferEvent(key, val);
+
         });
         /* initialize the external events
         -----------------------------------------------------------------*/
@@ -440,6 +456,10 @@ function AddBufferEvent(key, val) {
         revert: true,      // will cause the event to go back to its
         revertDuration: 0  //  original position after the drag
     });
+
+    el.editable = (readonly == "True") ? false : true;
+    el.draggable = (readonly == "True") ? false : true;
+
     $('#' + val.id).data('event', {
         // title: val.title, id: val.id, description: val.description, doors: val.doors, windows: val.windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
         title: val.title, id: val.id, description: val.description, doors: val.Doors, windows: val.Windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
@@ -688,10 +708,10 @@ $(document).ready(function () {
                         var con;
                         $.each(data.GetInstallationEventsResult, function (pos, item) {
                             item.allDay = true;
-                            item.editable = (item.HolidayName != null) ? false : true;
                          //   item.editable = (item.ReturnedJob == 1) ? false : true;
 
-                            item.editable  = (readonly == "True" )? false : true;
+                            item.editable = (readonly == "True") ? false : true;
+                            item.editable = (item.HolidayName != null) ? false : true;
 
                             eventWODict.push(item);
 
@@ -730,6 +750,7 @@ $(document).ready(function () {
                         $.each(data.GetEventsResult, function (pos, item) {
                             item.allDay = true;
                             item.editable = (item.HolidayName != null) ? false : true;
+                            item.editable = (readonly == "True") ? false : true;
                             events.push(item);
                         });
                         callback(events);
@@ -779,7 +800,7 @@ $(document).ready(function () {
             }
             if (event.ReturnedJob == 1) {
                 element.css({
-                    'background-color': '#DAA520'
+                    'background-color': '#ff6347'
                     // 'border-color': '#333333'
                 });
             }
@@ -901,6 +922,10 @@ $(document).ready(function () {
                 if (displayType == "Installation") {
                     ret += event.HolidayName;
                 }
+                element.css({
+                    'background-color': '#c6abd0'
+                    // 'border-color': '#333333'
+                });
                 $(element).find(dom).prepend(ret);
                 
             }
