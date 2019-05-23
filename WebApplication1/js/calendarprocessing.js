@@ -1098,7 +1098,7 @@ $(document).ready(function () {
                
                 var date1, date2;
                 var WOCount;
-                var xDate;
+                var xDate, xDateSat, xDateSun;
 
                 if (displayType == "Installation" ) {
                     for (var i = 0; i < totals.length; i++) {
@@ -1107,9 +1107,18 @@ $(document).ready(function () {
                         for (var j = 0; j < eventWODict.length; j++) {
                             date2 = new Date(GetDatefromMoment(eventWODict[j]["ScheduledDate"])).toLocaleDateString('en-US');
                             if ((date1 == date2) && (eventWODict[j].ReturnedJob != 1)) {
+                               // if eventWODict[j].Saturday == "No"
                                 xDate = is_weekend(date2);
-                                if ((eventWODict[j].Sunday == "No" || eventWODict[j].Saturday == "No") && (xDate == "weekend")) {
+                                xDateSat = is_saturday(date2);
+                                xDateSun = is_sunday(date2);
+                                if ((eventWODict[j].Sunday == "No" && eventWODict[j].Saturday == "No") && (xDate == "weekend")) {
 
+                                }
+                                else if ((eventWODict[j].Sunday == "Yes" && eventWODict[j].Saturday == "No") && (xDateSat == "saturday")) {
+                                   
+                                }
+                                else if ((eventWODict[j].Sunday == "No" && eventWODict[j].Saturday == "Yes") && (xDateSun == "sunday")) {
+                                  
                                 }
                                 else {
                                     totals[i].windows += eventWODict[j]["Windows"];
@@ -1274,6 +1283,13 @@ function UpdateEventWeekends() {
         type: "POST",
         success: function (data) {
             if (debug) console.log("events.success", "data.UpdateEventWeekends:");
+            $("#eventContent .close").click();
+            $('#calendar').fullCalendar('refetchEvents');
+            $('#calendar').fullCalendar('rerenderEvents');
+            var view = $('#calendar').fullCalendar('getView');
+            if (view.type == 'agendaWeek') {
+                $('#calendar').fullCalendar('changeView', 'agendaWeek');
+            }
             }, error: function (error) {
                 console.log('Error', error);
                 $('#script-warning').show();
