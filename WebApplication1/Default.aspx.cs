@@ -60,7 +60,7 @@ namespace CalendarSystem
                 // eventData.end = Convert.ToDateTime(eventData.end).AddDays(1).ToString("yyyy-MM-ddT00:00:00.000Z");
                // eventData.end = Convert.ToDateTime(eventData.end).AddDays(0).ToString("yyyy-MM-ddT00:00:00.000Z");
             }
-            
+         
 
             RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
             return runner.ProcessUpdate(Utils.ContentTypeParser.GetType(type), eventData);

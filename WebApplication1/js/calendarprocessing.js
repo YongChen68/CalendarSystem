@@ -55,8 +55,8 @@ function eventUpdate(event, dayDelta, minuteDelta, allDay, revertFunc) {
 function UpdateEventSchedule() {
     var i = eventid;
     var scheduledStartDate, scheduledEndDate;
-    var scheduledStartDate = $("#InstallScheduledStartDate").val();
-    var scheduledEndDate = $("#InstallScheduledEndDate").val();
+    scheduledStartDate = $("#InstallScheduledStartDate").val();
+    scheduledEndDate = $("#InstallScheduledEndDate").val();
   
     var isSaturdayChecked = document.getElementsByName('saturday')[0].checked;
     var isSundayChecked = document.getElementsByName('sunday')[0].checked;
@@ -118,7 +118,8 @@ function sendUpdateToServer(event) {
         Windows: event.Windows,
         Amount: event.TotalSalesAmount,
         totalWindows: event.TotalWindows,
-        totalDoors:event.TotalDoors
+        totalDoors: event.TotalDoors,
+        state: event.CurrentStateName
 
     };
     if (event.end === null) {
@@ -145,7 +146,7 @@ function sendUpdateToServer(event) {
     eventToUpdate.end = eventToUpdate.end.toJSON(); //endDate;
     eventToUpdate.allDay = event.allDay;
     eventToUpdate.eventDurationEditable = true;
-
+   
     if ((displayType == "Installation") && (event.ReturnedJob != 1)) {
       //  eventWODict = [];
 
@@ -397,7 +398,7 @@ function AddInstallationBufferEvent(key, val) {
         val.EstInstallerCnt + "\">" +
         (val.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + val.Windows + "Status: " + val.WindowState + "\" src=\"images/window.PNG\" />" : "") +
         (val.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + val.Doors + "Status: " + val.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
-        ("WO: " + val.WorkOrderNumber) + "&nbsp;" +
+        (" " + val.WorkOrderNumber) + "&nbsp;" +
         ("Name: " + val.LastName.trim().length > 10 ? val.LastName.trim().Substring(0, 10) : val.LastName.trim() + "&nbsp;" + val.FirstName.trim().length > 10 ? val.FirstName.trim().Substring(0, 10) : val.FirstName.trim()) + 
         "&nbsp;" + (val.City.trim().Length > 5 ? val.City.trim().toLowerCase().Substring(0, 5) : val.City.trim().toLowerCase());
    // $(element).find(dom).prepend(ret);
@@ -414,7 +415,7 @@ function AddInstallationBufferEvent(key, val) {
       //  title: val.title, id: val.id, doors: val.Doors, windows: val.Windows, WorkOrderNumber: title.WorkOrderNumber, Branch: val.Branch, City: val.City, CellPhone: val.CellPhone, CrewNames: val.CrewNames, CurrentStateName: val.CurrentStateName, LastName: val.LastName, FirstName: val.FirstName
         title: val.title, id: val.id, doors: val.Doors, City: val.City, windows: val.Windows, WorkOrderNumber: val.WorkOrderNumber, LastName: val.LastName, FirstName: val.FirstName,
         EstInstallerCnt: val.EstInstallerCnt, WindowState: val.WindowState, DoorState: val.DoorState, TotalWoodDropOff: val.TotalWoodDropOff,
-        TotalAsbestos: val.TotalAsbestos, TotalAsbestos: val.TotalAsbestos, LeadPaint: val.LeadPaint,
+        TotalAsbestos: val.TotalAsbestos, LeadPaint: val.LeadPaint,
         TotalHighRisk: val.TotalHighRisk, ReturnedJob: val.ReturnedJob
 
     });

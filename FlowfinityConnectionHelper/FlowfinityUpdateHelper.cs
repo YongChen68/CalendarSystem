@@ -37,6 +37,7 @@ namespace FlowfinityConnectionHelper
             {
                 OnBehalfOf = Owner,
                 RecordID = data.id,
+                
                 Record = GetRecord(type, data)
             };
             return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
