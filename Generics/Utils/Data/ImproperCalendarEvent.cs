@@ -40,8 +40,8 @@ namespace Generics.Utils
         [DataMember]
         public string end { get; set; }
 
-        //[DataMember]
-        //public string CurrentState { get; set; }
+        [DataMember]
+        public string CurrentStateName { get; set; }
 
     }
 

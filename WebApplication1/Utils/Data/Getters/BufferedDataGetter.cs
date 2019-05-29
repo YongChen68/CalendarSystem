@@ -58,7 +58,7 @@ namespace CalendarSystem.Utils.Data
             0  as TotalSalesAmount,i.EstInstallerCnt,i.Rep_display as SalesRep,i.LeadPaint ,0 as TotalWoodDropOff, 0 as TotalAsbestos,0 as TotalHighRisk
 	       ,'' as  Subtrades ,i.RecordId	 , [Branch]      ,[Branch_display]      ,[WorkOrderNumber]         ,[JobType]      ,[FirstName]      ,[LastName],0 as ReturnedJob
       ,[StreetAddress],HomePhoneNumber, CellPhone, WorkPhoneNumber, '' as CrewNames, '' as SeniorInstaller, null as hours,'' as WindowState,'' as DoorState, '' as OtherState
-      , 'no' as saturday, 'no' as sunday, i.PostalCode as PostCode
+      , 'no' as saturday, 'no' as sunday, i.PostalCode as PostCode,i.CurrentStateName
       ,[City]
       ,[PostalCode]
       ,[HomePhoneNumber]

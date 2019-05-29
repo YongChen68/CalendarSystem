@@ -119,7 +119,7 @@ function sendUpdateToServer(event) {
         Amount: event.TotalSalesAmount,
         totalWindows: event.TotalWindows,
         totalDoors: event.TotalDoors,
-        state: event.CurrentStateName
+        CurrentStateName: event.CurrentStateName
 
     };
     if (event.end === null) {
@@ -160,7 +160,7 @@ function sendUpdateToServer(event) {
         var date1, date2,day;
         date1 = new Date(eventToUpdate.end);
         date2 = new Date(eventToUpdate.start);
-        day = date1.getDay() - date2.getDay()
+        day = date1.getDay() - date2.getDay();
         var obj;
         var k =1;
         var xDate;
@@ -175,7 +175,7 @@ function sendUpdateToServer(event) {
                 obj.Doors = parseFloat(eventToUpdate.totalDoors / day).toFixed(2);
                 obj.Windows = parseFloat(eventToUpdate.totalWindows / day).toFixed(2);
                 obj.SalesAmmount = eventToUpdate.Amount / day;
-                obj.ScheduledDate = new Date(event.start + k * 24 * 60 * 60000)
+                obj.ScheduledDate = new Date(event.start + k * 24 * 60 * 60000);
                 k++;
                 if (day == 1) {
                     xDate = is_weekend(obj.ScheduledDate);
@@ -416,7 +416,7 @@ function AddInstallationBufferEvent(key, val) {
         title: val.title, id: val.id, doors: val.Doors, City: val.City, windows: val.Windows, WorkOrderNumber: val.WorkOrderNumber, LastName: val.LastName, FirstName: val.FirstName,
         EstInstallerCnt: val.EstInstallerCnt, WindowState: val.WindowState, DoorState: val.DoorState, TotalWoodDropOff: val.TotalWoodDropOff,
         TotalAsbestos: val.TotalAsbestos, LeadPaint: val.LeadPaint,
-        TotalHighRisk: val.TotalHighRisk, ReturnedJob: val.ReturnedJob
+        TotalHighRisk: val.TotalHighRisk, ReturnedJob: val.ReturnedJob,CurrentStateName:val.CurrentStateName
 
     });
 

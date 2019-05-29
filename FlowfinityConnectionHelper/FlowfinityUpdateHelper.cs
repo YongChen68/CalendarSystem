@@ -33,6 +33,8 @@ namespace FlowfinityConnectionHelper
         {
             //FASR.PlantProduction_UpdateWindowMakerData_Call call = new FASR.PlantProduction_UpdateWindowMakerData_Call()
             // HomeInstallations_EditSold_Call
+            bool ret;
+            bool ret1 = true;
             FASR.HomeInstallations_EditSold_Call  call = new FASR.HomeInstallations_EditSold_Call()
             {
                 OnBehalfOf = Owner,
@@ -40,7 +42,22 @@ namespace FlowfinityConnectionHelper
                 
                 Record = GetRecord(type, data)
             };
-            return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
+            ret= _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
+
+            if (data.CurrentStateName == "Unreviewed Work Scheduled")
+            {
+                FASR.HomeInstallations_ScheduleNewWorkOrder_Call call1 = new FASR.HomeInstallations_ScheduleNewWorkOrder_Call()
+                {
+                    OnBehalfOf = Owner,
+                    RecordID = data.id,
+
+                    Record = GetRecord(type, data)
+                };
+                ret1 = _helper.Send(new FASR.OperationCall[] { call1 }, PrepareTransactionId(data)).ReturnValue;
+            }
+
+            return ret & ret1;
+
         }
 
       
@@ -59,7 +76,7 @@ namespace FlowfinityConnectionHelper
         private static FASR.HomeInstallationsRecord GetRecord(Generics.Utils.ContentType type, Generics.Utils.ImproperInstallationEvent data)
         {
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
-            record.InstallationDates = PrepareInstallationDateList(data);
+           // record.InstallationDates = PrepareInstallationDateList(data);
             return record;
         }
         //GetRecordForReturnedJob

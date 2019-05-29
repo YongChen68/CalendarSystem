@@ -71,7 +71,7 @@ namespace Generics.Utils.Data
                 switch (CurrentStateName.Trim())
                 {
                     case "Install in Progress": color = " #a5d6a7"; break;                            // Green
-                    case "Installation Confirmed": color = "#9FB6CD"; break;                          // Blue - Grey Blue
+                    case "Installation Confirmed": color = "#4890e2"; break;                          // Blue - Grey Blue
                     case "Install Completed": color = "#ffc966"; break;                               // Orange
                     case "Installation inprogress rejected": color = "#ff6347"; break;                // Tomato
                     case "Installation Manager Review": color = "#ffc966"; break;                     // Orange
