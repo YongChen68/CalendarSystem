@@ -18,17 +18,17 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://srvvanweb1:8102/fa/integration/Public" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://srvvanweb2:8102/fa/integration/Public" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Public1.wsdl" MetadataType="Wsdl" ID="0dd945bb-a8d4-4cd5-ae24-88c9dc6328e5" SourceId="1" SourceUrl="http://srvvanweb1:8102/fa/integration/Public?wsdl=wsdl1" />
-    <MetadataFile FileName="Public5.xsd" MetadataType="Schema" ID="dd46a56e-9283-4a88-ad04-2bc014b451d4" SourceId="1" SourceUrl="http://srvvanweb1:8102/fa/integration/Public?xsd=xsd1" />
-    <MetadataFile FileName="Public6.xsd" MetadataType="Schema" ID="a4ab9468-0045-4f17-b5e5-34ab36a8ed51" SourceId="1" SourceUrl="http://srvvanweb1:8102/fa/integration/Public?xsd=xsd2" />
-    <MetadataFile FileName="BasicHttpBinding_IIntegration1.wsdl" MetadataType="Wsdl" ID="d3640555-a978-4749-9343-88ce229d1720" SourceId="1" SourceUrl="http://srvvanweb1:8102/fa/integration/Public?wsdl" />
-    <MetadataFile FileName="Public7.xsd" MetadataType="Schema" ID="4dc214f9-c653-4f95-813e-c1b3f8afd356" SourceId="1" SourceUrl="http://srvvanweb1:8102/fa/integration/Public?xsd=xsd4" />
-    <MetadataFile FileName="Public8.xsd" MetadataType="Schema" ID="51bc2c19-532d-4044-9498-e2eeb911e4b1" SourceId="1" SourceUrl="http://srvvanweb1:8102/fa/integration/Public?xsd=xsd3" />
-    <MetadataFile FileName="Public9.xsd" MetadataType="Schema" ID="aeb236e6-52f5-4b57-94ab-49f4a821fbcc" SourceId="1" SourceUrl="http://srvvanweb1:8102/fa/integration/Public?xsd=xsd0" />
-    <MetadataFile FileName="Public1.disco" MetadataType="Disco" ID="37ee651d-8d2e-49f7-8eea-b43d07e227b4" SourceId="1" SourceUrl="http://srvvanweb1:8102/fa/integration/Public?disco" />
+    <MetadataFile FileName="Public5.xsd" MetadataType="Schema" ID="290b31b1-a72e-4f2c-8f0b-a551c0114c45" SourceId="1" SourceUrl="http://srvvanweb2:8102/fa/integration/Public?xsd=xsd1" />
+    <MetadataFile FileName="Public1.wsdl" MetadataType="Wsdl" ID="5b25fac8-16ef-4172-bdbb-798e6f7efaec" SourceId="1" SourceUrl="http://srvvanweb2:8102/fa/integration/Public?wsdl=wsdl1" />
+    <MetadataFile FileName="Public6.xsd" MetadataType="Schema" ID="5cb834a7-fb58-403d-b69f-3bb9e3d5d8a7" SourceId="1" SourceUrl="http://srvvanweb2:8102/fa/integration/Public?xsd=xsd0" />
+    <MetadataFile FileName="Public7.xsd" MetadataType="Schema" ID="6f4ec454-636d-4e6b-b2e9-d1846705d678" SourceId="1" SourceUrl="http://srvvanweb2:8102/fa/integration/Public?xsd=xsd3" />
+    <MetadataFile FileName="Public8.xsd" MetadataType="Schema" ID="5b462e6c-04d1-407d-aed4-b54c30175f7d" SourceId="1" SourceUrl="http://srvvanweb2:8102/fa/integration/Public?xsd=xsd2" />
+    <MetadataFile FileName="Public9.xsd" MetadataType="Schema" ID="9461825a-4ebf-4b77-9cf5-a458bf36b48e" SourceId="1" SourceUrl="http://srvvanweb2:8102/fa/integration/Public?xsd=xsd4" />
+    <MetadataFile FileName="Public1.disco" MetadataType="Disco" ID="0936f14e-476d-484d-9ff0-7ca56fbd6697" SourceId="1" SourceUrl="http://srvvanweb2:8102/fa/integration/Public?disco" />
+    <MetadataFile FileName="BasicHttpBinding_IIntegration1.wsdl" MetadataType="Wsdl" ID="508834af-d3a8-4e31-9f26-5358c82cf1b9" SourceId="1" SourceUrl="http://srvvanweb2:8102/fa/integration/Public?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

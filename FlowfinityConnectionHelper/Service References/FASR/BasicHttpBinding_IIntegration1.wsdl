@@ -64,7 +64,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="BasicHttpBinding_ISalesReviewCalloutService_policy">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IManufacturerTrackingCalloutService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
@@ -72,7 +72,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="BasicHttpBinding_IManufacturerTrackingCalloutService_policy">
+  <wsp:Policy wsu:Id="BasicHttpBinding_ISalesReviewCalloutService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
@@ -267,8 +267,8 @@
     <wsp:PolicyReference URI="#BasicHttpBinding_IStationTargetCalloutService_policy">
     </wsp:PolicyReference>
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Callout_StationTarget_Legacy_Add">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_Add" style="document" />
+    <wsdl:operation name="Callout_StationTarget_Legacy_ADD">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_ADD" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -276,8 +276,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Callout_StationTarget_Legacy_Edit">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_Edit" style="document" />
+    <wsdl:operation name="Callout_StationTarget_Legacy_EDIT">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_EDIT" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -285,8 +285,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Callout_StationTarget_Legacy_Transition">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_Transition" style="document" />
+    <wsdl:operation name="Callout_StationTarget_Legacy_TRANSITION">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TRANSITION" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -294,8 +294,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Callout_StationTarget_Legacy_Delete">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_Delete" style="document" />
+    <wsdl:operation name="Callout_StationTarget_Legacy_DELETE">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_DELETE" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -303,8 +303,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Callout_StationTarget_Legacy_Duplicate">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_Duplicate" style="document" />
+    <wsdl:operation name="Callout_StationTarget_Legacy_DUPLICATE">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_DUPLICATE" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -312,8 +312,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Callout_StationTarget_Legacy_TriggerAdd">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TriggerAdd" style="document" />
+    <wsdl:operation name="Callout_StationTarget_Legacy_TRIGGERADD">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TRIGGERADD" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -321,8 +321,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Callout_StationTarget_Legacy_TriggerEdit">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TriggerEdit" style="document" />
+    <wsdl:operation name="Callout_StationTarget_Legacy_TRIGGEREDIT">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TRIGGEREDIT" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -381,13 +381,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-  </wsdl:binding>
-  <wsdl:binding name="BasicHttpBinding_ISalesReviewCalloutService" type="i0:ISalesReviewCalloutService">
-    <wsp:PolicyReference URI="#BasicHttpBinding_ISalesReviewCalloutService_policy">
-    </wsp:PolicyReference>
-    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Callout_SalesReview_AddRecord">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/ISalesReviewCalloutService/Callout_SalesReview_AddRecord" style="document" />
+    <wsdl:operation name="Callout_HomeInstallations_ScheduleNewWorkOrder">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_ScheduleNewWorkOrder" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -402,6 +397,20 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Callout_ManufacturerTracking_AddRecord">
       <soap:operation soapAction="http://flowfinity.com/ServiceContract/IManufacturerTrackingCalloutService/Callout_ManufacturerTracking_AddRecord" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="BasicHttpBinding_ISalesReviewCalloutService" type="i0:ISalesReviewCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ISalesReviewCalloutService_policy">
+    </wsp:PolicyReference>
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Callout_SalesReview_AddRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/ISalesReviewCalloutService/Callout_SalesReview_AddRecord" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -451,8 +460,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Callout_MMS_Legacy_Add">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_Add" style="document" />
+    <wsdl:operation name="Callout_MMS_Legacy_ADD">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_ADD" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -460,8 +469,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Callout_MMS_Legacy_Edit">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_Edit" style="document" />
+    <wsdl:operation name="Callout_MMS_Legacy_EDIT">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_EDIT" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -469,8 +478,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Callout_MMS_Legacy_Transition">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_Transition" style="document" />
+    <wsdl:operation name="Callout_MMS_Legacy_TRANSITION">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TRANSITION" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -478,8 +487,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Callout_MMS_Legacy_Delete">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_Delete" style="document" />
+    <wsdl:operation name="Callout_MMS_Legacy_DELETE">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_DELETE" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -487,8 +496,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Callout_MMS_Legacy_Duplicate">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_Duplicate" style="document" />
+    <wsdl:operation name="Callout_MMS_Legacy_DUPLICATE">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_DUPLICATE" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -496,8 +505,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Callout_MMS_Legacy_TriggerAdd">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TriggerAdd" style="document" />
+    <wsdl:operation name="Callout_MMS_Legacy_TRIGGERADD">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TRIGGERADD" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -505,8 +514,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="Callout_MMS_Legacy_TriggerEdit">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TriggerEdit" style="document" />
+    <wsdl:operation name="Callout_MMS_Legacy_TRIGGEREDIT">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TRIGGEREDIT" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -724,70 +733,70 @@
   </wsdl:binding>
   <wsdl:service name="BasicHttpBinding_IIntegration">
     <wsdl:port name="BasicHttpBinding_IBackOrderCalloutService" binding="i0:BasicHttpBinding_IBackOrderCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IEstimationCalloutService" binding="i0:BasicHttpBinding_IEstimationCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_ITimesheetCalloutService" binding="i0:BasicHttpBinding_ITimesheetCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IPlantProductionCalloutService" binding="i0:BasicHttpBinding_IPlantProductionCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IStationTargetCalloutService" binding="i0:BasicHttpBinding_IStationTargetCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IScheduleDraftCalloutService" binding="i0:BasicHttpBinding_IScheduleDraftCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IServiceCalloutService" binding="i0:BasicHttpBinding_IServiceCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IHomeInstallationsCalloutService" binding="i0:BasicHttpBinding_IHomeInstallationsCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
-    </wsdl:port>
-    <wsdl:port name="BasicHttpBinding_ISalesReviewCalloutService" binding="i0:BasicHttpBinding_ISalesReviewCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IManufacturerTrackingCalloutService" binding="i0:BasicHttpBinding_IManufacturerTrackingCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
+    </wsdl:port>
+    <wsdl:port name="BasicHttpBinding_ISalesReviewCalloutService" binding="i0:BasicHttpBinding_ISalesReviewCalloutService">
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IMaterialsInformationCalloutService" binding="i0:BasicHttpBinding_IMaterialsInformationCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IInventoryManagerCalloutService" binding="i0:BasicHttpBinding_IInventoryManagerCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IMMSCalloutService" binding="i0:BasicHttpBinding_IMMSCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_ISupplyOnlyCalloutService" binding="i0:BasicHttpBinding_ISupplyOnlyCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IIntegration" binding="i0:BasicHttpBinding_IIntegration">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_ItestappCalloutService" binding="i0:BasicHttpBinding_ItestappCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IWindowsItemTrackerCalloutService" binding="i0:BasicHttpBinding_IWindowsItemTrackerCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IJobSiteReviewCalloutService" binding="i0:BasicHttpBinding_IJobSiteReviewCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IInstallationTrackingCalloutService" binding="i0:BasicHttpBinding_IInstallationTrackingCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_ISchedulePublishedCalloutService" binding="i0:BasicHttpBinding_ISchedulePublishedCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_ICHIPurchaseOrderCalloutService" binding="i0:BasicHttpBinding_ICHIPurchaseOrderCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
     <wsdl:port name="BasicHttpBinding_IServiceReviewCalloutService" binding="i0:BasicHttpBinding_IServiceReviewCalloutService">
-      <soap:address location="http://srvvanweb1:8102/fa/integration/Public" />
+      <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
   </wsdl:service>
 </wsdl:definitions>

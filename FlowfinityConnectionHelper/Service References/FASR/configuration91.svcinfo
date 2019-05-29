@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="dx/ELV55Qt9Jt9+cR/CKI3+nuV0=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="zi+tTNcqkLeAu/6fJmJMPuAwEb0=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="customBinding" name="BasicHttpBinding_IIntegration">
       <properties>
@@ -3237,10 +3237,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IBackOrderCalloutService" contract="FASR.IBackOrderCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IBackOrderCalloutService">
+    <endpoint name="BasicHttpBinding_IBackOrderCalloutService" contract="FASR.IBackOrderCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IBackOrderCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3322,10 +3322,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_IEstimationCalloutService" contract="FASR.IEstimationCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IEstimationCalloutService">
+    <endpoint name="BasicHttpBinding_IEstimationCalloutService" contract="FASR.IEstimationCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IEstimationCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3407,10 +3407,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_ITimesheetCalloutService" contract="FASR.ITimesheetCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_ITimesheetCalloutService">
+    <endpoint name="BasicHttpBinding_ITimesheetCalloutService" contract="FASR.ITimesheetCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_ITimesheetCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3492,10 +3492,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_IPlantProductionCalloutService" contract="FASR.IPlantProductionCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IPlantProductionCalloutService">
+    <endpoint name="BasicHttpBinding_IPlantProductionCalloutService" contract="FASR.IPlantProductionCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IPlantProductionCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3577,10 +3577,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_IScheduleDraftCalloutService" contract="FASR.IScheduleDraftCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IScheduleDraftCalloutService">
+    <endpoint name="BasicHttpBinding_IScheduleDraftCalloutService" contract="FASR.IScheduleDraftCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IScheduleDraftCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3662,10 +3662,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_IServiceCalloutService" contract="FASR.IServiceCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IServiceCalloutService">
+    <endpoint name="BasicHttpBinding_IServiceCalloutService" contract="FASR.IServiceCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IServiceCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3747,10 +3747,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_IHomeInstallationsCalloutService" contract="FASR.IHomeInstallationsCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IHomeInstallationsCalloutService">
+    <endpoint name="BasicHttpBinding_IHomeInstallationsCalloutService" contract="FASR.IHomeInstallationsCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IHomeInstallationsCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -3832,95 +3832,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_ISalesReviewCalloutService" contract="FASR.ISalesReviewCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_ISalesReviewCalloutService">
+    <endpoint name="BasicHttpBinding_IManufacturerTrackingCalloutService" contract="FASR.IManufacturerTrackingCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IManufacturerTrackingCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
-        </property>
-        <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/binding" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>customBinding</serializedValue>
-        </property>
-        <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_ISalesReviewCalloutService</serializedValue>
-        </property>
-        <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>FASR.ISalesReviewCalloutService</serializedValue>
-        </property>
-        <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
-        </property>
-        <property path="/headers/headers" isComplexType="false" isExplicitlyDefined="true" clrType="System.ServiceModel.Channels.AddressHeaderCollection, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>&lt;Header /&gt;</serializedValue>
-        </property>
-        <property path="/identity" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.IdentityElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>System.ServiceModel.Configuration.IdentityElement</serializedValue>
-        </property>
-        <property path="/identity/userPrincipalName" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.UserPrincipalNameElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>System.ServiceModel.Configuration.UserPrincipalNameElement</serializedValue>
-        </property>
-        <property path="/identity/userPrincipalName/value" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/identity/servicePrincipalName" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.ServicePrincipalNameElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>System.ServiceModel.Configuration.ServicePrincipalNameElement</serializedValue>
-        </property>
-        <property path="/identity/servicePrincipalName/value" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/identity/dns" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.DnsElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>System.ServiceModel.Configuration.DnsElement</serializedValue>
-        </property>
-        <property path="/identity/dns/value" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/identity/rsa" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.RsaElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>System.ServiceModel.Configuration.RsaElement</serializedValue>
-        </property>
-        <property path="/identity/rsa/value" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/identity/certificate" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
-        </property>
-        <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
-        </property>
-        <property path="/identity/certificateReference/storeName" isComplexType="false" isExplicitlyDefined="false" clrType="System.Security.Cryptography.X509Certificates.StoreName, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>My</serializedValue>
-        </property>
-        <property path="/identity/certificateReference/storeLocation" isComplexType="false" isExplicitlyDefined="false" clrType="System.Security.Cryptography.X509Certificates.StoreLocation, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>LocalMachine</serializedValue>
-        </property>
-        <property path="/identity/certificateReference/x509FindType" isComplexType="false" isExplicitlyDefined="false" clrType="System.Security.Cryptography.X509Certificates.X509FindType, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>FindBySubjectDistinguishedName</serializedValue>
-        </property>
-        <property path="/identity/certificateReference/findValue" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/identity/certificateReference/isChainIncluded" isComplexType="false" isExplicitlyDefined="false" clrType="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>False</serializedValue>
-        </property>
-        <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>BasicHttpBinding_ISalesReviewCalloutService</serializedValue>
-        </property>
-        <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-        <property path="/endpointConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue />
-        </property>
-      </properties>
-    </endpoint>
-    <endpoint name="BasicHttpBinding_IManufacturerTrackingCalloutService" contract="FASR.IManufacturerTrackingCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IManufacturerTrackingCalloutService">
-      <properties>
-        <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4002,10 +3917,95 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_IMaterialsInformationCalloutService" contract="FASR.IMaterialsInformationCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IMaterialsInformationCalloutService">
+    <endpoint name="BasicHttpBinding_ISalesReviewCalloutService" contract="FASR.ISalesReviewCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_ISalesReviewCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
+        </property>
+        <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/binding" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>customBinding</serializedValue>
+        </property>
+        <property path="/bindingConfiguration" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>BasicHttpBinding_ISalesReviewCalloutService</serializedValue>
+        </property>
+        <property path="/contract" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>FASR.ISalesReviewCalloutService</serializedValue>
+        </property>
+        <property path="/headers" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.AddressHeaderCollectionElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>System.ServiceModel.Configuration.AddressHeaderCollectionElement</serializedValue>
+        </property>
+        <property path="/headers/headers" isComplexType="false" isExplicitlyDefined="true" clrType="System.ServiceModel.Channels.AddressHeaderCollection, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>&lt;Header /&gt;</serializedValue>
+        </property>
+        <property path="/identity" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.IdentityElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>System.ServiceModel.Configuration.IdentityElement</serializedValue>
+        </property>
+        <property path="/identity/userPrincipalName" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.UserPrincipalNameElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>System.ServiceModel.Configuration.UserPrincipalNameElement</serializedValue>
+        </property>
+        <property path="/identity/userPrincipalName/value" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/identity/servicePrincipalName" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.ServicePrincipalNameElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>System.ServiceModel.Configuration.ServicePrincipalNameElement</serializedValue>
+        </property>
+        <property path="/identity/servicePrincipalName/value" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/identity/dns" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.DnsElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>System.ServiceModel.Configuration.DnsElement</serializedValue>
+        </property>
+        <property path="/identity/dns/value" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/identity/rsa" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.RsaElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>System.ServiceModel.Configuration.RsaElement</serializedValue>
+        </property>
+        <property path="/identity/rsa/value" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/identity/certificate" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>System.ServiceModel.Configuration.CertificateElement</serializedValue>
+        </property>
+        <property path="/identity/certificate/encodedValue" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/identity/certificateReference" isComplexType="true" isExplicitlyDefined="false" clrType="System.ServiceModel.Configuration.CertificateReferenceElement, System.ServiceModel, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>System.ServiceModel.Configuration.CertificateReferenceElement</serializedValue>
+        </property>
+        <property path="/identity/certificateReference/storeName" isComplexType="false" isExplicitlyDefined="false" clrType="System.Security.Cryptography.X509Certificates.StoreName, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>My</serializedValue>
+        </property>
+        <property path="/identity/certificateReference/storeLocation" isComplexType="false" isExplicitlyDefined="false" clrType="System.Security.Cryptography.X509Certificates.StoreLocation, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>LocalMachine</serializedValue>
+        </property>
+        <property path="/identity/certificateReference/x509FindType" isComplexType="false" isExplicitlyDefined="false" clrType="System.Security.Cryptography.X509Certificates.X509FindType, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>FindBySubjectDistinguishedName</serializedValue>
+        </property>
+        <property path="/identity/certificateReference/findValue" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/identity/certificateReference/isChainIncluded" isComplexType="false" isExplicitlyDefined="false" clrType="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>False</serializedValue>
+        </property>
+        <property path="/name" isComplexType="false" isExplicitlyDefined="true" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>BasicHttpBinding_ISalesReviewCalloutService</serializedValue>
+        </property>
+        <property path="/kind" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+        <property path="/endpointConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue />
+        </property>
+      </properties>
+    </endpoint>
+    <endpoint name="BasicHttpBinding_IMaterialsInformationCalloutService" contract="FASR.IMaterialsInformationCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IMaterialsInformationCalloutService">
+      <properties>
+        <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4087,10 +4087,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_IInventoryManagerCalloutService" contract="FASR.IInventoryManagerCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IInventoryManagerCalloutService">
+    <endpoint name="BasicHttpBinding_IInventoryManagerCalloutService" contract="FASR.IInventoryManagerCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IInventoryManagerCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4172,10 +4172,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_IMMSCalloutService" contract="FASR.IMMSCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IMMSCalloutService">
+    <endpoint name="BasicHttpBinding_IMMSCalloutService" contract="FASR.IMMSCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IMMSCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4257,10 +4257,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_ISupplyOnlyCalloutService" contract="FASR.ISupplyOnlyCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_ISupplyOnlyCalloutService">
+    <endpoint name="BasicHttpBinding_ISupplyOnlyCalloutService" contract="FASR.ISupplyOnlyCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_ISupplyOnlyCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4342,10 +4342,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_IIntegration" contract="FASR.IIntegration" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IIntegration">
+    <endpoint name="BasicHttpBinding_IIntegration" contract="FASR.IIntegration" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IIntegration">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4427,10 +4427,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_ItestappCalloutService" contract="FASR.ItestappCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_ItestappCalloutService">
+    <endpoint name="BasicHttpBinding_ItestappCalloutService" contract="FASR.ItestappCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_ItestappCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4512,10 +4512,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_IWindowsItemTrackerCalloutService" contract="FASR.IWindowsItemTrackerCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IWindowsItemTrackerCalloutService">
+    <endpoint name="BasicHttpBinding_IWindowsItemTrackerCalloutService" contract="FASR.IWindowsItemTrackerCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IWindowsItemTrackerCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4597,10 +4597,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_IJobSiteReviewCalloutService" contract="FASR.IJobSiteReviewCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IJobSiteReviewCalloutService">
+    <endpoint name="BasicHttpBinding_IJobSiteReviewCalloutService" contract="FASR.IJobSiteReviewCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IJobSiteReviewCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4682,10 +4682,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_IInstallationTrackingCalloutService" contract="FASR.IInstallationTrackingCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IInstallationTrackingCalloutService">
+    <endpoint name="BasicHttpBinding_IInstallationTrackingCalloutService" contract="FASR.IInstallationTrackingCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IInstallationTrackingCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4767,10 +4767,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_ISchedulePublishedCalloutService" contract="FASR.ISchedulePublishedCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_ISchedulePublishedCalloutService">
+    <endpoint name="BasicHttpBinding_ISchedulePublishedCalloutService" contract="FASR.ISchedulePublishedCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_ISchedulePublishedCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4852,10 +4852,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_ICHIPurchaseOrderCalloutService" contract="FASR.ICHIPurchaseOrderCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_ICHIPurchaseOrderCalloutService">
+    <endpoint name="BasicHttpBinding_ICHIPurchaseOrderCalloutService" contract="FASR.ICHIPurchaseOrderCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_ICHIPurchaseOrderCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
@@ -4937,10 +4937,10 @@
         </property>
       </properties>
     </endpoint>
-    <endpoint name="BasicHttpBinding_IServiceReviewCalloutService" contract="FASR.IServiceReviewCalloutService" bindingType="customBinding" address="http://srvvanweb1:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IServiceReviewCalloutService">
+    <endpoint name="BasicHttpBinding_IServiceReviewCalloutService" contract="FASR.IServiceReviewCalloutService" bindingType="customBinding" address="http://srvvanweb2:8102/fa/integration/Public" bindingConfiguration="BasicHttpBinding_IServiceReviewCalloutService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://srvvanweb1:8102/fa/integration/Public</serializedValue>
+          <serializedValue>http://srvvanweb2:8102/fa/integration/Public</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

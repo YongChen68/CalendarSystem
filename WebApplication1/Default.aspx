@@ -69,27 +69,34 @@
         var geocoder;
         var map;
         $(function () {
-           // $("#from_date").datepicker();
-             $('#from_date').datepicker({
+            // $("#from_date").datepicker();
+            $('#from_date').datepicker({
                 dateFormat: "m/d/yy"
-               
+
             });
-         //   $("#end_date").datepicker();
+            //   $("#end_date").datepicker();
             $('#end_date').datepicker({
                 dateFormat: "m/d/yy"
-               
+
             });
-           // $("#InstallScheduledStartDate").datepicker();
+            // $("#InstallScheduledStartDate").datepicker();
             $('#InstallScheduledStartDate').datepicker({
                 dateFormat: "m/d/yy"
-               
+
             });
-           // $("#InstallScheduledEndDate").datepicker();
-             $('#InstallScheduledEndDate').datepicker({
+            // $("#InstallScheduledEndDate").datepicker();
+            $('#InstallScheduledEndDate').datepicker({
                 dateFormat: "m/d/yy"
-               
+
             });
 
+            $('.btn-minuse').on('click', function () {
+                $(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) - 1)
+            })
+
+            $('.btn-pluss').on('click', function () {
+                $(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) + 1)
+            })
         });
 
         function initialize() {
@@ -149,6 +156,7 @@
             });
 
         }
+
     </script>
     <style>
         body {
@@ -202,34 +210,37 @@
                 padding-top: 1em;
             }
 
-            #external-events .fc-event {
+                #external-events .fc-event {
+                    margin: 10px 0;
+                    cursor: pointer;
+                }
+
+            #external-events1 .fc-event {
                 margin: 10px 0;
                 cursor: pointer;
             }
-                #external-events1 .fc-event {
-                margin: 10px 0;
-                cursor: pointer;
-            }
+
             #external-events p {
                 margin: 1.5em 0;
                 font-size: 11px;
                 color: #666;
             }
 
-             #external-events1 p {
+            #external-events1 p {
                 margin: 1.5em 0;
                 font-size: 11px;
                 color: #666;
             }
 
-                #external-events p input {
-                    margin: 0;
-                    vertical-align: middle;
-                }
-                  #external-events1 p input {
-                    margin: 0;
-                    vertical-align: middle;
-                }
+            #external-events p input {
+                margin: 0;
+                vertical-align: middle;
+            }
+
+            #external-events1 p input {
+                margin: 0;
+                vertical-align: middle;
+            }
 
         #calendar {
             float: right;
@@ -262,6 +273,39 @@
         #FromDate, #ToDate {
             width: 50%;
             float: left;
+        }
+
+        #wrapper1, #wrapper2, #wrapper3 {
+            display: flex;
+        }
+
+        #left1, #left2, #left3, {
+            float: left;
+            width: 55%;
+            overflow: hidden;
+        }
+
+        #right1, #right2, #right3 {
+            float: right;
+            width: 45%;
+            overflow: hidden;
+        }
+
+        .leftcolumn {
+            float: left;
+            width: 20%;
+        }
+
+        .rightcolumn {
+            float: left;
+            width: 80%;
+        }
+
+        /* Clear floats after the columns */
+        .container:after {
+            content: "";
+            display: table;
+            clear: both;
         }
     </style>
 </head>
@@ -347,24 +391,36 @@
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="InstallTab">
-                                    <div id="installationContent" style="width: 600px; margin-left: 40px; padding-left: 150px;">
+                                    <div id="installationContent" style="width: 600px; margin-left: 20px; padding-left: 100px;">
                                         <br>
                                         <br>
                                         <span><b>Installation Scheduled Date: </b></span>
-                                        <div style="width: 400px;padding-left: 30px;">
-                                            
-                                            <div  >
-                                                <span >From: </span>
-                                                <input id="InstallScheduledStartDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
-                                            </div>
-                                            <span>To:  </span>
-                                            <div >
+                                        <div class="container">
 
-                                                <input id="InstallScheduledEndDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
+                                            <div class="leftcolumn">
+                                                <div class="container">
+                                                    <div class="leftcolumn" style="width: 5%; align-items: center;">
+                                                        From:
+                                                    </div>
+                                                    <div class="rightcolumn" style="width: 20%;">
+                                                        <input id="InstallScheduledStartDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
+                                                    </div>
+
+                                                </div>
+
                                             </div>
-                                            <div  id="Button">
-                                                <input type="button" name="btnUpdateInstallationEventSchedule" id="btnUpdateInstallationEventSchedule" class="btn btn-success" value="Save" onclick="UpdateEventSchedule()">
+                                            <div class="rightcolumn">
+                                                <div class="container">
+                                                    <div class="leftcolumn" style="width: 5%; padding-left: 50px;">
+                                                        To:
+                                                    </div>
+
+                                                    <div class="rightcolumn" style="padding-left: 50px; width: 5%;">
+                                                        <input id="InstallScheduledEndDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
+                                                    </div>
+                                                </div>
                                             </div>
+
                                         </div>
 
                                         <br>
@@ -374,80 +430,153 @@
                                         <div><b>CrewNames: </b><span id="CrewNames"></span></div>
                                         <br>
 
-                                        <div><b>Asbestos-Jobs: </b><span id="Asbestos-Jobs1"></span></div>
-
-
-                                        <br>
-
-                                        <div><b>Lead-Paint : </b><span id="Lead-Paint1"></span></div>
-
-
-                                        <br>
-                                        <div><b>Wood-DropOff-Jobs: </b><span id="Wood-DropOff-Jobs1"></span></div>
-
-                                        <br>
-                                        <div><b>HighRisk-Jobs: </b><span id="HighRisk-Jobs1"></span></div>
-
-                                        <br>
-                                        <div style="width: 800px;">
-                                            <b>Weekends Setting: </b>
-                                            <div style="padding-left:30px; width: 500px;">
-                                                <div>
-                                                    <b>Saturday: </b>
-                                                    <input type="checkbox" name="saturday">
-                                                    &nbsp;&nbsp;
-                                                </div>
-                                                <br>
-                                                <div>
-                                                    <b>Sunday: </b>&nbsp;&nbsp;<input type="checkbox" name="sunday">
-                                                    &nbsp;&nbsp;&nbsp;&nbsp;
-                                                <input type="button" name="btnSunday" id="btnSunday" class="btn btn-success" value="Save" onclick="UpdateEventWeekends()">
-                                                </div>
+                                        <div class="container">
+                                            <div class="leftcolumn">
+                                                <b>Number of Installers: </b>
                                             </div>
 
 
+                                            <div class="input-group" style="width: 20%">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-white btn-minuse" type="button">-</button>
+                                                </span>
+                                                <input type="text" class="form-control no-padding add-color text-center height-25" maxlength="3" id="NumOfInstallers" style="padding-left: -30px;">
+                                                <span class="input-group-btn">
+                                                    <button class="btn btn-red btn-pluss" type="button">+</button>
+                                                </span>
+                                            </div>
                                         </div>
                                         <br>
 
+                                        <div class="container">
+                                            <div class="leftcolumn">
+                                                <b>Asbestos-Jobs: </b>
+
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="Asbestos-Jobs" id="Asbestos-JobsYes">Yes</label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="Asbestos-Jobs" id="Asbestos-JobsNo">No</label>
+                                                </div>
+                                            </div>
+                                            <div class="rightcolumn">
+                                                <b>Lead-Paint : </b>
+
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="Lead-Paint" id="Lead-PaintYes">Yes</label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="Lead-Paint" id="Lead-PaintNo">No</label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="container">
+                                            <div class="leftcolumn">
+                                                <b>Wood-DropOff-Jobs : </b>
+
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="Wood-DropOff-Jobs" id="Wood-DropOff-JobsYes">Yes</label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="Wood-DropOff-Jobs" id="Wood-DropOff-JobsNo">No</label>
+                                                </div>
+                                            </div>
+                                            <div class="rightcolumn">
+                                                <b>HighRisk-Jobs : </b>
+
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="HighRisk-Jobs" id="HighRisk-JobsYes">Yes</label>
+                                                </div>
+                                                <div class="radio">
+                                                    <label>
+                                                        <input type="radio" name="HighRisk-Jobs" id="HighRisk-JobsNo">No</label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <br>
+
+                                        <span><b>Weekends Setting: </b></span>
+                                        <div style="width: 800px;" class="container">
+                                            <div class="leftcolumn">
+                                                Saturday:
+                                                <input type="checkbox" name="saturday">
+                                            </div>
+                                            <div class="rightcolumn">
+                                                Sunday: &nbsp;&nbsp;<input type="checkbox" name="sunday">
+                                            </div>
+                                        </div>
+                                        <br>
+
+                                        <span><b>Return Scheduled Date:</b></span>
                                         <div class="form-group" style="width: 800px;" id="ReturnedJob">
+                                            <div class="container">
 
-                                            <b>Return Scheduled Date:</b>
-                                            <div style="padding-left: 30px; width: 800px;">
+                                                <div class="leftcolumn">
+                                                    <div class="container">
+                                                        <div class="leftcolumn" style="width: 5%; align-items: center;">
+                                                            From:
+                                                        </div>
+                                                        <div class="rightcolumn" style="width: 20%;">
+                                                            <input id="from_date" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
+                                                        </div>
 
-                                                <div>
-                                                    From: 
-                                                <input id="from_date" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
-                                                    To:   &nbsp;&nbsp;<input id="end_date" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
-                                                    &nbsp;&nbsp;<input type="button" name="btnReturnedJob" id="btnReturnedJob" class="btn btn-success" value="Save" onclick="UpdateReturnedJobSchedule()">
+                                                    </div>
+
                                                 </div>
+
+                                                <div class="rightcolumn">
+                                                    <div class="container">
+                                                        <div class="leftcolumn" style="width: 5%; padding-left: 50px;">
+                                                            To:
+                                                        </div>
+
+                                                        <div class="rightcolumn" style="padding-left: 50px; width: 5%;">
+                                                            <input id="end_date" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
                                             </div>
                                         </div>
+                                        <input type="button" name="btnSave" id="btnSave" class="btn btn-success" value="Save" onclick="UpdateInstallationEvents()">
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane " id="ProductTab">
-                                    <div style="overflow: auto; height: 600px;">
-                                        <table id="dataTable" class="table table-striped table-bordered table-hover table-condensed"></table>
-                                    </div>
-
-                                </div>
-
-                                <div role="tabpanel" class="tab-pane " id="JobAnalysisTab">
-                                    <div>
-                                    </div>
-
+                            </div>
+                            <div role="tabpanel" class="tab-pane " id="ProductTab">
+                                <div style="overflow: auto; height: 600px;">
+                                    <table id="dataTable" class="table table-striped table-bordered table-hover table-condensed"></table>
                                 </div>
 
                             </div>
+
+                            <div role="tabpanel" class="tab-pane " id="JobAnalysisTab">
+                                <div>
+                                </div>
+
+                            </div>
+
                         </div>
                     </div>
-
-                    <div class="modal-footer">
-                    </div>
-
                 </div>
-            </div>
 
-            <br>
+                <div class="modal-footer">
+                </div>
+
+            </div>
+        </div>
+
+        <br>
         </div>
         <div id="openviewWeather">
             <a class="weatherwidget-io" href="https://forecast7.com/en/49d28n123d12/vancouver/" data-label_1="Vancouver" data-label_2="Weather" data-font="Roboto" data-icons="Climacons Animated" data-theme="original" data-accent="rgba(1, 1, 1, 0.0)"></a>
@@ -636,7 +765,7 @@
             <div id='external-events'>
                 <h4>New Work Orders</h4>
             </div>
-           <div id='external-events1'>
+            <div id='external-events1'>
                 <h4>New Work Orders</h4>
             </div>
 

@@ -95,9 +95,9 @@ function UpdateEventSchedule() {
             $("#InstallScheduledStartDate").val('');
             $("#InstallScheduledEndDate").val('');
 
-            $("#eventContent .close").click();
-            $('#calendar').fullCalendar('refetchEvents');
-            $('#calendar').fullCalendar('rerenderEvents');
+            //$("#eventContent .close").click();
+            //$('#calendar').fullCalendar('refetchEvents');
+            //$('#calendar').fullCalendar('rerenderEvents');
 
         }, error: function (error) {
             console.log('Error', error);
@@ -837,15 +837,56 @@ $(document).ready(function () {
                     $("#TotalWindows1").html(event.TotalWindows);
                     $("#TotalDoors1").html(event.TotalDoors);
                     
+                    if (event.TotalAsbestos == 1) {
+                        // 
+                        $("#Asbestos-JobsYes").prop("checked", true);
+                        $("#Asbestos-JobsNo").prop("checked", false);
+                    }
+                    else {
+                        $("#Asbestos-JobsNo").prop("checked", true);
+                        $("#Asbestos-JobsYes").prop("checked", false);
+                    } 
 
-                    $("#Asbestos-Jobs1").html(event.TotalAsbestos == 1 ? "Yes" : "No");
-                    $("#Lead-Paint1").html(event.LeadPaint);
-                    $("#Wood-DropOff-Jobs1").html(event.TotalWoodDropOff == 1 ? "Yes" : "No");
-                    $("#HighRisk-Jobs1").html(event.TotalHighRisk == 1 ? "Yes" : "No");
+                    if (event.LeadPaint == 1) {
+                        // 
+                        $("#Lead-PaintYes").prop("checked", true);
+                        $("#Lead-PaintNo").prop("checked", false);
+                    }
+                    else {
+                        $("#Lead-PaintNo").prop("checked", true);
+                        $("#Lead-PaintYes").prop("checked", false);
+                    }
 
-                    document.getElementById("btnUpdateInstallationEventSchedule").disabled = (readonly == "True") ? true : false;
-                    document.getElementById("btnSunday").disabled = (readonly == "True") ? true : false;
-                    document.getElementById("btnReturnedJob").disabled = (readonly == "True") ? true : false;
+                    if (event.TotalWoodDropOff == 1) {
+                        // 
+                        $("#Wood-DropOff-JobsYes").prop("checked", true);
+                        $("#Wood-DropOff-JobsNo").prop("checked", false);
+                    }
+                    else {
+                        $("#Wood-DropOff-JobsNo").prop("checked", true);
+                        $("#Wood-DropOff-JobsYes").prop("checked", false);
+                    }
+
+                    if (event.TotalHighRisk == 1) {
+                        // 
+                        $("#HighRisk-JobsYes").prop("checked", true);
+                        $("HighRisk-JobsNo").prop("checked", false);
+                    }
+                    else {
+                        $("#HighRisk-JobsNo").prop("checked", true);
+                        $("#HighRisk-JobsYes").prop("checked", false);
+                    }
+                    $("#NumOfInstallers").val(event.EstInstallerCnt);
+
+                   // 
+                    //$("#Asbestos-Jobs1").html(event.TotalAsbestos == 1 ? "Yes" : "No");
+                  //  $("#Lead-Paint1").html(event.LeadPaint);
+                 //   $("#Wood-DropOff-Jobs1").html(event.TotalWoodDropOff == 1 ? "Yes" : "No");
+                  //  $("#HighRisk-Jobs1").html(event.TotalHighRisk == 1 ? "Yes" : "No");
+
+                    //document.getElementById("btnUpdateInstallationEventSchedule").disabled = (readonly == "True") ? true : false;
+                    //document.getElementById("btnSunday").disabled = (readonly == "True") ? true : false;
+                    //document.getElementById("btnReturnedJob").disabled = (readonly == "True") ? true : false;
 
 
                     $("#Address").html(event.StreetAddress);
@@ -1284,9 +1325,9 @@ function UpdateEventWeekends() {
         type: "POST",
         success: function (data) {
             if (debug) console.log("events.success", "data.UpdateEventWeekends:");
-            $("#eventContent .close").click();
-            $('#calendar').fullCalendar('refetchEvents');
-            $('#calendar').fullCalendar('rerenderEvents');
+            //$("#eventContent .close").click();
+            //$('#calendar').fullCalendar('refetchEvents');
+            //$('#calendar').fullCalendar('rerenderEvents');
             var view = $('#calendar').fullCalendar('getView');
             if (view.type == 'agendaWeek') {
                 $('#calendar').fullCalendar('changeView', 'agendaWeek');
@@ -1417,7 +1458,6 @@ function ShowWarning(allocatedDayLabour, eventLabourMin, maxDayLabour) {
 
 function UpdateReturnedJobSchedule() {
     var i = eventid;
-    var scheduledStartDate, scheduledEndDate;
     var scheduledStartDate = $("#from_date").val();
     var scheduledEndDate = $("#end_date").val();
     $.ajax({
@@ -1428,9 +1468,9 @@ function UpdateReturnedJobSchedule() {
             $("#from_date").val('');
             $("#end_date").val('');
           
-            $("#eventContent .close").click();
-            $('#calendar').fullCalendar('refetchEvents');
-            $('#calendar').fullCalendar('rerenderEvents');
+            //$("#eventContent .close").click();
+            //$('#calendar').fullCalendar('refetchEvents');
+            //$('#calendar').fullCalendar('rerenderEvents');
 
         }, error: function (error) {
             console.log('Error', error);
@@ -1439,6 +1479,25 @@ function UpdateReturnedJobSchedule() {
     });
 
 }
+
+function UpdateInstallationEvents() {
+    UpdateEventSchedule();
+    UpdateEventWeekends();
+
+
+    var scheduledStartDate = $("#from_date").val();
+    var scheduledEndDate = $("#end_date").val();
+    if (scheduledStartDate.length != 0) {
+        UpdateReturnedJobSchedule();
+    }
+  
+    $("#eventContent .close").click();
+    $('#calendar').fullCalendar('refetchEvents');
+    $('#calendar').fullCalendar('rerenderEvents');
+
+
+}
+
 
 
 function GetJobAnalysys(workOrder) {

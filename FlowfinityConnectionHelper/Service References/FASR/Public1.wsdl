@@ -99,17 +99,23 @@
   <wsdl:message name="IHomeInstallationsCalloutService_Callout_HomeInstallations_EditSold_OutputMessage">
     <wsdl:part name="parameters" element="tns:Callout_HomeInstallations_EditSoldResponse" />
   </wsdl:message>
-  <wsdl:message name="ISalesReviewCalloutService_Callout_SalesReview_AddRecord_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_SalesReview_AddRecord" />
+  <wsdl:message name="IHomeInstallationsCalloutService_Callout_HomeInstallations_ScheduleNewWorkOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_HomeInstallations_ScheduleNewWorkOrder" />
   </wsdl:message>
-  <wsdl:message name="ISalesReviewCalloutService_Callout_SalesReview_AddRecord_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_SalesReview_AddRecordResponse" />
+  <wsdl:message name="IHomeInstallationsCalloutService_Callout_HomeInstallations_ScheduleNewWorkOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_HomeInstallations_ScheduleNewWorkOrderResponse" />
   </wsdl:message>
   <wsdl:message name="IManufacturerTrackingCalloutService_Callout_ManufacturerTracking_AddRecord_InputMessage">
     <wsdl:part name="parameters" element="tns:Callout_ManufacturerTracking_AddRecord" />
   </wsdl:message>
   <wsdl:message name="IManufacturerTrackingCalloutService_Callout_ManufacturerTracking_AddRecord_OutputMessage">
     <wsdl:part name="parameters" element="tns:Callout_ManufacturerTracking_AddRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISalesReviewCalloutService_Callout_SalesReview_AddRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_SalesReview_AddRecord" />
+  </wsdl:message>
+  <wsdl:message name="ISalesReviewCalloutService_Callout_SalesReview_AddRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_SalesReview_AddRecordResponse" />
   </wsdl:message>
   <wsdl:message name="IInventoryManagerCalloutService_Callout_InventoryManager_GetBOMItems_InputMessage">
     <wsdl:part name="parameters" element="tns:Callout_InventoryManager_GetBOMItems" />
@@ -213,89 +219,89 @@
   <wsdl:message name="IServiceReviewCalloutService_Callout_ServiceReview_AddRecord_OutputMessage">
     <wsdl:part name="parameters" element="tns:Callout_ServiceReview_AddRecordResponse" />
   </wsdl:message>
-  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_Add_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_Add" />
+  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_ADD_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_ADD" />
   </wsdl:message>
-  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_Add_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_AddResponse" />
+  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_ADD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_ADDResponse" />
   </wsdl:message>
-  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_Edit_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_Edit" />
+  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_EDIT_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_EDIT" />
   </wsdl:message>
-  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_Edit_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_EditResponse" />
+  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_EDIT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_EDITResponse" />
   </wsdl:message>
-  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_Transition_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_Transition" />
+  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_TRANSITION_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_TRANSITION" />
   </wsdl:message>
-  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_Transition_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_TransitionResponse" />
+  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_TRANSITION_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_TRANSITIONResponse" />
   </wsdl:message>
-  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_Delete_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_Delete" />
+  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_DELETE_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_DELETE" />
   </wsdl:message>
-  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_Delete_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_DeleteResponse" />
+  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_DELETE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_DELETEResponse" />
   </wsdl:message>
-  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_Duplicate_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_Duplicate" />
+  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_DUPLICATE_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_DUPLICATE" />
   </wsdl:message>
-  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_Duplicate_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_DuplicateResponse" />
+  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_DUPLICATE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_DUPLICATEResponse" />
   </wsdl:message>
-  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_TriggerAdd_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_TriggerAdd" />
+  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_TRIGGERADD_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_TRIGGERADD" />
   </wsdl:message>
-  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_TriggerAdd_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_TriggerAddResponse" />
+  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_TRIGGERADD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_TRIGGERADDResponse" />
   </wsdl:message>
-  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_TriggerEdit_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_TriggerEdit" />
+  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_TRIGGEREDIT_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_TRIGGEREDIT" />
   </wsdl:message>
-  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_TriggerEdit_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_TriggerEditResponse" />
+  <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_TRIGGEREDIT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_TRIGGEREDITResponse" />
   </wsdl:message>
-  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_Add_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_Add" />
+  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_ADD_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_ADD" />
   </wsdl:message>
-  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_Add_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_AddResponse" />
+  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_ADD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_ADDResponse" />
   </wsdl:message>
-  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_Edit_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_Edit" />
+  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_EDIT_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_EDIT" />
   </wsdl:message>
-  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_Edit_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_EditResponse" />
+  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_EDIT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_EDITResponse" />
   </wsdl:message>
-  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_Transition_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_Transition" />
+  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_TRANSITION_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_TRANSITION" />
   </wsdl:message>
-  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_Transition_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_TransitionResponse" />
+  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_TRANSITION_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_TRANSITIONResponse" />
   </wsdl:message>
-  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_Delete_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_Delete" />
+  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_DELETE_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_DELETE" />
   </wsdl:message>
-  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_Delete_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_DeleteResponse" />
+  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_DELETE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_DELETEResponse" />
   </wsdl:message>
-  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_Duplicate_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_Duplicate" />
+  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_DUPLICATE_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_DUPLICATE" />
   </wsdl:message>
-  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_Duplicate_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_DuplicateResponse" />
+  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_DUPLICATE_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_DUPLICATEResponse" />
   </wsdl:message>
-  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_TriggerAdd_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_TriggerAdd" />
+  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_TRIGGERADD_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_TRIGGERADD" />
   </wsdl:message>
-  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_TriggerAdd_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_TriggerAddResponse" />
+  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_TRIGGERADD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_TRIGGERADDResponse" />
   </wsdl:message>
-  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_TriggerEdit_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_TriggerEdit" />
+  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_TRIGGEREDIT_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_TRIGGEREDIT" />
   </wsdl:message>
-  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_TriggerEdit_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_TriggerEditResponse" />
+  <wsdl:message name="IMMSCalloutService_Callout_MMS_Legacy_TRIGGEREDIT_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_MMS_Legacy_TRIGGEREDITResponse" />
   </wsdl:message>
   <wsdl:portType msc:usingSession="false" name="IIntegration">
     <wsdl:operation name="Execute">
@@ -352,33 +358,33 @@
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType msc:usingSession="false" name="IStationTargetCalloutService">
-    <wsdl:operation name="Callout_StationTarget_Legacy_Add">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_Add" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_Add_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_AddResponse" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_Add_OutputMessage" />
+    <wsdl:operation name="Callout_StationTarget_Legacy_ADD">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_ADD" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_ADD_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_ADDResponse" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_ADD_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Callout_StationTarget_Legacy_Edit">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_Edit" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_Edit_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_EditResponse" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_Edit_OutputMessage" />
+    <wsdl:operation name="Callout_StationTarget_Legacy_EDIT">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_EDIT" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_EDIT_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_EDITResponse" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_EDIT_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Callout_StationTarget_Legacy_Transition">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_Transition" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_Transition_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TransitionResponse" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_Transition_OutputMessage" />
+    <wsdl:operation name="Callout_StationTarget_Legacy_TRANSITION">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TRANSITION" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_TRANSITION_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TRANSITIONResponse" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_TRANSITION_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Callout_StationTarget_Legacy_Delete">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_Delete" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_Delete_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_DeleteResponse" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_Delete_OutputMessage" />
+    <wsdl:operation name="Callout_StationTarget_Legacy_DELETE">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_DELETE" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_DELETE_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_DELETEResponse" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_DELETE_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Callout_StationTarget_Legacy_Duplicate">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_Duplicate" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_Duplicate_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_DuplicateResponse" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_Duplicate_OutputMessage" />
+    <wsdl:operation name="Callout_StationTarget_Legacy_DUPLICATE">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_DUPLICATE" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_DUPLICATE_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_DUPLICATEResponse" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_DUPLICATE_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Callout_StationTarget_Legacy_TriggerAdd">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TriggerAdd" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_TriggerAdd_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TriggerAddResponse" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_TriggerAdd_OutputMessage" />
+    <wsdl:operation name="Callout_StationTarget_Legacy_TRIGGERADD">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TRIGGERADD" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_TRIGGERADD_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TRIGGERADDResponse" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_TRIGGERADD_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Callout_StationTarget_Legacy_TriggerEdit">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TriggerEdit" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_TriggerEdit_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TriggerEditResponse" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_TriggerEdit_OutputMessage" />
+    <wsdl:operation name="Callout_StationTarget_Legacy_TRIGGEREDIT">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TRIGGEREDIT" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_TRIGGEREDIT_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IStationTargetCalloutService/Callout_StationTarget_Legacy_TRIGGEREDITResponse" message="tns:IStationTargetCalloutService_Callout_StationTarget_Legacy_TRIGGEREDIT_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType msc:usingSession="false" name="IScheduleDraftCalloutService" />
@@ -401,17 +407,21 @@
       <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_EditSold" message="tns:IHomeInstallationsCalloutService_Callout_HomeInstallations_EditSold_InputMessage" />
       <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_EditSoldResponse" message="tns:IHomeInstallationsCalloutService_Callout_HomeInstallations_EditSold_OutputMessage" />
     </wsdl:operation>
-  </wsdl:portType>
-  <wsdl:portType msc:usingSession="false" name="ISalesReviewCalloutService">
-    <wsdl:operation name="Callout_SalesReview_AddRecord">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/ISalesReviewCalloutService/Callout_SalesReview_AddRecord" message="tns:ISalesReviewCalloutService_Callout_SalesReview_AddRecord_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/ISalesReviewCalloutService/Callout_SalesReview_AddRecordResponse" message="tns:ISalesReviewCalloutService_Callout_SalesReview_AddRecord_OutputMessage" />
+    <wsdl:operation name="Callout_HomeInstallations_ScheduleNewWorkOrder">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_ScheduleNewWorkOrder" message="tns:IHomeInstallationsCalloutService_Callout_HomeInstallations_ScheduleNewWorkOrder_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_ScheduleNewWorkOrderResponse" message="tns:IHomeInstallationsCalloutService_Callout_HomeInstallations_ScheduleNewWorkOrder_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType msc:usingSession="false" name="IManufacturerTrackingCalloutService">
     <wsdl:operation name="Callout_ManufacturerTracking_AddRecord">
       <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IManufacturerTrackingCalloutService/Callout_ManufacturerTracking_AddRecord" message="tns:IManufacturerTrackingCalloutService_Callout_ManufacturerTracking_AddRecord_InputMessage" />
       <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IManufacturerTrackingCalloutService/Callout_ManufacturerTracking_AddRecordResponse" message="tns:IManufacturerTrackingCalloutService_Callout_ManufacturerTracking_AddRecord_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="false" name="ISalesReviewCalloutService">
+    <wsdl:operation name="Callout_SalesReview_AddRecord">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/ISalesReviewCalloutService/Callout_SalesReview_AddRecord" message="tns:ISalesReviewCalloutService_Callout_SalesReview_AddRecord_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/ISalesReviewCalloutService/Callout_SalesReview_AddRecordResponse" message="tns:ISalesReviewCalloutService_Callout_SalesReview_AddRecord_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType msc:usingSession="false" name="IMaterialsInformationCalloutService" />
@@ -430,33 +440,33 @@
       <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_EditRecord" message="tns:IMMSCalloutService_Callout_MMS_EditRecord_InputMessage" />
       <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_EditRecordResponse" message="tns:IMMSCalloutService_Callout_MMS_EditRecord_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Callout_MMS_Legacy_Add">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_Add" message="tns:IMMSCalloutService_Callout_MMS_Legacy_Add_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_AddResponse" message="tns:IMMSCalloutService_Callout_MMS_Legacy_Add_OutputMessage" />
+    <wsdl:operation name="Callout_MMS_Legacy_ADD">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_ADD" message="tns:IMMSCalloutService_Callout_MMS_Legacy_ADD_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_ADDResponse" message="tns:IMMSCalloutService_Callout_MMS_Legacy_ADD_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Callout_MMS_Legacy_Edit">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_Edit" message="tns:IMMSCalloutService_Callout_MMS_Legacy_Edit_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_EditResponse" message="tns:IMMSCalloutService_Callout_MMS_Legacy_Edit_OutputMessage" />
+    <wsdl:operation name="Callout_MMS_Legacy_EDIT">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_EDIT" message="tns:IMMSCalloutService_Callout_MMS_Legacy_EDIT_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_EDITResponse" message="tns:IMMSCalloutService_Callout_MMS_Legacy_EDIT_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Callout_MMS_Legacy_Transition">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_Transition" message="tns:IMMSCalloutService_Callout_MMS_Legacy_Transition_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TransitionResponse" message="tns:IMMSCalloutService_Callout_MMS_Legacy_Transition_OutputMessage" />
+    <wsdl:operation name="Callout_MMS_Legacy_TRANSITION">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TRANSITION" message="tns:IMMSCalloutService_Callout_MMS_Legacy_TRANSITION_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TRANSITIONResponse" message="tns:IMMSCalloutService_Callout_MMS_Legacy_TRANSITION_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Callout_MMS_Legacy_Delete">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_Delete" message="tns:IMMSCalloutService_Callout_MMS_Legacy_Delete_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_DeleteResponse" message="tns:IMMSCalloutService_Callout_MMS_Legacy_Delete_OutputMessage" />
+    <wsdl:operation name="Callout_MMS_Legacy_DELETE">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_DELETE" message="tns:IMMSCalloutService_Callout_MMS_Legacy_DELETE_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_DELETEResponse" message="tns:IMMSCalloutService_Callout_MMS_Legacy_DELETE_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Callout_MMS_Legacy_Duplicate">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_Duplicate" message="tns:IMMSCalloutService_Callout_MMS_Legacy_Duplicate_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_DuplicateResponse" message="tns:IMMSCalloutService_Callout_MMS_Legacy_Duplicate_OutputMessage" />
+    <wsdl:operation name="Callout_MMS_Legacy_DUPLICATE">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_DUPLICATE" message="tns:IMMSCalloutService_Callout_MMS_Legacy_DUPLICATE_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_DUPLICATEResponse" message="tns:IMMSCalloutService_Callout_MMS_Legacy_DUPLICATE_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Callout_MMS_Legacy_TriggerAdd">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TriggerAdd" message="tns:IMMSCalloutService_Callout_MMS_Legacy_TriggerAdd_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TriggerAddResponse" message="tns:IMMSCalloutService_Callout_MMS_Legacy_TriggerAdd_OutputMessage" />
+    <wsdl:operation name="Callout_MMS_Legacy_TRIGGERADD">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TRIGGERADD" message="tns:IMMSCalloutService_Callout_MMS_Legacy_TRIGGERADD_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TRIGGERADDResponse" message="tns:IMMSCalloutService_Callout_MMS_Legacy_TRIGGERADD_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="Callout_MMS_Legacy_TriggerEdit">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TriggerEdit" message="tns:IMMSCalloutService_Callout_MMS_Legacy_TriggerEdit_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TriggerEditResponse" message="tns:IMMSCalloutService_Callout_MMS_Legacy_TriggerEdit_OutputMessage" />
+    <wsdl:operation name="Callout_MMS_Legacy_TRIGGEREDIT">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TRIGGEREDIT" message="tns:IMMSCalloutService_Callout_MMS_Legacy_TRIGGEREDIT_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TRIGGEREDITResponse" message="tns:IMMSCalloutService_Callout_MMS_Legacy_TRIGGEREDIT_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType msc:usingSession="false" name="ISupplyOnlyCalloutService">
