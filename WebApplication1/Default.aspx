@@ -552,31 +552,30 @@
                                         <input type="button" name="btnSave" id="btnSave" class="btn btn-success" value="Save" onclick="UpdateInstallationEvents()">
                                     </div>
                                 </div>
-                            </div>
-                            <div role="tabpanel" class="tab-pane " id="ProductTab">
-                                <div style="overflow: auto; height: 600px;">
-                                    <table id="dataTable" class="table table-striped table-bordered table-hover table-condensed"></table>
+
+                                <div role="tabpanel" class="tab-pane " id="ProductTab">
+                                    <div style="overflow: auto; height: 600px;">
+                                        <table id="dataTable" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                    </div>
+
                                 </div>
 
-                            </div>
+                                <div role="tabpanel" class="tab-pane " id="JobAnalysisTab">
+                                    <div>
+                                    </div>
 
-                            <div role="tabpanel" class="tab-pane " id="JobAnalysisTab">
-                                <div>
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
-                </div>
 
-                <div class="modal-footer">
-                </div>
 
+                    <div class="modal-footer">
+                    </div>
+                </div>
             </div>
-        </div>
 
-        <br>
+            <br>
         </div>
         <div id="openviewWeather">
             <a class="weatherwidget-io" href="https://forecast7.com/en/49d28n123d12/vancouver/" data-label_1="Vancouver" data-label_2="Weather" data-font="Roboto" data-icons="Climacons Animated" data-theme="original" data-accent="rgba(1, 1, 1, 0.0)"></a>

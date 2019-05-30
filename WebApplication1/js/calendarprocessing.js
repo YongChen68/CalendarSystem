@@ -903,9 +903,51 @@ $(document).ready(function () {
                         $("#from_date").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
                         $("#end_date").val(new Date(GetDatefromMoment(event.end + 24 * 60 * 60000)).toLocaleDateString('en-US'));
                         $("#InstallScheduledStartDate").prop("disabled", true);
+                        $("#InstallScheduledEndDate").prop("disabled", true);
+                        $("#NumOfInstallers").prop("disabled", true);
+
+                        $("#Asbestos-JobsYes").prop("disabled", true);
+                        $("#Asbestos-JobsNo").prop("disabled", true);
+
+                        $("#Lead-PaintYes").prop("disabled", true);
+                        $("#Lead-PaintNo").prop("disabled", true);
+
+                        $("#Wood-DropOff-JobsYes").prop("disabled", true);
+                        $("#Wood-DropOff-JobsNo").prop("disabled", true);
+
+                        $("#HighRisk-JobsYes").prop("disabled", true);
+                        $("#HighRisk-JobsNo").prop("disabled", true);
+
+                        document.getElementsByName('saturday')[0].disabled = true;
+                        document.getElementsByName('sunday')[0].disabled = true;
+
+                        $("#from_date").prop("disabled", false);
+                        $("#end_date").prop("disabled", false);
+
                     }
                     else {
                         $("#InstallScheduledStartDate").prop("disabled", false);
+                        $("#InstallScheduledEndDate").prop("disabled", false);
+                        $("#NumOfInstallers").prop("disabled", false);
+
+                        $("#Asbestos-JobsYes").prop("disabled", false);
+                        $("#Asbestos-JobsNo").prop("disabled", false);
+
+                        $("#Lead-PaintYes").prop("disabled", false);
+                        $("#Lead-PaintNo").prop("disabled", false);
+
+                        $("#Wood-DropOff-JobsYes").prop("disabled", false);
+                        $("#Wood-DropOff-JobsNo").prop("disabled", false);
+
+                        $("#HighRisk-JobsYes").prop("disabled", false);
+                        $("#HighRisk-JobsNo").prop("disabled", false);
+
+                        document.getElementsByName('saturday')[0].disabled = false;
+                        document.getElementsByName('sunday')[0].disabled = false;
+
+                        $("#from_date").prop("disabled", true);
+                        $("#end_date").prop("disabled", true);
+
                     }
                                   
                     eventid = event.id;
