@@ -8,6 +8,7 @@ namespace Generics.RecordUpdate
 {
     public interface IUpdateHelper
     {
+        bool UpdateRecord(Utils.ContentType type, Utils.InstallationDataEvent data);
         bool UpdateRecord(Utils.ContentType type, Utils.ImproperCalendarEvent data);
         bool UpdateRecord(Utils.ContentType type, Utils.ImproperInstallationEvent data);
         bool UpdateRecord(Utils.ContentType type, Utils.InstallationEventWeekends data);//

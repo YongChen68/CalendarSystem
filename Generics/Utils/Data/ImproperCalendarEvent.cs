@@ -45,6 +45,50 @@ namespace Generics.Utils
 
     }
 
+    public class InstallationDataEvent
+    {
+        [DataMember]
+        public string id { get; set; }
+
+        [DataMember]
+        public string start { get; set; }
+        [DataMember]
+        public string end { get; set; }
+
+        [DataMember]
+        public int Asbestos { get; set; }
+
+        [DataMember]
+        public int WoodDropOff { get; set; }
+
+        [DataMember]
+        public int HighRisk { get; set; }
+
+
+        [DataMember]
+        public string Saturday { get; set; }
+
+        [DataMember]
+        public string Sunday
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public int EstInstallerCnt { get; set; }
+
+
+
+        [DataMember]
+        public string LeadPaint
+        {
+            get; set;
+        }
+
+
+    }
+
+
     public class InstallationEventWeekends
     {
         [DataMember]

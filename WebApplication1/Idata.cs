@@ -38,6 +38,12 @@ namespace CalendarSystem
         [WebInvoke(Method = "POST", UriTemplate = "UpdateReturnedJobSchedule?id={id}&scheduledStartDate={scheduledStartDate}&scheduledEndDate={scheduledEndDate}")]
         bool UpdateReturnedJobSchedule(string id, string scheduledStartDate, string scheduledEndDate);
 
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "UpdateInstallationData?id={id}&scheduledStartDate={scheduledStartDate}&scheduledEndDate={scheduledEndDate}&Asbestos={Asbestos}" +
+            "&WoodDropOff={WoodDropOff}&HighRisk={HighRisk}&EstInstallerCnt={EstInstallerCnt}&Saturday={Saturday}&Sunday={Sunday}&LeadPaint={LeadPaint}")]
+        bool UpdateInstallationData(string id, string scheduledStartDate, string scheduledEndDate,int Asbestos, int WoodDropOff, int HighRisk, int EstInstallerCnt, string Saturday, string Sunday, string LeadPaint);
+
+
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "UpdateInstallationSchedule?id={id}&scheduledStartDate={scheduledStartDate}&scheduledEndDate={scheduledEndDate}")]

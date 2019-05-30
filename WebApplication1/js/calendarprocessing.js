@@ -847,7 +847,7 @@ $(document).ready(function () {
                         $("#Asbestos-JobsYes").prop("checked", false);
                     } 
 
-                    if (event.LeadPaint == 1) {
+                    if (event.LeadPaint == 'Yes') {
                         // 
                         $("#Lead-PaintYes").prop("checked", true);
                         $("#Lead-PaintNo").prop("checked", false);
@@ -902,7 +902,10 @@ $(document).ready(function () {
                         // $("#ReturnedJob").show(); 
                         $("#from_date").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
                         $("#end_date").val(new Date(GetDatefromMoment(event.end + 24 * 60 * 60000)).toLocaleDateString('en-US'));
-
+                        $("#InstallScheduledStartDate").prop("disabled", true);
+                    }
+                    else {
+                        $("#InstallScheduledStartDate").prop("disabled", false);
                     }
                                   
                     eventid = event.id;
@@ -1465,8 +1468,8 @@ function UpdateReturnedJobSchedule() {
         type: "POST",
         success: function (data) {
             if (debug) console.log("events.success", "data.UpdateReturnedJobSchedule:");
-            $("#from_date").val('');
-            $("#end_date").val('');
+            //$("#from_date").val('');
+            //$("#end_date").val('');
           
             //$("#eventContent .close").click();
             //$('#calendar').fullCalendar('refetchEvents');
@@ -1479,23 +1482,67 @@ function UpdateReturnedJobSchedule() {
     });
 
 }
-
+//update events from popup
 function UpdateInstallationEvents() {
-    UpdateEventSchedule();
-    UpdateEventWeekends();
+   // UpdateEventSchedule();
+  //  UpdateEventWeekends();
 
 
-    var scheduledStartDate = $("#from_date").val();
-    var scheduledEndDate = $("#end_date").val();
-    if (scheduledStartDate.length != 0) {
+    var scheduledReturnedJobStartDate = $("#from_date").val();
+    if (scheduledReturnedJobStartDate.length != 0) {
         UpdateReturnedJobSchedule();
     }
-  
-    $("#eventContent .close").click();
-    $('#calendar').fullCalendar('refetchEvents');
-    $('#calendar').fullCalendar('rerenderEvents');
 
 
+    var i = eventid;
+    var scheduledStartDate, scheduledEndDate;
+    scheduledStartDate = $("#InstallScheduledStartDate").val();
+    scheduledEndDate = $("#InstallScheduledEndDate").val();
+
+    var Asbestos = 0, WoodDropOff = 0, HighRisk = 0;
+    var LeadPaint = 'No'; 
+    if ($("#Asbestos-JobsYes").prop('checked')) {
+        Asbestos =1;
+    }
+
+    if ($("#Lead-PaintYes").prop('checked')) {
+        LeadPaint = 'Yes';
+    }
+    if ($("#Wood-DropOff-JobsYes").prop('checked')) {
+        WoodDropOff = 1;
+    }
+    if ($("#HighRisk-JobsYes").prop('checked')) {
+        HighRisk = 1;
+    }
+
+    NumOfInstallers = $("#NumOfInstallers").val();
+    var isSaturdayChecked='No', isSundayChecked='No';
+    if (document.getElementsByName('saturday')[0].checked == true) {
+        isSaturdayChecked = 'Yes';
+    }
+    if (document.getElementsByName('saturday')[0].checked == true) {
+        isSundayChecked = 'Yes';
+    }
+
+    $.ajax({
+        url: 'data.svc/UpdateInstallationData?id=' + eventid
+            + '&ScheduledStartDate=' + scheduledStartDate + '&scheduledEndDate=' + scheduledEndDate
+            + '&Asbestos=' + Asbestos + '&WoodDropOff=' + WoodDropOff
+            + '&HighRisk=' + HighRisk + '&EstInstallerCnt=' + NumOfInstallers
+            + '&Saturday=' + isSaturdayChecked + '&Sunday=' + isSundayChecked + '&LeadPaint=' + LeadPaint,
+        type: "POST",
+        success: function (data) {
+            if (debug) console.log("events.success", "data.UpdateInstallationEvents:");
+           
+            $("#eventContent .close").click();
+            $('#calendar').fullCalendar('refetchEvents');
+            //$('#calendar').fullCalendar('rerenderEvents');
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
 }
 
 

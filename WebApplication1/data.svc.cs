@@ -254,6 +254,59 @@ namespace CalendarSystem
             }
             return retValue;
         }
+        /// <summary>
+        /// update event from pop up
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="scheduledStartDate"></param>
+        /// <param name="scheduledEndDate"></param>
+        /// <returns></returns>
+        public bool UpdateInstallationData(
+                string id 
+                ,string scheduledStartDate 
+                ,string scheduledEndDate
+                ,int Asbestos
+                , int WoodDropOff
+                , int HighRisk
+                 , int EstInstallerCnt
+                , string Saturday
+                 , string Sunday
+                , string LeadPaint
+            )
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateInstallationData('{0}')", id);
+            InstallationDataEvent eventData = null;
+            bool retValue = false;
+            try
+            {
+                eventData = new InstallationDataEvent();
+                eventData.id = id;
+
+                eventData.start = Convert.ToDateTime(scheduledStartDate).ToString("yyyy-MM-ddT00:00:00.000Z");
+                eventData.end = Convert.ToDateTime(scheduledEndDate).ToString("yyyy-MM-ddT00:00:00.000Z");
+
+                eventData.Asbestos = Asbestos;
+                eventData.WoodDropOff = WoodDropOff;
+                eventData.HighRisk = HighRisk;
+                eventData.LeadPaint = LeadPaint;
+                eventData.EstInstallerCnt = EstInstallerCnt;
+
+                eventData.Saturday = Saturday;
+                eventData.Sunday = Sunday;
+
+
+
+                RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
+                retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), eventData);
+
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateInstallationData id= {0}", id);
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
 
         List<Product> Idata.GetProducts(string workOrderNumber)
         {
@@ -271,7 +324,6 @@ namespace CalendarSystem
             }
             return retValue;
         }
-
 
     }
 }
