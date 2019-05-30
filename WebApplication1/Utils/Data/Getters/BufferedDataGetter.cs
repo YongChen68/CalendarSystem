@@ -196,5 +196,15 @@ and p.CurrentStateName <> 'Duplicated Work Order' and p.CurrentStateName <> 'Com
         {
             throw new NotImplementedException();
         }
+
+        public List<InstallationEvent> GetInstallationDateByWOForReturnedJob()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<InstallationEvent> GetInstallationDateByWOForNonReturnedJob()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

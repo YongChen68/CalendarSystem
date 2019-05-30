@@ -85,5 +85,19 @@ namespace CalendarSystem
                    ResponseFormat = WebMessageFormat.Json,
                    BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<Product> GetProducts(string workOrderNumber);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+                  UriTemplate = "GetInstallationDateByWOForReturnedJob={workOrderNumber}",
+                  ResponseFormat = WebMessageFormat.Json,
+                  BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<InstallationEvent> GetInstallationDateByWOForReturnedJob(string workOrderNumber);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+              UriTemplate = "GetInstallationDateByWOForNonReturnedJob={workOrderNumber}",
+              ResponseFormat = WebMessageFormat.Json,
+              BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<InstallationEvent> GetInstallationDateByWOForNonReturnedJob(string workOrderNumber);
     }
 }

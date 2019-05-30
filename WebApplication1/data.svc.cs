@@ -325,5 +325,39 @@ namespace CalendarSystem
             return retValue;
         }
 
+        List<InstallationEvent> Idata.GetInstallationDateByWOForReturnedJob(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetInstallationDateByWOForReturnedJob({0})", workOrderNumber);
+            List<InstallationEvent> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetInstallationDateByWOForReturnedJob();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetProducts() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+        List<InstallationEvent> Idata.GetInstallationDateByWOForNonReturnedJob(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetInstallationDateByWOForNonReturnedJob({0})", workOrderNumber);
+            List<InstallationEvent> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetInstallationDateByWOForNonReturnedJob();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetProducts() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
     }
 }

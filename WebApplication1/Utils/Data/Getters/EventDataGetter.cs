@@ -865,7 +865,47 @@ drop table #Subtrade", this.startDate.ToShortDateString(), this.endDate.ToShortD
         //}
 
 
+        private List<InstallationEvent> GetInstallationDateByWOForReturnedJob(string WO)
+        {
+            string SQL = GetInstallationDateByWOSQL(WO);
+            List<InstallationEvent> returnList = new List<InstallationEvent>();
 
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<InstallationEvent>(SQL).Where(b=>b.ReturnedJob==1).ToList();
+         
+            return returnList;
+        }
+
+        private List<InstallationEvent> GetInstallationDateByWOForNonReturnedJob(string WO)
+        {
+            string SQL = GetInstallationDateByWOSQL(WO);
+            List<InstallationEvent> returnList = new List<InstallationEvent>();
+
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<InstallationEvent>(SQL).Where(b => b.ReturnedJob != 1).ToList();
+
+            return returnList;
+        }
+
+
+
+        private string GetInstallationDateByWOSQL(string WO)
+        {
+            string SQL=string.Empty ;
+            SQL =  String.Format(@"
+            select d.ScheduledDate1 as ScheduledDate,d.ParentRecordId, d.detailrecordid,1 as 'ReturnedJob'
+            from [HomeInstallations_ReturnTrip] d
+            join [HomeInstallations_ReturnTrip] c
+            on d.ParentRecordId= c.ParentRecordId
+            where  d.ParentRecordId=(select recordid from HomeInstallations where workordernumber in '{0} '
+            union all
+            select d.ScheduledDate,d.ParentRecordId, d.detailrecordid,0 as 'ReturnedJob'
+            from HomeInstallations_InstallationDates d
+            join HomeInstallations_InstallationDates c
+            on d.ParentRecordId= c.ParentRecordId)
+            where  d.ParentRecordId =(select recordid from HomeInstallations where workordernumber in '{0}')",WO);
+           
+
+            return SQL;
+        }
 
 
         List<Generics.Utils.CalendarEvent> IGetter.GetData(Generics.Utils.ContentType type)
@@ -1101,6 +1141,15 @@ where p.WorkOrderNumber = '{0}' ", this.workOrderNumber);
             return SQL;
         }
 
+        public List<InstallationEvent> GetInstallationDateByWOForReturnedJob()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<InstallationEvent> GetInstallationDateByWOForNonReturnedJob()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 

@@ -4,7 +4,8 @@ var eventArray = [];
 var debug = true;
 var renderingComplete = false;
 var eventid;
-var eventWO = [];
+var eventWO = []; 
+var eventReturnedJobDate1;
 
 var is_weekend = function (date1) {
     var dt = new Date(date1);
@@ -394,13 +395,25 @@ function LoadInstallationBufferedJobs() {
 }
 
 function AddInstallationBufferEvent(key, val) {
-    var ret =  "<img src=\"images/installer" + val.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
-        val.EstInstallerCnt + "\">" +
-        (val.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + val.Windows + "Status: " + val.WindowState + "\" src=\"images/window.PNG\" />" : "") +
-        (val.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + val.Doors + "Status: " + val.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
-        (" " + val.WorkOrderNumber) + "&nbsp;" +
-        ("Name: " + val.LastName.trim().length > 10 ? val.LastName.trim().Substring(0, 10) : val.LastName.trim() + "&nbsp;" + val.FirstName.trim().length > 10 ? val.FirstName.trim().Substring(0, 10) : val.FirstName.trim()) + 
-        "&nbsp;" + (val.City.trim().Length > 5 ? val.City.trim().toLowerCase().Substring(0, 5) : val.City.trim().toLowerCase());
+    var ret;
+    if (val.EstInstallerCnt < 1) {
+        ret =  
+            (val.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + val.Windows + "Status: " + val.WindowState + "\" src=\"images/window.PNG\" />" : "") +
+            (val.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + val.Doors + "Status: " + val.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
+            (" " + val.WorkOrderNumber) + "&nbsp;" +
+            ("Name: " + val.LastName.trim().length > 10 ? val.LastName.trim().Substring(0, 10) : val.LastName.trim() + "&nbsp;" + val.FirstName.trim().length > 10 ? val.FirstName.trim().Substring(0, 10) : val.FirstName.trim()) +
+            "&nbsp;" + (val.City.trim().Length > 5 ? val.City.trim().toLowerCase().Substring(0, 5) : val.City.trim().toLowerCase());
+    }
+    else {
+        ret   = "<img src=\"images/installer" + val.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
+            val.EstInstallerCnt + "\">" +
+            (val.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + val.Windows + "Status: " + val.WindowState + "\" src=\"images/window.PNG\" />" : "") +
+            (val.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + val.Doors + "Status: " + val.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
+            (" " + val.WorkOrderNumber) + "&nbsp;" +
+            ("Name: " + val.LastName.trim().length > 10 ? val.LastName.trim().Substring(0, 10) : val.LastName.trim() + "&nbsp;" + val.FirstName.trim().length > 10 ? val.FirstName.trim().Substring(0, 10) : val.FirstName.trim()) +
+            "&nbsp;" + (val.City.trim().Length > 5 ? val.City.trim().toLowerCase().Substring(0, 5) : val.City.trim().toLowerCase());
+    }
+      
    // $(element).find(dom).prepend(ret);
 
     var el = $("<div class='fc-event " + (val.JobType == "RES" ? " reservation" : "") +
@@ -923,6 +936,10 @@ $(document).ready(function () {
 
                         $("#from_date").prop("disabled", false);
                         $("#end_date").prop("disabled", false);
+                       //etInstallationDateByWOForReturnedJob()
+
+                       // $("#InstallScheduledStartDate").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+                      //  $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(event.end + 24 * 60 * 60000)).toLocaleDateString('en-US'));
 
                     }
                     else {
@@ -948,6 +965,9 @@ $(document).ready(function () {
                         $("#from_date").prop("disabled", true);
                         $("#end_date").prop("disabled", true);
 
+                    //    $("#from_date").val('');
+                    //    $("#end_date").val('');
+
                     }
                                   
                     eventid = event.id;
@@ -964,9 +984,9 @@ $(document).ready(function () {
                     else {
                         document.getElementsByName('sunday')[0].checked = false;
                     }
-
+                    
                     //retrieve product info
-                 
+                   // var ss = GetNonReturnedJobDates(event.WorkOrderNumber);
                     GetProducts(event.WorkOrderNumber);
                     //GetJobAnalysys(event.WorkOrderNumber);
 
@@ -1642,23 +1662,7 @@ function GetProducts(workOrder) {
         dataType: 'json',
         success: function (data) {
             if (debug) console.log("events.success", "data.GetProducts:");
-            //$.each(data.Result, function (pos, item) {
-            //    AddInstallationBufferEvent(pos, item);
-            //});
-           // $('#grd').append("<tr><th>Item </th><th>Quantity </th></tr>")  
-            //var r = new Array(), j = -1;
-            //for (var key = 0, size = data.GetProductsResult.length; key < size; key++) {
-            //    r[++j] = '<tr><td>';
-            //    r[++j] = data.GetProductsResult[key]["Description"];
-            //    r[++j] = '</td><td class="whatever1">';
-            //    r[++j] = data.GetProductsResult[key]["Item"];
-            //    r[++j] = '</td><td class="whatever2">';
-            //    r[++j] = data.GetProductsResult[key]["Quantity"];
-            //    r[++j] = '</td><td class="whatever3">';
-            //    //r[++j] = data[key][2];
-            //    r[++j] = '</td></tr>';
-            //}
-            
+
             $("#dataTable tr").remove(); 
             if (data.GetProductsResult.length > 0) {
                 $("#dataTable").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
@@ -1673,6 +1677,47 @@ function GetProducts(workOrder) {
                         data.GetProductsResult[i].Status + "</td></tr>");
                 }
             }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
+
+
+function GetReturnedJobDates(workOrder) {
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetInstallationDateByWOForReturnedJob?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetInstallationDateByWOForReturnedJob:");
+            eventReturnedJobDate1 = data.GetInstallationDateByWOForReturnedJobResult[0];
+           // eventReturnedJobDate1 = data.GetInstallationDateByWOForReturnedJobResult[0];
+
+           
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
+
+function GetNonReturnedJobDates(workOrder) {
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetInstallationDateByWOForNonReturnedJob?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetInstallationDateByWOForNonReturnedJob:");
+            eventReturnedJobDate1 = data.GetInstallationDateByWOForNonReturnedJobResult[0];
+            // eventReturnedJobDate1 = data.GetInstallationDateByWOForReturnedJobResult[0];
+
+
 
         }, error: function (error) {
             console.log('Error', error);
