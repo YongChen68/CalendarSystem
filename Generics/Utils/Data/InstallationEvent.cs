@@ -213,12 +213,37 @@ namespace Generics.Utils.Data
             get; set;
         }
 
+
+        [DataMember]
+        public decimal installationwindowLBRMIN
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public decimal InstallationDoorLBRMin
+        {
+            get; set;
+        }
+
+
+        [DataMember]
+        public decimal InstallationPatioDoorLBRMin
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public decimal TotalInstallationLBRMin
+        {
+            get; set;
+        }
+
         [DataMember]
         public  string LeadPaint
         {
             get; set;
         }
-
 
 
         //[DataMember]

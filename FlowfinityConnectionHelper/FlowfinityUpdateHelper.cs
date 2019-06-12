@@ -51,7 +51,7 @@ namespace FlowfinityConnectionHelper
                     OnBehalfOf = Owner,
                     RecordID = data.id,
 
-                    Record = GetRecord(type, data)
+                    Record = GetRecordForStateChanges(type, data)
                 };
                 ret1 = _helper.Send(new FASR.OperationCall[] { call1 }, PrepareTransactionId(data)).ReturnValue;
             }
@@ -74,6 +74,13 @@ namespace FlowfinityConnectionHelper
         }
 
         private static FASR.HomeInstallationsRecord GetRecord(Generics.Utils.ContentType type, Generics.Utils.ImproperInstallationEvent data)
+        {
+            FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
+            record.InstallationDates = PrepareInstallationDateList(data);
+            return record;
+        }
+
+        private static FASR.HomeInstallationsRecord GetRecordForStateChanges(Generics.Utils.ContentType type, Generics.Utils.ImproperInstallationEvent data)
         {
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
            // record.InstallationDates = PrepareInstallationDateList(data);

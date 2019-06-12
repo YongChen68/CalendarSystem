@@ -332,7 +332,7 @@ namespace CalendarSystem
             try
             {
                 Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
-                retValue = getter.GetInstallationDateByWOForReturnedJob();
+                retValue = getter.GetInstallationDateByWOForReturnedJob(workOrderNumber);
                 Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetProducts() = {0}", retValue.Count.ToString());
             }
             catch (Exception ex)
@@ -349,7 +349,7 @@ namespace CalendarSystem
             try
             {
                 Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
-                retValue = getter.GetInstallationDateByWOForNonReturnedJob();
+                retValue = getter.GetInstallationDateByWOForNonReturnedJob(workOrderNumber);
                 Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetProducts() = {0}", retValue.Count.ToString());
             }
             catch (Exception ex)

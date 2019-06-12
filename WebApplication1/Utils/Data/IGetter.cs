@@ -17,7 +17,7 @@ namespace CalendarSystem.Utils.Data
         List<Generics.Utils.Data.InstallationEvent> GetInstallationBufferData();
         List<Generics.Utils.Holiday> GetHolidayData();
         List<Generics.Utils.Product> GetProducts();
-        List<Generics.Utils.Data.InstallationEvent> GetInstallationDateByWOForReturnedJob();
-        List<Generics.Utils.Data.InstallationEvent> GetInstallationDateByWOForNonReturnedJob();
+        List<Generics.Utils.Data.InstallationEvent> GetInstallationDateByWOForReturnedJob(string wO);
+        List<Generics.Utils.Data.InstallationEvent> GetInstallationDateByWOForNonReturnedJob(string wO);
     }
 }
