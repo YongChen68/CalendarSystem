@@ -988,6 +988,7 @@ $(document).ready(function () {
                     //retrieve product info
                    // var ss = GetNonReturnedJobDates(event.WorkOrderNumber);
                     GetProducts(event.WorkOrderNumber);
+                    GetInstallers(event.WorkOrderNumber);
                     //GetJobAnalysys(event.WorkOrderNumber);
 
                     $("#eventLink").attr('href', event.url);
@@ -1060,8 +1061,8 @@ $(document).ready(function () {
 
                 var ret ="<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
                     event.EstInstallerCnt + "\">" +
-                    (event.Windows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.Windows + ";&nbsp;Status: " + event.WindowState + "\" src=\"images/window.PNG\" />" : "") +
-                    (event.Doors != "0" ? "&nbsp;<img title=\"# of Doors: " + event.Doors + ";&nbsp;Status: " + event.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
+                    (event.Windows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.Windows  + "\" src=\"images/window.PNG\" />" : "") +
+                    (event.Doors != "0" ? "&nbsp;<img title=\"# of Doors: " + event.Doors + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
                     (event.TotalWoodDropOff == 1 ? "&nbsp;<img src=\"images/delivery.PNG\" />" : "") +
                     //(event.TotalAsbestos == 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
                     ((event.TotalAsbestos == 1) || (event.LeadPaint=='Yes') ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
@@ -1692,6 +1693,30 @@ function GetProducts(workOrder) {
 
 }
 
+
+function GetInstallers(workOrder) {
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetInstallers?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetProducts:");
+
+      
+            if (data.GetInstallersResult.length > 0) {
+
+                $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
+                $("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
+               
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
 
 function GetReturnedJobDates(workOrder) {
     $.ajax({

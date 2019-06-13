@@ -28,7 +28,15 @@ namespace Generics.Utils
 
         [DataMember]
         public string Status { get; set; }
+    }
+    public class Installer
+    {
+        [DataMember]
+        public string SeniorInstaller { get; set; }
 
+        [DataMember]
+        public string CrewNames { get; set; }
 
+       
     }
 }

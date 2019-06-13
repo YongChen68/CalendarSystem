@@ -156,16 +156,16 @@ namespace Generics.Utils.Data
         {
             get; set;
         }
-        [DataMember]
-        public string Other
-        {
-            get; set;
-        }
-        [DataMember]
-        public string Subtrades
-        {
-            get; set;
-        }
+        //[DataMember]
+        //public string Other
+        //{
+        //    get; set;
+        //}
+        //[DataMember]
+        //public string Subtrades
+        //{
+        //    get; set;
+        //}
         [DataMember]
         public string Hours
         {
@@ -176,22 +176,22 @@ namespace Generics.Utils.Data
         //{
         //    get; set;
         //}
-        [DataMember]
-        public string WindowState
-        {
-            get; set;
-        }
+        //[DataMember]
+        //public string WindowState
+        //{
+        //    get; set;
+        //}
         //[DataMember]
         //public OrderState DoorState
         //{
         //    get; set;
         //}
 
-        [DataMember]
-        public string DoorState
-        {
-            get; set;
-        }
+        //[DataMember]
+        //public string DoorState
+        //{
+        //    get; set;
+        //}
 
       
         [DataMember]
@@ -251,11 +251,11 @@ namespace Generics.Utils.Data
         //{
         //    get; set;
         //}
-        [DataMember]
-        public string OtherState
-        {
-            get; set;
-        }
+        //[DataMember]
+        //public string OtherState
+        //{
+        //    get; set;
+        //}
 
         //[DataMember]
         //public OrderState PaintedState
@@ -310,21 +310,21 @@ namespace Generics.Utils.Data
         {
             get; set;
         }
-        [DataMember]
-        public string CrewNames
-        {
-            get; set;
-        }
+        //[DataMember]
+        //public string CrewNames
+        //{
+        //    get; set;
+        //}
         [DataMember]
         public string CurrentStateName
         {
             get; set;
         }
-        [DataMember]
-        public string SeniorInstaller
-        {
-            get; set;
-        }
+       // [DataMember]
+        //public string SeniorInstaller
+        //{
+        //    get; set;
+        //}
         [DataMember]
         public string Saturday
         {

@@ -325,6 +325,23 @@ namespace CalendarSystem
             return retValue;
         }
 
+        List<Installer> Idata.GetInstallers(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetInstallers({0})", workOrderNumber);
+            List<Installer> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetInstallers();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetInstallers() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
         List<InstallationEvent> Idata.GetInstallationDateByWOForReturnedJob(string workOrderNumber)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetInstallationDateByWOForReturnedJob({0})", workOrderNumber);
