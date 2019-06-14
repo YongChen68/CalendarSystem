@@ -1061,8 +1061,8 @@ $(document).ready(function () {
 
                 var ret ="<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
                     event.EstInstallerCnt + "\">" +
-                    (event.Windows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.Windows  + "\" src=\"images/window.PNG\" />" : "") +
-                    (event.Doors != "0" ? "&nbsp;<img title=\"# of Doors: " + event.Doors + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
+                    (event.TotalWindows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.TotalWindows  + "\" src=\"images/window.PNG\" />" : "") +
+                    (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Doors: " + event.TotalDoors + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
                     (event.TotalWoodDropOff == 1 ? "&nbsp;<img src=\"images/delivery.PNG\" />" : "") +
                     //(event.TotalAsbestos == 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
                     ((event.TotalAsbestos == 1) || (event.LeadPaint=='Yes') ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
