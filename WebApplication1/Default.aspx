@@ -383,9 +383,12 @@
                                         <div><b>Total Windows: </b><span id="TotalWindows1"></span></div>
 
                                         <br>
-                                        <div><b>Total Doors: </b><span id="TotalDoors1"></span></div>
+                                        <div><b>Total Exterior Doors: </b><span id="TotalDoors1"></span></div>
                                         <br>
-                                        <div><b>SalesAmount: </b><span id="SalesAmmount"></span></div>
+
+                                          <div><b>Total Codel Doors: </b><span id="TotalDoors2"></span></div>
+                                        <br>
+                                        <div><b>Sales Amount: </b><span id="SalesAmmount"></span></div>
 
                                         <br>
                                     </div>
@@ -562,6 +565,7 @@
 
                                 <div role="tabpanel" class="tab-pane " id="JobAnalysisTab">
                                     <div>
+                                           <b>Total LBR Mins: </b><span id="TotalLBRMin"></span>
                                     </div>
 
                                 </div>

@@ -989,7 +989,8 @@ $(document).ready(function () {
                    // var ss = GetNonReturnedJobDates(event.WorkOrderNumber);
                     GetProducts(event.WorkOrderNumber);
                     GetInstallers(event.WorkOrderNumber);
-                    //GetJobAnalysys(event.WorkOrderNumber);
+                   // GetJobAnalysys(event.WorkOrderNumber);
+                    $("#TotalLBRMin").html(event.TotalInstallationLBRMin);
 
                     $("#eventLink").attr('href', event.url);
                    // $("#eventContent").dialog({ modal: true, title: event.LastName, width: 900 });
@@ -1311,8 +1312,8 @@ function SetDayValue(key, dayTotals) {
     if (debug) console.log("SetDayValue", key, "added", "date:", dayTotals.date, "data:", dayTotals);
     if (displayType == "Installation") {
      
-        SetData('Codel-Doors', dayTotals.day, parseFloat(dayTotals.doors).toFixed(2));
-        SetData('Patio-Doors', dayTotals.day, 0);
+        SetData('Codel-Doors', dayTotals.day, 0);
+        SetData('Patio-Doors', dayTotals.day, parseFloat(dayTotals.doors).toFixed(2));
         SetData('Installation-Min', dayTotals.day, 0);
         SetData('Wood-DropOff-Jobs', dayTotals.day, dayTotals.TotalWoodDropOff);
         SetData('HighRisk-Jobs', dayTotals.day, dayTotals.TotalHighRisk);
@@ -1617,6 +1618,7 @@ function UpdateInstallationEvents() {
 
 
 function GetJobAnalysys(workOrder) {
+    TotalLBRMin
     //var test;
     //var tab = $("a[href='#JobAnalysisTab']");
     //if (tab.innerText == "JOB ANALYSIS") {
