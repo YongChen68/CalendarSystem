@@ -251,7 +251,7 @@ function GetBlankDayData(day) {
         //return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount: 0,WOCount:0 };
         var installationDay = new Date(Date.UTC(day.getUTCFullYear(), day.getUTCMonth(), day.getUTCDate()+1 ));
      //  return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount: 0, WOCount: 0 };
-        return { day: dayName, date: installationDay, doors: 0, windows: 0, SalesAmmount: 0, TotalAsbestos: 0, TotalWoodDropOff: 0, TotalHighRisk: 0, TotalLeadPaint: 0, WOCount: 0, installationwindowLBRMIN: 0, TotalInstallationLBRMin: 0, InstallationDoorLBRMin: 0, InstallationPatioDoorLBRMin: 0};
+        return { day: dayName, date: installationDay, doors: 0, windows: 0, SalesAmmount: 0, TotalAsbestos: 0, TotalWoodDropOff: 0, TotalHighRisk: 0, TotalLeadPaint: 0, WOCount: 0, installationwindowLBRMIN: 0, TotalInstallationLBRMin: 0, InstallationDoorLBRMin: 0, InstallationPatioDoorLBRMin: 0, detailrecordCount:1};
     }
     else {
       //  return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, boxes: 0, glass: 0, value: 0, min: 0, max: 0, Available_Time: 0, rush: 0, float: 0, TotalBoxQty: 0, TotalGlassQty: 0, TotalPrice: 0, TotalLBRMin: 0, F6CA: 0, F27DS: 0, F27TS: 0, F27TT: 0, F29CA: 0, F29CM: 0, F52PD: 0, F68CA: 0, F68SL: 0, F68VS: 0, Transom: 0, Sidelite: 0, SingleDoor: 0, DoubleDoor: 0, Simple: 0, Complex: 0, Over_Size: 0, Arches: 0, Rakes: 0, Customs: 0, };
@@ -1241,6 +1241,7 @@ $(document).ready(function () {
                                     totals[i].InstallationDoorLBRMin += eventWODict[j]["InstallationDoorLBRMin"];
                                     totals[i].InstallationPatioDoorLBRMin += eventWODict[j]["InstallationPatioDoorLBRMin"];
                                     totals[i].TotalInstallationLBRMin += eventWODict[j]["TotalInstallationLBRMin"];
+                                    totals[i].detailrecordCount += eventWODict[j]["detailrecordCount"];
 
                                     if (eventWODict[j]["LeadPaint"] == "Yes") {
                                         totals[i].TotalLeadPaint++;
@@ -1323,10 +1324,10 @@ function SetDayValue(key, dayTotals) {
         SetData('Lead-Paint', dayTotals.day, dayTotals.TotalLeadPaint);
         SetData('Sales-Amount', dayTotals.day, dayTotals.SalesAmmount.formatMoney(2, "$", ",", "."));
 
-        SetData('Window-LBR', dayTotals.day,dayTotals.installationwindowLBRMIN);
-        SetData('Patio-Door-LBR', dayTotals.day, dayTotals.InstallationPatioDoorLBRMin);
-        SetData('EXT-Door-LB', dayTotals.day, dayTotals.InstallationDoorLBRMin);
-        SetData('Total-LBR', dayTotals.day, dayTotals.TotalInstallationLBRMin);
+        SetData('Window-LBR', dayTotals.day, dayTotals.installationwindowLBRMIN / dayTotals.detailrecordCount);
+        SetData('Patio-Door-LBR', dayTotals.day, dayTotals.InstallationPatioDoorLBRMin / dayTotals.detailrecordCount);
+        SetData('EXT-Door-LB', dayTotals.day, dayTotals.InstallationDoorLBRMin / dayTotals.detailrecordCount);
+        SetData('Total-LBR', dayTotals.day, dayTotals.TotalInstallationLBRMin / dayTotals.detailrecordCount);
     }
     else {
         var maxTime = parseInt(FindByValue("max", dayTotals.date).Value);

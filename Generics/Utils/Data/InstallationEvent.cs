@@ -244,6 +244,11 @@ namespace Generics.Utils.Data
         {
             get; set;
         }
+        [DataMember]
+        public decimal detailrecordCount
+        {
+            get; set;
+        }
 
 
         //[DataMember]

@@ -383,7 +383,7 @@
                                         <div><b>Total Windows: </b><span id="TotalWindows1"></span></div>
 
                                         <br>
-                                        <div><b>Total Exterior Doors: </b><span id="TotalDoors1"></span></div>
+                                        <div><b>Total Patio Doors: </b><span id="TotalDoors1"></span></div>
                                         <br>
 
                                           <div><b>Total Codel Doors: </b><span id="TotalDoors2"></span></div>
