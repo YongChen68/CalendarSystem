@@ -298,6 +298,10 @@ select WorkOrderNumber, LastName,FirstName, City,PostCode, Email,SalesRep,LeadPa
 TotalDoors,TotalWindows,Windows,Doors,
 DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, 
 installationwindowLBRMIN,InstallationPatioDoorLBRMin,InstallationDoorLBRMin,TotalInstallationLBRMin,
+installationwindowLBRMIN/detailrecordCount as subinstallationwindowLBRMIN,
+InstallationPatioDoorLBRMin/detailrecordCount as subInstallationPatioDoorLBRMin,
+TotalInstallationLBRMin/detailrecordCount as subTotalInstallationLBRMin,
+
 jobtype,CurrentStateName,null as Hours, null as hours, HomePhoneNumber, CellPhone, WorkPhoneNumber, 
 
 EstInstallerCnt, StreetAddress, ScheduledDate, case when ScheduledDate is null
@@ -310,8 +314,8 @@ ParentRecordId,detailrecordCount,saturday, sunday, jobtype,ActionItemId as id,i.
 i.WorkOrderNumber, i.LastName, i.FirstName,i.City, i.PostalCode as PostCode,i.Email,i.Rep_display as SalesRep,i.LeadPaint ,
 i.CurrentStateName,PlannedInstallWeek,
 
-round(i.Windows/detailrecordCount,2) as Windows, round(i. ExtDoors/detailrecordCount,2) as Doors,
-i.Windows as TotalWindows, i.ExtDoors as TotalDoors, 
+round(i.Windows/detailrecordCount,2) as Windows, round(i. PatioDoors/detailrecordCount,2) as Doors,
+i.Windows as TotalWindows, i.PatioDoors as TotalDoors, 
 
 						   d.ScheduledDate, 
                          
@@ -412,6 +416,10 @@ drop table #installs
                 newEvent.InstallationDoorLBRMin = eventx.InstallationDoorLBRMin;
                 newEvent.InstallationPatioDoorLBRMin = eventx.InstallationPatioDoorLBRMin;
                 newEvent.TotalInstallationLBRMin = eventx.TotalInstallationLBRMin;
+
+                newEvent.subInstallationPatioDoorLBRMin = eventx.subInstallationPatioDoorLBRMin;
+                newEvent.subinstallationwindowLBRMIN = eventx.subinstallationwindowLBRMIN;
+                newEvent.subTotalInstallationLBRMin = eventx.subTotalInstallationLBRMin;
 
                 // total = GetTotalByWO(eventx.WorkOrderNumber);
 
@@ -562,6 +570,11 @@ drop table #installs
                 newEvent.InstallationDoorLBRMin = returnedEvent.InstallationDoorLBRMin;
                 newEvent.InstallationPatioDoorLBRMin = returnedEvent.InstallationPatioDoorLBRMin;
                 newEvent.TotalInstallationLBRMin = returnedEvent.TotalInstallationLBRMin;
+
+
+                newEvent.subInstallationPatioDoorLBRMin = returnedEvent.subInstallationPatioDoorLBRMin;
+                newEvent.subinstallationwindowLBRMIN = returnedEvent.subinstallationwindowLBRMIN;
+                newEvent.subTotalInstallationLBRMin = returnedEvent.subTotalInstallationLBRMin;
 
 
 

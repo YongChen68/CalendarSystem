@@ -245,7 +245,19 @@ namespace Generics.Utils.Data
             get; set;
         }
         [DataMember]
-        public decimal detailrecordCount
+        public decimal subinstallationwindowLBRMIN
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public decimal subInstallationPatioDoorLBRMin
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public decimal subTotalInstallationLBRMin
         {
             get; set;
         }

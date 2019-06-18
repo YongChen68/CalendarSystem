@@ -251,7 +251,10 @@ function GetBlankDayData(day) {
         //return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount: 0,WOCount:0 };
         var installationDay = new Date(Date.UTC(day.getUTCFullYear(), day.getUTCMonth(), day.getUTCDate()+1 ));
      //  return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount: 0, WOCount: 0 };
-        return { day: dayName, date: installationDay, doors: 0, windows: 0, SalesAmmount: 0, TotalAsbestos: 0, TotalWoodDropOff: 0, TotalHighRisk: 0, TotalLeadPaint: 0, WOCount: 0, installationwindowLBRMIN: 0, TotalInstallationLBRMin: 0, InstallationDoorLBRMin: 0, InstallationPatioDoorLBRMin: 0, detailrecordCount:1};
+        return {
+            day: dayName, date: installationDay, doors: 0, windows: 0, SalesAmmount: 0, TotalAsbestos: 0, TotalWoodDropOff: 0, TotalHighRisk: 0, TotalLeadPaint: 0, WOCount: 0, installationwindowLBRMIN: 0, TotalInstallationLBRMin: 0, InstallationDoorLBRMin: 0,
+            InstallationPatioDoorLBRMin: 0, subinstallationwindowLBRMIN: 0, subInstallationPatioDoorLBRMin: 0, subTotalInstallationLBRMin: 0
+        };
     }
     else {
       //  return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, boxes: 0, glass: 0, value: 0, min: 0, max: 0, Available_Time: 0, rush: 0, float: 0, TotalBoxQty: 0, TotalGlassQty: 0, TotalPrice: 0, TotalLBRMin: 0, F6CA: 0, F27DS: 0, F27TS: 0, F27TT: 0, F29CA: 0, F29CM: 0, F52PD: 0, F68CA: 0, F68SL: 0, F68VS: 0, Transom: 0, Sidelite: 0, SingleDoor: 0, DoubleDoor: 0, Simple: 0, Complex: 0, Over_Size: 0, Arches: 0, Rakes: 0, Customs: 0, };
@@ -1063,7 +1066,8 @@ $(document).ready(function () {
                 var ret ="<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
                     event.EstInstallerCnt + "\">" +
                     (event.TotalWindows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.TotalWindows  + "\" src=\"images/window.PNG\" />" : "") +
-                    (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Doors: " + event.TotalDoors + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
+                    (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Patio Doors: " + event.TotalDoors + "\" src=\"images/patiodoor.PNG\" />" : "") + "&nbsp;" +
+                    (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Ext Doors: " + event.TotalDoors + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
                     (event.TotalWoodDropOff == 1 ? "&nbsp;<img src=\"images/delivery.PNG\" />" : "") +
                     //(event.TotalAsbestos == 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
                     ((event.TotalAsbestos == 1) || (event.LeadPaint=='Yes') ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
@@ -1241,7 +1245,10 @@ $(document).ready(function () {
                                     totals[i].InstallationDoorLBRMin += eventWODict[j]["InstallationDoorLBRMin"];
                                     totals[i].InstallationPatioDoorLBRMin += eventWODict[j]["InstallationPatioDoorLBRMin"];
                                     totals[i].TotalInstallationLBRMin += eventWODict[j]["TotalInstallationLBRMin"];
-                                    totals[i].detailrecordCount += eventWODict[j]["detailrecordCount"];
+
+                                    totals[i].subinstallationwindowLBRMIN += eventWODict[j]["subinstallationwindowLBRMIN"];
+                                    totals[i].subInstallationPatioDoorLBRMin += eventWODict[j]["subInstallationPatioDoorLBRMin"];
+                                    totals[i].subTotalInstallationLBRMin += eventWODict[j]["subTotalInstallationLBRMin"];
 
                                     if (eventWODict[j]["LeadPaint"] == "Yes") {
                                         totals[i].TotalLeadPaint++;
@@ -1313,9 +1320,9 @@ function SetDayValue(key, dayTotals) {
     if (debug) console.log("SetDayValue", key, "added", "date:", dayTotals.date, "data:", dayTotals);
     if (displayType == "Installation") {
      
-        SetData('Codel-Doors', dayTotals.day, 0);
+        SetData('Codel-Doors', dayTotals.day, parseFloat(0).toFixed(2));
         SetData('Patio-Doors', dayTotals.day, parseFloat(dayTotals.doors).toFixed(2));
-        SetData('Installation-Min', dayTotals.day, 0);
+        SetData('Installation-Min', dayTotals.day, parseFloat(0).toFixed(2));
         SetData('Wood-DropOff-Jobs', dayTotals.day, dayTotals.TotalWoodDropOff);
         SetData('HighRisk-Jobs', dayTotals.day, dayTotals.TotalHighRisk);
         SetData('Windows', dayTotals.day, parseFloat(dayTotals.windows).toFixed(2));
@@ -1324,10 +1331,10 @@ function SetDayValue(key, dayTotals) {
         SetData('Lead-Paint', dayTotals.day, dayTotals.TotalLeadPaint);
         SetData('Sales-Amount', dayTotals.day, dayTotals.SalesAmmount.formatMoney(2, "$", ",", "."));
 
-        SetData('Window-LBR', dayTotals.day, dayTotals.installationwindowLBRMIN / dayTotals.detailrecordCount);
-        SetData('Patio-Door-LBR', dayTotals.day, dayTotals.InstallationPatioDoorLBRMin / dayTotals.detailrecordCount);
-        SetData('EXT-Door-LB', dayTotals.day, dayTotals.InstallationDoorLBRMin / dayTotals.detailrecordCount);
-        SetData('Total-LBR', dayTotals.day, dayTotals.TotalInstallationLBRMin / dayTotals.detailrecordCount);
+        SetData('Window-LBR', dayTotals.day, parseFloat(dayTotals.subinstallationwindowLBRMIN).toFixed(2)); 
+        SetData('Patio-Door-LBR', dayTotals.day, parseFloat(dayTotals.subInstallationPatioDoorLBRMin).toFixed(2));
+        SetData('EXT-Door-LB', dayTotals.day,0);
+        SetData('Total-LBR', dayTotals.day, parseFloat(dayTotals.subTotalInstallationLBRMin).toFixed(2));
     }
     else {
         var maxTime = parseInt(FindByValue("max", dayTotals.date).Value);

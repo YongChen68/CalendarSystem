@@ -57,7 +57,8 @@ namespace CalendarSystem.Utils.Data
           SELECT  win.Number_1 as windows	 , win.Number_1 as TotalWindows, door.Number_1 as doors	 ,  door.Number_1 as TotalDoors, others.Number_1 as others	, others.Number_1 as other, dates.ScheduledDate,ActionItemId as id,0 as SalesAmmount,
             0  as TotalSalesAmount,i.EstInstallerCnt,i.Rep_display as SalesRep,i.LeadPaint ,0 as TotalWoodDropOff, 0 as TotalAsbestos,0 as TotalHighRisk
 	       ,'' as  Subtrades ,i.RecordId	 , [Branch]      ,[Branch_display]      ,[WorkOrderNumber]         ,[JobType]      ,[FirstName]      ,[LastName],0 as ReturnedJob,
-installationwindowLBRMIN,InstallationPatioDoorLBRMin,InstallationDoorLBRMin,TotalInstallationLBRMin
+installationwindowLBRMIN,InstallationPatioDoorLBRMin,InstallationDoorLBRMin,TotalInstallationLBRMin,
+1 as subinstallationwindowLBRMIN, 1 as subInstallationPatioDoorLBRMin, 1 as subTotalInstallationLBRMin
       ,[StreetAddress],HomePhoneNumber, CellPhone, WorkPhoneNumber, '' as CrewNames, '' as SeniorInstaller, null as hours,'' as WindowState,'' as DoorState, '' as OtherState
       , 'no' as saturday, 'no' as sunday, i.PostalCode as PostCode,i.CurrentStateName
       ,[City]
