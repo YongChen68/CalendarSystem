@@ -156,6 +156,18 @@ namespace Generics.Utils.Data
         {
             get; set;
         }
+
+        [DataMember]
+        public decimal ExtDoors
+        {
+            get; set;
+        }
+        [DataMember]
+        public decimal TotalExtDoors
+        {
+            get; set;
+        }
+
         //[DataMember]
         //public string Other
         //{
@@ -249,6 +261,11 @@ namespace Generics.Utils.Data
         {
             get; set;
         }
+        [DataMember]
+        public decimal subExtDoorLBRMIN
+        {
+            get; set;
+        }
 
         [DataMember]
         public decimal subInstallationPatioDoorLBRMin
@@ -261,7 +278,21 @@ namespace Generics.Utils.Data
         {
             get; set;
         }
-
+        [DataMember]
+        public decimal SidingLBRBudget
+        {
+            get; set;
+        }
+        [DataMember]
+        public decimal SidingLBRMin
+        {
+            get; set;
+        }
+        [DataMember]
+        public decimal SidingSQF
+        {
+            get; set;
+        }
 
         //[DataMember]
         //public OrderState OtherState

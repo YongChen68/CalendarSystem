@@ -295,13 +295,14 @@ and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or
 Branch in ({2})
 
 select WorkOrderNumber, LastName,FirstName, City,PostCode, Email,SalesRep,LeadPaint,ReturnedJob,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,
-TotalDoors,TotalWindows,Windows,Doors,
+TotalDoors,TotalWindows,Windows,Doors,ExtDoors,TotalExtDoors,
 DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, 
 installationwindowLBRMIN,InstallationPatioDoorLBRMin,InstallationDoorLBRMin,TotalInstallationLBRMin,
 installationwindowLBRMIN/detailrecordCount as subinstallationwindowLBRMIN,
+InstallationDoorLBRMin/detailrecordCount as subExtDoorLBRMIN,
 InstallationPatioDoorLBRMin/detailrecordCount as subInstallationPatioDoorLBRMin,
 TotalInstallationLBRMin/detailrecordCount as subTotalInstallationLBRMin,
-
+SidingLBRBudget,SidingLBRMin,SidingSQF,
 jobtype,CurrentStateName,null as Hours, null as hours, HomePhoneNumber, CellPhone, WorkPhoneNumber, 
 
 EstInstallerCnt, StreetAddress, ScheduledDate, case when ScheduledDate is null
@@ -313,9 +314,9 @@ i.SalesAmmount/detailrecordCount as SalesAmmount,i.SalesAmmount as TotalSalesAmo
 ParentRecordId,detailrecordCount,saturday, sunday, jobtype,ActionItemId as id,i.streetAddress, i.EstInstallerCnt,
 i.WorkOrderNumber, i.LastName, i.FirstName,i.City, i.PostalCode as PostCode,i.Email,i.Rep_display as SalesRep,i.LeadPaint ,
 i.CurrentStateName,PlannedInstallWeek,
-
-round(i.Windows/detailrecordCount,2) as Windows, round(i. PatioDoors/detailrecordCount,2) as Doors,
-i.Windows as TotalWindows, i.PatioDoors as TotalDoors, 
+SidingLBRBudget,SidingLBRMin,SidingSQF,
+round(i.Windows/detailrecordCount,2) as Windows, round(i. PatioDoors/detailrecordCount,2) as Doors,round(i. ExtDoors/detailrecordCount,2) as ExtDoors,
+i.Windows as TotalWindows, i.PatioDoors as TotalDoors,  i.ExtDoors as TotalExtDoors,
 
 						   d.ScheduledDate, 
                          
@@ -420,6 +421,16 @@ drop table #installs
                 newEvent.subInstallationPatioDoorLBRMin = eventx.subInstallationPatioDoorLBRMin;
                 newEvent.subinstallationwindowLBRMIN = eventx.subinstallationwindowLBRMIN;
                 newEvent.subTotalInstallationLBRMin = eventx.subTotalInstallationLBRMin;
+                newEvent.subExtDoorLBRMIN = eventx.subExtDoorLBRMIN;
+
+                newEvent.SidingLBRBudget = eventx.SidingLBRBudget;
+                newEvent.SidingLBRMin = eventx.SidingLBRMin;
+                newEvent.SidingSQF = eventx.SidingSQF;
+
+
+                newEvent.ExtDoors = eventx.ExtDoors;
+                newEvent.TotalExtDoors = eventx.TotalExtDoors;
+
 
                 // total = GetTotalByWO(eventx.WorkOrderNumber);
 
@@ -575,7 +586,15 @@ drop table #installs
                 newEvent.subInstallationPatioDoorLBRMin = returnedEvent.subInstallationPatioDoorLBRMin;
                 newEvent.subinstallationwindowLBRMIN = returnedEvent.subinstallationwindowLBRMIN;
                 newEvent.subTotalInstallationLBRMin = returnedEvent.subTotalInstallationLBRMin;
+                newEvent.subExtDoorLBRMIN = returnedEvent.subExtDoorLBRMIN;
 
+                newEvent.SidingLBRBudget = returnedEvent.SidingLBRBudget;
+                newEvent.SidingLBRMin = returnedEvent.SidingLBRMin;
+                newEvent.SidingSQF = returnedEvent.SidingSQF;
+
+
+                newEvent.ExtDoors = returnedEvent.ExtDoors;
+                newEvent.TotalExtDoors = returnedEvent.TotalExtDoors;
 
 
                 newEvent.title = returnedEvent.title;

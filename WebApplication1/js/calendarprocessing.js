@@ -252,8 +252,10 @@ function GetBlankDayData(day) {
         var installationDay = new Date(Date.UTC(day.getUTCFullYear(), day.getUTCMonth(), day.getUTCDate()+1 ));
      //  return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount: 0, WOCount: 0 };
         return {
-            day: dayName, date: installationDay, doors: 0, windows: 0, SalesAmmount: 0, TotalAsbestos: 0, TotalWoodDropOff: 0, TotalHighRisk: 0, TotalLeadPaint: 0, WOCount: 0, installationwindowLBRMIN: 0, TotalInstallationLBRMin: 0, InstallationDoorLBRMin: 0,
-            InstallationPatioDoorLBRMin: 0, subinstallationwindowLBRMIN: 0, subInstallationPatioDoorLBRMin: 0, subTotalInstallationLBRMin: 0
+            day: dayName, date: installationDay, doors: 0, windows: 0, ExtDoors:0,
+            SalesAmmount: 0, TotalAsbestos: 0, TotalWoodDropOff: 0, TotalHighRisk: 0, TotalLeadPaint: 0, WOCount: 0, installationwindowLBRMIN: 0, TotalInstallationLBRMin: 0, InstallationDoorLBRMin: 0,
+            InstallationPatioDoorLBRMin: 0, subinstallationwindowLBRMIN: 0, subInstallationPatioDoorLBRMin: 0, subExtDoorLBRMIN: 0, subTotalInstallationLBRMin: 0,
+            SidingLBRBudget: 0, SidingLBRMin: 0
         };
     }
     else {
@@ -852,6 +854,7 @@ $(document).ready(function () {
 
                     $("#TotalWindows1").html(event.TotalWindows);
                     $("#TotalDoors1").html(event.TotalDoors);
+                    $("#TotalDoors2").html(event.TotalExtDoors);
                     
                     if (event.TotalAsbestos == 1) {
                         // 
@@ -1067,7 +1070,7 @@ $(document).ready(function () {
                     event.EstInstallerCnt + "\">" +
                     (event.TotalWindows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.TotalWindows  + "\" src=\"images/window.PNG\" />" : "") +
                     (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Patio Doors: " + event.TotalDoors + "\" src=\"images/patiodoor.PNG\" />" : "") + "&nbsp;" +
-                    (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Ext Doors: " + event.TotalDoors + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
+                    (event.TotalExtDoors != "0" ? "&nbsp;<img title=\"# of Codel Doors: " + event.TotalExtDoors + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
                     (event.TotalWoodDropOff == 1 ? "&nbsp;<img src=\"images/delivery.PNG\" />" : "") +
                     //(event.TotalAsbestos == 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
                     ((event.TotalAsbestos == 1) || (event.LeadPaint=='Yes') ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
@@ -1236,6 +1239,7 @@ $(document).ready(function () {
                                 else {
                                     totals[i].windows += eventWODict[j]["Windows"];
                                     totals[i].doors += eventWODict[j]["Doors"];
+                                    totals[i].ExtDoors += eventWODict[j]["ExtDoors"];
                                     totals[i].SalesAmmount += eventWODict[j]["SalesAmmount"];
                                     totals[i].TotalAsbestos += eventWODict[j]["TotalAsbestos"];
                                     totals[i].TotalWoodDropOff += eventWODict[j]["TotalWoodDropOff"];
@@ -1248,7 +1252,11 @@ $(document).ready(function () {
 
                                     totals[i].subinstallationwindowLBRMIN += eventWODict[j]["subinstallationwindowLBRMIN"];
                                     totals[i].subInstallationPatioDoorLBRMin += eventWODict[j]["subInstallationPatioDoorLBRMin"];
+                                    totals[i].subExtDoorLBRMIN += eventWODict[j]["subExtDoorLBRMIN"];
                                     totals[i].subTotalInstallationLBRMin += eventWODict[j]["subTotalInstallationLBRMin"];
+
+                                    totals[i].SidingLBRBudget += eventWODict[j]["SidingLBRBudget"];
+                                    totals[i].SidingLBRMin += eventWODict[j]["SidingLBRMin"];
 
                                     if (eventWODict[j]["LeadPaint"] == "Yes") {
                                         totals[i].TotalLeadPaint++;
@@ -1320,7 +1328,8 @@ function SetDayValue(key, dayTotals) {
     if (debug) console.log("SetDayValue", key, "added", "date:", dayTotals.date, "data:", dayTotals);
     if (displayType == "Installation") {
      
-        SetData('Codel-Doors', dayTotals.day, parseFloat(0).toFixed(2));
+        SetData('Codel-Doors', dayTotals.day, parseFloat(dayTotals.ExtDoors).toFixed(2));
+       
         SetData('Patio-Doors', dayTotals.day, parseFloat(dayTotals.doors).toFixed(2));
         SetData('Installation-Min', dayTotals.day, parseFloat(0).toFixed(2));
         SetData('Wood-DropOff-Jobs', dayTotals.day, dayTotals.TotalWoodDropOff);
@@ -1333,8 +1342,11 @@ function SetDayValue(key, dayTotals) {
 
         SetData('Window-LBR', dayTotals.day, parseFloat(dayTotals.subinstallationwindowLBRMIN).toFixed(2)); 
         SetData('Patio-Door-LBR', dayTotals.day, parseFloat(dayTotals.subInstallationPatioDoorLBRMin).toFixed(2));
-        SetData('EXT-Door-LB', dayTotals.day,0);
+        SetData('Codel-Door-LBR', dayTotals.day, parseFloat(dayTotals.subExtDoorLBRMIN).toFixed(2));
         SetData('Total-LBR', dayTotals.day, parseFloat(dayTotals.subTotalInstallationLBRMin).toFixed(2));
+
+        SetData('SidingLBRBudget', dayTotals.day, parseFloat(dayTotals.SidingLBRBudget).toFixed(2));
+        SetData('SidingLBRMin', dayTotals.day, parseFloat(dayTotals.SidingLBRMin).toFixed(2));
     }
     else {
         var maxTime = parseInt(FindByValue("max", dayTotals.date).Value);
