@@ -1754,9 +1754,20 @@ function GetCalledLog(workOrder) {
 
             if (data.GetCalledLogResult.length > 0) {
                
-                $("#DateCalled").html(new Date(GetDatefromMoment(data.GetCalledLogResult[0].DateCalled)).toLocaleDateString('en-US'));
-                $("#CalledMessage").html(data.GetCalledLogResult[0].CalledMessage);
-                $("#CalledLogNotes").html(data.GetCalledLogResult[0].Notes3);
+                //$("#DateCalled").html(new Date(GetDatefromMoment(data.GetCalledLogResult[0].DateCalled)).toLocaleDateString('en-US'));
+                //$("#CalledMessage").html(data.GetCalledLogResult[0].CalledMessage);
+                //$("#CalledLogNotes").html(data.GetCalledLogResult[0].Notes3);
+
+                $("#dataTableCalledLog").append("<tr>  <th style = 'text-align:center;' > Date Called</th ><th style='text-align:center;'> Called Message</th > <th style = 'text-align:center;' > Notes</th >");
+              
+                for (var i = 0; i < data.GetCalledLogResult.length; i++) {
+                    $("#dataTableCalledLog").append("<tr><td>" +
+                        new Date(GetDatefromMoment(data.GetCalledLogResult[i].DateCalled)).toLocaleDateString('en-US') + "</td> <td>" +
+                        data.GetCalledLogResult[i].CalledMessage + "</td> <td>" +
+                     
+                        data.GetCalledLogResult[i].Notes3 + "</td></tr>");
+                }
+
               //  $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
                 //$("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
 

@@ -576,12 +576,9 @@
 
                                 </div>
                                  <div role="tabpanel" class="tab-pane " id="CalledLogTab">
-                                   <div id="CalledLogContent" style="width: 600px; margin-left: 20px; padding-left: 100px; text-align:left;">
-                                        <br/>
-                                        <br/>
-                                        <b>Date Called: </b><span id="DateCalled"></span><br/> <br/>
-                                          <b>Called Message: </b><span id="CalledMessage"></span><br/><br/>
-                                          <b>Notes: </b><span id="CalledLogNotes"></span>
+                                     <br/>
+                                    <div style="overflow: auto; height: 600px;">
+                                        <table id="dataTableCalledLog" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
 
                                 </div>
