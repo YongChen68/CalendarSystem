@@ -993,6 +993,31 @@ where WorkOrderNumber = '{0}' ", this.workOrderNumber);
             return SQL;
         }
 
+
+        private string GetCalledLogSQL()
+        {
+            string SQL = string.Format(@"SELECT  [DateCalled]
+      ,[CalledMessage]
+      ,[Notes3]
+      ,[ParentRecordId]
+      ,[DetailRecordId]
+  FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_CallLog] cl
+
+    inner join HomeInstallations i on  i.RecordId=cl.ParentRecordId
+where WorkOrderNumber = '{0}' ", this.workOrderNumber);
+            return SQL;
+        }
+
+        public List<CalledLog> GetCalledLog()
+        {
+            string SQL = GetCalledLogSQL();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("WorkOrderNumber", this.workOrderNumber));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.CalledLog>(SQL, pars.ToArray());
+        }
+
         List<InstallationEvent> IGetter.GetInstallationDateByWOForReturnedJob(string wO)
         {
             throw new NotImplementedException();

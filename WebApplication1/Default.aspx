@@ -568,16 +568,19 @@
                                 </div>
 
                                 <div role="tabpanel" class="tab-pane " id="JobAnalysisTab">
-                                    <div>
-                                        <b>Total LBR Mins: </b><span id="TotalLBRMin"></span>
+                                     <div id="LBRContent" style="width: 600px; margin-left: 20px; padding-left: 100px;  text-align:left;"">
+                                        <br/>
+                                        <br/>
+                                         <b>Total LBR Mins: </b><span id="TotalLBRMin"></span>
                                     </div>
 
                                 </div>
                                  <div role="tabpanel" class="tab-pane " id="CalledLogTab">
-                                    <div>
-                                        <b>Date Called: </b><span id="DateCalled"></span>
-                                          <b>Called Message: </b><span id="CalledMessage"></span>
-                                          <b>Called By: </b><span id="CalledBy"></span>
+                                   <div id="CalledLogContent" style="width: 600px; margin-left: 20px; padding-left: 100px; text-align:left;">
+                                        <br/>
+                                        <br/>
+                                        <b>Date Called: </b><span id="DateCalled"></span><br/> <br/>
+                                          <b>Called Message: </b><span id="CalledMessage"></span><br/><br/>
                                           <b>Notes: </b><span id="CalledLogNotes"></span>
                                     </div>
 

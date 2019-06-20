@@ -995,6 +995,7 @@ $(document).ready(function () {
                    // var ss = GetNonReturnedJobDates(event.WorkOrderNumber);
                     GetProducts(event.WorkOrderNumber);
                     GetInstallers(event.WorkOrderNumber);
+                    GetCalledLog(event.WorkOrderNumber);
                    // GetJobAnalysys(event.WorkOrderNumber);
                     $("#TotalLBRMin").html(event.TotalInstallationLBRMin);
 
@@ -1732,6 +1733,33 @@ function GetInstallers(workOrder) {
                 $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
                 $("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
                
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
+
+function GetCalledLog(workOrder) {
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetCalledLog?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.CalledLog:");
+
+
+            if (data.GetCalledLogResult.length > 0) {
+               
+                $("#DateCalled").html(new Date(GetDatefromMoment(data.GetCalledLogResult[0].DateCalled)).toLocaleDateString('en-US'));
+                $("#CalledMessage").html(data.GetCalledLogResult[0].CalledMessage);
+                $("#CalledLogNotes").html(data.GetCalledLogResult[0].Notes3);
+              //  $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
+                //$("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
+
             }
 
         }, error: function (error) {

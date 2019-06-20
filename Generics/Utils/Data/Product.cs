@@ -36,7 +36,21 @@ namespace Generics.Utils
 
         [DataMember]
         public string CrewNames { get; set; }
+      
+    }
 
-       
+    public class CalledLog
+    {
+        [DataMember]
+        public DateTime DateCalled { get; set; }
+
+        [DataMember]
+        public string CalledMessage { get; set; }
+
+
+        [DataMember]
+        public string Notes3  { get; set; }
+
+
     }
 }
