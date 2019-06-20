@@ -3674,8 +3674,9 @@
                         RenderDayRow('Patio-Door-LBR', dayIDs[cell.start.day()]) +
                         RenderDayRow('Codel-Door-LBR', dayIDs[cell.start.day()]) +
                         RenderDayRow('Total-LBR', dayIDs[cell.start.day()]) +
-                        RenderDayRow('SidingLBRBudget', dayIDs[cell.start.day()]) +
-                        RenderDayRow('SidingLBRMin', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Siding-LBRBudget', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Siding-LBRMin', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Siding-SQF', dayIDs[cell.start.day()]) +
                         '</tbody>';
 
                 }
@@ -3732,8 +3733,9 @@
                         RenderWeekRow('Patio-Door-LBR') +
                         RenderWeekRow('Codel-Door-LBR') +
                         RenderWeekRow('Total-LBR') +
-                        RenderWeekRow('SidingLBRBudget') +
-                        RenderWeekRow('SidingLBRMin') +
+                        RenderWeekRow('Siding-LBRBudget') +
+                        RenderWeekRow('Siding-LBRMin') +
+                        RenderWeekRow('Siding-SQF') +
 
                         '</tbody>';
                 }

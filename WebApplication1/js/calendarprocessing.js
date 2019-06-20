@@ -255,7 +255,7 @@ function GetBlankDayData(day) {
             day: dayName, date: installationDay, doors: 0, windows: 0, ExtDoors:0,
             SalesAmmount: 0, TotalAsbestos: 0, TotalWoodDropOff: 0, TotalHighRisk: 0, TotalLeadPaint: 0, WOCount: 0, installationwindowLBRMIN: 0, TotalInstallationLBRMin: 0, InstallationDoorLBRMin: 0,
             InstallationPatioDoorLBRMin: 0, subinstallationwindowLBRMIN: 0, subInstallationPatioDoorLBRMin: 0, subExtDoorLBRMIN: 0, subTotalInstallationLBRMin: 0,
-            SidingLBRBudget: 0, SidingLBRMin: 0
+            SidingLBRBudget: 0, SidingLBRMin: 0, SidingSQF: 0
         };
     }
     else {
@@ -1257,6 +1257,7 @@ $(document).ready(function () {
 
                                     totals[i].SidingLBRBudget += eventWODict[j]["SidingLBRBudget"];
                                     totals[i].SidingLBRMin += eventWODict[j]["SidingLBRMin"];
+                                    totals[i].SidingSQF += eventWODict[j]["SidingSQF"];
 
                                     if (eventWODict[j]["LeadPaint"] == "Yes") {
                                         totals[i].TotalLeadPaint++;
@@ -1345,8 +1346,9 @@ function SetDayValue(key, dayTotals) {
         SetData('Codel-Door-LBR', dayTotals.day, parseFloat(dayTotals.subExtDoorLBRMIN).toFixed(2));
         SetData('Total-LBR', dayTotals.day, parseFloat(dayTotals.subTotalInstallationLBRMin).toFixed(2));
 
-        SetData('SidingLBRBudget', dayTotals.day, parseFloat(dayTotals.SidingLBRBudget).toFixed(2));
-        SetData('SidingLBRMin', dayTotals.day, parseFloat(dayTotals.SidingLBRMin).toFixed(2));
+        SetData('Siding-LBRBudget', dayTotals.day, parseFloat(dayTotals.SidingLBRBudget).toFixed(2));
+        SetData('Siding-LBRMin', dayTotals.day, parseFloat(dayTotals.SidingLBRMin).toFixed(2));
+        SetData('Siding-SQF', dayTotals.day, parseFloat(dayTotals.SidingSQF).toFixed(2));
     }
     else {
         var maxTime = parseInt(FindByValue("max", dayTotals.date).Value);

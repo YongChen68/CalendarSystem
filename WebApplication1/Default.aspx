@@ -347,6 +347,10 @@
                                     <a href="#JobAnalysisTab" aria-controls="JobAnalysisTab" role="tab" data-toggle="tab">JOB ANALYSIS</a>
 
                                 </li>
+                                <li role="presentation">
+                                    <a href="#CalledLogTab" aria-controls="CalledLogTab" role="tab" data-toggle="tab">Called Log</a>
+
+                                </li>
 
                             </ul>
                             <!-- Tab panes -->
@@ -386,7 +390,7 @@
                                         <div><b>Total Patio Doors: </b><span id="TotalDoors1"></span></div>
                                         <br>
 
-                                          <div><b>Total Codel Doors: </b><span id="TotalDoors2"></span></div>
+                                        <div><b>Total Codel Doors: </b><span id="TotalDoors2"></span></div>
                                         <br>
                                         <div><b>Sales Amount: </b><span id="SalesAmmount"></span></div>
 
@@ -565,7 +569,16 @@
 
                                 <div role="tabpanel" class="tab-pane " id="JobAnalysisTab">
                                     <div>
-                                           <b>Total LBR Mins: </b><span id="TotalLBRMin"></span>
+                                        <b>Total LBR Mins: </b><span id="TotalLBRMin"></span>
+                                    </div>
+
+                                </div>
+                                 <div role="tabpanel" class="tab-pane " id="CalledLogTab">
+                                    <div>
+                                        <b>Date Called: </b><span id="DateCalled"></span>
+                                          <b>Called Message: </b><span id="CalledMessage"></span>
+                                          <b>Called By: </b><span id="CalledBy"></span>
+                                          <b>Notes: </b><span id="CalledLogNotes"></span>
                                     </div>
 
                                 </div>
