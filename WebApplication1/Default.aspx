@@ -351,7 +351,10 @@
                                     <a href="#CalledLogTab" aria-controls="CalledLogTab" role="tab" data-toggle="tab">Called Log</a>
 
                                 </li>
+                                 <li role="presentation">
+                                    <a href="#WOPictureTab" aria-controls="WOPictureTab" role="tab" data-toggle="tab">Photo Gallery</a>
 
+                                </li>
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content">
@@ -579,6 +582,15 @@
                                      <br/>
                                     <div style="overflow: auto; height: 600px;">
                                         <table id="dataTableCalledLog" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                    </div>
+
+                                </div>
+
+                                   <div role="tabpanel" class="tab-pane " id="WOPictureTab">
+                                     <br/>
+                                    <div style="overflow: auto; height: 600px;">
+                                        <table id="dataTableWOPicture" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                        <img id="ItemPreview" src="" />
                                     </div>
 
                                 </div>

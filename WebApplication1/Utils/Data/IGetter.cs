@@ -19,6 +19,7 @@ namespace CalendarSystem.Utils.Data
         List<Generics.Utils.Product> GetProducts();
         List<Generics.Utils.Installer> GetInstallers();
         List<Generics.Utils.CalledLog> GetCalledLog();
+        List<Generics.Utils.WOPicture> GetWOPicture();
         List<Generics.Utils.Data.InstallationEvent> GetInstallationDateByWOForReturnedJob(string wO);
         List<Generics.Utils.Data.InstallationEvent> GetInstallationDateByWOForNonReturnedJob(string wO);
     }

@@ -210,6 +210,11 @@ and p.CurrentStateName <> 'Duplicated Work Order' and p.CurrentStateName <> 'Com
         {
             throw new NotImplementedException();
         }
+        public List<WOPicture> GetWOPicture()
+        {
+            throw new NotImplementedException();
+        }
+
 
         public List<InstallationEvent> GetInstallationDateByWOForReturnedJob(string wo)
         {

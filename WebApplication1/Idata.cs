@@ -100,6 +100,14 @@ namespace CalendarSystem
     BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<CalledLog> GetCalledLog(string workOrderNumber);
 
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetWOPicture?workOrderNumber={workOrderNumber}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<WOPicture> GetWOPicture(string workOrderNumber);
+
+
 
         [OperationContract]
         [WebInvoke(Method = "GET",

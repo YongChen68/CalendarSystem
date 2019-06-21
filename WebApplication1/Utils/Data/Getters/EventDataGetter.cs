@@ -1018,6 +1018,30 @@ where WorkOrderNumber = '{0}' ", this.workOrderNumber);
             return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.CalledLog>(SQL, pars.ToArray());
         }
 
+
+        public List<WOPicture> GetWOPicture()
+        {
+            string SQL = GetWOPictureSQL();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("WorkOrderNumber", this.workOrderNumber));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.WOPicture>(SQL, pars.ToArray());
+        }
+
+        private string GetWOPictureSQL()
+        {
+            string SQL = string.Format(@"SELECT [input125] as PictureName
+      ,[Picture]
+      ,[ParentRecordId]
+      ,[DetailRecordId],WorkOrderNumber,tb.[Picture_thumbnail2] as pic
+  FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_TakePicture] tp
+  inner join  HomeInstallations i on  i.RecordId=tp.ParentRecordId
+  inner join [HomeInstallations_TakePicture__binaries] tb on tb.recordid = tp.DetailRecordId
+where WorkOrderNumber = '{0}' ", this.workOrderNumber);
+            return SQL;
+        }
+
         List<InstallationEvent> IGetter.GetInstallationDateByWOForReturnedJob(string wO)
         {
             throw new NotImplementedException();

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
@@ -358,6 +359,52 @@ namespace CalendarSystem
             }
             return retValue;
         }
+
+        List<WOPicture> Idata.GetWOPicture(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetWOPicture({0})", workOrderNumber);
+            List<WOPicture> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetWOPicture();
+                Image img,image2 ;
+                //foreach(WOPicture pic in retValue)
+                //{
+                 
+                //}
+
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetWOPictureGetWOPicture() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+        //string Idata.GetWOPictureString(byte[] PicByteArray)
+        //{
+        //    Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetWOPictureString({0})", PicByteArray);
+        //    List<WOPicture> retValue = null;
+        //    try
+        //    {
+        //        Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+        //        retValue = getter.GetWOPicture();
+        //        Image img, image2;
+        //        //foreach(WOPicture pic in retValue)
+        //        //{
+
+        //        //}
+
+        //        Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetWOPictureGetWOPicture() = {0}", retValue.Count.ToString());
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+        //    }
+        //    return retValue;
+        //}
 
         List<InstallationEvent> Idata.GetInstallationDateByWOForReturnedJob(string workOrderNumber)
         {

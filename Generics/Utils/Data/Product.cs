@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
+using static System.Net.Mime.MediaTypeNames;
+
 namespace Generics.Utils
 {
     public class Product
@@ -51,6 +53,37 @@ namespace Generics.Utils
         [DataMember]
         public string Notes3  { get; set; }
 
+
+    }
+
+    public class WOPicture
+    {
+        [DataMember]
+        public string PictureName { get; set; }
+
+        [DataMember]
+        public byte[] pic {
+            get; set;
+        }
+
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public string picString
+        {
+            get
+            {
+                if (pic != null)
+                {
+                     return "<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(pic) + "\">";
+                
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set {  }
+        }
 
     }
 }

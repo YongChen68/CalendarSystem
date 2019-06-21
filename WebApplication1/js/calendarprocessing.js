@@ -996,6 +996,7 @@ $(document).ready(function () {
                     GetProducts(event.WorkOrderNumber);
                     GetInstallers(event.WorkOrderNumber);
                     GetCalledLog(event.WorkOrderNumber);
+                    GetWOPicture(event.WorkOrderNumber);
                    // GetJobAnalysys(event.WorkOrderNumber);
                     $("#TotalLBRMin").html(event.TotalInstallationLBRMin);
 
@@ -1347,7 +1348,8 @@ function SetDayValue(key, dayTotals) {
         SetData('Codel-Door-LBR', dayTotals.day, parseFloat(dayTotals.subExtDoorLBRMIN).toFixed(2));
         SetData('Total-LBR', dayTotals.day, parseFloat(dayTotals.subTotalInstallationLBRMin).toFixed(2));
 
-        SetData('Siding-LBRBudget', dayTotals.day, parseFloat(dayTotals.SidingLBRBudget).toFixed(2));
+      // SetData('Siding-LBRBudget', dayTotals.day, parseFloat(dayTotals.SidingLBRBudget).toFixed(2));
+        SetData('Siding-LBRBudget', dayTotals.day, dayTotals.SidingLBRBudget.formatMoney(2, "$", ",", "."));
         SetData('Siding-LBRMin', dayTotals.day, parseFloat(dayTotals.SidingLBRMin).toFixed(2));
         SetData('Siding-SQF', dayTotals.day, parseFloat(dayTotals.SidingSQF).toFixed(2));
     }
@@ -1751,7 +1753,7 @@ function GetCalledLog(workOrder) {
         success: function (data) {
             if (debug) console.log("events.success", "data.CalledLog:");
 
-
+            $("#dataTableCalledLog tr").remove(); 
             if (data.GetCalledLogResult.length > 0) {
                
                 //$("#DateCalled").html(new Date(GetDatefromMoment(data.GetCalledLogResult[0].DateCalled)).toLocaleDateString('en-US'));
@@ -1779,6 +1781,60 @@ function GetCalledLog(workOrder) {
         }
     });
 
+}
+
+function GetWOPicture(workOrder) {
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetWOPicture?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.CalledLog:");
+
+            $("#dataTableWOPicture tr").remove(); 
+            if (data.GetWOPictureResult.length > 0) {
+               $("#dataTableWOPicture").append("<tr>  <th style = 'text-align:center;' > Picture Name</th ><th style='text-align:center;'> Picture</th > ");
+
+                for (var i = 0; i < data.GetWOPictureResult.length; i++) {
+                    $("#dataTableWOPicture").append("<tr><td>" +
+                        data.GetWOPictureResult[i].PictureName + "</td> <td> <image " +
+
+                     //   $('#item').attr('src', `data:image/jpg;base64,' + hexToBase64{data.GetWOPictureResult[0].pic)  + "</image></td></tr>");
+                    //  " document.getElementById('item').src = '" + data.GetWOPictureResult[0].picString + "'</image></td></tr>");
+                       data.GetWOPictureResult[i].picString + "'</image></td></tr>");
+
+                 //   $("#dataTableWOPicture").append("<tr><td><image id='item'" +
+                //       $('#item').attr('src', `data:image/jpg;base64,' + hexToBase64{data.GetWOPictureResult[0].pic)  + "</image></td></tr>");
+                       //(data.GetCalledLogResult[i].DateCalled)).toLocaleDateString('en-US') + "</td> <td>" +
+                       // data.GetCalledLogResult[i].CalledMessage + "</td> <td>" +
+
+                       // data.GetCalledLogResult[i].Notes3 + "</td></tr>");
+                }
+
+                //  $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
+                //$("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
+
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
+
+
+function toHexString(byteArray) {
+    return Array.prototype.map.call(byteArray, function (byte) {
+        return ('0' + (byte & 0xFF).toString(16)).slice(-2);
+    }).join('');
+}
+
+function hexToBase64(hexstring) {
+    return btoa(hexstring.match(/\w{2}/g).map(function (a) {
+        return String.fromCharCode(parseInt(a, 16));
+    }).join(""));
 }
 
 function GetReturnedJobDates(workOrder) {
