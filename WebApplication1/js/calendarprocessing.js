@@ -729,8 +729,9 @@ $(document).ready(function () {
                             item.allDay = true;
                          //   item.editable = (item.ReturnedJob == 1) ? false : true;
 
-                            item.editable = (readonly == "True") ? false : true;
-                            item.editable = (item.HolidayName != null) ? false : true;
+                           
+                            item.editable =( (item.HolidayName != null || readonly == "True") )? false : true;
+                          //  item.editable = (readonly == "True") ? false : true;
 
                             eventWODict.push(item);
 
