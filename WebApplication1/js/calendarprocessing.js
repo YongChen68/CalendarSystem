@@ -1072,7 +1072,7 @@ $(document).ready(function () {
                 var ret ="<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
                     event.EstInstallerCnt + "\">" +
                     (event.TotalWindows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.TotalWindows  + "\" src=\"images/window.PNG\" />" : "") +
-                    (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Patio Doors: " + event.TotalDoors + "\" src=\"images/patiodoor.PNG\" />" : "") + "&nbsp;" +
+                    (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Patio Doors: " + event.TotalDoors + "\" src=\"images/window.PNG\" />" : "") + "&nbsp;" +
                     (event.TotalExtDoors != "0" ? "&nbsp;<img title=\"# of Codel Doors: " + event.TotalExtDoors + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
                     (event.TotalWoodDropOff == 1 ? "&nbsp;<img src=\"images/delivery.PNG\" />" : "") +
                     //(event.TotalAsbestos == 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
