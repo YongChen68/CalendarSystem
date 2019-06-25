@@ -624,7 +624,8 @@
                     <input id="typePaint" class="typeButton" type="submit" name="type" value="Paint" onclick="ChangeType('Paint'); return false;"><br />
                     <input id="typeShipping" class="typeButton" type="submit" name="type" value="Shipping" onclick="ChangeType('Shipping'); return false;"><br />
                     <input id="typeCustomer" class="typeButton" type="submit" name="type" value="Customer" onclick="ChangeType('Customer'); return false;"><br />
-                    <input id="typeInstallation" class="typeButton" type="submit" name="type" value="Installation" onclick="ChangeType('Installation'); return false;">
+                    <input id="typeInstallation" class="typeButton" type="submit" name="type" value="Installation" onclick="ChangeType('Installation'); return false;"><br />
+                    <input id="typeRemeasure" class="typeButton" type="submit" name="type" value="Remeasure" onclick="ChangeType('Remeasure'); return false;">
                 </p>
             </div>
         </div>

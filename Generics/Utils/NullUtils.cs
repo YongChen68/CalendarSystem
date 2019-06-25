@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Generics.Utils
 {
-    public enum ContentType { Window, Door, Paint, Shipping, Customer, Installation };
+    public enum ContentType { Window, Door, Paint, Shipping, Customer, Installation, Remeasure };
 
     public static class NullUtils
     {

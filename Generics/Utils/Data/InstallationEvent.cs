@@ -167,6 +167,23 @@ namespace Generics.Utils.Data
         {
             get; set;
         }
+        [DataMember]
+        public DateTime? StartScheduleDate
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public DateTime? EndScheduleDate
+        {
+            get; set;
+        }
+
+        //[DataMember]
+        //public bool HasReturnedJob
+        //{
+        //    get; set;
+        //}
 
         //[DataMember]
         //public string Other

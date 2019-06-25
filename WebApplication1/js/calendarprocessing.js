@@ -835,14 +835,7 @@ $(document).ready(function () {
                     $("#postalCode").html(event.PostCode);
                     $("#workOrder").html(event.WorkOrderNumber);
                     $("#WorkOrderTitle").html(event.WorkOrderNumber);
-                    $("#InstallScheduledStartDate").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
-
-                    if (event.end == null) {
-                        $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
-                    }
-                    else {
-                        $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(event.end + 24 * 60 * 60000)).toLocaleDateString('en-US'));
-                    }
+                    
                                   
                     $("#homePhone").html(event.HomePhoneNumber);
                     $("#workPhone").html(event.WorkPhoneNumber);
@@ -918,12 +911,23 @@ $(document).ready(function () {
                        //$("#ReturnedJob").hide();
                     $("#from_date").val('');
                     $("#end_date").val('');
+              
+
                     if (event.ReturnedJob == 1) {
                         // $("#ReturnedJob").show(); 
                         $("#from_date").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
                         $("#end_date").val(new Date(GetDatefromMoment(event.end + 24 * 60 * 60000)).toLocaleDateString('en-US'));
-                        $("#InstallScheduledStartDate").prop("disabled", true);
-                        $("#InstallScheduledEndDate").prop("disabled", true);
+                        if (event.end == null) {
+                            $("#end_date").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+                        }
+
+                     
+                            $("#InstallScheduledStartDate").prop("disabled", true);
+                            $("#InstallScheduledEndDate").prop("disabled", true);
+                        $("#InstallScheduledStartDate").val(new Date(GetDatefromMoment(event.StartScheduleDate + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+                        $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(event.EndScheduleDate + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+
+                     
                         $("#NumOfInstallers").prop("disabled", true);
 
                         $("#Asbestos-JobsYes").prop("disabled", true);
@@ -950,8 +954,29 @@ $(document).ready(function () {
 
                     }
                     else {
+               
+                        $("#InstallScheduledStartDate").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+
+                    if (event.end == null) {
+                        $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+                    }
+                    else {
+                        $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(event.end + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+                    }
                         $("#InstallScheduledStartDate").prop("disabled", false);
                         $("#InstallScheduledEndDate").prop("disabled", false);
+
+                        if (event.StartScheduleDate != null) {
+                            $("#from_date").prop("disabled", true);
+                            $("#end_date").prop("disabled", true);
+                            $("#from_date").val(new Date(GetDatefromMoment(event.StartScheduleDate + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+                            $("#end_date").val(new Date(GetDatefromMoment(event.EndScheduleDate + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+
+                        }
+                        else {
+                            $("#from_date").prop("disabled", false);
+                            $("#end_date").prop("disabled", false);
+                        }
                         $("#NumOfInstallers").prop("disabled", false);
 
                         $("#Asbestos-JobsYes").prop("disabled", false);
@@ -969,8 +994,7 @@ $(document).ready(function () {
                         document.getElementsByName('saturday')[0].disabled = false;
                         document.getElementsByName('sunday')[0].disabled = false;
 
-                        $("#from_date").prop("disabled", true);
-                        $("#end_date").prop("disabled", true);
+                      
 
                     //    $("#from_date").val('');
                     //    $("#end_date").val('');

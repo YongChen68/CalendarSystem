@@ -19,6 +19,7 @@ namespace CalendarSystem.Utils
                 case "Paint": return ContentType.Paint;
                 case "Shipping": return ContentType.Shipping;
                 case "Installation": return ContentType.Installation;
+                case "Remeasure": return ContentType.Remeasure;
                 default: throw new NotSupportedException(type);
             }
         }

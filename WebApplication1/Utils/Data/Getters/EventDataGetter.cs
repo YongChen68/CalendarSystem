@@ -294,7 +294,7 @@ and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or
 (PlannedInstallWeek >= 1 and PlannedInstallWeek <= 7)) and RecordId not in (select ParentRecordId from #dates d group by ParentRecordId) and 
 Branch in ({2})
 
-select WorkOrderNumber, LastName,FirstName, City,PostCode, Email,SalesRep,LeadPaint,ReturnedJob,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,
+select WorkOrderNumber, LastName,FirstName, City,PostCode, Email,SalesRep,LeadPaint,ReturnedJob,StartScheduleDate,EndScheduleDate,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,
 TotalDoors,TotalWindows,Windows,Doors,ExtDoors,TotalExtDoors,
 DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, 
 installationwindowLBRMIN,InstallationPatioDoorLBRMin,InstallationDoorLBRMin,TotalInstallationLBRMin,
@@ -303,6 +303,7 @@ InstallationDoorLBRMin/detailrecordCount as subExtDoorLBRMIN,
 InstallationPatioDoorLBRMin/detailrecordCount as subInstallationPatioDoorLBRMin,
 TotalInstallationLBRMin/detailrecordCount as subTotalInstallationLBRMin,
 SidingLBRBudget,SidingLBRMin,SidingSQF,
+
 jobtype,CurrentStateName,null as Hours, null as hours, HomePhoneNumber, CellPhone, WorkPhoneNumber, 
 
 EstInstallerCnt, StreetAddress, ScheduledDate, case when ScheduledDate is null
@@ -315,6 +316,8 @@ ParentRecordId,detailrecordCount,saturday, sunday, jobtype,ActionItemId as id,i.
 i.WorkOrderNumber, i.LastName, i.FirstName,i.City, i.PostalCode as PostCode,i.Email,i.Rep_display as SalesRep,i.LeadPaint ,
 i.CurrentStateName,PlannedInstallWeek,
 SidingLBRBudget,SidingLBRMin,SidingSQF,
+dbo.fGetStartScheduleDate(ReturnedJob,RecordId) as StartScheduleDate,
+dbo.fGetEndScheduleDate(ReturnedJob,RecordId) as EndScheduleDate,
 round(i.Windows/detailrecordCount,2) as Windows, round(i. PatioDoors/detailrecordCount,2) as Doors,round(i. ExtDoors/detailrecordCount,2) as ExtDoors,
 i.Windows as TotalWindows, i.PatioDoors as TotalDoors,  i.ExtDoors as TotalExtDoors,
 
@@ -430,6 +433,9 @@ drop table #installs
 
                 newEvent.ExtDoors = eventx.ExtDoors;
                 newEvent.TotalExtDoors = eventx.TotalExtDoors;
+
+                newEvent.StartScheduleDate = eventx.StartScheduleDate;
+                newEvent.EndScheduleDate = eventx.EndScheduleDate;
 
 
                 // total = GetTotalByWO(eventx.WorkOrderNumber);
@@ -595,6 +601,9 @@ drop table #installs
 
                 newEvent.ExtDoors = returnedEvent.ExtDoors;
                 newEvent.TotalExtDoors = returnedEvent.TotalExtDoors;
+
+                newEvent.StartScheduleDate = returnedEvent.StartScheduleDate;
+                newEvent.EndScheduleDate = returnedEvent.EndScheduleDate;
 
 
                 newEvent.title = returnedEvent.title;
