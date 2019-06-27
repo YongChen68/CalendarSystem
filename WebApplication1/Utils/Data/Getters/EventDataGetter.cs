@@ -355,7 +355,7 @@ drop table #installs
         {
             string SQL = GetInstallationSQL();
 
-           
+
             int count, total, diff;
             List<InstallationEvent> installationEventList = new List<InstallationEvent>();
 
@@ -382,7 +382,7 @@ drop table #installs
                 newEvent.Branch = eventx.Branch;
                 newEvent.CellPhone = eventx.CellPhone;
                 newEvent.City = eventx.City;
-             //   newEvent.CrewNames = eventx.CrewNames;
+                //   newEvent.CrewNames = eventx.CrewNames;
                 newEvent.CurrentStateName = eventx.CurrentStateName;
                 //newEvent.DoorState = eventx.DoorState;
 
@@ -404,10 +404,10 @@ drop table #installs
                 newEvent.id = eventx.id;
                 newEvent.LastName = eventx.LastName;
                 newEvent.FirstName = eventx.FirstName;
-              //  newEvent.Other = eventx.Other;
-          //      newEvent.OtherState = eventx.OtherState;
+                //  newEvent.Other = eventx.Other;
+                //      newEvent.OtherState = eventx.OtherState;
 
-                
+
                 newEvent.ScheduledDate = eventx.ScheduledDate;
 
 
@@ -444,7 +444,7 @@ drop table #installs
                 //  total = GetInstallationEventsByWO(eventx.WorkOrderNumber).Count();
                 total = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber);
 
-                if ((eventx.Saturday=="Yes") && (eventx.Sunday=="Yes"))
+                if ((eventx.Saturday == "Yes") && (eventx.Sunday == "Yes"))
                 {
                     newEvent.Windows = eventx.Windows;
                     newEvent.Doors = eventx.Doors;
@@ -452,9 +452,9 @@ drop table #installs
                 }
                 else if ((eventx.Saturday == "No") && (eventx.Sunday == "No"))
                 {
-                  
-                    count = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber 
-                    && bt.ScheduledDate.DayOfWeek != DayOfWeek.Sunday && bt.ScheduledDate.DayOfWeek != DayOfWeek.Saturday && bt.ReturnedJob!=1);
+
+                    count = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber
+                    && bt.ScheduledDate.DayOfWeek != DayOfWeek.Sunday && bt.ScheduledDate.DayOfWeek != DayOfWeek.Saturday && bt.ReturnedJob != 1);
                     diff = total - count;
                     if ((eventx.ScheduledDate.DayOfWeek != DayOfWeek.Sunday) &&
                                 (eventx.ScheduledDate.DayOfWeek != DayOfWeek.Saturday))
@@ -484,7 +484,7 @@ drop table #installs
                 }
                 else if ((eventx.Saturday == "Yes") && (eventx.Sunday == "No"))
                 {
-                    count = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber && 
+                    count = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber &&
                     bt.ScheduledDate.DayOfWeek == DayOfWeek.Sunday && bt.ScheduledDate.DayOfWeek != DayOfWeek.Saturday && bt.ReturnedJob != 1);
                     diff = total - count;
                     if (eventx.ScheduledDate.DayOfWeek != DayOfWeek.Sunday)
@@ -518,16 +518,16 @@ drop table #installs
                     }
 
                 }
-                
-             //  newEvent.SeniorInstaller = eventx.SeniorInstaller;
+
+                //  newEvent.SeniorInstaller = eventx.SeniorInstaller;
                 newEvent.StreetAddress = eventx.StreetAddress;
-            //    newEvent.Subtrades = eventx.Subtrades;
+                //    newEvent.Subtrades = eventx.Subtrades;
 
                 newEvent.title = eventx.title;
-          
+
                 newEvent.TotalWindows = eventx.TotalWindows;
                 newEvent.TotalDoors = eventx.TotalDoors;
-           //     newEvent.WindowState = eventx.WindowState;
+                //     newEvent.WindowState = eventx.WindowState;
                 newEvent.WorkOrderNumber = eventx.WorkOrderNumber;
                 newEvent.WorkPhoneNumber = eventx.WorkPhoneNumber;
 
@@ -536,11 +536,11 @@ drop table #installs
 
                 newEvent.ReturnedJob = eventx.ReturnedJob;
 
-                newEvent.PostCode= eventx.PostCode;
+                newEvent.PostCode = eventx.PostCode;
                 newEvent.Email = eventx.Email;
                 newEvent.SalesRep = eventx.SalesRep;
                 newEvent.LeadPaint = eventx.LeadPaint;
-               
+
                 woList.Add(eventx.WorkOrderNumber);
                 returnEventList.Add(newEvent);
 
@@ -552,10 +552,10 @@ drop table #installs
                 newEvent.Branch = returnedEvent.Branch;
                 newEvent.CellPhone = returnedEvent.CellPhone;
                 newEvent.City = returnedEvent.City;
-               // newEvent.CrewNames = returnedEvent.CrewNames;
+                // newEvent.CrewNames = returnedEvent.CrewNames;
                 newEvent.CurrentStateName = returnedEvent.CurrentStateName;
                 newEvent.Doors = returnedEvent.Doors;
-               // newEvent.DoorState = returnedEvent.DoorState;
+                // newEvent.DoorState = returnedEvent.DoorState;
 
                 newEvent.start = returnedEventList.Where(a => a.WorkOrderNumber == returnedEvent.WorkOrderNumber).Min(b => b.ScheduledDate).
                    ToString();
@@ -570,8 +570,8 @@ drop table #installs
                 newEvent.LastName = returnedEvent.LastName;
                 newEvent.FirstName = returnedEvent.FirstName;
 
-               // newEvent.Other = returnedEvent.Other;
-              //  newEvent.OtherState = returnedEvent.OtherState;
+                // newEvent.Other = returnedEvent.Other;
+                //  newEvent.OtherState = returnedEvent.OtherState;
 
                 newEvent.SalesAmmount = returnedEvent.SalesAmmount;
                 newEvent.TotalSalesAmount = returnedEvent.TotalSalesAmount;
@@ -579,9 +579,9 @@ drop table #installs
                 newEvent.TotalWoodDropOff = returnedEvent.TotalWoodDropOff;
                 newEvent.TotalHighRisk = returnedEvent.TotalHighRisk;
                 newEvent.ScheduledDate = returnedEvent.ScheduledDate;
-            //    newEvent.SeniorInstaller = returnedEvent.SeniorInstaller;
+                //    newEvent.SeniorInstaller = returnedEvent.SeniorInstaller;
                 newEvent.StreetAddress = returnedEvent.StreetAddress;
-             //   newEvent.Subtrades = returnedEvent.Subtrades;
+                //   newEvent.Subtrades = returnedEvent.Subtrades;
 
                 newEvent.installationwindowLBRMIN = returnedEvent.installationwindowLBRMIN;
                 newEvent.InstallationDoorLBRMin = returnedEvent.InstallationDoorLBRMin;
@@ -610,7 +610,7 @@ drop table #installs
                 newEvent.Windows = returnedEvent.Windows;
                 newEvent.TotalWindows = returnedEvent.TotalWindows;
                 newEvent.TotalDoors = returnedEvent.TotalDoors;
-             //   newEvent.WindowState = returnedEvent.WindowState;
+                //   newEvent.WindowState = returnedEvent.WindowState;
                 newEvent.WorkOrderNumber = returnedEvent.WorkOrderNumber;
                 newEvent.WorkPhoneNumber = returnedEvent.WorkPhoneNumber;
 
@@ -624,6 +624,199 @@ drop table #installs
                 newEvent.LeadPaint = returnedEvent.LeadPaint;
 
                 woList.Add(returnedEvent.WorkOrderNumber);
+                returnEventList.Add(newEvent);
+
+            }
+
+            return returnEventList;
+        }
+
+        private string GetRemeasureSQL()
+        {
+
+            string sPlanedCheck = @"";
+            // Create an instance of Norwegian culture
+            System.Globalization.CultureInfo Culture =
+            System.Globalization.CultureInfo.CreateSpecificCulture("ca");
+            // Get the Norwegian calendar from the culture object
+            System.Globalization.Calendar cal = Culture.Calendar;
+
+
+
+
+            if (this.endDate.Year - this.startDate.Year > 0)
+            {
+                sPlanedCheck = string.Format(@" (((PlannedInstallWeek >= {0}) and PlannedInstallWeek <= {1}) or 
+(PlannedInstallWeek >= {2} and PlannedInstallWeek <= {3}))",
+                                                    cal.GetWeekOfYear(this.startDate, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday),
+                                                    cal.GetWeekOfYear(DateTime.Parse("12/31/" + this.startDate.Year.ToString() + " 11:59:59 pm"), System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday),
+                                                    cal.GetWeekOfYear(DateTime.Parse("1/1/" + this.endDate.Year.ToString()), System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday),
+                                                    cal.GetWeekOfYear(this.endDate, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday)
+                                                   );
+            }
+            else
+            {
+                // render simple Planed installation week chack
+                sPlanedCheck = string.Format(@"PlannedInstallWeek >= {0} and PlannedInstallWeek <= {1}",
+                    cal.GetWeekOfYear(this.startDate, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday),
+                    cal.GetWeekOfYear(this.endDate, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday));
+
+
+            }
+
+
+            string SQL = string.Format(@"
+
+
+select i.* into #installs from HomeInstallations i 
+where CurrentStateName in ({3}) and Branch in ({2})  
+insert into #installs select i.* from HomeInstallations i
+where CurrentStateName not in ('Unreviewed Buffered Work', 'Buffered Work') 
+and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or 
+(PlannedInstallWeek >= 1 and PlannedInstallWeek <= 7)) and 
+Branch in ({2})
+
+select WorkOrderNumber, LastName,FirstName, City,PostCode, Email,SalesRep,LeadPaint,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,
+TotalDoors,TotalWindows,Windows,Doors,ExtDoors,TotalExtDoors,
+saturday, sunday, 
+installationwindowLBRMIN,InstallationPatioDoorLBRMin,InstallationDoorLBRMin,TotalInstallationLBRMin,
+installationwindowLBRMIN as subinstallationwindowLBRMIN,
+InstallationDoorLBRMin as subExtDoorLBRMIN,
+InstallationPatioDoorLBRMin as subInstallationPatioDoorLBRMin,
+TotalInstallationLBRMin as subTotalInstallationLBRMin,
+SidingLBRBudget,SidingLBRMin,SidingSQF,RemeasureDate,id,
+
+jobtype,CurrentStateName,null as Hours, null as hours, HomePhoneNumber, CellPhone, WorkPhoneNumber, 
+
+EstInstallerCnt, StreetAddress, PaintedProduct, Branch 
+from (
+SELECT   i.Branch_Display as Branch, i.PaintedProduct,
+installationwindowLBRMIN,InstallationPatioDoorLBRMin,InstallationDoorLBRMin,TotalInstallationLBRMin,
+i.SalesAmmount as SalesAmmount,i.SalesAmmount as TotalSalesAmount 
+,saturday, sunday, jobtype,ActionItemId as id,i.streetAddress, i.EstInstallerCnt,
+i.WorkOrderNumber, i.LastName, i.FirstName,i.City, i.PostalCode as PostCode,i.Email,i.Rep_display as SalesRep,i.LeadPaint ,
+i.CurrentStateName,PlannedInstallWeek,
+SidingLBRBudget,SidingLBRMin,SidingSQF,i.RemeasureDate,
+i.Windows as Windows,i. PatioDoors as Doors,i. ExtDoors as ExtDoors,
+i.Windows as TotalWindows, i.PatioDoors as TotalDoors,  i.ExtDoors as TotalExtDoors,
+                         
+(SELECT count(*) 
+          FROM HomeInstallations
+         WHERE WoodDropOff='Yes' and i.RecordId = RecordId) TotalWoodDropOff,
+(SELECT count(*) 
+          FROM HomeInstallations
+         WHERE Asbestos='Yes' and i.RecordId = RecordId) TotalAsbestos,
+(SELECT count(*) 
+          FROM HomeInstallations
+         WHERE HighRisk='Yes' and i.RecordId = RecordId) TotalHighRisk,
+
+ HomePhoneNumber, CellPhone, WorkPhoneNumber
+FROM         #installs AS i 
+where jobtype<>'Multi Family'
+
+and RemeasureDate >= '{0} ' and RemeasureDate <= '{1} '
+) x order by RemeasureDate, Branch
+
+drop table #installs
+--drop table #Windows
+--drop table #Doors
+--drop table #Other
+--drop table #Subtrade", this.startDate.ToShortDateString(), this.endDate.ToShortDateString(), "'" + String.Join("','", branchList) + "'", "'" + String.Join("','", stateList) + "'");
+            return SQL;
+
+        }
+
+        List<Generics.Utils.Data.RemeasureEvent> IGetter.GetRemeasureData()
+        {
+            string SQL = GetRemeasureSQL();
+
+            List<RemeasureEvent> remeasureEventList = new List<RemeasureEvent>();
+
+            //  List<InstallationEvent> returnEventList = new List<InstallationEvent>();
+            List<RemeasureEvent> returnEventList = new List<RemeasureEvent>();
+
+
+            RemeasureEvent newEvent;
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("pStart", startDate));
+            pars.Add(new System.Data.SqlClient.SqlParameter("pEnd", endDate));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            remeasureEventList = Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.Data.RemeasureEvent>(SQL, pars.ToArray());
+
+            List<string> woList = new List<string>();
+
+            foreach (RemeasureEvent eventx in remeasureEventList)
+            {
+                newEvent = new RemeasureEvent();
+                newEvent.Branch = eventx.Branch;
+                newEvent.CellPhone = eventx.CellPhone;
+                newEvent.City = eventx.City;
+                //   newEvent.CrewNames = eventx.CrewNames;
+                newEvent.CurrentStateName = eventx.CurrentStateName;
+                //newEvent.DoorState = eventx.DoorState;
+                newEvent.RemeasureDate = eventx.RemeasureDate;
+                newEvent.title = eventx.title;
+                newEvent.EstInstallerCnt = eventx.EstInstallerCnt;
+                newEvent.HomePhoneNumber = eventx.HomePhoneNumber;
+                newEvent.Hours = eventx.Hours;
+
+                newEvent.start = remeasureEventList.Where(a => a.WorkOrderNumber == eventx.WorkOrderNumber).Min(b => b.RemeasureDate).
+                   ToString();
+
+                newEvent.end = newEvent.start;
+
+                newEvent.id = eventx.id;
+
+
+                newEvent.LastName = eventx.LastName;
+                newEvent.FirstName = eventx.FirstName;
+     
+                newEvent.TotalSalesAmount = eventx.TotalSalesAmount;
+                newEvent.TotalAsbestos = eventx.TotalAsbestos;
+                newEvent.TotalWoodDropOff = eventx.TotalWoodDropOff;
+                newEvent.TotalHighRisk = eventx.TotalHighRisk;
+
+                newEvent.installationwindowLBRMIN = eventx.installationwindowLBRMIN;
+                newEvent.InstallationDoorLBRMin = eventx.InstallationDoorLBRMin;
+                newEvent.InstallationPatioDoorLBRMin = eventx.InstallationPatioDoorLBRMin;
+                newEvent.TotalInstallationLBRMin = eventx.TotalInstallationLBRMin;
+
+                newEvent.subInstallationPatioDoorLBRMin = eventx.subInstallationPatioDoorLBRMin;
+                newEvent.subinstallationwindowLBRMIN = eventx.subinstallationwindowLBRMIN;
+                newEvent.subTotalInstallationLBRMin = eventx.subTotalInstallationLBRMin;
+                newEvent.subExtDoorLBRMIN = eventx.subExtDoorLBRMIN;
+
+                newEvent.SidingLBRBudget = eventx.SidingLBRBudget;
+                newEvent.SidingLBRMin = eventx.SidingLBRMin;
+                newEvent.SidingSQF = eventx.SidingSQF;
+
+
+                newEvent.ExtDoors = eventx.ExtDoors;
+                newEvent.TotalExtDoors = eventx.TotalExtDoors;
+
+                newEvent.Windows = eventx.Windows;
+                newEvent.Doors = eventx.Doors;
+                newEvent.SalesAmmount = eventx.SalesAmmount;
+
+                //  newEvent.SeniorInstaller = eventx.SeniorInstaller;
+                newEvent.StreetAddress = eventx.StreetAddress;
+                //    newEvent.Subtrades = eventx.Subtrades;
+
+                newEvent.TotalWindows = eventx.TotalWindows;
+                newEvent.TotalDoors = eventx.TotalDoors;
+                //     newEvent.WindowState = eventx.WindowState;
+                newEvent.WorkOrderNumber = eventx.WorkOrderNumber;
+                newEvent.WorkPhoneNumber = eventx.WorkPhoneNumber;
+
+                newEvent.Saturday = eventx.Saturday;
+                newEvent.Sunday = eventx.Sunday;
+
+                newEvent.PostCode = eventx.PostCode;
+                newEvent.Email = eventx.Email;
+                newEvent.SalesRep = eventx.SalesRep;
+                newEvent.LeadPaint = eventx.LeadPaint;
+
+                woList.Add(eventx.WorkOrderNumber);
                 returnEventList.Add(newEvent);
 
             }

@@ -60,8 +60,35 @@ namespace FlowfinityConnectionHelper
 
         }
 
-      
 
+        bool Generics.RecordUpdate.IUpdateHelper.UpdateRecord(Generics.Utils.ContentType type, Generics.Utils.ImproperRemeasureEvent data)
+        {
+            bool ret;
+            bool ret1 = true;
+            FASR.HomeInstallations_EditSold_Call call = new FASR.HomeInstallations_EditSold_Call()
+            {
+                OnBehalfOf = Owner,
+                RecordID = data.id,
+
+                Record = GetRecord(type, data)
+            };
+            ret = _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
+
+            //if (data.CurrentStateName == "Unreviewed Work Scheduled")
+            //{
+            //    FASR.HomeInstallations_ScheduleNewWorkOrder_Call call1 = new FASR.HomeInstallations_ScheduleNewWorkOrder_Call()
+            //    {
+            //        OnBehalfOf = Owner,
+            //        RecordID = data.id,
+
+            //        Record = GetRecordForStateChanges(type, data)
+            //    };
+            //    ret1 = _helper.Send(new FASR.OperationCall[] { call1 }, PrepareTransactionId(data)).ReturnValue;
+            //}
+
+            return ret & ret1;
+
+        }
         bool Generics.RecordUpdate.IUpdateHelper.UpdateRecord(Generics.Utils.ContentType type, Generics.Utils.InstallationEventWeekends data)
         {
             FASR.HomeInstallations_EditSold_Call call = new FASR.HomeInstallations_EditSold_Call()
@@ -72,6 +99,15 @@ namespace FlowfinityConnectionHelper
             };
             return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
         }
+
+        private static FASR.HomeInstallationsRecord GetRecord(Generics.Utils.ContentType type, Generics.Utils.ImproperRemeasureEvent data)
+        {
+            FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
+            record.RemeasureDate = new FASR.DateTimeValue() { Value = Generics.Utils.Date.DateParser.ParseTime(data.start) };
+          
+            return record;
+        }
+
 
         private static FASR.HomeInstallationsRecord GetRecord(Generics.Utils.ContentType type, Generics.Utils.ImproperInstallationEvent data)
         {
@@ -214,6 +250,10 @@ namespace FlowfinityConnectionHelper
             return string.Format("{0} {1} {2}", "update", data.id, DateTime.Now.Ticks.ToString());
         }
 
+        private static string PrepareTransactionId(Generics.Utils.ImproperRemeasureEvent data)
+        {
+            return string.Format("{0} {1} {2}", "update", data.id, DateTime.Now.Ticks.ToString());
+        }
         private static FASR.HomeInstallations_InstallationDatesRecord[] PrepareInstallationDateList(Generics.Utils.ImproperInstallationEvent data)
         {
             List<FASR.HomeInstallations_InstallationDatesRecord> returnValue = new List<FASR.HomeInstallations_InstallationDatesRecord>();
@@ -240,6 +280,14 @@ namespace FlowfinityConnectionHelper
                 });
             return returnValue.ToArray();
         }
+
+        //private static FASR.HomeInstallationsRecord PrepareRemeasureDateList(Generics.Utils.ImproperRemeasureEvent data)
+        //{
+        //   FASR.HomeInstallationsRecord returnValue = new FASR.HomeInstallationsRecord();
+        //    returnValue.RemeasureDate = new FASR.DateTimeValue() { Value = Generics.Utils.Date.DateParser.ParseTime(data.start) };
+
+        //    return returnValue;
+        //}
 
         private static FASR.HomeInstallations_ReturnTripRecord [] PrepareReturnedInstallationDateList(Generics.Utils.ImproperInstallationEvent data)
         {

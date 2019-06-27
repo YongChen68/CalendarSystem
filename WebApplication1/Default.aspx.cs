@@ -67,6 +67,13 @@ namespace CalendarSystem
         }
 
         [System.Web.Services.WebMethod(true)]
+        public static bool UpdateRemeasureEventTime(string type, Generics.Utils.ImproperRemeasureEvent eventData)
+        {
+            RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
+            return runner.ProcessUpdate(Utils.ContentTypeParser.GetType(type), eventData);
+        }
+
+        [System.Web.Services.WebMethod(true)]
         public static bool UpdateInstallationEventForSaturday(string type, Generics.Utils.ImproperInstallationEvent eventData)
         {
             RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();

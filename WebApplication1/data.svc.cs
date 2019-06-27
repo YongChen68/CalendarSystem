@@ -86,6 +86,44 @@ namespace CalendarSystem
             return retValue;
         }
 
+        public List<RemeasureEvent> GetRemeasureEvents(string start, string end, string branch, string state)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Entering GetRemeasureEvents({0},'{1}','{2}' )", start, end, branch ?? "NULL", state ?? "NULL");
+            List<RemeasureEvent> retValue = null;
+            List<Holiday> retValue1 = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(start, end, new List<string>(branch.Split(',')), new List<string>(state.Split(',')));
+                retValue = getter.GetRemeasureData();
+
+                Utils.Data.IGetter getter1 = new Utils.Data.EventDataGetter(start, end);
+                retValue1 = getter1.GetHolidayData();
+
+                RemeasureEvent myEvent = null;
+                foreach (Holiday holiday in retValue1)
+                {
+                    myEvent = new RemeasureEvent();
+                    myEvent.allDay = true;
+                    myEvent.HolidayDate = holiday.HolidayDate;
+                    myEvent.start = holiday.HolidayDate.ToShortDateString();
+                    myEvent.end = holiday.HolidayDate.ToShortDateString();
+                    myEvent.HolidayName = holiday.HolidayName;
+                    myEvent.LastName = "";
+                    myEvent.City = "";
+                    myEvent.title = holiday.HolidayName;
+                    myEvent.CurrentStateName = "Rejected Scheduled Work";
+                    retValue.Add(myEvent);
+                }
+
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetRemeasureEvents() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
         public bool UpdateInstallationWeekends(string id, string SaturdaySunday)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateInstallationWeekends('{0}','{1}' )", id, SaturdaySunday);
@@ -301,6 +339,32 @@ namespace CalendarSystem
                 retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), eventData);
 
                 Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateInstallationData id= {0}", id);
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+        public bool UpdateRemeasureData(
+               string id
+               , string remeasureDate
+           )
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateRemeasureData('{0}')", id);
+            ImproperRemeasureEvent eventData = null;
+            bool retValue = false;
+            try
+            {
+                eventData = new ImproperRemeasureEvent();
+                eventData.id = id;
+
+                eventData.start = Convert.ToDateTime(remeasureDate).ToString("yyyy-MM-ddT00:00:00.000Z");
+                RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
+                retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Remeasure"), eventData);
+
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateRemeasureData id= {0}", id);
             }
             catch (Exception ex)
             {

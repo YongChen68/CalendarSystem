@@ -716,6 +716,76 @@
                 </p>
             </div>
         </div>
+
+        <div id="RemeasureStateFilter" class="modal hidden">
+            <div class="modal-content">
+                <span id="closeRemeasureStateFilter" class="close" onclick="$('#RemeasureStateFilter').addClass('hidden');">×</span>
+                <h2>Remeasure Applied Filters:</h2>
+                <div>
+                    <table width="100%">
+                        <tr width="100%">
+                            <td width="45%"></td>
+                            <td width="25%" style="text-align: left;">
+
+
+                                <input type="checkbox" name="RemeasureState" value="Allocated Work Order" checked>Allocated Work Order<br />
+                                <input type="checkbox" name="RemeasureState" value="Cancelled" checked>Cancelled<br />
+
+                                <input type="checkbox" name="RemeasureState" value="Installation Confirmed" checked>Installation Confirmed<br />
+                                <input type="checkbox" name="RemeasureState" value="Install in Progress" checked>Install in Progress<br />
+                                <input type="checkbox" name="RemeasureState" value="Install Completed" checked>Install Completed<br />
+
+                                <input type="checkbox" name="RemeasureState" value="Installation inprogress rejected" checked>Installation inprogress rejected<br />
+                                  <input type="checkbox" name="RemeasureState" value="Installation Manager Review" checked>Installation Manager Review<br />
+
+                                <input type="checkbox" name="RemeasureState" value="Job Completed" checked>Job Completed<br />
+                                <input type="checkbox" name="RemeasureState" value="Job Costing" checked>Job Costing<br />
+                                <input type="checkbox" name="RemeasureState" value="Pending Install Completion" checked>Pending Install Completion<br />
+
+                                <input type="checkbox" name="RemeasureState" value="Ready for Invoicing" checked>Ready for Invoicing<br />
+                                <input type="checkbox" name="RemeasureState" value="Ready for ReMeasure" checked>Ready for ReMeasure<br />
+
+                                       <input type="checkbox" name="RemeasureState" value="ReMeasure Scheduled" checked>ReMeasure Scheduled<br />
+                       <input type="checkbox" name="RemeasureState" value="Rejected Installation" checked>Rejected Installation<br />
+                                <input type="checkbox" name="RemeasureState" value="Rejected Job Costing" checked>Rejected Job Costing<br />
+                                   <input type="checkbox" name="RemeasureState" value="Rejected Manager Review" checked>Rejected Manager Review<br />
+                                <input type="checkbox" name="RemeasureState" value="Rejected New Work Order" checked>Rejected New Work Order<br />
+
+                                <input type="checkbox" name="RemeasureState" value="Rejected Remeasure" checked>Rejected Remeasure<br />
+                                <input type="checkbox" name="RemeasureState" value="ReMeasure Scheduled" checked>ReMeasure Scheduled<br />
+
+                                               <input type="checkbox" name="RemeasureState" value="Rejected Scheduled Work" checked>Rejected Scheduled Work<br />
+                                
+
+                                <input type="checkbox" name="RemeasureState" value="Sold" checked>Sold<br />
+
+                                 <input type="checkbox" name="RemeasureState" value="System Duplicated" checked>System Duplicated<br />
+                              
+                                     <input type="checkbox" name="RemeasureState" value="Unreviewed Job Costing" checked>Unreviewed Job Costing<br />
+                 
+                                <input type="checkbox" name="RemeasureState" value="Unreviewed Buffered Work" checked>Unreviewed Buffered Work<br />
+
+                                           <input type="checkbox" name="RemeasureState" value="VP Installation Approval" checked>VP Installation Approval<br />
+                                <input type="checkbox" name="RemeasureState" value="Unreviewed Work Scheduled" checked>Unreviewed Work Scheduled<br />
+                     
+
+                                <input type="checkbox" name="RemeasureState" value="Work Scheduled" checked>Work Scheduled
+                                
+
+                            </td>
+                            <td></td>
+                        </tr>
+                    </table>
+                </div>
+                <p>
+                    <input id="SelectAllRemeasureState" class="typeButton" type="submit" value="SelectAll" onclick="SelectAll('RemeasureState'); return false;" />
+
+                </p>
+                <p>
+                    <input id="ApplyRemeasureStateChange" class="typeButton" type="submit" value="Apply" onclick="ApplyFilters('RemeasureState'); return false;" />
+                </p>
+            </div>
+        </div>
         <div id="JobTypeFilter" class="modal hidden">
             <div class="modal-content">
                 <span id="closeJobTypeFilter" class="close" onclick="$('#JobTypeFilter').addClass('hidden');">×</span>

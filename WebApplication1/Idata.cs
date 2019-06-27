@@ -29,6 +29,15 @@ namespace CalendarSystem
            BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<Generics.Utils.Data.InstallationEvent> GetInstallationEvents(string start, string end, string branch, string installationStates);
 
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+           UriTemplate = "GetRemeasureEvents?start={start}&end={end}&branch={branch}&remeasureStates={remeasureStates}",
+           ResponseFormat = WebMessageFormat.Json,
+           BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<Generics.Utils.Data.RemeasureEvent> GetRemeasureEvents(string start, string end, string branch, string remeasureStates);
+
+
         [OperationContract]
         [WebInvoke(Method = "POST",UriTemplate = "UpdateInstallationWeekends?id={id}&SaturdaySunday={SaturdaySunday}")]
        bool UpdateInstallationWeekends(string id, string SaturdaySunday);
@@ -42,6 +51,10 @@ namespace CalendarSystem
         [WebInvoke(Method = "POST", UriTemplate = "UpdateInstallationData?id={id}&scheduledStartDate={scheduledStartDate}&scheduledEndDate={scheduledEndDate}&Asbestos={Asbestos}" +
             "&WoodDropOff={WoodDropOff}&HighRisk={HighRisk}&EstInstallerCnt={EstInstallerCnt}&Saturday={Saturday}&Sunday={Sunday}&LeadPaint={LeadPaint}")]
         bool UpdateInstallationData(string id, string scheduledStartDate, string scheduledEndDate,int Asbestos, int WoodDropOff, int HighRisk, int EstInstallerCnt, string Saturday, string Sunday, string LeadPaint);
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "UpdateRemeasureData?id={id}&remeasureDate={remeasureDate}")]
+        bool UpdateRemeasureData(string id, string remeasureDate);
 
 
 

@@ -134,6 +134,9 @@ function sendUpdateToServer(event) {
         }
         
     }
+
+    eventToUpdate.id = event.id;
+
     var endDate;
     if (!event.allDay) {
         endDate = new Date(eventToUpdate.end + 60 * 60000);
@@ -144,6 +147,7 @@ function sendUpdateToServer(event) {
     }
 
     eventToUpdate.start = eventToUpdate.start.toJSON();
+ 
     eventToUpdate.end = eventToUpdate.end.toJSON(); //endDate;
     eventToUpdate.allDay = event.allDay;
     eventToUpdate.eventDurationEditable = true;
@@ -206,6 +210,10 @@ function sendUpdateToServer(event) {
 
 
         PageMethods.UpdateInstallationEventTime(displayType, eventToUpdate);
+        
+    }
+    else if (displayType == "Remeasure") {
+        UpdateRemeasureEvents(eventToUpdate);
     }
     else {
 
@@ -253,6 +261,17 @@ function GetBlankDayData(day) {
      //  return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount: 0, WOCount: 0 };
         return {
             day: dayName, date: installationDay, doors: 0, windows: 0, ExtDoors:0,
+            SalesAmmount: 0, TotalAsbestos: 0, TotalWoodDropOff: 0, TotalHighRisk: 0, TotalLeadPaint: 0, WOCount: 0, installationwindowLBRMIN: 0, TotalInstallationLBRMin: 0, InstallationDoorLBRMin: 0,
+            InstallationPatioDoorLBRMin: 0, subinstallationwindowLBRMIN: 0, subInstallationPatioDoorLBRMin: 0, subExtDoorLBRMIN: 0, subTotalInstallationLBRMin: 0,
+            SidingLBRBudget: 0, SidingLBRMin: 0, SidingSQF: 0
+        };
+    }
+    else if (displayType == "Remeasure")
+    {
+        var remeasureDay = new Date(Date.UTC(day.getUTCFullYear(), day.getUTCMonth(), day.getUTCDate() + 1));
+        //  return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount: 0, WOCount: 0 };
+        return {
+            day: dayName, date: remeasureDay, doors: 0, windows: 0, ExtDoors: 0,
             SalesAmmount: 0, TotalAsbestos: 0, TotalWoodDropOff: 0, TotalHighRisk: 0, TotalLeadPaint: 0, WOCount: 0, installationwindowLBRMIN: 0, TotalInstallationLBRMin: 0, InstallationDoorLBRMin: 0,
             InstallationPatioDoorLBRMin: 0, subinstallationwindowLBRMIN: 0, subInstallationPatioDoorLBRMin: 0, subExtDoorLBRMIN: 0, subTotalInstallationLBRMin: 0,
             SidingLBRBudget: 0, SidingLBRMin: 0, SidingSQF: 0
@@ -549,6 +568,12 @@ $(document).ready(function () {
                     $('#InstallationStateFilter').removeClass('hidden');
                 }
             },
+            applyRemeasureFilters: {
+                text: "Change Remeasure Record Filters",
+                click: function () {
+                    $('#RemeasureStateFilter').removeClass('hidden');
+                }
+            },
             changeBranch: {
                 text: "Change Branch",
                 click: function () {
@@ -658,9 +683,9 @@ $(document).ready(function () {
            
         },
         header: {
-            left: 'prev,next today, changeType,applyFilters,applyInstallationFilters,changeBranch,changeJobType,changeShippingType',
+            left: 'prev,next today, changeType,applyFilters,applyInstallationFilters,applyRemeasureFilters,changeBranch,changeJobType,changeShippingType',
             center: 'title',
-            right: 'ShowKelownaBranch,ShowLowerMainlandBranch,ShowNanaimoBranch,ShowVictoriaBranch,ShowWIP,month,agendaWeek,agendaDay',
+            right: 'ShowKelownaBranch,ShowLowerMainlandBranch,ShowNanaimoBranch,ShowVictoriaBranch,ShowWIP,month,agendaWeek,agendaDay'
         },
 
        //hiddenDays: [0, 6],
@@ -682,6 +707,13 @@ $(document).ready(function () {
                 installationStates.push($(this).val());
             });
             console.log("checked states: ", installationStates.join(","));
+
+            var remeasureStates = [];
+            $.each($("input[name='RemeasureState']:checked"), function () {
+                remeasureStates.push($(this).val());
+            });
+            console.log("checked remeasure states: ", remeasureStates.join(","));
+
 
             var branches = [];
             $.each($("input[name='branch']:checked"), function () {
@@ -711,6 +743,8 @@ $(document).ready(function () {
                 $('.fc-applyFilters-button').hide();
                 $('.fc-changeJobType-button').hide();
                 $('.fc-changeShippingType-button').hide();
+
+                $('.fc-applyRemeasureFilters-button').hide();
             //    $('#calendar').fullCalendar('changeView', 'month');
               //  document.getElementById('external-InstallationEvents').style.display = "block";
               //  document.getElementById('external-events').style.display = "none";
@@ -744,9 +778,53 @@ $(document).ready(function () {
                     }
                 });
             }
+            else if (displayType == "Remeasure")
+            {
+
+                $('.fc-applyRemeasureFilters-button').show();
+
+                $('.fc-applyInstallationFilters-button').hide();
+                $('.fc-ShowWIP-button').hide();
+
+                $('.fc-ShowKelownaBranch-button').hide();
+                $('.fc-ShowLowerMainlandBranch-button').hide();
+                $('.fc-ShowNanaimoBranch-button').hide();
+                $('.fc-ShowVictoriaBranch-button').hide();
+
+                $('.fc-applyFilters-button').hide();
+                $('.fc-changeJobType-button').hide();
+                $('.fc-changeShippingType-button').hide();
+                //  $('#calendar').fullCalendar('changeView', 'month');
+                //   document.getElementById('external-InstallationEvents').style.display = "none";
+                //  document.getElementById('external-events').style.display = "block";
+                $.ajax({
+                    url: 'data.svc/GetRemeasureEvents',
+                    dataType: 'json',
+                    data: { start: start.format(), end: end.format(), branch: branches.join(","), remeasureStates: remeasureStates.join(",") },
+                    //  data: { start: start.format(), end: end.format(), branch: branches.join(",") },
+                    success: function (data) {
+                        if (debug) console.log("events.success", "data.GetRemeasureEventsResult:", data.GetRemeasureEventsResult === undefined ? "NULL" : data.GetRemeasureEventsResult.length);
+                        var events = [];
+                        eventRemeasureWODict = [];
+                        $.each(data.GetRemeasureEventsResult, function (pos, item) {
+                            item.editable = ((item.HolidayName != null || readonly == "True")) ? false : true;
+                            //  item.editable = (readonly == "True") ? false : true;
+
+                            eventRemeasureWODict.push(item);
+                            
+                        });
+                        events = removeDuplicates(eventRemeasureWODict, "WorkOrderNumber");
+                        callback(events);
+                    }, error: function (error) {
+                        console.log('Error', error);
+                        $('#script-warning').show();
+                    }
+                });
+            }
             else {
                 $('.fc-applyInstallationFilters-button').hide();
                 $('.fc-ShowWIP-button').hide();
+                $('.fc-applyRemeasureFilters-button').hide();
 
                 $('.fc-ShowKelownaBranch-button').hide();
                 $('.fc-ShowLowerMainlandBranch-button').hide();
@@ -790,7 +868,7 @@ $(document).ready(function () {
         weekNumbers: true,
         businessHours: { start: '8:00', end: '17:00', dow: [1, 2, 3, 4, 5, 6] },
         eventDrop: function (event, delta, revertFunc) {
-            if (displayType != "Installation") {
+            if ((displayType != "Installation") && (displayType != "Remeasure")){
                 if (debug) console.log('eventDrop', 'event.title=' + event.title, "id: " + event.id, "labour min: " + event.TotalLBRMin, "event date:", GetDatefromMoment(event.start));
                 var eventDate = GetDatefromMoment(event.start);
                 var maxDayLabour = parseInt(FindByValue("max", eventDate).Value);
@@ -1114,6 +1192,33 @@ $(document).ready(function () {
             }
 
 
+            if ((displayType == "Remeasure") && (event.HolidayName == null)) {
+
+                dom = '.fc-title';
+                $(element).find(dom).empty();
+
+
+                var ret = "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
+                    event.EstInstallerCnt + "\">" +
+                    (event.TotalWindows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.TotalWindows + "\" src=\"images/window.PNG\" />" : "") +
+                    (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Patio Doors: " + event.TotalDoors + "\" src=\"images/window.PNG\" />" : "") + "&nbsp;" +
+                    (event.TotalExtDoors != "0" ? "&nbsp;<img title=\"# of Codel Doors: " + event.TotalExtDoors + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
+                    (event.TotalWoodDropOff == 1 ? "&nbsp;<img src=\"images/delivery.PNG\" />" : "") +
+                    //(event.TotalAsbestos == 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
+                    ((event.TotalAsbestos == 1) || (event.LeadPaint == 'Yes') ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
+                    (event.TotalHighRisk == 1 ? "&nbsp;<img src=\"images/risk.PNG\" />" : "") +
+
+                    (" " + event.WorkOrderNumber) + "&nbsp;" +
+                    (",Name: " + event.LastName.trim().length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
+                    //   + event.FirstName.trim().length > 10 ? event.FirstName.trim().Substring(0, 10) : event.FirstName.trim()) +
+                    "&nbsp;" + (event.City) + "&nbsp;";
+                //  ("WO: ") + "&nbsp;" ;
+
+                $(element).find(dom).append(ret);
+
+            }
+
+
             if (event.F52PD > 0) // Patio Doors
                 $(element).find(dom).prepend("<img alt=\"#\" src=\"images/patiodoor.png\" title= \"" + ToPDString(event) + "\" />&nbsp;");
 
@@ -1202,7 +1307,7 @@ $(document).ready(function () {
             totals[event.start._d.getUTCDay()].doors += event.doors !== 'undefined' ? event.doors : 0;
             totals[event.start._d.getUTCDay()].windows += event.windows !== 'undefined' ? event.windows : 0;
 
-            if (displayType != "Installation") {
+            if ((displayType != "Installation") && (displayType != "Remeasure")) {
 
                 var eventDate = GetDatefromMoment(event.start);
                 var maxDayLabour = parseInt(FindByValue("max", eventDate).Value);
@@ -1508,7 +1613,14 @@ function SelectAll(target) {
         }
         $('#' + target + 'Filter').addClass('hidden');
     }
-    else (target == "branch")
+    else if (target == "RemeasureState")
+    {
+        for (i = 0; i < document.getElementsByName('RemeasureState').length; i++) {
+            document.getElementsByName('RemeasureState')[i].checked = true;
+        }
+        $('#' + target + 'Filter').addClass('hidden');
+    }
+    else if (target == "branch")
     {
         for (i = 0; i < document.getElementsByName('branch').length; i++)
         {
@@ -1657,6 +1769,28 @@ function UpdateInstallationEvents() {
             $("#eventContent .close").click();
             $('#calendar').fullCalendar('refetchEvents');
             //$('#calendar').fullCalendar('rerenderEvents');
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+}
+
+function UpdateRemeasureEvents(event) {
+    var id = event.id;
+    var remesureDate;
+    remesureDate = event.start;
+    
+    $.ajax({
+        url: 'data.svc/UpdateRemeasureData?id=' + id
+            + '&remeasureDate=' + remesureDate,
+        type: "POST",
+        success: function (data) {
+            if (debug) console.log("events.success", "data.UpdateRemeasureEvents:");
+
+            $('#calendar').fullCalendar('refetchEvents');
+            $('#calendar').fullCalendar('rerenderEvents');
 
         }, error: function (error) {
             console.log('Error', error);

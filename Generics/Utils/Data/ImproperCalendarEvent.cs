@@ -45,6 +45,20 @@ namespace Generics.Utils
 
     }
 
+    public class ImproperRemeasureEvent
+    {
+        [DataMember]
+        public string id { get; set; }
+
+        [DataMember]
+        public string start { get; set; }
+        
+        [DataMember]
+        public string CurrentStateName { get; set; }
+
+    }
+
+
     public class InstallationDataEvent
     {
         [DataMember]

@@ -226,5 +226,10 @@ and p.CurrentStateName <> 'Duplicated Work Order' and p.CurrentStateName <> 'Com
         {
             throw new NotImplementedException();
         }
+
+        public List<RemeasureEvent> GetRemeasureData()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
