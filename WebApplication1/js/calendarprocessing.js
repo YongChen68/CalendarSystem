@@ -1108,9 +1108,51 @@ $(document).ready(function () {
                     //$("#eventContent").modal("show");
 
                 }
+                else   if (displayType == "Remeasure") {
+                    element.attr('data-toggle', "modal");
+                    element.attr('data-target', "#eventRemeasureContent");
+                    element.attr('href', "/details");
+                    $("#FirstNameRemeasure").html(event.FirstName);
+                    $("#LastNameRemeasure").html(event.LastName);
+                    $("#postalCodeRemeasure").html(event.PostCode);
+                    $("#workOrderRemeasure").html(event.WorkOrderNumber);
+                    $("#WorkOrderTitleRemeasure").html(event.WorkOrderNumber);
+                    
+                                  
+                    $("#homePhoneRemeasure").html(event.HomePhoneNumber);
+                    $("#workPhoneRemeasure").html(event.WorkPhoneNumber);
+                    $("#cellPhoneRemeasure").html(event.CellPhone);
+
+                    $("#emailRemeasure").html(event.Email);
+                    $("#salesRepRemeasure").html(event.SalesRep);
+
+                    $("#CityRemeasure").html(event.City);
+
+                    $("#TotalWindows1Remeasure").html(event.TotalWindows);
+                    $("#TotalDoors1Remeasure").html(event.TotalDoors);
+                    $("#TotalDoors2Remeasure").html(event.TotalExtDoors);
+
+
+                    $("#AddressRemeasure").html(event.StreetAddress);
+                    $("#SalesAmmountRemeasure").html(event.TotalSalesAmount.formatMoney(2, "$", ",", "."));
+
+                 //   codeAddressRemeasure();
+                  codeAddress();
+
+
+                    eventid = event.id;
+
+                  //  GetRemeasureProducts(event.WorkOrderNumber);
+
+         
+
+                    $("#eventLink").attr('href', event.url);
+                   // $("#eventContent").dialog({ modal: true, title: event.LastName, width: 900 });
+                    //$("#eventContent").modal("show");
+
+                }
                 else {
-                  //  $("#eventContent").dialog({ modal: true, title: event.title, width: 800 });
-                  
+                                   
                 }
               
                 
@@ -1251,8 +1293,11 @@ $(document).ready(function () {
             if (totals.length < dayId) console.log("eventRender", "dayId exceeds totals", dayId, totals.length);
 
             
-            if ((displayType == "Installation") && (event.HolidayName != null )){
-               
+            if ((displayType == "Installation") && (event.HolidayName != null)) {
+
+            }
+            else if ((displayType == "Remeasure") && (event.HolidayName != null)) {
+
             }
             else {
                 totals[dayId].doors += event.doors !== undefined ? event.doors : 0;
@@ -1404,6 +1449,57 @@ $(document).ready(function () {
                         }
                     }
                 }
+                else if (displayType == "Remeasure") {
+                    for (var i = 0; i < totals.length; i++) {
+                        date1 = new Date(totals[i]["date"]).toLocaleDateString('en-US');
+                        WOCount = 0; //ReturnedJob
+                        for (var j = 0; j < eventRemeasureWODict.length; j++) {
+                            date2 = new Date(GetDatefromMoment(eventRemeasureWODict[j]["start"])).toLocaleDateString('en-US');
+                            if (date1 == date2) {
+                                // if eventWODict[j].Saturday == "No"
+                                xDate = is_weekend(date2);
+                                xDateSat = is_saturday(date2);
+                                xDateSun = is_sunday(date2);
+                                if ((eventRemeasureWODict[j].Sunday == "No" && eventRemeasureWODict[j].Saturday == "No") && (xDate == "weekend")) {
+
+                                }
+                                else if ((eventRemeasureWODict[j].Sunday == "Yes" && eventRemeasureWODict[j].Saturday == "No") && (xDateSat == "saturday")) {
+
+                                }
+                                else if ((eventRemeasureWODict[j].Sunday == "No" && eventRemeasureWODict[j].Saturday == "Yes") && (xDateSun == "sunday")) {
+
+                                }
+                                else {
+                                    totals[i].windows += eventRemeasureWODict[j]["Windows"];
+                                    totals[i].doors += eventRemeasureWODict[j]["Doors"];
+                                    totals[i].ExtDoors += eventRemeasureWODict[j]["ExtDoors"];
+                                    totals[i].SalesAmmount += eventRemeasureWODict[j]["SalesAmmount"];
+                         
+
+                                    totals[i].installationwindowLBRMIN += eventRemeasureWODict[j]["installationwindowLBRMIN"];
+                                    totals[i].InstallationDoorLBRMin += eventRemeasureWODict[j]["InstallationDoorLBRMin"];
+                                    totals[i].InstallationPatioDoorLBRMin += eventRemeasureWODict[j]["InstallationPatioDoorLBRMin"];
+                                    totals[i].TotalInstallationLBRMin += eventRemeasureWODict[j]["TotalInstallationLBRMin"];
+
+                                    totals[i].subinstallationwindowLBRMIN += eventRemeasureWODict[j]["subinstallationwindowLBRMIN"];
+                                    totals[i].subInstallationPatioDoorLBRMin += eventRemeasureWODict[j]["subInstallationPatioDoorLBRMin"];
+                                    totals[i].subExtDoorLBRMIN += eventRemeasureWODict[j]["subExtDoorLBRMIN"];
+                                    totals[i].subTotalInstallationLBRMin += eventRemeasureWODict[j]["subTotalInstallationLBRMin"];
+
+                                    totals[i].SidingLBRBudget += eventRemeasureWODict[j]["SidingLBRBudget"];
+                                    totals[i].SidingLBRMin += eventRemeasureWODict[j]["SidingLBRMin"];
+                                    totals[i].SidingSQF += eventRemeasureWODict[j]["SidingSQF"];
+
+
+                                    totals[i].WOCount = WOCount + 1;
+                                    WOCount++;
+                                }
+
+                            }
+
+                        }
+                    }
+                }
                
 
                 for (var i = 0; i < totals.length; i++) {
@@ -1479,6 +1575,30 @@ function SetDayValue(key, dayTotals) {
         SetData('Total-LBR', dayTotals.day, parseFloat(dayTotals.subTotalInstallationLBRMin).toFixed(2));
 
       // SetData('Siding-LBRBudget', dayTotals.day, parseFloat(dayTotals.SidingLBRBudget).toFixed(2));
+        SetData('Siding-LBRBudget', dayTotals.day, dayTotals.SidingLBRBudget.formatMoney(2, "$", ",", "."));
+        SetData('Siding-LBRMin', dayTotals.day, parseFloat(dayTotals.SidingLBRMin).toFixed(2));
+        SetData('Siding-SQF', dayTotals.day, parseFloat(dayTotals.SidingSQF).toFixed(2));
+    }
+    else if (displayType == "Remeasure") {
+
+        SetData('Codel-Doors', dayTotals.day, parseFloat(dayTotals.ExtDoors).toFixed(2));
+
+        SetData('Patio-Doors', dayTotals.day, parseFloat(dayTotals.doors).toFixed(2));
+        SetData('Installation-Min', dayTotals.day, parseFloat(0).toFixed(2));
+        //SetData('Wood-DropOff-Jobs', dayTotals.day, dayTotals.TotalWoodDropOff);
+        SetData('HighRisk-Jobs', dayTotals.day, dayTotals.TotalHighRisk);
+        SetData('Windows', dayTotals.day, parseFloat(dayTotals.windows).toFixed(2));
+        SetData('Work-Orders', dayTotals.day, dayTotals.WOCount);
+        //SetData('Asbestos-Jobs', dayTotals.day, dayTotals.TotalAsbestos);
+        //SetData('Lead-Paint', dayTotals.day, dayTotals.TotalLeadPaint);
+        SetData('Sales-Amount', dayTotals.day, dayTotals.SalesAmmount.formatMoney(2, "$", ",", "."));
+
+        SetData('Window-LBR', dayTotals.day, parseFloat(dayTotals.subinstallationwindowLBRMIN).toFixed(2));
+        SetData('Patio-Door-LBR', dayTotals.day, parseFloat(dayTotals.subInstallationPatioDoorLBRMin).toFixed(2));
+        SetData('Codel-Door-LBR', dayTotals.day, parseFloat(dayTotals.subExtDoorLBRMIN).toFixed(2));
+        SetData('Total-LBR', dayTotals.day, parseFloat(dayTotals.subTotalInstallationLBRMin).toFixed(2));
+
+        // SetData('Siding-LBRBudget', dayTotals.day, parseFloat(dayTotals.SidingLBRBudget).toFixed(2));
         SetData('Siding-LBRBudget', dayTotals.day, dayTotals.SidingLBRBudget.formatMoney(2, "$", ",", "."));
         SetData('Siding-LBRMin', dayTotals.day, parseFloat(dayTotals.SidingLBRMin).toFixed(2));
         SetData('Siding-SQF', dayTotals.day, parseFloat(dayTotals.SidingSQF).toFixed(2));
@@ -1856,14 +1976,73 @@ function GetProducts(workOrder) {
         success: function (data) {
             if (debug) console.log("events.success", "data.GetProducts:");
 
-            $("#dataTable tr").remove(); 
+            $("#dataTableWindows tr").remove(); 
             if (data.GetProductsResult.length > 0) {
-                $("#dataTable").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
+                $("#dataTableWindows").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
                 for (var i = 0; i < data.GetProductsResult.length; i++) {
-                    $("#dataTable").append("<tr><td>" +
+                    $("#dataTableWindows").append("<tr><td>" +
                           data.GetProductsResult[i].Item + "</td> <td>" +
                           data.GetProductsResult[i].Size + "</td> <td>" +
                             data.GetProductsResult[i].Quantity + "</td> <td>" +
+                        data.GetProductsResult[i].SubQty + "</td> <td>" +
+                        data.GetProductsResult[i].System + "</td> <td>" +
+                        data.GetProductsResult[i].Description + "</td> <td>" +
+                        data.GetProductsResult[i].Status + "</td></tr>");
+                }
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetProductsDoors?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.ProductsDoors:");
+
+            $("#dataTableDoors tr").remove();
+            if (data.ProductsDoorsResult.length > 0) {
+                $("#dataTableDoors").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
+                for (var i = 0; i < data.GetProductsDoorResult.length; i++) {
+                    $("#dataTableDoors").append("<tr><td>" +
+                        data.ProductsDoorsResult[i].Item + "</td> <td>" +
+                        data.ProductsDoorsResult[i].Size + "</td> <td>" +
+                        data.ProductsDoorsResult[i].Quantity + "</td> <td>" +
+                        data.ProductsDoorsResult[i].SubQty + "</td> <td>" +
+                        data.ProductsDoorsResult[i].System + "</td> <td>" +
+                        data.ProductsDoorsResult[i].Description + "</td> <td>" +
+                        data.ProductsDoorsResult[i].Status + "</td></tr>");
+                }
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
+
+function GetRemeasureProducts(workOrder) {
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetProducts?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetProducts:");
+
+            $("#dataTableRemeasure tr").remove();
+            if (data.GetProductsResult.length > 0) {
+                $("#dataTableRemeasure").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
+                for (var i = 0; i < data.GetProductsResult.length; i++) {
+                    $("#dataTableRemeasure").append("<tr><td>" +
+                        data.GetProductsResult[i].Item + "</td> <td>" +
+                        data.GetProductsResult[i].Size + "</td> <td>" +
+                        data.GetProductsResult[i].Quantity + "</td> <td>" +
                         data.GetProductsResult[i].SubQty + "</td> <td>" +
                         data.GetProductsResult[i].System + "</td> <td>" +
                         data.GetProductsResult[i].Description + "</td> <td>" +

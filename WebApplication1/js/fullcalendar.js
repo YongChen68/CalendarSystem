@@ -3680,6 +3680,23 @@
                         '</tbody>';
 
                 }
+                else if (displayType == "Remeasure") {
+                    retValue += '<tbody>' +
+                        RenderDayRow('Work-Orders', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Windows', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Codel-Doors', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Patio-Doors', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Sales-Amount', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Installation-Min', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Window-LBR', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Patio-Door-LBR', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Codel-Door-LBR', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Total-LBR', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Siding-LBRBudget', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Siding-LBRMin', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Siding-SQF', dayIDs[cell.start.day()]) +
+                        '</tbody>';
+                }
                 else {
                     retValue += '<tbody>' +
                         RenderDayRow('Windows', dayIDs[cell.start.day()]) +
@@ -3729,6 +3746,25 @@
                         RenderWeekRow('Wood-DropOff-Jobs') +
                         RenderWeekRow('HighRisk-Jobs') +
                         RenderWeekRow('Lead-Paint') +
+                        RenderWeekRow('Window-LBR') +
+                        RenderWeekRow('Patio-Door-LBR') +
+                        RenderWeekRow('Codel-Door-LBR') +
+                        RenderWeekRow('Total-LBR') +
+                        RenderWeekRow('Siding-LBRBudget') +
+                        RenderWeekRow('Siding-LBRMin') +
+                        RenderWeekRow('Siding-SQF') +
+
+                        '</tbody>';
+                }
+                else if (displayType == "Remeasure") {
+                    retValue += '<tbody>' +
+
+                        RenderWeekRow('Work-Orders') +
+                        RenderWeekRow('Windows') +
+                        RenderWeekRow('Codel-Doors') +
+                        RenderWeekRow('Patio-Doors') +
+                        RenderWeekRow('Sales-Amount') +
+                        RenderWeekRow('Installation-Min') +
                         RenderWeekRow('Window-LBR') +
                         RenderWeekRow('Patio-Door-LBR') +
                         RenderWeekRow('Codel-Door-LBR') +

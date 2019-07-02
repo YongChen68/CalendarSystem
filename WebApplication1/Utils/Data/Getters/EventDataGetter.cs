@@ -1159,17 +1159,46 @@ where p.currentstatename in ({0}) and p.Branch in ({1}) and p.JobType in ({2}) a
 
         private string GetProductSQL()
         {
-            string SQL = string.Format(@"select  p.WorkOrderNumber
-         ,i.[Item] 
-      ,i.[Size_1] as Size
-         ,i.[Quantity]
-      ,i.[SubQty]
-      ,i.[System_1] as System
-      ,i.[Description]
-      ,i.[Status]
-  FROM [flowserv_flowfinityapps].[dbo].[PlantProduction_items] as i INNER JOIN
-       [flowserv_flowfinityapps].[dbo].[PlantProduction] as p ON i.ParentRecordId = p.RecordId
-where p.WorkOrderNumber = '{0}' ", this.workOrderNumber);
+            string SQL = string.Format(@"  SELECT i.WorkOrderNumber,
+				    [Item]
+      ,[System_1] as System
+      ,[Description1] as Description
+      ,[Size_1] as Size
+      ,[Quantity1] as Quantity
+      ,[SubQty]
+      ,[Status1] as Status
+   
+  FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_WindowItems] INNER JOIN
+       [flowserv_flowfinityapps].[dbo].[HomeInstallations] AS i ON i.RecordId = ParentRecordId
+where i.WorkOrderNumber = '{0}' ", this.workOrderNumber);
+            return SQL;
+        }
+
+
+        public List<Product> GetProductsDoors()
+        {
+            string SQL = GetProductDoorSQL();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("pWorkOrderNumber", this.workOrderNumber));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.Product>(SQL, pars.ToArray());
+        }
+
+        private string GetProductDoorSQL()
+        {
+            string SQL = string.Format(@"select  i.WorkOrderNumber
+         ,i.[Item1]  as Item
+      ,i.[Size1] as Size
+         ,i.[Quantity11] as Quantity
+      ,i.[SubQty1] as SubQty
+      ,i.[System1] as System
+      ,i.[Description11] as Description
+      ,i.[Status11] as Status
+FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_DoorItems] INNER JOIN
+       [flowserv_flowfinityapps].[dbo].[HomeInstallations] AS i ON i.RecordId = ParentRecordId
+
+where i.WorkOrderNumber = '{0}' ", this.workOrderNumber);
             return SQL;
         }
 

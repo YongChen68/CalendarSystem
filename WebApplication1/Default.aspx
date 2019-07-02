@@ -119,8 +119,14 @@
 
         function codeAddress() {
             var address = document.getElementById('Address').innerHTML;
-            alert(address);
-            geocoder.geocode({ 'address': address }, function (results, status) {
+            var request = {
+                address: address,
+                componentRestrictions: {
+                    country: 'CA'
+                }
+            }
+
+            geocoder.geocode(request, function (results, status) {
                 if (status == 'OK') {
                     map.setCenter(results[0].geometry.location);
                     var marker = new google.maps.Marker({
@@ -135,29 +141,7 @@
         }
     </script>
 
-    <script>
 
-
-
-
-        function codeAddress() {
-            var address = document.getElementById('Address').innerHTML;
-
-            geocoder.geocode({ 'address': address }, function (results, status) {
-                if (status == 'OK') {
-                    map.setCenter(results[0].geometry.location);
-                    var marker = new google.maps.Marker({
-                        map: map,
-                        position: results[0].geometry.location
-                    });
-                } else {
-                    alert('Geocode was not successful for the following reason: ' + status);
-                }
-            });
-
-        }
-
-    </script>
     <style>
         body {
             margin-top: 40px;
@@ -172,7 +156,21 @@
             width: 45%;
         }
 
+        #mapRemeasure {
+            float: left;
+            width: 45%;
+        }
+
+
         #content {
+            float: left;
+            width: 55%;
+            vertical-align: top;
+            text-align: left;
+            padding-left: 20px;
+        }
+
+        #contentRemeasure {
             float: left;
             width: 55%;
             vertical-align: top;
@@ -251,6 +249,11 @@
             z-index: 214748367;
         }
 
+       #eventRemeasureContent {
+            z-index: 214748367;
+        }
+
+
         .modal-header {
             background-color: #9FB6CD;
             color: white;
@@ -261,6 +264,8 @@
             width: 1400px;
             margin: auto;
         }
+
+
 
         .close {
             color: #fff;
@@ -340,7 +345,7 @@
 
                                 </li>
                                 <li role="presentation">
-                                    <a href="#ProductTab" aria-controls="productTab" role="tab" data-toggle="tab">PRODUCT</a>
+                                    <a href="#ProductTab" aria-controls="productTab" role="tab" data-toggle="tab">MANUFACTURING STATUS</a>
 
                                 </li>
                                 <li role="presentation">
@@ -564,8 +569,16 @@
                                 </div>
 
                                 <div role="tabpanel" class="tab-pane " id="ProductTab">
+                                    <br />
+                                    <div style=" text-align:left;"><b> <span id="windows" >WINDOWS</span></b>
+                                        </div>
+                                    <div style="overflow: auto; height: 300px;">
+                                        <table id="dataTableWindows" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                    </div>
+                                    <br />
+                                    <div style=" text-align:left;"> <b> <span id="doors">DOORS</span></b>  </div>
                                     <div style="overflow: auto; height: 600px;">
-                                        <table id="dataTable" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                        <table id="dataTableDoors" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
 
                                 </div>
@@ -606,6 +619,147 @@
 
             <br>
         </div>
+        <div id="eventRemeasureContent" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true" class="modal fade">
+        <div class="modal-dialog modal-ku" role="document">
+            <div class="modal-content">
+                <div class="modal-header ">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+
+                    </button>
+                    <h4 class="modal-title" id="WorkOrderTitleRemeasure"></h4>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <div role="tabpanel">
+                        <!-- Nav tabs -->
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                                <a href="#CustomerTabRemeasure" aria-controls="customerTab" role="tab" data-toggle="tab">CUSTOMER</a>
+
+                            </li>
+                            <li role="presentation">
+                                <a href="#RemeasureTab" aria-controls="remeasureTab" role="tab" data-toggle="tab">REMEASURE</a>
+
+                            </li>
+                            <li role="presentation">
+                                <a href="#ProductTabRemeasure" aria-controls="productTab" role="tab" data-toggle="tab">PRODUCT</a>
+
+                            </li>
+
+
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="CustomerTabRemeasure">
+                                <div id="mapRemeasure">
+
+                                </div>
+
+                                <div id="contentRemeasure">
+                                    <br>
+                                    <br>
+                                    <div><b>First Name: </b><span id="FirstNameRemeasure"></span></div>
+                                    <br>
+                                    <div><b>Last Name: </b><span id="LastNameRemeasure"></span></div>
+                                    <br>
+                                    <div><b>Work Order: </b><span id="workOrderRemeasure"></span></div>
+                                    <br>
+                                    <div><b>Street Address: </b><span id="AddressRemeasure"></span></div>
+                                    <br>
+                                    <div><b>City: </b><span id="CityRemeasure"></span></div>
+                                    <br>
+                                    <div><b>Postal Code: </b><span id="postalCodeRemeasure"></span></div>
+                                    <br>
+                                    <div><b>Home Phone: </b><span id="homePhoneRemeasure"></span></div>
+                                    <br>
+                                    <div><b>Work Phone: </b><span id="workPhoneRemeasure"></span></div>
+                                    <br>
+                                    <div><b>Cell Phone: </b><span id="cellPhoneRemeasure"></span></div>
+                                    <br>
+                                    <div><b>Email: </b><span id="emailRemeasure"></span></div>
+                                    <br>
+                                    <div><b>Sales Rep: </b><span id="salesRepRemeasure"></span></div>
+                                    <br>
+
+                                    <div><b>Total Windows: </b><span id="TotalWindows1Remeasure"></span></div>
+
+                                    <br>
+                                    <div><b>Total Patio Doors: </b><span id="TotalDoors1Remeasure"></span></div>
+                                    <br>
+
+                                    <div><b>Total Codel Doors: </b><span id="TotalDoors2Remeasure"></span></div>
+                                    <br>
+                                    <div><b>Sales Amount: </b><span id="SalesAmmountRemeasure"></span></div>
+
+                                    <br>
+                                </div>
+                            </div>
+
+                            <div role="tabpanel" class="tab-pane" id="RemeasureTab">
+                                <div id="RemeasureContent" style="width: 600px; margin-left: 20px; padding-left: 100px;">
+                                    <br>
+                                    <br>
+                                    <span><b>Remeasure Date: </b></span>
+                                    <div class="container">
+
+                                        <div class="leftcolumn">
+                                            <div class="container">
+                                                <div class="leftcolumn" style="width: 5%; align-items: center;">
+                                                    From:
+                                                </div>
+                                                <div class="rightcolumn" style="width: 20%;">
+                                                    <input id="RemeasureDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Remeasure Date">
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="rightcolumn">
+                                            <div class="container">
+                                                <div class="leftcolumn" style="width: 5%; padding-left: 50px;">
+                                                   
+                                                </div>
+
+                                                <div class="rightcolumn" style="padding-left: 50px; width: 5%;">
+                                                  
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <br>
+
+
+                                    <input type="button" name="btnSave" id="btnRemeasureSave" class="btn btn-success" value="Save" onclick="UpdateRemeasureEvents()">
+                                </div>
+                            </div>
+                            <div role="tabpanel" class="tab-pane " id="ProductTabRemeasure">
+                                <div style="overflow: auto; height: 600px;">
+                                    <table id="dataTableRemeasure" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                </div>
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal-footer">
+                </div>
+            </div>
+        </div>
+
+        <br>
+    </div>
+
         <div id="openviewWeather">
             <a class="weatherwidget-io" href="https://forecast7.com/en/49d28n123d12/vancouver/" data-label_1="Vancouver" data-label_2="Weather" data-font="Roboto" data-icons="Climacons Animated" data-theme="original" data-accent="rgba(1, 1, 1, 0.0)"></a>
         </div>
@@ -875,8 +1029,7 @@
         </div>
 
 
-        <div id="updatedialog" style="font: 70% 'Trebuchet MS', sans-serif; margin: 50px; display: none;"
-            title="Update Event">
+        <div id="updatedialog" style="font: 70% 'Trebuchet MS', sans-serif; margin: 50px; display: none;" title="Update Event">
             <table cellpadding="0" class="style1">
                 <tr>
                     <td class="alignRight">Name:</td>

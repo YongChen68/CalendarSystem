@@ -101,6 +101,13 @@ namespace CalendarSystem
 
         [OperationContract]
         [WebInvoke(Method = "GET",
+            UriTemplate = "GetProductsDoors?workOrderNumber={workOrderNumber}",
+            ResponseFormat = WebMessageFormat.Json,
+            BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<Product> GetProductsDoors(string workOrderNumber);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
             UriTemplate = "GetInstallers?workOrderNumber={workOrderNumber}",
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedResponse)]

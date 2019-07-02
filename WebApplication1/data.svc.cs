@@ -390,6 +390,25 @@ namespace CalendarSystem
             return retValue;
         }
 
+
+        List<Product> Idata.GetProductsDoors(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetProductsDoors({0})", workOrderNumber);
+            List<Product> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetProductsDoors();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetProductsDoors() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+
         List<Installer> Idata.GetInstallers(string workOrderNumber)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetInstallers({0})", workOrderNumber);
