@@ -766,7 +766,7 @@ $(document).ready(function () {
                            
                             item.editable =( (item.HolidayName != null || readonly == "True") )? false : true;
                           //  item.editable = (readonly == "True") ? false : true;
-
+                            
                             eventWODict.push(item);
 
                         });
@@ -897,14 +897,116 @@ $(document).ready(function () {
                 eventArray = [];
             }
             if (event.ReturnedJob == 1) {
-                element.css({
-                    'background-color': '#ff6347'
-                    // 'border-color': '#333333'
-                });
+                switch (event.CurrentStateName) {
+                    case "Install in Progress":
+                        element.css({
+                            'background-color': '#a5d6a7'
+                        });
+                        break;
+                    case "Installation Confirmed":
+                        element.css({
+                            'background-color': '#4890e2'
+                        });
+                        break;
+                    case "Install Completed":
+                        element.css({
+                            'background-color': '#ffc966'
+                        });
+                        break;
+
+                    case "Installation inprogress rejected":
+                        element.css({
+                            'background-color': '#ff6347'
+                        });
+                        break;
+                    case "Installation Manager Review":
+                        element.css({
+                            'background-color': '#ffc966'
+                        });
+                        break;
+                    case "Job Completed":
+                        element.css({
+                            'background-color': '#ffc966'
+                        });
+                        break;
+                    case "Job Costing":
+                        element.css({
+                            'background-color': '#ffc966'
+                        });
+                        break;
+                    case "Pending Install Completion":
+                        element.css({
+                            'background-color': '#ff6347'
+                        });
+                        break;
+
+                    case "Ready for Invoicing":
+                        element.css({
+                            'background-color': '#ffc966'
+                        });
+                        break;
+                    case "ReMeasure Scheduled":
+                        element.css({
+                            'background-color': '#9FB6CD'
+                        });
+                        break;
+                    case "Rejected Installation":
+                        element.css({
+                            'background-color': '#ff6347'
+                        });
+                        break;
+                    case "Rejected Job Costing":
+                        element.css({
+                            'background-color': '#ff6347'
+                        });
+                        break;
+
+                    case "Rejected Manager Review":
+                        element.css({
+                            'background-color': '#ff6347'
+                        });
+                        break;
+                    case "Rejected Remeasure":
+                        element.css({
+                            'background-color': '#ff6347'
+                        });
+                        break;
+                    case "Rejected Scheduled Work":
+                        element.css({
+                            'background-color': '#ff6347'
+                        });
+                        break;
+                    case "Unreviewed Job Costing":
+                        element.css({
+                            'background-color': '#ffc966'
+                        });
+                        break;
+
+                    case "Unreviewed Work Scheduled":
+                        element.css({
+                            'background-color': '#9FB6CD'
+                        });
+                        break;
+                    case "VP Installation Approval":
+                        element.css({
+                            'background-color': '#ffc966'
+                        });
+                        break;
+                    case "Work Scheduled":
+                        element.css({
+                            'background-color': '#9FB6CD'
+                        });
+                        break;
+                }
+            
             }
             element.attr('href', 'javascript:void(0);');
             element.click(function () {
                 if (displayType == "Installation") {
+                    if (event.HolidayName != null) {
+                        event.jsEvent.cancelBubble = true;
+                        event.jsEvent.preventDefault();
+                    }
                     element.attr('data-toggle', "modal");
                     element.attr('data-target', "#eventContent");
                     element.attr('href', "/details");
