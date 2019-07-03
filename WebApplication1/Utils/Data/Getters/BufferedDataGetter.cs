@@ -236,5 +236,15 @@ and p.CurrentStateName <> 'Duplicated Work Order' and p.CurrentStateName <> 'Com
         {
             throw new NotImplementedException();
         }
+
+        public List<Product> GetManufacturingWindows()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Product> GetManufacturingDoors()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

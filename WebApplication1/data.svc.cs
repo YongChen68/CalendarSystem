@@ -409,6 +409,40 @@ namespace CalendarSystem
         }
 
 
+        List<Product> Idata.GetManufacturingWindows(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetManufacturingWindows({0})", workOrderNumber);
+            List<Product> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetManufacturingWindows();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetManufacturingWindows() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+        List<Product> Idata.GetManufacturingDoors(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetManufacturingDoors({0})", workOrderNumber);
+            List<Product> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetManufacturingDoors();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetManufacturingDoors() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
         List<Installer> Idata.GetInstallers(string workOrderNumber)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetInstallers({0})", workOrderNumber);

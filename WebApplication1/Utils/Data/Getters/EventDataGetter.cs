@@ -1202,6 +1202,58 @@ where i.WorkOrderNumber = '{0}' ", this.workOrderNumber);
             return SQL;
         }
 
+        public List<Product> GetManufacturingWindows()
+        {
+            string SQL = GetManufacturingWindowsSQL();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("pWorkOrderNumber", this.workOrderNumber));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.Product>(SQL, pars.ToArray());
+        }
+
+        private string GetManufacturingWindowsSQL()
+        {
+            string SQL = string.Format(@"select  p.WorkOrderNumber
+         ,i.[Item] 
+      ,i.[Size_1] as Size
+         ,i.[Quantity]
+      ,i.[SubQty]
+      ,i.[System_1] as System
+      ,i.[Description]
+      ,i.[Status]
+  FROM [flowserv_flowfinityapps].[dbo].[PlantProduction_items] as i INNER JOIN
+       [flowserv_flowfinityapps].[dbo].[PlantProduction] as p ON i.ParentRecordId = p.RecordId
+where p.WorkOrderNumber = '{0}' ", this.workOrderNumber);
+            return SQL;
+        }
+
+        public List<Product> GetManufacturingDoors()
+        {
+            string SQL = GetManufacturingDoorsSQL();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("pWorkOrderNumber", this.workOrderNumber));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.Product>(SQL, pars.ToArray());
+        }
+
+        private string GetManufacturingDoorsSQL()
+        {
+            string SQL = string.Format(@"				   	select  p.WorkOrderNumber
+         ,[Item1]  as Item
+      ,[Size1] as Size
+         ,[Quantity1]as Quantity
+      ,[SubQty1] as SubQty
+      ,[System1] as System
+      ,[Description1] as Description
+      ,[Status1] as Status
+  FROM [flowserv_flowfinityapps].[dbo].[PlantProduction_DoorItems] as i INNER JOIN
+       [flowserv_flowfinityapps].[dbo].[PlantProduction] as p ON i.ParentRecordId = p.RecordId
+where p.WorkOrderNumber = '{0}' ", this.workOrderNumber);
+            return SQL;
+        }
+
         public List<Installer> GetInstallers()
         {
             string SQL = GeInstallerSQL();

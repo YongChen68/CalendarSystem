@@ -1098,7 +1098,7 @@ $(document).ready(function () {
                    // var ss = GetNonReturnedJobDates(event.WorkOrderNumber);
                     //GetProducts(event.WorkOrderNumber);
                     GetInstallationProducts(event.WorkOrderNumber);
-                 //   GetManufacturingProducts(event.WorkOrderNumber);
+                    GetManufacturingProducts(event.WorkOrderNumber);
                     GetInstallers(event.WorkOrderNumber);
                     GetCalledLog(event.WorkOrderNumber);
                     GetWOPicture(event.WorkOrderNumber);
@@ -2042,24 +2042,28 @@ function GetInstallationProducts(workOrder) {
 function GetManufacturingProducts(workOrder) {
     $.ajax({
         //type: "POST",  
-        url: 'data.svc/GetProducts?workOrderNumber=' + workOrder,
+        url: 'data.svc/GetManufacturingWindows?workOrderNumber=' + workOrder,
         dataType: 'json',
         success: function (data) {
-            if (debug) console.log("events.success", "data.GetProducts:");
-
-            $("#dataTableWindows tr").remove();
-            if (data.GetProductsResult.length > 0) {
-                $("#dataTableWindows").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
-                for (var i = 0; i < data.GetProductsResult.length; i++) {
-                    $("#dataTableWindows").append("<tr><td>" +
-                        data.GetProductsResult[i].Item + "</td> <td>" +
-                        data.GetProductsResult[i].Size + "</td> <td>" +
-                        data.GetProductsResult[i].Quantity + "</td> <td>" +
-                        data.GetProductsResult[i].SubQty + "</td> <td>" +
-                        data.GetProductsResult[i].System + "</td> <td>" +
-                        data.GetProductsResult[i].Description + "</td> <td>" +
-                        data.GetProductsResult[i].Status + "</td></tr>");
+            if (debug) console.log("events.success", "data.GetManufacturingWindows:");
+            var noManufacturingWindows = document.getElementById('noManufacturingWindows');
+            $("#dataTableManufacturingWindows tr").remove();
+            if (data.GetManufacturingWindowsResult.length > 0) {
+                noManufacturingWindows.style.display = "none";
+                $("#dataTableManufacturingWindows").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
+                for (var i = 0; i < data.GetManufacturingWindowsResult.length; i++) {
+                    $("#dataTableManufacturingWindows").append("<tr><td>" +
+                        data.GetManufacturingWindowsResult[i].Item + "</td> <td>" +
+                        data.GetManufacturingWindowsResult[i].Size + "</td> <td>" +
+                        data.GetManufacturingWindowsResult[i].Quantity + "</td> <td>" +
+                        data.GetManufacturingWindowsResult[i].SubQty + "</td> <td>" +
+                        data.GetManufacturingWindowsResult[i].System + "</td> <td>" +
+                        data.GetManufacturingWindowsResult[i].Description + "</td> <td>" +
+                        data.GetManufacturingWindowsResult[i].Status + "</td></tr>");
                 }
+            }
+            else {
+                noManufacturingWindows.style.display = "block";
             }
 
         }, error: function (error) {
@@ -2070,24 +2074,28 @@ function GetManufacturingProducts(workOrder) {
 
     $.ajax({
         //type: "POST",  
-        url: 'data.svc/GetProductsDoors?workOrderNumber=' + workOrder,
+        url: 'data.svc/GetManufacturingDoors?workOrderNumber=' + workOrder,
         dataType: 'json',
         success: function (data) {
-            if (debug) console.log("events.success", "data.ProductsDoors:");
-
-            $("#dataTableDoors tr").remove();
-            if (data.ProductsDoorsResult.length > 0) {
-                $("#dataTableDoors").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
-                for (var i = 0; i < data.GetProductsDoorResult.length; i++) {
-                    $("#dataTableDoors").append("<tr><td>" +
-                        data.ProductsDoorsResult[i].Item + "</td> <td>" +
-                        data.ProductsDoorsResult[i].Size + "</td> <td>" +
-                        data.ProductsDoorsResult[i].Quantity + "</td> <td>" +
-                        data.ProductsDoorsResult[i].SubQty + "</td> <td>" +
-                        data.ProductsDoorsResult[i].System + "</td> <td>" +
-                        data.ProductsDoorsResult[i].Description + "</td> <td>" +
-                        data.ProductsDoorsResult[i].Status + "</td></tr>");
+            if (debug) console.log("events.success", "data.GetManufacturingDoors:");
+            var noManufacturingDoors = document.getElementById('noManufacturingDoors');
+            $("#dataTableManufacturingDoors tr").remove();
+            if (data.GetManufacturingDoorsResult.length > 0) {
+                noManufacturingDoors.style.display = "none";
+                $("#dataTableManufacturingDoors").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
+                for (var i = 0; i < data.GetManufacturingDoorsResult.length; i++) {
+                    $("#dataTableManufacturingDoors").append("<tr><td>" +
+                        data.GetManufacturingDoorsResult[i].Item + "</td> <td>" +
+                        data.GetManufacturingDoorsResult[i].Size + "</td> <td>" +
+                        data.GetManufacturingDoorsResult[i].Quantity + "</td> <td>" +
+                        data.GetManufacturingDoorsResult[i].SubQty + "</td> <td>" +
+                        data.GetManufacturingDoorsResult[i].System + "</td> <td>" +
+                        data.GetManufacturingDoorsResult[i].Description + "</td> <td>" +
+                        data.GetManufacturingDoorsResult[i].Status + "</td></tr>");
                 }
+            }
+            else {
+                noManufacturingDoors.style.display = "block";
             }
 
         }, error: function (error) {

@@ -20,6 +20,10 @@ namespace CalendarSystem.Utils.Data
         List<Generics.Utils.Holiday> GetHolidayData();
         List<Generics.Utils.Product> GetProducts();
         List<Generics.Utils.Product> GetProductsDoors();
+        List<Generics.Utils.Product> GetManufacturingWindows();
+        List<Generics.Utils.Product> GetManufacturingDoors();
+
+
         List<Generics.Utils.Installer> GetInstallers();
         List<Generics.Utils.CalledLog> GetCalledLog();
         List<Generics.Utils.WOPicture> GetWOPicture();
