@@ -138,6 +138,13 @@ namespace CalendarSystem
 
         [OperationContract]
         [WebInvoke(Method = "GET",
+UriTemplate = "GetSubTrades?workOrderNumber={workOrderNumber}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<SubTrades> GetSubTrades(string workOrderNumber);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
 UriTemplate = "GetWOPicture?workOrderNumber={workOrderNumber}",
 ResponseFormat = WebMessageFormat.Json,
 BodyStyle = WebMessageBodyStyle.WrappedResponse)]

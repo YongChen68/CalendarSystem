@@ -1302,6 +1302,26 @@ where WorkOrderNumber = '{0}' ", this.workOrderNumber);
         }
 
 
+        private string GetSubTradesSQL()
+        {
+            string SQL = string.Format(@"SELECT [SubTrade]
+      ,[Status]
+  FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_SubtradeReqired] INNER JOIN
+       [flowserv_flowfinityapps].[dbo].[HomeInstallations] AS i ON i.RecordId = ParentRecordId
+
+where i.WorkOrderNumber = '{0}' ", this.workOrderNumber);
+            return SQL;
+        }
+
+        public List<SubTrades> GetSubTrades()
+        {
+            string SQL = GetSubTradesSQL();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("WorkOrderNumber", this.workOrderNumber));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.SubTrades>(SQL, pars.ToArray());
+        }
         public List<WOPicture> GetWOPicture()
         {
             string SQL = GetWOPictureSQL();

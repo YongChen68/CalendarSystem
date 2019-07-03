@@ -246,5 +246,10 @@ and p.CurrentStateName <> 'Duplicated Work Order' and p.CurrentStateName <> 'Com
         {
             throw new NotImplementedException();
         }
+
+        public List<SubTrades> GetSubTrades()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

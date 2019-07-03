@@ -261,7 +261,7 @@
         }
 
         .modal-ku {
-            width: 1400px;
+            width: 1600px;
             margin: auto;
         }
 
@@ -353,6 +353,9 @@
 
                                 </li>
                                 <li role="presentation">
+                                    <a href="#SubTradesTab" aria-controls="SubTradesTab" role="tab" data-toggle="tab">SUB TDADES REQUIRED</a>
+                                </li>
+                                <li role="presentation">
                                     <a href="#JobAnalysisTab" aria-controls="JobAnalysisTab" role="tab" data-toggle="tab">JOB ANALYSIS</a>
 
                                 </li>
@@ -362,7 +365,6 @@
                                 </li>
                                  <li role="presentation">
                                     <a href="#WOPictureTab" aria-controls="WOPictureTab" role="tab" data-toggle="tab">Photo Gallery</a>
-
                                 </li>
                             </ul>
                             <!-- Tab panes -->
@@ -609,7 +611,14 @@
                                     </div>
 
                                 </div>
-
+                                <div role="tabpanel" class="tab-pane " id="SubTradesTab">
+                                     <br/>
+                                    <div > <span id="noSubTrades" style=" text-align:left; display:none;">No Sub Trades required for this job.</span>
+                                    </div>
+                                    <div style="overflow: auto; ">
+                                        <table id="dataTableSubTrades" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                    </div>
+                                </div>
                                 <div role="tabpanel" class="tab-pane " id="JobAnalysisTab">
                                      <div id="LBRContent" style="width: 600px; margin-left: 20px; padding-left: 100px;  text-align:left;"">
                                         <br/>
@@ -620,7 +629,7 @@
                                 </div>
                                 <div role="tabpanel" class="tab-pane " id="CalledLogTab">
                                      <br/>
-                                    <div style="overflow: auto; height: 600px;">
+                                    <div style="overflow: auto;">
                                         <table id="dataTableCalledLog" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
 
@@ -628,7 +637,9 @@
 
                                 <div role="tabpanel" class="tab-pane " id="WOPictureTab">
                                      <br/>
-                                    <div style="overflow: auto; height: 600px;">
+                                     <div > <span id="noPhoto" style=" text-align:left; display:none;">No photo attached to this job.</span>
+                                    </div>
+                                    <div style="overflow: auto; ">
                                         <table id="dataTableWOPicture" class="table table-striped table-bordered table-hover table-condensed"></table>
                                         <img id="ItemPreview" src="" />
                                     </div>

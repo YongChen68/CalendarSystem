@@ -56,6 +56,20 @@ namespace Generics.Utils
 
     }
 
+    public class SubTrades
+    {
+     
+
+        [DataMember]
+        public string SubTrade { get; set; }
+
+
+        [DataMember]
+        public string Status { get; set; }
+
+
+    }
+
     public class WOPicture
     {
         [DataMember]

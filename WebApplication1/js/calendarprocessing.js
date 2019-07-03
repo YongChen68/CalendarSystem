@@ -1102,6 +1102,7 @@ $(document).ready(function () {
                     GetInstallers(event.WorkOrderNumber);
                     GetCalledLog(event.WorkOrderNumber);
                     GetWOPicture(event.WorkOrderNumber);
+                    GetSubTrades(event.WorkOrderNumber);
                    // GetJobAnalysys(event.WorkOrderNumber);
                     $("#TotalLBRMin").html(event.TotalInstallationLBRMin);
 
@@ -2200,39 +2201,82 @@ function GetCalledLog(workOrder) {
 
 }
 
+
+function GetSubTrades(workOrder) {
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetSubTrades?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetSubTrades:");
+            var noSubTrades = document.getElementById('noSubTrades');
+            $("#dataTableSubTrades tr").remove();
+            if (data.GetSubTradesResult.length > 0) {
+                noSubTrades.style.display = "none";
+                //$("#DateCalled").html(new Date(GetDatefromMoment(data.GetCalledLogResult[0].DateCalled)).toLocaleDateString('en-US'));
+                //$("#CalledMessage").html(data.GetCalledLogResult[0].CalledMessage);
+                //$("#CalledLogNotes").html(data.GetCalledLogResult[0].Notes3);
+
+                $("#dataTableSubTrades").append("<tr>  <th style='text-align:center;'>SubTrade</th > <th style = 'text-align:center;' > Status</th >");
+
+                for (var i = 0; i < data.GetSubTradesResult.length; i++) {
+                    $("#dataTableSubTrades").append("<tr><td>" +
+
+                        data.GetSubTradesResult[i].SubTrade + "</td> <td>" +
+
+                        data.GetSubTradesResult[i].Status + "</td></tr>");
+                }
+
+            }
+            else {
+                noSubTrades.style.display = "block";
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
+
+
 function GetWOPicture(workOrder) {
     $.ajax({
         //type: "POST",  
         url: 'data.svc/GetWOPicture?workOrderNumber=' + workOrder,
         dataType: 'json',
         success: function (data) {
-            if (debug) console.log("events.success", "data.CalledLog:");
-
+            if (debug) console.log("events.success", "data.GetWOPicture:");
+            var noPhoto = document.getElementById('noPhoto');
             $("#dataTableWOPicture tr").remove(); 
             if (data.GetWOPictureResult.length > 0) {
-               $("#dataTableWOPicture").append("<tr>  <th style = 'text-align:center;' > Picture Name</th ><th style='text-align:center;'> Picture</th > ");
+                noPhoto.style.display = "none";
+                $("#dataTableWOPicture").append("<tr>  <th style = 'text-align:center;' > Picture Name</th ><th style='text-align:center;'> Picture</th > ");
 
                 for (var i = 0; i < data.GetWOPictureResult.length; i++) {
                     $("#dataTableWOPicture").append("<tr><td>" +
                         data.GetWOPictureResult[i].PictureName + "</td> <td> <image " +
 
-                     //   $('#item').attr('src', `data:image/jpg;base64,' + hexToBase64{data.GetWOPictureResult[0].pic)  + "</image></td></tr>");
-                    //  " document.getElementById('item').src = '" + data.GetWOPictureResult[0].picString + "'</image></td></tr>");
-                       data.GetWOPictureResult[i].picString + "'</image></td></tr>");
+                        //   $('#item').attr('src', `data:image/jpg;base64,' + hexToBase64{data.GetWOPictureResult[0].pic)  + "</image></td></tr>");
+                        //  " document.getElementById('item').src = '" + data.GetWOPictureResult[0].picString + "'</image></td></tr>");
+                        data.GetWOPictureResult[i].picString + "'</image></td></tr>");
 
-                 //   $("#dataTableWOPicture").append("<tr><td><image id='item'" +
-                //       $('#item').attr('src', `data:image/jpg;base64,' + hexToBase64{data.GetWOPictureResult[0].pic)  + "</image></td></tr>");
-                       //(data.GetCalledLogResult[i].DateCalled)).toLocaleDateString('en-US') + "</td> <td>" +
-                       // data.GetCalledLogResult[i].CalledMessage + "</td> <td>" +
+                    //   $("#dataTableWOPicture").append("<tr><td><image id='item'" +
+                    //       $('#item').attr('src', `data:image/jpg;base64,' + hexToBase64{data.GetWOPictureResult[0].pic)  + "</image></td></tr>");
+                    //(data.GetCalledLogResult[i].DateCalled)).toLocaleDateString('en-US') + "</td> <td>" +
+                    // data.GetCalledLogResult[i].CalledMessage + "</td> <td>" +
 
-                       // data.GetCalledLogResult[i].Notes3 + "</td></tr>");
+                    // data.GetCalledLogResult[i].Notes3 + "</td></tr>");
                 }
 
                 //  $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
                 //$("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
 
             }
-
+            else {
+                noPhoto.style.display = "block";
+            }
         }, error: function (error) {
             console.log('Error', error);
             $('#script-warning').show();

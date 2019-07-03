@@ -477,6 +477,23 @@ namespace CalendarSystem
             return retValue;
         }
 
+        List<SubTrades> Idata.GetSubTrades(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetSubTrades({0})", workOrderNumber);
+            List<SubTrades> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetSubTrades();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetSubTrades() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
         List<WOPicture> Idata.GetWOPicture(string workOrderNumber)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetWOPicture({0})", workOrderNumber);

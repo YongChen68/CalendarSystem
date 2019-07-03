@@ -23,6 +23,7 @@ namespace CalendarSystem.Utils.Data
         List<Generics.Utils.Product> GetManufacturingWindows();
         List<Generics.Utils.Product> GetManufacturingDoors();
 
+        List<Generics.Utils.SubTrades> GetSubTrades();
 
         List<Generics.Utils.Installer> GetInstallers();
         List<Generics.Utils.CalledLog> GetCalledLog();
