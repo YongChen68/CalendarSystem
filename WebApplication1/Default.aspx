@@ -345,7 +345,11 @@
 
                                 </li>
                                 <li role="presentation">
-                                    <a href="#ProductTab" aria-controls="productTab" role="tab" data-toggle="tab">MANUFACTURING STATUS</a>
+                                    <a href="#InstallationTab" aria-controls="installationTab" role="tab" data-toggle="tab">INSTALLATION STATUS</a>
+
+                                </li>
+                                <li role="presentation">
+                                    <a href="#ManufacturingTab" aria-controls="manufacturingTab" role="tab" data-toggle="tab">MANUFACTURING STATUS</a>
 
                                 </li>
                                 <li role="presentation">
@@ -568,17 +572,40 @@
                                     </div>
                                 </div>
 
-                                <div role="tabpanel" class="tab-pane " id="ProductTab">
+                                <div role="tabpanel" class="tab-pane " id="InstallationTab">
                                     <br />
-                                    <div style=" text-align:left;"><b> <span id="windows" >WINDOWS</span></b>
-                                        </div>
-                                    <div style="overflow: auto; height: 300px;">
-                                        <table id="dataTableWindows" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                    <div style=" text-align:left;"><b> <span id="installationWindows" >WINDOWS</span></b>
+                                    </div>
+                                    <div > <span id="noInstallationWindows" style=" text-align:left; display:none;">This order does not contain any windows.</span>
+                                    </div>
+                                    <div style="overflow: auto; ">
+                                        <table id="dataTableInstallationWindows" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
                                     <br />
-                                    <div style=" text-align:left;"> <b> <span id="doors">DOORS</span></b>  </div>
-                                    <div style="overflow: auto; height: 600px;">
-                                        <table id="dataTableDoors" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                    <div style=" text-align:left;"> <b> <span id="installationDoors">DOORS</span></b>  </div>
+                                    <div > <span id="noInstallationDoors" style=" text-align:left; display:none;">This order does not contain any doors.</span>
+                                    </div>
+                                    <div style="overflow: auto; ">
+                                        <table id="dataTableInstallationDoors" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                    </div>
+
+                                </div>
+
+                                 <div role="tabpanel" class="tab-pane " id="ManufacturingTab">
+                                    <br />
+                                    <div style=" text-align:left;"><b> <span id="manufacturingWindows" >WINDOWS</span></b>
+                                    </div>
+                                    <div > <span id="noManufacturingWindows" style=" text-align:left; display:none;">This order does not contain any windows.</span>
+                                    </div>
+                                    <div style="overflow: auto; ">
+                                        <table id="dataTableManufacturingWindows" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                    </div>
+                                    <br />
+                                    <div style=" text-align:left;"> <b> <span id="manufacturinDoors">DOORS</span></b>  </div>
+                                    <div > <span id="noManufacturingDoors" style=" text-align:left; display:none;">This order does not contain any doors.</span>
+                                    </div>
+                                    <div style="overflow: auto; ">
+                                        <table id="dataTableManufacturingDoors" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
 
                                 </div>
@@ -591,7 +618,7 @@
                                     </div>
 
                                 </div>
-                                 <div role="tabpanel" class="tab-pane " id="CalledLogTab">
+                                <div role="tabpanel" class="tab-pane " id="CalledLogTab">
                                      <br/>
                                     <div style="overflow: auto; height: 600px;">
                                         <table id="dataTableCalledLog" class="table table-striped table-bordered table-hover table-condensed"></table>
@@ -599,7 +626,7 @@
 
                                 </div>
 
-                                   <div role="tabpanel" class="tab-pane " id="WOPictureTab">
+                                <div role="tabpanel" class="tab-pane " id="WOPictureTab">
                                      <br/>
                                     <div style="overflow: auto; height: 600px;">
                                         <table id="dataTableWOPicture" class="table table-striped table-bordered table-hover table-condensed"></table>

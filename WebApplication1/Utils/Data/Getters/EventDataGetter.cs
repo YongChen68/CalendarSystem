@@ -1188,13 +1188,13 @@ where i.WorkOrderNumber = '{0}' ", this.workOrderNumber);
         private string GetProductDoorSQL()
         {
             string SQL = string.Format(@"select  i.WorkOrderNumber
-         ,i.[Item1]  as Item
-      ,i.[Size1] as Size
-         ,i.[Quantity11] as Quantity
-      ,i.[SubQty1] as SubQty
-      ,i.[System1] as System
-      ,i.[Description11] as Description
-      ,i.[Status11] as Status
+         ,[Item1]  as Item
+      ,[Size1] as Size
+         ,[Quantity11] as Quantity
+      ,[SubQty1] as SubQty
+      ,[System1] as System
+      ,[Description11] as Description
+      ,[Status11] as Status
 FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_DoorItems] INNER JOIN
        [flowserv_flowfinityapps].[dbo].[HomeInstallations] AS i ON i.RecordId = ParentRecordId
 

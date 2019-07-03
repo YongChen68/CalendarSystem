@@ -1096,7 +1096,9 @@ $(document).ready(function () {
                     
                     //retrieve product info
                    // var ss = GetNonReturnedJobDates(event.WorkOrderNumber);
-                    GetProducts(event.WorkOrderNumber);
+                    //GetProducts(event.WorkOrderNumber);
+                    GetInstallationProducts(event.WorkOrderNumber);
+                 //   GetManufacturingProducts(event.WorkOrderNumber);
                     GetInstallers(event.WorkOrderNumber);
                     GetCalledLog(event.WorkOrderNumber);
                     GetWOPicture(event.WorkOrderNumber);
@@ -1968,7 +1970,76 @@ function GetJobAnalysys(workOrder) {
 }
 
 
-function GetProducts(workOrder) {
+function GetInstallationProducts(workOrder) {
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetProducts?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetProducts:");
+            var noInstallationWindows = document.getElementById('noInstallationWindows');
+            $("#dataTableInstallationWindows tr").remove(); 
+            if (data.GetProductsResult.length > 0) {
+                noInstallationWindows.style.display = "none";
+                $("#dataTableInstallationWindows").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
+                for (var i = 0; i < data.GetProductsResult.length; i++) {
+                    $("#dataTableInstallationWindows").append("<tr><td>" +
+                        data.GetProductsResult[i].Item + "</td> <td>" +
+                        data.GetProductsResult[i].Size + "</td> <td>" +
+                        data.GetProductsResult[i].Quantity + "</td> <td>" +
+                        data.GetProductsResult[i].SubQty + "</td> <td>" +
+                        data.GetProductsResult[i].System + "</td> <td>" +
+                        data.GetProductsResult[i].Description + "</td> <td>" +
+                        data.GetProductsResult[i].Status + "</td></tr>");
+                }
+            }
+            else {
+                noInstallationWindows.style.display = "block";
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetProductsDoors?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.ProductsDoors:");
+            var noInstallationDoors = document.getElementById('noInstallationDoors');
+            $("#dataTableInstallationDoors tr").remove();
+            if (data.GetProductsDoorsResult.length > 0) {
+                noInstallationDoors.style.display = "none";
+                $("#dataTableInstallationDoors").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
+                for (var i = 0; i < data.GetProductsDoorsResult.length; i++) {
+                    $("#dataTableInstallationDoors").append("<tr><td>" +
+                        data.GetProductsDoorsResult[i].Item + "</td> <td>" +
+                        data.GetProductsDoorsResult[i].Size + "</td> <td>" +
+                        data.GetProductsDoorsResult[i].Quantity + "</td> <td>" +
+                        data.GetProductsDoorsResult[i].SubQty + "</td> <td>" +
+                        data.GetProductsDoorsResult[i].System + "</td> <td>" +
+                        data.GetProductsDoorsResult[i].Description + "</td> <td>" +
+                        data.GetProductsDoorsResult[i].Status + "</td></tr>");
+                }
+            }
+            else {
+                noInstallationDoors.style.display = "block";
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
+
+
+
+function GetManufacturingProducts(workOrder) {
     $.ajax({
         //type: "POST",  
         url: 'data.svc/GetProducts?workOrderNumber=' + workOrder,
@@ -1976,14 +2047,14 @@ function GetProducts(workOrder) {
         success: function (data) {
             if (debug) console.log("events.success", "data.GetProducts:");
 
-            $("#dataTableWindows tr").remove(); 
+            $("#dataTableWindows tr").remove();
             if (data.GetProductsResult.length > 0) {
                 $("#dataTableWindows").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
                 for (var i = 0; i < data.GetProductsResult.length; i++) {
                     $("#dataTableWindows").append("<tr><td>" +
-                          data.GetProductsResult[i].Item + "</td> <td>" +
-                          data.GetProductsResult[i].Size + "</td> <td>" +
-                            data.GetProductsResult[i].Quantity + "</td> <td>" +
+                        data.GetProductsResult[i].Item + "</td> <td>" +
+                        data.GetProductsResult[i].Size + "</td> <td>" +
+                        data.GetProductsResult[i].Quantity + "</td> <td>" +
                         data.GetProductsResult[i].SubQty + "</td> <td>" +
                         data.GetProductsResult[i].System + "</td> <td>" +
                         data.GetProductsResult[i].Description + "</td> <td>" +
@@ -2065,7 +2136,7 @@ function GetInstallers(workOrder) {
         url: 'data.svc/GetInstallers?workOrderNumber=' + workOrder,
         dataType: 'json',
         success: function (data) {
-            if (debug) console.log("events.success", "data.GetProducts:");
+            if (debug) console.log("events.success", "data.GetInstallers:");
 
       
             if (data.GetInstallersResult.length > 0) {
