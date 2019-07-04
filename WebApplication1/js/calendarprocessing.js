@@ -1002,11 +1002,12 @@ $(document).ready(function () {
             }
             element.attr('href', 'javascript:void(0);');
             element.click(function () {
+                if (event.HolidayName != null) {
+                    event.jsEvent.cancelBubble = true;
+                    event.jsEvent.preventDefault();
+                }
                 if (displayType == "Installation") {
-                    if (event.HolidayName != null) {
-                        event.jsEvent.cancelBubble = true;
-                        event.jsEvent.preventDefault();
-                    }
+                    
                     element.attr('data-toggle', "modal");
                     element.attr('data-target', "#eventContent");
                     element.attr('href', "/details");
@@ -1213,7 +1214,8 @@ $(document).ready(function () {
                     //$("#eventContent").modal("show");
 
                 }
-                else   if (displayType == "Remeasure") {
+                else if (displayType == "Remeasure") {
+
                     element.attr('data-toggle', "modal");
                     element.attr('data-target', "#eventRemeasureContent");
                     element.attr('href', "/details");
@@ -1286,7 +1288,7 @@ $(document).ready(function () {
             if ((event.HolidayName != undefined) && (event.HolidayName != null)) {
                 var ret = "<img src=\"images/holiday-icon.png\" title=\"" + "\">" +
                     "&nbsp;";
-                if (displayType == "Installation") {
+                if ((displayType == "Installation") || (displayType == "Remeasure")) {
                     ret += event.HolidayName;
                 }
                 element.css({
@@ -1312,34 +1314,7 @@ $(document).ready(function () {
                 $(element).find(dom).prepend("<img alt=\"#\" src=\"images/window.png\" title= \"" + ToWDString(event) + "\" />&nbsp;");
             }
 
-            if ((displayType == "Installation") && (event.HolidayName == null)){
-
-                dom = '.fc-title';
-                $(element).find(dom).empty();
-                
-
-                var ret ="<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
-                    event.EstInstallerCnt + "\">" +
-                    (event.TotalWindows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.TotalWindows  + "\" src=\"images/window.PNG\" />" : "") +
-                    (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Patio Doors: " + event.TotalDoors + "\" src=\"images/window.PNG\" />" : "") + "&nbsp;" +
-                    (event.TotalExtDoors != "0" ? "&nbsp;<img title=\"# of Codel Doors: " + event.TotalExtDoors + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
-                    (event.TotalWoodDropOff == 1 ? "&nbsp;<img src=\"images/delivery.PNG\" />" : "") +
-                    //(event.TotalAsbestos == 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
-                    ((event.TotalAsbestos == 1) || (event.LeadPaint=='Yes') ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
-                    (event.TotalHighRisk == 1 ? "&nbsp;<img src=\"images/risk.PNG\" />" : "") +
-                    (event.ReturnedJob == 1 ? "&nbsp;<img src=\"images/fire.PNG\" />" : "") +
-                    (" " + event.WorkOrderNumber) + "&nbsp;" +
-                    (",Name: " + event.LastName.trim().length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim())  +
-                     //   + event.FirstName.trim().length > 10 ? event.FirstName.trim().Substring(0, 10) : event.FirstName.trim()) +
-                "&nbsp;" + (event.City) + "&nbsp;";
-                  //  ("WO: ") + "&nbsp;" ;
-
-                $(element).find(dom).append(ret);
-              
-            }
-
-
-            if ((displayType == "Remeasure") && (event.HolidayName == null)) {
+            if ((displayType == "Installation") && (event.HolidayName == null)) {
 
                 dom = '.fc-title';
                 $(element).find(dom).empty();
@@ -1354,7 +1329,7 @@ $(document).ready(function () {
                     //(event.TotalAsbestos == 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
                     ((event.TotalAsbestos == 1) || (event.LeadPaint == 'Yes') ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
                     (event.TotalHighRisk == 1 ? "&nbsp;<img src=\"images/risk.PNG\" />" : "") +
-
+                    (event.ReturnedJob == 1 ? "&nbsp;<img src=\"images/fire.PNG\" />" : "") +
                     (" " + event.WorkOrderNumber) + "&nbsp;" +
                     (",Name: " + event.LastName.trim().length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
                     //   + event.FirstName.trim().length > 10 ? event.FirstName.trim().Substring(0, 10) : event.FirstName.trim()) +
@@ -1362,6 +1337,25 @@ $(document).ready(function () {
                 //  ("WO: ") + "&nbsp;" ;
 
                 $(element).find(dom).append(ret);
+
+            }
+            else if ((displayType == "Remeasure") && (event.HolidayName == null)) {
+
+                dom = '.fc-title';
+                $(element).find(dom).empty();
+
+
+                var ret1 = "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
+                    event.EstInstallerCnt + "\">" +
+                    (event.TotalWindows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.TotalWindows + "\" src=\"images/window.PNG\" />" : "") +
+                    (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Patio Doors: " + event.TotalDoors + "\" src=\"images/window.PNG\" />" : "") + "&nbsp;" +
+                    (" " + event.WorkOrderNumber) + "&nbsp;" +
+                    (",Name: " + event.LastName.trim().length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
+                    //   + event.FirstName.trim().length > 10 ? event.FirstName.trim().Substring(0, 10) : event.FirstName.trim()) +
+                    "&nbsp;" + (event.City) + "&nbsp;";
+                //  ("WO: ") + "&nbsp;" ;
+
+                $(element).find(dom).append(ret1);
 
             }
 
@@ -1387,7 +1381,7 @@ $(document).ready(function () {
             //var dayId = FindDayIdfromTotals(GetDatefromMoment(event.start));
           
             var dayId;
-            if (displayType == "Installation") {
+            if ((displayType == "Installation") || (displayType == "Remeasure")){
               dayId = FindDayIdfromTotals(GetDatefromMoment(event.ScheduledDate));
             }
             else
@@ -2027,7 +2021,7 @@ function UpdateRemeasureEvents(event) {
 
 
 function GetJobAnalysys(workOrder) {
-    TotalLBRMin
+   // TotalLBRMin
     //var test;
     //var tab = $("a[href='#JobAnalysisTab']");
     //if (tab.innerText == "JOB ANALYSIS") {
@@ -2074,6 +2068,8 @@ function GetJobAnalysys(workOrder) {
 
 
 function GetInstallationProducts(workOrder) {
+    $("#dataTableInstallationDoors tr").remove();
+    $("#dataTableInstallationWindows tr").remove(); 
     $.ajax({
         //type: "POST",  
         url: 'data.svc/GetProducts?workOrderNumber=' + workOrder,
@@ -2081,7 +2077,7 @@ function GetInstallationProducts(workOrder) {
         success: function (data) {
             if (debug) console.log("events.success", "data.GetProducts:");
             var noInstallationWindows = document.getElementById('noInstallationWindows');
-            $("#dataTableInstallationWindows tr").remove(); 
+         
             if (data.GetProductsResult.length > 0) {
                 noInstallationWindows.style.display = "none";
                 $("#dataTableInstallationWindows").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
@@ -2113,7 +2109,7 @@ function GetInstallationProducts(workOrder) {
         success: function (data) {
             if (debug) console.log("events.success", "data.ProductsDoors:");
             var noInstallationDoors = document.getElementById('noInstallationDoors');
-            $("#dataTableInstallationDoors tr").remove();
+           
             if (data.GetProductsDoorsResult.length > 0) {
                 noInstallationDoors.style.display = "none";
                 $("#dataTableInstallationDoors").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
@@ -2143,6 +2139,8 @@ function GetInstallationProducts(workOrder) {
 
 
 function GetManufacturingProducts(workOrder) {
+    $("#dataTableManufacturingDoors tr").remove();
+    $("#dataTableManufacturingWindows tr").remove();
     $.ajax({
         //type: "POST",  
         url: 'data.svc/GetManufacturingWindows?workOrderNumber=' + workOrder,
@@ -2150,7 +2148,7 @@ function GetManufacturingProducts(workOrder) {
         success: function (data) {
             if (debug) console.log("events.success", "data.GetManufacturingWindows:");
             var noManufacturingWindows = document.getElementById('noManufacturingWindows');
-            $("#dataTableManufacturingWindows tr").remove();
+           
             if (data.GetManufacturingWindowsResult.length > 0) {
                 noManufacturingWindows.style.display = "none";
                 $("#dataTableManufacturingWindows").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
@@ -2182,7 +2180,7 @@ function GetManufacturingProducts(workOrder) {
         success: function (data) {
             if (debug) console.log("events.success", "data.GetManufacturingDoors:");
             var noManufacturingDoors = document.getElementById('noManufacturingDoors');
-            $("#dataTableManufacturingDoors tr").remove();
+            
             if (data.GetManufacturingDoorsResult.length > 0) {
                 noManufacturingDoors.style.display = "none";
                 $("#dataTableManufacturingDoors").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
@@ -2210,6 +2208,7 @@ function GetManufacturingProducts(workOrder) {
 }
 
 function GetRemeasureProducts(workOrder) {
+    $("#dataTableRemeasure tr").remove();
     $.ajax({
         //type: "POST",  
         url: 'data.svc/GetProducts?workOrderNumber=' + workOrder,
@@ -2217,7 +2216,7 @@ function GetRemeasureProducts(workOrder) {
         success: function (data) {
             if (debug) console.log("events.success", "data.GetProducts:");
 
-            $("#dataTableRemeasure tr").remove();
+           
             if (data.GetProductsResult.length > 0) {
                 $("#dataTableRemeasure").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
                 for (var i = 0; i < data.GetProductsResult.length; i++) {
@@ -2266,6 +2265,7 @@ function GetInstallers(workOrder) {
 }
 
 function GetCalledLog(workOrder) {
+    $("#dataTableCalledLog tr").remove(); 
     $.ajax({
         //type: "POST",  
         url: 'data.svc/GetCalledLog?workOrderNumber=' + workOrder,
@@ -2273,7 +2273,7 @@ function GetCalledLog(workOrder) {
         success: function (data) {
             if (debug) console.log("events.success", "data.CalledLog:");
 
-            $("#dataTableCalledLog tr").remove(); 
+       
             if (data.GetCalledLogResult.length > 0) {
                
                 //$("#DateCalled").html(new Date(GetDatefromMoment(data.GetCalledLogResult[0].DateCalled)).toLocaleDateString('en-US'));
@@ -2305,6 +2305,7 @@ function GetCalledLog(workOrder) {
 
 
 function GetSubTrades(workOrder) {
+    $("#dataTableSubTrades tr").remove();
     $.ajax({
         //type: "POST",  
         url: 'data.svc/GetSubTrades?workOrderNumber=' + workOrder,
@@ -2312,7 +2313,7 @@ function GetSubTrades(workOrder) {
         success: function (data) {
             if (debug) console.log("events.success", "data.GetSubTrades:");
             var noSubTrades = document.getElementById('noSubTrades');
-            $("#dataTableSubTrades tr").remove();
+           
             if (data.GetSubTradesResult.length > 0) {
                 noSubTrades.style.display = "none";
                 //$("#DateCalled").html(new Date(GetDatefromMoment(data.GetCalledLogResult[0].DateCalled)).toLocaleDateString('en-US'));
@@ -2344,6 +2345,7 @@ function GetSubTrades(workOrder) {
 
 
 function GetWOPicture(workOrder) {
+    $("#dataTableWOPicture tr").remove(); 
     $.ajax({
         //type: "POST",  
         url: 'data.svc/GetWOPicture?workOrderNumber=' + workOrder,
@@ -2351,7 +2353,7 @@ function GetWOPicture(workOrder) {
         success: function (data) {
             if (debug) console.log("events.success", "data.GetWOPicture:");
             var noPhoto = document.getElementById('noPhoto');
-            $("#dataTableWOPicture tr").remove(); 
+           
             if (data.GetWOPictureResult.length > 0) {
                 noPhoto.style.display = "none";
                 $("#dataTableWOPicture").append("<tr>  <th style = 'text-align:center;' > Picture Name</th ><th style='text-align:center;'> Picture</th > ");
