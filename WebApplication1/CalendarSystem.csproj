@@ -91,6 +91,9 @@
     <Content Include="js\calendarprocessing.js" />
     <None Include="js\oldcalendarprocessing.js.old2" />
     <Content Include="images\Custom.png" />
+    <Content Include="js\ekko-lightbox.css" />
+    <Content Include="js\ekko-lightbox.js" />
+    <Content Include="js\ekko-lightbox.min.js" />
     <Content Include="js\fullcalendar.css" />
     <Content Include="js\fullcalendar.js" />
     <Content Include="js\fullcalendar.min.css" />

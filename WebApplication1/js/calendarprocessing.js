@@ -272,7 +272,7 @@ function GetBlankDayData(day) {
         //  return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, SalesAmmount: 0, WOCount: 0 };
         return {
             day: dayName, date: remeasureDay, doors: 0, windows: 0, ExtDoors: 0,
-            SalesAmmount: 0, TotalAsbestos: 0, TotalWoodDropOff: 0, TotalHighRisk: 0, TotalLeadPaint: 0, WOCount: 0, installationwindowLBRMIN: 0, TotalInstallationLBRMin: 0, InstallationDoorLBRMin: 0,
+            SalesAmmount: 0, WOCount: 0, installationwindowLBRMIN: 0, TotalInstallationLBRMin: 0, InstallationDoorLBRMin: 0,
             InstallationPatioDoorLBRMin: 0, subinstallationwindowLBRMIN: 0, subInstallationPatioDoorLBRMin: 0, subExtDoorLBRMIN: 0, subTotalInstallationLBRMin: 0,
             SidingLBRBudget: 0, SidingLBRMin: 0, SidingSQF: 0
         };
@@ -524,6 +524,10 @@ $(document).ready(function () {
     LoadBufferedJobs();
     LoadInstallationBufferedJobs();
     $('#external-events1').hide();
+
+
+
+
 
     //$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
     //    var currentTab = $(e.target).text(); // get current tab
@@ -1011,6 +1015,8 @@ $(document).ready(function () {
                     element.attr('data-toggle', "modal");
                     element.attr('data-target', "#eventContent");
                     element.attr('href', "/details");
+
+      
                     $("#FirstName").html(event.FirstName);
                     $("#LastName").html(event.LastName);
                     $("#postalCode").html(event.PostCode);
@@ -1219,6 +1225,7 @@ $(document).ready(function () {
                     element.attr('data-toggle', "modal");
                     element.attr('data-target', "#eventRemeasureContent");
                     element.attr('href', "/details");
+           
                     $("#FirstNameRemeasure").html(event.FirstName);
                     $("#LastNameRemeasure").html(event.LastName);
                     $("#postalCodeRemeasure").html(event.PostCode);
@@ -1242,6 +1249,10 @@ $(document).ready(function () {
 
                     $("#AddressRemeasure").html(event.StreetAddress);
                     $("#SalesAmmountRemeasure").html(event.TotalSalesAmount.formatMoney(2, "$", ",", "."));
+                    $("#RemeasureDate").val('');
+                    $("#RemeasureDate").val(new Date(GetDatefromMoment(event.RemeasureDate + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+                  
+                    
 
                  //   codeAddressRemeasure();
                   codeAddress();
@@ -1302,7 +1313,7 @@ $(document).ready(function () {
 
 
             if (view.name == "agendaDay") {
-                if (displayType != "Installation") {
+                if ((displayType != "Installation") || (displayType != "Remeasure") ){
                     $(element).find(dom).text(element.text() + " - LBR Min: " + (event.TotalLBRMin !== undefined ? event.TotalLBRMin : 0) + ", Bundle: " + event.BatchNo);
                 }
             }
@@ -1320,7 +1331,7 @@ $(document).ready(function () {
                 $(element).find(dom).empty();
 
 
-                var ret = "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
+                var ret2 = "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
                     event.EstInstallerCnt + "\">" +
                     (event.TotalWindows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.TotalWindows + "\" src=\"images/window.PNG\" />" : "") +
                     (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Patio Doors: " + event.TotalDoors + "\" src=\"images/window.PNG\" />" : "") + "&nbsp;" +
@@ -1336,7 +1347,7 @@ $(document).ready(function () {
                     "&nbsp;" + (event.City) + "&nbsp;";
                 //  ("WO: ") + "&nbsp;" ;
 
-                $(element).find(dom).append(ret);
+                $(element).find(dom).append(ret2);
 
             }
             else if ((displayType == "Remeasure") && (event.HolidayName == null)) {
@@ -2003,13 +2014,45 @@ function UpdateRemeasureEvents(event) {
     
     $.ajax({
         url: 'data.svc/UpdateRemeasureData?id=' + id
-            + '&remeasureDate=' + remesureDate,
+            + '&remeasureDate=' + remesureDate
+            + '&fromPopup=no',
+        type: "POST",
+        success: function (data) {
+            if (debug) console.log("events.success", "data.UpdateRemeasureEvents:");
+            $("#RemeasureDate").val('');
+            $('#calendar').fullCalendar('refetchEvents');
+            $('#calendar').fullCalendar('rerenderEvents');
+    
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+}
+
+
+function UpdateRemeasureEventsFromPopup() {
+    var id = eventid;
+    var remesureDate; 
+    remesureDate = $("#RemeasureDate").val();
+
+    $("#RemeasureDate").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+
+    $.ajax({
+        url: 'data.svc/UpdateRemeasureData?id=' + id
+            + '&remeasureDate=' + remesureDate
+            + '&fromPopup=yes',
         type: "POST",
         success: function (data) {
             if (debug) console.log("events.success", "data.UpdateRemeasureEvents:");
 
+            //$('#calendar').fullCalendar('refetchEvents');
+            //$('#calendar').fullCalendar('rerenderEvents');
+      
+            $("#eventRemeasureContent .close").click();
             $('#calendar').fullCalendar('refetchEvents');
-            $('#calendar').fullCalendar('rerenderEvents');
+            //$('#calendar').fullCalendar('rerenderEvents');
 
         }, error: function (error) {
             console.log('Error', error);
@@ -2360,22 +2403,13 @@ function GetWOPicture(workOrder) {
 
                 for (var i = 0; i < data.GetWOPictureResult.length; i++) {
                     $("#dataTableWOPicture").append("<tr><td>" +
-                        data.GetWOPictureResult[i].PictureName + "</td> <td> <image " +
+                        data.GetWOPictureResult[i].PictureName + "</td> <td> <a href='https://www.google.com/imgres?imgurl=https%3A%2F%2Fphotos5.appleinsider.com%2Fgallery%2F27879-42410-XS-Max-vs-X-2-l.jpg&imgrefurl=https%3A%2F%2Fappleinsider.com%2Farticles%2F18%2F10%2F01%2Fphoto-shootout----comparing-the-iphone-xs-max-versus-the-iphone-x&docid=iVvUg0mffYFoxM&tbnid=ru4IIxc_SNv4KM%3A&vet=10ahUKEwjdyYrw5ZvjAhXLj1QKHZOkBL0QMwjHASgwMDA..i&w=660&h=371&bih=938&biw=1920&q=iphone%20x%20images&ved=0ahUKEwjdyYrw5ZvjAhXLj1QKHZOkBL0QMwjHASgwMDA&iact=mrc&uact=8' data-toggle='lightbox'> " +
+                        data.GetWOPictureResult[i].picString + "</a></td></tr>");
+                        
 
-                        //   $('#item').attr('src', `data:image/jpg;base64,' + hexToBase64{data.GetWOPictureResult[0].pic)  + "</image></td></tr>");
-                        //  " document.getElementById('item').src = '" + data.GetWOPictureResult[0].picString + "'</image></td></tr>");
-                        data.GetWOPictureResult[i].picString + "'</image></td></tr>");
-
-                    //   $("#dataTableWOPicture").append("<tr><td><image id='item'" +
-                    //       $('#item').attr('src', `data:image/jpg;base64,' + hexToBase64{data.GetWOPictureResult[0].pic)  + "</image></td></tr>");
-                    //(data.GetCalledLogResult[i].DateCalled)).toLocaleDateString('en-US') + "</td> <td>" +
-                    // data.GetCalledLogResult[i].CalledMessage + "</td> <td>" +
-
-                    // data.GetCalledLogResult[i].Notes3 + "</td></tr>");
+ 
                 }
 
-                //  $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
-                //$("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
 
             }
             else {

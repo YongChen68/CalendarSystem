@@ -350,6 +350,7 @@ namespace CalendarSystem
         public bool UpdateRemeasureData(
                string id
                , string remeasureDate
+               , string fromPopup
            )
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateRemeasureData('{0}')", id);
@@ -359,8 +360,16 @@ namespace CalendarSystem
             {
                 eventData = new ImproperRemeasureEvent();
                 eventData.id = id;
-
-                eventData.start = Convert.ToDateTime(remeasureDate).ToString("yyyy-MM-ddT00:00:00.000Z");
+                
+                if (fromPopup=="yes")
+                {
+                    eventData.start = Convert.ToDateTime(remeasureDate).ToString("yyyy-MM-ddT00:00:00.000Z");
+                }
+                else
+                {
+                    eventData.start = Convert.ToDateTime(remeasureDate).AddDays(1).ToString("yyyy-MM-ddT00:00:00.000Z");
+                }
+                
                 RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
                 retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Remeasure"), eventData);
 

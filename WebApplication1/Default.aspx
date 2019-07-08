@@ -16,7 +16,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link href='js/fullcalendar.css' rel='stylesheet' />
     <link href='css/application.css' rel='stylesheet' />
+
+    <link href='js/ekko-lightbox.css' rel='stylesheet' />
+
+    
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+
+
 
     <link href='js/fullcalendar.print.css' rel='stylesheet' media='print' />
 
@@ -31,6 +38,10 @@
     <script src='js/fullcalendar.js'></script>
     <script src="js/calendarprocessing.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhsQnBPh07vYae9Oakwczkyv8gTDY9j-U"></script>
+
+    <script src="js/ekko-lightbox.js"></script>
+    <script src="js/ekko-lightbox.min.js"></script>
+
     <script>
         var readonly = "<%= ReadOnly %>";
     </script>
@@ -90,6 +101,11 @@
 
             });
 
+            $('#RemeasureDate').datepicker({
+                dateFormat: "m/d/yy"
+
+            });
+
             $('.btn-minuse').on('click', function () {
                 $(this).parent().siblings('input').val(parseInt($(this).parent().siblings('input').val()) - 1)
             })
@@ -139,6 +155,8 @@
             });
 
         }
+
+
     </script>
 
 
@@ -313,6 +331,7 @@
             clear: both;
         }
     </style>
+
 </head>
 <body onload="initialize()">
     <form id="main" runat="server">
@@ -738,10 +757,11 @@
                             </div>
 
                             <div role="tabpanel" class="tab-pane" id="RemeasureTab">
-                                <div id="RemeasureContent" style="width: 600px; margin-left: 20px; padding-left: 100px;">
+                                <div id="RemeasureContent" style="width: 600px; margin-left: 20px; padding-left: 20px;">
+                                    
                                     <br>
-                                    <br>
-                                    <span><b>Remeasure Date: </b></span>
+                                    <span style="margin-left:-390px;"><b>Remeasure Date: </b></span>
+                                     <br>
                                     <div class="container">
 
                                         <div class="leftcolumn">
@@ -759,7 +779,7 @@
                                         <div class="rightcolumn">
                                             <div class="container">
                                                 <div class="leftcolumn" style="width: 5%; padding-left: 50px;">
-                                                   
+                                                       <input type="button" name="btnSave" id="btnRemeasureSave" class="btn btn-success" value="Save" onclick="UpdateRemeasureEventsFromPopup()">
                                                 </div>
 
                                                 <div class="rightcolumn" style="padding-left: 50px; width: 5%;">
@@ -774,7 +794,7 @@
                                     <br>
 
 
-                                    <input type="button" name="btnSave" id="btnRemeasureSave" class="btn btn-success" value="Save" onclick="UpdateRemeasureEvents()">
+                                
                                 </div>
                             </div>
                             <div role="tabpanel" class="tab-pane " id="ProductTabRemeasure">
@@ -1120,6 +1140,7 @@
 
         </div>
     </form>
+
 </body>
 </html>
 
