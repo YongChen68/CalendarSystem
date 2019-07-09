@@ -78,7 +78,7 @@
 
     <script>
         var geocoder;
-        var map;
+        var map,mapRemeasure;
         $(function () {
             // $("#from_date").datepicker();
             $('#from_date').datepicker({
@@ -125,6 +125,7 @@
                 mapTypeControl: false
             }
             map = new google.maps.Map(document.getElementById('map'), mapOptions);
+            mapRemeasure = new google.maps.Map(document.getElementById('mapRemeasure'), mapOptions);
 
             var marker = new google.maps.Marker({
                 position: latlng,
@@ -154,8 +155,33 @@
                 }
             });
 
+
         }
 
+        function codeAddressRemeasure() {
+            var address = document.getElementById('AddressRemeasure').innerHTML;
+            var request = {
+                address: address,
+                componentRestrictions: {
+                    country: 'CA'
+                }
+            }
+
+            geocoder.geocode(request, function (results, status) {
+                if (status == 'OK') {
+                    mapRemeasure.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: mapRemeasure,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                    mapRemeasure = null;
+                }
+            });
+
+
+        }
 
     </script>
 
@@ -712,7 +738,7 @@
                         <!-- Tab panes -->
                         <div class="tab-content">
                             <div role="tabpanel" class="tab-pane active" id="CustomerTabRemeasure">
-                                <div id="mapRemeasure">
+                                <div id="mapRemeasure" style="height:500px;margin-top:20px;">
 
                                 </div>
 

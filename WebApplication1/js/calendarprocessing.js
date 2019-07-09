@@ -1255,8 +1255,8 @@ $(document).ready(function () {
                   
                     
 
-                 //   codeAddressRemeasure();
-                  codeAddress();
+                    codeAddressRemeasure();
+                  //codeAddress();
 
 
                     eventid = event.id;
