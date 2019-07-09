@@ -811,6 +811,7 @@ $(document).ready(function () {
                         var events = [];
                         eventRemeasureWODict = [];
                         $.each(data.GetRemeasureEventsResult, function (pos, item) {
+                            item.allDay = true;
                             item.editable = ((item.HolidayName != null || readonly == "True")) ? false : true;
                             //  item.editable = (readonly == "True") ? false : true;
 
@@ -1356,8 +1357,10 @@ $(document).ready(function () {
                 $(element).find(dom).empty();
 
 
-                var ret1 = "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
-                    event.EstInstallerCnt + "\">" +
+                var ret1 =
+                    //"<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
+                    //event.EstInstallerCnt + "\">" +
+                    (event.EstInstallerCnt != "" ? "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " : "") +
                     (event.TotalWindows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.TotalWindows + "\" src=\"images/window.PNG\" />" : "") +
                     (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Patio Doors: " + event.TotalDoors + "\" src=\"images/window.PNG\" />" : "") + "&nbsp;" +
                     (" " + event.WorkOrderNumber) + "&nbsp;" +
