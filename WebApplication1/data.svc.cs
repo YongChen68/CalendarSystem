@@ -418,6 +418,24 @@ namespace CalendarSystem
         }
 
 
+        List<UnavailableHR> Idata.GetUnavailableResources(string branch)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetUnavailableResources({0})", branch);
+            List<UnavailableHR> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(new List<string>(branch.Split(',')));
+                retValue = getter.GetUnavailableResources();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetUnavailableResources() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+
         List<Product> Idata.GetManufacturingWindows(string workOrderNumber)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetManufacturingWindows({0})", workOrderNumber);

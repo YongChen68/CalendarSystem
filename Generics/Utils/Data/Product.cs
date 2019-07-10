@@ -100,4 +100,24 @@ namespace Generics.Utils
         }
 
     }
+    public class UnavailableHR
+    {
+        [DataMember]
+        public string DateUnavailable { get; set; }
+
+        [DataMember]
+        public string Name { get; set; }
+
+        [DataMember]
+        public string Branch { get; set; }
+
+
+        [DataMember]
+        public string Reason { get; set; }
+
+    }
+
+    public class Datetime
+    {
+    }
 }

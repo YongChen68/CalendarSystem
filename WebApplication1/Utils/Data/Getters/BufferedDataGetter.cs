@@ -202,6 +202,11 @@ and p.CurrentStateName <> 'Duplicated Work Order' and p.CurrentStateName <> 'Com
             throw new NotImplementedException();
         }
 
+        public List<UnavailableHR> GetUnavailableResources()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Installer> GetInstallers()
         {
             throw new NotImplementedException();

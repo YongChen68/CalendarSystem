@@ -39,6 +39,11 @@ namespace CalendarSystem.Utils.Data
             this.stateList = stateList;
         }
 
+        public EventDataGetter( List<string> branchList)
+        {
+            this.branchList = branchList;
+        }
+
         public EventDataGetter(string start, string end)
         {
             this.startDate = DateTime.ParseExact(start.Trim(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
@@ -1171,6 +1176,33 @@ where p.currentstatename in ({0}) and p.Branch in ({1}) and p.JobType in ({2}) a
   FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_WindowItems] INNER JOIN
        [flowserv_flowfinityapps].[dbo].[HomeInstallations] AS i ON i.RecordId = ParentRecordId
 where i.WorkOrderNumber = '{0}' ", this.workOrderNumber);
+            return SQL;
+        }
+
+
+        public List<UnavailableHR> GetUnavailableResources()
+        {
+            string SQL = GetGetUnavailableResourcesSQL();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.UnavailableHR>(SQL);
+        }
+
+
+        private string GetGetUnavailableResourcesSQL()
+        {
+            string SQL = string.Format(@"SELECT
+                   DateUnavailable
+                                 ,u.[Name]
+                                ,[Branch_display] AS Branch
+                                ,[UnavailableReason_display] AS Reason
+                     ,[AdminNote]
+
+  FROM [flowserv_flowfinityapps].[dbo].[UnavailableStaff] as r INNER JOIN
+       [flowserv_flowfinityapps].[dbo].[UnavailableStaff_UnavailableStaff] as us ON recordid = us.[ParentRecordId] INNER JOIN
+                   [flowserv_flowfinityapps].[dbo].[Users] as u ON us.[UserId] = u.[userid]
+where branch in ('{0}') ", String.Join("','", branchList));
             return SQL;
         }
 

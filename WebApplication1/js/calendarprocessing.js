@@ -735,6 +735,8 @@ $(document).ready(function () {
             });
             console.log("checked shippingType: ", shippingType.join(","));
 
+      
+
             if (displayType == "Installation") {
                 $('.fc-applyInstallationFilters-button').show();
                 
@@ -864,7 +866,36 @@ $(document).ready(function () {
                 });
             }
 
+            $("#dataTableHR tr").remove();
 
+            $.ajax({
+                //type: "POST",  
+                url: 'data.svc/GetUnavailableResources',
+                dataType: 'json',
+                data: { branch: branches.join(",") },
+                success: function (data) {
+                    if (debug) console.log("events.success", "data.GetUnavailableResources:");
+
+                    if (data.GetUnavailableResourcesResult.length > 0) {
+
+                        $("#dataTableHR").append("<tr> <th style = 'text-align:center;' > Date Unavaiable</th ><th style='text-align:center;'> Name</th ><th style='text-align:center;'>Branch</th> <th style='text-align:center;' > Unavailable Reason</th > </tr > ");
+                        for (var i = 0; i < data.GetUnavailableResourcesResult.length; i++) {
+                            $("#dataTableHR").append("<tr><td>" +
+                                new Date(GetDatefromMoment(data.GetUnavailableResourcesResult[i].DateUnavaiable)).toLocaleDateString('en-US') + "</td> <td>" +
+                                data.GetUnavailableResourcesResult[i].Name + "</td> <td>" +
+                                data.GetUnavailableResourcesResult[i].Branch + "</td> <td>" +
+                                data.GetUnavailableResourcesResult[i].Reason + "</td></tr>");
+                        }
+                    }
+                    else {
+                        noInstallationWindows.style.display = "block";
+                    }
+
+                }, error: function (error) {
+                    console.log('Error', error);
+                    $('#script-warning').show();
+                }
+            });
         },
         editable: readonly == "True" ? false : true,
         nowIndicator: true,
@@ -2113,6 +2144,41 @@ function GetJobAnalysys(workOrder) {
 }
 
 
+function GetUnavailableResources() {
+    //$("#dataTableHR tr").remove();
+    
+    //$.ajax({
+    //    //type: "POST",  
+    //    url: 'data.svc/GetUnavailableResources=' ,
+    //    dataType: 'json',
+    //    data: {  branch: branches.join(",") },
+    //    success: function (data) {
+    //        if (debug) console.log("events.success", "data.GetUnavailableResources:");
+            
+    //        if (data.GetUnavailableResourcesResult.length > 0) {
+                
+    //            $("#dataTableHR").append("<tr> < th style = 'text-align:center;' > Date Unavaiable</th ><th style='text-align:center;'> Name</th ><th style='text-align:center;'>Branch</th> <th style='text-align:center;' > Unavailable Reason</th > </tr > ");
+    //            for (var i = 0; i < data.GetUnavailableResourcesResult.length; i++) {
+    //                $("#dataTableHR").append("<tr><td>" +
+    //                    data.GetUnavailableResourcesResult[i].DateUnavaiable + "</td> <td>" +
+    //                    data.GetUnavailableResourcesResult[i].Name + "</td> <td>" +
+    //                    data.GetUnavailableResourcesResult[i].Branch + "</td> <td>" +
+    //                    data.GetUnavailableResourcesResult[i].Reason + "</td></tr>");
+    //            }
+    //        }
+    //        else {
+    //            noInstallationWindows.style.display = "block";
+    //        }
+
+    //    }, error: function (error) {
+    //        console.log('Error', error);
+    //        $('#script-warning').show();
+    //    }
+    //});
+
+
+
+}
 function GetInstallationProducts(workOrder) {
     $("#dataTableInstallationDoors tr").remove();
     $("#dataTableInstallationWindows tr").remove(); 
@@ -2406,8 +2472,13 @@ function GetWOPicture(workOrder) {
 
                 for (var i = 0; i < data.GetWOPictureResult.length; i++) {
                     $("#dataTableWOPicture").append("<tr><td>" +
-                        data.GetWOPictureResult[i].PictureName + "</td> <td> <a href='https://www.google.com/imgres?imgurl=https%3A%2F%2Fphotos5.appleinsider.com%2Fgallery%2F27879-42410-XS-Max-vs-X-2-l.jpg&imgrefurl=https%3A%2F%2Fappleinsider.com%2Farticles%2F18%2F10%2F01%2Fphoto-shootout----comparing-the-iphone-xs-max-versus-the-iphone-x&docid=iVvUg0mffYFoxM&tbnid=ru4IIxc_SNv4KM%3A&vet=10ahUKEwjdyYrw5ZvjAhXLj1QKHZOkBL0QMwjHASgwMDA..i&w=660&h=371&bih=938&biw=1920&q=iphone%20x%20images&ved=0ahUKEwjdyYrw5ZvjAhXLj1QKHZOkBL0QMwjHASgwMDA&iact=mrc&uact=8' data-toggle='lightbox'> " +
-                        data.GetWOPictureResult[i].picString + "</a></td></tr>");
+                        //data.GetWOPictureResult[i].PictureName + "</td> <td> <a href='https://www.google.com/imgres?imgurl=https%3A%2F%2Fphotos5.appleinsider.com%2Fgallery%2F27879-42410-XS-Max-vs-X-2-l.jpg&imgrefurl=https%3A%2F%2Fappleinsider.com%2Farticles%2F18%2F10%2F01%2Fphoto-shootout----comparing-the-iphone-xs-max-versus-the-iphone-x&docid=iVvUg0mffYFoxM&tbnid=ru4IIxc_SNv4KM%3A&vet=10ahUKEwjdyYrw5ZvjAhXLj1QKHZOkBL0QMwjHASgwMDA..i&w=660&h=371&bih=938&biw=1920&q=iphone%20x%20images&ved=0ahUKEwjdyYrw5ZvjAhXLj1QKHZOkBL0QMwjHASgwMDA&iact=mrc&uact=8' data-toggle='lightbox'> " +
+                        //data.GetWOPictureResult[i].picString + "</a></td></tr>");
+                        data.GetWOPictureResult[i].PictureName + "</td> <td> <image " +
+
+                        //   $('#item').attr('src', `data:image/jpg;base64,' + hexToBase64{data.GetWOPictureResult[0].pic)  + "</image></td></tr>");
+                        //  " document.getElementById('item').src = '" + data.GetWOPictureResult[0].picString + "'</image></td></tr>");
+                        data.GetWOPictureResult[i].picString + "'</image></td></tr>");
                         
 
  

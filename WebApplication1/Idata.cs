@@ -121,6 +121,14 @@ namespace CalendarSystem
           BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<Product> GetProductsDoors(string workOrderNumber);
 
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+  UriTemplate = "GetUnavailableResources?branch={branch}",
+  ResponseFormat = WebMessageFormat.Json,
+  BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<UnavailableHR> GetUnavailableResources(string branch);
+
+
 
         [OperationContract]
         [WebInvoke(Method = "GET",

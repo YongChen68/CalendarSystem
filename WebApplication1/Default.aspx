@@ -193,7 +193,13 @@
             font-size: 14px;
             font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
         }
-
+        .dot {
+          height: 12px;
+          width: 12px;
+          border-radius: 50%;
+          display: inline-block;
+          margin-right:10px;
+        }
 
         #map {
             float: left;
@@ -728,10 +734,10 @@
                                 <a href="#RemeasureTab" aria-controls="remeasureTab" role="tab" data-toggle="tab">REMEASURE</a>
 
                             </li>
-                            <li role="presentation">
+                <%--            <li role="presentation">
                                 <a href="#ProductTabRemeasure" aria-controls="productTab" role="tab" data-toggle="tab">PRODUCT</a>
 
-                            </li>
+                            </li>--%>
 
 
                         </ul>
@@ -823,12 +829,12 @@
                                 
                                 </div>
                             </div>
-                            <div role="tabpanel" class="tab-pane " id="ProductTabRemeasure">
+     <%--                       <div role="tabpanel" class="tab-pane " id="ProductTabRemeasure">
                                 <div style="overflow: auto; height: 600px;">
                                     <table id="dataTableRemeasure" class="table table-striped table-bordered table-hover table-condensed"></table>
                                 </div>
 
-                            </div>
+                            </div>--%>
 
 
                         </div>
@@ -906,38 +912,40 @@
 
 
 
-                                <input type="checkbox" name="InstallationState" value="Install in Progress" checked>Install in Progress<br />
-                                <input type="checkbox" name="InstallationState" value="Installation Confirmed" checked>Installation Confirmed<br />
-                                <input type="checkbox" name="InstallationState" value="Install Completed" checked>Install Completed<br />
-                                <input type="checkbox" name="InstallationState" value="Installation inprogress rejected" checked>Installation inprogress rejected<br />
-                                <input type="checkbox" name="InstallationState" value="Installation Manager Review" checked>Installation Manager Review<br />
+                                   <span class="dot" style="background-color: #a5d6a7; "></span><input type="checkbox" name="InstallationState" value="Install in Progress" checked>Install in Progress
+                             
+                                <br />
+                                <span class="dot" style="background-color: #4890e2; "> </span><<input type="checkbox" name="InstallationState" value="Installation Confirmed" checked>Installation Confirmed<br />
+                                <span class="dot" style="background-color: #ffc966; "> </span><<input type="checkbox" name="InstallationState" value="Install Completed" checked>Install Completed<br />
+                                  <span class="dot" style="background-color: #ff6347; "> </span><input type="checkbox" name="InstallationState" value="Installation inprogress rejected" checked>Installation inprogress rejected<br />
+                                  <span class="dot" style="background-color: #ffc966; "> </span> <input type="checkbox" name="InstallationState" value="Installation Manager Review" checked>Installation Manager Review<br />
 
-                                <input type="checkbox" name="InstallationState" value="Job Completed" checked>Job Completed<br />
-                                <input type="checkbox" name="InstallationState" value="Job Costing" checked>Job Costing<br />
-                                <input type="checkbox" name="InstallationState" value="Pending Install Completion" checked>Pending Install Completion<br />
+                                  <span class="dot" style="background-color: #ffc966; "> </span> <input type="checkbox" name="InstallationState" value="Job Completed" checked>Job Completed<br />
+                                <span class="dot" style="background-color: #ffc966; "> </span>  <input type="checkbox" name="InstallationState" value="Job Costing" checked>Job Costing<br />
+                                <span class="dot" style="background-color: #ff6347; "> </span>  <input type="checkbox" name="InstallationState" value="Pending Install Completion" checked>Pending Install Completion<br />
 
-                                <input type="checkbox" name="InstallationState" value="Ready for Invoicing" checked>Ready for Invoicing<br />
-
-
-                                <input type="checkbox" name="InstallationState" value="ReMeasure Scheduled" checked>ReMeasure Scheduled<br />
-
+                                <span class="dot" style="background-color: #ffc966; "> </span>   <input type="checkbox" name="InstallationState" value="Ready for Invoicing" checked>Ready for Invoicing<br />
 
 
-
-                                <input type="checkbox" name="InstallationState" value="Rejected Installation" checked>Rejected Installation<br />
-                                <input type="checkbox" name="InstallationState" value="Rejected Job Costing" checked>Rejected Job Costing<br />
-                                <input type="checkbox" name="InstallationState" value="Rejected Manager Review" checked>Rejected Manager Review<br />
-                                <input type="checkbox" name="InstallationState" value="Rejected Remeasure" checked>Rejected Remeasure<br />
-                                <input type="checkbox" name="InstallationState" value="Rejected Scheduled Work" checked>Rejected Scheduled Work<br />
+                                <span class="dot" style="background-color: #9FB6CD; "> </span> <input type="checkbox" name="InstallationState" value="ReMeasure Scheduled" checked>ReMeasure Scheduled<br />
 
 
 
-                                <input type="checkbox" name="InstallationState" value="Unreviewed Job Costing" checked>Unreviewed Job Costing<br />
 
-                                <input type="checkbox" name="InstallationState" value="Unreviewed Work Scheduled" checked>Unreviewed Work Scheduled<br />
-                                <input type="checkbox" name="InstallationState" value="VP Installation Approval" checked>VP Installation Approval<br />
+                               <span class="dot" style="background-color: #ff6347; "> </span>   <input type="checkbox" name="InstallationState" value="Rejected Installation" checked>Rejected Installation<br />
+                                 <span class="dot" style="background-color: #ff6347; "> </span>  <input type="checkbox" name="InstallationState" value="Rejected Job Costing" checked>Rejected Job Costing<br />
+                                 <span class="dot" style="background-color: #ff6347; "> </span>  <input type="checkbox" name="InstallationState" value="Rejected Manager Review" checked>Rejected Manager Review<br />
+                                 <span class="dot" style="background-color: #ff6347; "> </span>    <input type="checkbox" name="InstallationState" value="Rejected Remeasure" checked>Rejected Remeasure<br />
+                               <span class="dot" style="background-color: #ff6347; "> </span>   <input type="checkbox" name="InstallationState" value="Rejected Scheduled Work" checked>Rejected Scheduled Work<br />
 
-                                <input type="checkbox" name="InstallationState" value="Work Scheduled" checked>Work Scheduled
+
+
+                                <span class="dot" style="background-color: #ffc966; "> </span>  <input type="checkbox" name="InstallationState" value="Unreviewed Job Costing" checked>Unreviewed Job Costing<br />
+
+                                 <span class="dot" style="background-color: #9FB6CD; "> </span>  <input type="checkbox" name="InstallationState" value="Unreviewed Work Scheduled" checked>Unreviewed Work Scheduled<br />
+                                <span class="dot" style="background-color: #ffc966; "> </span>  <input type="checkbox" name="InstallationState" value="VP Installation Approval" checked>VP Installation Approval<br />
+
+                               <span class="dot" style="background-color: #9FB6CD; "> </span>  <input type="checkbox" name="InstallationState" value="Work Scheduled" checked>Work Scheduled
                                 
 
                             </td>
@@ -1107,7 +1115,9 @@
             </div>
 
             <div id='calendar'></div>
-
+            <div>
+              <table id="dataTableHR" class="table table-striped table-bordered table-hover table-condensed"></table>
+           </div>
             <div style='clear: both'></div>
 
         </div>
@@ -1164,6 +1174,9 @@
                 </tr>
             </table>
 
+        </div>
+        <div>
+        
         </div>
     </form>
 
