@@ -6,6 +6,7 @@ var renderingComplete = false;
 var eventid;
 var eventWO = []; 
 var eventReturnedJobDate1;
+var hasSubStrade;
 
 var is_weekend = function (date1) {
     var dt = new Date(date1);
@@ -1358,6 +1359,8 @@ $(document).ready(function () {
             }
 
             if ((displayType == "Installation") && (event.HolidayName == null)) {
+                
+                //GetSubTradesCount(event.WorkOrderNumber);
 
                 dom = '.fc-title';
                 $(element).find(dom).empty();
@@ -1372,6 +1375,7 @@ $(document).ready(function () {
                     //(event.TotalAsbestos == 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
                     ((event.TotalAsbestos == 1) || (event.LeadPaint == 'Yes') ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
                     (event.TotalHighRisk == 1 ? "&nbsp;<img src=\"images/risk.PNG\" />" : "") +
+                   // (hasSubStrade == "true" ? "&nbsp;<img src=\"images/subtrade.PNG\" />" : "") +
                     (event.ReturnedJob == 1 ? "&nbsp;<img src=\"images/fire.PNG\" />" : "") +
                     (" " + event.WorkOrderNumber) + "&nbsp;" +
                     (",Name: " + event.LastName.trim().length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
@@ -1391,14 +1395,14 @@ $(document).ready(function () {
                 var ret1 =
                     //"<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
                     //event.EstInstallerCnt + "\">" +
-                    (event.EstInstallerCnt != "" ? "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " : "") +
+                    (event.EstInstallerCnt != "" ? "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " + "\">": ""  ) +
                     (event.TotalWindows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.TotalWindows + "\" src=\"images/window.PNG\" />" : "") +
-                    (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Patio Doors: " + event.TotalDoors + "\" src=\"images/window.PNG\" />" : "") + "&nbsp;" +
+                 
+                   (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Patio Doors: " + event.TotalDoors + "\" src=\"images/window.PNG\" />" : "") + "&nbsp;" +
                     (" " + event.WorkOrderNumber) + "&nbsp;" +
                     (",Name: " + event.LastName.trim().length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
-                    //   + event.FirstName.trim().length > 10 ? event.FirstName.trim().Substring(0, 10) : event.FirstName.trim()) +
                     "&nbsp;" + (event.City) + "&nbsp;";
-                //  ("WO: ") + "&nbsp;" ;
+
 
                 $(element).find(dom).append(ret1);
 
@@ -2455,6 +2459,31 @@ function GetSubTrades(workOrder) {
 
 }
 
+function GetSubTradesCount(workOrder) {
+    hasSubStrade = "false";
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetSubTrades?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetSubTrades:");
+            var noSubTrades = document.getElementById('noSubTrades');
+
+            if (data.GetSubTradesResult.length > 0) {
+                hasSubStrade = "true";
+
+            }
+            else {
+                hasSubStrade = "false";
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
 
 function GetWOPicture(workOrder) {
     $("#dataTableWOPicture tr").remove(); 

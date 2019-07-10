@@ -522,7 +522,7 @@
 
                                         <div class="container">
                                             <div class="leftcolumn">
-                                                <b>Asbestos-Jobs: </b>
+                                                    <image src="images/asbestos.PNG"></image>  <b>Asbestos-Jobs: </b>
 
                                                 <div class="radio">
                                                     <label>
@@ -534,7 +534,7 @@
                                                 </div>
                                             </div>
                                             <div class="rightcolumn">
-                                                <b>Lead-Paint : </b>
+                                        <image src="images/asbestos.PNG"></image>   <b>Lead-Paint : </b>
 
                                                 <div class="radio">
                                                     <label>
@@ -551,7 +551,7 @@
 
                                         <div class="container">
                                             <div class="leftcolumn">
-                                                <b>Wood-DropOff-Jobs : </b>
+                                             <image src="images/delivery.PNG"></image>     <b>Wood-DropOff-Jobs : </b>
 
                                                 <div class="radio">
                                                     <label>
@@ -563,7 +563,7 @@
                                                 </div>
                                             </div>
                                             <div class="rightcolumn">
-                                                <b>HighRisk-Jobs : </b>
+                                            <image src="images/risk.PNG"></image>     <b>HighRisk-Jobs : </b>
 
                                                 <div class="radio">
                                                     <label>
