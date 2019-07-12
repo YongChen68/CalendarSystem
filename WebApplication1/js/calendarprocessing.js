@@ -7,6 +7,7 @@ var eventid;
 var eventWO = []; 
 var eventReturnedJobDate1;
 var hasSubStrade;
+var JobStaffEvent;
 
 var is_weekend = function (date1) {
     var dt = new Date(date1);
@@ -375,6 +376,7 @@ function LoadBufferedJobs() {
 
 }
 
+
 function LoadInstallationBufferedJobs() {
     var branches = [];
     $.each($("input[name='branch']:checked"), function () {
@@ -526,10 +528,6 @@ $(document).ready(function () {
     LoadInstallationBufferedJobs();
     $('#external-events1').hide();
 
-
-
-
-
     //$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
     //    var currentTab = $(e.target).text(); // get current tab
     //    var LastTab = $(e.relatedTarget).text(); // get last tab
@@ -591,6 +589,7 @@ $(document).ready(function () {
                     $('#JobTypeFilter').removeClass('hidden');
                 }
             },
+
             changeShippingType: {
                 text: "Change Shipping Type",
                 click: function () {
@@ -736,15 +735,25 @@ $(document).ready(function () {
             });
             console.log("checked shippingType: ", shippingType.join(","));
 
-      
+
+            var jobstaff = $('#JobStaff');
+            if (jobstaff.length == 0) {
+                $(".fc-left").append('<div class="fc-button-group" style="margin-top: 5px; "><select id="JobStaff"  onchange="changeJobStaff()" style="width:80px;height:20px;"><option class="fc-agendaDay-button fc-button fc-state-default fc-corner-right">Job</option><option class="fc-agendaWeek-button fc-button fc-state-default">Staff</option></select></div>');
+                //   $(".fc-left").append(' <div class="dropdown" id="JobStaff"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dropdown button</button><div class="dropdown-menu"><a class="dropdown-item" href="#">Link 1</a><a class="dropdown-item" href="#">Link 2</a><a class="dropdown-item" href="#">Link 3</a> </div>  </div>');
+
+            }
 
             if (displayType == "Installation") {
+
+    
+
                 $('.fc-applyInstallationFilters-button').show();
-                
+                $('#JobStaff').show();
                 $('.fc-ShowKelownaBranch-button').show();
                 $('.fc-ShowLowerMainlandBranch-button').show();
                 $('.fc-ShowNanaimoBranch-button').show();
                 $('.fc-ShowVictoriaBranch-button').show();
+               // $('.fc-changeJobStaff-button').show();
 
                 $('.fc-ShowWIP-button').show();
                 $('.fc-applyFilters-button').hide();
@@ -757,6 +766,8 @@ $(document).ready(function () {
               //  document.getElementById('external-events').style.display = "none";
                // LoadInstallationBufferedJobs();
              //   $('.fc-event').remove();
+
+                
                 $.ajax({
                     url: 'data.svc/GetInstallationEvents',
                     dataType: 'json',
@@ -771,12 +782,15 @@ $(document).ready(function () {
                          //   item.editable = (item.ReturnedJob == 1) ? false : true;
 
                            
-                            item.editable =( (item.HolidayName != null || readonly == "True") )? false : true;
+                            item.editable = ((item.HolidayName != null || readonly == "True" || item.UnavailableStaff != null) )? false : true;
                           //  item.editable = (readonly == "True") ? false : true;
-                            
-                            eventWODict.push(item);
-
+                            if ((($("#JobStaff").val() == "Job") && (item.UnavailableStaff == null)) || ((($("#JobStaff").val() == "Staff") && (item.UnavailableStaff != null)))) {
+                                eventWODict.push(item);
+                            }
                         });
+                        //if ((item.UnavailableStaff == undefined) || (item.UnavailableStaff == null)) {
+                        //    events = removeDuplicates(eventWODict, "WorkOrderNumber");
+                        //}
                         events = removeDuplicates(eventWODict, "WorkOrderNumber");
                         callback(events);
                     }, error: function (error) {
@@ -784,15 +798,18 @@ $(document).ready(function () {
                         $('#script-warning').show();
                     }
                 });
+
+      
             }
             else if (displayType == "Remeasure")
             {
 
                 $('.fc-applyRemeasureFilters-button').show();
-
+                $('#JobStaff').hide();
                 $('.fc-applyInstallationFilters-button').hide();
                 $('.fc-ShowWIP-button').hide();
-
+                
+                //$('.fc-changeJobStaff-button').hide();
                 $('.fc-ShowKelownaBranch-button').hide();
                 $('.fc-ShowLowerMainlandBranch-button').hide();
                 $('.fc-ShowNanaimoBranch-button').hide();
@@ -832,8 +849,9 @@ $(document).ready(function () {
             else {
                 $('.fc-applyInstallationFilters-button').hide();
                 $('.fc-ShowWIP-button').hide();
+                $('#JobStaff').hide();
                 $('.fc-applyRemeasureFilters-button').hide();
-
+             //   $('.fc-changeJobStaff-button').hide();
                 $('.fc-ShowKelownaBranch-button').hide();
                 $('.fc-ShowLowerMainlandBranch-button').hide();
                 $('.fc-ShowNanaimoBranch-button').hide();
@@ -869,35 +887,47 @@ $(document).ready(function () {
 
             $("#dataTableHR tr").remove();
 
-            $.ajax({
-                //type: "POST",  
-                url: 'data.svc/GetUnavailableResources',
-                dataType: 'json',
-                data: { branch: branches.join(",") },
-                success: function (data) {
-                    if (debug) console.log("events.success", "data.GetUnavailableResources:");
+            //$.ajax({
+            //    //type: "POST",  
+            //    url: 'data.svc/GetUnavailableResources',
+            //    dataType: 'json',
+            //    data: { branch: branches.join(",") },
+            //    success: function (data) {
+            //        if (debug) console.log("events.success", "data.GetUnavailableResources:");
 
-                    if (data.GetUnavailableResourcesResult.length > 0) {
+            //        if (data.GetUnavailableResourcesResult.length > 0) {
 
-                        $("#dataTableHR").append("<tr> <th style = 'text-align:center;' > Date Unavaiable</th ><th style='text-align:center;'> Name</th ><th style='text-align:center;'>Branch</th> <th style='text-align:center;' > Unavailable Reason</th > </tr > ");
-                        for (var i = 0; i < data.GetUnavailableResourcesResult.length; i++) {
-                            $("#dataTableHR").append("<tr><td>" +
-                                new Date(GetDatefromMoment(data.GetUnavailableResourcesResult[i].DateUnavaiable)).toLocaleDateString('en-US') + "</td> <td>" +
-                                data.GetUnavailableResourcesResult[i].Name + "</td> <td>" +
-                                data.GetUnavailableResourcesResult[i].Branch + "</td> <td>" +
-                                data.GetUnavailableResourcesResult[i].Reason + "</td></tr>");
-                        }
-                    }
-                    else {
-                        noInstallationWindows.style.display = "block";
-                    }
+            //            $("#dataTableHR").append("<tr> <th style = 'text-align:center;' > Date Unavaiable</th ><th style='text-align:center;'> Name</th ><th style='text-align:center;'>Branch</th> <th style='text-align:center;' > Unavailable Reason</th > </tr > ");
+            //            for (var i = 0; i < data.GetUnavailableResourcesResult.length; i++) {
+            //                $("#dataTableHR").append("<tr><td>" +
+            //                    new Date(GetDatefromMoment(data.GetUnavailableResourcesResult[i].DateUnavaiable)).toLocaleDateString('en-US') + "</td> <td>" +
+            //                    data.GetUnavailableResourcesResult[i].Name + "</td> <td>" +
+            //                    data.GetUnavailableResourcesResult[i].Branch + "</td> <td>" +
+            //                    data.GetUnavailableResourcesResult[i].Reason + "</td></tr>");
+            //            }
+            //        }
+            //        else {
+            //            noInstallationWindows.style.display = "block";
+            //        }
 
-                }, error: function (error) {
-                    console.log('Error', error);
-                    $('#script-warning').show();
-                }
-            });
+            //    }, error: function (error) {
+            //        console.log('Error', error);
+            //        $('#script-warning').show();
+            //    }
+            //});
+           // $(".fc-right").append(' <div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dropdown button</button><div class="dropdown-menu"><a class="dropdown-item" href="#">Link 1</a><a class="dropdown-item" href="#">Link 2</a><a class="dropdown-item" href="#">Link 3</a> </div>  </div>');
+            //var jobstaff = $('#JobStaff');
+            //if ((displayType == "Installation") && (jobstaff.length ==0)) {
+            //    $(".fc-left").append('<div class="fc-button-group" style="margin-top: 5px; "><select id="JobStaff" style="width:80px;height:20px;"><option class="fc-agendaDay-button fc-button fc-state-default fc-corner-right">Job</option><option class="fc-agendaWeek-button fc-button fc-state-default">Staff</option></select></div>');
+            // //   $(".fc-left").append(' <div class="dropdown" id="JobStaff"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dropdown button</button><div class="dropdown-menu"><a class="dropdown-item" href="#">Link 1</a><a class="dropdown-item" href="#">Link 2</a><a class="dropdown-item" href="#">Link 3</a> </div>  </div>');
+            //}
+            
+          //  $(".fc-right").append('<select class="form-control" name="features"> <option value="1" selected="selected">Feature 1</option> <option value="2">Feature 2</option></select>');
+         //   $(".dropdown .dropdown-menu li a")[0].click();
+  
         },
+    
+
         editable: readonly == "True" ? false : true,
         nowIndicator: true,
         eventDurationEditable: readonly == "True" ? false : true,
@@ -1039,7 +1069,7 @@ $(document).ready(function () {
             }
             element.attr('href', 'javascript:void(0);');
             element.click(function () {
-                if (event.HolidayName != null) {
+                if ((event.HolidayName != null) || (event.UnavailableStaff != null) ){
                     event.jsEvent.cancelBubble = true;
                     event.jsEvent.preventDefault();
                 }
@@ -1345,6 +1375,7 @@ $(document).ready(function () {
 
 
 
+
             if (view.name == "agendaDay") {
                 if ((displayType != "Installation") || (displayType != "Remeasure") ){
                     $(element).find(dom).text(element.text() + " - LBR Min: " + (event.TotalLBRMin !== undefined ? event.TotalLBRMin : 0) + ", Bundle: " + event.BatchNo);
@@ -1358,7 +1389,29 @@ $(document).ready(function () {
                 $(element).find(dom).prepend("<img alt=\"#\" src=\"images/window.png\" title= \"" + ToWDString(event) + "\" />&nbsp;");
             }
 
-            if ((displayType == "Installation") && (event.HolidayName == null)) {
+
+            if ((event.UnavailableStaff != undefined) && (event.UnavailableStaff != null)) {
+                //    (event.EstInstallerCnt != "" ? "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " + "\">": ""  ) +
+                //var ret3 =
+                //    //"<img src=\"images/human.png\" title=\"" + "\">" +"&nbsp;";
+                //if (displayType == "Installation") {
+                //    ret3 += event.UnavailableStaff;
+                //}
+                //element.css({
+                //    'background-color': '#c6abd0'
+                //    // 'border-color': '#333333'
+                //});
+                //$(element).find(dom).append(ret3);
+              //  (event.UnavailableStaff.split(",").length != 0? "<img src=\"images/installer" + event.UnavailableStaff.split(",").length + ".png\" title=\"Estimated number of installers for the job: " + "\">" : "") +
+                var ret3 = "<img src=\"images/human.png\" />" + "&nbsp;" + 
+                 //   "<img src=\"images/installer" + event.UnavailableStaff.split(",").length + ".png\" title=\"" +
+                    (event.UnavailableStaff.split(",").length != 0 ? "<img src=\"images/installer" + event.UnavailableStaff.split(",").length + ".png\" title=\"" + "\">" : "") +
+                    (" " + event.UnavailableStaff) 
+                $(element).find(dom).prepend(ret3);
+
+            }
+
+            if ((displayType == "Installation") && (event.HolidayName == null) && (event.UnavailableStaff == null) ) {
                 
                 //GetSubTradesCount(event.WorkOrderNumber);
 
@@ -1685,6 +1738,24 @@ $(document).ready(function () {
 
   
 });
+
+
+function changeJobStaff() {
+    //if (document.getElementById("leave").value != "100") {
+    //    document.getElementById("message").innerHTML = "Common message";
+    //}
+    //else {
+    //    document.getElementById("message").innerHTML = "Having a Baby!!";
+    //}
+    var jobStaff = $("#JobStaff").val();
+    if (jobStaff == "Job") {
+        JobStaffEvent = "Job";
+    }
+    else {
+        JobStaffEvent = "Staff";
+    }
+    $('#calendar').fullCalendar('refetchEvents');
+}
 function FindDayIdfromTotals(dayValue) {
     for (var i = 0; i < totals.length; i++) {
         //console.log("FindDayIdfromTotals", "target day:", dayValue, "current date:", totals[i].date, "equals:", dayValue.Equals(totals[i].date));

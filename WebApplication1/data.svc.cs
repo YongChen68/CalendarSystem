@@ -53,6 +53,10 @@ namespace CalendarSystem
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Entering InstallationEvent({0},'{1}','{2}' )", start, end, branch ?? "NULL", state ?? "NULL");
             List<InstallationEvent> retValue = null;
             List<Holiday> retValue1 = null;
+            List<UnavailableHR> retValue2 = null;
+          //  List<string> unavailableStaffName = new List<string>();
+
+            Dictionary<string, string> unavailableStaffList = new Dictionary<string, string>();
             try
             {
                 Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(start, end,  new List<string>(branch.Split(',')), new List<string>(state.Split(',')));
@@ -61,6 +65,12 @@ namespace CalendarSystem
                 Utils.Data.IGetter getter1 = new Utils.Data.EventDataGetter(start, end);
                 retValue1 = getter1.GetHolidayData();
 
+                //Utils.Data.IGetter getter1 = new Utils.Data.EventDataGetter(start, end);
+                //retValue1 = getter1.GetHolidayData();
+
+                Utils.Data.IGetter getter2 = new Utils.Data.EventDataGetter(new List<string>(branch.Split(',')));
+                retValue2 = getter.GetUnavailableResources();
+                
                 InstallationEvent myEvent = null;
                 foreach (Holiday holiday in retValue1)
                 {
@@ -76,6 +86,35 @@ namespace CalendarSystem
                     myEvent.CurrentStateName = "Rejected Scheduled Work";
                     retValue.Add(myEvent);
                 }
+                // unavailableStaffList =  retValue2.GroupBy( l=>l.DateUnavailable).Select(dd=>new { DateUnavailable =dd.Key,Name = string.Join(",",dd.Select(ee=>ee.Name).ToList()) });
+                var xx = retValue2.GroupBy(l => l.DateUnavailable).Select(dd => new { DateUnavailable = dd.Key, Name = string.Join(",", dd.Select(ee => ee.Name).ToArray()) });
+                //}
+                //   => new { DateUnavailable= g.DateUnavailable,Name = string.Join(",", g.Select(
+                //       ee=>ee.Name.ToList())});
+
+                foreach (KeyValuePair<string, string> un in xx.ToDictionary(x=>x.DateUnavailable,x=>x.Name))
+                {
+                    myEvent = new InstallationEvent();
+                    myEvent.allDay = true;
+                    myEvent.start = un.Key;
+                    myEvent.end = un.Key;
+                    myEvent.ScheduledDate = Convert.ToDateTime(un.Key);
+                    myEvent.WorkOrderNumber = un.Key;
+
+                    //myEvent.StartScheduleDate = Convert.ToDateTime(un.StartScheduleDate);
+                    //myEvent.EndScheduleDate = Convert.ToDateTime(un.EndScheduleDate);
+
+
+                    myEvent.LastName = "Unavailable Staff";
+                    //unavailableStaffName.Add(un.Name );
+                    //    myEvent.UnavailableStaff = string.Join(",", unavailableStaffName.ToArray());
+                    myEvent.UnavailableStaff = un.Value;
+                    //myEvent.City = "";
+                    myEvent.title = un.Value;
+                    myEvent.CurrentStateName = "Rejected Scheduled Work";
+                    retValue.Add(myEvent);
+                }
+
 
                 Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetEvents() = {0}", retValue.Count.ToString());
             }

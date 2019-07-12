@@ -78,7 +78,7 @@
 
     <script>
         var geocoder;
-        var map,mapRemeasure;
+        var map, mapRemeasure;
         $(function () {
             // $("#from_date").datepicker();
             $('#from_date').datepicker({
@@ -193,12 +193,13 @@
             font-size: 14px;
             font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
         }
+
         .dot {
-          height: 12px;
-          width: 12px;
-          border-radius: 50%;
-          display: inline-block;
-          margin-right:10px;
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 10px;
         }
 
         #map {
@@ -299,7 +300,7 @@
             z-index: 214748367;
         }
 
-       #eventRemeasureContent {
+        #eventRemeasureContent {
             z-index: 214748367;
         }
 
@@ -1104,7 +1105,20 @@
             </div>
 
         </div>
-
+        <div id="JobStaffFilter" class="modal hidden">
+                      <div class="modal-content">'
+                            <div class="dropdown">
+                                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    Dropdown button
+                                  </button>
+                                      <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">Link 1</a>
+                                        <a class="dropdown-item" href="#">Link 2</a>
+                                        <a class="dropdown-item" href="#">Link 3</a>
+                                      </div>
+                            </div>
+                    </div>
+        </div>
         <div id='wrap'>
 
             <div id='external-events'>
@@ -1115,9 +1129,7 @@
             </div>
 
             <div id='calendar'></div>
-            <div>
-              <table id="dataTableHR" class="table table-striped table-bordered table-hover table-condensed"></table>
-           </div>
+
             <div style='clear: both'></div>
 
         </div>

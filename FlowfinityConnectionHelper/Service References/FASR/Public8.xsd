@@ -601,18 +601,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="PlantProduction_.ShippingDateRecord" nillable="true" type="tns:PlantProduction_.ShippingDateRecord" />
-  <xs:complexType name="ScheduleDraftRecord">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Date_1" nillable="true" type="tns:DateTimeValue" />
-      <xs:element minOccurs="0" name="Employee" nillable="true" type="tns:Choice" />
-      <xs:element minOccurs="0" name="Job_1" nillable="true" type="tns:Choice" />
-      <xs:element minOccurs="0" name="SeniorInstaller" nillable="true" type="tns:MultiSelection" />
-      <xs:element minOccurs="0" name="UnavailableReason" nillable="true" type="tns:Choice" />
-      <xs:element minOccurs="0" name="UnavailableMemo" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Service" nillable="true" type="tns:Choice" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ScheduleDraftRecord" nillable="true" type="tns:ScheduleDraftRecord" />
   <xs:complexType name="ServiceRecord">
     <xs:sequence>
       <xs:element minOccurs="0" name="DateService100Complete" nillable="true" type="tns:DateTimeValue" />
@@ -905,135 +893,161 @@
   <xs:element name="Service_.TakePictureRecord" nillable="true" type="tns:Service_.TakePictureRecord" />
   <xs:complexType name="HomeInstallationsRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" name="PendingRecord" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="OriginalContactDate" nillable="true" type="tns:DateTimeValue" />
-      <xs:element minOccurs="0" name="WorkOrderDate" nillable="true" type="tns:DateTimeValue" />
-      <xs:element minOccurs="0" name="Branch" nillable="true" type="tns:Choice" />
-      <xs:element minOccurs="0" name="WorkOrderNumber" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="FirstName" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="LastName" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="StreetAddress" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="City" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="HomePhoneNumber" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="WorkPhoneNumber" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="CellPhone" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Email" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Rep" nillable="true" type="tns:Choice" />
-      <xs:element minOccurs="0" name="Marketer" nillable="true" type="tns:Choice" />
-      <xs:element minOccurs="0" name="Source_1" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="SalesAmmount" nillable="true" type="tns:DoubleValue" />
-      <xs:element minOccurs="0" name="TypeofWork" nillable="true" type="tns:ArrayOfHomeInstallations_.TypeofWorkRecord" />
-      <xs:element minOccurs="0" name="SalesManagersApprovalDate" nillable="true" type="tns:DateTimeValue" />
-      <xs:element minOccurs="0" name="RemeasureDate" nillable="true" type="tns:DateTimeValue" />
-      <xs:element minOccurs="0" name="EstInstallerCnt" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="remeasureinstaller" nillable="true" type="tns:ArrayOfUserLookupRecord" />
-      <xs:element minOccurs="0" name="SubtradeReqired" nillable="true" type="tns:ArrayOfHomeInstallations_.SubtradeReqiredRecord" />
-      <xs:element minOccurs="0" name="PlannedinstallWeek" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="InstallationDates" nillable="true" type="tns:ArrayOfHomeInstallations_.InstallationDatesRecord" />
-      <xs:element minOccurs="0" name="SeniorInstaller" nillable="true" type="tns:ArrayOfUserLookupRecord" />
-      <xs:element minOccurs="0" name="Crew" nillable="true" type="tns:ArrayOfUserLookupRecord" />
-      <xs:element minOccurs="0" name="MaterialsUsed" nillable="true" type="tns:ArrayOfHomeInstallations_.MaterialsUsedRecord" />
-      <xs:element minOccurs="0" name="OtherInstallationMaterials" nillable="true" type="tns:ArrayOfHomeInstallations_.OtherInstallationMaterialsRecord" />
-      <xs:element minOccurs="0" name="InstallationCompletedDate" nillable="true" type="tns:DateTimeValue" />
-      <xs:element minOccurs="0" name="InstallationCheckList" nillable="true" type="tns:MultiSelection" />
-      <xs:element minOccurs="0" name="Reason" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="WorkLeftMaterialsRequired" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Installwentwell" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="ExtraUseReason" nillable="true" type="tns:StringValue" />
       <xs:element minOccurs="0" name="AcceptanceDate" nillable="true" type="tns:DateTimeValue" />
-      <xs:element minOccurs="0" name="SalesCommission" nillable="true" type="tns:DoubleValue" />
-      <xs:element minOccurs="0" name="MarketCommission" nillable="true" type="tns:DoubleValue" />
-      <xs:element minOccurs="0" name="DoorCost" nillable="true" type="tns:DoubleValue" />
-      <xs:element minOccurs="0" name="RemakeCost" nillable="true" type="tns:DoubleValue" />
-      <xs:element minOccurs="0" name="WindowCost" nillable="true" type="tns:DoubleValue" />
-      <xs:element minOccurs="0" name="CreditCardCharges" nillable="true" type="tns:DoubleValue" />
-      <xs:element minOccurs="0" name="CreditCardDeposit" nillable="true" type="tns:DoubleValue" />
-      <xs:element minOccurs="0" name="BuyDown" nillable="true" type="tns:DoubleValue" />
-      <xs:element minOccurs="0" name="OtherCost" nillable="true" type="tns:DoubleValue" />
+      <xs:element minOccurs="0" name="AddOnProduct" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="Asbestos" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="BookPrice" nillable="true" type="tns:DecimalValue" />
+      <xs:element minOccurs="0" name="Branch" nillable="true" type="tns:Choice" />
+      <xs:element minOccurs="0" name="BudgetedLBR" nillable="true" type="tns:DecimalValue" />
+      <xs:element minOccurs="0" name="BuyDown" nillable="true" type="tns:DecimalValue" />
+      <xs:element minOccurs="0" name="CallLog" nillable="true" type="tns:ArrayOfHomeInstallations_.CallLogRecord" />
+      <xs:element minOccurs="0" name="CellPhone" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="CheckRole" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="ChequeAttachment" nillable="true" type="tns:BinaryValue" />
+      <xs:element minOccurs="0" name="City" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="CompletionAcceptance" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="CreditCardCharges" nillable="true" type="tns:DecimalValue" />
+      <xs:element minOccurs="0" name="CreditCardDeposit" nillable="true" type="tns:DecimalValue" />
+      <xs:element minOccurs="0" name="Crew" nillable="true" type="tns:ArrayOfUserLookupRecord" />
+      <xs:element minOccurs="0" name="DegreeOfDifficulty" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="DepartmentResponsible1" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="Dolly" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="DoorCost" nillable="true" type="tns:DecimalValue" />
+      <xs:element minOccurs="0" name="DoorItems" nillable="true" type="tns:ArrayOfHomeInstallations_.DoorItemsRecord" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="ErrorID" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="EstInstallerCnt" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="ExtDoors" nillable="true" type="tns:LongValue" />
+      <xs:element minOccurs="0" name="ExtraUseReason" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="FileAttachment" nillable="true" type="tns:ArrayOfHomeInstallations_.FileAttachmentRecord" />
+      <xs:element minOccurs="0" name="Financing" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="FirstName" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="FollowupNote" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="HighRisk" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="HomePhoneNumber" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="HVAC" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="InstallationCheckList" nillable="true" type="tns:MultiSelection" />
+      <xs:element minOccurs="0" name="InstallationCompletedDate" nillable="true" type="tns:DateTimeValue" />
+      <xs:element minOccurs="0" name="InstallationDates" nillable="true" type="tns:ArrayOfHomeInstallations_.InstallationDatesRecord" />
+      <xs:element minOccurs="0" name="InstallationDoorLBRMin" nillable="true" type="tns:LongValue" />
+      <xs:element minOccurs="0" name="InstallationPatioDoorLBRMin" nillable="true" type="tns:LongValue" />
+      <xs:element minOccurs="0" name="InstallationWindowLBRMin" nillable="true" type="tns:LongValue" />
+      <xs:element minOccurs="0" name="Installwentwell" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="Job100Costed" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="JobType" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="LastName" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="LeadPaint" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="LumberOrdered" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="ManMinutes" nillable="true" type="tns:LongValue" />
+      <xs:element minOccurs="0" name="MarketCommission" nillable="true" type="tns:DecimalValue" />
+      <xs:element minOccurs="0" name="Marketer" nillable="true" type="tns:Choice" />
+      <xs:element minOccurs="0" name="MaterialsUsed" nillable="true" type="tns:ArrayOfHomeInstallations_.MaterialsUsedRecord" />
+      <xs:element minOccurs="0" name="nestedlist66" nillable="true" type="tns:ArrayOfHomeInstallations_.nestedlist66Record" />
+      <xs:element minOccurs="0" name="nestedlist76" nillable="true" type="tns:ArrayOfHomeInstallations_.nestedlist76Record" />
+      <xs:element minOccurs="0" name="OriginalContactDate" nillable="true" type="tns:DateTimeValue" />
+      <xs:element minOccurs="0" name="OtherCost" nillable="true" type="tns:DecimalValue" />
+      <xs:element minOccurs="0" name="OtherInstallationMaterials" nillable="true" type="tns:ArrayOfHomeInstallations_.OtherInstallationMaterialsRecord" />
+      <xs:element minOccurs="0" name="PaintedProduct" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="PatioDoors" nillable="true" type="tns:LongValue" />
       <xs:element minOccurs="0" name="PaymentOption" nillable="true" type="tns:SingleSelection" />
       <xs:element minOccurs="0" name="PaymentStatus" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="ChequeAttachment" nillable="true" type="tns:BinaryValue" />
-      <xs:element minOccurs="0" name="nestedlist66" nillable="true" type="tns:ArrayOfHomeInstallations_.nestedlist66Record" />
-      <xs:element minOccurs="0" name="AddOnProduct" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Dolly" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="nestedlist76" nillable="true" type="tns:ArrayOfHomeInstallations_.nestedlist76Record" />
-      <xs:element minOccurs="0" name="CallLog" nillable="true" type="tns:ArrayOfHomeInstallations_.CallLogRecord" />
-      <xs:element minOccurs="0" name="BookPrice" nillable="true" type="tns:DoubleValue" />
-      <xs:element minOccurs="0" name="RemakeLog" nillable="true" type="tns:ArrayOfHomeInstallations_.RemakeLogRecord" />
-      <xs:element minOccurs="0" name="WorkOrderNotes" nillable="true" type="tns:ArrayOfHomeInstallations_.WorkOrderNotesRecord" />
-      <xs:element minOccurs="0" name="SalesClawBack" nillable="true" type="tns:ArrayOfHomeInstallations_.SalesClawBackRecord" />
-      <xs:element minOccurs="0" name="CompletionAcceptance" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="UserResponsible" nillable="true" type="tns:ArrayOfUserLookupRecord" />
-      <xs:element minOccurs="0" name="FollowupNote" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Job100Costed" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="DepartmentResponsible1" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="PendingRecord" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="PlannedinstallWeek" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="PostalCode" nillable="true" type="tns:StringValue" />
       <xs:element minOccurs="0" name="ProjectedFinishDate" nillable="true" type="tns:DateTimeValue" />
+      <xs:element minOccurs="0" name="Reason" nillable="true" type="tns:StringValue" />
       <xs:element minOccurs="0" name="Reason1" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="FileAttachment" nillable="true" type="tns:ArrayOfHomeInstallations_.FileAttachmentRecord" />
-      <xs:element minOccurs="0" name="PaintedProduct" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="HVAC" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="ManMinutes" nillable="true" type="tns:LongValue" />
-      <xs:element minOccurs="0" name="LumberOrdered" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="SubcontractorBooked" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="DegreeOfDifficulty" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Zone" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="RemakeCost" nillable="true" type="tns:DecimalValue" />
+      <xs:element minOccurs="0" name="RemakeLog" nillable="true" type="tns:ArrayOfHomeInstallations_.RemakeLogRecord" />
+      <xs:element minOccurs="0" name="RemeasureDate" nillable="true" type="tns:DateTimeValue" />
       <xs:element minOccurs="0" name="RemeasureEndTime" nillable="true" type="tns:DateTimeValue" />
-      <xs:element minOccurs="0" name="Financing" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="TakePicture" nillable="true" type="tns:ArrayOfHomeInstallations_.TakePictureRecord" />
-      <xs:element minOccurs="0" name="JobType" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="BudgetedLBR" nillable="true" type="tns:DoubleValue" />
-      <xs:element minOccurs="0" name="TruckNumber" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="SidingRequired" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="SidingBudgetedLBR" nillable="true" type="tns:DoubleValue" />
-      <xs:element minOccurs="0" name="Saturday" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="Sunday" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="Asbestos" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="WoodDropOff" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="HighRisk" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="CheckRole" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="remeasureinstaller" nillable="true" type="tns:ArrayOfUserLookupRecord" />
+      <xs:element minOccurs="0" name="Rep" nillable="true" type="tns:Choice" />
       <xs:element minOccurs="0" name="ReturnTrip" nillable="true" type="tns:ArrayOfHomeInstallations_.ReturnTripRecord" />
-      <xs:element minOccurs="0" name="LeadPaint" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="InstallationWindowLBRMin" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="WMLinkStatus" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="ErrorID" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="SalesAmmount" nillable="true" type="tns:DecimalValue" />
+      <xs:element minOccurs="0" name="SalesClawBack" nillable="true" type="tns:ArrayOfHomeInstallations_.SalesClawBackRecord" />
+      <xs:element minOccurs="0" name="SalesCommission" nillable="true" type="tns:DecimalValue" />
+      <xs:element minOccurs="0" name="SalesManagersApprovalDate" nillable="true" type="tns:DateTimeValue" />
+      <xs:element minOccurs="0" name="Saturday" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="SeniorInstaller" nillable="true" type="tns:ArrayOfUserLookupRecord" />
+      <xs:element minOccurs="0" name="SidingBudgetedLBR" nillable="true" type="tns:DecimalValue" />
+      <xs:element minOccurs="0" name="SidingLBRBudget" nillable="true" type="tns:DecimalValue" />
+      <xs:element minOccurs="0" name="SidingLBRMin" nillable="true" type="tns:LongValue" />
+      <xs:element minOccurs="0" name="SidingRequired" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="SidingSQF" nillable="true" type="tns:DecimalValue" />
+      <xs:element minOccurs="0" name="Source_1" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="StreetAddress" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="SubcontractorBooked" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="SubtradeReqired" nillable="true" type="tns:ArrayOfHomeInstallations_.SubtradeReqiredRecord" />
+      <xs:element minOccurs="0" name="Sunday" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="TakePicture" nillable="true" type="tns:ArrayOfHomeInstallations_.TakePictureRecord" />
+      <xs:element minOccurs="0" name="TotalInstallationLBRMin" nillable="true" type="tns:LongValue" />
+      <xs:element minOccurs="0" name="TruckNumber" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="TypeofWork" nillable="true" type="tns:ArrayOfHomeInstallations_.TypeofWorkRecord" />
+      <xs:element minOccurs="0" name="UserResponsible" nillable="true" type="tns:ArrayOfUserLookupRecord" />
+      <xs:element minOccurs="0" name="WindowCost" nillable="true" type="tns:DecimalValue" />
       <xs:element minOccurs="0" name="WindowItems" nillable="true" type="tns:ArrayOfHomeInstallations_.WindowItemsRecord" />
       <xs:element minOccurs="0" name="WindowmakerUpdateDate" nillable="true" type="tns:DateTimeValue" />
-      <xs:element minOccurs="0" name="InstallationPatioDoorLBRMin" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="InstallationDoorLBRMin" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="TotalInstallationLBRMin" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="DoorItems" nillable="true" type="tns:ArrayOfHomeInstallations_.DoorItemsRecord" />
       <xs:element minOccurs="0" name="WindowManufacturingStatus" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="Windows" nillable="true" type="tns:LongValue" />
+      <xs:element minOccurs="0" name="WMLinkStatus" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="WoodDropOff" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="WorkLeftMaterialsRequired" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="WorkOrderDate" nillable="true" type="tns:DateTimeValue" />
+      <xs:element minOccurs="0" name="WorkOrderNotes" nillable="true" type="tns:ArrayOfHomeInstallations_.WorkOrderNotesRecord" />
+      <xs:element minOccurs="0" name="WorkOrderNumber" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="WorkPhoneNumber" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="Zone" nillable="true" type="tns:SingleSelection" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HomeInstallationsRecord" nillable="true" type="tns:HomeInstallationsRecord" />
-  <xs:complexType name="ArrayOfHomeInstallations_.TypeofWorkRecord">
+  <xs:complexType name="ArrayOfHomeInstallations_.CallLogRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.TypeofWorkRecord" nillable="true" type="tns:HomeInstallations_.TypeofWorkRecord" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.CallLogRecord" nillable="true" type="tns:HomeInstallations_.CallLogRecord" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfHomeInstallations_.TypeofWorkRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.TypeofWorkRecord" />
-  <xs:complexType name="HomeInstallations_.TypeofWorkRecord">
+  <xs:element name="ArrayOfHomeInstallations_.CallLogRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.CallLogRecord" />
+  <xs:complexType name="HomeInstallations_.CallLogRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Type_1" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Number_1" nillable="true" type="tns:LongValue" />
-      <xs:element minOccurs="0" name="ManufacturingStatus" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="CalledBy" nillable="true" type="tns:ArrayOfUserLookupRecord" />
+      <xs:element minOccurs="0" name="CalledMessage" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="DateCalled" nillable="true" type="tns:DateTimeValue" />
+      <xs:element minOccurs="0" name="Notes3" nillable="true" type="tns:StringValue" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="HomeInstallations_.TypeofWorkRecord" nillable="true" type="tns:HomeInstallations_.TypeofWorkRecord" />
-  <xs:complexType name="ArrayOfHomeInstallations_.SubtradeReqiredRecord">
+  <xs:element name="HomeInstallations_.CallLogRecord" nillable="true" type="tns:HomeInstallations_.CallLogRecord" />
+  <xs:complexType name="ArrayOfHomeInstallations_.DoorItemsRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.SubtradeReqiredRecord" nillable="true" type="tns:HomeInstallations_.SubtradeReqiredRecord" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.DoorItemsRecord" nillable="true" type="tns:HomeInstallations_.DoorItemsRecord" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfHomeInstallations_.SubtradeReqiredRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.SubtradeReqiredRecord" />
-  <xs:complexType name="HomeInstallations_.SubtradeReqiredRecord">
+  <xs:element name="ArrayOfHomeInstallations_.DoorItemsRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.DoorItemsRecord" />
+  <xs:complexType name="HomeInstallations_.DoorItemsRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" name="SubTrade" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="Description11" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="Item1" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="LBRMin1" nillable="true" type="tns:LongValue" />
+      <xs:element minOccurs="0" name="Quantity11" nillable="true" type="tns:LongValue" />
+      <xs:element minOccurs="0" name="Size1" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="Status11" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="SubQty1" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="System1" nillable="true" type="tns:StringValue" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="HomeInstallations_.SubtradeReqiredRecord" nillable="true" type="tns:HomeInstallations_.SubtradeReqiredRecord" />
+  <xs:element name="HomeInstallations_.DoorItemsRecord" nillable="true" type="tns:HomeInstallations_.DoorItemsRecord" />
+  <xs:complexType name="ArrayOfHomeInstallations_.FileAttachmentRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.FileAttachmentRecord" nillable="true" type="tns:HomeInstallations_.FileAttachmentRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHomeInstallations_.FileAttachmentRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.FileAttachmentRecord" />
+  <xs:complexType name="HomeInstallations_.FileAttachmentRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="FileName" nillable="true" type="tns:BinaryValue" />
+      <xs:element minOccurs="0" name="Notes5" nillable="true" type="tns:StringValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HomeInstallations_.FileAttachmentRecord" nillable="true" type="tns:HomeInstallations_.FileAttachmentRecord" />
   <xs:complexType name="ArrayOfHomeInstallations_.InstallationDatesRecord">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.InstallationDatesRecord" nillable="true" type="tns:HomeInstallations_.InstallationDatesRecord" />
@@ -1055,26 +1069,10 @@
   <xs:complexType name="HomeInstallations_.MaterialsUsedRecord">
     <xs:sequence>
       <xs:element minOccurs="0" name="Materials" nillable="true" type="tns:Choice" />
-      <xs:element minOccurs="0" name="Quantity" nillable="true" type="tns:DoubleValue" />
+      <xs:element minOccurs="0" name="Quantity" nillable="true" type="tns:DecimalValue" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HomeInstallations_.MaterialsUsedRecord" nillable="true" type="tns:HomeInstallations_.MaterialsUsedRecord" />
-  <xs:complexType name="ArrayOfHomeInstallations_.OtherInstallationMaterialsRecord">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.OtherInstallationMaterialsRecord" nillable="true" type="tns:HomeInstallations_.OtherInstallationMaterialsRecord" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfHomeInstallations_.OtherInstallationMaterialsRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.OtherInstallationMaterialsRecord" />
-  <xs:complexType name="HomeInstallations_.OtherInstallationMaterialsRecord">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="MaterialSource" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="Description" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="InvoiceNumb" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="MaterialCost" nillable="true" type="tns:DoubleValue" />
-      <xs:element minOccurs="0" name="Notes" nillable="true" type="tns:StringValue" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="HomeInstallations_.OtherInstallationMaterialsRecord" nillable="true" type="tns:HomeInstallations_.OtherInstallationMaterialsRecord" />
   <xs:complexType name="ArrayOfHomeInstallations_.nestedlist66Record">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.nestedlist66Record" nillable="true" type="tns:HomeInstallations_.nestedlist66Record" />
@@ -1102,21 +1100,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HomeInstallations_.nestedlist76Record" nillable="true" type="tns:HomeInstallations_.nestedlist76Record" />
-  <xs:complexType name="ArrayOfHomeInstallations_.CallLogRecord">
+  <xs:complexType name="ArrayOfHomeInstallations_.OtherInstallationMaterialsRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.CallLogRecord" nillable="true" type="tns:HomeInstallations_.CallLogRecord" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.OtherInstallationMaterialsRecord" nillable="true" type="tns:HomeInstallations_.OtherInstallationMaterialsRecord" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfHomeInstallations_.CallLogRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.CallLogRecord" />
-  <xs:complexType name="HomeInstallations_.CallLogRecord">
+  <xs:element name="ArrayOfHomeInstallations_.OtherInstallationMaterialsRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.OtherInstallationMaterialsRecord" />
+  <xs:complexType name="HomeInstallations_.OtherInstallationMaterialsRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" name="DateCalled" nillable="true" type="tns:DateTimeValue" />
-      <xs:element minOccurs="0" name="CalledMessage" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="CalledBy" nillable="true" type="tns:ArrayOfUserLookupRecord" />
-      <xs:element minOccurs="0" name="Notes3" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="Description" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="InvoiceNumb" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="MaterialCost" nillable="true" type="tns:DecimalValue" />
+      <xs:element minOccurs="0" name="MaterialSource" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="tns:StringValue" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="HomeInstallations_.CallLogRecord" nillable="true" type="tns:HomeInstallations_.CallLogRecord" />
+  <xs:element name="HomeInstallations_.OtherInstallationMaterialsRecord" nillable="true" type="tns:HomeInstallations_.OtherInstallationMaterialsRecord" />
   <xs:complexType name="ArrayOfHomeInstallations_.RemakeLogRecord">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.RemakeLogRecord" nillable="true" type="tns:HomeInstallations_.RemakeLogRecord" />
@@ -1125,30 +1124,26 @@
   <xs:element name="ArrayOfHomeInstallations_.RemakeLogRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.RemakeLogRecord" />
   <xs:complexType name="HomeInstallations_.RemakeLogRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" name="RequestedBy" nillable="true" type="tns:ArrayOfUserLookupRecord" />
+      <xs:element minOccurs="0" name="Cost1" nillable="true" type="tns:DecimalValue" />
       <xs:element minOccurs="0" name="Date_1" nillable="true" type="tns:DateTimeValue" />
       <xs:element minOccurs="0" name="DepartmentResponsible" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="Cost1" nillable="true" type="tns:DoubleValue" />
       <xs:element minOccurs="0" name="Reason2" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="RequestedBy" nillable="true" type="tns:ArrayOfUserLookupRecord" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HomeInstallations_.RemakeLogRecord" nillable="true" type="tns:HomeInstallations_.RemakeLogRecord" />
-  <xs:complexType name="ArrayOfHomeInstallations_.WorkOrderNotesRecord">
+  <xs:complexType name="ArrayOfHomeInstallations_.ReturnTripRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.WorkOrderNotesRecord" nillable="true" type="tns:HomeInstallations_.WorkOrderNotesRecord" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.ReturnTripRecord" nillable="true" type="tns:HomeInstallations_.ReturnTripRecord" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfHomeInstallations_.WorkOrderNotesRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.WorkOrderNotesRecord" />
-  <xs:complexType name="HomeInstallations_.WorkOrderNotesRecord">
+  <xs:element name="ArrayOfHomeInstallations_.ReturnTripRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.ReturnTripRecord" />
+  <xs:complexType name="HomeInstallations_.ReturnTripRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Date11" nillable="true" type="tns:DateTimeValue" />
-      <xs:element minOccurs="0" name="Department" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="User_1" nillable="true" type="tns:ArrayOfUserLookupRecord" />
-      <xs:element minOccurs="0" name="Notes4" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="NoteReference" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="ScheduledDate1" nillable="true" type="tns:DateTimeValue" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="HomeInstallations_.WorkOrderNotesRecord" nillable="true" type="tns:HomeInstallations_.WorkOrderNotesRecord" />
+  <xs:element name="HomeInstallations_.ReturnTripRecord" nillable="true" type="tns:HomeInstallations_.ReturnTripRecord" />
   <xs:complexType name="ArrayOfHomeInstallations_.SalesClawBackRecord">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.SalesClawBackRecord" nillable="true" type="tns:HomeInstallations_.SalesClawBackRecord" />
@@ -1157,25 +1152,25 @@
   <xs:element name="ArrayOfHomeInstallations_.SalesClawBackRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.SalesClawBackRecord" />
   <xs:complexType name="HomeInstallations_.SalesClawBackRecord">
     <xs:sequence>
+      <xs:element minOccurs="0" name="Cost2" nillable="true" type="tns:DecimalValue" />
       <xs:element minOccurs="0" name="Date1" nillable="true" type="tns:DateTimeValue" />
       <xs:element minOccurs="0" name="Reasonforclawback" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Cost2" nillable="true" type="tns:DoubleValue" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HomeInstallations_.SalesClawBackRecord" nillable="true" type="tns:HomeInstallations_.SalesClawBackRecord" />
-  <xs:complexType name="ArrayOfHomeInstallations_.FileAttachmentRecord">
+  <xs:complexType name="ArrayOfHomeInstallations_.SubtradeReqiredRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.FileAttachmentRecord" nillable="true" type="tns:HomeInstallations_.FileAttachmentRecord" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.SubtradeReqiredRecord" nillable="true" type="tns:HomeInstallations_.SubtradeReqiredRecord" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfHomeInstallations_.FileAttachmentRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.FileAttachmentRecord" />
-  <xs:complexType name="HomeInstallations_.FileAttachmentRecord">
+  <xs:element name="ArrayOfHomeInstallations_.SubtradeReqiredRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.SubtradeReqiredRecord" />
+  <xs:complexType name="HomeInstallations_.SubtradeReqiredRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" name="FileName" nillable="true" type="tns:BinaryValue" />
-      <xs:element minOccurs="0" name="Notes5" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="SubTrade" nillable="true" type="tns:SingleSelection" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="HomeInstallations_.FileAttachmentRecord" nillable="true" type="tns:HomeInstallations_.FileAttachmentRecord" />
+  <xs:element name="HomeInstallations_.SubtradeReqiredRecord" nillable="true" type="tns:HomeInstallations_.SubtradeReqiredRecord" />
   <xs:complexType name="ArrayOfHomeInstallations_.TakePictureRecord">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.TakePictureRecord" nillable="true" type="tns:HomeInstallations_.TakePictureRecord" />
@@ -1189,18 +1184,20 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HomeInstallations_.TakePictureRecord" nillable="true" type="tns:HomeInstallations_.TakePictureRecord" />
-  <xs:complexType name="ArrayOfHomeInstallations_.ReturnTripRecord">
+  <xs:complexType name="ArrayOfHomeInstallations_.TypeofWorkRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.ReturnTripRecord" nillable="true" type="tns:HomeInstallations_.ReturnTripRecord" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.TypeofWorkRecord" nillable="true" type="tns:HomeInstallations_.TypeofWorkRecord" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfHomeInstallations_.ReturnTripRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.ReturnTripRecord" />
-  <xs:complexType name="HomeInstallations_.ReturnTripRecord">
+  <xs:element name="ArrayOfHomeInstallations_.TypeofWorkRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.TypeofWorkRecord" />
+  <xs:complexType name="HomeInstallations_.TypeofWorkRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" name="ScheduledDate1" nillable="true" type="tns:DateTimeValue" />
+      <xs:element minOccurs="0" name="ManufacturingStatus" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="Number_1" nillable="true" type="tns:LongValue" />
+      <xs:element minOccurs="0" name="Type_1" nillable="true" type="tns:StringValue" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="HomeInstallations_.ReturnTripRecord" nillable="true" type="tns:HomeInstallations_.ReturnTripRecord" />
+  <xs:element name="HomeInstallations_.TypeofWorkRecord" nillable="true" type="tns:HomeInstallations_.TypeofWorkRecord" />
   <xs:complexType name="ArrayOfHomeInstallations_.WindowItemsRecord">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.WindowItemsRecord" nillable="true" type="tns:HomeInstallations_.WindowItemsRecord" />
@@ -1209,72 +1206,39 @@
   <xs:element name="ArrayOfHomeInstallations_.WindowItemsRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.WindowItemsRecord" />
   <xs:complexType name="HomeInstallations_.WindowItemsRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="System_1" nillable="true" type="tns:StringValue" />
       <xs:element minOccurs="0" name="Description1" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="Item" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="LBRMin" nillable="true" type="tns:LongValue" />
+      <xs:element minOccurs="0" name="Quantity1" nillable="true" type="tns:LongValue" />
       <xs:element minOccurs="0" name="Size_1" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Quantity1" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="Status1" nillable="true" type="tns:SingleSelection" />
       <xs:element minOccurs="0" name="SubQty" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Status1" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="LBRMin" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="System_1" nillable="true" type="tns:StringValue" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HomeInstallations_.WindowItemsRecord" nillable="true" type="tns:HomeInstallations_.WindowItemsRecord" />
-  <xs:complexType name="ArrayOfHomeInstallations_.DoorItemsRecord">
+  <xs:complexType name="ArrayOfHomeInstallations_.WorkOrderNotesRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.DoorItemsRecord" nillable="true" type="tns:HomeInstallations_.DoorItemsRecord" />
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.WorkOrderNotesRecord" nillable="true" type="tns:HomeInstallations_.WorkOrderNotesRecord" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfHomeInstallations_.DoorItemsRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.DoorItemsRecord" />
-  <xs:complexType name="HomeInstallations_.DoorItemsRecord">
+  <xs:element name="ArrayOfHomeInstallations_.WorkOrderNotesRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.WorkOrderNotesRecord" />
+  <xs:complexType name="HomeInstallations_.WorkOrderNotesRecord">
     <xs:sequence>
-      <xs:element minOccurs="0" name="Item1" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="System1" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Description11" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Size1" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Quantity11" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="SubQty1" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Status11" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="LBRMin1" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="Date11" nillable="true" type="tns:DateTimeValue" />
+      <xs:element minOccurs="0" name="Department" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="NoteReference" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="Notes4" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="User_1" nillable="true" type="tns:ArrayOfUserLookupRecord" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="HomeInstallations_.DoorItemsRecord" nillable="true" type="tns:HomeInstallations_.DoorItemsRecord" />
+  <xs:element name="HomeInstallations_.WorkOrderNotesRecord" nillable="true" type="tns:HomeInstallations_.WorkOrderNotesRecord" />
   <xs:complexType name="ManufacturerTrackingRecord">
     <xs:sequence>
       <xs:element minOccurs="0" name="Barcode" nillable="true" type="tns:StringValue" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ManufacturerTrackingRecord" nillable="true" type="tns:ManufacturerTrackingRecord" />
-  <xs:complexType name="SalesReviewRecord">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="CentraRating1" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="CentraRating2" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="CentraRating3" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="CentraRating4" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="CentraRating5" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="CodelDataEntry" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="CodelRating2" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="CodelRating3" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="CodelRating4" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="CodelRating5" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="ContractDifference" nillable="true" type="tns:DecimalValue" />
-      <xs:element minOccurs="0" name="ContractQuality" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="ContractRating1" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="ContractRating2" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="ContractRating3" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="ContractRating4" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="ContractRating5" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="ContractValue" nillable="true" type="tns:DecimalValue" />
-      <xs:element minOccurs="0" name="DoorRating1" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Notes" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="SalesRep" nillable="true" type="tns:Choice" />
-      <xs:element minOccurs="0" name="Status" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="SubmitedBy" nillable="true" type="tns:ArrayOfUserLookupRecord" />
-      <xs:element minOccurs="0" name="WMDataEntry" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="WorkOrder" nillable="true" type="tns:StringValue" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="SalesReviewRecord" nillable="true" type="tns:SalesReviewRecord" />
   <xs:complexType name="MaterialsInformationRecord">
     <xs:sequence>
       <xs:element minOccurs="0" name="Supplier" nillable="true" type="tns:StringValue" />
@@ -1305,17 +1269,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="InventoryManagerRecord" nillable="true" type="tns:InventoryManagerRecord" />
-  <xs:complexType name="MMSRecord">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Address" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Email" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="FirstName" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Gender" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="LastName" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Phone" nillable="true" type="tns:StringValue" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="MMSRecord" nillable="true" type="tns:MMSRecord" />
   <xs:complexType name="SupplyOnlyRecord">
     <xs:sequence>
       <xs:element minOccurs="0" name="Title" nillable="true" type="tns:StringValue" />
@@ -1371,15 +1324,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SupplyOnly_.RejectedReasonRecord" nillable="true" type="tns:SupplyOnly_.RejectedReasonRecord" />
-  <xs:complexType name="testappRecord">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="email" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="test2" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="testfield" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="value" nillable="true" type="tns:DecimalValue" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="testappRecord" nillable="true" type="tns:testappRecord" />
   <xs:complexType name="WindowsItemTrackerRecord">
     <xs:sequence>
       <xs:element minOccurs="0" name="Description" nillable="true" type="tns:StringValue" />
@@ -1457,31 +1401,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="InstallationTrackingRecord" nillable="true" type="tns:InstallationTrackingRecord" />
-  <xs:complexType name="SchedulePublishedRecord">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Date_1" nillable="true" type="tns:DateTimeValue" />
-      <xs:element minOccurs="0" name="Employee" nillable="true" type="tns:Choice" />
-      <xs:element minOccurs="0" name="Job_1" nillable="true" type="tns:Choice" />
-      <xs:element minOccurs="0" name="SeniorInstaller" nillable="true" type="tns:MultiSelection" />
-      <xs:element minOccurs="0" name="Service" nillable="true" type="tns:Choice" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="SchedulePublishedRecord" nillable="true" type="tns:SchedulePublishedRecord" />
-  <xs:complexType name="CHIPurchaseOrderRecord">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="AttachPIcture" nillable="true" type="tns:BinaryValue" />
-      <xs:element minOccurs="0" name="CostType" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Notes" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Notes1" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="PO" nillable="true" type="tns:StringValue" />
-      <xs:element minOccurs="0" name="Source_1" nillable="true" type="tns:SingleSelection" />
-      <xs:element minOccurs="0" name="SubmitedBy" nillable="true" type="tns:ArrayOfUserLookupRecord" />
-      <xs:element minOccurs="0" name="Total" nillable="true" type="tns:DoubleValue" />
-      <xs:element minOccurs="0" name="WorkOrderNumber" nillable="true" type="tns:Choice" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="CHIPurchaseOrderRecord" nillable="true" type="tns:CHIPurchaseOrderRecord" />
   <xs:complexType name="ServiceReviewRecord">
     <xs:sequence>
       <xs:element minOccurs="0" name="CentraQuality" nillable="true" type="tns:SingleSelection" />
@@ -1529,6 +1448,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ServiceReview_.InspectionRecord" nillable="true" type="tns:ServiceReview_.InspectionRecord" />
+  <xs:complexType name="CHIPurchaseOrderRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AttachPIcture" nillable="true" type="tns:BinaryValue" />
+      <xs:element minOccurs="0" name="CostType" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="InvoiceNumber" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="Notes" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="Notes1" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="PO" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="Source_1" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="SubmitedBy" nillable="true" type="tns:ArrayOfUserLookupRecord" />
+      <xs:element minOccurs="0" name="Total" nillable="true" type="tns:DoubleValue" />
+      <xs:element minOccurs="0" name="WorkOrderNumber" nillable="true" type="tns:Choice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CHIPurchaseOrderRecord" nillable="true" type="tns:CHIPurchaseOrderRecord" />
   <xs:complexType name="BackOrder_AddRecord_Call">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
@@ -1647,80 +1581,11 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="PlantProduction_DeleteRecord_Call" nillable="true" type="tns:PlantProduction_DeleteRecord_Call" />
-  <xs:complexType name="ScheduleDraft_RecordServiceSchedule_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q28:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:ScheduleDraftRecord" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ScheduleDraft_RecordServiceSchedule_Call" nillable="true" type="tns:ScheduleDraft_RecordServiceSchedule_Call" />
-  <xs:complexType name="ScheduleDraft_RecordUnavailable_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q29:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:ScheduleDraftRecord" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ScheduleDraft_RecordUnavailable_Call" nillable="true" type="tns:ScheduleDraft_RecordUnavailable_Call" />
-  <xs:complexType name="ScheduleDraft_EditScheduled_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q30:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:ScheduleDraftRecord" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ScheduleDraft_EditScheduled_Call" nillable="true" type="tns:ScheduleDraft_EditScheduled_Call" />
-  <xs:complexType name="ScheduleDraft_RecordSchedule_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q31:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:ScheduleDraftRecord" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ScheduleDraft_RecordSchedule_Call" nillable="true" type="tns:ScheduleDraft_RecordSchedule_Call" />
-  <xs:complexType name="ScheduleDraft_Delete_1_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q32="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q32:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="ScheduleDraft_Delete_1_Call" nillable="true" type="tns:ScheduleDraft_Delete_1_Call" />
   <xs:complexType name="Service_EditService_Call">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q34:ArrayOfstring" />
+          <xs:element xmlns:q28="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q28:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:ServiceRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -1734,7 +1599,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q35:ArrayOfstring" />
+          <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q29:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:ServiceRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -1748,7 +1613,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q36:ArrayOfstring" />
+          <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q30:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:ServiceRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -1762,7 +1627,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q37:ArrayOfstring" />
+          <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q31:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:ServiceRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -1776,7 +1641,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q39:ArrayOfstring" />
+          <xs:element xmlns:q33="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q33:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:ServiceRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -1790,7 +1655,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q40="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q40:ArrayOfstring" />
+          <xs:element xmlns:q34="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q34:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:ServiceRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -1804,39 +1669,27 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q43:ArrayOfstring" />
+          <xs:element xmlns:q37="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q37:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="HomeInstallations_BackRemeasureReady_Call" nillable="true" type="tns:HomeInstallations_BackRemeasureReady_Call" />
-  <xs:complexType name="HomeInstallations_ScheduleWork_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q45="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q45:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="HomeInstallations_ScheduleWork_Call" nillable="true" type="tns:HomeInstallations_ScheduleWork_Call" />
   <xs:complexType name="HomeInstallations_BufferWorkOrder_Call">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q47:ArrayOfstring" />
+          <xs:element xmlns:q39="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q39:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1846,53 +1699,42 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q49="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q49:ArrayOfstring" />
+          <xs:element xmlns:q41="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q41:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="HomeInstallations_ScheduleRemeasure_Call" nillable="true" type="tns:HomeInstallations_ScheduleRemeasure_Call" />
-  <xs:complexType name="HomeInstallations_AddRecord_Call">
+  <xs:complexType name="HomeInstallations_GetWindowmaker_Call">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q51:ArrayOfstring" />
+          <xs:element xmlns:q43="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q43:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="HomeInstallations_AddRecord_Call" nillable="true" type="tns:HomeInstallations_AddRecord_Call" />
-  <xs:complexType name="HomeInstallations_RescheduleInstallation_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q52="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q52:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="HomeInstallations_RescheduleInstallation_Call" nillable="true" type="tns:HomeInstallations_RescheduleInstallation_Call" />
+  <xs:element name="HomeInstallations_GetWindowmaker_Call" nillable="true" type="tns:HomeInstallations_GetWindowmaker_Call" />
   <xs:complexType name="HomeInstallations_ReSchedule_Call">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q53="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q53:ArrayOfstring" />
+          <xs:element xmlns:q44="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q44:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1902,11 +1744,12 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q54="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q54:ArrayOfstring" />
+          <xs:element xmlns:q45="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q45:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1916,11 +1759,12 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q55="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q55:ArrayOfstring" />
+          <xs:element xmlns:q46="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q46:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1930,11 +1774,12 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q56="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q56:ArrayOfstring" />
+          <xs:element xmlns:q47="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q47:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -1944,21 +1789,67 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q58="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q58:ArrayOfstring" />
+          <xs:element xmlns:q49="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q49:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="HomeInstallations_ReturnToBuffer_Call" nillable="true" type="tns:HomeInstallations_ReturnToBuffer_Call" />
+  <xs:complexType name="HomeInstallations_ScheduleWork_Call">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationCall">
+        <xs:sequence>
+          <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q51:ArrayOfstring" />
+          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
+          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HomeInstallations_ScheduleWork_Call" nillable="true" type="tns:HomeInstallations_ScheduleWork_Call" />
+  <xs:complexType name="HomeInstallations_AddRecord_Call">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationCall">
+        <xs:sequence>
+          <xs:element xmlns:q53="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q53:ArrayOfstring" />
+          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
+          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HomeInstallations_AddRecord_Call" nillable="true" type="tns:HomeInstallations_AddRecord_Call" />
+  <xs:complexType name="HomeInstallations_RescheduleInstallation_Call">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationCall">
+        <xs:sequence>
+          <xs:element xmlns:q54="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q54:ArrayOfstring" />
+          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
+          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="HomeInstallations_RescheduleInstallation_Call" nillable="true" type="tns:HomeInstallations_RescheduleInstallation_Call" />
   <xs:complexType name="ManufacturerTracking_EditRecord_Call">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q61="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q61:ArrayOfstring" />
+          <xs:element xmlns:q56="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q56:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:ManufacturerTrackingRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -1973,7 +1864,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q62="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q62:ArrayOfstring" />
+          <xs:element xmlns:q57="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q57:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:ManufacturerTrackingRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -1988,7 +1879,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q63="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q63:ArrayOfstring" />
+          <xs:element xmlns:q58="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q58:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
@@ -1998,26 +1889,11 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ManufacturerTracking_DeleteRecord_Call" nillable="true" type="tns:ManufacturerTracking_DeleteRecord_Call" />
-  <xs:complexType name="SalesReview_AddRecord_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q65="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q65:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:SalesReviewRecord" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="SalesReview_AddRecord_Call" nillable="true" type="tns:SalesReview_AddRecord_Call" />
   <xs:complexType name="MaterialsInformation_AddProduct_Call">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q67="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q67:ArrayOfstring" />
+          <xs:element xmlns:q60="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q60:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:MaterialsInformationRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -2031,7 +1907,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q68="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q68:ArrayOfstring" />
+          <xs:element xmlns:q61="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q61:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:MaterialsInformationRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -2045,7 +1921,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q70="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q70:ArrayOfstring" />
+          <xs:element xmlns:q63="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q63:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:InventoryManagerRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -2060,7 +1936,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q71="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q71:ArrayOfstring" />
+          <xs:element xmlns:q64="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q64:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:InventoryManagerRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -2075,7 +1951,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q72="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q72:ArrayOfstring" />
+          <xs:element xmlns:q65="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q65:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
@@ -2089,7 +1965,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q73="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q73:ArrayOfstring" />
+          <xs:element xmlns:q66="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q66:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:InventoryManagerRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -2100,55 +1976,11 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="InventoryManager_DeleteBOM_Call" nillable="true" type="tns:InventoryManager_DeleteBOM_Call" />
-  <xs:complexType name="MMS_EditRecord_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q75="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q75:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="MMS_EditRecord_Call" nillable="true" type="tns:MMS_EditRecord_Call" />
-  <xs:complexType name="MMS_DeleteRecord_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q76="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q76:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="MMS_DeleteRecord_Call" nillable="true" type="tns:MMS_DeleteRecord_Call" />
-  <xs:complexType name="MMS_AddNew_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q77="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q77:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="MMS_AddNew_Call" nillable="true" type="tns:MMS_AddNew_Call" />
   <xs:complexType name="SupplyOnly_AddRecord_Call">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q80="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q80:ArrayOfstring" />
+          <xs:element xmlns:q68="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q68:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:SupplyOnlyRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -2158,26 +1990,11 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="SupplyOnly_AddRecord_Call" nillable="true" type="tns:SupplyOnly_AddRecord_Call" />
-  <xs:complexType name="testapp_AddRecord_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q82="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q82:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:testappRecord" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="testapp_AddRecord_Call" nillable="true" type="tns:testapp_AddRecord_Call" />
   <xs:complexType name="WindowsItemTracker_UpdateItemStatus_Call">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q84="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q84:ArrayOfstring" />
+          <xs:element xmlns:q70="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q70:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:WindowsItemTrackerRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -2192,7 +2009,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q85="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q85:ArrayOfstring" />
+          <xs:element xmlns:q71="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q71:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:WindowsItemTrackerRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -2207,7 +2024,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q87="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q87:ArrayOfstring" />
+          <xs:element xmlns:q73="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q73:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:WindowsItemTrackerRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -2222,7 +2039,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q89="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q89:ArrayOfstring" />
+          <xs:element xmlns:q75="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q75:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:WindowsItemTrackerRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -2237,7 +2054,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q92="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q92:ArrayOfstring" />
+          <xs:element xmlns:q78="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q78:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:JobSiteReviewRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -2252,7 +2069,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q94="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q94:ArrayOfstring" />
+          <xs:element xmlns:q80="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q80:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
           <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
@@ -2266,7 +2083,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q95="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q95:ArrayOfstring" />
+          <xs:element xmlns:q81="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q81:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:InstallationTrackingRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -2281,7 +2098,7 @@
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q96="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q96:ArrayOfstring" />
+          <xs:element xmlns:q82="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q82:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:InstallationTrackingRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -2292,95 +2109,11 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="InstallationTracking_EditRecord_Call" nillable="true" type="tns:InstallationTracking_EditRecord_Call" />
-  <xs:complexType name="SchedulePublished_RecordSchedule_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q98="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q98:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:SchedulePublishedRecord" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="SchedulePublished_RecordSchedule_Call" nillable="true" type="tns:SchedulePublished_RecordSchedule_Call" />
-  <xs:complexType name="SchedulePublished_RecordServiceSchedule_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q99="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q99:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:SchedulePublishedRecord" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="SchedulePublished_RecordServiceSchedule_Call" nillable="true" type="tns:SchedulePublished_RecordServiceSchedule_Call" />
-  <xs:complexType name="SchedulePublished_Delete_1_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q100="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q100:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="SchedulePublished_Delete_1_Call" nillable="true" type="tns:SchedulePublished_Delete_1_Call" />
-  <xs:complexType name="SchedulePublished_Edit_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q101="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q101:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:SchedulePublishedRecord" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="SchedulePublished_Edit_Call" nillable="true" type="tns:SchedulePublished_Edit_Call" />
-  <xs:complexType name="SchedulePublished_EditScheduled_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q102="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q102:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:SchedulePublishedRecord" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="SchedulePublished_EditScheduled_Call" nillable="true" type="tns:SchedulePublished_EditScheduled_Call" />
-  <xs:complexType name="CHIPurchaseOrder_AddRecord_Call">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:OperationCall">
-        <xs:sequence>
-          <xs:element xmlns:q104="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q104:ArrayOfstring" />
-          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:CHIPurchaseOrderRecord" />
-          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
-          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="CHIPurchaseOrder_AddRecord_Call" nillable="true" type="tns:CHIPurchaseOrder_AddRecord_Call" />
   <xs:complexType name="ServiceReview_AddRecord_Call">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:OperationCall">
         <xs:sequence>
-          <xs:element xmlns:q106="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q106:ArrayOfstring" />
+          <xs:element xmlns:q84="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q84:ArrayOfstring" />
           <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:ServiceReviewRecord" />
           <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
@@ -2391,6 +2124,21 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="ServiceReview_AddRecord_Call" nillable="true" type="tns:ServiceReview_AddRecord_Call" />
+  <xs:complexType name="CHIPurchaseOrder_AddRecord_Call">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:OperationCall">
+        <xs:sequence>
+          <xs:element xmlns:q86="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="EmailNotification" nillable="true" type="q86:ArrayOfstring" />
+          <xs:element minOccurs="1" name="OnBehalfOf" nillable="true" type="xs:string" />
+          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:CHIPurchaseOrderRecord" />
+          <xs:element minOccurs="0" name="RecordID" nillable="true" type="xs:string" />
+          <xs:element minOccurs="0" name="ClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="0" name="ClientTime" nillable="true" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="CHIPurchaseOrder_AddRecord_Call" nillable="true" type="tns:CHIPurchaseOrder_AddRecord_Call" />
   <xs:complexType name="BackOrder_AddRecord_Request">
     <xs:sequence>
       <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
@@ -2621,56 +2369,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="ScheduleDraft_RecordServiceSchedule">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ScheduleDraftRecord" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ScheduleDraft_RecordUnavailable">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ScheduleDraftRecord" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ScheduleDraft_EditScheduled">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ScheduleDraftRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ScheduleDraft_RecordSchedule">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ScheduleDraftRecord" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ScheduleDraft_Delete_1">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="Service_EditService_Request">
     <xs:sequence>
       <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
@@ -2719,7 +2417,7 @@
           <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ServiceRecord" />
-          <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q38:State" />
+          <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q32:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
         </xs:sequence>
       </xs:extension>
@@ -2744,7 +2442,7 @@
           <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ServiceRecord" />
-          <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q41:State" />
+          <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q35:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
         </xs:sequence>
       </xs:extension>
@@ -2758,22 +2456,10 @@
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
-          <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q44:State" />
+          <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q38:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="HomeInstallations_ScheduleWork">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
-          <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q46:State" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2786,8 +2472,10 @@
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
-          <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q48:State" />
+          <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q40:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2800,31 +2488,23 @@
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
-          <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q50:State" />
+          <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q42:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="HomeInstallations_AddRecord_Request">
+  <xs:complexType name="HomeInstallations_GetWindowmaker_Request">
     <xs:sequence>
       <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
-      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:HomeInstallations_AddRecord" />
+      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:HomeInstallations_GetWindowmaker" />
       <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="HomeInstallations_AddRecord_Request" nillable="true" type="tns:HomeInstallations_AddRecord_Request" />
-  <xs:complexType name="HomeInstallations_AddRecord">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="HomeInstallations_RescheduleInstallation">
+  <xs:element name="HomeInstallations_GetWindowmaker_Request" nillable="true" type="tns:HomeInstallations_GetWindowmaker_Request" />
+  <xs:complexType name="HomeInstallations_GetWindowmaker">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:AbstractOperation">
         <xs:sequence>
@@ -2833,6 +2513,8 @@
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2846,6 +2528,8 @@
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2859,27 +2543,8 @@
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="HomeInstallations_CreateServiceRequest_Request">
-    <xs:sequence>
-      <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
-      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:HomeInstallations_CreateServiceRequest" />
-      <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="HomeInstallations_CreateServiceRequest_Request" nillable="true" type="tns:HomeInstallations_CreateServiceRequest_Request" />
-  <xs:complexType name="HomeInstallations_CreateServiceRequest">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2901,6 +2566,8 @@
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2921,8 +2588,10 @@
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
-          <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q57:State" />
+          <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q48:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2935,8 +2604,83 @@
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
-          <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q59:State" />
+          <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q50:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HomeInstallations_ScheduleWork">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractOperation">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
+          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
+          <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q52:State" />
+          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HomeInstallations_AddRecord_Request">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
+      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:HomeInstallations_AddRecord" />
+      <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HomeInstallations_AddRecord_Request" nillable="true" type="tns:HomeInstallations_AddRecord_Request" />
+  <xs:complexType name="HomeInstallations_AddRecord">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractOperation">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
+          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HomeInstallations_RescheduleInstallation">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractOperation">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
+          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
+          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="HomeInstallations_CreateServiceRequest_Request">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
+      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:HomeInstallations_CreateServiceRequest" />
+      <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HomeInstallations_CreateServiceRequest_Request" nillable="true" type="tns:HomeInstallations_CreateServiceRequest_Request" />
+  <xs:complexType name="HomeInstallations_CreateServiceRequest">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractOperation">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
+          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
+          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -2982,24 +2726,6 @@
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
           <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
           <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SalesReview_AddRecord_Request">
-    <xs:sequence>
-      <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
-      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:SalesReview_AddRecord" />
-      <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="SalesReview_AddRecord_Request" nillable="true" type="tns:SalesReview_AddRecord_Request" />
-  <xs:complexType name="SalesReview_AddRecord">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SalesReviewRecord" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -3084,55 +2810,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="MMS_EditRecord_Request">
-    <xs:sequence>
-      <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
-      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:MMS_EditRecord" />
-      <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="MMS_EditRecord_Request" nillable="true" type="tns:MMS_EditRecord_Request" />
-  <xs:complexType name="MMS_EditRecord">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalRecord" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="MMS_DeleteRecord">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalRecord" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="MMS_AddNew">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="SupplyOnly_AddRecord_Request">
     <xs:sequence>
       <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
@@ -3146,24 +2823,6 @@
       <xs:extension base="tns:AbstractOperation">
         <xs:sequence>
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SupplyOnlyRecord" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="testapp_AddRecord_Request">
-    <xs:sequence>
-      <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
-      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:testapp_AddRecord" />
-      <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="testapp_AddRecord_Request" nillable="true" type="tns:testapp_AddRecord_Request" />
-  <xs:complexType name="testapp_AddRecord">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:testappRecord" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -3207,7 +2866,7 @@
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:WindowsItemTrackerRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:WindowsItemTrackerRecord" />
-          <xs:element xmlns:q86="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q86:State" />
+          <xs:element xmlns:q72="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q72:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
           <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
           <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
@@ -3250,7 +2909,7 @@
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:WindowsItemTrackerRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:WindowsItemTrackerRecord" />
-          <xs:element xmlns:q88="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q88:State" />
+          <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q74:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
           <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
           <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
@@ -3297,7 +2956,7 @@
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:WindowsItemTrackerRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:WindowsItemTrackerRecord" />
-          <xs:element xmlns:q90="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q90:State" />
+          <xs:element xmlns:q76="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q76:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
           <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
           <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
@@ -3384,55 +3043,20 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="SchedulePublished_RecordSchedule">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SchedulePublishedRecord" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
+  <xs:complexType name="ServiceReview_AddRecord_Request">
+    <xs:sequence>
+      <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
+      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:ServiceReview_AddRecord" />
+      <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
+    </xs:sequence>
   </xs:complexType>
-  <xs:complexType name="SchedulePublished_RecordServiceSchedule">
+  <xs:element name="ServiceReview_AddRecord_Request" nillable="true" type="tns:ServiceReview_AddRecord_Request" />
+  <xs:complexType name="ServiceReview_AddRecord">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:AbstractOperation">
         <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SchedulePublishedRecord" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SchedulePublished_Delete_1">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SchedulePublished_Edit">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SchedulePublishedRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SchedulePublished_EditScheduled">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SchedulePublishedRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ServiceReviewRecord" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -3450,24 +3074,6 @@
       <xs:extension base="tns:AbstractOperation">
         <xs:sequence>
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:CHIPurchaseOrderRecord" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ServiceReview_AddRecord_Request">
-    <xs:sequence>
-      <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
-      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:ServiceReview_AddRecord" />
-      <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ServiceReview_AddRecord_Request" nillable="true" type="tns:ServiceReview_AddRecord_Request" />
-  <xs:complexType name="ServiceReview_AddRecord">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ServiceReviewRecord" />
           <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
@@ -3810,81 +3416,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="ScheduleDraft_Legacy_ADD">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ScheduleDraftRecord" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ScheduleDraft_Legacy_EDIT">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ScheduleDraftRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ScheduleDraft_Legacy_TRANSITION">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ScheduleDraftRecord" />
-          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q27:State" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ScheduleDraft_Legacy_DELETE">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ScheduleDraft_Legacy_DUPLICATE">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ScheduleDraftRecord" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ScheduleDraft_Legacy_TRIGGERADD">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ScheduleDraftRecord" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ScheduleDraft_Legacy_TRIGGEREDIT">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ScheduleDraftRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="Service_Legacy_ADD">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:AbstractLegacyOperation">
@@ -3913,7 +3444,7 @@
           <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ServiceRecord" />
-          <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q33:State" />
+          <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q27:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
         </xs:sequence>
       </xs:extension>
@@ -3966,6 +3497,7 @@
         <xs:sequence>
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -3979,6 +3511,8 @@
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -3991,8 +3525,10 @@
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
-          <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q42:State" />
+          <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q36:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4004,6 +3540,8 @@
           <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4014,6 +3552,7 @@
         <xs:sequence>
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4024,6 +3563,7 @@
         <xs:sequence>
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4037,6 +3577,8 @@
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:HomeInstallationsRecord" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -4072,7 +3614,7 @@
           <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ManufacturerTrackingRecord" />
-          <xs:element xmlns:q60="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q60:State" />
+          <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q55:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
           <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
           <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
@@ -4127,92 +3669,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="SalesReview_Legacy_ADD">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SalesReviewRecord" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SalesReview_Legacy_EDIT">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SalesReviewRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SalesReview_Legacy_TRANSITION">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SalesReviewRecord" />
-          <xs:element xmlns:q64="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q64:State" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SalesReview_Legacy_DELETE">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SalesReview_Legacy_DUPLICATE">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SalesReviewRecord" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SalesReview_Legacy_TRIGGERADD">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SalesReviewRecord" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SalesReview_Legacy_TRIGGEREDIT">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SalesReviewRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="MaterialsInformation_Legacy_ADD">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:AbstractLegacyOperation">
@@ -4241,7 +3697,7 @@
           <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:MaterialsInformationRecord" />
-          <xs:element xmlns:q66="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q66:State" />
+          <xs:element xmlns:q59="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q59:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
         </xs:sequence>
       </xs:extension>
@@ -4319,7 +3775,7 @@
           <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:InventoryManagerRecord" />
-          <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q69:State" />
+          <xs:element xmlns:q62="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q62:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
           <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
           <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
@@ -4374,158 +3830,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="MMS_Legacy_ADD_Request">
-    <xs:sequence>
-      <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
-      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:MMS_Legacy_ADD" />
-      <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="MMS_Legacy_ADD_Request" nillable="true" type="tns:MMS_Legacy_ADD_Request" />
-  <xs:complexType name="MMS_Legacy_ADD">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="MMS_Legacy_EDIT_Request">
-    <xs:sequence>
-      <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
-      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:MMS_Legacy_EDIT" />
-      <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="MMS_Legacy_EDIT_Request" nillable="true" type="tns:MMS_Legacy_EDIT_Request" />
-  <xs:complexType name="MMS_Legacy_EDIT">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalRecord" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="MMS_Legacy_TRANSITION_Request">
-    <xs:sequence>
-      <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
-      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:MMS_Legacy_TRANSITION" />
-      <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="MMS_Legacy_TRANSITION_Request" nillable="true" type="tns:MMS_Legacy_TRANSITION_Request" />
-  <xs:complexType name="MMS_Legacy_TRANSITION">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalRecord" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:MMSRecord" />
-          <xs:element xmlns:q74="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q74:State" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="MMS_Legacy_DELETE_Request">
-    <xs:sequence>
-      <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
-      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:MMS_Legacy_DELETE" />
-      <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="MMS_Legacy_DELETE_Request" nillable="true" type="tns:MMS_Legacy_DELETE_Request" />
-  <xs:complexType name="MMS_Legacy_DELETE">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalRecord" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="MMS_Legacy_DUPLICATE_Request">
-    <xs:sequence>
-      <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
-      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:MMS_Legacy_DUPLICATE" />
-      <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="MMS_Legacy_DUPLICATE_Request" nillable="true" type="tns:MMS_Legacy_DUPLICATE_Request" />
-  <xs:complexType name="MMS_Legacy_DUPLICATE">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="MMS_Legacy_TRIGGERADD_Request">
-    <xs:sequence>
-      <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
-      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:MMS_Legacy_TRIGGERADD" />
-      <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="MMS_Legacy_TRIGGERADD_Request" nillable="true" type="tns:MMS_Legacy_TRIGGERADD_Request" />
-  <xs:complexType name="MMS_Legacy_TRIGGERADD">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="MMS_Legacy_TRIGGEREDIT_Request">
-    <xs:sequence>
-      <xs:element minOccurs="1" name="CommitTime" type="xs:dateTime" />
-      <xs:element minOccurs="1" name="Operation" nillable="true" type="tns:MMS_Legacy_TRIGGEREDIT" />
-      <xs:element minOccurs="1" name="TransactionId" type="xs:long" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="MMS_Legacy_TRIGGEREDIT_Request" nillable="true" type="tns:MMS_Legacy_TRIGGEREDIT_Request" />
-  <xs:complexType name="MMS_Legacy_TRIGGEREDIT">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalRecord" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="Record" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:MMSRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="SupplyOnly_Legacy_ADD">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:AbstractLegacyOperation">
@@ -4554,7 +3858,7 @@
           <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SupplyOnlyRecord" />
-          <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q79:State" />
+          <xs:element xmlns:q67="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q67:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
         </xs:sequence>
       </xs:extension>
@@ -4601,92 +3905,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="testapp_Legacy_ADD">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:testappRecord" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="testapp_Legacy_EDIT">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:testappRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="testapp_Legacy_TRANSITION">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:testappRecord" />
-          <xs:element xmlns:q81="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q81:State" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="testapp_Legacy_DELETE">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="testapp_Legacy_DUPLICATE">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:testappRecord" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="testapp_Legacy_TRIGGERADD">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:testappRecord" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="testapp_Legacy_TRIGGEREDIT">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:testappRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="WindowsItemTracker_Legacy_ADD">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:AbstractLegacyOperation">
@@ -4721,7 +3939,7 @@
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="Record" nillable="true" type="tns:WindowsItemTrackerRecord" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:WindowsItemTrackerRecord" />
-          <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q83:State" />
+          <xs:element xmlns:q69="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q69:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
           <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
           <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
@@ -4810,7 +4028,7 @@
           <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:JobSiteReviewRecord" />
-          <xs:element xmlns:q91="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q91:State" />
+          <xs:element xmlns:q77="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q77:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
           <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
           <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
@@ -4896,7 +4114,7 @@
           <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:InstallationTrackingRecord" />
-          <xs:element xmlns:q93="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q93:State" />
+          <xs:element xmlns:q79="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q79:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
           <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
           <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
@@ -4951,167 +4169,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="SchedulePublished_Legacy_ADD">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SchedulePublishedRecord" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SchedulePublished_Legacy_EDIT">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SchedulePublishedRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SchedulePublished_Legacy_TRANSITION">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SchedulePublishedRecord" />
-          <xs:element xmlns:q97="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q97:State" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SchedulePublished_Legacy_DELETE">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SchedulePublished_Legacy_DUPLICATE">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SchedulePublishedRecord" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SchedulePublished_Legacy_TRIGGERADD">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SchedulePublishedRecord" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SchedulePublished_Legacy_TRIGGEREDIT">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:SchedulePublishedRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="CHIPurchaseOrder_Legacy_ADD">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:CHIPurchaseOrderRecord" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="CHIPurchaseOrder_Legacy_EDIT">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:CHIPurchaseOrderRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="CHIPurchaseOrder_Legacy_TRANSITION">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:CHIPurchaseOrderRecord" />
-          <xs:element xmlns:q103="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q103:State" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="CHIPurchaseOrder_Legacy_DELETE">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="CHIPurchaseOrder_Legacy_DUPLICATE">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:CHIPurchaseOrderRecord" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="CHIPurchaseOrder_Legacy_TRIGGERADD">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:CHIPurchaseOrderRecord" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="CHIPurchaseOrder_Legacy_TRIGGEREDIT">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:AbstractLegacyOperation">
-        <xs:sequence>
-          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
-          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:CHIPurchaseOrderRecord" />
-          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
-          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
-          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="ServiceReview_Legacy_ADD">
     <xs:complexContent mixed="false">
       <xs:extension base="tns:AbstractLegacyOperation">
@@ -5143,7 +4200,7 @@
           <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
           <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
           <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:ServiceReviewRecord" />
-          <xs:element xmlns:q105="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q105:State" />
+          <xs:element xmlns:q83="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q83:State" />
           <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
           <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
           <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
@@ -5198,6 +4255,92 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="CHIPurchaseOrder_Legacy_ADD">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractLegacyOperation">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:CHIPurchaseOrderRecord" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CHIPurchaseOrder_Legacy_EDIT">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractLegacyOperation">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:CHIPurchaseOrderRecord" />
+          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CHIPurchaseOrder_Legacy_TRANSITION">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractLegacyOperation">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:CHIPurchaseOrderRecord" />
+          <xs:element xmlns:q85="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="OriginalState" type="q85:State" />
+          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CHIPurchaseOrder_Legacy_DELETE">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractLegacyOperation">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CHIPurchaseOrder_Legacy_DUPLICATE">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractLegacyOperation">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:CHIPurchaseOrderRecord" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CHIPurchaseOrder_Legacy_TRIGGERADD">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractLegacyOperation">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:CHIPurchaseOrderRecord" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CHIPurchaseOrder_Legacy_TRIGGEREDIT">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AbstractLegacyOperation">
+        <xs:sequence>
+          <xs:element minOccurs="1" name="OriginalModifiedBy" nillable="true" type="xs:string" />
+          <xs:element minOccurs="1" name="OriginalModifiedOn" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="CurrentRecord" nillable="true" type="tns:CHIPurchaseOrderRecord" />
+          <xs:element minOccurs="1" name="OriginalClientLocation" nillable="true" type="tns:LocationValue" />
+          <xs:element minOccurs="1" name="ClientTime" type="xs:dateTime" />
+          <xs:element minOccurs="1" name="OriginalClientTime" type="xs:dateTime" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:simpleType name="StationTarget_ViewAllRecords_SortField">
     <xs:restriction base="xs:string">
       <xs:enumeration value="Station" />
@@ -5242,59 +4385,6 @@
       <xs:extension base="tns:ViewResponse">
         <xs:sequence>
           <xs:element minOccurs="0" name="Rows" nillable="true" type="tns:ArrayOfStationTarget_ViewAllRecords_Row" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:simpleType name="MMS_ViewAllRecords_SortField">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="FirstName" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:complexType name="MMS_ViewAllRecords_Sort">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Field" nillable="true" type="tns:MMS_ViewAllRecords_SortField" />
-      <xs:element minOccurs="0" name="Direction" nillable="true" type="tns:SortDirection" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="ArrayOfMMS_ViewAllRecords_Sort">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="MMS_ViewAllRecords_Sort" nillable="true" type="tns:MMS_ViewAllRecords_Sort" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="MMS_ViewAllRecords_Request">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:ViewRequest">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Sort" nillable="true" type="tns:ArrayOfMMS_ViewAllRecords_Sort" />
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ArrayOfMMS_ViewAllRecords_Row">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="MMS_ViewAllRecords_Row" nillable="true" type="tns:MMS_ViewAllRecords_Row" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="MMS_ViewAllRecords_Row">
-    <xs:sequence>
-      <xs:element name="ClientTime" nillable="true" type="xs:dateTime" />
-      <xs:element name="ClientLocation" nillable="true" type="tns:LocationValue" />
-      <xs:element xmlns:q78="http://schemas.datacontract.org/2004/07/Flowfinity" minOccurs="1" name="State" type="q78:State" />
-      <xs:element name="CreatedBy" nillable="true" type="xs:string" />
-      <xs:element name="ModifiedBy" nillable="true" type="xs:string" />
-      <xs:element name="ModifiedOn" nillable="true" type="xs:dateTime" />
-      <xs:element name="CreatedOn" nillable="true" type="xs:dateTime" />
-      <xs:element name="RecordID" nillable="true" type="xs:string" />
-      <xs:element name="LastOperationName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Record" nillable="true" type="tns:MMSRecord" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:complexType name="MMS_ViewAllRecords_Response">
-    <xs:complexContent mixed="false">
-      <xs:extension base="tns:ViewResponse">
-        <xs:sequence>
-          <xs:element minOccurs="0" name="Rows" nillable="true" type="tns:ArrayOfMMS_ViewAllRecords_Row" />
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>

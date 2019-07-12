@@ -422,6 +422,8 @@ namespace Generics.Utils.Data
         [DataMember]
         public string HolidayName { get; set; }
 
-
+        [Lift.Database.DbIgnore]
+        [DataMember]
+        public string UnavailableStaff { get; set; }
     }
 }

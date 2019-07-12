@@ -157,13 +157,6 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.PlantProduction_Legacy_DUPLICATE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.PlantProduction_Legacy_TRIGGERADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.PlantProduction_Legacy_TRIGGEREDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_Legacy_ADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_Legacy_EDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_Legacy_TRANSITION))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_Legacy_DELETE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_Legacy_DUPLICATE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_Legacy_TRIGGERADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_Legacy_TRIGGEREDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Service_Legacy_ADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Service_Legacy_EDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Service_Legacy_TRANSITION))]
@@ -185,13 +178,6 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ManufacturerTracking_Legacy_DUPLICATE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ManufacturerTracking_Legacy_TRIGGERADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ManufacturerTracking_Legacy_TRIGGEREDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SalesReview_Legacy_ADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SalesReview_Legacy_EDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SalesReview_Legacy_TRANSITION))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SalesReview_Legacy_DELETE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SalesReview_Legacy_DUPLICATE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SalesReview_Legacy_TRIGGERADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SalesReview_Legacy_TRIGGEREDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MaterialsInformation_Legacy_ADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MaterialsInformation_Legacy_EDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MaterialsInformation_Legacy_TRANSITION))]
@@ -206,13 +192,6 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InventoryManager_Legacy_DUPLICATE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InventoryManager_Legacy_TRIGGERADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InventoryManager_Legacy_TRIGGEREDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_Legacy_ADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_Legacy_EDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_Legacy_TRANSITION))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_Legacy_DELETE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_Legacy_DUPLICATE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_Legacy_TRIGGERADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_Legacy_TRIGGEREDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SupplyOnly_Legacy_ADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SupplyOnly_Legacy_EDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SupplyOnly_Legacy_TRANSITION))]
@@ -220,13 +199,6 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SupplyOnly_Legacy_DUPLICATE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SupplyOnly_Legacy_TRIGGERADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SupplyOnly_Legacy_TRIGGEREDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.testapp_Legacy_ADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.testapp_Legacy_EDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.testapp_Legacy_TRANSITION))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.testapp_Legacy_DELETE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.testapp_Legacy_DUPLICATE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.testapp_Legacy_TRIGGERADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.testapp_Legacy_TRIGGEREDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.WindowsItemTracker_Legacy_ADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.WindowsItemTracker_Legacy_EDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.WindowsItemTracker_Legacy_TRANSITION))]
@@ -248,20 +220,6 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InstallationTracking_Legacy_DUPLICATE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InstallationTracking_Legacy_TRIGGERADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InstallationTracking_Legacy_TRIGGEREDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Legacy_ADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Legacy_EDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Legacy_TRANSITION))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Legacy_DELETE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Legacy_DUPLICATE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Legacy_TRIGGERADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Legacy_TRIGGEREDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_ADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_EDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_TRANSITION))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_DELETE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_DUPLICATE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_TRIGGERADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_TRIGGEREDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ServiceReview_Legacy_ADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ServiceReview_Legacy_EDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ServiceReview_Legacy_TRANSITION))]
@@ -269,6 +227,13 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ServiceReview_Legacy_DUPLICATE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ServiceReview_Legacy_TRIGGERADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ServiceReview_Legacy_TRIGGEREDIT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_ADD))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_EDIT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_TRANSITION))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_DELETE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_DUPLICATE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_TRIGGERADD))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_TRIGGEREDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Estimation_AddRecord))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Timesheet_RejectEdit))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Timesheet_Accept))]
@@ -281,11 +246,6 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.PlantProduction_DeleteRecord))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.PlantProduction_AddRecord))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.PlantProduction_delete_1))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_RecordServiceSchedule))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_RecordUnavailable))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_EditScheduled))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_RecordSchedule))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_Delete_1))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Service_EditService))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Service_UpdateCrew))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Service_AddRecord))]
@@ -293,32 +253,28 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Service_rescheduleservice))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Service_ReturnToBuffer))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_BackRemeasureReady))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_ScheduleWork))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_BufferWorkOrder))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_ScheduleRemeasure))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_AddRecord))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_RescheduleInstallation))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_GetWindowmaker))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_ReSchedule))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_UpdateCrew))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_CreateServiceRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_EditSold))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_ScheduleNewWorkOrder))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_ReturnToBuffer))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_ScheduleWork))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_AddRecord))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_RescheduleInstallation))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_CreateServiceRequest))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ManufacturerTracking_EditRecord))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ManufacturerTracking_AddRecord))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ManufacturerTracking_DeleteRecord))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SalesReview_AddRecord))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MaterialsInformation_AddProduct))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MaterialsInformation_EditRecord))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InventoryManager_AddRecord))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InventoryManager_GetBOMItems))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InventoryManager_DeleteRecord))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InventoryManager_DeleteBOM))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_EditRecord))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_DeleteRecord))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_AddNew))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SupplyOnly_AddRecord))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.testapp_AddRecord))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.WindowsItemTracker_UpdateItemStatus))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.WindowsItemTracker_MovetoOnhold))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.WindowsItemTracker_AddRecord))]
@@ -329,13 +285,8 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InstallationTracking_DeleteRecord))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InstallationTracking_AddRecord))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InstallationTracking_EditRecord))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_RecordSchedule))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_RecordServiceSchedule))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Delete_1))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Edit))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_EditScheduled))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_AddRecord))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ServiceReview_AddRecord))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_AddRecord))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.BackOrder_AddRecord))]
     public partial class AbstractOperation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -625,13 +576,6 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.PlantProduction_Legacy_DUPLICATE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.PlantProduction_Legacy_TRIGGERADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.PlantProduction_Legacy_TRIGGEREDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_Legacy_ADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_Legacy_EDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_Legacy_TRANSITION))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_Legacy_DELETE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_Legacy_DUPLICATE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_Legacy_TRIGGERADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_Legacy_TRIGGEREDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Service_Legacy_ADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Service_Legacy_EDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Service_Legacy_TRANSITION))]
@@ -653,13 +597,6 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ManufacturerTracking_Legacy_DUPLICATE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ManufacturerTracking_Legacy_TRIGGERADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ManufacturerTracking_Legacy_TRIGGEREDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SalesReview_Legacy_ADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SalesReview_Legacy_EDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SalesReview_Legacy_TRANSITION))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SalesReview_Legacy_DELETE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SalesReview_Legacy_DUPLICATE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SalesReview_Legacy_TRIGGERADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SalesReview_Legacy_TRIGGEREDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MaterialsInformation_Legacy_ADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MaterialsInformation_Legacy_EDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MaterialsInformation_Legacy_TRANSITION))]
@@ -674,13 +611,6 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InventoryManager_Legacy_DUPLICATE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InventoryManager_Legacy_TRIGGERADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InventoryManager_Legacy_TRIGGEREDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_Legacy_ADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_Legacy_EDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_Legacy_TRANSITION))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_Legacy_DELETE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_Legacy_DUPLICATE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_Legacy_TRIGGERADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_Legacy_TRIGGEREDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SupplyOnly_Legacy_ADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SupplyOnly_Legacy_EDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SupplyOnly_Legacy_TRANSITION))]
@@ -688,13 +618,6 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SupplyOnly_Legacy_DUPLICATE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SupplyOnly_Legacy_TRIGGERADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SupplyOnly_Legacy_TRIGGEREDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.testapp_Legacy_ADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.testapp_Legacy_EDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.testapp_Legacy_TRANSITION))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.testapp_Legacy_DELETE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.testapp_Legacy_DUPLICATE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.testapp_Legacy_TRIGGERADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.testapp_Legacy_TRIGGEREDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.WindowsItemTracker_Legacy_ADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.WindowsItemTracker_Legacy_EDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.WindowsItemTracker_Legacy_TRANSITION))]
@@ -716,20 +639,6 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InstallationTracking_Legacy_DUPLICATE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InstallationTracking_Legacy_TRIGGERADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InstallationTracking_Legacy_TRIGGEREDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Legacy_ADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Legacy_EDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Legacy_TRANSITION))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Legacy_DELETE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Legacy_DUPLICATE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Legacy_TRIGGERADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Legacy_TRIGGEREDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_ADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_EDIT))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_TRANSITION))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_DELETE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_DUPLICATE))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_TRIGGERADD))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_TRIGGEREDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ServiceReview_Legacy_ADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ServiceReview_Legacy_EDIT))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ServiceReview_Legacy_TRANSITION))]
@@ -737,6 +646,13 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ServiceReview_Legacy_DUPLICATE))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ServiceReview_Legacy_TRIGGERADD))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ServiceReview_Legacy_TRIGGEREDIT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_ADD))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_EDIT))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_TRANSITION))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_DELETE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_DUPLICATE))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_TRIGGERADD))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_Legacy_TRIGGEREDIT))]
     public partial class AbstractLegacyOperation : FlowfinityConnectionHelper.FASR.AbstractOperation {
     }
     
@@ -2633,340 +2549,6 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_Legacy_ADD", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_Legacy_ADD : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecordField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_Legacy_EDIT", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_Legacy_EDIT : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_Legacy_TRANSITION", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_Legacy_TRANSITION : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.State OriginalStateField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.State OriginalState {
-            get {
-                return this.OriginalStateField;
-            }
-            set {
-                if ((this.OriginalStateField.Equals(value) != true)) {
-                    this.OriginalStateField = value;
-                    this.RaisePropertyChanged("OriginalState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_Legacy_DELETE", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_Legacy_DELETE : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_Legacy_DUPLICATE", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_Legacy_DUPLICATE : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecordField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_Legacy_TRIGGERADD", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_Legacy_TRIGGERADD : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecordField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_Legacy_TRIGGEREDIT", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_Legacy_TRIGGEREDIT : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Service_Legacy_ADD", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
     public partial class Service_Legacy_ADD : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
@@ -3309,6 +2891,8 @@ namespace FlowfinityConnectionHelper.FASR {
         
         private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
         
+        private System.DateTime ClientTimeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
             get {
@@ -3334,6 +2918,19 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3351,6 +2948,10 @@ namespace FlowfinityConnectionHelper.FASR {
         private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
         
         private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public string OriginalModifiedBy {
@@ -3416,6 +3017,32 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3435,6 +3062,10 @@ namespace FlowfinityConnectionHelper.FASR {
         private FlowfinityConnectionHelper.FASR.State OriginalStateField;
         
         private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public string OriginalModifiedBy {
@@ -3513,6 +3144,32 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3526,6 +3183,10 @@ namespace FlowfinityConnectionHelper.FASR {
         private System.DateTime OriginalModifiedOnField;
         
         private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public string OriginalModifiedBy {
@@ -3565,6 +3226,32 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -3576,6 +3263,8 @@ namespace FlowfinityConnectionHelper.FASR {
         private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
         
         private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
+        
+        private System.DateTime ClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
@@ -3599,6 +3288,19 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
                     this.CurrentRecordField = value;
                     this.RaisePropertyChanged("CurrentRecord");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
                 }
             }
         }
@@ -3614,6 +3316,8 @@ namespace FlowfinityConnectionHelper.FASR {
         
         private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
         
+        private System.DateTime ClientTimeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
             get {
@@ -3636,6 +3340,19 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
                     this.CurrentRecordField = value;
                     this.RaisePropertyChanged("CurrentRecord");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
                 }
             }
         }
@@ -3656,6 +3373,10 @@ namespace FlowfinityConnectionHelper.FASR {
         private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
         
         private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public string OriginalModifiedBy {
@@ -3718,6 +3439,32 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
                     this.OriginalClientLocationField = value;
                     this.RaisePropertyChanged("OriginalClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
                 }
             }
         }
@@ -4171,505 +3918,6 @@ namespace FlowfinityConnectionHelper.FASR {
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
         public FlowfinityConnectionHelper.FASR.ManufacturerTrackingRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SalesReview_Legacy_ADD", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SalesReview_Legacy_ADD : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private FlowfinityConnectionHelper.FASR.SalesReviewRecord CurrentRecordField;
-        
-        private System.DateTime ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.SalesReviewRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SalesReview_Legacy_EDIT", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SalesReview_Legacy_EDIT : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.SalesReviewRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.SalesReviewRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SalesReview_Legacy_TRANSITION", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SalesReview_Legacy_TRANSITION : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.SalesReviewRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.State OriginalStateField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.SalesReviewRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.State OriginalState {
-            get {
-                return this.OriginalStateField;
-            }
-            set {
-                if ((this.OriginalStateField.Equals(value) != true)) {
-                    this.OriginalStateField = value;
-                    this.RaisePropertyChanged("OriginalState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SalesReview_Legacy_DELETE", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SalesReview_Legacy_DELETE : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SalesReview_Legacy_DUPLICATE", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SalesReview_Legacy_DUPLICATE : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private FlowfinityConnectionHelper.FASR.SalesReviewRecord CurrentRecordField;
-        
-        private System.DateTime ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.SalesReviewRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SalesReview_Legacy_TRIGGERADD", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SalesReview_Legacy_TRIGGERADD : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private FlowfinityConnectionHelper.FASR.SalesReviewRecord CurrentRecordField;
-        
-        private System.DateTime ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.SalesReviewRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SalesReview_Legacy_TRIGGEREDIT", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SalesReview_Legacy_TRIGGEREDIT : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.SalesReviewRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.SalesReviewRecord CurrentRecord {
             get {
                 return this.CurrentRecordField;
             }
@@ -5556,655 +4804,6 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_Legacy_ADD", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_Legacy_ADD : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord RecordField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord CurrentRecordField;
-        
-        private System.DateTime ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_Legacy_EDIT", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_Legacy_EDIT : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord OriginalRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord RecordField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord OriginalRecord {
-            get {
-                return this.OriginalRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalRecordField, value) != true)) {
-                    this.OriginalRecordField = value;
-                    this.RaisePropertyChanged("OriginalRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_Legacy_TRANSITION", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_Legacy_TRANSITION : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord OriginalRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord RecordField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.State OriginalStateField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord OriginalRecord {
-            get {
-                return this.OriginalRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalRecordField, value) != true)) {
-                    this.OriginalRecordField = value;
-                    this.RaisePropertyChanged("OriginalRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public FlowfinityConnectionHelper.FASR.State OriginalState {
-            get {
-                return this.OriginalStateField;
-            }
-            set {
-                if ((this.OriginalStateField.Equals(value) != true)) {
-                    this.OriginalStateField = value;
-                    this.RaisePropertyChanged("OriginalState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_Legacy_DELETE", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_Legacy_DELETE : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord OriginalRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord OriginalRecord {
-            get {
-                return this.OriginalRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalRecordField, value) != true)) {
-                    this.OriginalRecordField = value;
-                    this.RaisePropertyChanged("OriginalRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_Legacy_DUPLICATE", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_Legacy_DUPLICATE : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord RecordField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord CurrentRecordField;
-        
-        private System.DateTime ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_Legacy_TRIGGERADD", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_Legacy_TRIGGERADD : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord RecordField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord CurrentRecordField;
-        
-        private System.DateTime ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_Legacy_TRIGGEREDIT", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_Legacy_TRIGGEREDIT : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord OriginalRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord RecordField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord OriginalRecord {
-            get {
-                return this.OriginalRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalRecordField, value) != true)) {
-                    this.OriginalRecordField = value;
-                    this.RaisePropertyChanged("OriginalRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SupplyOnly_Legacy_ADD", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
     public partial class SupplyOnly_Legacy_ADD : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
@@ -6532,505 +5131,6 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
                     this.OriginalClientLocationField = value;
                     this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="testapp_Legacy_ADD", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class testapp_Legacy_ADD : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private FlowfinityConnectionHelper.FASR.testappRecord CurrentRecordField;
-        
-        private System.DateTime ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.testappRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="testapp_Legacy_EDIT", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class testapp_Legacy_EDIT : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.testappRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.testappRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="testapp_Legacy_TRANSITION", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class testapp_Legacy_TRANSITION : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.testappRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.State OriginalStateField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.testappRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.State OriginalState {
-            get {
-                return this.OriginalStateField;
-            }
-            set {
-                if ((this.OriginalStateField.Equals(value) != true)) {
-                    this.OriginalStateField = value;
-                    this.RaisePropertyChanged("OriginalState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="testapp_Legacy_DELETE", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class testapp_Legacy_DELETE : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="testapp_Legacy_DUPLICATE", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class testapp_Legacy_DUPLICATE : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private FlowfinityConnectionHelper.FASR.testappRecord CurrentRecordField;
-        
-        private System.DateTime ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.testappRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="testapp_Legacy_TRIGGERADD", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class testapp_Legacy_TRIGGERADD : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private FlowfinityConnectionHelper.FASR.testappRecord CurrentRecordField;
-        
-        private System.DateTime ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.testappRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="testapp_Legacy_TRIGGEREDIT", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class testapp_Legacy_TRIGGEREDIT : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.testappRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.testappRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
                 }
             }
         }
@@ -8625,14 +6725,16 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_Legacy_ADD", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_Legacy_ADD", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class SchedulePublished_Legacy_ADD : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
+    public partial class ServiceReview_Legacy_ADD : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
         
-        private FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecordField;
+        private FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecordField;
+        
+        private System.DateTime ClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecord {
+        public FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecord {
             get {
                 return this.CurrentRecordField;
             }
@@ -8643,21 +6745,38 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_Legacy_EDIT", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_Legacy_EDIT", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class SchedulePublished_Legacy_EDIT : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
+    public partial class ServiceReview_Legacy_EDIT : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
         
         private string OriginalModifiedByField;
         
         private System.DateTime OriginalModifiedOnField;
         
-        private FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecordField;
+        private FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecordField;
         
         private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public string OriginalModifiedBy {
@@ -8686,7 +6805,7 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecord {
+        public FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecord {
             get {
                 return this.CurrentRecordField;
             }
@@ -8710,23 +6829,53 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_Legacy_TRANSITION", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_Legacy_TRANSITION", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class SchedulePublished_Legacy_TRANSITION : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
+    public partial class ServiceReview_Legacy_TRANSITION : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
         
         private string OriginalModifiedByField;
         
         private System.DateTime OriginalModifiedOnField;
         
-        private FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecordField;
+        private FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecordField;
         
         private FlowfinityConnectionHelper.FASR.State OriginalStateField;
         
         private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public string OriginalModifiedBy {
@@ -8755,7 +6904,7 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecord {
+        public FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecord {
             get {
                 return this.CurrentRecordField;
             }
@@ -8792,19 +6941,49 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_Legacy_DELETE", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_Legacy_DELETE", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class SchedulePublished_Legacy_DELETE : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
+    public partial class ServiceReview_Legacy_DELETE : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
         
         private string OriginalModifiedByField;
         
         private System.DateTime OriginalModifiedOnField;
         
         private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public string OriginalModifiedBy {
@@ -8844,18 +7023,46 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_Legacy_DUPLICATE", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_Legacy_DUPLICATE", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class SchedulePublished_Legacy_DUPLICATE : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
+    public partial class ServiceReview_Legacy_DUPLICATE : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
         
-        private FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecordField;
+        private FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecordField;
+        
+        private System.DateTime ClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecord {
+        public FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecord {
             get {
                 return this.CurrentRecordField;
             }
@@ -8866,18 +7073,33 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_Legacy_TRIGGERADD", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_Legacy_TRIGGERADD", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class SchedulePublished_Legacy_TRIGGERADD : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
+    public partial class ServiceReview_Legacy_TRIGGERADD : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
         
-        private FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecordField;
+        private FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecordField;
+        
+        private System.DateTime ClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecord {
+        public FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecord {
             get {
                 return this.CurrentRecordField;
             }
@@ -8888,21 +7110,38 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_Legacy_TRIGGEREDIT", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_Legacy_TRIGGEREDIT", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class SchedulePublished_Legacy_TRIGGEREDIT : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
+    public partial class ServiceReview_Legacy_TRIGGEREDIT : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
         
         private string OriginalModifiedByField;
         
         private System.DateTime OriginalModifiedOnField;
         
-        private FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecordField;
+        private FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecordField;
         
         private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public string OriginalModifiedBy {
@@ -8931,7 +7170,7 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecord {
+        public FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecord {
             get {
                 return this.CurrentRecordField;
             }
@@ -8952,6 +7191,32 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
                     this.OriginalClientLocationField = value;
                     this.RaisePropertyChanged("OriginalClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
                 }
             }
         }
@@ -9405,505 +7670,6 @@ namespace FlowfinityConnectionHelper.FASR {
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
         public FlowfinityConnectionHelper.FASR.CHIPurchaseOrderRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_Legacy_ADD", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ServiceReview_Legacy_ADD : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecordField;
-        
-        private System.DateTime ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_Legacy_EDIT", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ServiceReview_Legacy_EDIT : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_Legacy_TRANSITION", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ServiceReview_Legacy_TRANSITION : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.State OriginalStateField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.State OriginalState {
-            get {
-                return this.OriginalStateField;
-            }
-            set {
-                if ((this.OriginalStateField.Equals(value) != true)) {
-                    this.OriginalStateField = value;
-                    this.RaisePropertyChanged("OriginalState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_Legacy_DELETE", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ServiceReview_Legacy_DELETE : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_Legacy_DUPLICATE", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ServiceReview_Legacy_DUPLICATE : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecordField;
-        
-        private System.DateTime ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_Legacy_TRIGGERADD", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ServiceReview_Legacy_TRIGGERADD : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecordField;
-        
-        private System.DateTime ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_Legacy_TRIGGEREDIT", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ServiceReview_Legacy_TRIGGEREDIT : FlowfinityConnectionHelper.FASR.AbstractLegacyOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecord {
             get {
                 return this.CurrentRecordField;
             }
@@ -11061,191 +8827,6 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_RecordServiceSchedule", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_RecordServiceSchedule : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecordField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_RecordUnavailable", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_RecordUnavailable : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecordField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_EditScheduled", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_EditScheduled : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_RecordSchedule", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_RecordSchedule : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecordField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.ScheduleDraftRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_Delete_1", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_Delete_1 : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Service_EditService", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
     public partial class Service_EditService : FlowfinityConnectionHelper.FASR.AbstractOperation {
@@ -11649,102 +9230,9 @@ namespace FlowfinityConnectionHelper.FASR {
         
         private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
+        private System.DateTime ClientTimeField;
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public FlowfinityConnectionHelper.FASR.State OriginalState {
-            get {
-                return this.OriginalStateField;
-            }
-            set {
-                if ((this.OriginalStateField.Equals(value) != true)) {
-                    this.OriginalStateField = value;
-                    this.RaisePropertyChanged("OriginalState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_ScheduleWork", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class HomeInstallations_ScheduleWork : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
-        
-        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.State OriginalStateField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        private System.DateTime OriginalClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public string OriginalModifiedBy {
@@ -11820,6 +9308,32 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
                     this.OriginalClientLocationField = value;
                     this.RaisePropertyChanged("OriginalClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
                 }
             }
         }
@@ -11843,6 +9357,10 @@ namespace FlowfinityConnectionHelper.FASR {
         
         private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
         
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public string OriginalModifiedBy {
             get {
@@ -11917,6 +9435,32 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
                     this.OriginalClientLocationField = value;
                     this.RaisePropertyChanged("OriginalClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
                 }
             }
         }
@@ -11940,6 +9484,10 @@ namespace FlowfinityConnectionHelper.FASR {
         
         private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
         
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public string OriginalModifiedBy {
             get {
@@ -12017,6 +9565,861 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_GetWindowmaker", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class HomeInstallations_GetWindowmaker : FlowfinityConnectionHelper.FASR.AbstractOperation {
+        
+        private string OriginalModifiedByField;
+        
+        private System.DateTime OriginalModifiedOnField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
+        
+        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public string OriginalModifiedBy {
+            get {
+                return this.OriginalModifiedByField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
+                    this.OriginalModifiedByField = value;
+                    this.RaisePropertyChanged("OriginalModifiedBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.DateTime OriginalModifiedOn {
+            get {
+                return this.OriginalModifiedOnField;
+            }
+            set {
+                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
+                    this.OriginalModifiedOnField = value;
+                    this.RaisePropertyChanged("OriginalModifiedOn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
+            get {
+                return this.RecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
+                    this.RecordField = value;
+                    this.RaisePropertyChanged("Record");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecord {
+            get {
+                return this.CurrentRecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
+                    this.CurrentRecordField = value;
+                    this.RaisePropertyChanged("CurrentRecord");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
+            get {
+                return this.OriginalClientLocationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
+                    this.OriginalClientLocationField = value;
+                    this.RaisePropertyChanged("OriginalClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_ReSchedule", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class HomeInstallations_ReSchedule : FlowfinityConnectionHelper.FASR.AbstractOperation {
+        
+        private string OriginalModifiedByField;
+        
+        private System.DateTime OriginalModifiedOnField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
+        
+        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public string OriginalModifiedBy {
+            get {
+                return this.OriginalModifiedByField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
+                    this.OriginalModifiedByField = value;
+                    this.RaisePropertyChanged("OriginalModifiedBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.DateTime OriginalModifiedOn {
+            get {
+                return this.OriginalModifiedOnField;
+            }
+            set {
+                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
+                    this.OriginalModifiedOnField = value;
+                    this.RaisePropertyChanged("OriginalModifiedOn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
+            get {
+                return this.RecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
+                    this.RecordField = value;
+                    this.RaisePropertyChanged("Record");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecord {
+            get {
+                return this.CurrentRecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
+                    this.CurrentRecordField = value;
+                    this.RaisePropertyChanged("CurrentRecord");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
+            get {
+                return this.OriginalClientLocationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
+                    this.OriginalClientLocationField = value;
+                    this.RaisePropertyChanged("OriginalClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_UpdateCrew", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class HomeInstallations_UpdateCrew : FlowfinityConnectionHelper.FASR.AbstractOperation {
+        
+        private string OriginalModifiedByField;
+        
+        private System.DateTime OriginalModifiedOnField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
+        
+        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public string OriginalModifiedBy {
+            get {
+                return this.OriginalModifiedByField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
+                    this.OriginalModifiedByField = value;
+                    this.RaisePropertyChanged("OriginalModifiedBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.DateTime OriginalModifiedOn {
+            get {
+                return this.OriginalModifiedOnField;
+            }
+            set {
+                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
+                    this.OriginalModifiedOnField = value;
+                    this.RaisePropertyChanged("OriginalModifiedOn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
+            get {
+                return this.RecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
+                    this.RecordField = value;
+                    this.RaisePropertyChanged("Record");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecord {
+            get {
+                return this.CurrentRecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
+                    this.CurrentRecordField = value;
+                    this.RaisePropertyChanged("CurrentRecord");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
+            get {
+                return this.OriginalClientLocationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
+                    this.OriginalClientLocationField = value;
+                    this.RaisePropertyChanged("OriginalClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_EditSold", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class HomeInstallations_EditSold : FlowfinityConnectionHelper.FASR.AbstractOperation {
+        
+        private string OriginalModifiedByField;
+        
+        private System.DateTime OriginalModifiedOnField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
+        
+        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public string OriginalModifiedBy {
+            get {
+                return this.OriginalModifiedByField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
+                    this.OriginalModifiedByField = value;
+                    this.RaisePropertyChanged("OriginalModifiedBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.DateTime OriginalModifiedOn {
+            get {
+                return this.OriginalModifiedOnField;
+            }
+            set {
+                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
+                    this.OriginalModifiedOnField = value;
+                    this.RaisePropertyChanged("OriginalModifiedOn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
+            get {
+                return this.RecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
+                    this.RecordField = value;
+                    this.RaisePropertyChanged("Record");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecord {
+            get {
+                return this.CurrentRecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
+                    this.CurrentRecordField = value;
+                    this.RaisePropertyChanged("CurrentRecord");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
+            get {
+                return this.OriginalClientLocationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
+                    this.OriginalClientLocationField = value;
+                    this.RaisePropertyChanged("OriginalClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_ScheduleNewWorkOrder", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class HomeInstallations_ScheduleNewWorkOrder : FlowfinityConnectionHelper.FASR.AbstractOperation {
+        
+        private string OriginalModifiedByField;
+        
+        private System.DateTime OriginalModifiedOnField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
+        
+        private FlowfinityConnectionHelper.FASR.State OriginalStateField;
+        
+        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public string OriginalModifiedBy {
+            get {
+                return this.OriginalModifiedByField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
+                    this.OriginalModifiedByField = value;
+                    this.RaisePropertyChanged("OriginalModifiedBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.DateTime OriginalModifiedOn {
+            get {
+                return this.OriginalModifiedOnField;
+            }
+            set {
+                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
+                    this.OriginalModifiedOnField = value;
+                    this.RaisePropertyChanged("OriginalModifiedOn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
+            get {
+                return this.RecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
+                    this.RecordField = value;
+                    this.RaisePropertyChanged("Record");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecord {
+            get {
+                return this.CurrentRecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
+                    this.CurrentRecordField = value;
+                    this.RaisePropertyChanged("CurrentRecord");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public FlowfinityConnectionHelper.FASR.State OriginalState {
+            get {
+                return this.OriginalStateField;
+            }
+            set {
+                if ((this.OriginalStateField.Equals(value) != true)) {
+                    this.OriginalStateField = value;
+                    this.RaisePropertyChanged("OriginalState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
+            get {
+                return this.OriginalClientLocationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
+                    this.OriginalClientLocationField = value;
+                    this.RaisePropertyChanged("OriginalClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_ReturnToBuffer", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class HomeInstallations_ReturnToBuffer : FlowfinityConnectionHelper.FASR.AbstractOperation {
+        
+        private string OriginalModifiedByField;
+        
+        private System.DateTime OriginalModifiedOnField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
+        
+        private FlowfinityConnectionHelper.FASR.State OriginalStateField;
+        
+        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public string OriginalModifiedBy {
+            get {
+                return this.OriginalModifiedByField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
+                    this.OriginalModifiedByField = value;
+                    this.RaisePropertyChanged("OriginalModifiedBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.DateTime OriginalModifiedOn {
+            get {
+                return this.OriginalModifiedOnField;
+            }
+            set {
+                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
+                    this.OriginalModifiedOnField = value;
+                    this.RaisePropertyChanged("OriginalModifiedOn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
+            get {
+                return this.RecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
+                    this.RecordField = value;
+                    this.RaisePropertyChanged("Record");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecord {
+            get {
+                return this.CurrentRecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
+                    this.CurrentRecordField = value;
+                    this.RaisePropertyChanged("CurrentRecord");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public FlowfinityConnectionHelper.FASR.State OriginalState {
+            get {
+                return this.OriginalStateField;
+            }
+            set {
+                if ((this.OriginalStateField.Equals(value) != true)) {
+                    this.OriginalStateField = value;
+                    this.RaisePropertyChanged("OriginalState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
+            get {
+                return this.OriginalClientLocationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
+                    this.OriginalClientLocationField = value;
+                    this.RaisePropertyChanged("OriginalClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_ScheduleWork", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class HomeInstallations_ScheduleWork : FlowfinityConnectionHelper.FASR.AbstractOperation {
+        
+        private string OriginalModifiedByField;
+        
+        private System.DateTime OriginalModifiedOnField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
+        
+        private FlowfinityConnectionHelper.FASR.State OriginalStateField;
+        
+        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        
+        private System.DateTime ClientTimeField;
+        
+        private System.DateTime OriginalClientTimeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public string OriginalModifiedBy {
+            get {
+                return this.OriginalModifiedByField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
+                    this.OriginalModifiedByField = value;
+                    this.RaisePropertyChanged("OriginalModifiedBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.DateTime OriginalModifiedOn {
+            get {
+                return this.OriginalModifiedOnField;
+            }
+            set {
+                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
+                    this.OriginalModifiedOnField = value;
+                    this.RaisePropertyChanged("OriginalModifiedOn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
+            get {
+                return this.RecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
+                    this.RecordField = value;
+                    this.RaisePropertyChanged("Record");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecord {
+            get {
+                return this.CurrentRecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
+                    this.CurrentRecordField = value;
+                    this.RaisePropertyChanged("CurrentRecord");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public FlowfinityConnectionHelper.FASR.State OriginalState {
+            get {
+                return this.OriginalStateField;
+            }
+            set {
+                if ((this.OriginalStateField.Equals(value) != true)) {
+                    this.OriginalStateField = value;
+                    this.RaisePropertyChanged("OriginalState");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
+            get {
+                return this.OriginalClientLocationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
+                    this.OriginalClientLocationField = value;
+                    this.RaisePropertyChanged("OriginalClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
+        public System.DateTime OriginalClientTime {
+            get {
+                return this.OriginalClientTimeField;
+            }
+            set {
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -12028,6 +10431,8 @@ namespace FlowfinityConnectionHelper.FASR {
         private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
         
         private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
+        
+        private System.DateTime ClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
@@ -12054,6 +10459,19 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public System.DateTime ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -12072,87 +10490,9 @@ namespace FlowfinityConnectionHelper.FASR {
         
         private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
+        private System.DateTime ClientTimeField;
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_ReSchedule", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class HomeInstallations_ReSchedule : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
-        
-        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        private System.DateTime OriginalClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public string OriginalModifiedBy {
@@ -12218,85 +10558,29 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_UpdateCrew", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class HomeInstallations_UpdateCrew : FlowfinityConnectionHelper.FASR.AbstractOperation {
         
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
-        
-        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
+        public System.DateTime ClientTime {
             get {
-                return this.OriginalModifiedByField;
+                return this.ClientTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime OriginalClientTime {
             get {
-                return this.OriginalModifiedOnField;
+                return this.OriginalClientTimeField;
             }
             set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
                 }
             }
         }
@@ -12318,87 +10602,9 @@ namespace FlowfinityConnectionHelper.FASR {
         
         private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
+        private System.DateTime ClientTimeField;
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_EditSold", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class HomeInstallations_EditSold : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
-        
-        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
+        private System.DateTime OriginalClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public string OriginalModifiedBy {
@@ -12461,200 +10667,32 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
                     this.OriginalClientLocationField = value;
                     this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_ScheduleNewWorkOrder", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class HomeInstallations_ScheduleNewWorkOrder : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
-        
-        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.State OriginalStateField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public FlowfinityConnectionHelper.FASR.State OriginalState {
-            get {
-                return this.OriginalStateField;
-            }
-            set {
-                if ((this.OriginalStateField.Equals(value) != true)) {
-                    this.OriginalStateField = value;
-                    this.RaisePropertyChanged("OriginalState");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
+        public System.DateTime ClientTime {
             get {
-                return this.OriginalClientLocationField;
+                return this.ClientTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_ReturnToBuffer", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class HomeInstallations_ReturnToBuffer : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
-        
-        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.State OriginalStateField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
+        public System.DateTime OriginalClientTime {
             get {
-                return this.OriginalModifiedOnField;
+                return this.OriginalClientTimeField;
             }
             set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public FlowfinityConnectionHelper.FASR.State OriginalState {
-            get {
-                return this.OriginalStateField;
-            }
-            set {
-                if ((this.OriginalStateField.Equals(value) != true)) {
-                    this.OriginalStateField = value;
-                    this.RaisePropertyChanged("OriginalState");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
+                if ((this.OriginalClientTimeField.Equals(value) != true)) {
+                    this.OriginalClientTimeField = value;
+                    this.RaisePropertyChanged("OriginalClientTime");
                 }
             }
         }
@@ -12871,43 +10909,6 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((this.OriginalClientTimeField.Equals(value) != true)) {
                     this.OriginalClientTimeField = value;
                     this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SalesReview_AddRecord", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SalesReview_AddRecord : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private FlowfinityConnectionHelper.FASR.SalesReviewRecord CurrentRecordField;
-        
-        private System.DateTime ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.SalesReviewRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
                 }
             }
         }
@@ -13197,282 +11198,6 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_EditRecord", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_EditRecord : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord OriginalRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord RecordField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord OriginalRecord {
-            get {
-                return this.OriginalRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalRecordField, value) != true)) {
-                    this.OriginalRecordField = value;
-                    this.RaisePropertyChanged("OriginalRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_DeleteRecord", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_DeleteRecord : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord OriginalRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        private System.DateTime ClientTimeField;
-        
-        private System.DateTime OriginalClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord OriginalRecord {
-            get {
-                return this.OriginalRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalRecordField, value) != true)) {
-                    this.OriginalRecordField = value;
-                    this.RaisePropertyChanged("OriginalRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.DateTime OriginalClientTime {
-            get {
-                return this.OriginalClientTimeField;
-            }
-            set {
-                if ((this.OriginalClientTimeField.Equals(value) != true)) {
-                    this.OriginalClientTimeField = value;
-                    this.RaisePropertyChanged("OriginalClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_AddNew", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_AddNew : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord RecordField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord CurrentRecordField;
-        
-        private System.DateTime ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SupplyOnly_AddRecord", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
     public partial class SupplyOnly_AddRecord : FlowfinityConnectionHelper.FASR.AbstractOperation {
@@ -13488,43 +11213,6 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
                     this.CurrentRecordField = value;
                     this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="testapp_AddRecord", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class testapp_AddRecord : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private FlowfinityConnectionHelper.FASR.testappRecord CurrentRecordField;
-        
-        private System.DateTime ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.testappRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public System.DateTime ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
                 }
             }
         }
@@ -14442,246 +12130,16 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_RecordSchedule", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_AddRecord", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class SchedulePublished_RecordSchedule : FlowfinityConnectionHelper.FASR.AbstractOperation {
+    public partial class ServiceReview_AddRecord : FlowfinityConnectionHelper.FASR.AbstractOperation {
         
-        private FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecordField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_RecordServiceSchedule", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SchedulePublished_RecordServiceSchedule : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecordField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_Delete_1", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SchedulePublished_Delete_1 : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_Edit", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SchedulePublished_Edit : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_EditScheduled", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SchedulePublished_EditScheduled : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private string OriginalModifiedByField;
-        
-        private System.DateTime OriginalModifiedOnField;
-        
-        private FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecordField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OriginalModifiedBy {
-            get {
-                return this.OriginalModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalModifiedByField, value) != true)) {
-                    this.OriginalModifiedByField = value;
-                    this.RaisePropertyChanged("OriginalModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime OriginalModifiedOn {
-            get {
-                return this.OriginalModifiedOnField;
-            }
-            set {
-                if ((this.OriginalModifiedOnField.Equals(value) != true)) {
-                    this.OriginalModifiedOnField = value;
-                    this.RaisePropertyChanged("OriginalModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.SchedulePublishedRecord CurrentRecord {
-            get {
-                return this.CurrentRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CurrentRecordField, value) != true)) {
-                    this.CurrentRecordField = value;
-                    this.RaisePropertyChanged("CurrentRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public FlowfinityConnectionHelper.FASR.LocationValue OriginalClientLocation {
-            get {
-                return this.OriginalClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalClientLocationField, value) != true)) {
-                    this.OriginalClientLocationField = value;
-                    this.RaisePropertyChanged("OriginalClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CHIPurchaseOrder_AddRecord", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class CHIPurchaseOrder_AddRecord : FlowfinityConnectionHelper.FASR.AbstractOperation {
-        
-        private FlowfinityConnectionHelper.FASR.CHIPurchaseOrderRecord CurrentRecordField;
+        private FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecordField;
         
         private System.DateTime ClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.CHIPurchaseOrderRecord CurrentRecord {
+        public FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecord {
             get {
                 return this.CurrentRecordField;
             }
@@ -14709,16 +12167,16 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_AddRecord", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CHIPurchaseOrder_AddRecord", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class ServiceReview_AddRecord : FlowfinityConnectionHelper.FASR.AbstractOperation {
+    public partial class CHIPurchaseOrder_AddRecord : FlowfinityConnectionHelper.FASR.AbstractOperation {
         
-        private FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecordField;
+        private FlowfinityConnectionHelper.FASR.CHIPurchaseOrderRecord CurrentRecordField;
         
         private System.DateTime ClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.ServiceReviewRecord CurrentRecord {
+        public FlowfinityConnectionHelper.FASR.CHIPurchaseOrderRecord CurrentRecord {
             get {
                 return this.CurrentRecordField;
             }
@@ -14788,484 +12246,367 @@ namespace FlowfinityConnectionHelper.FASR {
         PlantProduction_delete_1 = 12,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ScheduleDraft_RecordServiceSchedule = 13,
+        Service_EditService = 13,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ScheduleDraft_RecordUnavailable = 14,
+        Service_UpdateCrew = 14,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ScheduleDraft_EditScheduled = 15,
+        Service_AddRecord = 15,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ScheduleDraft_RecordSchedule = 16,
+        Service_ScheduleService = 16,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ScheduleDraft_Delete_1 = 17,
+        Service_rescheduleservice = 17,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Service_EditService = 18,
+        Service_ReturnToBuffer = 18,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Service_UpdateCrew = 19,
+        HomeInstallations_BackRemeasureReady = 19,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Service_AddRecord = 20,
+        HomeInstallations_BufferWorkOrder = 20,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Service_ScheduleService = 21,
+        HomeInstallations_ScheduleRemeasure = 21,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Service_rescheduleservice = 22,
+        HomeInstallations_GetWindowmaker = 22,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Service_ReturnToBuffer = 23,
+        HomeInstallations_ReSchedule = 23,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_BackRemeasureReady = 24,
+        HomeInstallations_UpdateCrew = 24,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_ScheduleWork = 25,
+        HomeInstallations_EditSold = 25,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_BufferWorkOrder = 26,
+        HomeInstallations_ScheduleNewWorkOrder = 26,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_ScheduleRemeasure = 27,
+        HomeInstallations_ReturnToBuffer = 27,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_AddRecord = 28,
+        HomeInstallations_ScheduleWork = 28,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_RescheduleInstallation = 29,
+        HomeInstallations_AddRecord = 29,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_ReSchedule = 30,
+        HomeInstallations_RescheduleInstallation = 30,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_UpdateCrew = 31,
+        HomeInstallations_CreateServiceRequest = 31,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_CreateServiceRequest = 32,
+        ManufacturerTracking_EditRecord = 32,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_EditSold = 33,
+        ManufacturerTracking_AddRecord = 33,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_ScheduleNewWorkOrder = 34,
+        ManufacturerTracking_DeleteRecord = 34,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_ReturnToBuffer = 35,
+        MaterialsInformation_AddProduct = 35,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ManufacturerTracking_EditRecord = 36,
+        MaterialsInformation_EditRecord = 36,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ManufacturerTracking_AddRecord = 37,
+        InventoryManager_AddRecord = 37,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ManufacturerTracking_DeleteRecord = 38,
+        InventoryManager_GetBOMItems = 38,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SalesReview_AddRecord = 39,
+        InventoryManager_DeleteRecord = 39,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MaterialsInformation_AddProduct = 40,
+        InventoryManager_DeleteBOM = 40,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MaterialsInformation_EditRecord = 41,
+        SupplyOnly_AddRecord = 41,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InventoryManager_AddRecord = 42,
+        WindowsItemTracker_UpdateItemStatus = 42,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InventoryManager_GetBOMItems = 43,
+        WindowsItemTracker_MovetoOnhold = 43,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InventoryManager_DeleteRecord = 44,
+        WindowsItemTracker_AddRecord = 44,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InventoryManager_DeleteBOM = 45,
+        WindowsItemTracker_Movetoshipped = 45,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MMS_EditRecord = 46,
+        WindowsItemTracker_EditRecord = 46,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MMS_DeleteRecord = 47,
+        WindowsItemTracker_BacktoInprogress = 47,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MMS_AddNew = 48,
+        JobSiteReview_AddRecord = 48,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SupplyOnly_AddRecord = 49,
+        InstallationTracking_DeleteRecord = 49,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        testapp_AddRecord = 50,
+        InstallationTracking_AddRecord = 50,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        WindowsItemTracker_UpdateItemStatus = 51,
+        InstallationTracking_EditRecord = 51,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        WindowsItemTracker_MovetoOnhold = 52,
+        ServiceReview_AddRecord = 52,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        WindowsItemTracker_AddRecord = 53,
+        CHIPurchaseOrder_AddRecord = 53,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        WindowsItemTracker_Movetoshipped = 54,
+        BackOrder_Legacy_Add = 54,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        WindowsItemTracker_EditRecord = 55,
+        BackOrder_Legacy_Edit = 55,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        WindowsItemTracker_BacktoInprogress = 56,
+        BackOrder_Legacy_Transition = 56,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        JobSiteReview_AddRecord = 57,
+        BackOrder_Legacy_Delete = 57,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InstallationTracking_DeleteRecord = 58,
+        BackOrder_Legacy_Duplicate = 58,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InstallationTracking_AddRecord = 59,
+        Estimation_Legacy_Add = 59,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InstallationTracking_EditRecord = 60,
+        Estimation_Legacy_Edit = 60,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SchedulePublished_RecordSchedule = 61,
+        Estimation_Legacy_Transition = 61,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SchedulePublished_RecordServiceSchedule = 62,
+        Estimation_Legacy_Delete = 62,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SchedulePublished_Delete_1 = 63,
+        Estimation_Legacy_Duplicate = 63,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SchedulePublished_Edit = 64,
+        Timesheet_Legacy_Add = 64,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SchedulePublished_EditScheduled = 65,
+        Timesheet_Legacy_Edit = 65,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        CHIPurchaseOrder_AddRecord = 66,
+        Timesheet_Legacy_Transition = 66,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ServiceReview_AddRecord = 67,
+        Timesheet_Legacy_Delete = 67,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        BackOrder_Legacy_Add = 68,
+        Timesheet_Legacy_Duplicate = 68,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        BackOrder_Legacy_Edit = 69,
+        PlantProduction_Legacy_Add = 69,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        BackOrder_Legacy_Transition = 70,
+        PlantProduction_Legacy_Edit = 70,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        BackOrder_Legacy_Delete = 71,
+        PlantProduction_Legacy_Transition = 71,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        BackOrder_Legacy_Duplicate = 72,
+        PlantProduction_Legacy_Delete = 72,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Estimation_Legacy_Add = 73,
+        PlantProduction_Legacy_Duplicate = 73,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Estimation_Legacy_Edit = 74,
+        StationTarget_Legacy_Add = 74,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Estimation_Legacy_Transition = 75,
+        StationTarget_Legacy_Edit = 75,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Estimation_Legacy_Delete = 76,
+        StationTarget_Legacy_Transition = 76,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Estimation_Legacy_Duplicate = 77,
+        StationTarget_Legacy_Delete = 77,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Timesheet_Legacy_Add = 78,
+        StationTarget_Legacy_Duplicate = 78,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Timesheet_Legacy_Edit = 79,
+        Service_Legacy_Add = 79,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Timesheet_Legacy_Transition = 80,
+        Service_Legacy_Edit = 80,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Timesheet_Legacy_Delete = 81,
+        Service_Legacy_Transition = 81,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Timesheet_Legacy_Duplicate = 82,
+        Service_Legacy_Delete = 82,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        PlantProduction_Legacy_Add = 83,
+        Service_Legacy_Duplicate = 83,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        PlantProduction_Legacy_Edit = 84,
+        HomeInstallations_Legacy_Add = 84,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        PlantProduction_Legacy_Transition = 85,
+        HomeInstallations_Legacy_Edit = 85,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        PlantProduction_Legacy_Delete = 86,
+        HomeInstallations_Legacy_Transition = 86,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        PlantProduction_Legacy_Duplicate = 87,
+        HomeInstallations_Legacy_Delete = 87,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        StationTarget_Legacy_Add = 88,
+        HomeInstallations_Legacy_Duplicate = 88,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        StationTarget_Legacy_Edit = 89,
+        ManufacturerTracking_Legacy_Add = 89,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        StationTarget_Legacy_Transition = 90,
+        ManufacturerTracking_Legacy_Edit = 90,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        StationTarget_Legacy_Delete = 91,
+        ManufacturerTracking_Legacy_Transition = 91,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        StationTarget_Legacy_Duplicate = 92,
+        ManufacturerTracking_Legacy_Delete = 92,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ScheduleDraft_Legacy_Add = 93,
+        ManufacturerTracking_Legacy_Duplicate = 93,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ScheduleDraft_Legacy_Edit = 94,
+        MaterialsInformation_Legacy_Add = 94,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ScheduleDraft_Legacy_Transition = 95,
+        MaterialsInformation_Legacy_Edit = 95,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ScheduleDraft_Legacy_Delete = 96,
+        MaterialsInformation_Legacy_Transition = 96,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ScheduleDraft_Legacy_Duplicate = 97,
+        MaterialsInformation_Legacy_Delete = 97,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Service_Legacy_Add = 98,
+        MaterialsInformation_Legacy_Duplicate = 98,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Service_Legacy_Edit = 99,
+        InventoryManager_Legacy_Add = 99,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Service_Legacy_Transition = 100,
+        InventoryManager_Legacy_Edit = 100,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Service_Legacy_Delete = 101,
+        InventoryManager_Legacy_Transition = 101,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Service_Legacy_Duplicate = 102,
+        InventoryManager_Legacy_Delete = 102,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_Legacy_Add = 103,
+        InventoryManager_Legacy_Duplicate = 103,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_Legacy_Edit = 104,
+        SupplyOnly_Legacy_Add = 104,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_Legacy_Transition = 105,
+        SupplyOnly_Legacy_Edit = 105,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_Legacy_Delete = 106,
+        SupplyOnly_Legacy_Transition = 106,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        HomeInstallations_Legacy_Duplicate = 107,
+        SupplyOnly_Legacy_Delete = 107,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ManufacturerTracking_Legacy_Add = 108,
+        SupplyOnly_Legacy_Duplicate = 108,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ManufacturerTracking_Legacy_Edit = 109,
+        WindowsItemTracker_Legacy_Add = 109,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ManufacturerTracking_Legacy_Transition = 110,
+        WindowsItemTracker_Legacy_Edit = 110,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ManufacturerTracking_Legacy_Delete = 111,
+        WindowsItemTracker_Legacy_Transition = 111,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        ManufacturerTracking_Legacy_Duplicate = 112,
+        WindowsItemTracker_Legacy_Delete = 112,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SalesReview_Legacy_Add = 113,
+        WindowsItemTracker_Legacy_Duplicate = 113,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SalesReview_Legacy_Edit = 114,
+        JobSiteReview_Legacy_Add = 114,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SalesReview_Legacy_Transition = 115,
+        JobSiteReview_Legacy_Edit = 115,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SalesReview_Legacy_Delete = 116,
+        JobSiteReview_Legacy_Transition = 116,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SalesReview_Legacy_Duplicate = 117,
+        JobSiteReview_Legacy_Delete = 117,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MaterialsInformation_Legacy_Add = 118,
+        JobSiteReview_Legacy_Duplicate = 118,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MaterialsInformation_Legacy_Edit = 119,
+        InstallationTracking_Legacy_Add = 119,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MaterialsInformation_Legacy_Transition = 120,
+        InstallationTracking_Legacy_Edit = 120,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MaterialsInformation_Legacy_Delete = 121,
+        InstallationTracking_Legacy_Transition = 121,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MaterialsInformation_Legacy_Duplicate = 122,
+        InstallationTracking_Legacy_Delete = 122,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InventoryManager_Legacy_Add = 123,
+        InstallationTracking_Legacy_Duplicate = 123,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InventoryManager_Legacy_Edit = 124,
+        ServiceReview_Legacy_Add = 124,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InventoryManager_Legacy_Transition = 125,
+        ServiceReview_Legacy_Edit = 125,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InventoryManager_Legacy_Delete = 126,
+        ServiceReview_Legacy_Transition = 126,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        InventoryManager_Legacy_Duplicate = 127,
+        ServiceReview_Legacy_Delete = 127,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MMS_Legacy_Add = 128,
+        ServiceReview_Legacy_Duplicate = 128,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MMS_Legacy_Edit = 129,
+        CHIPurchaseOrder_Legacy_Add = 129,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MMS_Legacy_Transition = 130,
+        CHIPurchaseOrder_Legacy_Edit = 130,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MMS_Legacy_Delete = 131,
+        CHIPurchaseOrder_Legacy_Transition = 131,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        MMS_Legacy_Duplicate = 132,
+        CHIPurchaseOrder_Legacy_Delete = 132,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        SupplyOnly_Legacy_Add = 133,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SupplyOnly_Legacy_Edit = 134,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SupplyOnly_Legacy_Transition = 135,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SupplyOnly_Legacy_Delete = 136,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SupplyOnly_Legacy_Duplicate = 137,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        testapp_Legacy_Add = 138,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        testapp_Legacy_Edit = 139,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        testapp_Legacy_Transition = 140,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        testapp_Legacy_Delete = 141,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        testapp_Legacy_Duplicate = 142,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WindowsItemTracker_Legacy_Add = 143,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WindowsItemTracker_Legacy_Edit = 144,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WindowsItemTracker_Legacy_Transition = 145,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WindowsItemTracker_Legacy_Delete = 146,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        WindowsItemTracker_Legacy_Duplicate = 147,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        JobSiteReview_Legacy_Add = 148,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        JobSiteReview_Legacy_Edit = 149,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        JobSiteReview_Legacy_Transition = 150,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        JobSiteReview_Legacy_Delete = 151,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        JobSiteReview_Legacy_Duplicate = 152,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        InstallationTracking_Legacy_Add = 153,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        InstallationTracking_Legacy_Edit = 154,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        InstallationTracking_Legacy_Transition = 155,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        InstallationTracking_Legacy_Delete = 156,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        InstallationTracking_Legacy_Duplicate = 157,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SchedulePublished_Legacy_Add = 158,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SchedulePublished_Legacy_Edit = 159,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SchedulePublished_Legacy_Transition = 160,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SchedulePublished_Legacy_Delete = 161,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        SchedulePublished_Legacy_Duplicate = 162,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CHIPurchaseOrder_Legacy_Add = 163,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CHIPurchaseOrder_Legacy_Edit = 164,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CHIPurchaseOrder_Legacy_Transition = 165,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CHIPurchaseOrder_Legacy_Delete = 166,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        CHIPurchaseOrder_Legacy_Duplicate = 167,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ServiceReview_Legacy_Add = 168,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ServiceReview_Legacy_Edit = 169,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ServiceReview_Legacy_Transition = 170,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ServiceReview_Legacy_Delete = 171,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ServiceReview_Legacy_Duplicate = 172,
+        CHIPurchaseOrder_Legacy_Duplicate = 133,
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
@@ -15293,323 +12634,311 @@ namespace FlowfinityConnectionHelper.FASR {
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected Work Order")]
         RejectedWorkOrder = 6,
         
-        [System.Runtime.Serialization.EnumMemberAttribute(Value="Member Stage")]
-        MemberStage = 7,
-        
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Closed Job")]
-        ClosedJob = 8,
+        ClosedJob = 7,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Scheduled Estimations")]
-        ScheduledEstimations = 9,
+        ScheduledEstimations = 8,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected New Work Order")]
-        RejectedNewWorkOrder = 10,
+        RejectedNewWorkOrder = 9,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Job Completed")]
-        JobCompleted = 11,
+        JobCompleted = 10,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Unreviewed Work Scheduled")]
-        UnreviewedWorkScheduled = 12,
+        UnreviewedWorkScheduled = 11,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Finance Review")]
-        FinanceReview = 13,
+        FinanceReview = 12,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Pre-site Finance Setup")]
-        PresiteFinanceSetup = 14,
+        PresiteFinanceSetup = 13,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Shipped = 15,
+        Shipped = 14,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Project Review")]
-        ProjectReview = 16,
+        ProjectReview = 15,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Accepted = 17,
+        Accepted = 16,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Closed Service Quote")]
-        ClosedServiceQuote = 18,
+        ClosedServiceQuote = 17,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected Scheduled Work")]
-        RejectedScheduledWork = 19,
+        RejectedScheduledWork = 18,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Onhold = 20,
+        Onhold = 19,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected Quality Assurance")]
-        RejectedQualityAssurance = 21,
+        RejectedQualityAssurance = 20,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Install in Progress")]
-        InstallinProgress = 22,
+        InstallinProgress = 21,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Re-Measure In-Progress")]
-        ReMeasureInProgress = 23,
+        ReMeasureInProgress = 22,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="New PO")]
-        NewPO = 24,
+        NewPO = 23,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Costing Approval")]
-        CostingApproval = 25,
+        CostingApproval = 24,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected Service Quote")]
-        RejectedServiceQuote = 26,
+        RejectedServiceQuote = 25,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="New Service Draft")]
-        NewServiceDraft = 27,
+        NewServiceDraft = 26,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Service Place Holder")]
-        ServicePlaceHolder = 28,
+        ServicePlaceHolder = 27,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="In Progress")]
-        InProgress = 29,
+        InProgress = 28,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Ready To Invoice")]
-        ReadyToInvoice = 30,
+        ReadyToInvoice = 29,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute(Value="Re-Measure Scheduled")]
+        ReMeasureScheduled = 30,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
         Scheduled = 31,
         
-        [System.Runtime.Serialization.EnumMemberAttribute(Value="Re-Measure Scheduled")]
-        ReMeasureScheduled = 32,
-        
         [System.Runtime.Serialization.EnumMemberAttribute(Value="New Order")]
-        NewOrder = 33,
+        NewOrder = 32,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Estimation In-Progress")]
-        EstimationInProgress = 34,
+        EstimationInProgress = 33,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Scheduled Service")]
-        ScheduledService = 35,
+        ScheduledService = 34,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Installation inprogress rejected")]
-        Installationinprogressrejected = 36,
+        Installationinprogressrejected = 35,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Quality Assurance Review")]
-        QualityAssuranceReview = 37,
+        QualityAssuranceReview = 36,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Closing Job Review")]
-        ClosingJobReview = 38,
+        ClosingJobReview = 37,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Shipped ")]
-        Shipped1 = 39,
+        Shipped1 = 38,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="In-Progress ")]
-        InProgress1 = 40,
+        InProgress1 = 39,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Default State")]
-        DefaultState = 41,
+        DefaultState = 40,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Closed Service Order")]
-        ClosedServiceOrder = 42,
+        ClosedServiceOrder = 41,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Installation Confirmed")]
-        InstallationConfirmed = 43,
+        InstallationConfirmed = 42,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected Finance")]
-        RejectedFinance = 44,
+        RejectedFinance = 43,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected Job Costing")]
-        RejectedJobCosting = 45,
+        RejectedJobCosting = 44,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Called Service")]
-        CalledService = 46,
+        CalledService = 45,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected Service")]
-        RejectedService = 47,
+        RejectedService = 46,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Draft Work Order")]
-        DraftWorkOrder = 48,
+        DraftWorkOrder = 47,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Completed Site Review")]
-        CompletedSiteReview = 49,
+        CompletedSiteReview = 48,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="System Duplicated")]
-        SystemDuplicated = 50,
+        SystemDuplicated = 49,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Duplicated Work Order")]
-        DuplicatedWorkOrder = 51,
+        DuplicatedWorkOrder = 50,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Completed Order")]
-        CompletedOrder = 52,
+        CompletedOrder = 51,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected Estimation")]
-        RejectedEstimation = 53,
+        RejectedEstimation = 52,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Service Complete")]
-        ServiceComplete = 54,
+        ServiceComplete = 53,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Scheduled Work Order")]
-        ScheduledWorkOrder = 55,
+        ScheduledWorkOrder = 54,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Won Quotes")]
-        WonQuotes = 56,
+        WonQuotes = 55,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Install Completed")]
-        InstallCompleted = 57,
+        InstallCompleted = 56,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Ready for Re-Measure")]
-        ReadyforReMeasure1 = 58,
+        ReadyforReMeasure1 = 57,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Service Quote in Progress")]
-        ServiceQuoteinProgress = 59,
+        ServiceQuoteinProgress = 58,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected Remeasure")]
-        RejectedRemeasure = 60,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Unavailable = 61,
+        RejectedRemeasure = 59,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="VP Installation Approval")]
-        VPInstallationApproval = 62,
+        VPInstallationApproval = 60,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Scheduled Service Quote")]
-        ScheduledServiceQuote = 63,
+        ScheduledServiceQuote = 61,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Quality Assurance Costing")]
-        QualityAssuranceCosting = 64,
+        QualityAssuranceCosting = 62,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Glazing = 65,
+        Glazing = 63,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Installation Manager Review")]
-        InstallationManagerReview = 66,
+        InstallationManagerReview = 64,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Data Entry Review")]
-        DataEntryReview = 67,
+        DataEntryReview = 65,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Cancelled Service")]
-        CancelledService = 68,
+        CancelledService = 66,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Service Job Costing")]
-        ServiceJobCosting = 69,
+        ServiceJobCosting = 67,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="New Site Review")]
-        NewSiteReview = 70,
+        NewSiteReview = 68,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected Service Draft")]
-        RejectedServiceDraft = 71,
+        RejectedServiceDraft = 69,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Project Management Review")]
-        ProjectManagementReview = 72,
+        ProjectManagementReview = 70,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Unreviewed Job Costing")]
-        UnreviewedJobCosting = 73,
+        UnreviewedJobCosting = 71,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Service in Progress")]
-        ServiceinProgress = 74,
+        ServiceinProgress = 72,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Work Scheduled")]
-        WorkScheduled = 75,
+        WorkScheduled = 73,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Buffered Work")]
-        BufferedWork = 76,
+        BufferedWork = 74,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Allocated Work Order")]
-        AllocatedWorkOrder = 77,
+        AllocatedWorkOrder = 75,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected Project Management")]
-        RejectedProjectManagement = 78,
+        RejectedProjectManagement = 76,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Un-reviewed Service Costing")]
-        UnreviewedServiceCosting = 79,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute(Value="Applicant Stage")]
-        ApplicantStage = 80,
+        UnreviewedServiceCosting = 77,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Completed Reservations")]
-        CompletedReservations = 81,
+        CompletedReservations = 78,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Approved PO")]
-        ApprovedPO = 82,
+        ApprovedPO = 79,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected Job")]
-        RejectedJob = 83,
+        RejectedJob = 80,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Closed Estimation")]
-        ClosedEstimation = 84,
+        ClosedEstimation = 81,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Order In-Progress")]
-        OrderInProgress = 85,
+        OrderInProgress = 82,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Job Site Review")]
-        JobSiteReview = 86,
+        JobSiteReview = 83,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Buffered Service Quote")]
-        BufferedServiceQuote = 87,
+        BufferedServiceQuote = 84,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Ready To Ship ")]
-        ReadyToShip = 88,
+        ReadyToShip = 85,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="On Hold")]
-        OnHold1 = 89,
+        OnHold1 = 86,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected Manager Review")]
-        RejectedManagerReview = 90,
+        RejectedManagerReview = 87,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Pending Delete")]
-        PendingDelete = 91,
+        PendingDelete = 88,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Work Order Number")]
-        WorkOrderNumber = 92,
+        WorkOrderNumber = 89,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Buffered Service")]
-        BufferedService = 93,
+        BufferedService = 90,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Allocated WO")]
-        AllocatedWO = 94,
+        AllocatedWO = 91,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Ready to Ship")]
-        ReadytoShip1 = 95,
+        ReadytoShip1 = 92,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Job Costing")]
-        JobCosting = 96,
+        JobCosting = 93,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        testingstate = 97,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        Sold = 98,
+        Sold = 94,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Lost Quotes")]
-        LostQuotes = 99,
+        LostQuotes = 95,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected PO")]
-        RejectedPO = 100,
+        RejectedPO = 96,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Data Entry Approval")]
-        DataEntryApproval = 101,
+        DataEntryApproval = 97,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Cancelled = 102,
+        Cancelled = 98,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="New Service")]
-        NewService = 103,
+        NewService = 99,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="New Project Estimating")]
-        NewProjectEstimating = 104,
+        NewProjectEstimating = 100,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Rejected Service Costing")]
-        RejectedServiceCosting = 105,
+        RejectedServiceCosting = 101,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="ReMeasure Scheduled")]
-        ReMeasureScheduled1 = 106,
+        ReMeasureScheduled1 = 102,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Completed = 107,
+        Completed = 103,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Unreviewed Buffered Work")]
-        UnreviewedBufferedWork = 108,
+        UnreviewedBufferedWork = 104,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Pending Install Completion")]
-        PendingInstallCompletion = 109,
+        PendingInstallCompletion = 105,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Ready for Invoicing")]
-        ReadyforInvoicing = 110,
+        ReadyforInvoicing = 106,
         
         [System.Runtime.Serialization.EnumMemberAttribute(Value="Pending")]
-        Pending1 = 111,
+        Pending1 = 107,
         
         [System.Runtime.Serialization.EnumMemberAttribute()]
-        Legacy_State = 112,
+        Legacy_State = 108,
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
@@ -19744,147 +17073,6 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraftRecord", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraftRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DateTimeValue Date_1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.Choice EmployeeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.Choice Job_1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.MultiSelection SeniorInstallerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.Choice UnavailableReasonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue UnavailableMemoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.Choice ServiceField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.DateTimeValue Date_1 {
-            get {
-                return this.Date_1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Date_1Field, value) != true)) {
-                    this.Date_1Field = value;
-                    this.RaisePropertyChanged("Date_1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.Choice Employee {
-            get {
-                return this.EmployeeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmployeeField, value) != true)) {
-                    this.EmployeeField = value;
-                    this.RaisePropertyChanged("Employee");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.Choice Job_1 {
-            get {
-                return this.Job_1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Job_1Field, value) != true)) {
-                    this.Job_1Field = value;
-                    this.RaisePropertyChanged("Job_1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.MultiSelection SeniorInstaller {
-            get {
-                return this.SeniorInstallerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SeniorInstallerField, value) != true)) {
-                    this.SeniorInstallerField = value;
-                    this.RaisePropertyChanged("SeniorInstaller");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.Choice UnavailableReason {
-            get {
-                return this.UnavailableReasonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UnavailableReasonField, value) != true)) {
-                    this.UnavailableReasonField = value;
-                    this.RaisePropertyChanged("UnavailableReason");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public FlowfinityConnectionHelper.FASR.StringValue UnavailableMemo {
-            get {
-                return this.UnavailableMemoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UnavailableMemoField, value) != true)) {
-                    this.UnavailableMemoField = value;
-                    this.RaisePropertyChanged("UnavailableMemo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public FlowfinityConnectionHelper.FASR.Choice Service {
-            get {
-                return this.ServiceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ServiceField, value) != true)) {
-                    this.ServiceField = value;
-                    this.RaisePropertyChanged("Service");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceRecord", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
     public partial class ServiceRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -22373,142 +19561,172 @@ namespace FlowfinityConnectionHelper.FASR {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue PendingRecordField;
+        private FlowfinityConnectionHelper.FASR.DateTimeValue AcceptanceDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DateTimeValue OriginalContactDateField;
+        private FlowfinityConnectionHelper.FASR.StringValue AddOnProductField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DateTimeValue WorkOrderDateField;
+        private FlowfinityConnectionHelper.FASR.SingleSelection AsbestosField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.DecimalValue BookPriceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.Choice BranchField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue WorkOrderNumberField;
+        private FlowfinityConnectionHelper.FASR.DecimalValue BudgetedLBRField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue FirstNameField;
+        private FlowfinityConnectionHelper.FASR.DecimalValue BuyDownField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue StreetAddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue CityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue PostalCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue HomePhoneNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue WorkPhoneNumberField;
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_CallLogRecord[] CallLogField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.StringValue CellPhoneField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue EmailField;
+        private FlowfinityConnectionHelper.FASR.StringValue CheckRoleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.Choice RepField;
+        private FlowfinityConnectionHelper.FASR.BinaryValue ChequeAttachmentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.Choice MarketerField;
+        private FlowfinityConnectionHelper.FASR.StringValue CityField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue Source_1Field;
+        private FlowfinityConnectionHelper.FASR.SingleSelection CompletionAcceptanceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue SalesAmmountField;
+        private FlowfinityConnectionHelper.FASR.DecimalValue CreditCardChargesField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.HomeInstallations_TypeofWorkRecord[] TypeofWorkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DateTimeValue SalesManagersApprovalDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DateTimeValue RemeasureDateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection EstInstallerCntField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.UserLookupRecord[] remeasureinstallerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.HomeInstallations_SubtradeReqiredRecord[] SubtradeReqiredField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection PlannedinstallWeekField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.HomeInstallations_InstallationDatesRecord[] InstallationDatesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.UserLookupRecord[] SeniorInstallerField;
+        private FlowfinityConnectionHelper.FASR.DecimalValue CreditCardDepositField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.UserLookupRecord[] CrewField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.HomeInstallations_MaterialsUsedRecord[] MaterialsUsedField;
+        private FlowfinityConnectionHelper.FASR.StringValue DegreeOfDifficultyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.HomeInstallations_OtherInstallationMaterialsRecord[] OtherInstallationMaterialsField;
+        private FlowfinityConnectionHelper.FASR.SingleSelection DepartmentResponsible1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DateTimeValue InstallationCompletedDateField;
+        private FlowfinityConnectionHelper.FASR.StringValue DollyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.MultiSelection InstallationCheckListField;
+        private FlowfinityConnectionHelper.FASR.DecimalValue DoorCostField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue ReasonField;
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_DoorItemsRecord[] DoorItemsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue WorkLeftMaterialsRequiredField;
+        private FlowfinityConnectionHelper.FASR.StringValue EmailField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection InstallwentwellField;
+        private FlowfinityConnectionHelper.FASR.StringValue ErrorIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.SingleSelection EstInstallerCntField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.LongValue ExtDoorsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.StringValue ExtraUseReasonField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DateTimeValue AcceptanceDateField;
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_FileAttachmentRecord[] FileAttachmentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue SalesCommissionField;
+        private FlowfinityConnectionHelper.FASR.SingleSelection FinancingField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue MarketCommissionField;
+        private FlowfinityConnectionHelper.FASR.StringValue FirstNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue DoorCostField;
+        private FlowfinityConnectionHelper.FASR.StringValue FollowupNoteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue RemakeCostField;
+        private FlowfinityConnectionHelper.FASR.SingleSelection HighRiskField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue WindowCostField;
+        private FlowfinityConnectionHelper.FASR.StringValue HomePhoneNumberField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue CreditCardChargesField;
+        private FlowfinityConnectionHelper.FASR.SingleSelection HVACField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue CreditCardDepositField;
+        private FlowfinityConnectionHelper.FASR.MultiSelection InstallationCheckListField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue BuyDownField;
+        private FlowfinityConnectionHelper.FASR.DateTimeValue InstallationCompletedDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue OtherCostField;
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_InstallationDatesRecord[] InstallationDatesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.LongValue InstallationDoorLBRMinField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.LongValue InstallationPatioDoorLBRMinField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.LongValue InstallationWindowLBRMinField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.SingleSelection InstallwentwellField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.SingleSelection Job100CostedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.SingleSelection JobTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue LastNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.SingleSelection LeadPaintField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue LumberOrderedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.LongValue ManMinutesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.DecimalValue MarketCommissionField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.Choice MarketerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_MaterialsUsedRecord[] MaterialsUsedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_nestedlist66Record[] nestedlist66Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_nestedlist76Record[] nestedlist76Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.DateTimeValue OriginalContactDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.DecimalValue OtherCostField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_OtherInstallationMaterialsRecord[] OtherInstallationMaterialsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.SingleSelection PaintedProductField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.LongValue PatioDoorsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.SingleSelection PaymentOptionField;
@@ -22517,136 +19735,109 @@ namespace FlowfinityConnectionHelper.FASR {
         private FlowfinityConnectionHelper.FASR.SingleSelection PaymentStatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.BinaryValue ChequeAttachmentField;
+        private FlowfinityConnectionHelper.FASR.StringValue PendingRecordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.HomeInstallations_nestedlist66Record[] nestedlist66Field;
+        private FlowfinityConnectionHelper.FASR.SingleSelection PlannedinstallWeekField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue AddOnProductField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue DollyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.HomeInstallations_nestedlist76Record[] nestedlist76Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.HomeInstallations_CallLogRecord[] CallLogField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue BookPriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.HomeInstallations_RemakeLogRecord[] RemakeLogField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.HomeInstallations_WorkOrderNotesRecord[] WorkOrderNotesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.HomeInstallations_SalesClawBackRecord[] SalesClawBackField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection CompletionAcceptanceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.UserLookupRecord[] UserResponsibleField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue FollowupNoteField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection Job100CostedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection DepartmentResponsible1Field;
+        private FlowfinityConnectionHelper.FASR.StringValue PostalCodeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.DateTimeValue ProjectedFinishDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue ReasonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.StringValue Reason1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.HomeInstallations_FileAttachmentRecord[] FileAttachmentField;
+        private FlowfinityConnectionHelper.FASR.DecimalValue RemakeCostField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection PaintedProductField;
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_RemakeLogRecord[] RemakeLogField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection HVACField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LongValue ManMinutesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue LumberOrderedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue SubcontractorBookedField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue DegreeOfDifficultyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection ZoneField;
+        private FlowfinityConnectionHelper.FASR.DateTimeValue RemeasureDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.DateTimeValue RemeasureEndTimeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection FinancingField;
+        private FlowfinityConnectionHelper.FASR.UserLookupRecord[] remeasureinstallerField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.HomeInstallations_TakePictureRecord[] TakePictureField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection JobTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue BudgetedLBRField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue TruckNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection SidingRequiredField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue SidingBudgetedLBRField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection SaturdayField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection SundayField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection AsbestosField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection WoodDropOffField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection HighRiskField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue CheckRoleField;
+        private FlowfinityConnectionHelper.FASR.Choice RepField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.HomeInstallations_ReturnTripRecord[] ReturnTripField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection LeadPaintField;
+        private FlowfinityConnectionHelper.FASR.DecimalValue SalesAmmountField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue InstallationWindowLBRMinField;
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_SalesClawBackRecord[] SalesClawBackField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue WMLinkStatusField;
+        private FlowfinityConnectionHelper.FASR.DecimalValue SalesCommissionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue ErrorIDField;
+        private FlowfinityConnectionHelper.FASR.DateTimeValue SalesManagersApprovalDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.SingleSelection SaturdayField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.UserLookupRecord[] SeniorInstallerField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.DecimalValue SidingBudgetedLBRField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.DecimalValue SidingLBRBudgetField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.LongValue SidingLBRMinField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.SingleSelection SidingRequiredField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.DecimalValue SidingSQFField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue Source_1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue StreetAddressField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue SubcontractorBookedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_SubtradeReqiredRecord[] SubtradeReqiredField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.SingleSelection SundayField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_TakePictureRecord[] TakePictureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.LongValue TotalInstallationLBRMinField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue TruckNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_TypeofWorkRecord[] TypeofWorkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.UserLookupRecord[] UserResponsibleField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.DecimalValue WindowCostField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.HomeInstallations_WindowItemsRecord[] WindowItemsField;
@@ -22655,19 +19846,34 @@ namespace FlowfinityConnectionHelper.FASR {
         private FlowfinityConnectionHelper.FASR.DateTimeValue WindowmakerUpdateDateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue InstallationPatioDoorLBRMinField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue InstallationDoorLBRMinField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue TotalInstallationLBRMinField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.HomeInstallations_DoorItemsRecord[] DoorItemsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.StringValue WindowManufacturingStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.LongValue WindowsField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue WMLinkStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.SingleSelection WoodDropOffField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue WorkLeftMaterialsRequiredField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.DateTimeValue WorkOrderDateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_WorkOrderNotesRecord[] WorkOrderNotesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue WorkOrderNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue WorkPhoneNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.SingleSelection ZoneField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -22680,474 +19886,6 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue PendingRecord {
-            get {
-                return this.PendingRecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PendingRecordField, value) != true)) {
-                    this.PendingRecordField = value;
-                    this.RaisePropertyChanged("PendingRecord");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public FlowfinityConnectionHelper.FASR.DateTimeValue OriginalContactDate {
-            get {
-                return this.OriginalContactDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OriginalContactDateField, value) != true)) {
-                    this.OriginalContactDateField = value;
-                    this.RaisePropertyChanged("OriginalContactDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public FlowfinityConnectionHelper.FASR.DateTimeValue WorkOrderDate {
-            get {
-                return this.WorkOrderDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WorkOrderDateField, value) != true)) {
-                    this.WorkOrderDateField = value;
-                    this.RaisePropertyChanged("WorkOrderDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public FlowfinityConnectionHelper.FASR.Choice Branch {
-            get {
-                return this.BranchField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BranchField, value) != true)) {
-                    this.BranchField = value;
-                    this.RaisePropertyChanged("Branch");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.StringValue WorkOrderNumber {
-            get {
-                return this.WorkOrderNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WorkOrderNumberField, value) != true)) {
-                    this.WorkOrderNumberField = value;
-                    this.RaisePropertyChanged("WorkOrderNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public FlowfinityConnectionHelper.FASR.StringValue FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public FlowfinityConnectionHelper.FASR.StringValue LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public FlowfinityConnectionHelper.FASR.StringValue StreetAddress {
-            get {
-                return this.StreetAddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StreetAddressField, value) != true)) {
-                    this.StreetAddressField = value;
-                    this.RaisePropertyChanged("StreetAddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=8)]
-        public FlowfinityConnectionHelper.FASR.StringValue City {
-            get {
-                return this.CityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CityField, value) != true)) {
-                    this.CityField = value;
-                    this.RaisePropertyChanged("City");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public FlowfinityConnectionHelper.FASR.StringValue PostalCode {
-            get {
-                return this.PostalCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PostalCodeField, value) != true)) {
-                    this.PostalCodeField = value;
-                    this.RaisePropertyChanged("PostalCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=10)]
-        public FlowfinityConnectionHelper.FASR.StringValue HomePhoneNumber {
-            get {
-                return this.HomePhoneNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.HomePhoneNumberField, value) != true)) {
-                    this.HomePhoneNumberField = value;
-                    this.RaisePropertyChanged("HomePhoneNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=11)]
-        public FlowfinityConnectionHelper.FASR.StringValue WorkPhoneNumber {
-            get {
-                return this.WorkPhoneNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WorkPhoneNumberField, value) != true)) {
-                    this.WorkPhoneNumberField = value;
-                    this.RaisePropertyChanged("WorkPhoneNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=12)]
-        public FlowfinityConnectionHelper.FASR.StringValue CellPhone {
-            get {
-                return this.CellPhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CellPhoneField, value) != true)) {
-                    this.CellPhoneField = value;
-                    this.RaisePropertyChanged("CellPhone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=13)]
-        public FlowfinityConnectionHelper.FASR.StringValue Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=14)]
-        public FlowfinityConnectionHelper.FASR.Choice Rep {
-            get {
-                return this.RepField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RepField, value) != true)) {
-                    this.RepField = value;
-                    this.RaisePropertyChanged("Rep");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=15)]
-        public FlowfinityConnectionHelper.FASR.Choice Marketer {
-            get {
-                return this.MarketerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MarketerField, value) != true)) {
-                    this.MarketerField = value;
-                    this.RaisePropertyChanged("Marketer");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=16)]
-        public FlowfinityConnectionHelper.FASR.StringValue Source_1 {
-            get {
-                return this.Source_1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Source_1Field, value) != true)) {
-                    this.Source_1Field = value;
-                    this.RaisePropertyChanged("Source_1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=17)]
-        public FlowfinityConnectionHelper.FASR.DoubleValue SalesAmmount {
-            get {
-                return this.SalesAmmountField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SalesAmmountField, value) != true)) {
-                    this.SalesAmmountField = value;
-                    this.RaisePropertyChanged("SalesAmmount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=18)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallations_TypeofWorkRecord[] TypeofWork {
-            get {
-                return this.TypeofWorkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TypeofWorkField, value) != true)) {
-                    this.TypeofWorkField = value;
-                    this.RaisePropertyChanged("TypeofWork");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=19)]
-        public FlowfinityConnectionHelper.FASR.DateTimeValue SalesManagersApprovalDate {
-            get {
-                return this.SalesManagersApprovalDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SalesManagersApprovalDateField, value) != true)) {
-                    this.SalesManagersApprovalDateField = value;
-                    this.RaisePropertyChanged("SalesManagersApprovalDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=20)]
-        public FlowfinityConnectionHelper.FASR.DateTimeValue RemeasureDate {
-            get {
-                return this.RemeasureDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RemeasureDateField, value) != true)) {
-                    this.RemeasureDateField = value;
-                    this.RaisePropertyChanged("RemeasureDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=21)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection EstInstallerCnt {
-            get {
-                return this.EstInstallerCntField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EstInstallerCntField, value) != true)) {
-                    this.EstInstallerCntField = value;
-                    this.RaisePropertyChanged("EstInstallerCnt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=22)]
-        public FlowfinityConnectionHelper.FASR.UserLookupRecord[] remeasureinstaller {
-            get {
-                return this.remeasureinstallerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.remeasureinstallerField, value) != true)) {
-                    this.remeasureinstallerField = value;
-                    this.RaisePropertyChanged("remeasureinstaller");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=23)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallations_SubtradeReqiredRecord[] SubtradeReqired {
-            get {
-                return this.SubtradeReqiredField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SubtradeReqiredField, value) != true)) {
-                    this.SubtradeReqiredField = value;
-                    this.RaisePropertyChanged("SubtradeReqired");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=24)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection PlannedinstallWeek {
-            get {
-                return this.PlannedinstallWeekField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PlannedinstallWeekField, value) != true)) {
-                    this.PlannedinstallWeekField = value;
-                    this.RaisePropertyChanged("PlannedinstallWeek");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=25)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallations_InstallationDatesRecord[] InstallationDates {
-            get {
-                return this.InstallationDatesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InstallationDatesField, value) != true)) {
-                    this.InstallationDatesField = value;
-                    this.RaisePropertyChanged("InstallationDates");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=26)]
-        public FlowfinityConnectionHelper.FASR.UserLookupRecord[] SeniorInstaller {
-            get {
-                return this.SeniorInstallerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SeniorInstallerField, value) != true)) {
-                    this.SeniorInstallerField = value;
-                    this.RaisePropertyChanged("SeniorInstaller");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=27)]
-        public FlowfinityConnectionHelper.FASR.UserLookupRecord[] Crew {
-            get {
-                return this.CrewField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CrewField, value) != true)) {
-                    this.CrewField = value;
-                    this.RaisePropertyChanged("Crew");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=28)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallations_MaterialsUsedRecord[] MaterialsUsed {
-            get {
-                return this.MaterialsUsedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MaterialsUsedField, value) != true)) {
-                    this.MaterialsUsedField = value;
-                    this.RaisePropertyChanged("MaterialsUsed");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=29)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallations_OtherInstallationMaterialsRecord[] OtherInstallationMaterials {
-            get {
-                return this.OtherInstallationMaterialsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OtherInstallationMaterialsField, value) != true)) {
-                    this.OtherInstallationMaterialsField = value;
-                    this.RaisePropertyChanged("OtherInstallationMaterials");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=30)]
-        public FlowfinityConnectionHelper.FASR.DateTimeValue InstallationCompletedDate {
-            get {
-                return this.InstallationCompletedDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InstallationCompletedDateField, value) != true)) {
-                    this.InstallationCompletedDateField = value;
-                    this.RaisePropertyChanged("InstallationCompletedDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=31)]
-        public FlowfinityConnectionHelper.FASR.MultiSelection InstallationCheckList {
-            get {
-                return this.InstallationCheckListField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InstallationCheckListField, value) != true)) {
-                    this.InstallationCheckListField = value;
-                    this.RaisePropertyChanged("InstallationCheckList");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=32)]
-        public FlowfinityConnectionHelper.FASR.StringValue Reason {
-            get {
-                return this.ReasonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ReasonField, value) != true)) {
-                    this.ReasonField = value;
-                    this.RaisePropertyChanged("Reason");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=33)]
-        public FlowfinityConnectionHelper.FASR.StringValue WorkLeftMaterialsRequired {
-            get {
-                return this.WorkLeftMaterialsRequiredField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WorkLeftMaterialsRequiredField, value) != true)) {
-                    this.WorkLeftMaterialsRequiredField = value;
-                    this.RaisePropertyChanged("WorkLeftMaterialsRequired");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=34)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection Installwentwell {
-            get {
-                return this.InstallwentwellField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InstallwentwellField, value) != true)) {
-                    this.InstallwentwellField = value;
-                    this.RaisePropertyChanged("Installwentwell");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=35)]
-        public FlowfinityConnectionHelper.FASR.StringValue ExtraUseReason {
-            get {
-                return this.ExtraUseReasonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ExtraUseReasonField, value) != true)) {
-                    this.ExtraUseReasonField = value;
-                    this.RaisePropertyChanged("ExtraUseReason");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=36)]
         public FlowfinityConnectionHelper.FASR.DateTimeValue AcceptanceDate {
             get {
                 return this.AcceptanceDateField;
@@ -23160,99 +19898,73 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=37)]
-        public FlowfinityConnectionHelper.FASR.DoubleValue SalesCommission {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue AddOnProduct {
             get {
-                return this.SalesCommissionField;
+                return this.AddOnProductField;
             }
             set {
-                if ((object.ReferenceEquals(this.SalesCommissionField, value) != true)) {
-                    this.SalesCommissionField = value;
-                    this.RaisePropertyChanged("SalesCommission");
+                if ((object.ReferenceEquals(this.AddOnProductField, value) != true)) {
+                    this.AddOnProductField = value;
+                    this.RaisePropertyChanged("AddOnProduct");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=38)]
-        public FlowfinityConnectionHelper.FASR.DoubleValue MarketCommission {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.SingleSelection Asbestos {
             get {
-                return this.MarketCommissionField;
+                return this.AsbestosField;
             }
             set {
-                if ((object.ReferenceEquals(this.MarketCommissionField, value) != true)) {
-                    this.MarketCommissionField = value;
-                    this.RaisePropertyChanged("MarketCommission");
+                if ((object.ReferenceEquals(this.AsbestosField, value) != true)) {
+                    this.AsbestosField = value;
+                    this.RaisePropertyChanged("Asbestos");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=39)]
-        public FlowfinityConnectionHelper.FASR.DoubleValue DoorCost {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.DecimalValue BookPrice {
             get {
-                return this.DoorCostField;
+                return this.BookPriceField;
             }
             set {
-                if ((object.ReferenceEquals(this.DoorCostField, value) != true)) {
-                    this.DoorCostField = value;
-                    this.RaisePropertyChanged("DoorCost");
+                if ((object.ReferenceEquals(this.BookPriceField, value) != true)) {
+                    this.BookPriceField = value;
+                    this.RaisePropertyChanged("BookPrice");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=40)]
-        public FlowfinityConnectionHelper.FASR.DoubleValue RemakeCost {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.Choice Branch {
             get {
-                return this.RemakeCostField;
+                return this.BranchField;
             }
             set {
-                if ((object.ReferenceEquals(this.RemakeCostField, value) != true)) {
-                    this.RemakeCostField = value;
-                    this.RaisePropertyChanged("RemakeCost");
+                if ((object.ReferenceEquals(this.BranchField, value) != true)) {
+                    this.BranchField = value;
+                    this.RaisePropertyChanged("Branch");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=41)]
-        public FlowfinityConnectionHelper.FASR.DoubleValue WindowCost {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.DecimalValue BudgetedLBR {
             get {
-                return this.WindowCostField;
+                return this.BudgetedLBRField;
             }
             set {
-                if ((object.ReferenceEquals(this.WindowCostField, value) != true)) {
-                    this.WindowCostField = value;
-                    this.RaisePropertyChanged("WindowCost");
+                if ((object.ReferenceEquals(this.BudgetedLBRField, value) != true)) {
+                    this.BudgetedLBRField = value;
+                    this.RaisePropertyChanged("BudgetedLBR");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=42)]
-        public FlowfinityConnectionHelper.FASR.DoubleValue CreditCardCharges {
-            get {
-                return this.CreditCardChargesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CreditCardChargesField, value) != true)) {
-                    this.CreditCardChargesField = value;
-                    this.RaisePropertyChanged("CreditCardCharges");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=43)]
-        public FlowfinityConnectionHelper.FASR.DoubleValue CreditCardDeposit {
-            get {
-                return this.CreditCardDepositField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CreditCardDepositField, value) != true)) {
-                    this.CreditCardDepositField = value;
-                    this.RaisePropertyChanged("CreditCardDeposit");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=44)]
-        public FlowfinityConnectionHelper.FASR.DoubleValue BuyDown {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.DecimalValue BuyDown {
             get {
                 return this.BuyDownField;
             }
@@ -23264,46 +19976,46 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=45)]
-        public FlowfinityConnectionHelper.FASR.DoubleValue OtherCost {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_CallLogRecord[] CallLog {
             get {
-                return this.OtherCostField;
+                return this.CallLogField;
             }
             set {
-                if ((object.ReferenceEquals(this.OtherCostField, value) != true)) {
-                    this.OtherCostField = value;
-                    this.RaisePropertyChanged("OtherCost");
+                if ((object.ReferenceEquals(this.CallLogField, value) != true)) {
+                    this.CallLogField = value;
+                    this.RaisePropertyChanged("CallLog");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=46)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection PaymentOption {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue CellPhone {
             get {
-                return this.PaymentOptionField;
+                return this.CellPhoneField;
             }
             set {
-                if ((object.ReferenceEquals(this.PaymentOptionField, value) != true)) {
-                    this.PaymentOptionField = value;
-                    this.RaisePropertyChanged("PaymentOption");
+                if ((object.ReferenceEquals(this.CellPhoneField, value) != true)) {
+                    this.CellPhoneField = value;
+                    this.RaisePropertyChanged("CellPhone");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=47)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection PaymentStatus {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue CheckRole {
             get {
-                return this.PaymentStatusField;
+                return this.CheckRoleField;
             }
             set {
-                if ((object.ReferenceEquals(this.PaymentStatusField, value) != true)) {
-                    this.PaymentStatusField = value;
-                    this.RaisePropertyChanged("PaymentStatus");
+                if ((object.ReferenceEquals(this.CheckRoleField, value) != true)) {
+                    this.CheckRoleField = value;
+                    this.RaisePropertyChanged("CheckRole");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=48)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public FlowfinityConnectionHelper.FASR.BinaryValue ChequeAttachment {
             get {
                 return this.ChequeAttachmentField;
@@ -23312,6 +20024,500 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.ChequeAttachmentField, value) != true)) {
                     this.ChequeAttachmentField = value;
                     this.RaisePropertyChanged("ChequeAttachment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue City {
+            get {
+                return this.CityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CityField, value) != true)) {
+                    this.CityField = value;
+                    this.RaisePropertyChanged("City");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.SingleSelection CompletionAcceptance {
+            get {
+                return this.CompletionAcceptanceField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CompletionAcceptanceField, value) != true)) {
+                    this.CompletionAcceptanceField = value;
+                    this.RaisePropertyChanged("CompletionAcceptance");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.DecimalValue CreditCardCharges {
+            get {
+                return this.CreditCardChargesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreditCardChargesField, value) != true)) {
+                    this.CreditCardChargesField = value;
+                    this.RaisePropertyChanged("CreditCardCharges");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.DecimalValue CreditCardDeposit {
+            get {
+                return this.CreditCardDepositField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CreditCardDepositField, value) != true)) {
+                    this.CreditCardDepositField = value;
+                    this.RaisePropertyChanged("CreditCardDeposit");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.UserLookupRecord[] Crew {
+            get {
+                return this.CrewField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CrewField, value) != true)) {
+                    this.CrewField = value;
+                    this.RaisePropertyChanged("Crew");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue DegreeOfDifficulty {
+            get {
+                return this.DegreeOfDifficultyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DegreeOfDifficultyField, value) != true)) {
+                    this.DegreeOfDifficultyField = value;
+                    this.RaisePropertyChanged("DegreeOfDifficulty");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.SingleSelection DepartmentResponsible1 {
+            get {
+                return this.DepartmentResponsible1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DepartmentResponsible1Field, value) != true)) {
+                    this.DepartmentResponsible1Field = value;
+                    this.RaisePropertyChanged("DepartmentResponsible1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue Dolly {
+            get {
+                return this.DollyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DollyField, value) != true)) {
+                    this.DollyField = value;
+                    this.RaisePropertyChanged("Dolly");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.DecimalValue DoorCost {
+            get {
+                return this.DoorCostField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DoorCostField, value) != true)) {
+                    this.DoorCostField = value;
+                    this.RaisePropertyChanged("DoorCost");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_DoorItemsRecord[] DoorItems {
+            get {
+                return this.DoorItemsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DoorItemsField, value) != true)) {
+                    this.DoorItemsField = value;
+                    this.RaisePropertyChanged("DoorItems");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue Email {
+            get {
+                return this.EmailField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
+                    this.EmailField = value;
+                    this.RaisePropertyChanged("Email");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue ErrorID {
+            get {
+                return this.ErrorIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorIDField, value) != true)) {
+                    this.ErrorIDField = value;
+                    this.RaisePropertyChanged("ErrorID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.SingleSelection EstInstallerCnt {
+            get {
+                return this.EstInstallerCntField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EstInstallerCntField, value) != true)) {
+                    this.EstInstallerCntField = value;
+                    this.RaisePropertyChanged("EstInstallerCnt");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.LongValue ExtDoors {
+            get {
+                return this.ExtDoorsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExtDoorsField, value) != true)) {
+                    this.ExtDoorsField = value;
+                    this.RaisePropertyChanged("ExtDoors");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue ExtraUseReason {
+            get {
+                return this.ExtraUseReasonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ExtraUseReasonField, value) != true)) {
+                    this.ExtraUseReasonField = value;
+                    this.RaisePropertyChanged("ExtraUseReason");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_FileAttachmentRecord[] FileAttachment {
+            get {
+                return this.FileAttachmentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FileAttachmentField, value) != true)) {
+                    this.FileAttachmentField = value;
+                    this.RaisePropertyChanged("FileAttachment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.SingleSelection Financing {
+            get {
+                return this.FinancingField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FinancingField, value) != true)) {
+                    this.FinancingField = value;
+                    this.RaisePropertyChanged("Financing");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue FollowupNote {
+            get {
+                return this.FollowupNoteField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FollowupNoteField, value) != true)) {
+                    this.FollowupNoteField = value;
+                    this.RaisePropertyChanged("FollowupNote");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.SingleSelection HighRisk {
+            get {
+                return this.HighRiskField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HighRiskField, value) != true)) {
+                    this.HighRiskField = value;
+                    this.RaisePropertyChanged("HighRisk");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue HomePhoneNumber {
+            get {
+                return this.HomePhoneNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HomePhoneNumberField, value) != true)) {
+                    this.HomePhoneNumberField = value;
+                    this.RaisePropertyChanged("HomePhoneNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=32)]
+        public FlowfinityConnectionHelper.FASR.SingleSelection HVAC {
+            get {
+                return this.HVACField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.HVACField, value) != true)) {
+                    this.HVACField = value;
+                    this.RaisePropertyChanged("HVAC");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=33)]
+        public FlowfinityConnectionHelper.FASR.MultiSelection InstallationCheckList {
+            get {
+                return this.InstallationCheckListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InstallationCheckListField, value) != true)) {
+                    this.InstallationCheckListField = value;
+                    this.RaisePropertyChanged("InstallationCheckList");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=34)]
+        public FlowfinityConnectionHelper.FASR.DateTimeValue InstallationCompletedDate {
+            get {
+                return this.InstallationCompletedDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InstallationCompletedDateField, value) != true)) {
+                    this.InstallationCompletedDateField = value;
+                    this.RaisePropertyChanged("InstallationCompletedDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=35)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_InstallationDatesRecord[] InstallationDates {
+            get {
+                return this.InstallationDatesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InstallationDatesField, value) != true)) {
+                    this.InstallationDatesField = value;
+                    this.RaisePropertyChanged("InstallationDates");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=36)]
+        public FlowfinityConnectionHelper.FASR.LongValue InstallationDoorLBRMin {
+            get {
+                return this.InstallationDoorLBRMinField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InstallationDoorLBRMinField, value) != true)) {
+                    this.InstallationDoorLBRMinField = value;
+                    this.RaisePropertyChanged("InstallationDoorLBRMin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=37)]
+        public FlowfinityConnectionHelper.FASR.LongValue InstallationPatioDoorLBRMin {
+            get {
+                return this.InstallationPatioDoorLBRMinField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InstallationPatioDoorLBRMinField, value) != true)) {
+                    this.InstallationPatioDoorLBRMinField = value;
+                    this.RaisePropertyChanged("InstallationPatioDoorLBRMin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=38)]
+        public FlowfinityConnectionHelper.FASR.LongValue InstallationWindowLBRMin {
+            get {
+                return this.InstallationWindowLBRMinField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InstallationWindowLBRMinField, value) != true)) {
+                    this.InstallationWindowLBRMinField = value;
+                    this.RaisePropertyChanged("InstallationWindowLBRMin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=39)]
+        public FlowfinityConnectionHelper.FASR.SingleSelection Installwentwell {
+            get {
+                return this.InstallwentwellField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InstallwentwellField, value) != true)) {
+                    this.InstallwentwellField = value;
+                    this.RaisePropertyChanged("Installwentwell");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=40)]
+        public FlowfinityConnectionHelper.FASR.SingleSelection Job100Costed {
+            get {
+                return this.Job100CostedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Job100CostedField, value) != true)) {
+                    this.Job100CostedField = value;
+                    this.RaisePropertyChanged("Job100Costed");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=41)]
+        public FlowfinityConnectionHelper.FASR.SingleSelection JobType {
+            get {
+                return this.JobTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.JobTypeField, value) != true)) {
+                    this.JobTypeField = value;
+                    this.RaisePropertyChanged("JobType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=42)]
+        public FlowfinityConnectionHelper.FASR.StringValue LastName {
+            get {
+                return this.LastNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=43)]
+        public FlowfinityConnectionHelper.FASR.SingleSelection LeadPaint {
+            get {
+                return this.LeadPaintField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LeadPaintField, value) != true)) {
+                    this.LeadPaintField = value;
+                    this.RaisePropertyChanged("LeadPaint");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=44)]
+        public FlowfinityConnectionHelper.FASR.StringValue LumberOrdered {
+            get {
+                return this.LumberOrderedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LumberOrderedField, value) != true)) {
+                    this.LumberOrderedField = value;
+                    this.RaisePropertyChanged("LumberOrdered");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=45)]
+        public FlowfinityConnectionHelper.FASR.LongValue ManMinutes {
+            get {
+                return this.ManMinutesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ManMinutesField, value) != true)) {
+                    this.ManMinutesField = value;
+                    this.RaisePropertyChanged("ManMinutes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=46)]
+        public FlowfinityConnectionHelper.FASR.DecimalValue MarketCommission {
+            get {
+                return this.MarketCommissionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MarketCommissionField, value) != true)) {
+                    this.MarketCommissionField = value;
+                    this.RaisePropertyChanged("MarketCommission");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=47)]
+        public FlowfinityConnectionHelper.FASR.Choice Marketer {
+            get {
+                return this.MarketerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MarketerField, value) != true)) {
+                    this.MarketerField = value;
+                    this.RaisePropertyChanged("Marketer");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=48)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_MaterialsUsedRecord[] MaterialsUsed {
+            get {
+                return this.MaterialsUsedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaterialsUsedField, value) != true)) {
+                    this.MaterialsUsedField = value;
+                    this.RaisePropertyChanged("MaterialsUsed");
                 }
             }
         }
@@ -23330,32 +20536,6 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=50)]
-        public FlowfinityConnectionHelper.FASR.StringValue AddOnProduct {
-            get {
-                return this.AddOnProductField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AddOnProductField, value) != true)) {
-                    this.AddOnProductField = value;
-                    this.RaisePropertyChanged("AddOnProduct");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=51)]
-        public FlowfinityConnectionHelper.FASR.StringValue Dolly {
-            get {
-                return this.DollyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DollyField, value) != true)) {
-                    this.DollyField = value;
-                    this.RaisePropertyChanged("Dolly");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=52)]
         public FlowfinityConnectionHelper.FASR.HomeInstallations_nestedlist76Record[] nestedlist76 {
             get {
                 return this.nestedlist76Field;
@@ -23368,176 +20548,46 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=53)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallations_CallLogRecord[] CallLog {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=51)]
+        public FlowfinityConnectionHelper.FASR.DateTimeValue OriginalContactDate {
             get {
-                return this.CallLogField;
+                return this.OriginalContactDateField;
             }
             set {
-                if ((object.ReferenceEquals(this.CallLogField, value) != true)) {
-                    this.CallLogField = value;
-                    this.RaisePropertyChanged("CallLog");
+                if ((object.ReferenceEquals(this.OriginalContactDateField, value) != true)) {
+                    this.OriginalContactDateField = value;
+                    this.RaisePropertyChanged("OriginalContactDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=52)]
+        public FlowfinityConnectionHelper.FASR.DecimalValue OtherCost {
+            get {
+                return this.OtherCostField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OtherCostField, value) != true)) {
+                    this.OtherCostField = value;
+                    this.RaisePropertyChanged("OtherCost");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=53)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_OtherInstallationMaterialsRecord[] OtherInstallationMaterials {
+            get {
+                return this.OtherInstallationMaterialsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OtherInstallationMaterialsField, value) != true)) {
+                    this.OtherInstallationMaterialsField = value;
+                    this.RaisePropertyChanged("OtherInstallationMaterials");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=54)]
-        public FlowfinityConnectionHelper.FASR.DoubleValue BookPrice {
-            get {
-                return this.BookPriceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BookPriceField, value) != true)) {
-                    this.BookPriceField = value;
-                    this.RaisePropertyChanged("BookPrice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=55)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallations_RemakeLogRecord[] RemakeLog {
-            get {
-                return this.RemakeLogField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RemakeLogField, value) != true)) {
-                    this.RemakeLogField = value;
-                    this.RaisePropertyChanged("RemakeLog");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=56)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallations_WorkOrderNotesRecord[] WorkOrderNotes {
-            get {
-                return this.WorkOrderNotesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WorkOrderNotesField, value) != true)) {
-                    this.WorkOrderNotesField = value;
-                    this.RaisePropertyChanged("WorkOrderNotes");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=57)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallations_SalesClawBackRecord[] SalesClawBack {
-            get {
-                return this.SalesClawBackField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SalesClawBackField, value) != true)) {
-                    this.SalesClawBackField = value;
-                    this.RaisePropertyChanged("SalesClawBack");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=58)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection CompletionAcceptance {
-            get {
-                return this.CompletionAcceptanceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CompletionAcceptanceField, value) != true)) {
-                    this.CompletionAcceptanceField = value;
-                    this.RaisePropertyChanged("CompletionAcceptance");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=59)]
-        public FlowfinityConnectionHelper.FASR.UserLookupRecord[] UserResponsible {
-            get {
-                return this.UserResponsibleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.UserResponsibleField, value) != true)) {
-                    this.UserResponsibleField = value;
-                    this.RaisePropertyChanged("UserResponsible");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=60)]
-        public FlowfinityConnectionHelper.FASR.StringValue FollowupNote {
-            get {
-                return this.FollowupNoteField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FollowupNoteField, value) != true)) {
-                    this.FollowupNoteField = value;
-                    this.RaisePropertyChanged("FollowupNote");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=61)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection Job100Costed {
-            get {
-                return this.Job100CostedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Job100CostedField, value) != true)) {
-                    this.Job100CostedField = value;
-                    this.RaisePropertyChanged("Job100Costed");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=62)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection DepartmentResponsible1 {
-            get {
-                return this.DepartmentResponsible1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DepartmentResponsible1Field, value) != true)) {
-                    this.DepartmentResponsible1Field = value;
-                    this.RaisePropertyChanged("DepartmentResponsible1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=63)]
-        public FlowfinityConnectionHelper.FASR.DateTimeValue ProjectedFinishDate {
-            get {
-                return this.ProjectedFinishDateField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ProjectedFinishDateField, value) != true)) {
-                    this.ProjectedFinishDateField = value;
-                    this.RaisePropertyChanged("ProjectedFinishDate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=64)]
-        public FlowfinityConnectionHelper.FASR.StringValue Reason1 {
-            get {
-                return this.Reason1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Reason1Field, value) != true)) {
-                    this.Reason1Field = value;
-                    this.RaisePropertyChanged("Reason1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=65)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallations_FileAttachmentRecord[] FileAttachment {
-            get {
-                return this.FileAttachmentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FileAttachmentField, value) != true)) {
-                    this.FileAttachmentField = value;
-                    this.RaisePropertyChanged("FileAttachment");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=66)]
         public FlowfinityConnectionHelper.FASR.SingleSelection PaintedProduct {
             get {
                 return this.PaintedProductField;
@@ -23550,85 +20600,163 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=55)]
+        public FlowfinityConnectionHelper.FASR.LongValue PatioDoors {
+            get {
+                return this.PatioDoorsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PatioDoorsField, value) != true)) {
+                    this.PatioDoorsField = value;
+                    this.RaisePropertyChanged("PatioDoors");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=56)]
+        public FlowfinityConnectionHelper.FASR.SingleSelection PaymentOption {
+            get {
+                return this.PaymentOptionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaymentOptionField, value) != true)) {
+                    this.PaymentOptionField = value;
+                    this.RaisePropertyChanged("PaymentOption");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=57)]
+        public FlowfinityConnectionHelper.FASR.SingleSelection PaymentStatus {
+            get {
+                return this.PaymentStatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PaymentStatusField, value) != true)) {
+                    this.PaymentStatusField = value;
+                    this.RaisePropertyChanged("PaymentStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=58)]
+        public FlowfinityConnectionHelper.FASR.StringValue PendingRecord {
+            get {
+                return this.PendingRecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PendingRecordField, value) != true)) {
+                    this.PendingRecordField = value;
+                    this.RaisePropertyChanged("PendingRecord");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=59)]
+        public FlowfinityConnectionHelper.FASR.SingleSelection PlannedinstallWeek {
+            get {
+                return this.PlannedinstallWeekField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PlannedinstallWeekField, value) != true)) {
+                    this.PlannedinstallWeekField = value;
+                    this.RaisePropertyChanged("PlannedinstallWeek");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=60)]
+        public FlowfinityConnectionHelper.FASR.StringValue PostalCode {
+            get {
+                return this.PostalCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PostalCodeField, value) != true)) {
+                    this.PostalCodeField = value;
+                    this.RaisePropertyChanged("PostalCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=61)]
+        public FlowfinityConnectionHelper.FASR.DateTimeValue ProjectedFinishDate {
+            get {
+                return this.ProjectedFinishDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProjectedFinishDateField, value) != true)) {
+                    this.ProjectedFinishDateField = value;
+                    this.RaisePropertyChanged("ProjectedFinishDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=62)]
+        public FlowfinityConnectionHelper.FASR.StringValue Reason {
+            get {
+                return this.ReasonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ReasonField, value) != true)) {
+                    this.ReasonField = value;
+                    this.RaisePropertyChanged("Reason");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=63)]
+        public FlowfinityConnectionHelper.FASR.StringValue Reason1 {
+            get {
+                return this.Reason1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Reason1Field, value) != true)) {
+                    this.Reason1Field = value;
+                    this.RaisePropertyChanged("Reason1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=64)]
+        public FlowfinityConnectionHelper.FASR.DecimalValue RemakeCost {
+            get {
+                return this.RemakeCostField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemakeCostField, value) != true)) {
+                    this.RemakeCostField = value;
+                    this.RaisePropertyChanged("RemakeCost");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=65)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_RemakeLogRecord[] RemakeLog {
+            get {
+                return this.RemakeLogField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemakeLogField, value) != true)) {
+                    this.RemakeLogField = value;
+                    this.RaisePropertyChanged("RemakeLog");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=66)]
+        public FlowfinityConnectionHelper.FASR.DateTimeValue RemeasureDate {
+            get {
+                return this.RemeasureDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RemeasureDateField, value) != true)) {
+                    this.RemeasureDateField = value;
+                    this.RaisePropertyChanged("RemeasureDate");
+                }
+            }
+        }
+        
         [System.Runtime.Serialization.DataMemberAttribute(Order=67)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection HVAC {
-            get {
-                return this.HVACField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.HVACField, value) != true)) {
-                    this.HVACField = value;
-                    this.RaisePropertyChanged("HVAC");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=68)]
-        public FlowfinityConnectionHelper.FASR.LongValue ManMinutes {
-            get {
-                return this.ManMinutesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ManMinutesField, value) != true)) {
-                    this.ManMinutesField = value;
-                    this.RaisePropertyChanged("ManMinutes");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=69)]
-        public FlowfinityConnectionHelper.FASR.StringValue LumberOrdered {
-            get {
-                return this.LumberOrderedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LumberOrderedField, value) != true)) {
-                    this.LumberOrderedField = value;
-                    this.RaisePropertyChanged("LumberOrdered");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=70)]
-        public FlowfinityConnectionHelper.FASR.StringValue SubcontractorBooked {
-            get {
-                return this.SubcontractorBookedField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SubcontractorBookedField, value) != true)) {
-                    this.SubcontractorBookedField = value;
-                    this.RaisePropertyChanged("SubcontractorBooked");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=71)]
-        public FlowfinityConnectionHelper.FASR.StringValue DegreeOfDifficulty {
-            get {
-                return this.DegreeOfDifficultyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DegreeOfDifficultyField, value) != true)) {
-                    this.DegreeOfDifficultyField = value;
-                    this.RaisePropertyChanged("DegreeOfDifficulty");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=72)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection Zone {
-            get {
-                return this.ZoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ZoneField, value) != true)) {
-                    this.ZoneField = value;
-                    this.RaisePropertyChanged("Zone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=73)]
         public FlowfinityConnectionHelper.FASR.DateTimeValue RemeasureEndTime {
             get {
                 return this.RemeasureEndTimeField;
@@ -23641,176 +20769,33 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=74)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection Financing {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=68)]
+        public FlowfinityConnectionHelper.FASR.UserLookupRecord[] remeasureinstaller {
             get {
-                return this.FinancingField;
+                return this.remeasureinstallerField;
             }
             set {
-                if ((object.ReferenceEquals(this.FinancingField, value) != true)) {
-                    this.FinancingField = value;
-                    this.RaisePropertyChanged("Financing");
+                if ((object.ReferenceEquals(this.remeasureinstallerField, value) != true)) {
+                    this.remeasureinstallerField = value;
+                    this.RaisePropertyChanged("remeasureinstaller");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=75)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallations_TakePictureRecord[] TakePicture {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=69)]
+        public FlowfinityConnectionHelper.FASR.Choice Rep {
             get {
-                return this.TakePictureField;
+                return this.RepField;
             }
             set {
-                if ((object.ReferenceEquals(this.TakePictureField, value) != true)) {
-                    this.TakePictureField = value;
-                    this.RaisePropertyChanged("TakePicture");
+                if ((object.ReferenceEquals(this.RepField, value) != true)) {
+                    this.RepField = value;
+                    this.RaisePropertyChanged("Rep");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=76)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection JobType {
-            get {
-                return this.JobTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.JobTypeField, value) != true)) {
-                    this.JobTypeField = value;
-                    this.RaisePropertyChanged("JobType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=77)]
-        public FlowfinityConnectionHelper.FASR.DoubleValue BudgetedLBR {
-            get {
-                return this.BudgetedLBRField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.BudgetedLBRField, value) != true)) {
-                    this.BudgetedLBRField = value;
-                    this.RaisePropertyChanged("BudgetedLBR");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=78)]
-        public FlowfinityConnectionHelper.FASR.StringValue TruckNumber {
-            get {
-                return this.TruckNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TruckNumberField, value) != true)) {
-                    this.TruckNumberField = value;
-                    this.RaisePropertyChanged("TruckNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=79)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection SidingRequired {
-            get {
-                return this.SidingRequiredField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SidingRequiredField, value) != true)) {
-                    this.SidingRequiredField = value;
-                    this.RaisePropertyChanged("SidingRequired");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=80)]
-        public FlowfinityConnectionHelper.FASR.DoubleValue SidingBudgetedLBR {
-            get {
-                return this.SidingBudgetedLBRField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SidingBudgetedLBRField, value) != true)) {
-                    this.SidingBudgetedLBRField = value;
-                    this.RaisePropertyChanged("SidingBudgetedLBR");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=81)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection Saturday {
-            get {
-                return this.SaturdayField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SaturdayField, value) != true)) {
-                    this.SaturdayField = value;
-                    this.RaisePropertyChanged("Saturday");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=82)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection Sunday {
-            get {
-                return this.SundayField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SundayField, value) != true)) {
-                    this.SundayField = value;
-                    this.RaisePropertyChanged("Sunday");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=83)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection Asbestos {
-            get {
-                return this.AsbestosField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AsbestosField, value) != true)) {
-                    this.AsbestosField = value;
-                    this.RaisePropertyChanged("Asbestos");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=84)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection WoodDropOff {
-            get {
-                return this.WoodDropOffField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WoodDropOffField, value) != true)) {
-                    this.WoodDropOffField = value;
-                    this.RaisePropertyChanged("WoodDropOff");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=85)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection HighRisk {
-            get {
-                return this.HighRiskField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.HighRiskField, value) != true)) {
-                    this.HighRiskField = value;
-                    this.RaisePropertyChanged("HighRisk");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=86)]
-        public FlowfinityConnectionHelper.FASR.StringValue CheckRole {
-            get {
-                return this.CheckRoleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CheckRoleField, value) != true)) {
-                    this.CheckRoleField = value;
-                    this.RaisePropertyChanged("CheckRole");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=87)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=70)]
         public FlowfinityConnectionHelper.FASR.HomeInstallations_ReturnTripRecord[] ReturnTrip {
             get {
                 return this.ReturnTripField;
@@ -23823,59 +20808,293 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=88)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection LeadPaint {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=71)]
+        public FlowfinityConnectionHelper.FASR.DecimalValue SalesAmmount {
             get {
-                return this.LeadPaintField;
+                return this.SalesAmmountField;
             }
             set {
-                if ((object.ReferenceEquals(this.LeadPaintField, value) != true)) {
-                    this.LeadPaintField = value;
-                    this.RaisePropertyChanged("LeadPaint");
+                if ((object.ReferenceEquals(this.SalesAmmountField, value) != true)) {
+                    this.SalesAmmountField = value;
+                    this.RaisePropertyChanged("SalesAmmount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=72)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_SalesClawBackRecord[] SalesClawBack {
+            get {
+                return this.SalesClawBackField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SalesClawBackField, value) != true)) {
+                    this.SalesClawBackField = value;
+                    this.RaisePropertyChanged("SalesClawBack");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=73)]
+        public FlowfinityConnectionHelper.FASR.DecimalValue SalesCommission {
+            get {
+                return this.SalesCommissionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SalesCommissionField, value) != true)) {
+                    this.SalesCommissionField = value;
+                    this.RaisePropertyChanged("SalesCommission");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=74)]
+        public FlowfinityConnectionHelper.FASR.DateTimeValue SalesManagersApprovalDate {
+            get {
+                return this.SalesManagersApprovalDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SalesManagersApprovalDateField, value) != true)) {
+                    this.SalesManagersApprovalDateField = value;
+                    this.RaisePropertyChanged("SalesManagersApprovalDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=75)]
+        public FlowfinityConnectionHelper.FASR.SingleSelection Saturday {
+            get {
+                return this.SaturdayField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SaturdayField, value) != true)) {
+                    this.SaturdayField = value;
+                    this.RaisePropertyChanged("Saturday");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=76)]
+        public FlowfinityConnectionHelper.FASR.UserLookupRecord[] SeniorInstaller {
+            get {
+                return this.SeniorInstallerField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SeniorInstallerField, value) != true)) {
+                    this.SeniorInstallerField = value;
+                    this.RaisePropertyChanged("SeniorInstaller");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=77)]
+        public FlowfinityConnectionHelper.FASR.DecimalValue SidingBudgetedLBR {
+            get {
+                return this.SidingBudgetedLBRField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SidingBudgetedLBRField, value) != true)) {
+                    this.SidingBudgetedLBRField = value;
+                    this.RaisePropertyChanged("SidingBudgetedLBR");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=78)]
+        public FlowfinityConnectionHelper.FASR.DecimalValue SidingLBRBudget {
+            get {
+                return this.SidingLBRBudgetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SidingLBRBudgetField, value) != true)) {
+                    this.SidingLBRBudgetField = value;
+                    this.RaisePropertyChanged("SidingLBRBudget");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=79)]
+        public FlowfinityConnectionHelper.FASR.LongValue SidingLBRMin {
+            get {
+                return this.SidingLBRMinField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SidingLBRMinField, value) != true)) {
+                    this.SidingLBRMinField = value;
+                    this.RaisePropertyChanged("SidingLBRMin");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=80)]
+        public FlowfinityConnectionHelper.FASR.SingleSelection SidingRequired {
+            get {
+                return this.SidingRequiredField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SidingRequiredField, value) != true)) {
+                    this.SidingRequiredField = value;
+                    this.RaisePropertyChanged("SidingRequired");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=81)]
+        public FlowfinityConnectionHelper.FASR.DecimalValue SidingSQF {
+            get {
+                return this.SidingSQFField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SidingSQFField, value) != true)) {
+                    this.SidingSQFField = value;
+                    this.RaisePropertyChanged("SidingSQF");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=82)]
+        public FlowfinityConnectionHelper.FASR.StringValue Source_1 {
+            get {
+                return this.Source_1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Source_1Field, value) != true)) {
+                    this.Source_1Field = value;
+                    this.RaisePropertyChanged("Source_1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=83)]
+        public FlowfinityConnectionHelper.FASR.StringValue StreetAddress {
+            get {
+                return this.StreetAddressField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StreetAddressField, value) != true)) {
+                    this.StreetAddressField = value;
+                    this.RaisePropertyChanged("StreetAddress");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=84)]
+        public FlowfinityConnectionHelper.FASR.StringValue SubcontractorBooked {
+            get {
+                return this.SubcontractorBookedField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubcontractorBookedField, value) != true)) {
+                    this.SubcontractorBookedField = value;
+                    this.RaisePropertyChanged("SubcontractorBooked");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=85)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_SubtradeReqiredRecord[] SubtradeReqired {
+            get {
+                return this.SubtradeReqiredField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubtradeReqiredField, value) != true)) {
+                    this.SubtradeReqiredField = value;
+                    this.RaisePropertyChanged("SubtradeReqired");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=86)]
+        public FlowfinityConnectionHelper.FASR.SingleSelection Sunday {
+            get {
+                return this.SundayField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SundayField, value) != true)) {
+                    this.SundayField = value;
+                    this.RaisePropertyChanged("Sunday");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=87)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_TakePictureRecord[] TakePicture {
+            get {
+                return this.TakePictureField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TakePictureField, value) != true)) {
+                    this.TakePictureField = value;
+                    this.RaisePropertyChanged("TakePicture");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=88)]
+        public FlowfinityConnectionHelper.FASR.LongValue TotalInstallationLBRMin {
+            get {
+                return this.TotalInstallationLBRMinField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TotalInstallationLBRMinField, value) != true)) {
+                    this.TotalInstallationLBRMinField = value;
+                    this.RaisePropertyChanged("TotalInstallationLBRMin");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=89)]
-        public FlowfinityConnectionHelper.FASR.StringValue InstallationWindowLBRMin {
+        public FlowfinityConnectionHelper.FASR.StringValue TruckNumber {
             get {
-                return this.InstallationWindowLBRMinField;
+                return this.TruckNumberField;
             }
             set {
-                if ((object.ReferenceEquals(this.InstallationWindowLBRMinField, value) != true)) {
-                    this.InstallationWindowLBRMinField = value;
-                    this.RaisePropertyChanged("InstallationWindowLBRMin");
+                if ((object.ReferenceEquals(this.TruckNumberField, value) != true)) {
+                    this.TruckNumberField = value;
+                    this.RaisePropertyChanged("TruckNumber");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=90)]
-        public FlowfinityConnectionHelper.FASR.StringValue WMLinkStatus {
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_TypeofWorkRecord[] TypeofWork {
             get {
-                return this.WMLinkStatusField;
+                return this.TypeofWorkField;
             }
             set {
-                if ((object.ReferenceEquals(this.WMLinkStatusField, value) != true)) {
-                    this.WMLinkStatusField = value;
-                    this.RaisePropertyChanged("WMLinkStatus");
+                if ((object.ReferenceEquals(this.TypeofWorkField, value) != true)) {
+                    this.TypeofWorkField = value;
+                    this.RaisePropertyChanged("TypeofWork");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=91)]
-        public FlowfinityConnectionHelper.FASR.StringValue ErrorID {
+        public FlowfinityConnectionHelper.FASR.UserLookupRecord[] UserResponsible {
             get {
-                return this.ErrorIDField;
+                return this.UserResponsibleField;
             }
             set {
-                if ((object.ReferenceEquals(this.ErrorIDField, value) != true)) {
-                    this.ErrorIDField = value;
-                    this.RaisePropertyChanged("ErrorID");
+                if ((object.ReferenceEquals(this.UserResponsibleField, value) != true)) {
+                    this.UserResponsibleField = value;
+                    this.RaisePropertyChanged("UserResponsible");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=92)]
+        public FlowfinityConnectionHelper.FASR.DecimalValue WindowCost {
+            get {
+                return this.WindowCostField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WindowCostField, value) != true)) {
+                    this.WindowCostField = value;
+                    this.RaisePropertyChanged("WindowCost");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=93)]
         public FlowfinityConnectionHelper.FASR.HomeInstallations_WindowItemsRecord[] WindowItems {
             get {
                 return this.WindowItemsField;
@@ -23888,7 +21107,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=93)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=94)]
         public FlowfinityConnectionHelper.FASR.DateTimeValue WindowmakerUpdateDate {
             get {
                 return this.WindowmakerUpdateDateField;
@@ -23901,59 +21120,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=94)]
-        public FlowfinityConnectionHelper.FASR.StringValue InstallationPatioDoorLBRMin {
-            get {
-                return this.InstallationPatioDoorLBRMinField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InstallationPatioDoorLBRMinField, value) != true)) {
-                    this.InstallationPatioDoorLBRMinField = value;
-                    this.RaisePropertyChanged("InstallationPatioDoorLBRMin");
-                }
-            }
-        }
-        
         [System.Runtime.Serialization.DataMemberAttribute(Order=95)]
-        public FlowfinityConnectionHelper.FASR.StringValue InstallationDoorLBRMin {
-            get {
-                return this.InstallationDoorLBRMinField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InstallationDoorLBRMinField, value) != true)) {
-                    this.InstallationDoorLBRMinField = value;
-                    this.RaisePropertyChanged("InstallationDoorLBRMin");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=96)]
-        public FlowfinityConnectionHelper.FASR.StringValue TotalInstallationLBRMin {
-            get {
-                return this.TotalInstallationLBRMinField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TotalInstallationLBRMinField, value) != true)) {
-                    this.TotalInstallationLBRMinField = value;
-                    this.RaisePropertyChanged("TotalInstallationLBRMin");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=97)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallations_DoorItemsRecord[] DoorItems {
-            get {
-                return this.DoorItemsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DoorItemsField, value) != true)) {
-                    this.DoorItemsField = value;
-                    this.RaisePropertyChanged("DoorItems");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=98)]
         public FlowfinityConnectionHelper.FASR.StringValue WindowManufacturingStatus {
             get {
                 return this.WindowManufacturingStatusField;
@@ -23966,6 +21133,123 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
+        [System.Runtime.Serialization.DataMemberAttribute(Order=96)]
+        public FlowfinityConnectionHelper.FASR.LongValue Windows {
+            get {
+                return this.WindowsField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WindowsField, value) != true)) {
+                    this.WindowsField = value;
+                    this.RaisePropertyChanged("Windows");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=97)]
+        public FlowfinityConnectionHelper.FASR.StringValue WMLinkStatus {
+            get {
+                return this.WMLinkStatusField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WMLinkStatusField, value) != true)) {
+                    this.WMLinkStatusField = value;
+                    this.RaisePropertyChanged("WMLinkStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=98)]
+        public FlowfinityConnectionHelper.FASR.SingleSelection WoodDropOff {
+            get {
+                return this.WoodDropOffField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WoodDropOffField, value) != true)) {
+                    this.WoodDropOffField = value;
+                    this.RaisePropertyChanged("WoodDropOff");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=99)]
+        public FlowfinityConnectionHelper.FASR.StringValue WorkLeftMaterialsRequired {
+            get {
+                return this.WorkLeftMaterialsRequiredField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WorkLeftMaterialsRequiredField, value) != true)) {
+                    this.WorkLeftMaterialsRequiredField = value;
+                    this.RaisePropertyChanged("WorkLeftMaterialsRequired");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=100)]
+        public FlowfinityConnectionHelper.FASR.DateTimeValue WorkOrderDate {
+            get {
+                return this.WorkOrderDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WorkOrderDateField, value) != true)) {
+                    this.WorkOrderDateField = value;
+                    this.RaisePropertyChanged("WorkOrderDate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=101)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_WorkOrderNotesRecord[] WorkOrderNotes {
+            get {
+                return this.WorkOrderNotesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WorkOrderNotesField, value) != true)) {
+                    this.WorkOrderNotesField = value;
+                    this.RaisePropertyChanged("WorkOrderNotes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=102)]
+        public FlowfinityConnectionHelper.FASR.StringValue WorkOrderNumber {
+            get {
+                return this.WorkOrderNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WorkOrderNumberField, value) != true)) {
+                    this.WorkOrderNumberField = value;
+                    this.RaisePropertyChanged("WorkOrderNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=103)]
+        public FlowfinityConnectionHelper.FASR.StringValue WorkPhoneNumber {
+            get {
+                return this.WorkPhoneNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WorkPhoneNumberField, value) != true)) {
+                    this.WorkPhoneNumberField = value;
+                    this.RaisePropertyChanged("WorkPhoneNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=104)]
+        public FlowfinityConnectionHelper.FASR.SingleSelection Zone {
+            get {
+                return this.ZoneField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ZoneField, value) != true)) {
+                    this.ZoneField = value;
+                    this.RaisePropertyChanged("Zone");
+                }
+            }
+        }
+        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -23978,21 +21262,24 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.TypeofWorkRecord", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.CallLogRecord", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class HomeInstallations_TypeofWorkRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class HomeInstallations_CallLogRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue Type_1Field;
+        private FlowfinityConnectionHelper.FASR.UserLookupRecord[] CalledByField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LongValue Number_1Field;
+        private FlowfinityConnectionHelper.FASR.SingleSelection CalledMessageField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection ManufacturingStatusField;
+        private FlowfinityConnectionHelper.FASR.DateTimeValue DateCalledField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue Notes3Field;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -24005,40 +21292,53 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue Type_1 {
+        public FlowfinityConnectionHelper.FASR.UserLookupRecord[] CalledBy {
             get {
-                return this.Type_1Field;
+                return this.CalledByField;
             }
             set {
-                if ((object.ReferenceEquals(this.Type_1Field, value) != true)) {
-                    this.Type_1Field = value;
-                    this.RaisePropertyChanged("Type_1");
+                if ((object.ReferenceEquals(this.CalledByField, value) != true)) {
+                    this.CalledByField = value;
+                    this.RaisePropertyChanged("CalledBy");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public FlowfinityConnectionHelper.FASR.LongValue Number_1 {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.SingleSelection CalledMessage {
             get {
-                return this.Number_1Field;
+                return this.CalledMessageField;
             }
             set {
-                if ((object.ReferenceEquals(this.Number_1Field, value) != true)) {
-                    this.Number_1Field = value;
-                    this.RaisePropertyChanged("Number_1");
+                if ((object.ReferenceEquals(this.CalledMessageField, value) != true)) {
+                    this.CalledMessageField = value;
+                    this.RaisePropertyChanged("CalledMessage");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection ManufacturingStatus {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.DateTimeValue DateCalled {
             get {
-                return this.ManufacturingStatusField;
+                return this.DateCalledField;
             }
             set {
-                if ((object.ReferenceEquals(this.ManufacturingStatusField, value) != true)) {
-                    this.ManufacturingStatusField = value;
-                    this.RaisePropertyChanged("ManufacturingStatus");
+                if ((object.ReferenceEquals(this.DateCalledField, value) != true)) {
+                    this.DateCalledField = value;
+                    this.RaisePropertyChanged("DateCalled");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue Notes3 {
+            get {
+                return this.Notes3Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Notes3Field, value) != true)) {
+                    this.Notes3Field = value;
+                    this.RaisePropertyChanged("Notes3");
                 }
             }
         }
@@ -24055,18 +21355,36 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.SubtradeReqiredRecord", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.DoorItemsRecord", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class HomeInstallations_SubtradeReqiredRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class HomeInstallations_DoorItemsRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection SubTradeField;
+        private FlowfinityConnectionHelper.FASR.StringValue Description11Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection StatusField;
+        private FlowfinityConnectionHelper.FASR.StringValue Item1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.LongValue LBRMin1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.LongValue Quantity11Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue Size1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.SingleSelection Status11Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue SubQty1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue System1Field;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -24079,27 +21397,166 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.SingleSelection SubTrade {
+        public FlowfinityConnectionHelper.FASR.StringValue Description11 {
             get {
-                return this.SubTradeField;
+                return this.Description11Field;
             }
             set {
-                if ((object.ReferenceEquals(this.SubTradeField, value) != true)) {
-                    this.SubTradeField = value;
-                    this.RaisePropertyChanged("SubTrade");
+                if ((object.ReferenceEquals(this.Description11Field, value) != true)) {
+                    this.Description11Field = value;
+                    this.RaisePropertyChanged("Description11");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection Status {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue Item1 {
             get {
-                return this.StatusField;
+                return this.Item1Field;
             }
             set {
-                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
-                    this.StatusField = value;
-                    this.RaisePropertyChanged("Status");
+                if ((object.ReferenceEquals(this.Item1Field, value) != true)) {
+                    this.Item1Field = value;
+                    this.RaisePropertyChanged("Item1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.LongValue LBRMin1 {
+            get {
+                return this.LBRMin1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.LBRMin1Field, value) != true)) {
+                    this.LBRMin1Field = value;
+                    this.RaisePropertyChanged("LBRMin1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.LongValue Quantity11 {
+            get {
+                return this.Quantity11Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Quantity11Field, value) != true)) {
+                    this.Quantity11Field = value;
+                    this.RaisePropertyChanged("Quantity11");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue Size1 {
+            get {
+                return this.Size1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Size1Field, value) != true)) {
+                    this.Size1Field = value;
+                    this.RaisePropertyChanged("Size1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.SingleSelection Status11 {
+            get {
+                return this.Status11Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Status11Field, value) != true)) {
+                    this.Status11Field = value;
+                    this.RaisePropertyChanged("Status11");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue SubQty1 {
+            get {
+                return this.SubQty1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubQty1Field, value) != true)) {
+                    this.SubQty1Field = value;
+                    this.RaisePropertyChanged("SubQty1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue System1 {
+            get {
+                return this.System1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.System1Field, value) != true)) {
+                    this.System1Field = value;
+                    this.RaisePropertyChanged("System1");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.FileAttachmentRecord", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class HomeInstallations_FileAttachmentRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.BinaryValue FileNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue Notes5Field;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.BinaryValue FileName {
+            get {
+                return this.FileNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FileNameField, value) != true)) {
+                    this.FileNameField = value;
+                    this.RaisePropertyChanged("FileName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue Notes5 {
+            get {
+                return this.Notes5Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Notes5Field, value) != true)) {
+                    this.Notes5Field = value;
+                    this.RaisePropertyChanged("Notes5");
                 }
             }
         }
@@ -24172,7 +21629,7 @@ namespace FlowfinityConnectionHelper.FASR {
         private FlowfinityConnectionHelper.FASR.Choice MaterialsField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue QuantityField;
+        private FlowfinityConnectionHelper.FASR.DecimalValue QuantityField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -24198,7 +21655,7 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.DoubleValue Quantity {
+        public FlowfinityConnectionHelper.FASR.DecimalValue Quantity {
             get {
                 return this.QuantityField;
             }
@@ -24206,115 +21663,6 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.QuantityField, value) != true)) {
                     this.QuantityField = value;
                     this.RaisePropertyChanged("Quantity");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.OtherInstallationMaterialsRecord", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class HomeInstallations_OtherInstallationMaterialsRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection MaterialSourceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue DescriptionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue InvoiceNumbField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue MaterialCostField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue NotesField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.SingleSelection MaterialSource {
-            get {
-                return this.MaterialSourceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MaterialSourceField, value) != true)) {
-                    this.MaterialSourceField = value;
-                    this.RaisePropertyChanged("MaterialSource");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public FlowfinityConnectionHelper.FASR.StringValue Description {
-            get {
-                return this.DescriptionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
-                    this.DescriptionField = value;
-                    this.RaisePropertyChanged("Description");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public FlowfinityConnectionHelper.FASR.StringValue InvoiceNumb {
-            get {
-                return this.InvoiceNumbField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InvoiceNumbField, value) != true)) {
-                    this.InvoiceNumbField = value;
-                    this.RaisePropertyChanged("InvoiceNumb");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public FlowfinityConnectionHelper.FASR.DoubleValue MaterialCost {
-            get {
-                return this.MaterialCostField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MaterialCostField, value) != true)) {
-                    this.MaterialCostField = value;
-                    this.RaisePropertyChanged("MaterialCost");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.StringValue Notes {
-            get {
-                return this.NotesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
-                    this.NotesField = value;
-                    this.RaisePropertyChanged("Notes");
                 }
             }
         }
@@ -24469,24 +21817,27 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.CallLogRecord", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.OtherInstallationMaterialsRecord", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class HomeInstallations_CallLogRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class HomeInstallations_OtherInstallationMaterialsRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DateTimeValue DateCalledField;
+        private FlowfinityConnectionHelper.FASR.StringValue DescriptionField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection CalledMessageField;
+        private FlowfinityConnectionHelper.FASR.StringValue InvoiceNumbField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.UserLookupRecord[] CalledByField;
+        private FlowfinityConnectionHelper.FASR.DecimalValue MaterialCostField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue Notes3Field;
+        private FlowfinityConnectionHelper.FASR.SingleSelection MaterialSourceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue NotesField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -24499,53 +21850,66 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.DateTimeValue DateCalled {
+        public FlowfinityConnectionHelper.FASR.StringValue Description {
             get {
-                return this.DateCalledField;
+                return this.DescriptionField;
             }
             set {
-                if ((object.ReferenceEquals(this.DateCalledField, value) != true)) {
-                    this.DateCalledField = value;
-                    this.RaisePropertyChanged("DateCalled");
+                if ((object.ReferenceEquals(this.DescriptionField, value) != true)) {
+                    this.DescriptionField = value;
+                    this.RaisePropertyChanged("Description");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection CalledMessage {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue InvoiceNumb {
             get {
-                return this.CalledMessageField;
+                return this.InvoiceNumbField;
             }
             set {
-                if ((object.ReferenceEquals(this.CalledMessageField, value) != true)) {
-                    this.CalledMessageField = value;
-                    this.RaisePropertyChanged("CalledMessage");
+                if ((object.ReferenceEquals(this.InvoiceNumbField, value) != true)) {
+                    this.InvoiceNumbField = value;
+                    this.RaisePropertyChanged("InvoiceNumb");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public FlowfinityConnectionHelper.FASR.UserLookupRecord[] CalledBy {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.DecimalValue MaterialCost {
             get {
-                return this.CalledByField;
+                return this.MaterialCostField;
             }
             set {
-                if ((object.ReferenceEquals(this.CalledByField, value) != true)) {
-                    this.CalledByField = value;
-                    this.RaisePropertyChanged("CalledBy");
+                if ((object.ReferenceEquals(this.MaterialCostField, value) != true)) {
+                    this.MaterialCostField = value;
+                    this.RaisePropertyChanged("MaterialCost");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public FlowfinityConnectionHelper.FASR.StringValue Notes3 {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.SingleSelection MaterialSource {
             get {
-                return this.Notes3Field;
+                return this.MaterialSourceField;
             }
             set {
-                if ((object.ReferenceEquals(this.Notes3Field, value) != true)) {
-                    this.Notes3Field = value;
-                    this.RaisePropertyChanged("Notes3");
+                if ((object.ReferenceEquals(this.MaterialSourceField, value) != true)) {
+                    this.MaterialSourceField = value;
+                    this.RaisePropertyChanged("MaterialSource");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue Notes {
+            get {
+                return this.NotesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
+                    this.NotesField = value;
+                    this.RaisePropertyChanged("Notes");
                 }
             }
         }
@@ -24570,7 +21934,7 @@ namespace FlowfinityConnectionHelper.FASR {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.UserLookupRecord[] RequestedByField;
+        private FlowfinityConnectionHelper.FASR.DecimalValue Cost1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.DateTimeValue Date_1Field;
@@ -24579,10 +21943,10 @@ namespace FlowfinityConnectionHelper.FASR {
         private FlowfinityConnectionHelper.FASR.SingleSelection DepartmentResponsibleField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue Cost1Field;
+        private FlowfinityConnectionHelper.FASR.StringValue Reason2Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue Reason2Field;
+        private FlowfinityConnectionHelper.FASR.UserLookupRecord[] RequestedByField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -24591,6 +21955,58 @@ namespace FlowfinityConnectionHelper.FASR {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.DecimalValue Cost1 {
+            get {
+                return this.Cost1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Cost1Field, value) != true)) {
+                    this.Cost1Field = value;
+                    this.RaisePropertyChanged("Cost1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.DateTimeValue Date_1 {
+            get {
+                return this.Date_1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Date_1Field, value) != true)) {
+                    this.Date_1Field = value;
+                    this.RaisePropertyChanged("Date_1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.SingleSelection DepartmentResponsible {
+            get {
+                return this.DepartmentResponsibleField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DepartmentResponsibleField, value) != true)) {
+                    this.DepartmentResponsibleField = value;
+                    this.RaisePropertyChanged("DepartmentResponsible");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue Reason2 {
+            get {
+                return this.Reason2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Reason2Field, value) != true)) {
+                    this.Reason2Field = value;
+                    this.RaisePropertyChanged("Reason2");
+                }
             }
         }
         
@@ -24607,58 +22023,6 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public FlowfinityConnectionHelper.FASR.DateTimeValue Date_1 {
-            get {
-                return this.Date_1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Date_1Field, value) != true)) {
-                    this.Date_1Field = value;
-                    this.RaisePropertyChanged("Date_1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection DepartmentResponsible {
-            get {
-                return this.DepartmentResponsibleField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DepartmentResponsibleField, value) != true)) {
-                    this.DepartmentResponsibleField = value;
-                    this.RaisePropertyChanged("DepartmentResponsible");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public FlowfinityConnectionHelper.FASR.DoubleValue Cost1 {
-            get {
-                return this.Cost1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Cost1Field, value) != true)) {
-                    this.Cost1Field = value;
-                    this.RaisePropertyChanged("Cost1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.StringValue Reason2 {
-            get {
-                return this.Reason2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Reason2Field, value) != true)) {
-                    this.Reason2Field = value;
-                    this.RaisePropertyChanged("Reason2");
-                }
-            }
-        }
-        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -24671,27 +22035,15 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.WorkOrderNotesRecord", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.ReturnTripRecord", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class HomeInstallations_WorkOrderNotesRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class HomeInstallations_ReturnTripRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DateTimeValue Date11Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection DepartmentField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.UserLookupRecord[] User_1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue Notes4Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection NoteReferenceField;
+        private FlowfinityConnectionHelper.FASR.DateTimeValue ScheduledDate1Field;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -24704,66 +22056,14 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.DateTimeValue Date11 {
+        public FlowfinityConnectionHelper.FASR.DateTimeValue ScheduledDate1 {
             get {
-                return this.Date11Field;
+                return this.ScheduledDate1Field;
             }
             set {
-                if ((object.ReferenceEquals(this.Date11Field, value) != true)) {
-                    this.Date11Field = value;
-                    this.RaisePropertyChanged("Date11");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.SingleSelection Department {
-            get {
-                return this.DepartmentField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DepartmentField, value) != true)) {
-                    this.DepartmentField = value;
-                    this.RaisePropertyChanged("Department");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.UserLookupRecord[] User_1 {
-            get {
-                return this.User_1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.User_1Field, value) != true)) {
-                    this.User_1Field = value;
-                    this.RaisePropertyChanged("User_1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public FlowfinityConnectionHelper.FASR.StringValue Notes4 {
-            get {
-                return this.Notes4Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Notes4Field, value) != true)) {
-                    this.Notes4Field = value;
-                    this.RaisePropertyChanged("Notes4");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.SingleSelection NoteReference {
-            get {
-                return this.NoteReferenceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NoteReferenceField, value) != true)) {
-                    this.NoteReferenceField = value;
-                    this.RaisePropertyChanged("NoteReference");
+                if ((object.ReferenceEquals(this.ScheduledDate1Field, value) != true)) {
+                    this.ScheduledDate1Field = value;
+                    this.RaisePropertyChanged("ScheduledDate1");
                 }
             }
         }
@@ -24788,13 +22088,13 @@ namespace FlowfinityConnectionHelper.FASR {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.DecimalValue Cost2Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.DateTimeValue Date1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.StringValue ReasonforclawbackField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue Cost2Field;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -24803,6 +22103,19 @@ namespace FlowfinityConnectionHelper.FASR {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.DecimalValue Cost2 {
+            get {
+                return this.Cost2Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Cost2Field, value) != true)) {
+                    this.Cost2Field = value;
+                    this.RaisePropertyChanged("Cost2");
+                }
             }
         }
         
@@ -24832,19 +22145,6 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public FlowfinityConnectionHelper.FASR.DoubleValue Cost2 {
-            get {
-                return this.Cost2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Cost2Field, value) != true)) {
-                    this.Cost2Field = value;
-                    this.RaisePropertyChanged("Cost2");
-                }
-            }
-        }
-        
         public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
         
         protected void RaisePropertyChanged(string propertyName) {
@@ -24857,18 +22157,18 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.FileAttachmentRecord", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.SubtradeReqiredRecord", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class HomeInstallations_FileAttachmentRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class HomeInstallations_SubtradeReqiredRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.BinaryValue FileNameField;
+        private FlowfinityConnectionHelper.FASR.SingleSelection StatusField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue Notes5Field;
+        private FlowfinityConnectionHelper.FASR.SingleSelection SubTradeField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -24881,27 +22181,27 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.BinaryValue FileName {
+        public FlowfinityConnectionHelper.FASR.SingleSelection Status {
             get {
-                return this.FileNameField;
+                return this.StatusField;
             }
             set {
-                if ((object.ReferenceEquals(this.FileNameField, value) != true)) {
-                    this.FileNameField = value;
-                    this.RaisePropertyChanged("FileName");
+                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
+                    this.StatusField = value;
+                    this.RaisePropertyChanged("Status");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue Notes5 {
+        public FlowfinityConnectionHelper.FASR.SingleSelection SubTrade {
             get {
-                return this.Notes5Field;
+                return this.SubTradeField;
             }
             set {
-                if ((object.ReferenceEquals(this.Notes5Field, value) != true)) {
-                    this.Notes5Field = value;
-                    this.RaisePropertyChanged("Notes5");
+                if ((object.ReferenceEquals(this.SubTradeField, value) != true)) {
+                    this.SubTradeField = value;
+                    this.RaisePropertyChanged("SubTrade");
                 }
             }
         }
@@ -24979,15 +22279,21 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.ReturnTripRecord", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.TypeofWorkRecord", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class HomeInstallations_ReturnTripRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class HomeInstallations_TypeofWorkRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DateTimeValue ScheduledDate1Field;
+        private FlowfinityConnectionHelper.FASR.SingleSelection ManufacturingStatusField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.LongValue Number_1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue Type_1Field;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -25000,14 +22306,40 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.DateTimeValue ScheduledDate1 {
+        public FlowfinityConnectionHelper.FASR.SingleSelection ManufacturingStatus {
             get {
-                return this.ScheduledDate1Field;
+                return this.ManufacturingStatusField;
             }
             set {
-                if ((object.ReferenceEquals(this.ScheduledDate1Field, value) != true)) {
-                    this.ScheduledDate1Field = value;
-                    this.RaisePropertyChanged("ScheduledDate1");
+                if ((object.ReferenceEquals(this.ManufacturingStatusField, value) != true)) {
+                    this.ManufacturingStatusField = value;
+                    this.RaisePropertyChanged("ManufacturingStatus");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.LongValue Number_1 {
+            get {
+                return this.Number_1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Number_1Field, value) != true)) {
+                    this.Number_1Field = value;
+                    this.RaisePropertyChanged("Number_1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue Type_1 {
+            get {
+                return this.Type_1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Type_1Field, value) != true)) {
+                    this.Type_1Field = value;
+                    this.RaisePropertyChanged("Type_1");
                 }
             }
         }
@@ -25032,28 +22364,28 @@ namespace FlowfinityConnectionHelper.FASR {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue Description1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.StringValue ItemField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue System_1Field;
+        private FlowfinityConnectionHelper.FASR.LongValue LBRMinField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue Description1Field;
+        private FlowfinityConnectionHelper.FASR.LongValue Quantity1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.StringValue Size_1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue Quantity1Field;
+        private FlowfinityConnectionHelper.FASR.SingleSelection Status1Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.StringValue SubQtyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue Status1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue LBRMinField;
+        private FlowfinityConnectionHelper.FASR.StringValue System_1Field;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -25062,6 +22394,19 @@ namespace FlowfinityConnectionHelper.FASR {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue Description1 {
+            get {
+                return this.Description1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Description1Field, value) != true)) {
+                    this.Description1Field = value;
+                    this.RaisePropertyChanged("Description1");
+                }
             }
         }
         
@@ -25079,32 +22424,32 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue System_1 {
+        public FlowfinityConnectionHelper.FASR.LongValue LBRMin {
             get {
-                return this.System_1Field;
+                return this.LBRMinField;
             }
             set {
-                if ((object.ReferenceEquals(this.System_1Field, value) != true)) {
-                    this.System_1Field = value;
-                    this.RaisePropertyChanged("System_1");
+                if ((object.ReferenceEquals(this.LBRMinField, value) != true)) {
+                    this.LBRMinField = value;
+                    this.RaisePropertyChanged("LBRMin");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public FlowfinityConnectionHelper.FASR.StringValue Description1 {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.LongValue Quantity1 {
             get {
-                return this.Description1Field;
+                return this.Quantity1Field;
             }
             set {
-                if ((object.ReferenceEquals(this.Description1Field, value) != true)) {
-                    this.Description1Field = value;
-                    this.RaisePropertyChanged("Description1");
+                if ((object.ReferenceEquals(this.Quantity1Field, value) != true)) {
+                    this.Quantity1Field = value;
+                    this.RaisePropertyChanged("Quantity1");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public FlowfinityConnectionHelper.FASR.StringValue Size_1 {
             get {
                 return this.Size_1Field;
@@ -25117,20 +22462,20 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.StringValue Quantity1 {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.SingleSelection Status1 {
             get {
-                return this.Quantity1Field;
+                return this.Status1Field;
             }
             set {
-                if ((object.ReferenceEquals(this.Quantity1Field, value) != true)) {
-                    this.Quantity1Field = value;
-                    this.RaisePropertyChanged("Quantity1");
+                if ((object.ReferenceEquals(this.Status1Field, value) != true)) {
+                    this.Status1Field = value;
+                    this.RaisePropertyChanged("Status1");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public FlowfinityConnectionHelper.FASR.StringValue SubQty {
             get {
                 return this.SubQtyField;
@@ -25143,28 +22488,15 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public FlowfinityConnectionHelper.FASR.StringValue Status1 {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue System_1 {
             get {
-                return this.Status1Field;
+                return this.System_1Field;
             }
             set {
-                if ((object.ReferenceEquals(this.Status1Field, value) != true)) {
-                    this.Status1Field = value;
-                    this.RaisePropertyChanged("Status1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public FlowfinityConnectionHelper.FASR.StringValue LBRMin {
-            get {
-                return this.LBRMinField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LBRMinField, value) != true)) {
-                    this.LBRMinField = value;
-                    this.RaisePropertyChanged("LBRMin");
+                if ((object.ReferenceEquals(this.System_1Field, value) != true)) {
+                    this.System_1Field = value;
+                    this.RaisePropertyChanged("System_1");
                 }
             }
         }
@@ -25181,36 +22513,27 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.DoorItemsRecord", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.WorkOrderNotesRecord", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class HomeInstallations_DoorItemsRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class HomeInstallations_WorkOrderNotesRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue Item1Field;
+        private FlowfinityConnectionHelper.FASR.DateTimeValue Date11Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue System1Field;
+        private FlowfinityConnectionHelper.FASR.SingleSelection DepartmentField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue Description11Field;
+        private FlowfinityConnectionHelper.FASR.SingleSelection NoteReferenceField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue Size1Field;
+        private FlowfinityConnectionHelper.FASR.StringValue Notes4Field;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue Quantity11Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue SubQty1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue Status11Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue LBRMin1Field;
+        private FlowfinityConnectionHelper.FASR.UserLookupRecord[] User_1Field;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -25223,105 +22546,66 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue Item1 {
+        public FlowfinityConnectionHelper.FASR.DateTimeValue Date11 {
             get {
-                return this.Item1Field;
+                return this.Date11Field;
             }
             set {
-                if ((object.ReferenceEquals(this.Item1Field, value) != true)) {
-                    this.Item1Field = value;
-                    this.RaisePropertyChanged("Item1");
+                if ((object.ReferenceEquals(this.Date11Field, value) != true)) {
+                    this.Date11Field = value;
+                    this.RaisePropertyChanged("Date11");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue System1 {
+        public FlowfinityConnectionHelper.FASR.SingleSelection Department {
             get {
-                return this.System1Field;
+                return this.DepartmentField;
             }
             set {
-                if ((object.ReferenceEquals(this.System1Field, value) != true)) {
-                    this.System1Field = value;
-                    this.RaisePropertyChanged("System1");
+                if ((object.ReferenceEquals(this.DepartmentField, value) != true)) {
+                    this.DepartmentField = value;
+                    this.RaisePropertyChanged("Department");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
-        public FlowfinityConnectionHelper.FASR.StringValue Description11 {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.SingleSelection NoteReference {
             get {
-                return this.Description11Field;
+                return this.NoteReferenceField;
             }
             set {
-                if ((object.ReferenceEquals(this.Description11Field, value) != true)) {
-                    this.Description11Field = value;
-                    this.RaisePropertyChanged("Description11");
+                if ((object.ReferenceEquals(this.NoteReferenceField, value) != true)) {
+                    this.NoteReferenceField = value;
+                    this.RaisePropertyChanged("NoteReference");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public FlowfinityConnectionHelper.FASR.StringValue Size1 {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue Notes4 {
             get {
-                return this.Size1Field;
+                return this.Notes4Field;
             }
             set {
-                if ((object.ReferenceEquals(this.Size1Field, value) != true)) {
-                    this.Size1Field = value;
-                    this.RaisePropertyChanged("Size1");
+                if ((object.ReferenceEquals(this.Notes4Field, value) != true)) {
+                    this.Notes4Field = value;
+                    this.RaisePropertyChanged("Notes4");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.StringValue Quantity11 {
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.UserLookupRecord[] User_1 {
             get {
-                return this.Quantity11Field;
+                return this.User_1Field;
             }
             set {
-                if ((object.ReferenceEquals(this.Quantity11Field, value) != true)) {
-                    this.Quantity11Field = value;
-                    this.RaisePropertyChanged("Quantity11");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public FlowfinityConnectionHelper.FASR.StringValue SubQty1 {
-            get {
-                return this.SubQty1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SubQty1Field, value) != true)) {
-                    this.SubQty1Field = value;
-                    this.RaisePropertyChanged("SubQty1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=6)]
-        public FlowfinityConnectionHelper.FASR.StringValue Status11 {
-            get {
-                return this.Status11Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Status11Field, value) != true)) {
-                    this.Status11Field = value;
-                    this.RaisePropertyChanged("Status11");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=7)]
-        public FlowfinityConnectionHelper.FASR.StringValue LBRMin1 {
-            get {
-                return this.LBRMin1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LBRMin1Field, value) != true)) {
-                    this.LBRMin1Field = value;
-                    this.RaisePropertyChanged("LBRMin1");
+                if ((object.ReferenceEquals(this.User_1Field, value) != true)) {
+                    this.User_1Field = value;
+                    this.RaisePropertyChanged("User_1");
                 }
             }
         }
@@ -25367,435 +22651,6 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.BarcodeField, value) != true)) {
                     this.BarcodeField = value;
                     this.RaisePropertyChanged("Barcode");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SalesReviewRecord", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SalesReviewRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue CentraRating1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue CentraRating2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue CentraRating3Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue CentraRating4Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue CentraRating5Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection CodelDataEntryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue CodelRating2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue CodelRating3Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue CodelRating4Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue CodelRating5Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DecimalValue ContractDifferenceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection ContractQualityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue ContractRating1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue ContractRating2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue ContractRating3Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue ContractRating4Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue ContractRating5Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DecimalValue ContractValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue DoorRating1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue NotesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.Choice SalesRepField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection StatusField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.UserLookupRecord[] SubmitedByField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection WMDataEntryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue WorkOrderField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue CentraRating1 {
-            get {
-                return this.CentraRating1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CentraRating1Field, value) != true)) {
-                    this.CentraRating1Field = value;
-                    this.RaisePropertyChanged("CentraRating1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue CentraRating2 {
-            get {
-                return this.CentraRating2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CentraRating2Field, value) != true)) {
-                    this.CentraRating2Field = value;
-                    this.RaisePropertyChanged("CentraRating2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue CentraRating3 {
-            get {
-                return this.CentraRating3Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CentraRating3Field, value) != true)) {
-                    this.CentraRating3Field = value;
-                    this.RaisePropertyChanged("CentraRating3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue CentraRating4 {
-            get {
-                return this.CentraRating4Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CentraRating4Field, value) != true)) {
-                    this.CentraRating4Field = value;
-                    this.RaisePropertyChanged("CentraRating4");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue CentraRating5 {
-            get {
-                return this.CentraRating5Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CentraRating5Field, value) != true)) {
-                    this.CentraRating5Field = value;
-                    this.RaisePropertyChanged("CentraRating5");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.SingleSelection CodelDataEntry {
-            get {
-                return this.CodelDataEntryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CodelDataEntryField, value) != true)) {
-                    this.CodelDataEntryField = value;
-                    this.RaisePropertyChanged("CodelDataEntry");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue CodelRating2 {
-            get {
-                return this.CodelRating2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CodelRating2Field, value) != true)) {
-                    this.CodelRating2Field = value;
-                    this.RaisePropertyChanged("CodelRating2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue CodelRating3 {
-            get {
-                return this.CodelRating3Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CodelRating3Field, value) != true)) {
-                    this.CodelRating3Field = value;
-                    this.RaisePropertyChanged("CodelRating3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue CodelRating4 {
-            get {
-                return this.CodelRating4Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CodelRating4Field, value) != true)) {
-                    this.CodelRating4Field = value;
-                    this.RaisePropertyChanged("CodelRating4");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue CodelRating5 {
-            get {
-                return this.CodelRating5Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CodelRating5Field, value) != true)) {
-                    this.CodelRating5Field = value;
-                    this.RaisePropertyChanged("CodelRating5");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.DecimalValue ContractDifference {
-            get {
-                return this.ContractDifferenceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContractDifferenceField, value) != true)) {
-                    this.ContractDifferenceField = value;
-                    this.RaisePropertyChanged("ContractDifference");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.SingleSelection ContractQuality {
-            get {
-                return this.ContractQualityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContractQualityField, value) != true)) {
-                    this.ContractQualityField = value;
-                    this.RaisePropertyChanged("ContractQuality");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue ContractRating1 {
-            get {
-                return this.ContractRating1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContractRating1Field, value) != true)) {
-                    this.ContractRating1Field = value;
-                    this.RaisePropertyChanged("ContractRating1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue ContractRating2 {
-            get {
-                return this.ContractRating2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContractRating2Field, value) != true)) {
-                    this.ContractRating2Field = value;
-                    this.RaisePropertyChanged("ContractRating2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue ContractRating3 {
-            get {
-                return this.ContractRating3Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContractRating3Field, value) != true)) {
-                    this.ContractRating3Field = value;
-                    this.RaisePropertyChanged("ContractRating3");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue ContractRating4 {
-            get {
-                return this.ContractRating4Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContractRating4Field, value) != true)) {
-                    this.ContractRating4Field = value;
-                    this.RaisePropertyChanged("ContractRating4");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue ContractRating5 {
-            get {
-                return this.ContractRating5Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContractRating5Field, value) != true)) {
-                    this.ContractRating5Field = value;
-                    this.RaisePropertyChanged("ContractRating5");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.DecimalValue ContractValue {
-            get {
-                return this.ContractValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ContractValueField, value) != true)) {
-                    this.ContractValueField = value;
-                    this.RaisePropertyChanged("ContractValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue DoorRating1 {
-            get {
-                return this.DoorRating1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.DoorRating1Field, value) != true)) {
-                    this.DoorRating1Field = value;
-                    this.RaisePropertyChanged("DoorRating1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue Notes {
-            get {
-                return this.NotesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
-                    this.NotesField = value;
-                    this.RaisePropertyChanged("Notes");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.Choice SalesRep {
-            get {
-                return this.SalesRepField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SalesRepField, value) != true)) {
-                    this.SalesRepField = value;
-                    this.RaisePropertyChanged("SalesRep");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.SingleSelection Status {
-            get {
-                return this.StatusField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.StatusField, value) != true)) {
-                    this.StatusField = value;
-                    this.RaisePropertyChanged("Status");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.UserLookupRecord[] SubmitedBy {
-            get {
-                return this.SubmitedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SubmitedByField, value) != true)) {
-                    this.SubmitedByField = value;
-                    this.RaisePropertyChanged("SubmitedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.SingleSelection WMDataEntry {
-            get {
-                return this.WMDataEntryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WMDataEntryField, value) != true)) {
-                    this.WMDataEntryField = value;
-                    this.RaisePropertyChanged("WMDataEntry");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue WorkOrder {
-            get {
-                return this.WorkOrderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WorkOrderField, value) != true)) {
-                    this.WorkOrderField = value;
-                    this.RaisePropertyChanged("WorkOrder");
                 }
             }
         }
@@ -26174,131 +23029,6 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.UnitField, value) != true)) {
                     this.UnitField = value;
                     this.RaisePropertyChanged("Unit");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMSRecord", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMSRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue AddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue EmailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue FirstNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection GenderField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue LastNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue PhoneField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue Address {
-            get {
-                return this.AddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AddressField, value) != true)) {
-                    this.AddressField = value;
-                    this.RaisePropertyChanged("Address");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue Email {
-            get {
-                return this.EmailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailField, value) != true)) {
-                    this.EmailField = value;
-                    this.RaisePropertyChanged("Email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue FirstName {
-            get {
-                return this.FirstNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
-                    this.FirstNameField = value;
-                    this.RaisePropertyChanged("FirstName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.SingleSelection Gender {
-            get {
-                return this.GenderField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.GenderField, value) != true)) {
-                    this.GenderField = value;
-                    this.RaisePropertyChanged("Gender");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue LastName {
-            get {
-                return this.LastNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
-                    this.LastNameField = value;
-                    this.RaisePropertyChanged("LastName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue Phone {
-            get {
-                return this.PhoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.PhoneField, value) != true)) {
-                    this.PhoneField = value;
-                    this.RaisePropertyChanged("Phone");
                 }
             }
         }
@@ -26834,99 +23564,6 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.RejectedBy1Field, value) != true)) {
                     this.RejectedBy1Field = value;
                     this.RaisePropertyChanged("RejectedBy1");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="testappRecord", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class testappRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue emailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection test2Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue testfieldField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DecimalValue valueField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue email {
-            get {
-                return this.emailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.emailField, value) != true)) {
-                    this.emailField = value;
-                    this.RaisePropertyChanged("email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.SingleSelection test2 {
-            get {
-                return this.test2Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.test2Field, value) != true)) {
-                    this.test2Field = value;
-                    this.RaisePropertyChanged("test2");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue testfield {
-            get {
-                return this.testfieldField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.testfieldField, value) != true)) {
-                    this.testfieldField = value;
-                    this.RaisePropertyChanged("testfield");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.DecimalValue value {
-            get {
-                return this.valueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.valueField, value) != true)) {
-                    this.valueField = value;
-                    this.RaisePropertyChanged("value");
                 }
             }
         }
@@ -27875,304 +24512,6 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublishedRecord", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SchedulePublishedRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DateTimeValue Date_1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.Choice EmployeeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.Choice Job_1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.MultiSelection SeniorInstallerField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.Choice ServiceField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.DateTimeValue Date_1 {
-            get {
-                return this.Date_1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Date_1Field, value) != true)) {
-                    this.Date_1Field = value;
-                    this.RaisePropertyChanged("Date_1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.Choice Employee {
-            get {
-                return this.EmployeeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmployeeField, value) != true)) {
-                    this.EmployeeField = value;
-                    this.RaisePropertyChanged("Employee");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.Choice Job_1 {
-            get {
-                return this.Job_1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Job_1Field, value) != true)) {
-                    this.Job_1Field = value;
-                    this.RaisePropertyChanged("Job_1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.MultiSelection SeniorInstaller {
-            get {
-                return this.SeniorInstallerField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SeniorInstallerField, value) != true)) {
-                    this.SeniorInstallerField = value;
-                    this.RaisePropertyChanged("SeniorInstaller");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.Choice Service {
-            get {
-                return this.ServiceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ServiceField, value) != true)) {
-                    this.ServiceField = value;
-                    this.RaisePropertyChanged("Service");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CHIPurchaseOrderRecord", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class CHIPurchaseOrderRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.BinaryValue AttachPIctureField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection CostTypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue InvoiceNumberField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue NotesField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue Notes1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.StringValue POField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.SingleSelection Source_1Field;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.UserLookupRecord[] SubmitedByField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.DoubleValue TotalField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.Choice WorkOrderNumberField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.BinaryValue AttachPIcture {
-            get {
-                return this.AttachPIctureField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.AttachPIctureField, value) != true)) {
-                    this.AttachPIctureField = value;
-                    this.RaisePropertyChanged("AttachPIcture");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.SingleSelection CostType {
-            get {
-                return this.CostTypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CostTypeField, value) != true)) {
-                    this.CostTypeField = value;
-                    this.RaisePropertyChanged("CostType");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue InvoiceNumber {
-            get {
-                return this.InvoiceNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.InvoiceNumberField, value) != true)) {
-                    this.InvoiceNumberField = value;
-                    this.RaisePropertyChanged("InvoiceNumber");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue Notes {
-            get {
-                return this.NotesField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
-                    this.NotesField = value;
-                    this.RaisePropertyChanged("Notes");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue Notes1 {
-            get {
-                return this.Notes1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Notes1Field, value) != true)) {
-                    this.Notes1Field = value;
-                    this.RaisePropertyChanged("Notes1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.StringValue PO {
-            get {
-                return this.POField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.POField, value) != true)) {
-                    this.POField = value;
-                    this.RaisePropertyChanged("PO");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.SingleSelection Source_1 {
-            get {
-                return this.Source_1Field;
-            }
-            set {
-                if ((object.ReferenceEquals(this.Source_1Field, value) != true)) {
-                    this.Source_1Field = value;
-                    this.RaisePropertyChanged("Source_1");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.UserLookupRecord[] SubmitedBy {
-            get {
-                return this.SubmitedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SubmitedByField, value) != true)) {
-                    this.SubmitedByField = value;
-                    this.RaisePropertyChanged("SubmitedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.DoubleValue Total {
-            get {
-                return this.TotalField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TotalField, value) != true)) {
-                    this.TotalField = value;
-                    this.RaisePropertyChanged("Total");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.Choice WorkOrderNumber {
-            get {
-                return this.WorkOrderNumberField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.WorkOrderNumberField, value) != true)) {
-                    this.WorkOrderNumberField = value;
-                    this.RaisePropertyChanged("WorkOrderNumber");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReviewRecord", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
     public partial class ServiceReviewRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -28711,6 +25050,195 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.TimeStampField, value) != true)) {
                     this.TimeStampField = value;
                     this.RaisePropertyChanged("TimeStamp");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CHIPurchaseOrderRecord", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class CHIPurchaseOrderRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.BinaryValue AttachPIctureField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.SingleSelection CostTypeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue InvoiceNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue NotesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue Notes1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue POField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.SingleSelection Source_1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.UserLookupRecord[] SubmitedByField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.DoubleValue TotalField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.Choice WorkOrderNumberField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.BinaryValue AttachPIcture {
+            get {
+                return this.AttachPIctureField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.AttachPIctureField, value) != true)) {
+                    this.AttachPIctureField = value;
+                    this.RaisePropertyChanged("AttachPIcture");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.SingleSelection CostType {
+            get {
+                return this.CostTypeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CostTypeField, value) != true)) {
+                    this.CostTypeField = value;
+                    this.RaisePropertyChanged("CostType");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue InvoiceNumber {
+            get {
+                return this.InvoiceNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.InvoiceNumberField, value) != true)) {
+                    this.InvoiceNumberField = value;
+                    this.RaisePropertyChanged("InvoiceNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue Notes {
+            get {
+                return this.NotesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NotesField, value) != true)) {
+                    this.NotesField = value;
+                    this.RaisePropertyChanged("Notes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue Notes1 {
+            get {
+                return this.Notes1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Notes1Field, value) != true)) {
+                    this.Notes1Field = value;
+                    this.RaisePropertyChanged("Notes1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue PO {
+            get {
+                return this.POField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.POField, value) != true)) {
+                    this.POField = value;
+                    this.RaisePropertyChanged("PO");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.SingleSelection Source_1 {
+            get {
+                return this.Source_1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Source_1Field, value) != true)) {
+                    this.Source_1Field = value;
+                    this.RaisePropertyChanged("Source_1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.UserLookupRecord[] SubmitedBy {
+            get {
+                return this.SubmitedByField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SubmitedByField, value) != true)) {
+                    this.SubmitedByField = value;
+                    this.RaisePropertyChanged("SubmitedBy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.DoubleValue Total {
+            get {
+                return this.TotalField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TotalField, value) != true)) {
+                    this.TotalField = value;
+                    this.RaisePropertyChanged("Total");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.Choice WorkOrderNumber {
+            get {
+                return this.WorkOrderNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WorkOrderNumberField, value) != true)) {
+                    this.WorkOrderNumberField = value;
+                    this.RaisePropertyChanged("WorkOrderNumber");
                 }
             }
         }
@@ -29303,16 +25831,16 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_AddRecord_Request", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_GetWindowmaker_Request", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class HomeInstallations_AddRecord_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class HomeInstallations_GetWindowmaker_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         private System.DateTime CommitTimeField;
         
-        private FlowfinityConnectionHelper.FASR.HomeInstallations_AddRecord OperationField;
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_GetWindowmaker OperationField;
         
         private long TransactionIdField;
         
@@ -29340,81 +25868,7 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallations_AddRecord Operation {
-            get {
-                return this.OperationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OperationField, value) != true)) {
-                    this.OperationField = value;
-                    this.RaisePropertyChanged("Operation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long TransactionId {
-            get {
-                return this.TransactionIdField;
-            }
-            set {
-                if ((this.TransactionIdField.Equals(value) != true)) {
-                    this.TransactionIdField = value;
-                    this.RaisePropertyChanged("TransactionId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_CreateServiceRequest_Request", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class HomeInstallations_CreateServiceRequest_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.DateTime CommitTimeField;
-        
-        private FlowfinityConnectionHelper.FASR.HomeInstallations_CreateServiceRequest OperationField;
-        
-        private long TransactionIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime CommitTime {
-            get {
-                return this.CommitTimeField;
-            }
-            set {
-                if ((this.CommitTimeField.Equals(value) != true)) {
-                    this.CommitTimeField = value;
-                    this.RaisePropertyChanged("CommitTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallations_CreateServiceRequest Operation {
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_GetWindowmaker Operation {
             get {
                 return this.OperationField;
             }
@@ -29599,6 +26053,154 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_AddRecord_Request", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class HomeInstallations_AddRecord_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private System.DateTime CommitTimeField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_AddRecord OperationField;
+        
+        private long TransactionIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.DateTime CommitTime {
+            get {
+                return this.CommitTimeField;
+            }
+            set {
+                if ((this.CommitTimeField.Equals(value) != true)) {
+                    this.CommitTimeField = value;
+                    this.RaisePropertyChanged("CommitTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_AddRecord Operation {
+            get {
+                return this.OperationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OperationField, value) != true)) {
+                    this.OperationField = value;
+                    this.RaisePropertyChanged("Operation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public long TransactionId {
+            get {
+                return this.TransactionIdField;
+            }
+            set {
+                if ((this.TransactionIdField.Equals(value) != true)) {
+                    this.TransactionIdField = value;
+                    this.RaisePropertyChanged("TransactionId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_CreateServiceRequest_Request", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class HomeInstallations_CreateServiceRequest_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private System.DateTime CommitTimeField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_CreateServiceRequest OperationField;
+        
+        private long TransactionIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.DateTime CommitTime {
+            get {
+                return this.CommitTimeField;
+            }
+            set {
+                if ((this.CommitTimeField.Equals(value) != true)) {
+                    this.CommitTimeField = value;
+                    this.RaisePropertyChanged("CommitTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_CreateServiceRequest Operation {
+            get {
+                return this.OperationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OperationField, value) != true)) {
+                    this.OperationField = value;
+                    this.RaisePropertyChanged("Operation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public long TransactionId {
+            get {
+                return this.TransactionIdField;
+            }
+            set {
+                if ((this.TransactionIdField.Equals(value) != true)) {
+                    this.TransactionIdField = value;
+                    this.RaisePropertyChanged("TransactionId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ManufacturerTracking_AddRecord_Request", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
     public partial class ManufacturerTracking_AddRecord_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -29637,80 +26239,6 @@ namespace FlowfinityConnectionHelper.FASR {
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public FlowfinityConnectionHelper.FASR.ManufacturerTracking_AddRecord Operation {
-            get {
-                return this.OperationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OperationField, value) != true)) {
-                    this.OperationField = value;
-                    this.RaisePropertyChanged("Operation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long TransactionId {
-            get {
-                return this.TransactionIdField;
-            }
-            set {
-                if ((this.TransactionIdField.Equals(value) != true)) {
-                    this.TransactionIdField = value;
-                    this.RaisePropertyChanged("TransactionId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SalesReview_AddRecord_Request", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SalesReview_AddRecord_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.DateTime CommitTimeField;
-        
-        private FlowfinityConnectionHelper.FASR.SalesReview_AddRecord OperationField;
-        
-        private long TransactionIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime CommitTime {
-            get {
-                return this.CommitTimeField;
-            }
-            set {
-                if ((this.CommitTimeField.Equals(value) != true)) {
-                    this.CommitTimeField = value;
-                    this.RaisePropertyChanged("CommitTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.SalesReview_AddRecord Operation {
             get {
                 return this.OperationField;
             }
@@ -29895,598 +26423,6 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_EditRecord_Request", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_EditRecord_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.DateTime CommitTimeField;
-        
-        private FlowfinityConnectionHelper.FASR.MMS_EditRecord OperationField;
-        
-        private long TransactionIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime CommitTime {
-            get {
-                return this.CommitTimeField;
-            }
-            set {
-                if ((this.CommitTimeField.Equals(value) != true)) {
-                    this.CommitTimeField = value;
-                    this.RaisePropertyChanged("CommitTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMS_EditRecord Operation {
-            get {
-                return this.OperationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OperationField, value) != true)) {
-                    this.OperationField = value;
-                    this.RaisePropertyChanged("Operation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long TransactionId {
-            get {
-                return this.TransactionIdField;
-            }
-            set {
-                if ((this.TransactionIdField.Equals(value) != true)) {
-                    this.TransactionIdField = value;
-                    this.RaisePropertyChanged("TransactionId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_Legacy_ADD_Request", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_Legacy_ADD_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.DateTime CommitTimeField;
-        
-        private FlowfinityConnectionHelper.FASR.MMS_Legacy_ADD OperationField;
-        
-        private long TransactionIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime CommitTime {
-            get {
-                return this.CommitTimeField;
-            }
-            set {
-                if ((this.CommitTimeField.Equals(value) != true)) {
-                    this.CommitTimeField = value;
-                    this.RaisePropertyChanged("CommitTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMS_Legacy_ADD Operation {
-            get {
-                return this.OperationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OperationField, value) != true)) {
-                    this.OperationField = value;
-                    this.RaisePropertyChanged("Operation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long TransactionId {
-            get {
-                return this.TransactionIdField;
-            }
-            set {
-                if ((this.TransactionIdField.Equals(value) != true)) {
-                    this.TransactionIdField = value;
-                    this.RaisePropertyChanged("TransactionId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_Legacy_EDIT_Request", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_Legacy_EDIT_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.DateTime CommitTimeField;
-        
-        private FlowfinityConnectionHelper.FASR.MMS_Legacy_EDIT OperationField;
-        
-        private long TransactionIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime CommitTime {
-            get {
-                return this.CommitTimeField;
-            }
-            set {
-                if ((this.CommitTimeField.Equals(value) != true)) {
-                    this.CommitTimeField = value;
-                    this.RaisePropertyChanged("CommitTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMS_Legacy_EDIT Operation {
-            get {
-                return this.OperationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OperationField, value) != true)) {
-                    this.OperationField = value;
-                    this.RaisePropertyChanged("Operation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long TransactionId {
-            get {
-                return this.TransactionIdField;
-            }
-            set {
-                if ((this.TransactionIdField.Equals(value) != true)) {
-                    this.TransactionIdField = value;
-                    this.RaisePropertyChanged("TransactionId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_Legacy_TRANSITION_Request", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_Legacy_TRANSITION_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.DateTime CommitTimeField;
-        
-        private FlowfinityConnectionHelper.FASR.MMS_Legacy_TRANSITION OperationField;
-        
-        private long TransactionIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime CommitTime {
-            get {
-                return this.CommitTimeField;
-            }
-            set {
-                if ((this.CommitTimeField.Equals(value) != true)) {
-                    this.CommitTimeField = value;
-                    this.RaisePropertyChanged("CommitTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMS_Legacy_TRANSITION Operation {
-            get {
-                return this.OperationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OperationField, value) != true)) {
-                    this.OperationField = value;
-                    this.RaisePropertyChanged("Operation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long TransactionId {
-            get {
-                return this.TransactionIdField;
-            }
-            set {
-                if ((this.TransactionIdField.Equals(value) != true)) {
-                    this.TransactionIdField = value;
-                    this.RaisePropertyChanged("TransactionId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_Legacy_DELETE_Request", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_Legacy_DELETE_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.DateTime CommitTimeField;
-        
-        private FlowfinityConnectionHelper.FASR.MMS_Legacy_DELETE OperationField;
-        
-        private long TransactionIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime CommitTime {
-            get {
-                return this.CommitTimeField;
-            }
-            set {
-                if ((this.CommitTimeField.Equals(value) != true)) {
-                    this.CommitTimeField = value;
-                    this.RaisePropertyChanged("CommitTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMS_Legacy_DELETE Operation {
-            get {
-                return this.OperationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OperationField, value) != true)) {
-                    this.OperationField = value;
-                    this.RaisePropertyChanged("Operation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long TransactionId {
-            get {
-                return this.TransactionIdField;
-            }
-            set {
-                if ((this.TransactionIdField.Equals(value) != true)) {
-                    this.TransactionIdField = value;
-                    this.RaisePropertyChanged("TransactionId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_Legacy_DUPLICATE_Request", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_Legacy_DUPLICATE_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.DateTime CommitTimeField;
-        
-        private FlowfinityConnectionHelper.FASR.MMS_Legacy_DUPLICATE OperationField;
-        
-        private long TransactionIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime CommitTime {
-            get {
-                return this.CommitTimeField;
-            }
-            set {
-                if ((this.CommitTimeField.Equals(value) != true)) {
-                    this.CommitTimeField = value;
-                    this.RaisePropertyChanged("CommitTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMS_Legacy_DUPLICATE Operation {
-            get {
-                return this.OperationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OperationField, value) != true)) {
-                    this.OperationField = value;
-                    this.RaisePropertyChanged("Operation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long TransactionId {
-            get {
-                return this.TransactionIdField;
-            }
-            set {
-                if ((this.TransactionIdField.Equals(value) != true)) {
-                    this.TransactionIdField = value;
-                    this.RaisePropertyChanged("TransactionId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_Legacy_TRIGGERADD_Request", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_Legacy_TRIGGERADD_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.DateTime CommitTimeField;
-        
-        private FlowfinityConnectionHelper.FASR.MMS_Legacy_TRIGGERADD OperationField;
-        
-        private long TransactionIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime CommitTime {
-            get {
-                return this.CommitTimeField;
-            }
-            set {
-                if ((this.CommitTimeField.Equals(value) != true)) {
-                    this.CommitTimeField = value;
-                    this.RaisePropertyChanged("CommitTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMS_Legacy_TRIGGERADD Operation {
-            get {
-                return this.OperationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OperationField, value) != true)) {
-                    this.OperationField = value;
-                    this.RaisePropertyChanged("Operation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long TransactionId {
-            get {
-                return this.TransactionIdField;
-            }
-            set {
-                if ((this.TransactionIdField.Equals(value) != true)) {
-                    this.TransactionIdField = value;
-                    this.RaisePropertyChanged("TransactionId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_Legacy_TRIGGEREDIT_Request", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_Legacy_TRIGGEREDIT_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.DateTime CommitTimeField;
-        
-        private FlowfinityConnectionHelper.FASR.MMS_Legacy_TRIGGEREDIT OperationField;
-        
-        private long TransactionIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime CommitTime {
-            get {
-                return this.CommitTimeField;
-            }
-            set {
-                if ((this.CommitTimeField.Equals(value) != true)) {
-                    this.CommitTimeField = value;
-                    this.RaisePropertyChanged("CommitTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMS_Legacy_TRIGGEREDIT Operation {
-            get {
-                return this.OperationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OperationField, value) != true)) {
-                    this.OperationField = value;
-                    this.RaisePropertyChanged("Operation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long TransactionId {
-            get {
-                return this.TransactionIdField;
-            }
-            set {
-                if ((this.TransactionIdField.Equals(value) != true)) {
-                    this.TransactionIdField = value;
-                    this.RaisePropertyChanged("TransactionId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SupplyOnly_AddRecord_Request", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
     public partial class SupplyOnly_AddRecord_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -30631,11 +26567,6 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.PlantProduction_UpdateWindowMakerData_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.PlantProduction_MovetoOnHold_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.PlantProduction_DeleteRecord_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_RecordServiceSchedule_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_RecordUnavailable_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_EditScheduled_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_RecordSchedule_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ScheduleDraft_Delete_1_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Service_EditService_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Service_UpdateCrew_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Service_AddRecord_Call))]
@@ -30643,31 +26574,27 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Service_rescheduleservice_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.Service_ReturnToBuffer_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_BackRemeasureReady_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_ScheduleWork_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_BufferWorkOrder_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_ScheduleRemeasure_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_AddRecord_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_RescheduleInstallation_Call))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_GetWindowmaker_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_ReSchedule_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_UpdateCrew_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_EditSold_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_ScheduleNewWorkOrder_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_ReturnToBuffer_Call))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_ScheduleWork_Call))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_AddRecord_Call))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.HomeInstallations_RescheduleInstallation_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ManufacturerTracking_EditRecord_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ManufacturerTracking_AddRecord_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ManufacturerTracking_DeleteRecord_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SalesReview_AddRecord_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MaterialsInformation_AddProduct_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MaterialsInformation_EditRecord_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InventoryManager_AddRecord_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InventoryManager_GetBOMItems_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InventoryManager_DeleteRecord_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InventoryManager_DeleteBOM_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_EditRecord_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_DeleteRecord_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_AddNew_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SupplyOnly_AddRecord_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.testapp_AddRecord_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.WindowsItemTracker_UpdateItemStatus_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.WindowsItemTracker_MovetoOnhold_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.WindowsItemTracker_AddRecord_Call))]
@@ -30676,13 +26603,8 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InstallationTracking_DeleteRecord_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InstallationTracking_AddRecord_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.InstallationTracking_EditRecord_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_RecordSchedule_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_RecordServiceSchedule_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Delete_1_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_Edit_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.SchedulePublished_EditScheduled_Call))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_AddRecord_Call))]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.ServiceReview_AddRecord_Call))]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_AddRecord_Call))]
     public partial class OperationCall : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -31487,416 +27409,6 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_RecordServiceSchedule_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_RecordServiceSchedule_Call : FlowfinityConnectionHelper.FASR.OperationCall {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        private FlowfinityConnectionHelper.FASR.ScheduleDraftRecord RecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
-            get {
-                return this.EmailNotificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.ScheduleDraftRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_RecordUnavailable_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_RecordUnavailable_Call : FlowfinityConnectionHelper.FASR.OperationCall {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        private FlowfinityConnectionHelper.FASR.ScheduleDraftRecord RecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
-            get {
-                return this.EmailNotificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.ScheduleDraftRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_EditScheduled_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_EditScheduled_Call : FlowfinityConnectionHelper.FASR.OperationCall {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        private FlowfinityConnectionHelper.FASR.ScheduleDraftRecord RecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
-            get {
-                return this.EmailNotificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.ScheduleDraftRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_RecordSchedule_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_RecordSchedule_Call : FlowfinityConnectionHelper.FASR.OperationCall {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        private FlowfinityConnectionHelper.FASR.ScheduleDraftRecord RecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
-            get {
-                return this.EmailNotificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.ScheduleDraftRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ScheduleDraft_Delete_1_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ScheduleDraft_Delete_1_Call : FlowfinityConnectionHelper.FASR.OperationCall {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
-            get {
-                return this.EmailNotificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Service_EditService_Call", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
     public partial class Service_EditService_Call : FlowfinityConnectionHelper.FASR.OperationCall {
@@ -32424,6 +27936,9 @@ namespace FlowfinityConnectionHelper.FASR {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ClientTimeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string[] EmailNotification {
             get {
@@ -32488,88 +28003,16 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_ScheduleWork_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class HomeInstallations_ScheduleWork_Call : FlowfinityConnectionHelper.FASR.OperationCall {
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.Nullable<System.DateTime> ClientTime {
             get {
-                return this.EmailNotificationField;
+                return this.ClientTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
                 }
             }
         }
@@ -32594,6 +28037,9 @@ namespace FlowfinityConnectionHelper.FASR {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ClientTimeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string[] EmailNotification {
             get {
@@ -32655,6 +28101,19 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
                     this.ClientLocationField = value;
                     this.RaisePropertyChanged("ClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.Nullable<System.DateTime> ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
                 }
             }
         }
@@ -32679,6 +28138,9 @@ namespace FlowfinityConnectionHelper.FASR {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ClientTimeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string[] EmailNotification {
             get {
@@ -32743,13 +28205,26 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.Nullable<System.DateTime> ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_AddRecord_Call", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_GetWindowmaker_Call", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class HomeInstallations_AddRecord_Call : FlowfinityConnectionHelper.FASR.OperationCall {
+    public partial class HomeInstallations_GetWindowmaker_Call : FlowfinityConnectionHelper.FASR.OperationCall {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string[] EmailNotificationField;
@@ -32764,6 +28239,9 @@ namespace FlowfinityConnectionHelper.FASR {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ClientTimeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string[] EmailNotification {
             get {
@@ -32828,88 +28306,16 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_RescheduleInstallation_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class HomeInstallations_RescheduleInstallation_Call : FlowfinityConnectionHelper.FASR.OperationCall {
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.Nullable<System.DateTime> ClientTime {
             get {
-                return this.EmailNotificationField;
+                return this.ClientTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
                 }
             }
         }
@@ -32934,6 +28340,9 @@ namespace FlowfinityConnectionHelper.FASR {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ClientTimeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string[] EmailNotification {
             get {
@@ -32995,6 +28404,19 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
                     this.ClientLocationField = value;
                     this.RaisePropertyChanged("ClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.Nullable<System.DateTime> ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
                 }
             }
         }
@@ -33019,6 +28441,9 @@ namespace FlowfinityConnectionHelper.FASR {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ClientTimeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string[] EmailNotification {
             get {
@@ -33080,6 +28505,19 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
                     this.ClientLocationField = value;
                     this.RaisePropertyChanged("ClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.Nullable<System.DateTime> ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
                 }
             }
         }
@@ -33104,6 +28542,9 @@ namespace FlowfinityConnectionHelper.FASR {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ClientTimeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string[] EmailNotification {
             get {
@@ -33165,6 +28606,19 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
                     this.ClientLocationField = value;
                     this.RaisePropertyChanged("ClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.Nullable<System.DateTime> ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
                 }
             }
         }
@@ -33189,6 +28643,9 @@ namespace FlowfinityConnectionHelper.FASR {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ClientTimeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string[] EmailNotification {
             get {
@@ -33250,6 +28707,19 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
                     this.ClientLocationField = value;
                     this.RaisePropertyChanged("ClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.Nullable<System.DateTime> ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
                 }
             }
         }
@@ -33274,6 +28744,9 @@ namespace FlowfinityConnectionHelper.FASR {
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
         
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ClientTimeField;
+        
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string[] EmailNotification {
             get {
@@ -33335,6 +28808,322 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
                     this.ClientLocationField = value;
                     this.RaisePropertyChanged("ClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.Nullable<System.DateTime> ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_ScheduleWork_Call", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class HomeInstallations_ScheduleWork_Call : FlowfinityConnectionHelper.FASR.OperationCall {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string[] EmailNotificationField;
+        
+        private string OnBehalfOfField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecordIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ClientTimeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] EmailNotification {
+            get {
+                return this.EmailNotificationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
+                    this.EmailNotificationField = value;
+                    this.RaisePropertyChanged("EmailNotification");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public string OnBehalfOf {
+            get {
+                return this.OnBehalfOfField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
+                    this.OnBehalfOfField = value;
+                    this.RaisePropertyChanged("OnBehalfOf");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
+            get {
+                return this.RecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
+                    this.RecordField = value;
+                    this.RaisePropertyChanged("Record");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecordID {
+            get {
+                return this.RecordIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
+                    this.RecordIDField = value;
+                    this.RaisePropertyChanged("RecordID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
+            get {
+                return this.ClientLocationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
+                    this.ClientLocationField = value;
+                    this.RaisePropertyChanged("ClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.Nullable<System.DateTime> ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_AddRecord_Call", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class HomeInstallations_AddRecord_Call : FlowfinityConnectionHelper.FASR.OperationCall {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string[] EmailNotificationField;
+        
+        private string OnBehalfOfField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecordIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ClientTimeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] EmailNotification {
+            get {
+                return this.EmailNotificationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
+                    this.EmailNotificationField = value;
+                    this.RaisePropertyChanged("EmailNotification");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public string OnBehalfOf {
+            get {
+                return this.OnBehalfOfField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
+                    this.OnBehalfOfField = value;
+                    this.RaisePropertyChanged("OnBehalfOf");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
+            get {
+                return this.RecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
+                    this.RecordField = value;
+                    this.RaisePropertyChanged("Record");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecordID {
+            get {
+                return this.RecordIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
+                    this.RecordIDField = value;
+                    this.RaisePropertyChanged("RecordID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
+            get {
+                return this.ClientLocationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
+                    this.ClientLocationField = value;
+                    this.RaisePropertyChanged("ClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.Nullable<System.DateTime> ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_RescheduleInstallation_Call", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class HomeInstallations_RescheduleInstallation_Call : FlowfinityConnectionHelper.FASR.OperationCall {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string[] EmailNotificationField;
+        
+        private string OnBehalfOfField;
+        
+        private FlowfinityConnectionHelper.FASR.HomeInstallationsRecord RecordField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string RecordIDField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ClientTimeField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string[] EmailNotification {
+            get {
+                return this.EmailNotificationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
+                    this.EmailNotificationField = value;
+                    this.RaisePropertyChanged("EmailNotification");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public string OnBehalfOf {
+            get {
+                return this.OnBehalfOfField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
+                    this.OnBehalfOfField = value;
+                    this.RaisePropertyChanged("OnBehalfOf");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public FlowfinityConnectionHelper.FASR.HomeInstallationsRecord Record {
+            get {
+                return this.RecordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
+                    this.RecordField = value;
+                    this.RaisePropertyChanged("Record");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string RecordID {
+            get {
+                return this.RecordIDField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
+                    this.RecordIDField = value;
+                    this.RaisePropertyChanged("RecordID");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
+        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
+            get {
+                return this.ClientLocationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
+                    this.ClientLocationField = value;
+                    this.RaisePropertyChanged("ClientLocation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.Nullable<System.DateTime> ClientTime {
+            get {
+                return this.ClientTimeField;
+            }
+            set {
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
                 }
             }
         }
@@ -33615,107 +29404,6 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public System.Nullable<System.DateTime> ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SalesReview_AddRecord_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SalesReview_AddRecord_Call : FlowfinityConnectionHelper.FASR.OperationCall {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        private FlowfinityConnectionHelper.FASR.SalesReviewRecord RecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
-            get {
-                return this.EmailNotificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.SalesReviewRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
         public System.Nullable<System.DateTime> ClientTime {
             get {
                 return this.ClientTimeField;
@@ -34290,294 +29978,6 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_EditRecord_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_EditRecord_Call : FlowfinityConnectionHelper.FASR.OperationCall {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord RecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
-            get {
-                return this.EmailNotificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public System.Nullable<System.DateTime> ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_DeleteRecord_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_DeleteRecord_Call : FlowfinityConnectionHelper.FASR.OperationCall {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
-            get {
-                return this.EmailNotificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public System.Nullable<System.DateTime> ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_AddNew_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_AddNew_Call : FlowfinityConnectionHelper.FASR.OperationCall {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        private FlowfinityConnectionHelper.FASR.MMSRecord RecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
-            get {
-                return this.EmailNotificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public System.Nullable<System.DateTime> ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="SupplyOnly_AddRecord_Call", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
     public partial class SupplyOnly_AddRecord_Call : FlowfinityConnectionHelper.FASR.OperationCall {
@@ -34656,107 +30056,6 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
                     this.ClientLocationField = value;
                     this.RaisePropertyChanged("ClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="testapp_AddRecord_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class testapp_AddRecord_Call : FlowfinityConnectionHelper.FASR.OperationCall {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        private FlowfinityConnectionHelper.FASR.testappRecord RecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
-            get {
-                return this.EmailNotificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.testappRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public System.Nullable<System.DateTime> ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
                 }
             }
         }
@@ -35557,22 +30856,25 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_RecordSchedule_Call", Namespace="http://flowfinity.com/contract")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_AddRecord_Call", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
-    public partial class SchedulePublished_RecordSchedule_Call : FlowfinityConnectionHelper.FASR.OperationCall {
+    public partial class ServiceReview_AddRecord_Call : FlowfinityConnectionHelper.FASR.OperationCall {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string[] EmailNotificationField;
         
         private string OnBehalfOfField;
         
-        private FlowfinityConnectionHelper.FASR.SchedulePublishedRecord RecordField;
+        private FlowfinityConnectionHelper.FASR.ServiceReviewRecord RecordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string RecordIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> ClientTimeField;
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public string[] EmailNotification {
@@ -35601,7 +30903,7 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.SchedulePublishedRecord Record {
+        public FlowfinityConnectionHelper.FASR.ServiceReviewRecord Record {
             get {
                 return this.RecordField;
             }
@@ -35638,328 +30940,16 @@ namespace FlowfinityConnectionHelper.FASR {
                 }
             }
         }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_RecordServiceSchedule_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SchedulePublished_RecordServiceSchedule_Call : FlowfinityConnectionHelper.FASR.OperationCall {
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        private FlowfinityConnectionHelper.FASR.SchedulePublishedRecord RecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
+        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
+        public System.Nullable<System.DateTime> ClientTime {
             get {
-                return this.EmailNotificationField;
+                return this.ClientTimeField;
             }
             set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.SchedulePublishedRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_Delete_1_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SchedulePublished_Delete_1_Call : FlowfinityConnectionHelper.FASR.OperationCall {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
-            get {
-                return this.EmailNotificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_Edit_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SchedulePublished_Edit_Call : FlowfinityConnectionHelper.FASR.OperationCall {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        private FlowfinityConnectionHelper.FASR.SchedulePublishedRecord RecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
-            get {
-                return this.EmailNotificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.SchedulePublishedRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="SchedulePublished_EditScheduled_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class SchedulePublished_EditScheduled_Call : FlowfinityConnectionHelper.FASR.OperationCall {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        private FlowfinityConnectionHelper.FASR.SchedulePublishedRecord RecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
-            get {
-                return this.EmailNotificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.SchedulePublishedRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
+                if ((this.ClientTimeField.Equals(value) != true)) {
+                    this.ClientTimeField = value;
+                    this.RaisePropertyChanged("ClientTime");
                 }
             }
         }
@@ -36015,107 +31005,6 @@ namespace FlowfinityConnectionHelper.FASR {
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public FlowfinityConnectionHelper.FASR.CHIPurchaseOrderRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=4)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=5)]
-        public System.Nullable<System.DateTime> ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_AddRecord_Call", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class ServiceReview_AddRecord_Call : FlowfinityConnectionHelper.FASR.OperationCall {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string[] EmailNotificationField;
-        
-        private string OnBehalfOfField;
-        
-        private FlowfinityConnectionHelper.FASR.ServiceReviewRecord RecordField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string RecordIDField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> ClientTimeField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string[] EmailNotification {
-            get {
-                return this.EmailNotificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.EmailNotificationField, value) != true)) {
-                    this.EmailNotificationField = value;
-                    this.RaisePropertyChanged("EmailNotification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public string OnBehalfOf {
-            get {
-                return this.OnBehalfOfField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OnBehalfOfField, value) != true)) {
-                    this.OnBehalfOfField = value;
-                    this.RaisePropertyChanged("OnBehalfOf");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.ServiceReviewRecord Record {
             get {
                 return this.RecordField;
             }
@@ -36398,7 +31287,6 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.DataContractAttribute(Name="ViewRequest", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.StationTarget_ViewAllRecords_Request))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_ViewAllRecords_Request))]
     public partial class ViewRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -36483,29 +31371,6 @@ namespace FlowfinityConnectionHelper.FASR {
         
         [System.Runtime.Serialization.DataMemberAttribute()]
         public FlowfinityConnectionHelper.FASR.StationTarget_ViewAllRecords_Sort[] Sort {
-            get {
-                return this.SortField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SortField, value) != true)) {
-                    this.SortField = value;
-                    this.RaisePropertyChanged("Sort");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_ViewAllRecords_Request", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_ViewAllRecords_Request : FlowfinityConnectionHelper.FASR.ViewRequest {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.MMS_ViewAllRecords_Sort[] SortField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.MMS_ViewAllRecords_Sort[] Sort {
             get {
                 return this.SortField;
             }
@@ -36609,75 +31474,6 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_ViewAllRecords_Sort", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_ViewAllRecords_Sort : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<FlowfinityConnectionHelper.FASR.MMS_ViewAllRecords_SortField> FieldField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<FlowfinityConnectionHelper.FASR.SortDirection> DirectionField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<FlowfinityConnectionHelper.FASR.MMS_ViewAllRecords_SortField> Field {
-            get {
-                return this.FieldField;
-            }
-            set {
-                if ((this.FieldField.Equals(value) != true)) {
-                    this.FieldField = value;
-                    this.RaisePropertyChanged("Field");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
-        public System.Nullable<FlowfinityConnectionHelper.FASR.SortDirection> Direction {
-            get {
-                return this.DirectionField;
-            }
-            set {
-                if ((this.DirectionField.Equals(value) != true)) {
-                    this.DirectionField = value;
-                    this.RaisePropertyChanged("Direction");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_ViewAllRecords_SortField", Namespace="http://flowfinity.com/contract")]
-    public enum MMS_ViewAllRecords_SortField : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        FirstName = 0,
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="QueryResponse", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
     public partial class QueryResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -36726,7 +31522,6 @@ namespace FlowfinityConnectionHelper.FASR {
     [System.Runtime.Serialization.DataContractAttribute(Name="ViewResponse", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
     [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.StationTarget_ViewAllRecords_Response))]
-    [System.Runtime.Serialization.KnownTypeAttribute(typeof(FlowfinityConnectionHelper.FASR.MMS_ViewAllRecords_Response))]
     public partial class ViewResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
@@ -36825,29 +31620,6 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_ViewAllRecords_Response", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_ViewAllRecords_Response : FlowfinityConnectionHelper.FASR.ViewResponse {
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.MMS_ViewAllRecords_Row[] RowsField;
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public FlowfinityConnectionHelper.FASR.MMS_ViewAllRecords_Row[] Rows {
-            get {
-                return this.RowsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RowsField, value) != true)) {
-                    this.RowsField = value;
-                    this.RaisePropertyChanged("Rows");
-                }
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="StationTarget_ViewAllRecords_Row", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
     public partial class StationTarget_ViewAllRecords_Row : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -36909,186 +31681,6 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.StationTargetMonthField, value) != true)) {
                     this.StationTargetMonthField = value;
                     this.RaisePropertyChanged("StationTargetMonth");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="MMS_ViewAllRecords_Row", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class MMS_ViewAllRecords_Row : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.Nullable<System.DateTime> ClientTimeField;
-        
-        private FlowfinityConnectionHelper.FASR.LocationValue ClientLocationField;
-        
-        private FlowfinityConnectionHelper.FASR.State StateField;
-        
-        private string CreatedByField;
-        
-        private string ModifiedByField;
-        
-        private System.Nullable<System.DateTime> ModifiedOnField;
-        
-        private System.Nullable<System.DateTime> CreatedOnField;
-        
-        private string RecordIDField;
-        
-        private string LastOperationNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private FlowfinityConnectionHelper.FASR.MMSRecord RecordField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.Nullable<System.DateTime> ClientTime {
-            get {
-                return this.ClientTimeField;
-            }
-            set {
-                if ((this.ClientTimeField.Equals(value) != true)) {
-                    this.ClientTimeField = value;
-                    this.RaisePropertyChanged("ClientTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public FlowfinityConnectionHelper.FASR.LocationValue ClientLocation {
-            get {
-                return this.ClientLocationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ClientLocationField, value) != true)) {
-                    this.ClientLocationField = value;
-                    this.RaisePropertyChanged("ClientLocation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public FlowfinityConnectionHelper.FASR.State State {
-            get {
-                return this.StateField;
-            }
-            set {
-                if ((this.StateField.Equals(value) != true)) {
-                    this.StateField = value;
-                    this.RaisePropertyChanged("State");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
-        public string CreatedBy {
-            get {
-                return this.CreatedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.CreatedByField, value) != true)) {
-                    this.CreatedByField = value;
-                    this.RaisePropertyChanged("CreatedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
-        public string ModifiedBy {
-            get {
-                return this.ModifiedByField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.ModifiedByField, value) != true)) {
-                    this.ModifiedByField = value;
-                    this.RaisePropertyChanged("ModifiedBy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=5)]
-        public System.Nullable<System.DateTime> ModifiedOn {
-            get {
-                return this.ModifiedOnField;
-            }
-            set {
-                if ((this.ModifiedOnField.Equals(value) != true)) {
-                    this.ModifiedOnField = value;
-                    this.RaisePropertyChanged("ModifiedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=6)]
-        public System.Nullable<System.DateTime> CreatedOn {
-            get {
-                return this.CreatedOnField;
-            }
-            set {
-                if ((this.CreatedOnField.Equals(value) != true)) {
-                    this.CreatedOnField = value;
-                    this.RaisePropertyChanged("CreatedOn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=7)]
-        public string RecordID {
-            get {
-                return this.RecordIDField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordIDField, value) != true)) {
-                    this.RecordIDField = value;
-                    this.RaisePropertyChanged("RecordID");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=8)]
-        public string LastOperationName {
-            get {
-                return this.LastOperationNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LastOperationNameField, value) != true)) {
-                    this.LastOperationNameField = value;
-                    this.RaisePropertyChanged("LastOperationName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=9)]
-        public FlowfinityConnectionHelper.FASR.MMSRecord Record {
-            get {
-                return this.RecordField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.RecordField, value) != true)) {
-                    this.RecordField = value;
-                    this.RaisePropertyChanged("Record");
                 }
             }
         }
@@ -37349,80 +31941,6 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.TransactionsField, value) != true)) {
                     this.TransactionsField = value;
                     this.RaisePropertyChanged("Transactions");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="testapp_AddRecord_Request", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class testapp_AddRecord_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.DateTime CommitTimeField;
-        
-        private FlowfinityConnectionHelper.FASR.testapp_AddRecord OperationField;
-        
-        private long TransactionIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime CommitTime {
-            get {
-                return this.CommitTimeField;
-            }
-            set {
-                if ((this.CommitTimeField.Equals(value) != true)) {
-                    this.CommitTimeField = value;
-                    this.RaisePropertyChanged("CommitTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.testapp_AddRecord Operation {
-            get {
-                return this.OperationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OperationField, value) != true)) {
-                    this.OperationField = value;
-                    this.RaisePropertyChanged("Operation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long TransactionId {
-            get {
-                return this.TransactionIdField;
-            }
-            set {
-                if ((this.TransactionIdField.Equals(value) != true)) {
-                    this.TransactionIdField = value;
-                    this.RaisePropertyChanged("TransactionId");
                 }
             }
         }
@@ -38179,80 +32697,6 @@ namespace FlowfinityConnectionHelper.FASR {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="CHIPurchaseOrder_AddRecord_Request", Namespace="http://flowfinity.com/contract")]
-    [System.SerializableAttribute()]
-    public partial class CHIPurchaseOrder_AddRecord_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        private System.DateTime CommitTimeField;
-        
-        private FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_AddRecord OperationField;
-        
-        private long TransactionIdField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public System.DateTime CommitTime {
-            get {
-                return this.CommitTimeField;
-            }
-            set {
-                if ((this.CommitTimeField.Equals(value) != true)) {
-                    this.CommitTimeField = value;
-                    this.RaisePropertyChanged("CommitTime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_AddRecord Operation {
-            get {
-                return this.OperationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.OperationField, value) != true)) {
-                    this.OperationField = value;
-                    this.RaisePropertyChanged("Operation");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public long TransactionId {
-            get {
-                return this.TransactionIdField;
-            }
-            set {
-                if ((this.TransactionIdField.Equals(value) != true)) {
-                    this.TransactionIdField = value;
-                    this.RaisePropertyChanged("TransactionId");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ServiceReview_AddRecord_Request", Namespace="http://flowfinity.com/contract")]
     [System.SerializableAttribute()]
     public partial class ServiceReview_AddRecord_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -38291,6 +32735,80 @@ namespace FlowfinityConnectionHelper.FASR {
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
         public FlowfinityConnectionHelper.FASR.ServiceReview_AddRecord Operation {
+            get {
+                return this.OperationField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.OperationField, value) != true)) {
+                    this.OperationField = value;
+                    this.RaisePropertyChanged("Operation");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public long TransactionId {
+            get {
+                return this.TransactionIdField;
+            }
+            set {
+                if ((this.TransactionIdField.Equals(value) != true)) {
+                    this.TransactionIdField = value;
+                    this.RaisePropertyChanged("TransactionId");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CHIPurchaseOrder_AddRecord_Request", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class CHIPurchaseOrder_AddRecord_Request : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private System.DateTime CommitTimeField;
+        
+        private FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_AddRecord OperationField;
+        
+        private long TransactionIdField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public System.DateTime CommitTime {
+            get {
+                return this.CommitTimeField;
+            }
+            set {
+                if ((this.CommitTimeField.Equals(value) != true)) {
+                    this.CommitTimeField = value;
+                    this.RaisePropertyChanged("CommitTime");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_AddRecord Operation {
             get {
                 return this.OperationField;
             }
@@ -38575,39 +33093,6 @@ namespace FlowfinityConnectionHelper.FASR {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://flowfinity.com/ServiceContract", ConfigurationName="FASR.IScheduleDraftCalloutService", SessionMode=System.ServiceModel.SessionMode.NotAllowed)]
-    public interface IScheduleDraftCalloutService {
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IScheduleDraftCalloutServiceChannel : FlowfinityConnectionHelper.FASR.IScheduleDraftCalloutService, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ScheduleDraftCalloutServiceClient : System.ServiceModel.ClientBase<FlowfinityConnectionHelper.FASR.IScheduleDraftCalloutService>, FlowfinityConnectionHelper.FASR.IScheduleDraftCalloutService {
-        
-        public ScheduleDraftCalloutServiceClient() {
-        }
-        
-        public ScheduleDraftCalloutServiceClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
-        }
-        
-        public ScheduleDraftCalloutServiceClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public ScheduleDraftCalloutServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public ScheduleDraftCalloutServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://flowfinity.com/ServiceContract", ConfigurationName="FASR.IServiceCalloutService", SessionMode=System.ServiceModel.SessionMode.NotAllowed)]
     public interface IServiceCalloutService {
         
@@ -38653,12 +33138,8 @@ namespace FlowfinityConnectionHelper.FASR {
     public interface IHomeInstallationsCalloutService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_Ho" +
-            "meInstallations_AddRecord", ReplyAction="*")]
-        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_HomeInstallations_AddRecord(FlowfinityConnectionHelper.FASR.HomeInstallations_AddRecord_Request Request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_Ho" +
-            "meInstallations_CreateServiceRequest", ReplyAction="*")]
-        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_HomeInstallations_CreateServiceRequest(FlowfinityConnectionHelper.FASR.HomeInstallations_CreateServiceRequest_Request Request);
+            "meInstallations_GetWindowmaker", ReplyAction="*")]
+        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_HomeInstallations_GetWindowmaker(FlowfinityConnectionHelper.FASR.HomeInstallations_GetWindowmaker_Request Request);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_Ho" +
             "meInstallations_EditSold", ReplyAction="*")]
@@ -38667,6 +33148,14 @@ namespace FlowfinityConnectionHelper.FASR {
         [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_Ho" +
             "meInstallations_ScheduleNewWorkOrder", ReplyAction="*")]
         FlowfinityConnectionHelper.FASR.CalloutResponse Callout_HomeInstallations_ScheduleNewWorkOrder(FlowfinityConnectionHelper.FASR.HomeInstallations_ScheduleNewWorkOrder_Request Request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_Ho" +
+            "meInstallations_AddRecord", ReplyAction="*")]
+        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_HomeInstallations_AddRecord(FlowfinityConnectionHelper.FASR.HomeInstallations_AddRecord_Request Request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_Ho" +
+            "meInstallations_CreateServiceRequest", ReplyAction="*")]
+        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_HomeInstallations_CreateServiceRequest(FlowfinityConnectionHelper.FASR.HomeInstallations_CreateServiceRequest_Request Request);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -38696,12 +33185,8 @@ namespace FlowfinityConnectionHelper.FASR {
                 base(binding, remoteAddress) {
         }
         
-        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_HomeInstallations_AddRecord(FlowfinityConnectionHelper.FASR.HomeInstallations_AddRecord_Request Request) {
-            return base.Channel.Callout_HomeInstallations_AddRecord(Request);
-        }
-        
-        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_HomeInstallations_CreateServiceRequest(FlowfinityConnectionHelper.FASR.HomeInstallations_CreateServiceRequest_Request Request) {
-            return base.Channel.Callout_HomeInstallations_CreateServiceRequest(Request);
+        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_HomeInstallations_GetWindowmaker(FlowfinityConnectionHelper.FASR.HomeInstallations_GetWindowmaker_Request Request) {
+            return base.Channel.Callout_HomeInstallations_GetWindowmaker(Request);
         }
         
         public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_HomeInstallations_EditSold(FlowfinityConnectionHelper.FASR.HomeInstallations_EditSold_Request Request) {
@@ -38710,6 +33195,14 @@ namespace FlowfinityConnectionHelper.FASR {
         
         public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_HomeInstallations_ScheduleNewWorkOrder(FlowfinityConnectionHelper.FASR.HomeInstallations_ScheduleNewWorkOrder_Request Request) {
             return base.Channel.Callout_HomeInstallations_ScheduleNewWorkOrder(Request);
+        }
+        
+        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_HomeInstallations_AddRecord(FlowfinityConnectionHelper.FASR.HomeInstallations_AddRecord_Request Request) {
+            return base.Channel.Callout_HomeInstallations_AddRecord(Request);
+        }
+        
+        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_HomeInstallations_CreateServiceRequest(FlowfinityConnectionHelper.FASR.HomeInstallations_CreateServiceRequest_Request Request) {
+            return base.Channel.Callout_HomeInstallations_CreateServiceRequest(Request);
         }
     }
     
@@ -38751,47 +33244,6 @@ namespace FlowfinityConnectionHelper.FASR {
         
         public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_ManufacturerTracking_AddRecord(FlowfinityConnectionHelper.FASR.ManufacturerTracking_AddRecord_Request Request) {
             return base.Channel.Callout_ManufacturerTracking_AddRecord(Request);
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://flowfinity.com/ServiceContract", ConfigurationName="FASR.ISalesReviewCalloutService", SessionMode=System.ServiceModel.SessionMode.NotAllowed)]
-    public interface ISalesReviewCalloutService {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/ISalesReviewCalloutService/Callout_SalesRev" +
-            "iew_AddRecord", ReplyAction="*")]
-        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_SalesReview_AddRecord(FlowfinityConnectionHelper.FASR.SalesReview_AddRecord_Request Request);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ISalesReviewCalloutServiceChannel : FlowfinityConnectionHelper.FASR.ISalesReviewCalloutService, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SalesReviewCalloutServiceClient : System.ServiceModel.ClientBase<FlowfinityConnectionHelper.FASR.ISalesReviewCalloutService>, FlowfinityConnectionHelper.FASR.ISalesReviewCalloutService {
-        
-        public SalesReviewCalloutServiceClient() {
-        }
-        
-        public SalesReviewCalloutServiceClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
-        }
-        
-        public SalesReviewCalloutServiceClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public SalesReviewCalloutServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public SalesReviewCalloutServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
-        }
-        
-        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_SalesReview_AddRecord(FlowfinityConnectionHelper.FASR.SalesReview_AddRecord_Request Request) {
-            return base.Channel.Callout_SalesReview_AddRecord(Request);
         }
     }
     
@@ -38878,100 +33330,6 @@ namespace FlowfinityConnectionHelper.FASR {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://flowfinity.com/ServiceContract", ConfigurationName="FASR.IMMSCalloutService", SessionMode=System.ServiceModel.SessionMode.NotAllowed)]
-    public interface IMMSCalloutService {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_EditRecord", ReplyAction="*")]
-        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_MMS_EditRecord(FlowfinityConnectionHelper.FASR.MMS_EditRecord_Request Request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_ADD", ReplyAction="*")]
-        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_MMS_Legacy_ADD(FlowfinityConnectionHelper.FASR.MMS_Legacy_ADD_Request Request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_EDIT", ReplyAction="*")]
-        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_MMS_Legacy_EDIT(FlowfinityConnectionHelper.FASR.MMS_Legacy_EDIT_Request Request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TRANS" +
-            "ITION", ReplyAction="*")]
-        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_MMS_Legacy_TRANSITION(FlowfinityConnectionHelper.FASR.MMS_Legacy_TRANSITION_Request Request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_DELET" +
-            "E", ReplyAction="*")]
-        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_MMS_Legacy_DELETE(FlowfinityConnectionHelper.FASR.MMS_Legacy_DELETE_Request Request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_DUPLI" +
-            "CATE", ReplyAction="*")]
-        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_MMS_Legacy_DUPLICATE(FlowfinityConnectionHelper.FASR.MMS_Legacy_DUPLICATE_Request Request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TRIGG" +
-            "ERADD", ReplyAction="*")]
-        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_MMS_Legacy_TRIGGERADD(FlowfinityConnectionHelper.FASR.MMS_Legacy_TRIGGERADD_Request Request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/IMMSCalloutService/Callout_MMS_Legacy_TRIGG" +
-            "EREDIT", ReplyAction="*")]
-        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_MMS_Legacy_TRIGGEREDIT(FlowfinityConnectionHelper.FASR.MMS_Legacy_TRIGGEREDIT_Request Request);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IMMSCalloutServiceChannel : FlowfinityConnectionHelper.FASR.IMMSCalloutService, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class MMSCalloutServiceClient : System.ServiceModel.ClientBase<FlowfinityConnectionHelper.FASR.IMMSCalloutService>, FlowfinityConnectionHelper.FASR.IMMSCalloutService {
-        
-        public MMSCalloutServiceClient() {
-        }
-        
-        public MMSCalloutServiceClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
-        }
-        
-        public MMSCalloutServiceClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public MMSCalloutServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public MMSCalloutServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
-        }
-        
-        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_MMS_EditRecord(FlowfinityConnectionHelper.FASR.MMS_EditRecord_Request Request) {
-            return base.Channel.Callout_MMS_EditRecord(Request);
-        }
-        
-        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_MMS_Legacy_ADD(FlowfinityConnectionHelper.FASR.MMS_Legacy_ADD_Request Request) {
-            return base.Channel.Callout_MMS_Legacy_ADD(Request);
-        }
-        
-        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_MMS_Legacy_EDIT(FlowfinityConnectionHelper.FASR.MMS_Legacy_EDIT_Request Request) {
-            return base.Channel.Callout_MMS_Legacy_EDIT(Request);
-        }
-        
-        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_MMS_Legacy_TRANSITION(FlowfinityConnectionHelper.FASR.MMS_Legacy_TRANSITION_Request Request) {
-            return base.Channel.Callout_MMS_Legacy_TRANSITION(Request);
-        }
-        
-        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_MMS_Legacy_DELETE(FlowfinityConnectionHelper.FASR.MMS_Legacy_DELETE_Request Request) {
-            return base.Channel.Callout_MMS_Legacy_DELETE(Request);
-        }
-        
-        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_MMS_Legacy_DUPLICATE(FlowfinityConnectionHelper.FASR.MMS_Legacy_DUPLICATE_Request Request) {
-            return base.Channel.Callout_MMS_Legacy_DUPLICATE(Request);
-        }
-        
-        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_MMS_Legacy_TRIGGERADD(FlowfinityConnectionHelper.FASR.MMS_Legacy_TRIGGERADD_Request Request) {
-            return base.Channel.Callout_MMS_Legacy_TRIGGERADD(Request);
-        }
-        
-        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_MMS_Legacy_TRIGGEREDIT(FlowfinityConnectionHelper.FASR.MMS_Legacy_TRIGGEREDIT_Request Request) {
-            return base.Channel.Callout_MMS_Legacy_TRIGGEREDIT(Request);
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(Namespace="http://flowfinity.com/ServiceContract", ConfigurationName="FASR.ISupplyOnlyCalloutService", SessionMode=System.ServiceModel.SessionMode.NotAllowed)]
     public interface ISupplyOnlyCalloutService {
         
@@ -39009,47 +33367,6 @@ namespace FlowfinityConnectionHelper.FASR {
         
         public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_SupplyOnly_AddRecord(FlowfinityConnectionHelper.FASR.SupplyOnly_AddRecord_Request Request) {
             return base.Channel.Callout_SupplyOnly_AddRecord(Request);
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://flowfinity.com/ServiceContract", ConfigurationName="FASR.ItestappCalloutService", SessionMode=System.ServiceModel.SessionMode.NotAllowed)]
-    public interface ItestappCalloutService {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/ItestappCalloutService/Callout_testapp_AddR" +
-            "ecord", ReplyAction="*")]
-        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_testapp_AddRecord(FlowfinityConnectionHelper.FASR.testapp_AddRecord_Request Request);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ItestappCalloutServiceChannel : FlowfinityConnectionHelper.FASR.ItestappCalloutService, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ItestappCalloutServiceClient : System.ServiceModel.ClientBase<FlowfinityConnectionHelper.FASR.ItestappCalloutService>, FlowfinityConnectionHelper.FASR.ItestappCalloutService {
-        
-        public ItestappCalloutServiceClient() {
-        }
-        
-        public ItestappCalloutServiceClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
-        }
-        
-        public ItestappCalloutServiceClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public ItestappCalloutServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public ItestappCalloutServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
-        }
-        
-        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_testapp_AddRecord(FlowfinityConnectionHelper.FASR.testapp_AddRecord_Request Request) {
-            return base.Channel.Callout_testapp_AddRecord(Request);
         }
     }
     
@@ -39233,35 +33550,43 @@ namespace FlowfinityConnectionHelper.FASR {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://flowfinity.com/ServiceContract", ConfigurationName="FASR.ISchedulePublishedCalloutService", SessionMode=System.ServiceModel.SessionMode.NotAllowed)]
-    public interface ISchedulePublishedCalloutService {
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://flowfinity.com/ServiceContract", ConfigurationName="FASR.IServiceReviewCalloutService", SessionMode=System.ServiceModel.SessionMode.NotAllowed)]
+    public interface IServiceReviewCalloutService {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/IServiceReviewCalloutService/Callout_Servic" +
+            "eReview_AddRecord", ReplyAction="*")]
+        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_ServiceReview_AddRecord(FlowfinityConnectionHelper.FASR.ServiceReview_AddRecord_Request Request);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ISchedulePublishedCalloutServiceChannel : FlowfinityConnectionHelper.FASR.ISchedulePublishedCalloutService, System.ServiceModel.IClientChannel {
+    public interface IServiceReviewCalloutServiceChannel : FlowfinityConnectionHelper.FASR.IServiceReviewCalloutService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class SchedulePublishedCalloutServiceClient : System.ServiceModel.ClientBase<FlowfinityConnectionHelper.FASR.ISchedulePublishedCalloutService>, FlowfinityConnectionHelper.FASR.ISchedulePublishedCalloutService {
+    public partial class ServiceReviewCalloutServiceClient : System.ServiceModel.ClientBase<FlowfinityConnectionHelper.FASR.IServiceReviewCalloutService>, FlowfinityConnectionHelper.FASR.IServiceReviewCalloutService {
         
-        public SchedulePublishedCalloutServiceClient() {
+        public ServiceReviewCalloutServiceClient() {
         }
         
-        public SchedulePublishedCalloutServiceClient(string endpointConfigurationName) : 
+        public ServiceReviewCalloutServiceClient(string endpointConfigurationName) : 
                 base(endpointConfigurationName) {
         }
         
-        public SchedulePublishedCalloutServiceClient(string endpointConfigurationName, string remoteAddress) : 
+        public ServiceReviewCalloutServiceClient(string endpointConfigurationName, string remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public SchedulePublishedCalloutServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServiceReviewCalloutServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(endpointConfigurationName, remoteAddress) {
         }
         
-        public SchedulePublishedCalloutServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+        public ServiceReviewCalloutServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_ServiceReview_AddRecord(FlowfinityConnectionHelper.FASR.ServiceReview_AddRecord_Request Request) {
+            return base.Channel.Callout_ServiceReview_AddRecord(Request);
         }
     }
     
@@ -39303,47 +33628,6 @@ namespace FlowfinityConnectionHelper.FASR {
         
         public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_CHIPurchaseOrder_AddRecord(FlowfinityConnectionHelper.FASR.CHIPurchaseOrder_AddRecord_Request Request) {
             return base.Channel.Callout_CHIPurchaseOrder_AddRecord(Request);
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(Namespace="http://flowfinity.com/ServiceContract", ConfigurationName="FASR.IServiceReviewCalloutService", SessionMode=System.ServiceModel.SessionMode.NotAllowed)]
-    public interface IServiceReviewCalloutService {
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://flowfinity.com/ServiceContract/IServiceReviewCalloutService/Callout_Servic" +
-            "eReview_AddRecord", ReplyAction="*")]
-        FlowfinityConnectionHelper.FASR.CalloutResponse Callout_ServiceReview_AddRecord(FlowfinityConnectionHelper.FASR.ServiceReview_AddRecord_Request Request);
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface IServiceReviewCalloutServiceChannel : FlowfinityConnectionHelper.FASR.IServiceReviewCalloutService, System.ServiceModel.IClientChannel {
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class ServiceReviewCalloutServiceClient : System.ServiceModel.ClientBase<FlowfinityConnectionHelper.FASR.IServiceReviewCalloutService>, FlowfinityConnectionHelper.FASR.IServiceReviewCalloutService {
-        
-        public ServiceReviewCalloutServiceClient() {
-        }
-        
-        public ServiceReviewCalloutServiceClient(string endpointConfigurationName) : 
-                base(endpointConfigurationName) {
-        }
-        
-        public ServiceReviewCalloutServiceClient(string endpointConfigurationName, string remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public ServiceReviewCalloutServiceClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(endpointConfigurationName, remoteAddress) {
-        }
-        
-        public ServiceReviewCalloutServiceClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
-                base(binding, remoteAddress) {
-        }
-        
-        public FlowfinityConnectionHelper.FASR.CalloutResponse Callout_ServiceReview_AddRecord(FlowfinityConnectionHelper.FASR.ServiceReview_AddRecord_Request Request) {
-            return base.Channel.Callout_ServiceReview_AddRecord(Request);
         }
     }
 }

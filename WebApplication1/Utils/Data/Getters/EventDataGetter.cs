@@ -676,7 +676,7 @@ drop table #installs
 select i.* into #installs from HomeInstallations i 
 where CurrentStateName in ({3}) and Branch in ({2})  
 insert into #installs select i.* from HomeInstallations i
-where CurrentStateName not in ('Unreviewed Buffered Work', 'Buffered Work') 
+where CurrentStateName in ('Ready for ReMeasure') 
 and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or 
 (PlannedInstallWeek >= 1 and PlannedInstallWeek <= 7)) and 
 Branch in ({2})

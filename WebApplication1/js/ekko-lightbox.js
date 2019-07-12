@@ -476,7 +476,7 @@ var Lightbox = (function ($) {
 				// local ajax can be loaded into the container itself
 				if (!disableExternalCheck && !this._isExternal(url)) {
 					$containerForElement.load(url, $.proxy(function () {
-						return _this3._$element.trigger('loaded.bs.modal');l;
+						return _this3._$element.trigger('loaded.bs.modal');
 					}));
 				} else {
 					$containerForElement.html('<iframe src="' + url + '" frameborder="0" allowfullscreen></iframe>');
