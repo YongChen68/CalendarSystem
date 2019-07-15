@@ -1403,10 +1403,17 @@ $(document).ready(function () {
                 //});
                 //$(element).find(dom).append(ret3);
               //  (event.UnavailableStaff.split(",").length != 0? "<img src=\"images/installer" + event.UnavailableStaff.split(",").length + ".png\" title=\"Estimated number of installers for the job: " + "\">" : "") +
-                var ret3 = "<img src=\"images/human.png\" />" + "&nbsp;" + 
-                 //   "<img src=\"images/installer" + event.UnavailableStaff.split(",").length + ".png\" title=\"" +
-                    (event.UnavailableStaff.split(",").length != 0 ? "<img src=\"images/installer" + event.UnavailableStaff.split(",").length + ".png\" title=\"" + "\">" : "") +
-                    (" " + event.UnavailableStaff) 
+                dom = '.fc-title';
+                $(element).find(dom).empty();
+
+                var ret3 =
+                    //"<img src=\"images/human.png\" />" + "&nbsp;" +
+                    (event.UnavailableStaff.split(",").length != 0 ? "<img src=\"images/human.png\" title=\"Unavailable staff: " + event.UnavailableStaff +  "\">" : "") +
+
+                    //   "<img src=\"images/installer" + event.UnavailableStaff.split(",").length + ".png\" title=\"" +
+                 //   (event.UnavailableStaff.split(",").length != 0 ? "<img src=\"images/installer" + event.UnavailableStaff.split(",").length + ".png\" title=\"" + "\">" : "") +
+                  //  (" " + event.UnavailableStaff.split(",")[0] + "...");
+                    (event.UnavailableStaff.split(",").length != 0 ? " " + event.UnavailableStaff.split(",")[0] + "(" + event.UnavailableStaff.split(",").length + ")" : "")
                 $(element).find(dom).prepend(ret3);
 
             }
