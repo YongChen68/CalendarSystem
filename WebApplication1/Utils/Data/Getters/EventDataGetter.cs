@@ -307,7 +307,7 @@ installationwindowLBRMIN/detailrecordCount as subinstallationwindowLBRMIN,
 InstallationDoorLBRMin/detailrecordCount as subExtDoorLBRMIN,
 InstallationPatioDoorLBRMin/detailrecordCount as subInstallationPatioDoorLBRMin,
 TotalInstallationLBRMin/detailrecordCount as subTotalInstallationLBRMin,
-SidingLBRBudget,SidingLBRMin,SidingSQF,
+SidingLBRBudget,SidingLBRMin,SidingSQF,SubTradeFlag,
 
 jobtype,CurrentStateName,null as Hours, null as hours, HomePhoneNumber, CellPhone, WorkPhoneNumber, 
 
@@ -320,7 +320,7 @@ i.SalesAmmount/detailrecordCount as SalesAmmount,i.SalesAmmount as TotalSalesAmo
 ParentRecordId,detailrecordCount,saturday, sunday, jobtype,ActionItemId as id,i.streetAddress, i.EstInstallerCnt,
 i.WorkOrderNumber, i.LastName, i.FirstName,i.City, i.PostalCode as PostCode,i.Email,i.Rep_display as SalesRep,i.LeadPaint ,
 i.CurrentStateName,PlannedInstallWeek,
-SidingLBRBudget,SidingLBRMin,SidingSQF,
+SidingLBRBudget,SidingLBRMin,SidingSQF,i.SubTradeFlag,
 dbo.fGetStartScheduleDate(ReturnedJob,RecordId) as StartScheduleDate,
 dbo.fGetEndScheduleDate(ReturnedJob,RecordId) as EndScheduleDate,
 round(i.Windows/detailrecordCount,2) as Windows, round(i. PatioDoors/detailrecordCount,2) as Doors,round(i. ExtDoors/detailrecordCount,2) as ExtDoors,
@@ -409,6 +409,9 @@ drop table #installs
                 newEvent.id = eventx.id;
                 newEvent.LastName = eventx.LastName;
                 newEvent.FirstName = eventx.FirstName;
+
+                newEvent.SubTradeFlag = eventx.SubTradeFlag;
+
                 //  newEvent.Other = eventx.Other;
                 //      newEvent.OtherState = eventx.OtherState;
 
@@ -541,6 +544,8 @@ drop table #installs
 
                 newEvent.ReturnedJob = eventx.ReturnedJob;
 
+
+
                 newEvent.PostCode = eventx.PostCode;
                 newEvent.Email = eventx.Email;
                 newEvent.SalesRep = eventx.SalesRep;
@@ -574,6 +579,8 @@ drop table #installs
                 newEvent.id = returnedEvent.id;
                 newEvent.LastName = returnedEvent.LastName;
                 newEvent.FirstName = returnedEvent.FirstName;
+
+                newEvent.SubTradeFlag = returnedEvent.SubTradeFlag;
 
                 // newEvent.Other = returnedEvent.Other;
                 //  newEvent.OtherState = returnedEvent.OtherState;

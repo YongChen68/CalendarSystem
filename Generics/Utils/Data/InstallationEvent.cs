@@ -285,6 +285,15 @@ namespace Generics.Utils.Data
         }
 
         [DataMember]
+        public string SubTradeFlag
+        {
+            get; set;
+        }
+
+        
+
+
+        [DataMember]
         public decimal subInstallationPatioDoorLBRMin
         {
             get; set;

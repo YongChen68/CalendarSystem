@@ -1435,7 +1435,7 @@ $(document).ready(function () {
                     //(event.TotalAsbestos == 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
                     ((event.TotalAsbestos == 1) || (event.LeadPaint == 'Yes') ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
                     (event.TotalHighRisk == 1 ? "&nbsp;<img src=\"images/risk.PNG\" />" : "") +
-                   // (hasSubStrade == "true" ? "&nbsp;<img src=\"images/subtrade.PNG\" />" : "") +
+                    ((event.SubTradeFlag.length > 0) && (event.SubTradeFlag>0) ? "&nbsp;<img src=\"images/subtrade.PNG\" />" : "") +
                     (event.ReturnedJob == 1 ? "&nbsp;<img src=\"images/fire.PNG\" />" : "") +
                     (" " + event.WorkOrderNumber) + "&nbsp;" +
                     (",Name: " + event.LastName.trim().length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
