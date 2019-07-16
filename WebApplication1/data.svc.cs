@@ -440,6 +440,7 @@ namespace CalendarSystem
                string id
                , string remeasureDate
                , string fromPopup
+               , string currentState
            )
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateRemeasureData('{0}')", id);
@@ -449,7 +450,9 @@ namespace CalendarSystem
             {
                 eventData = new ImproperRemeasureEvent();
                 eventData.id = id;
-                
+                eventData.CurrentStateName = currentState;
+
+
                 if (fromPopup=="yes")
                 {
                     eventData.start = Convert.ToDateTime(remeasureDate).ToString("yyyy-MM-ddT00:00:00.000Z");

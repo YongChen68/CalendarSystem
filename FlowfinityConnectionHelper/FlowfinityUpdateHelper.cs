@@ -65,14 +65,30 @@ namespace FlowfinityConnectionHelper
         {
             bool ret;
             bool ret1 = true;
-            FASR.HomeInstallations_EditSold_Call call = new FASR.HomeInstallations_EditSold_Call()
-            {
-                OnBehalfOf = Owner,
-                RecordID = data.id,
 
-                Record = GetRecord(type, data)
-            };
-            ret = _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
+            if ((data.CurrentStateName == "Ready for ReMeasure") || (data.CurrentStateName == "Rejected Remeasure"))
+            {
+                FASR.HomeInstallations_ScheduleRemeasure_Call call = new FASR.HomeInstallations_ScheduleRemeasure_Call()
+                {
+                    OnBehalfOf = Owner,
+                    RecordID = data.id,
+
+                    Record = GetRecord(type, data)
+                };
+                ret = _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
+            }
+            else
+            {
+                FASR.HomeInstallations_EditSold_Call call = new FASR.HomeInstallations_EditSold_Call()
+                {
+                    OnBehalfOf = Owner,
+                    RecordID = data.id,
+
+                    Record = GetRecord(type, data)
+                };
+                ret = _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
+
+            }
 
             //if (data.CurrentStateName == "Unreviewed Work Scheduled")
             //{

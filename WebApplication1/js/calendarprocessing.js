@@ -584,8 +584,8 @@ function LoadGlobalValues(firstDay, lastDay) {
 }
 $(document).ready(function () {
     LoadBufferedJobs();
-    LoadInstallationBufferedJobs();
-   LoadRemeasureBufferedJobs();
+   // LoadInstallationBufferedJobs();
+   //LoadRemeasureBufferedJobs();
 
     $('#external-events1').hide();
    $('#external-eventsRemeasure').hide();
@@ -2056,11 +2056,11 @@ function ChangeType(type) {
         LoadInstallationBufferedJobs();
         $('#external-events1').show();
         $('#external-events').hide();
-        $('#eventsRemeasure-events').hide();
+        $('#external-eventsRemeasure').hide();
     }
     else if (type == "Remeasure") {
         LoadRemeasureBufferedJobs();
-        $('#eventsRemeasure-events').show();
+        $('#external-eventsRemeasure').show();
         $('#external-events').hide();
         $('#external-events1').hide();
         
@@ -2069,7 +2069,7 @@ function ChangeType(type) {
         LoadBufferedJobs();
         $('#external-events').show();
         $('#external-events1').hide();
-        $('#eventsRemeasure-events').hide();
+        $('#external-eventsRemeasure').hide();
     }
 
  
@@ -2200,12 +2200,14 @@ function UpdateInstallationEvents() {
 
 function UpdateRemeasureEvents(event) {
     var id = event.id;
-    var remesureDate;
+    var remesureDate, currentState;
+    currentState = event.CurrentStateName;
     remesureDate = event.start;
     
     $.ajax({
         url: 'data.svc/UpdateRemeasureData?id=' + id
             + '&remeasureDate=' + remesureDate
+            + '&currentState=' + currentState
             + '&fromPopup=no',
         type: "POST",
         success: function (data) {
