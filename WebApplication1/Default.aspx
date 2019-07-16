@@ -242,7 +242,7 @@
             margin: 0 auto;
         }
 
-        #external-events, #external-events1 {
+        #external-events, #external-events1,#external-eventsRemeasure{
             float: left;
             width: 200px;
             padding: 0 10px;
@@ -253,7 +253,7 @@
             height: 900px;
         }
 
-            #external-events, #external-events1 h4 {
+            #external-events, #external-events1,#external-eventsRemeasure h4 {
                 font-size: 16px;
                 margin-top: 0;
                 padding-top: 1em;
@@ -265,6 +265,11 @@
                 }
 
             #external-events1 .fc-event {
+                margin: 10px 0;
+                cursor: pointer;
+            }
+
+            #external-eventsRemeasure .fc-event {
                 margin: 10px 0;
                 cursor: pointer;
             }
@@ -281,12 +286,23 @@
                 color: #666;
             }
 
+            #external-eventsRemeasure p {
+                margin: 1.5em 0;
+                font-size: 11px;
+                color: #666;
+            }
+
             #external-events p input {
                 margin: 0;
                 vertical-align: middle;
             }
 
             #external-events1 p input {
+                margin: 0;
+                vertical-align: middle;
+            }
+
+          #external-eventsRemeasure p input {
                 margin: 0;
                 vertical-align: middle;
             }
@@ -1125,6 +1141,9 @@
                 <h4>New Work Orders</h4>
             </div>
             <div id='external-events1'>
+                <h4>New Work Orders</h4>
+            </div>
+             <div id='external-eventsRemeasure'>
                 <h4>New Work Orders</h4>
             </div>
 

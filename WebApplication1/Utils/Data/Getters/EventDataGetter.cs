@@ -683,7 +683,7 @@ drop table #installs
 select i.* into #installs from HomeInstallations i 
 where CurrentStateName in ({3}) and Branch in ({2})  
 insert into #installs select i.* from HomeInstallations i
-where CurrentStateName in ('Ready for ReMeasure') 
+where CurrentStateName in ('ReMeasure Scheduled') 
 and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or 
 (PlannedInstallWeek >= 1 and PlannedInstallWeek <= 7)) and 
 Branch in ({2})
@@ -696,7 +696,7 @@ installationwindowLBRMIN as subinstallationwindowLBRMIN,
 InstallationDoorLBRMin as subExtDoorLBRMIN,
 InstallationPatioDoorLBRMin as subInstallationPatioDoorLBRMin,
 TotalInstallationLBRMin as subTotalInstallationLBRMin,
-SidingLBRBudget,SidingLBRMin,SidingSQF,RemeasureDate,id,
+SidingLBRBudget,SidingLBRMin,SidingSQF,RemeasureDate,RemeasureEndTime,id,
 
 jobtype,CurrentStateName,null as Hours, null as hours, HomePhoneNumber, CellPhone, WorkPhoneNumber, 
 
@@ -708,7 +708,7 @@ i.SalesAmmount as SalesAmmount,i.SalesAmmount as TotalSalesAmount
 ,saturday, sunday, jobtype,ActionItemId as id,i.streetAddress, i.EstInstallerCnt,
 i.WorkOrderNumber, i.LastName, i.FirstName,i.City, i.PostalCode as PostCode,i.Email,i.Rep_display as SalesRep,i.LeadPaint ,
 i.CurrentStateName,PlannedInstallWeek,
-SidingLBRBudget,SidingLBRMin,SidingSQF,i.RemeasureDate,
+SidingLBRBudget,SidingLBRMin,SidingSQF,i.RemeasureDate,i.RemeasureEndTime,
 i.Windows as Windows,i. PatioDoors as Doors,i. ExtDoors as ExtDoors,
 i.Windows as TotalWindows, i.PatioDoors as TotalDoors,  i.ExtDoors as TotalExtDoors,
                          
@@ -727,6 +727,7 @@ FROM         #installs AS i
 where jobtype<>'Multi Family'
 
 and RemeasureDate >= '{0} ' and RemeasureDate <= '{1} '
+and  CurrentStateName in ('ReMeasure Scheduled') 
 ) x order by RemeasureDate, Branch
 
 drop table #installs
@@ -767,6 +768,7 @@ drop table #installs
                 newEvent.CurrentStateName = eventx.CurrentStateName;
                 //newEvent.DoorState = eventx.DoorState;
                 newEvent.RemeasureDate = eventx.RemeasureDate;
+                newEvent.RemeasureEndTime = eventx.RemeasureEndTime;
                 newEvent.title = eventx.title;
                 newEvent.EstInstallerCnt = eventx.EstInstallerCnt;
                 newEvent.HomePhoneNumber = eventx.HomePhoneNumber;
@@ -1390,6 +1392,11 @@ where WorkOrderNumber = '{0}' ", this.workOrderNumber);
         }
 
         List<InstallationEvent> IGetter.GetInstallationDateByWOForNonReturnedJob(string wO)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<RemeasureEvent> GetRemeasureBufferData()
         {
             throw new NotImplementedException();
         }

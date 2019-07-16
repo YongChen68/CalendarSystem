@@ -87,6 +87,14 @@ namespace CalendarSystem
 
         [OperationContract]
         [WebInvoke(Method = "GET",
+    UriTemplate = "GetRemeasureBufferJobs?branch={branch}",
+    ResponseFormat = WebMessageFormat.Json,
+    BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<Generics.Utils.Data.RemeasureEvent> GetRemeasureBufferJobs(string branch);
+
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
             UriTemplate = "GetSystemParameters?type={type}&start={start}&end={end}",
             ResponseFormat = WebMessageFormat.Json,
             BodyStyle = WebMessageBodyStyle.WrappedResponse)]

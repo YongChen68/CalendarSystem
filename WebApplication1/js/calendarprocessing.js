@@ -384,18 +384,6 @@ function LoadInstallationBufferedJobs() {
     });
     console.log("checked branches: ", branches.join(","));
     var eventBufferWODict = [];
-    //$.getJSON("data.svc/GetInstallationBufferJobs", { branch: branches.join(",")}, function (data) {
-    //    //$.each(data, function (key, val) {
-    //    //    AddInstallationBufferEvent(key, val);
-    //    //});
-    //    var events = [];
-    //    $.each(data, function (pos, item) {
-    //        item.editable = (item.HolidayName != null) ? false : true;
-    //        events.push(item);
-    //    });
-    //    /* initialize the external events
-    //    -----------------------------------------------------------------*/
-    //});
     $.ajax({
         url: 'data.svc/GetInstallationBufferJobs',
         dataType: 'json',
@@ -469,6 +457,77 @@ function AddInstallationBufferEvent(key, val) {
 
 }
 
+function AddRemeasureBufferEvent(key, val) {
+    var ret;
+ 
+        ret =
+            (val.Windows != "0" ? "&nbsp;<img alt=\"# of Windows: " + val.Windows + "Status: " + val.WindowState + "\" src=\"images/window.PNG\" />" : "") +
+            (val.Doors != "0" ? "&nbsp;<img alt=\"# of Doors: " + val.Doors + "Status: " + val.DoorState + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
+            (" " + val.WorkOrderNumber) + "&nbsp;" +
+            ("Name: " + val.LastName.trim().length > 10 ? val.LastName.trim().Substring(0, 10) : val.LastName.trim() + "&nbsp;" + val.FirstName.trim().length > 10 ? val.FirstName.trim().Substring(0, 10) : val.FirstName.trim()) +
+            "&nbsp;" + (val.City.trim().Length > 5 ? val.City.trim().toLowerCase().Substring(0, 5) : val.City.trim().toLowerCase());
+
+    // $(element).find(dom).prepend(ret);
+
+    var el = $("<div class='fc-event " + (val.JobType == "RES" ? " reservation" : "") +
+        "' id=\"" + val.id + "\" style=\"background-color:" + val.color + "\">" + ret + "</div>").appendTo('#external-eventsRemeasure');
+    el.draggable({
+        zIndex: 996,
+        revert: true,
+        revertDuration: 0  //  original position after the drag
+    });
+    $('#' + val.id).data('event', {
+        // title: val.title, id: val.id, description: val.description, doors: val.doors, windows: val.windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
+        //  title: val.title, id: val.id, doors: val.Doors, windows: val.Windows, WorkOrderNumber: title.WorkOrderNumber, Branch: val.Branch, City: val.City, CellPhone: val.CellPhone, CrewNames: val.CrewNames, CurrentStateName: val.CurrentStateName, LastName: val.LastName, FirstName: val.FirstName
+        title: val.title, id: val.id, doors: val.Doors, City: val.City, windows: val.Windows, WorkOrderNumber: val.WorkOrderNumber, LastName: val.LastName, FirstName: val.FirstName,
+        EstInstallerCnt: val.EstInstallerCnt, WindowState: val.WindowState, DoorState: val.DoorState, TotalWoodDropOff: val.TotalWoodDropOff,
+        TotalAsbestos: val.TotalAsbestos, LeadPaint: val.LeadPaint,
+        TotalHighRisk: val.TotalHighRisk, ReturnedJob: val.ReturnedJob, CurrentStateName: val.CurrentStateName
+
+    });
+
+    //new Draggable(val.id, {
+    //    eventData: {
+    //        title: 'my event',
+    //        duration: '02:00'
+    //    }
+    //});
+ }
+
+
+
+function LoadRemeasureBufferedJobs() {
+    var branches = [];
+    $.each($("input[name='branch']:checked"), function () {
+        branches.push($(this).val());
+    });
+    console.log("checked branches: ", branches.join(","));
+    var eventBufferWODict = [];
+    $.ajax({
+        url: 'data.svc/GetRemeasureBufferJobs',
+        dataType: 'json',
+        data: { branch: branches.join(",") },
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetRemeasureBufferJobsResult:", data.GetRemeasureBufferJobsResult === undefined ? "NULL" : data.GetRemeasureBufferJobsResult.length);
+            var events = [];
+
+
+            var found = false;
+            var con;
+            $.each(data.GetRemeasureBufferJobsResult, function (pos, item) {
+               AddRemeasureBufferEvent(pos, item);
+            });
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+
+
+}
+
 
 function AddBufferEvent(key, val) {
     var img = "";
@@ -526,7 +585,10 @@ function LoadGlobalValues(firstDay, lastDay) {
 $(document).ready(function () {
     LoadBufferedJobs();
     LoadInstallationBufferedJobs();
+   LoadRemeasureBufferedJobs();
+
     $('#external-events1').hide();
+   $('#external-eventsRemeasure').hide();
 
     //$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
     //    var currentTab = $(e.target).text(); // get current tab
@@ -1407,13 +1469,15 @@ $(document).ready(function () {
                 $(element).find(dom).empty();
 
                 var ret3 =
+                    (event.UnavailableStaff.length != 0 ? "<img src=\"images/human.png\" title=\"Unavailable staff: " + event.UnavailableStaff + "\">" : "") +
                     //"<img src=\"images/human.png\" />" + "&nbsp;" +
-                    (event.UnavailableStaff.split(",").length != 0 ? "<img src=\"images/human.png\" title=\"Unavailable staff: " + event.UnavailableStaff +  "\">" : "") +
+                  //  (event.UnavailableStaff.split(",").length != 0 ? "<img src=\"images/human.png\" title=\"Unavailable staff: " + event.UnavailableStaff +  "\">" : "") +
 
                     //   "<img src=\"images/installer" + event.UnavailableStaff.split(",").length + ".png\" title=\"" +
                  //   (event.UnavailableStaff.split(",").length != 0 ? "<img src=\"images/installer" + event.UnavailableStaff.split(",").length + ".png\" title=\"" + "\">" : "") +
-                  //  (" " + event.UnavailableStaff.split(",")[0] + "...");
-                    (event.UnavailableStaff.split(",").length != 0 ? " " + event.UnavailableStaff.split(",")[0] + "(" + event.UnavailableStaff.split(",").length + ")" : "")
+                    (" " + event.UnavailableStaff );
+                 //   (event.UnavailableStaff.split(",").length != 0 ? " " + event.UnavailableStaff.split(",")[0] + "(" + event.UnavailableStaff.split(",").length + ")" : "")
+                  //  (event.UnavailableStaff.length != 0 ? " " + event.UnavailableStaff + "(" + event.UnavailableStaff.split(",").length + ")" : "")
                 $(element).find(dom).prepend(ret3);
 
             }
@@ -1455,7 +1519,7 @@ $(document).ready(function () {
                 var ret1 =
                     //"<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
                     //event.EstInstallerCnt + "\">" +
-                    (event.EstInstallerCnt != "" ? "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " + "\">": ""  ) +
+                    (event.EstInstallerCnt != "" ? "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +  event.EstInstallerCnt + "\">": ""  ) +
                     (event.TotalWindows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.TotalWindows + "\" src=\"images/window.PNG\" />" : "") +
                  
                    (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Patio Doors: " + event.TotalDoors + "\" src=\"images/window.PNG\" />" : "") + "&nbsp;" +
@@ -1984,19 +2048,30 @@ function ChangeType(type) {
     $('.fc-changeType-button').html(displayType);
     $('#calendar').fullCalendar('refetchEvents');
     $('#external-events').find(".fc-event").remove();
-   $('#external-events1').find(".fc-event").remove();
+    $('#external-events1').find(".fc-event").remove();
+    $('#external-eventsRemeasure').find(".fc-event").remove();
     ControlHeaderVisibility(GetDisplayItemList(displayType));
 
     if (type == "Installation") {
         LoadInstallationBufferedJobs();
         $('#external-events1').show();
         $('#external-events').hide();
+        $('#eventsRemeasure-events').hide();
+    }
+    else if (type == "Remeasure") {
+        LoadRemeasureBufferedJobs();
+        $('#eventsRemeasure-events').show();
+        $('#external-events').hide();
+        $('#external-events1').hide();
+        
     }
     else {
         LoadBufferedJobs();
         $('#external-events').show();
         $('#external-events1').hide();
+        $('#eventsRemeasure-events').hide();
     }
+
  
     $('#typeChange').addClass('hidden');
     $('#calendar').fullCalendar('changeView', 'month');

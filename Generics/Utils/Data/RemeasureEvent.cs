@@ -18,6 +18,9 @@ namespace Generics.Utils.Data
         public DateTime RemeasureDate { get; set; }
 
         [DataMember]
+        public string RemeasureEndTime { get; set; }
+        
+        [DataMember]
         [Lift.Database.DbIgnore]
         public string color
         {

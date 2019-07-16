@@ -86,35 +86,66 @@ namespace CalendarSystem
                     myEvent.CurrentStateName = "Rejected Scheduled Work";
                     retValue.Add(myEvent);
                 }
-                // unavailableStaffList =  retValue2.GroupBy( l=>l.DateUnavailable).Select(dd=>new { DateUnavailable =dd.Key,Name = string.Join(",",dd.Select(ee=>ee.Name).ToList()) });
-                var xx = retValue2.GroupBy(l => l.DateUnavailable).Select(dd => new { DateUnavailable = dd.Key, Name = string.Join(",", dd.Select(ee => ee.Name).ToArray()) });
-                //}
-                //   => new { DateUnavailable= g.DateUnavailable,Name = string.Join(",", g.Select(
-                //       ee=>ee.Name.ToList())});
 
-                foreach (KeyValuePair<string, string> un in xx.ToDictionary(x=>x.DateUnavailable,x=>x.Name))
+                //var xx = retValue2.GroupBy(l => l.DateUnavailable).Select(dd => new { DateUnavailable = dd.Key, Name = string.Join(",", dd.Select(ee => ee.Name).ToArray()) });
+                //foreach (KeyValuePair<string, string> un in xx.ToDictionary(x=>x.DateUnavailable,x=>x.Name))
+                // {
+                //     myEvent = new InstallationEvent();
+                //     myEvent.allDay = true;
+                //     myEvent.start = un.Key;
+                //     myEvent.end = un.Key;
+                //     myEvent.ScheduledDate = Convert.ToDateTime(un.Key);
+                //     myEvent.WorkOrderNumber = un.Key;
+
+                //     myEvent.LastName = "Unavailable Staff";
+
+                //     myEvent.UnavailableStaff = un.Value;
+                //     //myEvent.City = "";
+                //     myEvent.title = un.Value;
+                //     myEvent.CurrentStateName = "Rejected Scheduled Work";
+                //     retValue.Add(myEvent);
+                // }
+
+                foreach (UnavailableHR un in retValue2)
                 {
                     myEvent = new InstallationEvent();
                     myEvent.allDay = true;
-                    myEvent.start = un.Key;
-                    myEvent.end = un.Key;
-                    myEvent.ScheduledDate = Convert.ToDateTime(un.Key);
-                    myEvent.WorkOrderNumber = un.Key;
-                 
+                    myEvent.start = un.DateUnavailable;
+                    myEvent.end = un.DateUnavailable;
+                    myEvent.WorkOrderNumber = un.Name + un.DateUnavailable;
+                    // myEvent.ScheduledDate = Convert.ToDateTime(un.DateUnavailable);
+                    // myEvent.WorkOrderNumber = un.DateUnavailable;
+                    //    myEvent.WorkOrderNumber = un.Name;
 
-                    //myEvent.StartScheduleDate = Convert.ToDateTime(un.StartScheduleDate);
-                    //myEvent.EndScheduleDate = Convert.ToDateTime(un.EndScheduleDate);
+                    myEvent.LastName ="";
 
-
-                    myEvent.LastName = "Unavailable Staff";
-                    //unavailableStaffName.Add(un.Name );
-                    //    myEvent.UnavailableStaff = string.Join(",", unavailableStaffName.ToArray());
-                    myEvent.UnavailableStaff = un.Value;
-                    //myEvent.City = "";
-                    myEvent.title = un.Value;
+                    myEvent.UnavailableStaff = un.Name;
+                    myEvent.City = "";
+                    myEvent.title = un.Name;
                     myEvent.CurrentStateName = "Rejected Scheduled Work";
                     retValue.Add(myEvent);
                 }
+
+                //   var xx = retValue2.GroupBy(l => l.DateUnavailable).Select(dd => new { DateUnavailable = dd.Key, Name = string.Join(",", dd.Select(ee => ee.Name).ToArray()) });
+                //   var xx = retValue2.GroupBy(l => l.DateUnavailable).Select(dd => new { DateUnavailable = dd.Key, Name = dd.Select(ee => ee.Name)});
+                //var xx = retValue2.GroupBy(l => l.DateUnavailable).Select(dd => new { DateUnavailable = dd.Key, Name = dd.Select(ee => ee.Name) });
+                //foreach (KeyValuePair<string, string> un in xx.ToDictionary(x => x.DateUnavailable, x => x.Name))
+                //{
+                //    myEvent = new InstallationEvent();
+                //    myEvent.allDay = true;
+                //    myEvent.start = un.Key;
+                //    myEvent.end = un.Key;
+                //    myEvent.ScheduledDate = Convert.ToDateTime(un.Key);
+                //    myEvent.WorkOrderNumber = un.Key;
+
+                //    myEvent.LastName = "Unavailable Staff";
+
+                //    myEvent.UnavailableStaff = un.Value;
+                //    //myEvent.City = "";
+                //    myEvent.title = un.Value;
+                //    myEvent.CurrentStateName = "Rejected Scheduled Work";
+                //    retValue.Add(myEvent);
+                //}
 
 
                 Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetEvents() = {0}", retValue.Count.ToString());
@@ -258,6 +289,24 @@ namespace CalendarSystem
             }
             return retValue;
         }
+
+        List<RemeasureEvent> Idata.GetRemeasureBufferJobs(string branch)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Entering GetRemeasureBufferJobs");
+            List<RemeasureEvent> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.BufferedDataGetter(new List<string>(branch.Split(',')));
+                retValue = getter.GetRemeasureBufferData();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetInstallationBufferJobs() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
 
         List<GlobalValues> Idata.GetSystemParameters(string type, DateTime start, DateTime end)
         {
