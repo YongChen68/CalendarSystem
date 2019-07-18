@@ -18,6 +18,10 @@ namespace Generics.Utils.Data
         public DateTime RemeasureDate { get; set; }
 
         [DataMember]
+        [Lift.Database.DbIgnore]
+        public string RemeasureDateFormat { get { return FormatDateTime(RemeasureDate); } set { } }
+
+        [DataMember]
         public string RemeasureEndTime { get; set; }
         
         [DataMember]

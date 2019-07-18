@@ -806,44 +806,22 @@
                             </div>
 
                             <div role="tabpanel" class="tab-pane" id="RemeasureTab">
-                                <div id="RemeasureContent" style="width: 600px; margin-left: 20px; padding-left: 20px;">
-                                    
+                                <div id="RemeasureContent" style="width: 600px; margin-left: 0px; padding-left: 0px;">
                                     <br>
-                                    <span style="margin-left:-390px;"><b>Remeasure Date: </b></span>
-                                     <br>
-                                    <div class="container">
-
-                                        <div class="leftcolumn">
-                                            <div class="container">
-                                                <div class="leftcolumn" style="width: 5%; align-items: center;">
-                                                    From:
-                                                </div>
-                                                <div class="rightcolumn" style="width: 20%;">
-                                                    <input id="RemeasureDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Remeasure Date">
-                                                </div>
-
-                                            </div>
-
-                                        </div>
-                                        <div class="rightcolumn">
-                                            <div class="container">
-                                                <div class="leftcolumn" style="width: 5%; padding-left: 50px;">
-                                                       <input type="button" name="btnSave" id="btnRemeasureSave" class="btn btn-success" value="Save" onclick="UpdateRemeasureEventsFromPopup()">
-                                                </div>
-
-                                                <div class="rightcolumn" style="padding-left: 50px; width: 5%;">
-                                                  
-                                                </div>
-                                            </div>
-                                        </div>
-
-
+                                    <br>
+                                    <div style="margin-left:-160px;"><b>Remeasure Date & Time: </b>
+                                         <input type="datetime-local"  id="RemeasureDate" style="width: 250px; text-align: center;">  
                                     </div>
-
                                     <br>
+                                    <div style="margin-left:-210px;"><b>End Time: </b>
+       <%--                                  <input type="datetime-local"  id="EndRemeasureDate" style="width: 250px; text-align: center;">--%>
+                                        <input type="time" id="EndRemeasureDate" name="appt">
+                                    </div>
+                                  
+                                    <br>
+                                 
 
-
-                                
+                                <input type="button" name="btnSave" id="btnRemeasureSave" class="btn btn-success" value="Save" style="margin-left:-450px; " onclick="UpdateRemeasureEventsFromPopup()">
                                 </div>
                             </div>
      <%--                       <div role="tabpanel" class="tab-pane " id="ProductTabRemeasure">

@@ -224,6 +224,8 @@ function sendUpdateToServer(event) {
 
 }
 
+
+
 function GetDatefromMoment(val) {
     return moment(val).toDate();
 }
@@ -1375,7 +1377,15 @@ $(document).ready(function () {
                     $("#AddressRemeasure").html(event.StreetAddress);
                     $("#SalesAmmountRemeasure").html(event.TotalSalesAmount.formatMoney(2, "$", ",", "."));
                     $("#RemeasureDate").val('');
-                    $("#RemeasureDate").val(new Date(GetDatefromMoment(event.RemeasureDate + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+                    //$("#RemeasureDate").val(new Date(GetDatefromMoment(event.RemeasureDate + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+                //   $("#RemeasureDate").val( "2014-01-02T11:42");RemeasureDateFormat
+                  //  $("#RemeasureDate").val(event.RemeasureDateFormat);
+                    $("#RemeasureDate").val(event.RemeasureDateFormat.slice(0, -4));
+                   
+
+                    $("#EndRemeasureDate").val('');
+                   // $("#EndRemeasureDate").val(event.EndRemeasureDateFormat.slice(0, -4));
+                    $("#EndRemeasureDate").val(event.RemeasureEndTime);
                   
                     
 
@@ -1519,10 +1529,13 @@ $(document).ready(function () {
                 var ret1 =
                     //"<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
                     //event.EstInstallerCnt + "\">" +
-                    (event.EstInstallerCnt != "" ? "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +  event.EstInstallerCnt + "\">": ""  ) +
+                    (event.EstInstallerCnt != "" ? "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " + event.EstInstallerCnt + "\">" : "") +
+                    (event.RemeasureDate != ""? "&nbsp;<img title=\"Remeasure Date & Time: " + formatDate(new Date(GetDatefromMoment(event.RemeasureDate + 24 * 60 * 60000))) + "\" src=\"images/timer.PNG\" />" : "") + "&nbsp;" +
                     (event.TotalWindows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.TotalWindows + "\" src=\"images/window.PNG\" />" : "") +
                  
-                   (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Patio Doors: " + event.TotalDoors + "\" src=\"images/window.PNG\" />" : "") + "&nbsp;" +
+                    (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Patio Doors: " + event.TotalDoors + "\" src=\"images/window.PNG\" />" : "") + "&nbsp;" +
+                  //  (formatDate(new Date(GetDatefromMoment(event.RemeasureDate + 24 * 60 * 60000)))) + "&nbsp;" +
+                   // (" " + new Date(GetDatefromMoment(event.RemeasureDate + 24 * 60 * 60000)).toLocaleDateString('en-US') +  "&nbsp;" +
                     (" " + event.WorkOrderNumber) + "&nbsp;" +
                     (",Name: " + event.LastName.trim().length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
                     "&nbsp;" + (event.City) + "&nbsp;";
@@ -1672,49 +1685,77 @@ $(document).ready(function () {
                         for (var j = 0; j < eventWODict.length; j++) {
                             date2 = new Date(GetDatefromMoment(eventWODict[j]["ScheduledDate"])).toLocaleDateString('en-US');
                             if ((date1 == date2) && (eventWODict[j].ReturnedJob != 1)) {
+                                totals[i].windows += eventWODict[j]["Windows"];
+                                totals[i].doors += eventWODict[j]["Doors"];
+                                totals[i].ExtDoors += eventWODict[j]["ExtDoors"];
+                                totals[i].SalesAmmount += eventWODict[j]["SalesAmmount"];
+                                totals[i].TotalAsbestos += eventWODict[j]["TotalAsbestos"];
+                                totals[i].TotalWoodDropOff += eventWODict[j]["TotalWoodDropOff"];
+                                totals[i].TotalHighRisk += eventWODict[j]["TotalHighRisk"];
+
+                                totals[i].installationwindowLBRMIN += eventWODict[j]["installationwindowLBRMIN"];
+                                totals[i].InstallationDoorLBRMin += eventWODict[j]["InstallationDoorLBRMin"];
+                                totals[i].InstallationPatioDoorLBRMin += eventWODict[j]["InstallationPatioDoorLBRMin"];
+                                totals[i].TotalInstallationLBRMin += eventWODict[j]["TotalInstallationLBRMin"];
+
+                                totals[i].subinstallationwindowLBRMIN += eventWODict[j]["subinstallationwindowLBRMIN"];
+                                totals[i].subInstallationPatioDoorLBRMin += eventWODict[j]["subInstallationPatioDoorLBRMin"];
+                                totals[i].subExtDoorLBRMIN += eventWODict[j]["subExtDoorLBRMIN"];
+                                totals[i].subTotalInstallationLBRMin += eventWODict[j]["subTotalInstallationLBRMin"];
+
+                                totals[i].SidingLBRBudget += eventWODict[j]["SidingLBRBudget"];
+                                totals[i].SidingLBRMin += eventWODict[j]["SidingLBRMin"];
+                                totals[i].SidingSQF += eventWODict[j]["SidingSQF"];
+
+                                if (eventWODict[j]["LeadPaint"] == "Yes") {
+                                    totals[i].TotalLeadPaint++;
+                                }
+
+                                totals[i].WOCount = WOCount + 1;
+                                WOCount++;
                                // if eventWODict[j].Saturday == "No"
-                                xDate = is_weekend(date2);
-                                xDateSat = is_saturday(date2);
-                                xDateSun = is_sunday(date2);
-                                if ((eventWODict[j].Sunday == "No" && eventWODict[j].Saturday == "No") && (xDate == "weekend")) {
+                                //xDate = is_weekend(date2);
+                                //xDateSat = is_saturday(date2);
+                                //xDateSun = is_sunday(date2);
+                                //if ((eventWODict[j].Sunday == "No" && eventWODict[j].Saturday == "No") && (xDate == "weekend")) {
 
-                                }
-                                else if ((eventWODict[j].Sunday == "Yes" && eventWODict[j].Saturday == "No") && (xDateSat == "saturday")) {
+                                //}
+                                //else if ((eventWODict[j].Sunday == "Yes" && eventWODict[j].Saturday == "No") && (xDateSat == "saturday")) {
                                    
-                                }
-                                else if ((eventWODict[j].Sunday == "No" && eventWODict[j].Saturday == "Yes") && (xDateSun == "sunday")) {
+                                //}
+                                //else if ((eventWODict[j].Sunday == "No" && eventWODict[j].Saturday == "Yes") && (xDateSun == "sunday")) {
                                   
-                                }
-                                else {
-                                    totals[i].windows += eventWODict[j]["Windows"];
-                                    totals[i].doors += eventWODict[j]["Doors"];
-                                    totals[i].ExtDoors += eventWODict[j]["ExtDoors"];
-                                    totals[i].SalesAmmount += eventWODict[j]["SalesAmmount"];
-                                    totals[i].TotalAsbestos += eventWODict[j]["TotalAsbestos"];
-                                    totals[i].TotalWoodDropOff += eventWODict[j]["TotalWoodDropOff"];
-                                    totals[i].TotalHighRisk += eventWODict[j]["TotalHighRisk"];
+                                //}
+                                //else {
+                                //    totals[i].windows += eventWODict[j]["Windows"];
+                                //    totals[i].doors += eventWODict[j]["Doors"];
+                                //    totals[i].ExtDoors += eventWODict[j]["ExtDoors"];
+                                //    totals[i].SalesAmmount += eventWODict[j]["SalesAmmount"];
+                                //    totals[i].TotalAsbestos += eventWODict[j]["TotalAsbestos"];
+                                //    totals[i].TotalWoodDropOff += eventWODict[j]["TotalWoodDropOff"];
+                                //    totals[i].TotalHighRisk += eventWODict[j]["TotalHighRisk"];
 
-                                    totals[i].installationwindowLBRMIN += eventWODict[j]["installationwindowLBRMIN"];
-                                    totals[i].InstallationDoorLBRMin += eventWODict[j]["InstallationDoorLBRMin"];
-                                    totals[i].InstallationPatioDoorLBRMin += eventWODict[j]["InstallationPatioDoorLBRMin"];
-                                    totals[i].TotalInstallationLBRMin += eventWODict[j]["TotalInstallationLBRMin"];
+                                //    totals[i].installationwindowLBRMIN += eventWODict[j]["installationwindowLBRMIN"];
+                                //    totals[i].InstallationDoorLBRMin += eventWODict[j]["InstallationDoorLBRMin"];
+                                //    totals[i].InstallationPatioDoorLBRMin += eventWODict[j]["InstallationPatioDoorLBRMin"];
+                                //    totals[i].TotalInstallationLBRMin += eventWODict[j]["TotalInstallationLBRMin"];
 
-                                    totals[i].subinstallationwindowLBRMIN += eventWODict[j]["subinstallationwindowLBRMIN"];
-                                    totals[i].subInstallationPatioDoorLBRMin += eventWODict[j]["subInstallationPatioDoorLBRMin"];
-                                    totals[i].subExtDoorLBRMIN += eventWODict[j]["subExtDoorLBRMIN"];
-                                    totals[i].subTotalInstallationLBRMin += eventWODict[j]["subTotalInstallationLBRMin"];
+                                //    totals[i].subinstallationwindowLBRMIN += eventWODict[j]["subinstallationwindowLBRMIN"];
+                                //    totals[i].subInstallationPatioDoorLBRMin += eventWODict[j]["subInstallationPatioDoorLBRMin"];
+                                //    totals[i].subExtDoorLBRMIN += eventWODict[j]["subExtDoorLBRMIN"];
+                                //    totals[i].subTotalInstallationLBRMin += eventWODict[j]["subTotalInstallationLBRMin"];
 
-                                    totals[i].SidingLBRBudget += eventWODict[j]["SidingLBRBudget"];
-                                    totals[i].SidingLBRMin += eventWODict[j]["SidingLBRMin"];
-                                    totals[i].SidingSQF += eventWODict[j]["SidingSQF"];
+                                //    totals[i].SidingLBRBudget += eventWODict[j]["SidingLBRBudget"];
+                                //    totals[i].SidingLBRMin += eventWODict[j]["SidingLBRMin"];
+                                //    totals[i].SidingSQF += eventWODict[j]["SidingSQF"];
 
-                                    if (eventWODict[j]["LeadPaint"] == "Yes") {
-                                        totals[i].TotalLeadPaint++;
-                                    }
+                                //    if (eventWODict[j]["LeadPaint"] == "Yes") {
+                                //        totals[i].TotalLeadPaint++;
+                                //    }
 
-                                    totals[i].WOCount = WOCount + 1;
-                                    WOCount++;
-                                }
+                                //    totals[i].WOCount = WOCount + 1;
+                                //    WOCount++;
+                                //}
 
                             }
 
@@ -1809,6 +1850,29 @@ $(document).ready(function () {
 
   
 });
+
+ function formatDate(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return date.getMonth() + 1 + "/" + date.getDate() + "/" + date.getFullYear() + "  " + strTime;
+}
+
+
+function formatTime(date) {
+    var hours = date.getHours();
+    var minutes = date.getMinutes();
+    var ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+    var strTime = hours + ':' + minutes + ' ' + ampm;
+    return  strTime;
+}
 
 
 function changeJobStaff() {
@@ -2227,8 +2291,9 @@ function UpdateRemeasureEvents(event) {
 
 function UpdateRemeasureEventsFromPopup() {
     var id = eventid;
-    var remesureDate; 
+    var remesureDate, endRemesureDate; 
     remesureDate = $("#RemeasureDate").val();
+    endRemesureDate = $("#EndRemeasureDate").val();
 
     $("#RemeasureDate").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
 
