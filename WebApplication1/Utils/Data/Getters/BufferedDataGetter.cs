@@ -244,15 +244,74 @@ and p.CurrentStateName <> 'Duplicated Work Order' and p.CurrentStateName <> 'Com
             return returnEventList;
         }
 
+        //        private string GetRemeasureSQL()
+        //        {
+
+        //             string SQL = string.Format(@"
+
+
+        //select i.* into #installs from HomeInstallations i 
+        //insert into #installs select i.* from HomeInstallations i
+
+        //select WorkOrderNumber, LastName,FirstName, City,PostCode, Email,SalesRep,LeadPaint,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,
+        //TotalDoors,TotalWindows,Windows,Doors,ExtDoors,TotalExtDoors,
+        //saturday, sunday, 
+        //installationwindowLBRMIN,InstallationPatioDoorLBRMin,InstallationDoorLBRMin,TotalInstallationLBRMin,
+        //installationwindowLBRMIN as subinstallationwindowLBRMIN,
+        //InstallationDoorLBRMin as subExtDoorLBRMIN,
+        //InstallationPatioDoorLBRMin as subInstallationPatioDoorLBRMin,
+        //TotalInstallationLBRMin as subTotalInstallationLBRMin,
+        //SidingLBRBudget,SidingLBRMin,SidingSQF,RemeasureDate,RemeasureEndTime,id,
+
+        //jobtype,CurrentStateName,null as Hours, null as hours, HomePhoneNumber, CellPhone, WorkPhoneNumber, 
+
+        //EstInstallerCnt, StreetAddress, PaintedProduct, Branch 
+        //from (
+        //SELECT   i.Branch_Display as Branch, i.PaintedProduct,
+        //installationwindowLBRMIN,InstallationPatioDoorLBRMin,InstallationDoorLBRMin,TotalInstallationLBRMin,
+        //i.SalesAmmount as SalesAmmount,i.SalesAmmount as TotalSalesAmount 
+        //,saturday, sunday, jobtype,ActionItemId as id,i.streetAddress, i.EstInstallerCnt,
+        //i.WorkOrderNumber, i.LastName, i.FirstName,i.City, i.PostalCode as PostCode,i.Email,i.Rep_display as SalesRep,i.LeadPaint ,
+        //i.CurrentStateName,PlannedInstallWeek,
+        //SidingLBRBudget,SidingLBRMin,SidingSQF,i.RemeasureDate,i.RemeasureEndTime,
+        //i.Windows as Windows,i. PatioDoors as Doors,i. ExtDoors as ExtDoors,
+        //i.Windows as TotalWindows, i.PatioDoors as TotalDoors,  i.ExtDoors as TotalExtDoors,
+
+        //(SELECT count(*) 
+        //          FROM HomeInstallations
+        //         WHERE WoodDropOff='Yes' and i.RecordId = RecordId) TotalWoodDropOff,
+        //(SELECT count(*) 
+        //          FROM HomeInstallations
+        //         WHERE Asbestos='Yes' and i.RecordId = RecordId) TotalAsbestos,
+        //(SELECT count(*) 
+        //          FROM HomeInstallations
+        //         WHERE HighRisk='Yes' and i.RecordId = RecordId) TotalHighRisk,
+
+        // HomePhoneNumber, CellPhone, WorkPhoneNumber
+        //FROM         #installs AS i 
+        //where jobtype<>'Multi Family'
+        //and  CurrentStateName in ('Ready for ReMeasure', 'Rejected Remeasure') 
+
+        //) x order by Branch
+
+        //drop table #installs
+        //--drop table #Windows
+        //--drop table #Doors
+        //--drop table #Other
+        //--drop table #Subtrade");
+        //            return SQL;
+
+        //        }
+
         private string GetRemeasureSQL()
         {
 
-             string SQL = string.Format(@"
+            string SQL = string.Format(@"
 
 
-select i.* into #installs from HomeInstallations i 
-insert into #installs select i.* from HomeInstallations i
 
+
+                         
 select WorkOrderNumber, LastName,FirstName, City,PostCode, Email,SalesRep,LeadPaint,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,
 TotalDoors,TotalWindows,Windows,Doors,ExtDoors,TotalExtDoors,
 saturday, sunday, 
@@ -287,21 +346,17 @@ i.Windows as TotalWindows, i.PatioDoors as TotalDoors,  i.ExtDoors as TotalExtDo
           FROM HomeInstallations
          WHERE HighRisk='Yes' and i.RecordId = RecordId) TotalHighRisk,
 
- HomePhoneNumber, CellPhone, WorkPhoneNumber
-FROM         #installs AS i 
-where jobtype<>'Multi Family'
+HomePhoneNumber, CellPhone, WorkPhoneNumber
+FROM         [flowserv_flowfinityapps].[dbo].[HomeInstallations] AS i 
+where jobtype<>'Multi Family' and i.RemeasureDate is null
 and  CurrentStateName in ('Ready for ReMeasure', 'Rejected Remeasure') 
 
 ) x order by Branch
-
-drop table #installs
---drop table #Windows
---drop table #Doors
---drop table #Other
---drop table #Subtrade");
+");
             return SQL;
 
         }
+
 
         public List<Product> GetProductsDoors()
         {

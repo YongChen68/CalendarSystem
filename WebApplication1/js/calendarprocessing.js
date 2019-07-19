@@ -122,7 +122,9 @@ function sendUpdateToServer(event) {
         Amount: event.TotalSalesAmount,
         totalWindows: event.TotalWindows,
         totalDoors: event.TotalDoors,
-        CurrentStateName: event.CurrentStateName
+        CurrentStateName: event.CurrentStateName,
+        EndTime: event.EndRemeasureDate
+        
 
     };
     if (event.end === null) {
@@ -1525,12 +1527,26 @@ $(document).ready(function () {
                 dom = '.fc-title';
                 $(element).find(dom).empty();
 
+                var endTime ;
+                
+                if (event.RemeasureEndTime == undefined) {
+                    endTime = "";
+                }
+                else if (event.RemeasureEndTime.length == 0) {
+                    endTime = "";
+                }
+                else {
+                    endTime = " to " + tConv24(event.RemeasureEndTime);
+                }
+
 
                 var ret1 =
                     //"<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
                     //event.EstInstallerCnt + "\">" +
                     (event.EstInstallerCnt != "" ? "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " + event.EstInstallerCnt + "\">" : "") +
-                    (event.RemeasureDate != ""? "&nbsp;<img title=\"Remeasure Date & Time: " + formatDate(new Date(GetDatefromMoment(event.RemeasureDate + 24 * 60 * 60000))) + "\" src=\"images/timer.PNG\" />" : "") + "&nbsp;" +
+                    (event.RemeasureDate != "" ? "&nbsp;<img title=\"Remeasure Date & Time: " + formatDate(new Date(GetDatefromMoment(event.RemeasureDate + 24 * 60 * 60000))) + " " +
+                   //     (event.RemeasureEndTime != undefined && event.RemeasureEndTime.length ? " to " + event.RemeasureEndTime:"") + "\" src=\"images/timer.PNG\" />" : "") + "&nbsp;" +
+                        endTime + "\" src=\"images/timer.PNG\" />" : "") + "&nbsp;" +
                     (event.TotalWindows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.TotalWindows + "\" src=\"images/window.PNG\" />" : "") +
                  
                     (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Patio Doors: " + event.TotalDoors + "\" src=\"images/window.PNG\" />" : "") + "&nbsp;" +
@@ -2267,16 +2283,19 @@ function UpdateRemeasureEvents(event) {
     var remesureDate, currentState;
     currentState = event.CurrentStateName;
     remesureDate = event.start;
+    remeasureEndDate = event.EndRemeasureDate;
     
     $.ajax({
         url: 'data.svc/UpdateRemeasureData?id=' + id
             + '&remeasureDate=' + remesureDate
+            + '&remeasureEndDate=' + remeasureEndDate
             + '&currentState=' + currentState
             + '&fromPopup=no',
         type: "POST",
         success: function (data) {
             if (debug) console.log("events.success", "data.UpdateRemeasureEvents:");
             $("#RemeasureDate").val('');
+            $("#EndRemeasureDate").val('');
             $('#calendar').fullCalendar('refetchEvents');
             $('#calendar').fullCalendar('rerenderEvents');
     
@@ -2288,18 +2307,28 @@ function UpdateRemeasureEvents(event) {
     });
 }
 
+function tConv24(time24) {
+    var ts = time24;
+    var H = +ts.substr(0, 2);
+    var h = (H % 12) || 12;
+   // h = (h < 10) ? ("0" + h) : h;  // leading 0 at the left for 1 digit hours
+    var ampm = H < 12 ? " am" : " pm";
+    ts = h + ts.substr(2, 3) + ampm;
+    return ts;
+}
 
 function UpdateRemeasureEventsFromPopup() {
     var id = eventid;
-    var remesureDate, endRemesureDate; 
+    var remesureDate, endRemeasureDate; 
     remesureDate = $("#RemeasureDate").val();
-    endRemesureDate = $("#EndRemeasureDate").val();
+    endRemeasureDate = $("#EndRemeasureDate").val();
 
     $("#RemeasureDate").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
 
     $.ajax({
         url: 'data.svc/UpdateRemeasureData?id=' + id
             + '&remeasureDate=' + remesureDate
+            + '&remeasureEndDate=' + endRemeasureDate
             + '&fromPopup=yes',
         type: "POST",
         success: function (data) {

@@ -439,6 +439,7 @@ namespace CalendarSystem
         public bool UpdateRemeasureData(
                string id
                , string remeasureDate
+               , string remeasureEndDate
                , string fromPopup
                , string currentState
            )
@@ -461,7 +462,7 @@ namespace CalendarSystem
                 {
                     eventData.start = Convert.ToDateTime(remeasureDate).AddDays(1).ToString("yyyy-MM-ddT00:00:00.000Z");
                 }
-                
+                eventData.end = remeasureEndDate;
                 RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
                 retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Remeasure"), eventData);
 

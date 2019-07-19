@@ -53,8 +53,8 @@ namespace CalendarSystem
         bool UpdateInstallationData(string id, string scheduledStartDate, string scheduledEndDate,int Asbestos, int WoodDropOff, int HighRisk, int EstInstallerCnt, string Saturday, string Sunday, string LeadPaint);
 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "UpdateRemeasureData?id={id}&remeasureDate={remeasureDate}&fromPopup={fromPopup}&currentState={currentState}")]
-        bool UpdateRemeasureData(string id, string remeasureDate,string fromPopup, string currentState);
+        [WebInvoke(Method = "POST", UriTemplate = "UpdateRemeasureData?id={id}&remeasureDate={remeasureDate}&remeasureEndDate={remeasureEndDate}&fromPopup={fromPopup}&currentState={currentState}")]
+        bool UpdateRemeasureData(string id, string remeasureDate, string remeasureEndDate, string fromPopup, string currentState);
 
 
 

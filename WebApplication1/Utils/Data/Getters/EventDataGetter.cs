@@ -643,51 +643,110 @@ drop table #installs
             return returnEventList;
         }
 
+        //        private string GetRemeasureSQL()
+        //        {
+
+        //            string sPlanedCheck = @"";
+        //            // Create an instance of Norwegian culture
+        //            System.Globalization.CultureInfo Culture =
+        //            System.Globalization.CultureInfo.CreateSpecificCulture("ca");
+        //            // Get the Norwegian calendar from the culture object
+        //            System.Globalization.Calendar cal = Culture.Calendar;
+
+
+
+
+        //            if (this.endDate.Year - this.startDate.Year > 0)
+        //            {
+        //                sPlanedCheck = string.Format(@" (((PlannedInstallWeek >= {0}) and PlannedInstallWeek <= {1}) or 
+        //(PlannedInstallWeek >= {2} and PlannedInstallWeek <= {3}))",
+        //                                                    cal.GetWeekOfYear(this.startDate, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday),
+        //                                                    cal.GetWeekOfYear(DateTime.Parse("12/31/" + this.startDate.Year.ToString() + " 11:59:59 pm"), System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday),
+        //                                                    cal.GetWeekOfYear(DateTime.Parse("1/1/" + this.endDate.Year.ToString()), System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday),
+        //                                                    cal.GetWeekOfYear(this.endDate, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday)
+        //                                                   );
+        //            }
+        //            else
+        //            {
+        //                // render simple Planed installation week chack
+        //                sPlanedCheck = string.Format(@"PlannedInstallWeek >= {0} and PlannedInstallWeek <= {1}",
+        //                    cal.GetWeekOfYear(this.startDate, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday),
+        //                    cal.GetWeekOfYear(this.endDate, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday));
+
+
+        //            }
+
+
+        //            string SQL = string.Format(@"
+
+
+        //select i.* into #installs from HomeInstallations i 
+        //where CurrentStateName in ({3}) and Branch in ({2})  
+        //insert into #installs select i.* from HomeInstallations i
+        //where CurrentStateName in ('ReMeasure Scheduled') 
+        //and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or 
+        //(PlannedInstallWeek >= 1 and PlannedInstallWeek <= 7)) and 
+        //Branch in ({2})
+
+        //select WorkOrderNumber, LastName,FirstName, City,PostCode, Email,SalesRep,LeadPaint,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,
+        //TotalDoors,TotalWindows,Windows,Doors,ExtDoors,TotalExtDoors,
+        //saturday, sunday, 
+        //installationwindowLBRMIN,InstallationPatioDoorLBRMin,InstallationDoorLBRMin,TotalInstallationLBRMin,
+        //installationwindowLBRMIN as subinstallationwindowLBRMIN,
+        //InstallationDoorLBRMin as subExtDoorLBRMIN,
+        //InstallationPatioDoorLBRMin as subInstallationPatioDoorLBRMin,
+        //TotalInstallationLBRMin as subTotalInstallationLBRMin,
+        //SidingLBRBudget,SidingLBRMin,SidingSQF,RemeasureDate,RemeasureEndTime,id,
+
+        //jobtype,CurrentStateName,null as Hours, null as hours, HomePhoneNumber, CellPhone, WorkPhoneNumber, 
+
+        //EstInstallerCnt, StreetAddress, PaintedProduct, Branch 
+        //from (
+        //SELECT   i.Branch_Display as Branch, i.PaintedProduct,
+        //installationwindowLBRMIN,InstallationPatioDoorLBRMin,InstallationDoorLBRMin,TotalInstallationLBRMin,
+        //i.SalesAmmount as SalesAmmount,i.SalesAmmount as TotalSalesAmount 
+        //,saturday, sunday, jobtype,ActionItemId as id,i.streetAddress, i.EstInstallerCnt,
+        //i.WorkOrderNumber, i.LastName, i.FirstName,i.City, i.PostalCode as PostCode,i.Email,i.Rep_display as SalesRep,i.LeadPaint ,
+        //i.CurrentStateName,PlannedInstallWeek,
+        //SidingLBRBudget,SidingLBRMin,SidingSQF,i.RemeasureDate,i.RemeasureEndTime,
+        //i.Windows as Windows,i. PatioDoors as Doors,i. ExtDoors as ExtDoors,
+        //i.Windows as TotalWindows, i.PatioDoors as TotalDoors,  i.ExtDoors as TotalExtDoors,
+
+        //(SELECT count(*) 
+        //          FROM HomeInstallations
+        //         WHERE WoodDropOff='Yes' and i.RecordId = RecordId) TotalWoodDropOff,
+        //(SELECT count(*) 
+        //          FROM HomeInstallations
+        //         WHERE Asbestos='Yes' and i.RecordId = RecordId) TotalAsbestos,
+        //(SELECT count(*) 
+        //          FROM HomeInstallations
+        //         WHERE HighRisk='Yes' and i.RecordId = RecordId) TotalHighRisk,
+
+        // HomePhoneNumber, CellPhone, WorkPhoneNumber
+        //FROM         #installs AS i 
+        //where jobtype<>'Multi Family'
+
+        //and RemeasureDate >= '{0} ' and RemeasureDate <= '{1} '
+        //and  CurrentStateName in ('ReMeasure Scheduled') 
+        //) x order by RemeasureDate, Branch
+
+        //drop table #installs
+        //--drop table #Windows
+        //--drop table #Doors
+        //--drop table #Other
+        //--drop table #Subtrade", this.startDate.ToShortDateString(), this.endDate.ToShortDateString(), "'" + String.Join("','", branchList) + "'", "'" + String.Join("','", stateList) + "'");
+        //            return SQL;
+
+        //        }
+
         private string GetRemeasureSQL()
         {
-
-            string sPlanedCheck = @"";
-            // Create an instance of Norwegian culture
-            System.Globalization.CultureInfo Culture =
-            System.Globalization.CultureInfo.CreateSpecificCulture("ca");
-            // Get the Norwegian calendar from the culture object
-            System.Globalization.Calendar cal = Culture.Calendar;
-
-
-
-
-            if (this.endDate.Year - this.startDate.Year > 0)
-            {
-                sPlanedCheck = string.Format(@" (((PlannedInstallWeek >= {0}) and PlannedInstallWeek <= {1}) or 
-(PlannedInstallWeek >= {2} and PlannedInstallWeek <= {3}))",
-                                                    cal.GetWeekOfYear(this.startDate, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday),
-                                                    cal.GetWeekOfYear(DateTime.Parse("12/31/" + this.startDate.Year.ToString() + " 11:59:59 pm"), System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday),
-                                                    cal.GetWeekOfYear(DateTime.Parse("1/1/" + this.endDate.Year.ToString()), System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday),
-                                                    cal.GetWeekOfYear(this.endDate, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday)
-                                                   );
-            }
-            else
-            {
-                // render simple Planed installation week chack
-                sPlanedCheck = string.Format(@"PlannedInstallWeek >= {0} and PlannedInstallWeek <= {1}",
-                    cal.GetWeekOfYear(this.startDate, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday),
-                    cal.GetWeekOfYear(this.endDate, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday));
-
-
-            }
-
 
             string SQL = string.Format(@"
 
 
-select i.* into #installs from HomeInstallations i 
-where CurrentStateName in ({3}) and Branch in ({2})  
-insert into #installs select i.* from HomeInstallations i
-where CurrentStateName in ('ReMeasure Scheduled') 
-and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or 
-(PlannedInstallWeek >= 1 and PlannedInstallWeek <= 7)) and 
-Branch in ({2})
 
+                         
 select WorkOrderNumber, LastName,FirstName, City,PostCode, Email,SalesRep,LeadPaint,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,
 TotalDoors,TotalWindows,Windows,Doors,ExtDoors,TotalExtDoors,
 saturday, sunday, 
@@ -722,19 +781,16 @@ i.Windows as TotalWindows, i.PatioDoors as TotalDoors,  i.ExtDoors as TotalExtDo
           FROM HomeInstallations
          WHERE HighRisk='Yes' and i.RecordId = RecordId) TotalHighRisk,
 
- HomePhoneNumber, CellPhone, WorkPhoneNumber
-FROM         #installs AS i 
-where jobtype<>'Multi Family'
-
+HomePhoneNumber, CellPhone, WorkPhoneNumber
+FROM         [flowserv_flowfinityapps].[dbo].[HomeInstallations] AS i 
+where jobtype<>'Multi Family' 
 and RemeasureDate >= '{0} ' and RemeasureDate <= '{1} '
-and  CurrentStateName in ('ReMeasure Scheduled') 
-) x order by RemeasureDate, Branch
+and i.RemeasureDate is not null
+and Branch  in ({2})
+and  CurrentStateName in ({3})
+--and  CurrentStateName in ('Ready for ReMeasure', 'Rejected Remeasure') 
 
-drop table #installs
---drop table #Windows
---drop table #Doors
---drop table #Other
---drop table #Subtrade", this.startDate.ToShortDateString(), this.endDate.ToShortDateString(), "'" + String.Join("','", branchList) + "'", "'" + String.Join("','", stateList) + "'");
+) x order by RemeasureDate,Branch", this.startDate.ToShortDateString(), this.endDate.ToShortDateString(), "'" + String.Join("','", branchList) + "'", "'" + String.Join("','", stateList) + "'");
             return SQL;
 
         }
