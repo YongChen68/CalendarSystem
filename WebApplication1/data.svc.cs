@@ -456,13 +456,29 @@ namespace CalendarSystem
 
                 if (fromPopup=="yes")
                 {
-                    eventData.start = Convert.ToDateTime(remeasureDate).ToString("yyyy-MM-ddT00:00:00.000Z");
+                    // eventData.start = Convert.ToDateTime(remeasureDate).ToString("yyyy-MM-ddT00:00:00.000Z");
+                    // eventData.start = Convert.ToDateTime(remeasureDate).ToString("yyyy-MM-ddTHH:mm:ssZ");
+                    eventData.start = Convert.ToDateTime(remeasureDate).ToString(@"yyyy-MM-dd\THH:mm:ss.fff\Z");
+                    //YYYY-MM-DD[T]HH:mm:ss
                 }
                 else
                 {
-                    eventData.start = Convert.ToDateTime(remeasureDate).AddDays(1).ToString("yyyy-MM-ddT00:00:00.000Z");
+                    //  eventData.start = Convert.ToDateTime(remeasureDate).AddDays(1).ToString("yyyy-MM-ddTHH:mm:ssZ");
+                    eventData.start = Convert.ToDateTime(remeasureDate).AddDays(1).ToString(@"yyyy-MM-dd\THH:mm:ss.fff\Z");
                 }
-                eventData.end = remeasureEndDate;
+                if (remeasureEndDate == "undefined")
+                {
+                    eventData.end = null;
+                }
+                else
+                {
+                    DateTime dt = Convert.ToDateTime(Convert.ToDateTime(remeasureDate).Date.AddHours(Convert.ToDouble(remeasureEndDate.Split(':')[0])).AddMinutes(Convert.ToDouble(remeasureEndDate.Split(':')[1])));
+                    // eventData.end = dt.ToString("yyyy-MM-ddTHH:mm:ssZ");
+                    eventData.end = dt.ToString(@"yyyy-MM-dd\THH:mm:ss.fff\Z");
+                    
+                }
+
+           
                 RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
                 retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Remeasure"), eventData);
 

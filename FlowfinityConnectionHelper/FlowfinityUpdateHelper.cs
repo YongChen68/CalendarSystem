@@ -118,10 +118,12 @@ namespace FlowfinityConnectionHelper
 
         private static FASR.HomeInstallationsRecord GetRecord(Generics.Utils.ContentType type, Generics.Utils.ImproperRemeasureEvent data)
         {
+          
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
             record.RemeasureDate = new FASR.DateTimeValue() { Value = Generics.Utils.Date.DateParser.ParseTime(data.start) };
-          
+            record.RemeasureEndTime = new FASR.DateTimeValue() { Value = Generics.Utils.Date.DateParser.ParseTime(data.end) };
             return record;
+            
         }
 
 
