@@ -453,82 +453,82 @@ drop table #installs
 
 
                 //  total = GetInstallationEventsByWO(eventx.WorkOrderNumber).Count();
-                total = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber);
+            //    total = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber);
 
-                if ((eventx.Saturday == "Yes") && (eventx.Sunday == "Yes"))
-                {
-                    newEvent.Windows = eventx.Windows;
-                    newEvent.Doors = eventx.Doors;
-                    newEvent.SalesAmmount = eventx.SalesAmmount;
-                }
-                else if ((eventx.Saturday == "No") && (eventx.Sunday == "No"))
-                {
+                //if ((eventx.Saturday == "Yes") && (eventx.Sunday == "Yes"))
+                //{
+                //    newEvent.Windows = eventx.Windows;
+                //    newEvent.Doors = eventx.Doors;
+                //    newEvent.SalesAmmount = eventx.SalesAmmount;
+                //}
+                //else if ((eventx.Saturday == "No") && (eventx.Sunday == "No"))
+                //{
 
-                    count = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber
-                    && bt.ScheduledDate.DayOfWeek != DayOfWeek.Sunday && bt.ScheduledDate.DayOfWeek != DayOfWeek.Saturday && bt.ReturnedJob != 1);
-                    diff = total - count;
-                    if ((eventx.ScheduledDate.DayOfWeek != DayOfWeek.Sunday) &&
-                                (eventx.ScheduledDate.DayOfWeek != DayOfWeek.Saturday))
-                    {
-                        if (diff == 0)
-                        {
-                            diff = total;
-                        }
-                        newEvent.Windows = eventx.Windows * total / diff;
-                        newEvent.Doors = eventx.Doors * total / diff;
-                        newEvent.SalesAmmount = eventx.SalesAmmount * total / diff;
+                //    count = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber
+                //    && bt.ScheduledDate.DayOfWeek != DayOfWeek.Sunday && bt.ScheduledDate.DayOfWeek != DayOfWeek.Saturday && bt.ReturnedJob != 1);
+                //    diff = total - count;
+                //    if ((eventx.ScheduledDate.DayOfWeek != DayOfWeek.Sunday) &&
+                //                (eventx.ScheduledDate.DayOfWeek != DayOfWeek.Saturday))
+                //    {
+                //        if (diff == 0)
+                //        {
+                //            diff = total;
+                //        }
+                //        newEvent.Windows = eventx.Windows * total / diff;
+                //        newEvent.Doors = eventx.Doors * total / diff;
+                //        newEvent.SalesAmmount = eventx.SalesAmmount * total / diff;
 
-                    }
+                //    }
 
-                    //if ((eventx.ScheduledDate.DayOfWeek != DayOfWeek.Sunday) && 
-                    //        (eventx.ScheduledDate.DayOfWeek != DayOfWeek.Saturday) )
-                    //{
-                    //    if (diff==0)
-                    //    {
-                    //        diff = total;
-                    //    }
-                    //    newEvent.Windows = eventx.Windows * total / diff;
-                    //    newEvent.Doors = eventx.Doors * total / diff;
-                    //    newEvent.SalesAmmount = eventx.SalesAmmount * total / diff;
+                //    //if ((eventx.ScheduledDate.DayOfWeek != DayOfWeek.Sunday) && 
+                //    //        (eventx.ScheduledDate.DayOfWeek != DayOfWeek.Saturday) )
+                //    //{
+                //    //    if (diff==0)
+                //    //    {
+                //    //        diff = total;
+                //    //    }
+                //    //    newEvent.Windows = eventx.Windows * total / diff;
+                //    //    newEvent.Doors = eventx.Doors * total / diff;
+                //    //    newEvent.SalesAmmount = eventx.SalesAmmount * total / diff;
 
-                    //}
-                }
-                else if ((eventx.Saturday == "Yes") && (eventx.Sunday == "No"))
-                {
-                    count = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber &&
-                    bt.ScheduledDate.DayOfWeek == DayOfWeek.Sunday && bt.ScheduledDate.DayOfWeek != DayOfWeek.Saturday && bt.ReturnedJob != 1);
-                    diff = total - count;
-                    if (eventx.ScheduledDate.DayOfWeek != DayOfWeek.Sunday)
-                    {
-                        if (diff == 0)
-                        {
-                            diff = total;
-                        }
-                        newEvent.Windows = eventx.Windows * total / diff;
-                        newEvent.Doors = eventx.Doors * total / diff;
-                        newEvent.SalesAmmount = eventx.SalesAmmount * total / diff;
+                //    //}
+                //}
+                //else if ((eventx.Saturday == "Yes") && (eventx.Sunday == "No"))
+                //{
+                //    count = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber &&
+                //    bt.ScheduledDate.DayOfWeek == DayOfWeek.Sunday && bt.ScheduledDate.DayOfWeek != DayOfWeek.Saturday && bt.ReturnedJob != 1);
+                //    diff = total - count;
+                //    if (eventx.ScheduledDate.DayOfWeek != DayOfWeek.Sunday)
+                //    {
+                //        if (diff == 0)
+                //        {
+                //            diff = total;
+                //        }
+                //        newEvent.Windows = eventx.Windows * total / diff;
+                //        newEvent.Doors = eventx.Doors * total / diff;
+                //        newEvent.SalesAmmount = eventx.SalesAmmount * total / diff;
 
-                    }
+                //    }
 
-                }
-                else if ((eventx.Saturday == "No") && (eventx.Sunday == "Yes"))
-                {
-                    count = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber &&
-                   bt.ScheduledDate.DayOfWeek != DayOfWeek.Sunday && bt.ScheduledDate.DayOfWeek == DayOfWeek.Saturday && bt.ReturnedJob != 1);
-                    diff = total - count;
-                    if (eventx.ScheduledDate.DayOfWeek != DayOfWeek.Saturday)
-                    {
-                        if (diff == 0)
-                        {
-                            diff = total;
-                        }
-                        newEvent.Windows = eventx.Windows * total / diff;
-                        newEvent.Doors = eventx.Doors * total / diff;
-                        newEvent.SalesAmmount = eventx.SalesAmmount * total / diff;
+                //}
+                //else if ((eventx.Saturday == "No") && (eventx.Sunday == "Yes"))
+                //{
+                //    count = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber &&
+                //   bt.ScheduledDate.DayOfWeek != DayOfWeek.Sunday && bt.ScheduledDate.DayOfWeek == DayOfWeek.Saturday && bt.ReturnedJob != 1);
+                //    diff = total - count;
+                //    if (eventx.ScheduledDate.DayOfWeek != DayOfWeek.Saturday)
+                //    {
+                //        if (diff == 0)
+                //        {
+                //            diff = total;
+                //        }
+                //        newEvent.Windows = eventx.Windows * total / diff;
+                //        newEvent.Doors = eventx.Doors * total / diff;
+                //        newEvent.SalesAmmount = eventx.SalesAmmount * total / diff;
 
-                    }
+                //    }
 
-                }
+                //}
 
                 //  newEvent.SeniorInstaller = eventx.SeniorInstaller;
                 newEvent.StreetAddress = eventx.StreetAddress;

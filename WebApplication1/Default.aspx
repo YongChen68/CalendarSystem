@@ -601,18 +601,17 @@
                                         </div>
                                         <br>
 
-                                        <span><b>Weekends Setting: </b></span>
-                                        <div style="width: 800px;" class="container">
+                                        <span style="display:none;"><b>Weekends Setting: </b></span>
+                                        <div style="width: 800px;display:none;" class="container" >
                                             <div class="leftcolumn">
                                                 Saturday:
-                                                <input type="checkbox" name="saturday">
+                                                <input type="checkbox" name="saturday" disabled="disabled">
                                             </div>
                                             <div class="rightcolumn">
-                                                Sunday: &nbsp;&nbsp;<input type="checkbox" name="sunday">
+                                                Sunday: &nbsp;&nbsp;<input type="checkbox" name="sunday" disabled="disabled">
                                             </div>
                                         </div>
-                                        <br>
-
+                                     
                                         <span><b>Return Scheduled Date:</b></span>
                                         <div class="form-group" style="width: 800px;" id="ReturnedJob">
                                             <div class="container">
