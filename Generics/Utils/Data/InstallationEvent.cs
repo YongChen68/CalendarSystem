@@ -109,6 +109,10 @@ namespace Generics.Utils.Data
         public string StreetAddress { get; set; }
 
         [DataMember]
+        public int detailrecordCount { get; set; }
+
+
+        [DataMember]
         public string id { get; set; }
 
 

@@ -410,6 +410,8 @@ drop table #installs
                 newEvent.LastName = eventx.LastName;
                 newEvent.FirstName = eventx.FirstName;
 
+                newEvent.detailrecordCount = eventx.detailrecordCount;
+
                 newEvent.SubTradeFlag = eventx.SubTradeFlag;
 
                 //  newEvent.Other = eventx.Other;
@@ -420,6 +422,7 @@ drop table #installs
 
 
                 newEvent.TotalSalesAmount = eventx.TotalSalesAmount;
+                newEvent.SalesAmmount = eventx.SalesAmmount;
                 newEvent.TotalAsbestos = eventx.TotalAsbestos;
                 newEvent.TotalWoodDropOff = eventx.TotalWoodDropOff;
                 newEvent.TotalHighRisk = eventx.TotalHighRisk;
@@ -566,7 +569,7 @@ drop table #installs
                 newEvent.CurrentStateName = returnedEvent.CurrentStateName;
                 newEvent.Doors = returnedEvent.Doors;
                 // newEvent.DoorState = returnedEvent.DoorState;
-
+                newEvent.detailrecordCount = returnedEvent.detailrecordCount;
                 newEvent.start = returnedEventList.Where(a => a.WorkOrderNumber == returnedEvent.WorkOrderNumber).Min(b => b.ScheduledDate).
                    ToString();
 
@@ -581,7 +584,7 @@ drop table #installs
                 newEvent.FirstName = returnedEvent.FirstName;
 
                 newEvent.SubTradeFlag = returnedEvent.SubTradeFlag;
-
+                newEvent.SalesAmmount = returnedEvent.SalesAmmount;
                 // newEvent.Other = returnedEvent.Other;
                 //  newEvent.OtherState = returnedEvent.OtherState;
 

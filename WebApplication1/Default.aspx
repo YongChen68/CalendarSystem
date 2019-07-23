@@ -474,7 +474,10 @@
 
                                         <div><b>Total Codel Doors: </b><span id="TotalDoors2"></span></div>
                                         <br>
-                                        <div><b>Sales Amount: </b><span id="SalesAmmount"></span></div>
+                                        <div><b>Total Sales Amount: </b><span id="SalesAmmount"></span></div>
+
+                                        <br>
+                                         <div><b>Daily Sales Amount: </b><span id="DailySalesAmmount"></span></div>
 
                                         <br>
                                     </div>
@@ -483,13 +486,16 @@
                                     <div id="installationContent" style="width: 600px; margin-left: 20px; padding-left: 100px;">
                                         <br>
                                         <br>
-                                        <span><b>Installation Scheduled Date: </b></span>
+                                        <span><b>Installation Scheduled Date:  &nbsp;</b>
+                                            <span  id="DaysOfWork"></span>  &nbsp; days
+                                         
+                                        </span>
                                         <div class="container">
 
                                             <div class="leftcolumn">
                                                 <div class="container">
                                                     <div class="leftcolumn" style="width: 5%; align-items: center;">
-                                                        From:
+                                                        Start Date:
                                                     </div>
                                                     <div class="rightcolumn" style="width: 20%;">
                                                         <input id="InstallScheduledStartDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
@@ -501,7 +507,7 @@
                                             <div class="rightcolumn">
                                                 <div class="container">
                                                     <div class="leftcolumn" style="width: 5%; padding-left: 50px;">
-                                                        To:
+                                                        End Date:
                                                     </div>
 
                                                     <div class="rightcolumn" style="padding-left: 50px; width: 5%;">
@@ -614,7 +620,7 @@
                                                 <div class="leftcolumn">
                                                     <div class="container">
                                                         <div class="leftcolumn" style="width: 5%; align-items: center;">
-                                                            From:
+                                                            Start Date:
                                                         </div>
                                                         <div class="rightcolumn" style="width: 20%;">
                                                             <input id="from_date" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
@@ -627,7 +633,7 @@
                                                 <div class="rightcolumn">
                                                     <div class="container">
                                                         <div class="leftcolumn" style="width: 5%; padding-left: 50px;">
-                                                            To:
+                                                            End Date:
                                                         </div>
 
                                                         <div class="rightcolumn" style="padding-left: 50px; width: 5%;">

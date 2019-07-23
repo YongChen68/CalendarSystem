@@ -1219,7 +1219,9 @@ $(document).ready(function () {
 
 
                     $("#Address").html(event.StreetAddress);
+                    $("#DaysOfWork").html(event.detailrecordCount);
                     $("#SalesAmmount").html(event.TotalSalesAmount.formatMoney(2, "$", ",", "."));
+                    $("#DailySalesAmmount").html(event.SalesAmmount.formatMoney(2, "$", ",", "."));
                     $("#SeniorInstaller").html(event.SeniorInstaller != null && event.SeniorInstaller.trim().length > 0 ? event.SeniorInstaller : "Unspecified");
                     $("#CrewNames").html(event.CrewNames != null && event.CrewNames.trim().length > 0 ? event.CrewNames : "Un assigned");
 
@@ -1471,10 +1473,10 @@ $(document).ready(function () {
                 //if (displayType == "Installation") {
                 //    ret3 += event.UnavailableStaff;
                 //}
-                //element.css({
-                //    'background-color': '#c6abd0'
-                //    // 'border-color': '#333333'
-                //});
+                element.css({
+                    'background-color': '#a5d6a7'
+                    // 'border-color': '#333333'
+                });
                 //$(element).find(dom).append(ret3);
               //  (event.UnavailableStaff.split(",").length != 0? "<img src=\"images/installer" + event.UnavailableStaff.split(",").length + ".png\" title=\"Estimated number of installers for the job: " + "\">" : "") +
                 dom = '.fc-title';
