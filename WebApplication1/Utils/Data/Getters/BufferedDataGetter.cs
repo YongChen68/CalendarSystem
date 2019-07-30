@@ -382,5 +382,10 @@ and  CurrentStateName in ('Ready for ReMeasure', 'Rejected Remeasure')
         {
             throw new NotImplementedException();
         }
+
+        public List<WindowsCustomer> GetWindowsCustomer()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

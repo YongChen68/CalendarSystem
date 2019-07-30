@@ -152,6 +152,14 @@ namespace CalendarSystem
     BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<CalledLog> GetCalledLog(string workOrderNumber);
 
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+    UriTemplate = "GetWindowsCustomer?workOrderNumber={workOrderNumber}",
+    ResponseFormat = WebMessageFormat.Json,
+    BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<WindowsCustomer> GetWindowsCustomer(string workOrderNumber);
+
         [OperationContract]
         [WebInvoke(Method = "GET",
 UriTemplate = "GetSubTrades?workOrderNumber={workOrderNumber}",

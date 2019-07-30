@@ -1016,12 +1016,120 @@ and  CurrentStateName in ({3})
         List<Generics.Utils.CalendarEvent> IGetter.GetData(Generics.Utils.ContentType type)
         {
             string SQL = GetSQL(type);
-
+            List<CalendarEvent> eventList = new List<CalendarEvent>();
+            List<CalendarEvent> returnList = new List<CalendarEvent>();
+            CalendarEvent newEvent = new CalendarEvent();
             List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
             pars.Add(new System.Data.SqlClient.SqlParameter("pStart", startDate));
             pars.Add(new System.Data.SqlClient.SqlParameter("pEnd", endDate));
             Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
-            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.CalendarEvent>(SQL, pars.ToArray());
+            eventList = Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.CalendarEvent>(SQL, pars.ToArray());
+
+            int dayDiff = 0;
+            int k = 0;
+            List<CalendarEvent> re = new List<CalendarEvent>();
+
+            foreach (CalendarEvent e in eventList)
+            {
+                dayDiff = Convert.ToInt32((e.endDateTime - e.startDateTime).TotalDays);
+                if (dayDiff == 0)
+                {
+                    e.ScheduledProductionDate = e.startDateTime;
+                    returnList.Add(e);
+                }
+                else
+                {
+                    for (int i = 0; i <= dayDiff; i++)
+                    {
+                        newEvent = new CalendarEvent();
+                        newEvent.allDay = e.allDay;
+                        newEvent.Arches = e.Arches;
+                        newEvent.BatchNo = e.BatchNo;
+                        newEvent.Branch = e.Branch;
+                        newEvent.CardinalOrderedDate = e.CardinalOrderedDate;
+                        newEvent.CurrentStateName = e.CurrentStateName;
+                        newEvent.color = e.color;
+
+                        newEvent.CompleteDate = e.CompleteDate;
+                        newEvent.Complex = e.Complex;
+                        newEvent.CustomFlag = e.CustomFlag;
+                        newEvent.Customs = e.Customs;
+
+                        newEvent.description = e.description;
+                        newEvent.DoorIcon = e.DoorIcon;
+                        newEvent.doors = e.doors;
+                        newEvent.DoubleDoor = e.DoubleDoor;
+
+                        newEvent.end = e.end;
+                        
+                        newEvent.F27DS = e.F27DS;
+                        newEvent.F27TS = e.F27TS;
+                        newEvent.F27TT = e.F27TT;
+                        newEvent.F29CA = e.F29CA;
+                        newEvent.F29CM = e.F29CM;
+                        newEvent.F52PD = e.F52PD;
+                        newEvent.F68CA = e.F68CA;
+                        newEvent.F68SL = e.F68SL;
+                        newEvent.F68VS = e.F68VS;
+                        newEvent.F6CA = e.F6CA;
+                        newEvent.FlagOrder = e.FlagOrder;
+
+                        newEvent.HighRiskFlag = e.HighRiskFlag;
+                        newEvent.HolidayDate = e.HolidayDate;
+                        newEvent.HolidayName = e.HolidayName;
+
+                        newEvent.id = e.id;
+                        newEvent.isHoliday = e.isHoliday;
+                        newEvent.JobType = e.JobType;
+                        newEvent.M2000Icon = e.M2000Icon;
+                        newEvent.NumberOfPatioDoors = e.NumberOfPatioDoors;
+                        newEvent.Over_Size = e.Over_Size;
+                        newEvent.PaintIcon = e.PaintIcon;
+                        newEvent.Rakes = e.Rakes;
+                        newEvent.ScheduledProductionDate = e.startDateTime.AddDays(i);
+                        newEvent.Sidelite = e.Sidelite;
+                        newEvent.Simple = e.Simple;
+                        //newEvent.start = e.start;
+
+                        newEvent.start = e.start;
+                     //   newEvent.startDateTime = newEvent.ScheduledProductionDate;
+                       newEvent.endDateTime = e.endDateTime;
+                      //  newEvent.endDateTime = newEvent.ScheduledProductionDate;
+                        newEvent.startDateTime = e.startDateTime;
+                        newEvent.title = e.title;
+                        
+                        newEvent.TotalBoxQty = e.TotalBoxQty;
+                        newEvent.TotalGlassQty = e.TotalGlassQty;
+                        newEvent.TotalLBRMin = e.TotalLBRMin;
+                        newEvent.TotalPrice = e.TotalPrice;
+                        newEvent.Transom = e.Transom;
+                        newEvent.WindowIcon = e.WindowIcon;
+                        newEvent.windows = e.windows;
+
+                        newEvent.SingleDoor = e.SingleDoor;
+                        re.Add(newEvent);
+                    }
+                    returnList.AddRange(re);
+                }
+
+
+            }
+
+
+            //foreach (CalendarEvent e1 in re)
+            //{
+            //    //  e1.ScheduledProductionDate = e.startDateTime.AddDays(k);
+            //    newEvent = e1;
+            //    newEvent.ScheduledProductionDate = e1.startDateTime.AddDays(k);
+            //    returnList.Add(newEvent);
+            //    k++;
+            //}
+
+            //re[0].windows = 20;
+            //re[1].windows = 30;
+          
+
+            return returnList.OrderBy(x => x.startDateTime).ToList(); ;
         }
 
         List<Generics.Utils.Holiday> IGetter.GetHolidayData()
@@ -1376,6 +1484,27 @@ where WorkOrderNumber = '{0}' ", this.workOrderNumber);
             return SQL;
         }
 
+
+        private string GetWindowsCustomerInfo()
+        {
+            string SQL = string.Format(@"select distinct p.WorkOrderNumber,CustomerName, City, Address, PhoneNUmber, ShippingType, Email, Branch_display,
+NumberOfWindows as TotalWindows,NumberOfDoors as TotalDoors,NumberOfPatioDoors as TotalPatioDoors,TotalPrice
+       
+  FROM [flowserv_flowfinityapps].[dbo].[PlantProduction_items] as i INNER JOIN
+       [flowserv_flowfinityapps].[dbo].[PlantProduction] as p ON i.ParentRecordId = p.RecordId
+where p.WorkOrderNumber = '{0}' ", this.workOrderNumber);
+            return SQL;
+        }
+
+        public List<WindowsCustomer> GetWindowsCustomer()
+        {
+            string SQL = GetWindowsCustomerInfo();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("WorkOrderNumber", this.workOrderNumber));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.WindowsCustomer>(SQL, pars.ToArray());
+        }
 
         private string GetCalledLogSQL()
         {

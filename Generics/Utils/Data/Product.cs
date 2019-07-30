@@ -56,6 +56,50 @@ namespace Generics.Utils
 
     }
 
+
+    public class WindowsCustomer
+    {
+        [DataMember]
+        public string WorkOrderNumber { get; set; }
+
+        [DataMember]
+        public string CustomerName { get; set; }
+
+
+        [DataMember]
+        public string City { get; set; }
+
+        [DataMember]
+        public string Address { get; set; }
+
+        [DataMember]
+        public string PhoneNumber { get; set; }
+
+        [DataMember]
+        public string ShippingType { get; set; }
+
+        [DataMember]
+        public string Email { get; set; }
+
+        [DataMember]
+        public string Branch_display { get; set; }
+
+        [DataMember]
+        public int TotalWindows { get; set; }
+
+        [DataMember]
+        public int TotalDoors { get; set; }
+
+        [DataMember]
+        public int TotalPatioDoors { get; set; }
+
+        [DataMember]
+        public decimal TotalPrice { get; set; }
+
+
+    }
+
+
     public class SubTrades
     {
      

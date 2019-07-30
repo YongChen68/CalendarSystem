@@ -78,7 +78,7 @@
 
     <script>
         var geocoder;
-        var map, mapRemeasure;
+        var map, mapRemeasure,mapWindows;
         $(function () {
             // $("#from_date").datepicker();
             $('#from_date').datepicker({
@@ -126,6 +126,7 @@
             }
             map = new google.maps.Map(document.getElementById('map'), mapOptions);
             mapRemeasure = new google.maps.Map(document.getElementById('mapRemeasure'), mapOptions);
+            mapWindows = new google.maps.Map(document.getElementById('mapWindows'), mapOptions);
 
             var marker = new google.maps.Marker({
                 position: latlng,
@@ -183,6 +184,30 @@
 
         }
 
+        function codeAddressWindows() {
+            var address = document.getElementById('AddressWindows').innerHTML;
+            var request = {
+                address: address,
+                componentRestrictions: {
+                    country: 'CA'
+                }
+            }
+
+            geocoder.geocode(request, function (results, status) {
+                if (status == 'OK') {
+                    mapWindows.setCenter(results[0].geometry.location);
+                    var marker = new google.maps.Marker({
+                        map: mapWindows,
+                        position: results[0].geometry.location
+                    });
+                } else {
+                    alert('Geocode was not successful for the following reason: ' + status);
+                    mapWindows = null;
+                }
+            });
+
+
+        }
     </script>
 
 
@@ -211,6 +236,10 @@
             float: left;
             width: 45%;
         }
+        #mapWindows {
+            float: left;
+            width: 45%;
+        }
 
 
         #content {
@@ -228,6 +257,14 @@
             text-align: left;
             padding-left: 20px;
         }
+        #contentWindows {
+            float: left;
+            width: 55%;
+            vertical-align: top;
+            text-align: left;
+            padding-left: 20px;
+        }
+        
 
         #installationContent {
             float: left;
@@ -320,6 +357,9 @@
             z-index: 214748367;
         }
 
+       #eventContentWindows {
+            z-index: 214748367;
+        }
 
         .modal-header {
             background-color: #9FB6CD;
@@ -850,6 +890,103 @@
         <br>
     </div>
 
+
+        <div id="eventContentWindows" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true" class="modal fade">
+            <div class="modal-dialog modal-ku" role="document">
+                <div class="modal-content">
+                    <div class="modal-header ">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+
+                        </button>
+                        <h4 class="modal-title" id="WorkOrderTitleWindows"></h4>
+
+                    </div>
+
+                    <div class="modal-body">
+                        <div role="tabpanel">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active">
+                                    <a href="#CustomerTabWindows" aria-controls="customerTab" role="tab" data-toggle="tab">CUSTOMER</a>
+
+                                </li>
+                                <li role="presentation">
+                                    <a href="#WindowItemsTab" aria-controls="uploadTab" role="tab" data-toggle="tab">Windows Items</a>
+
+                                </li>
+              
+
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="CustomerTabWindows">
+                                    <div id="mapWindows" style="height:500px;margin-top:20px;"></div>
+
+                                    <div id="contentWindows">
+                                        <br>
+                                        <br>
+                                    
+                                        <div><b>Work Order: </b><span id="workOrderWindows"></span></div>
+                                         <br>
+                                        <div><b>Customer Name: </b><span id="CustomerNameWindows"></span></div>
+                                        <br>
+                                        <div><b>Branch: </b><span id="BranchWindows"></span></div>
+                                        <br>
+                                        <div><b>Shipping Type: </b><span id="ShippingTypeWindows"></span></div>
+                                        <br>
+                                        <div><b>Street Address: </b><span id="AddressWindows"></span></div>
+                                         <br>
+                                        <div><b>Email: </b><span id="emailWindows"></span></div>
+                                        <br>
+                                        <div><b>Total Windows: </b><span id="TotalWindows"></span></div>
+                                       
+                                        <br>
+                                        <div><b>Total Patio Doors: </b><span id="TotalPatioDoors"></span></div>
+                                         <br>
+                              
+                                        <div><b>Total Doors: </b><span id="TotalDoors"></span></div>
+                                        <br>
+                                        <div><b>Total Price: </b><span id="TotalPrice"></span></div>
+                                     
+                                      
+                                       <br>
+                                    </div>
+                                </div>
+                     
+
+                                <div role="tabpanel" class="tab-pane " id="WindowItemsTab">
+                                    <br />
+                                    <div style=" text-align:left;"><b> <span id="ProductnWindows" >WINDOWS</span></b>
+                                    </div>
+                                    <div > <span id="noProductWindows" style=" text-align:left; display:none;">This order does not contain any windows.</span>
+                                    </div>
+                                    <div style="overflow: auto; ">
+                                        <table id="dataTableProductWindows" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                    </div>
+                                    <br />
+                                    <div style=" text-align:left;"> <b> <span id="ProductDoors">DOORS</span></b>  </div>
+                                    <div > <span id="noProductDoors" style=" text-align:left; display:none;">This order does not contain any doors.</span>
+                                    </div>
+                                    <div style="overflow: auto; ">
+                                        <table id="dataTableProductDoors" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
+
+            <br>
+        </div>
         <div id="openviewWeather">
             <a class="weatherwidget-io" href="https://forecast7.com/en/49d28n123d12/vancouver/" data-label_1="Vancouver" data-label_2="Weather" data-font="Roboto" data-icons="Climacons Animated" data-theme="original" data-accent="rgba(1, 1, 1, 0.0)"></a>
         </div>

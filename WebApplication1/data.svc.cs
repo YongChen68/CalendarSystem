@@ -613,6 +613,23 @@ namespace CalendarSystem
             return retValue;
         }
 
+        List<WindowsCustomer> Idata.GetWindowsCustomer(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetWindowsCustomer({0})", workOrderNumber);
+            List<WindowsCustomer> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetWindowsCustomer();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetWindowsCustomer() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
         List<SubTrades> Idata.GetSubTrades(string workOrderNumber)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetSubTrades({0})", workOrderNumber);

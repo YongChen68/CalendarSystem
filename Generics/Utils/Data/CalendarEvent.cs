@@ -156,6 +156,11 @@ namespace Generics.Utils
         [DataMember]
         public string HolidayName { get; set; }
 
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public DateTime ScheduledProductionDate { get; set; }
+
+
     }
 
 

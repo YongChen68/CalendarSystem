@@ -1409,7 +1409,30 @@ $(document).ready(function () {
 
                 }
                 else {
-                                   
+                    element.attr('data-toggle', "modal");
+                    element.attr('data-target', "#eventContentWindows");
+                    element.attr('href', "/details");
+
+         
+             
+                    $("#WorkOrderTitleWindows").html(event.title);
+
+                    GetWindowsCustomer(event.title.split(" ")[0]);
+                    GetManufacturingWindowsProducts(event.title.split(" ")[0]);
+
+
+                    codeAddressWindows();
+           
+
+
+                    eventid = event.id;
+
+                    //  GetRemeasureProducts(event.WorkOrderNumber);
+
+
+
+                    $("#eventLink").attr('href', event.url);
+        
                 }
               
                 
@@ -2572,6 +2595,129 @@ function GetManufacturingProducts(workOrder) {
         }
     });
 
+}
+
+
+function GetManufacturingWindowsProducts(workOrder) {
+    $("#dataTableProductWindows tr").remove();
+    $("#dataTableProductDoors tr").remove();
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetManufacturingWindows?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetManufacturingWindows:");
+            var noProductWindows = document.getElementById('noProductWindows');
+
+            if (data.GetManufacturingWindowsResult.length > 0) {
+                noProductWindows.style.display = "none";
+                $("#dataTableProductWindows").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
+                for (var i = 0; i < data.GetManufacturingWindowsResult.length; i++) {
+                    $("#dataTableProductWindows").append("<tr><td>" +
+                        data.GetManufacturingWindowsResult[i].Item + "</td> <td>" +
+                        data.GetManufacturingWindowsResult[i].Size + "</td> <td>" +
+                        data.GetManufacturingWindowsResult[i].Quantity + "</td> <td>" +
+                        data.GetManufacturingWindowsResult[i].SubQty + "</td> <td>" +
+                        data.GetManufacturingWindowsResult[i].System + "</td> <td>" +
+                        data.GetManufacturingWindowsResult[i].Description + "</td> <td>" +
+                        data.GetManufacturingWindowsResult[i].Status + "</td></tr>");
+                }
+            }
+            else {
+                noProductWindows.style.display = "block";
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetManufacturingDoors?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetManufacturingDoors:");
+            var noProductDoors = document.getElementById('noProductDoors');
+
+            if (data.GetManufacturingDoorsResult.length > 0) {
+                noProductDoors.style.display = "none";
+                $("#dataTableProductDoors").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
+                for (var i = 0; i < data.GetManufacturingDoorsResult.length; i++) {
+                    $("#dataTableProductDoors").append("<tr><td>" +
+                        data.GetManufacturingDoorsResult[i].Item + "</td> <td>" +
+                        data.GetManufacturingDoorsResult[i].Size + "</td> <td>" +
+                        data.GetManufacturingDoorsResult[i].Quantity + "</td> <td>" +
+                        data.GetManufacturingDoorsResult[i].SubQty + "</td> <td>" +
+                        data.GetManufacturingDoorsResult[i].System + "</td> <td>" +
+                        data.GetManufacturingDoorsResult[i].Description + "</td> <td>" +
+                        data.GetManufacturingDoorsResult[i].Status + "</td></tr>");
+                }
+            }
+            else {
+                noProductDoors.style.display = "block";
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
+
+
+function GetWindowsCustomer(workOrder) {
+    //$("#dataTableManufacturingDoors tr").remove();
+    //$("#dataTableManufacturingWindows tr").remove();
+    $("#workOrderWindows").html("");
+    $("#CustomerNameWindows").html("");
+    $("#BranchWindows").html("");
+    $("#ShippingTypeWindows").html("");
+    $("#AddressWindows").html("");
+    $("#emailWindows").html("");
+    $("#PhoneWindows").html("");
+
+    $("#TotalWindows").html("");
+    $("#TotalPatioDoors").html("");
+    $("#TotalDoors").html("");
+    $("#TotalPrice").html("");
+
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetWindowsCustomer?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetWindowsCustomer:");
+            var noManufacturingWindows = document.getElementById('noProductWindows');
+
+            if (data.GetWindowsCustomerResult.length > 0) {
+                noManufacturingWindows.style.display = "none";
+                //data.GetWindowsCustomerResult[0].Item = 
+
+                $("#workOrderWindows").html(data.GetWindowsCustomerResult[0].WorkOrderNumber);
+                $("#CustomerNameWindows").html(data.GetWindowsCustomerResult[0].CustomerName);
+                $("#BranchWindows").html(data.GetWindowsCustomerResult[0].Branch_display);
+                $("#ShippingTypeWindows").html(data.GetWindowsCustomerResult[0].ShippingType);
+                $("#AddressWindows").html(data.GetWindowsCustomerResult[0].Address);
+                $("#emailWindows").html(data.GetWindowsCustomerResult[0].Email);
+                $("#PhoneWindows").html(data.GetWindowsCustomerResult[0].PhoneNumber);
+
+                $("#TotalWindows").html(data.GetWindowsCustomerResult[0].TotalWindows);
+                $("#TotalPatioDoors").html(data.GetWindowsCustomerResult[0].TotalPatioDoors);
+                $("#TotalDoors").html(data.GetWindowsCustomerResult[0].TotalDoors);
+                $("#TotalPrice").html(data.GetWindowsCustomerResult[0].TotalPrice);
+            }
+            else {
+                noManufacturingWindows.style.display = "block";
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
 }
 
 function GetRemeasureProducts(workOrder) {
