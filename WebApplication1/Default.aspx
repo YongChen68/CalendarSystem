@@ -186,6 +186,7 @@
 
         function codeAddressWindows() {
             var address = document.getElementById('AddressWindows').innerHTML;
+
             var request = {
                 address: address,
                 componentRestrictions: {

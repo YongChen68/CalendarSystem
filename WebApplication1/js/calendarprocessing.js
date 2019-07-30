@@ -1420,11 +1420,6 @@ $(document).ready(function () {
                     GetWindowsCustomer(event.title.split(" ")[0]);
                     GetManufacturingWindowsProducts(event.title.split(" ")[0]);
 
-
-                    codeAddressWindows();
-           
-
-
                     eventid = event.id;
 
                     //  GetRemeasureProducts(event.WorkOrderNumber);
@@ -2707,7 +2702,10 @@ function GetWindowsCustomer(workOrder) {
                 $("#TotalWindows").html(data.GetWindowsCustomerResult[0].TotalWindows);
                 $("#TotalPatioDoors").html(data.GetWindowsCustomerResult[0].TotalPatioDoors);
                 $("#TotalDoors").html(data.GetWindowsCustomerResult[0].TotalDoors);
-                $("#TotalPrice").html(data.GetWindowsCustomerResult[0].TotalPrice);
+               // $("#TotalPrice").html(data.GetWindowsCustomerResult[0].TotalPrice);
+                $("#TotalPrice").html(data.GetWindowsCustomerResult[0].TotalPrice.formatMoney(2, "$", ",", "."));
+
+                codeAddressWindows();
             }
             else {
                 noManufacturingWindows.style.display = "block";
