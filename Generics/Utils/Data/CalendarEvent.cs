@@ -55,11 +55,24 @@ namespace Generics.Utils
         public DateTime startDateTime { get; set; }
         [DataMember]
         [Lift.Database.DbIgnore]
-        public string start { get { return FormatDateTime(startDateTime); } set { } }
+        public string start {
+            get
+            {
+                return startDateTime.ToString();
+            }
+            set { } }
         public DateTime endDateTime { get; set; }
         [DataMember]
         [Lift.Database.DbIgnore]
-        public string end { get { return FormatDateTime(endDateTime); } set { } }
+        //  public string end { get { return FormatDateTime(endDateTime.AddDays(1)); } set { } }
+        public string end {
+            get
+            {
+                int dayDiff = Convert.ToInt32((endDateTime - startDateTime).TotalDays);
+                // return FormatDateTime(endDateTime.AddDays(dayDiff));
+                return endDateTime.AddDays(dayDiff).ToString();
+            }
+            set { } }
         [DataMember]
         public bool allDay { get; set; }
         [DataMember]
@@ -155,11 +168,6 @@ namespace Generics.Utils
         [Lift.Database.DbIgnore]
         [DataMember]
         public string HolidayName { get; set; }
-
-        [DataMember]
-        [Lift.Database.DbIgnore]
-        public DateTime ScheduledProductionDate { get; set; }
-
 
     }
 

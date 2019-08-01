@@ -953,44 +953,6 @@ $(document).ready(function () {
 
             $("#dataTableHR tr").remove();
 
-            //$.ajax({
-            //    //type: "POST",  
-            //    url: 'data.svc/GetUnavailableResources',
-            //    dataType: 'json',
-            //    data: { branch: branches.join(",") },
-            //    success: function (data) {
-            //        if (debug) console.log("events.success", "data.GetUnavailableResources:");
-
-            //        if (data.GetUnavailableResourcesResult.length > 0) {
-
-            //            $("#dataTableHR").append("<tr> <th style = 'text-align:center;' > Date Unavaiable</th ><th style='text-align:center;'> Name</th ><th style='text-align:center;'>Branch</th> <th style='text-align:center;' > Unavailable Reason</th > </tr > ");
-            //            for (var i = 0; i < data.GetUnavailableResourcesResult.length; i++) {
-            //                $("#dataTableHR").append("<tr><td>" +
-            //                    new Date(GetDatefromMoment(data.GetUnavailableResourcesResult[i].DateUnavaiable)).toLocaleDateString('en-US') + "</td> <td>" +
-            //                    data.GetUnavailableResourcesResult[i].Name + "</td> <td>" +
-            //                    data.GetUnavailableResourcesResult[i].Branch + "</td> <td>" +
-            //                    data.GetUnavailableResourcesResult[i].Reason + "</td></tr>");
-            //            }
-            //        }
-            //        else {
-            //            noInstallationWindows.style.display = "block";
-            //        }
-
-            //    }, error: function (error) {
-            //        console.log('Error', error);
-            //        $('#script-warning').show();
-            //    }
-            //});
-           // $(".fc-right").append(' <div class="dropdown"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dropdown button</button><div class="dropdown-menu"><a class="dropdown-item" href="#">Link 1</a><a class="dropdown-item" href="#">Link 2</a><a class="dropdown-item" href="#">Link 3</a> </div>  </div>');
-            //var jobstaff = $('#JobStaff');
-            //if ((displayType == "Installation") && (jobstaff.length ==0)) {
-            //    $(".fc-left").append('<div class="fc-button-group" style="margin-top: 5px; "><select id="JobStaff" style="width:80px;height:20px;"><option class="fc-agendaDay-button fc-button fc-state-default fc-corner-right">Job</option><option class="fc-agendaWeek-button fc-button fc-state-default">Staff</option></select></div>');
-            // //   $(".fc-left").append(' <div class="dropdown" id="JobStaff"><button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Dropdown button</button><div class="dropdown-menu"><a class="dropdown-item" href="#">Link 1</a><a class="dropdown-item" href="#">Link 2</a><a class="dropdown-item" href="#">Link 3</a> </div>  </div>');
-            //}
-            
-          //  $(".fc-right").append('<select class="form-control" name="features"> <option value="1" selected="selected">Feature 1</option> <option value="2">Feature 2</option></select>');
-         //   $(".dropdown .dropdown-menu li a")[0].click();
-  
         },
     
 
@@ -1609,6 +1571,7 @@ $(document).ready(function () {
             else
             {
                 dayId = FindDayIdfromTotals(GetDatefromMoment(event.start));
+             //   dayId = FindDayIdfromTotals(GetDatefromMoment(event.ScheduledProductionDate));
             }
                 
             if (totals.length < dayId) console.log("eventRender", "dayId exceeds totals", dayId, totals.length);
