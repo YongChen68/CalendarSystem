@@ -6,8 +6,10 @@ var renderingComplete = false;
 var eventid;
 var eventWO = []; 
 var eventReturnedJobDate1;
+var eventDiff=[];
 var hasSubStrade;
 var JobStaffEvent;
+var updateStatus = 0;;
 
 var is_weekend = function (date1) {
     var dt = new Date(date1);
@@ -220,8 +222,12 @@ function sendUpdateToServer(event) {
         UpdateRemeasureEvents(eventToUpdate);
     }
     else {
-
+        eventDiff = [];
+        updateStatus = 1;
+        eventToUpdate.end = new Date(GetDatefromMoment(event.end - 24 * 60 * 60000)).toJSON();
         PageMethods.UpdateEventTime(displayType, eventToUpdate);
+        $('#calendar').fullCalendar('refetchEvents');
+        $('#calendar').fullCalendar('rerenderEvents');
     }
 
 }
@@ -937,12 +943,18 @@ $(document).ready(function () {
                     success: function (data) {
                         if (debug) console.log("events.success", "data.GetEventsResult:", data.GetEventsResult === undefined ? "NULL" : data.GetEventsResult.length);
                         var events = [];
+                        eventDiff = [];
+                       // evenDict = [];
                         $.each(data.GetEventsResult, function (pos, item) {
                             item.allDay = true;
                             item.editable = (item.HolidayName != null) ? false : true;
                             item.editable = (readonly == "True") ? false : true;
+                      
+                          //  evenDict.push(item);
                             events.push(item);
+                         
                         });
+                       // events = removeDuplicates(evenDict, "title");
                         callback(events);
                     }, error: function (error) {
                         console.log('Error', error);
@@ -1570,8 +1582,8 @@ $(document).ready(function () {
             }
             else
             {
-                dayId = FindDayIdfromTotals(GetDatefromMoment(event.start));
-             //   dayId = FindDayIdfromTotals(GetDatefromMoment(event.ScheduledProductionDate));
+              dayId = FindDayIdfromTotals(GetDatefromMoment(event.start));
+              //  dayId = FindDayIdfromTotals(GetDatefromMoment(event.ScheduledProductionDate));
             }
                 
             if (totals.length < dayId) console.log("eventRender", "dayId exceeds totals", dayId, totals.length);
@@ -1584,8 +1596,40 @@ $(document).ready(function () {
 
             }
             else {
-                totals[dayId].doors += event.doors !== undefined ? event.doors : 0;
-                totals[dayId].windows += event.windows !== undefined ? event.windows : 0;
+                //totals[dayId].doors += event.doors !== undefined ? event.doors : 0;
+                //totals[dayId].windows += event.windows !== undefined ? event.windows : 0;
+                //totals[dayId].F52PD += event.F52PD !== undefined ? event.F52PD : 0;
+
+                var diff;
+               // diff = parseInt((event.end - event.start) / (24 * 3600 * 1000));
+
+                if (event.end != null) {
+                    diff = moment(event.end._i, 'M/D/YYYY').diff(moment(event.start._i, 'M/D/YYYY'), 'days')-1;
+                    if (diff > 0) {
+                        //if (view.name !== "agendaMonth" && view.name !== "month") {
+                        //    diff = diff + 1;
+                        //}updateStatus
+                        if (updateStatus==1) {
+                            diff = diff + 1;
+                        }
+
+                        totals[dayId].doors += event.doors !== undefined ? event.doors / (diff+1) : 0;
+                        totals[dayId].windows += event.windows !== undefined ? event.windows / (diff+1) : 0;
+                        totals[dayId].F52PD += event.F52PD !== undefined ? event.F52PD / (diff+1) : 0;
+                        eventDiff.push(event);
+                        eventDiff = removeDuplicates(eventDiff, "title");
+                    }
+                    else {
+                        totals[dayId].doors += event.doors !== undefined ? event.doors : 0;
+                        totals[dayId].windows += event.windows !== undefined ? event.windows : 0;
+                        totals[dayId].F52PD += event.F52PD !== undefined ? event.F52PD : 0;
+                    }
+                }
+                else {
+                    totals[dayId].doors += event.doors !== undefined ? event.doors : 0;
+                    totals[dayId].windows += event.windows !== undefined ? event.windows : 0;
+                    totals[dayId].F52PD += event.F52PD !== undefined ? event.F52PD : 0;
+                }
             }
 
             totals[dayId].boxes += event.TotalBoxQty !== undefined ? event.TotalBoxQty : 0;
@@ -1598,7 +1642,7 @@ $(document).ready(function () {
             totals[dayId].F68VS += event.F68VS !== undefined ? event.F68VS : 0;
             totals[dayId].F68SL += event.F68SL !== undefined ? event.F68SL : 0;
             totals[dayId].F68CA += event.F68CA !== undefined ? event.F68CA : 0;
-            totals[dayId].F52PD += event.F52PD !== undefined ? event.F52PD : 0;
+            
             totals[dayId].F29CM += event.F29CM !== undefined ? event.F29CM : 0;
             totals[dayId].F29CA += event.F29CA !== undefined ? event.F29CA : 0;
             totals[dayId].F27TT += event.F27TT !== undefined ? event.F27TT : 0;
@@ -1677,7 +1721,7 @@ $(document).ready(function () {
                 var WOCount;
                 var xDate, xDateSat, xDateSun;
 
-                if (displayType == "Installation" ) {
+                if (displayType == "Installation") {
                     for (var i = 0; i < totals.length; i++) {
                         date1 = new Date(totals[i]["date"]).toLocaleDateString('en-US');
                         WOCount = 0; //ReturnedJob
@@ -1712,7 +1756,7 @@ $(document).ready(function () {
 
                                 totals[i].WOCount = WOCount + 1;
                                 WOCount++;
-                               // if eventWODict[j].Saturday == "No"
+                                // if eventWODict[j].Saturday == "No"
                                 //xDate = is_weekend(date2);
                                 //xDateSat = is_saturday(date2);
                                 //xDateSun = is_sunday(date2);
@@ -1720,10 +1764,10 @@ $(document).ready(function () {
 
                                 //}
                                 //else if ((eventWODict[j].Sunday == "Yes" && eventWODict[j].Saturday == "No") && (xDateSat == "saturday")) {
-                                   
+
                                 //}
                                 //else if ((eventWODict[j].Sunday == "No" && eventWODict[j].Saturday == "Yes") && (xDateSun == "sunday")) {
-                                  
+
                                 //}
                                 //else {
                                 //    totals[i].windows += eventWODict[j]["Windows"];
@@ -1786,7 +1830,7 @@ $(document).ready(function () {
                                     totals[i].doors += eventRemeasureWODict[j]["Doors"];
                                     totals[i].ExtDoors += eventRemeasureWODict[j]["ExtDoors"];
                                     totals[i].SalesAmmount += eventRemeasureWODict[j]["SalesAmmount"];
-                         
+
 
                                     totals[i].installationwindowLBRMIN += eventRemeasureWODict[j]["installationwindowLBRMIN"];
                                     totals[i].InstallationDoorLBRMin += eventRemeasureWODict[j]["InstallationDoorLBRMin"];
@@ -1812,12 +1856,66 @@ $(document).ready(function () {
                         }
                     }
                 }
-               
+                else {
+                    //for (var i = 0; i < totals.length; i++) {
+                    ////}
+                    //date1 = new Date(event.start).toLocaleDateString('en-US');
+                    //date1 = new Date(event.end).toLocaleDateString('en-US');
+                    //var dayId = FindDayIdfromTotals(GetDatefromMoment(event.start));
+                    var diff,dayId;
+                    var len = eventDiff.length;
+
+                    for (var k = 0;k <eventDiff.length; k++) {
+                        diff = moment(eventDiff[k].end._i, 'M/D/YYYY').diff(moment(eventDiff[k].start._i, 'M/D/YYYY'), 'days') - 1;
+                        //if view is not monthview, then 
+                        //if (view.name !== "agendaMonth" && view.name !== "month") {
+                        //    diff = diff + 1;
+                        //}
+                        //if (updateStatus == 1) {
+                        //    diff = diff + 1;
+                        //}
+                        
+                        for (var i = 0; i < diff; i++) {
+                            dayId = FindDayIdfromTotals(GetDatefromMoment(eventDiff[k].start));
+                            totals[i + dayId+1].doors = totals[dayId].doors;
+                            totals[i + dayId+1].windows = totals[dayId].windows;
+                            totals[i + dayId + 1].F52PD = totals[dayId].F52PD;
+
+                            totals[i + dayId + 1].boxes = totals[dayId].boxes;
+                            totals[i + dayId + 1].glass = totals[dayId].glass;
+                            totals[i + dayId + 1].value = totals[dayId].value;
+                            totals[i + dayId + 1].rush = totals[dayId].rush;
+                            totals[i + dayId + 1].min = totals[dayId].min;
+                            // Windows
+                            totals[i + dayId + 1].F6CA = totals[dayId].F6CA;
+                            totals[i + dayId + 1].F68VS = totals[dayId].F68VS;
+                            totals[i + dayId + 1].F68SL = totals[dayId].F68SL;
+                            totals[i + dayId + 1].F68CA = totals[dayId].F68CA;
+
+                            totals[i + dayId + 1].F29CM = totals[dayId].F29CM;
+                            totals[i + dayId + 1].F29CA = totals[dayId].F29CA;
+                            totals[i + dayId + 1].F27TT = totals[dayId].F27TT;
+                            totals[i + dayId + 1].F27TS = totals[dayId].F27TS;
+                            totals[i + dayId + 1].F27DS = totals[dayId].F27DS;
+                            // Doors
+                            totals[i + dayId + 1].Transom = totals[dayId].Transom;
+                            totals[i + dayId + 1].Sidelite = totals[dayId].Sidelite;
+                            totals[i + dayId + 1].SingleDoor = totals[dayId].SingleDoor;
+                            totals[i + dayId + 1].DoubleDoor = totals[dayId].DoubleDoor;
+
+                        }
+
+                    }
+                 
+                 
+                 
+                }
 
                 for (var i = 0; i < totals.length; i++) {
                     SetDayValue(i, totals[i]);
                 }
-
+                updateStatus = 0;
+                eventDiff = [];
               //  eventWODict = [];
             }
         },
@@ -1959,9 +2057,11 @@ function SetDayValue(key, dayTotals) {
     else {
         var maxTime = parseInt(FindByValue("max", dayTotals.date).Value);
         var maxStaff = parseInt(FindByValue("manpower", dayTotals.date).Value);
-        SetData('Doors', dayTotals.day, dayTotals.doors);
+        SetData('Doors', dayTotals.day, parseFloat(dayTotals.doors).toFixed(2));
+     
         SetData('Rush', dayTotals.day, dayTotals.rush);
-        SetData('Windows', dayTotals.day, dayTotals.windows);
+        SetData('Windows', dayTotals.day, parseFloat(dayTotals.windows).toFixed(2));
+    
         SetData('Boxes', dayTotals.day, dayTotals.boxes);
         SetData('Glass', dayTotals.day, dayTotals.glass);
         SetData('Value', dayTotals.day, dayTotals.value.formatMoney(2, "$", ",", "."));
@@ -1975,7 +2075,8 @@ function SetDayValue(key, dayTotals) {
         SetData('27TT', dayTotals.day, dayTotals.F27TT);
         SetData('29CA', dayTotals.day, dayTotals.F29CA);
         SetData('29CM', dayTotals.day, dayTotals.F29CM);
-        SetData('52PD', dayTotals.day, dayTotals.F52PD);
+        SetData('52PD', dayTotals.day, parseFloat(dayTotals.F52PD).toFixed(2));
+
         SetData('68CA', dayTotals.day, dayTotals.F68CA);
         SetData('68VS', dayTotals.day, dayTotals.F68VS);
         SetData('68SL', dayTotals.day, dayTotals.F68SL);

@@ -65,18 +65,21 @@ namespace Generics.Utils
         [DataMember]
         [Lift.Database.DbIgnore]
         //  public string end { get { return FormatDateTime(endDateTime.AddDays(1)); } set { } }
-        public string end {
+
+        public string end
+        {
             get
             {
                 int dayDiff = Convert.ToInt32((endDateTime - startDateTime).TotalDays);
                 // return FormatDateTime(endDateTime.AddDays(dayDiff));
-                return endDateTime.AddDays(dayDiff).ToString();
+                return startDateTime.AddDays(dayDiff+1).ToString();
             }
-            set { } }
+            set { }
+        }
         [DataMember]
         public bool allDay { get; set; }
         [DataMember]
-        public int doors { get; set; }
+        public decimal doors { get; set; }
         [DataMember]
         public int NumberOfPatioDoors { get; set; }
         [DataMember]
@@ -94,7 +97,7 @@ namespace Generics.Utils
         [DataMember]
         public int FlagOrder { get; set; }
         [DataMember]
-        public int windows { get; set; }
+        public decimal windows { get; set; }
         [DataMember]
         public int TotalBoxQty { get; set; }
         [DataMember]
@@ -116,7 +119,7 @@ namespace Generics.Utils
         [DataMember]
         public int F29CM { get; set; }
         [DataMember]
-        public int F52PD { get; set; }
+        public decimal F52PD { get; set; }
         [DataMember]
         public int F68CA { get; set; }
         [DataMember]
@@ -168,6 +171,10 @@ namespace Generics.Utils
         [Lift.Database.DbIgnore]
         [DataMember]
         public string HolidayName { get; set; }
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public DateTime ScheduledProductionDate { get; set; }
+        
 
     }
 

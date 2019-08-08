@@ -1011,7 +1011,6 @@ and  CurrentStateName in ({3})
 
             return SQL;
         }
-
         List<Generics.Utils.CalendarEvent> IGetter.GetData(Generics.Utils.ContentType type)
         {
             string SQL = GetSQL(type);
@@ -1022,6 +1021,119 @@ and  CurrentStateName in ({3})
             Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
             return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.CalendarEvent>(SQL, pars.ToArray());
         }
+        //List<Generics.Utils.CalendarEvent> IGetter.GetData(Generics.Utils.ContentType type)
+        //{
+        //    //string SQL = GetSQL(type);
+
+        //    //List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+        //    //pars.Add(new System.Data.SqlClient.SqlParameter("pStart", startDate));
+        //    //pars.Add(new System.Data.SqlClient.SqlParameter("pEnd", endDate));
+        //    //Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+        //    //return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.CalendarEvent>(SQL, pars.ToArray());
+        //    string SQL = GetSQL(type);
+        //    List<CalendarEvent> eventList = new List<CalendarEvent>();
+        //    List<CalendarEvent> returnList = new List<CalendarEvent>();
+        //    CalendarEvent newEvent = new CalendarEvent();
+        //    List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+        //    pars.Add(new System.Data.SqlClient.SqlParameter("pStart", startDate));
+        //    pars.Add(new System.Data.SqlClient.SqlParameter("pEnd", endDate));
+        //    Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+        //    int dayDiff = 0;
+        //    List<CalendarEvent> re = new List<CalendarEvent>();
+        //    eventList = Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.CalendarEvent>(SQL, pars.ToArray());
+
+        //    foreach (CalendarEvent e in eventList)
+        //    {
+        //        dayDiff = Convert.ToInt32((e.endDateTime - e.startDateTime).TotalDays);
+
+        //        if (dayDiff == 0)
+        //        {
+        //            e.ScheduledProductionDate = e.startDateTime;
+        //            returnList.Add(e);
+        //        }
+        //        else
+        //        {
+        //            for (int i = 0; i <= dayDiff; i++)
+        //            {
+        //                newEvent = new CalendarEvent();
+        //                newEvent.allDay = e.allDay;
+        //                newEvent.Arches = e.Arches;
+        //                newEvent.BatchNo = e.BatchNo;
+        //                newEvent.Branch = e.Branch;
+        //                newEvent.CardinalOrderedDate = e.CardinalOrderedDate;
+        //                newEvent.CurrentStateName = e.CurrentStateName;
+        //                newEvent.color = e.color;
+
+        //                newEvent.CompleteDate = e.CompleteDate;
+        //                newEvent.Complex = e.Complex;
+        //                newEvent.CustomFlag = e.CustomFlag;
+        //                newEvent.Customs = e.Customs;
+
+        //                newEvent.description = e.description;
+        //                newEvent.DoorIcon = e.DoorIcon;
+
+        //                newEvent.end = e.end;
+
+        //                newEvent.F27DS = e.F27DS;
+        //                newEvent.F27TS = e.F27TS;
+        //                newEvent.F27TT = e.F27TT;
+        //                newEvent.F29CA = e.F29CA;
+        //                newEvent.F29CM = e.F29CM;
+
+        //                newEvent.F68CA = e.F68CA;
+        //                newEvent.F68SL = e.F68SL;
+        //                newEvent.F68VS = e.F68VS;
+        //                newEvent.F6CA = e.F6CA;
+        //                newEvent.FlagOrder = e.FlagOrder;
+
+        //                newEvent.HighRiskFlag = e.HighRiskFlag;
+        //                newEvent.HolidayDate = e.HolidayDate;
+        //                newEvent.HolidayName = e.HolidayName;
+
+        //                newEvent.id = e.id;
+        //                newEvent.isHoliday = e.isHoliday;
+        //                newEvent.JobType = e.JobType;
+        //                newEvent.M2000Icon = e.M2000Icon;
+        //                newEvent.NumberOfPatioDoors = e.NumberOfPatioDoors;
+        //                newEvent.Over_Size = e.Over_Size;
+        //                newEvent.PaintIcon = e.PaintIcon;
+        //                newEvent.Rakes = e.Rakes;
+        //                newEvent.Sidelite = e.Sidelite;
+        //                newEvent.Simple = e.Simple;
+
+        //                newEvent.start = e.start;
+        //                newEvent.end = e.end;
+        //                newEvent.startDateTime = e.startDateTime;
+        //                newEvent.endDateTime = e.endDateTime;
+        //                newEvent.ScheduledProductionDate = e.startDateTime.AddDays(i);
+
+        //                newEvent.title = e.title;
+
+        //                newEvent.TotalBoxQty = e.TotalBoxQty;
+        //                newEvent.TotalGlassQty = e.TotalGlassQty;
+        //                newEvent.TotalLBRMin = e.TotalLBRMin;
+        //                newEvent.TotalPrice = e.TotalPrice;
+        //                newEvent.Transom = e.Transom;
+        //                newEvent.WindowIcon = e.WindowIcon;
+
+        //                newEvent.SingleDoor = e.SingleDoor;
+
+        //                newEvent.F52PD = e.F52PD / (dayDiff + 1);
+        //                newEvent.doors = e.doors / (dayDiff + 1);
+        //                newEvent.DoubleDoor = e.DoubleDoor / (dayDiff + 1);
+        //                newEvent.windows = e.windows / (dayDiff + 1);
+
+        //                returnList.Add(newEvent);
+        //            }
+
+        //        }
+        //    }
+
+
+
+        //    return returnList;
+
+        //}
         //List<Generics.Utils.CalendarEvent> IGetter.GetData(Generics.Utils.ContentType type)
         //{
         //    string SQL = GetSQL(type);
