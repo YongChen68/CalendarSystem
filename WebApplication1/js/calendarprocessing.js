@@ -275,7 +275,7 @@ function GetBlankDayData(day) {
             day: dayName, date: installationDay, doors: 0, windows: 0, ExtDoors:0,
             SalesAmmount: 0, TotalAsbestos: 0, TotalWoodDropOff: 0, TotalHighRisk: 0, TotalLeadPaint: 0, WOCount: 0, installationwindowLBRMIN: 0, TotalInstallationLBRMin: 0, InstallationDoorLBRMin: 0,
             InstallationPatioDoorLBRMin: 0, subinstallationwindowLBRMIN: 0, subInstallationPatioDoorLBRMin: 0, subExtDoorLBRMIN: 0, subTotalInstallationLBRMin: 0,
-            SidingLBRBudget: 0, SidingLBRMin: 0, SidingSQF: 0
+            SidingLBRBudget: 0, SidingLBRMin: 0, SidingSQF: 0, MinAvailable: 0, SalesTarget:0
         };
     }
     else if (displayType == "Remeasure")
@@ -1615,7 +1615,32 @@ $(document).ready(function () {
 
                         totals[dayId].doors += event.doors !== undefined ? event.doors / (diff+1) : 0;
                         totals[dayId].windows += event.windows !== undefined ? event.windows / (diff+1) : 0;
-                        totals[dayId].F52PD += event.F52PD !== undefined ? event.F52PD / (diff+1) : 0;
+                        totals[dayId].F52PD += event.F52PD !== undefined ? event.F52PD / (diff + 1) : 0;
+
+                        totals[dayId].boxes += event.TotalBoxQty !== undefined ? event.TotalBoxQty / (diff + 1) : 0;
+                        totals[dayId].glass += event.TotalGlassQty !== undefined ? event.TotalGlassQty / (diff + 1) : 0;
+                        totals[dayId].min += event.TotalLBRMin !== undefined ? event.TotalLBRMin / (diff + 1) : 0;
+                        // Windows
+                        totals[dayId].F6CA += event.F6CA !== undefined ? event.F6CA / (diff + 1) : 0;
+                        totals[dayId].F68VS += event.F68VS !== undefined ? event.F68VS / (diff + 1): 0;
+                        totals[dayId].F68SL += event.F68SL !== undefined ? event.F68SL / (diff + 1) : 0;
+                        totals[dayId].F68CA += event.F68CA !== undefined ? event.F68CA / (diff + 1) : 0;
+
+                        totals[dayId].F29CM += event.F29CM !== undefined ? event.F29CM / (diff + 1): 0;
+                        totals[dayId].F29CA += event.F29CA !== undefined ? event.F29CA / (diff + 1): 0;
+                        totals[dayId].F27TT += event.F27TT !== undefined ? event.F27TT / (diff + 1) : 0;
+                        totals[dayId].F27TS += event.F27TS !== undefined ? event.F27TS / (diff + 1) : 0;
+                        totals[dayId].F27DS += event.F27DS !== undefined ? event.F27DS / (diff + 1): 0;
+
+
+                        // Doors
+                        totals[dayId].Transom += event.Transom !== undefined ? event.Transom / (diff + 1) : 0;
+                        totals[dayId].Sidelite += event.Sidelite !== undefined ? event.Sidelite / (diff + 1) : 0;
+                        totals[dayId].SingleDoor += event.SingleDoor !== undefined ? event.SingleDoor / (diff + 1) : 0;
+                        totals[dayId].DoubleDoor += event.DoubleDoor !== undefined ? event.DoubleDoor / (diff + 1) : 0;
+
+                        totals[dayId].value += event.TotalPrice !== undefined ? event.TotalPrice / (diff + 1) : 0;
+
                         eventDiff.push(event);
                         eventDiff = removeDuplicates(eventDiff, "title");
                     }
@@ -1623,36 +1648,70 @@ $(document).ready(function () {
                         totals[dayId].doors += event.doors !== undefined ? event.doors : 0;
                         totals[dayId].windows += event.windows !== undefined ? event.windows : 0;
                         totals[dayId].F52PD += event.F52PD !== undefined ? event.F52PD : 0;
+
+                        totals[dayId].boxes += event.TotalBoxQty !== undefined ? event.TotalBoxQty : 0;
+                        totals[dayId].glass += event.TotalGlassQty !== undefined ? event.TotalGlassQty : 0;
+                        totals[dayId].min += event.TotalLBRMin !== undefined ? event.TotalLBRMin : 0;
+                        // Windows
+                        totals[dayId].F6CA += event.F6CA !== undefined ? event.F6CA : 0;
+                        totals[dayId].F68VS += event.F68VS !== undefined ? event.F68VS : 0;
+                        totals[dayId].F68SL += event.F68SL !== undefined ? event.F68SL : 0;
+                        totals[dayId].F68CA += event.F68CA !== undefined ? event.F68CA : 0;
+
+                        totals[dayId].F29CM += event.F29CM !== undefined ? event.F29CM : 0;
+                        totals[dayId].F29CA += event.F29CA !== undefined ? event.F29CA : 0;
+                        totals[dayId].F27TT += event.F27TT !== undefined ? event.F27TT : 0;
+                        totals[dayId].F27TS += event.F27TS !== undefined ? event.F27TS : 0;
+                        totals[dayId].F27DS += event.F27DS !== undefined ? event.F27DS : 0;
+
+
+                        // Doors
+                        totals[dayId].Transom += event.Transom !== undefined ? event.Transom : 0;
+                        totals[dayId].Sidelite += event.Sidelite !== undefined ? event.Sidelite : 0;
+                        totals[dayId].SingleDoor += event.SingleDoor !== undefined ? event.SingleDoor : 0;
+                        totals[dayId].DoubleDoor += event.DoubleDoor !== undefined ? event.DoubleDoor : 0;
+
+                        totals[dayId].value += event.TotalPrice !== undefined ? event.TotalPrice : 0;
+
                     }
                 }
                 else {
                     totals[dayId].doors += event.doors !== undefined ? event.doors : 0;
                     totals[dayId].windows += event.windows !== undefined ? event.windows : 0;
                     totals[dayId].F52PD += event.F52PD !== undefined ? event.F52PD : 0;
+
+                    totals[dayId].boxes += event.TotalBoxQty !== undefined ? event.TotalBoxQty : 0;
+                    totals[dayId].glass += event.TotalGlassQty !== undefined ? event.TotalGlassQty : 0;
+                    totals[dayId].min += event.TotalLBRMin !== undefined ? event.TotalLBRMin : 0;
+                    // Windows
+                    totals[dayId].F6CA += event.F6CA !== undefined ? event.F6CA : 0;
+                    totals[dayId].F68VS += event.F68VS !== undefined ? event.F68VS : 0;
+                    totals[dayId].F68SL += event.F68SL !== undefined ? event.F68SL : 0;
+                    totals[dayId].F68CA += event.F68CA !== undefined ? event.F68CA : 0;
+
+                    totals[dayId].F29CM += event.F29CM !== undefined ? event.F29CM : 0;
+                    totals[dayId].F29CA += event.F29CA !== undefined ? event.F29CA : 0;
+                    totals[dayId].F27TT += event.F27TT !== undefined ? event.F27TT : 0;
+                    totals[dayId].F27TS += event.F27TS !== undefined ? event.F27TS : 0;
+                    totals[dayId].F27DS += event.F27DS !== undefined ? event.F27DS : 0;
+
+
+                    // Doors
+                    totals[dayId].Transom += event.Transom !== undefined ? event.Transom : 0;
+                    totals[dayId].Sidelite += event.Sidelite !== undefined ? event.Sidelite : 0;
+                    totals[dayId].SingleDoor += event.SingleDoor !== undefined ? event.SingleDoor : 0;
+                    totals[dayId].DoubleDoor += event.DoubleDoor !== undefined ? event.DoubleDoor : 0;
+
+                    totals[dayId].value += event.TotalPrice !== undefined ? event.TotalPrice : 0;
                 }
             }
 
-            totals[dayId].boxes += event.TotalBoxQty !== undefined ? event.TotalBoxQty : 0;
-            totals[dayId].glass += event.TotalGlassQty !== undefined ? event.TotalGlassQty : 0;
-            totals[dayId].value += event.TotalPrice !== undefined ? event.TotalPrice : 0;
             totals[dayId].rush += event.FlagOrder !== undefined ? event.FlagOrder : 0;
-            totals[dayId].min += event.TotalLBRMin !== undefined ? event.TotalLBRMin : 0;
-            // Windows
-            totals[dayId].F6CA += event.F6CA !== undefined ? event.F6CA : 0;
-            totals[dayId].F68VS += event.F68VS !== undefined ? event.F68VS : 0;
-            totals[dayId].F68SL += event.F68SL !== undefined ? event.F68SL : 0;
-            totals[dayId].F68CA += event.F68CA !== undefined ? event.F68CA : 0;
-            
-            totals[dayId].F29CM += event.F29CM !== undefined ? event.F29CM : 0;
-            totals[dayId].F29CA += event.F29CA !== undefined ? event.F29CA : 0;
-            totals[dayId].F27TT += event.F27TT !== undefined ? event.F27TT : 0;
-            totals[dayId].F27TS += event.F27TS !== undefined ? event.F27TS : 0;
-            totals[dayId].F27DS += event.F27DS !== undefined ? event.F27DS : 0;
-            // Doors
-            totals[dayId].Transom += event.Transom !== undefined ? event.Transom : 0;
-            totals[dayId].Sidelite += event.Sidelite !== undefined ? event.Sidelite : 0;
-            totals[dayId].SingleDoor += event.SingleDoor !== undefined ? event.SingleDoor : 0;
-            totals[dayId].DoubleDoor += event.DoubleDoor !== undefined ? event.DoubleDoor : 0;
+
+
+        
+        
+
             // Window Info
             //totals[dayId].Complex += event.Complex !== undefined ? event.Complex : 0;
             //totals[dayId].Simple += event.Simple !== undefined ? event.Simple : 0;
@@ -1749,6 +1808,8 @@ $(document).ready(function () {
                                 totals[i].SidingLBRBudget += eventWODict[j]["SidingLBRBudget"];
                                 totals[i].SidingLBRMin += eventWODict[j]["SidingLBRMin"];
                                 totals[i].SidingSQF += eventWODict[j]["SidingSQF"];
+                                totals[i].MinAvailable += eventWODict[j]["MinAvailable"];
+                                totals[i].SalesTarget += eventWODict[j]["SalesTarget"];
 
                                 if (eventWODict[j]["LeadPaint"] == "Yes") {
                                     totals[i].TotalLeadPaint++;
@@ -2019,16 +2080,28 @@ function SetDayValue(key, dayTotals) {
         SetData('Asbestos-Jobs', dayTotals.day, dayTotals.TotalAsbestos);
         SetData('Lead-Paint', dayTotals.day, dayTotals.TotalLeadPaint);
         SetData('Sales-Amount', dayTotals.day, dayTotals.SalesAmmount.formatMoney(2, "$", ",", "."));
+      //  SetData('SalesTarget', dayTotals.day, parseFloat(dayTotals.SalesTarget).toFixed(2));
+        SetData('SalesTarget', dayTotals.day, dayTotals.SalesTarget.formatMoney(2, "$", ",", "."));
+      //  SetData('Sales+/-', dayTotals.day, parseFloat(dayTotals.SalesTarget - dayTotals.SalesAmmount).formatMoney(2, "$", ",", "."));
+       // SetData('Sales+/-', dayTotals.day, (parseFloat(dayTotals.SalesTarget) - parseFloat(dayTotals.SalesAmmount)).formatMoney(2, "$", ",", "."));
+        SetData('Sales-Diff', dayTotals.day, (parseFloat(dayTotals.SalesTarget) - parseFloat(dayTotals.SalesAmmount)).formatMoney(2, "$", ",", "."));
 
         SetData('Window-LBR', dayTotals.day, parseFloat(dayTotals.subinstallationwindowLBRMIN).toFixed(2)); 
         SetData('Patio-Door-LBR', dayTotals.day, parseFloat(dayTotals.subInstallationPatioDoorLBRMin).toFixed(2));
         SetData('Codel-Door-LBR', dayTotals.day, parseFloat(dayTotals.subExtDoorLBRMIN).toFixed(2));
         SetData('Total-LBR', dayTotals.day, parseFloat(dayTotals.subTotalInstallationLBRMin).toFixed(2));
+        SetData('Installation-Min', dayTotals.day, parseFloat(dayTotals.MinAvailable).toFixed(2));
+       // SetData('LBR\+', dayTotals.day, (parseFloat(dayTotals.MinAvailable) - parseFloat(dayTotals.subTotalInstallationLBRMin)).toFixed(2));
+       SetData('LBR-Diff', dayTotals.day, (parseFloat(dayTotals.MinAvailable) - parseFloat(dayTotals.subTotalInstallationLBRMin)).toFixed(2));
+    
 
       // SetData('Siding-LBRBudget', dayTotals.day, parseFloat(dayTotals.SidingLBRBudget).toFixed(2));
         SetData('Siding-LBRBudget', dayTotals.day, dayTotals.SidingLBRBudget.formatMoney(2, "$", ",", "."));
         SetData('Siding-LBRMin', dayTotals.day, parseFloat(dayTotals.SidingLBRMin).toFixed(2));
         SetData('Siding-SQF', dayTotals.day, parseFloat(dayTotals.SidingSQF).toFixed(2));
+
+       
+     
     }
     else if (displayType == "Remeasure") {
 
@@ -2062,29 +2135,58 @@ function SetDayValue(key, dayTotals) {
         SetData('Rush', dayTotals.day, dayTotals.rush);
         SetData('Windows', dayTotals.day, parseFloat(dayTotals.windows).toFixed(2));
     
-        SetData('Boxes', dayTotals.day, dayTotals.boxes);
-        SetData('Glass', dayTotals.day, dayTotals.glass);
+       // SetData('Boxes', dayTotals.day, dayTotals.boxes);
+        SetData('Boxes', dayTotals.day, parseFloat(dayTotals.boxes).toFixed(2));
+
+      //  SetData('Glass', dayTotals.day, dayTotals.glass);
+
+        SetData('Glass', dayTotals.day, parseFloat(dayTotals.glass).toFixed(2));
+
         SetData('Value', dayTotals.day, dayTotals.value.formatMoney(2, "$", ",", "."));
+
         SetData('Min', dayTotals.day, dayTotals.min.formatMoney(0, "", ",", "."));
         SetData('Max', dayTotals.day, maxTime.formatMoney(0, "", ",", "."));
         SetData('Available_Time', dayTotals.day, (maxTime - dayTotals.min).formatMoney(0, "", ",", "."));
         SetData('Available_Staff', dayTotals.day, maxStaff);
         SetData('Float', dayTotals.day, dayTotals.float.formatMoney(0, "", ",", "."));
-        SetData('27DS', dayTotals.day, dayTotals.F27DS);
-        SetData('27TS', dayTotals.day, dayTotals.F27TS);
-        SetData('27TT', dayTotals.day, dayTotals.F27TT);
-        SetData('29CA', dayTotals.day, dayTotals.F29CA);
-        SetData('29CM', dayTotals.day, dayTotals.F29CM);
+
+        //SetData('27DS', dayTotals.day, dayTotals.F27DS);
+        SetData('27DS', dayTotals.day, parseFloat(dayTotals.F27DS).toFixed(2));
+
+      //  SetData('27TS', dayTotals.day, dayTotals.F27TS);
+
+        SetData('27TS', dayTotals.day, parseFloat(dayTotals.F27TS).toFixed(2));
+
+       // SetData('27TT', dayTotals.day, dayTotals.F27TT);
+        SetData('27TT', dayTotals.day, parseFloat(dayTotals.F27TT).toFixed(2));
+
+       // SetData('29CA', dayTotals.day, dayTotals.F29CA);
+        SetData('29CA', dayTotals.day, parseFloat(dayTotals.F29CA).toFixed(2));
+
+      //  SetData('29CM', dayTotals.day, dayTotals.F29CM);
+        SetData('29CM', dayTotals.day, parseFloat(dayTotals.F29CM).toFixed(2));
+
         SetData('52PD', dayTotals.day, parseFloat(dayTotals.F52PD).toFixed(2));
 
-        SetData('68CA', dayTotals.day, dayTotals.F68CA);
-        SetData('68VS', dayTotals.day, dayTotals.F68VS);
-        SetData('68SL', dayTotals.day, dayTotals.F68SL);
-        SetData('26CA', dayTotals.day, dayTotals.F6CA);
+       // SetData('68CA', dayTotals.day, dayTotals.F68CA);
+        SetData('68CA', dayTotals.day, parseFloat(dayTotals.F68CA).toFixed(2));
+
+       // SetData('68VS', dayTotals.day, dayTotals.F68VS);
+        SetData('68VS', dayTotals.day, parseFloat(dayTotals.F68VS).toFixed(2));
+
+        //SetData('68SL', dayTotals.day, dayTotals.F68SL);
+        SetData('68SL', dayTotals.day, parseFloat(dayTotals.F68SL).toFixed(2));
+
+       // SetData('26CA', dayTotals.day, dayTotals.F6CA);
+        SetData('26CA', dayTotals.day, parseFloat(dayTotals.F6CA).toFixed(2));
+
         SetData('Transom', dayTotals.day, dayTotals.Transom);
         SetData('Sidelite', dayTotals.day, dayTotals.Sidelite);
-        SetData('SingleDoor', dayTotals.day, dayTotals.SingleDoor);
-        SetData('DoubleDoor', dayTotals.day, dayTotals.DoubleDoor);
+   //     SetData('SingleDoor', dayTotals.day, dayTotals.SingleDoor);
+        SetData('SingleDoor', dayTotals.day, parseFloat(dayTotals.SingleDoor).toFixed(2));
+      //  SetData('DoubleDoor', dayTotals.day, dayTotals.DoubleDoor);
+        SetData('DoubleDoor', dayTotals.day, parseFloat(dayTotals.DoubleDoor).toFixed(2));
+
         //SetData('Simple', dayTotals.day, dayTotals.Simple);
         //SetData('Complex', dayTotals.day, dayTotals.Complex);
         //SetData('Over_Size', dayTotals.day, dayTotals.Over_Size);

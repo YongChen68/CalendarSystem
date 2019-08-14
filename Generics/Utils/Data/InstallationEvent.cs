@@ -438,5 +438,17 @@ namespace Generics.Utils.Data
         [Lift.Database.DbIgnore]
         [DataMember]
         public string UnavailableStaff { get; set; }
+
+        [DataMember]
+        public int MinAvailable
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public Decimal SalesTarget
+        {
+            get; set;
+        }
     }
 }

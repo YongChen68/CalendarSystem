@@ -3665,7 +3665,8 @@
                         RenderDayRow('Codel-Doors', dayIDs[cell.start.day()]) +
                         RenderDayRow('Patio-Doors', dayIDs[cell.start.day()]) +
                         RenderDayRow('Sales-Amount', dayIDs[cell.start.day()]) +
-                        RenderDayRow('Installation-Min', dayIDs[cell.start.day()]) +
+                        RenderDayRow('SalesTarget', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Sales-Diff', dayIDs[cell.start.day()]) +
                         RenderDayRow('Asbestos-Jobs', dayIDs[cell.start.day()]) +
                         RenderDayRow('Wood-DropOff-Jobs', dayIDs[cell.start.day()]) +
                         RenderDayRow('HighRisk-Jobs', dayIDs[cell.start.day()]) +
@@ -3674,6 +3675,9 @@
                         RenderDayRow('Patio-Door-LBR', dayIDs[cell.start.day()]) +
                         RenderDayRow('Codel-Door-LBR', dayIDs[cell.start.day()]) +
                         RenderDayRow('Total-LBR', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Installation-Min', dayIDs[cell.start.day()]) +
+                        RenderDayRow('LBR-Diff', dayIDs[cell.start.day()]) +
+
                         RenderDayRow('Siding-LBRBudget', dayIDs[cell.start.day()]) +
                         RenderDayRow('Siding-LBRMin', dayIDs[cell.start.day()]) +
                         RenderDayRow('Siding-SQF', dayIDs[cell.start.day()]) +
@@ -3741,7 +3745,8 @@
                         RenderWeekRow('Codel-Doors') +
                         RenderWeekRow('Patio-Doors') +
                         RenderWeekRow('Sales-Amount') +
-                        RenderWeekRow('Installation-Min') +
+                        RenderWeekRow('SalesTarget') +
+                        RenderWeekRow('Sales-Diff') +
                         RenderWeekRow('Asbestos-Jobs') +
                         RenderWeekRow('Wood-DropOff-Jobs') +
                         RenderWeekRow('HighRisk-Jobs') +
@@ -3750,6 +3755,8 @@
                         RenderWeekRow('Patio-Door-LBR') +
                         RenderWeekRow('Codel-Door-LBR') +
                         RenderWeekRow('Total-LBR') +
+                        RenderWeekRow('Installation-Min') +
+                        RenderWeekRow('LBR-Diff') +
                         RenderWeekRow('Siding-LBRBudget') +
                         RenderWeekRow('Siding-LBRMin') +
                         RenderWeekRow('Siding-SQF') +

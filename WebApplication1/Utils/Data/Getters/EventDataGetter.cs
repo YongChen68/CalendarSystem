@@ -300,7 +300,7 @@ and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or
 Branch in ({2})
 
 select WorkOrderNumber, LastName,FirstName, City,PostCode, Email,SalesRep,LeadPaint,ReturnedJob,StartScheduleDate,EndScheduleDate,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,
-TotalDoors,TotalWindows,Windows,Doors,ExtDoors,TotalExtDoors,
+TotalDoors,TotalWindows,Windows,Doors,ExtDoors,TotalExtDoors,MinAvailable/detailrecordCount as MinAvailable,SalesTarget/detailrecordCount as SalesTarget,
 DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, 
 installationwindowLBRMIN,InstallationPatioDoorLBRMin,InstallationDoorLBRMin,TotalInstallationLBRMin,
 installationwindowLBRMIN/detailrecordCount as subinstallationwindowLBRMIN,
@@ -323,6 +323,8 @@ i.CurrentStateName,PlannedInstallWeek,
 SidingLBRBudget,SidingLBRMin,SidingSQF,i.SubTradeFlag,
 dbo.fGetStartScheduleDate(ReturnedJob,RecordId) as StartScheduleDate,
 dbo.fGetEndScheduleDate(ReturnedJob,RecordId) as EndScheduleDate,
+dbo.fGetMinAvaiable(ScheduledDate,Branch) as MinAvailable,
+dbo.fGetSalesTarget(ScheduledDate,Branch) as SalesTarget,
 round(i.Windows/detailrecordCount,2) as Windows, round(i. PatioDoors/detailrecordCount,2) as Doors,round(i. ExtDoors/detailrecordCount,2) as ExtDoors,
 i.Windows as TotalWindows, i.PatioDoors as TotalDoors,  i.ExtDoors as TotalExtDoors,
 
@@ -448,12 +450,13 @@ drop table #installs
                 newEvent.StartScheduleDate = eventx.StartScheduleDate;
                 newEvent.EndScheduleDate = eventx.EndScheduleDate;
 
-
+                newEvent.MinAvailable = eventx.MinAvailable;
+                newEvent.SalesTarget = eventx.SalesTarget;
                 // total = GetTotalByWO(eventx.WorkOrderNumber);
 
 
                 //  total = GetInstallationEventsByWO(eventx.WorkOrderNumber).Count();
-            //    total = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber);
+                //    total = installationEventList.Count(bt => bt.WorkOrderNumber == eventx.WorkOrderNumber);
 
                 //if ((eventx.Saturday == "Yes") && (eventx.Sunday == "Yes"))
                 //{
@@ -637,6 +640,9 @@ drop table #installs
                 newEvent.Email = returnedEvent.Email;
                 newEvent.SalesRep = returnedEvent.SalesRep;
                 newEvent.LeadPaint = returnedEvent.LeadPaint;
+
+                newEvent.MinAvailable = returnedEvent.MinAvailable;
+                newEvent.SalesTarget = returnedEvent.SalesTarget;
 
                 woList.Add(returnedEvent.WorkOrderNumber);
                 returnEventList.Add(newEvent);
@@ -1489,7 +1495,6 @@ where i.WorkOrderNumber = '{0}' ", this.workOrderNumber);
 where branch in ('{0}') ", String.Join("','", branchList));
             return SQL;
         }
-
 
         public List<Product> GetProductsDoors()
         {

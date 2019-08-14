@@ -164,4 +164,21 @@ namespace Generics.Utils
     public class Datetime
     {
     }
+
+    public class Projections
+    {
+        [DataMember]
+        public int NumberOfInstallers { get; set; }
+
+        [DataMember]
+        public string NumberOfMinAvailable { get; set; }
+
+        [DataMember]
+        public string Branch { get; set; }
+
+        [DataMember]
+        public DateTime ProjectionsDate { get; set; }
+
+    }
+
 }
