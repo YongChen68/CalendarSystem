@@ -3705,6 +3705,7 @@
                     retValue += '<tbody>' +
                         RenderDayRow('Windows', dayIDs[cell.start.day()]) +
                         RenderDayRow('Doors', dayIDs[cell.start.day()]) +
+                        RenderDayRow('PATIO-DOORS', dayIDs[cell.start.day()]) +
                         RenderDayRow('Boxes', dayIDs[cell.start.day()]) +
                         RenderDayRow('Glass', dayIDs[cell.start.day()]) +
                         RenderDayRow('Rush', dayIDs[cell.start.day()]) +
@@ -3713,7 +3714,7 @@
                         RenderDayRow('Available_Time', dayIDs[cell.start.day()]) +
                         RenderDayRow('Available_Staff', dayIDs[cell.start.day()]) +
                         RenderDayRow('26CA', dayIDs[cell.start.day()]) +
-                        RenderDayRow('27DS', dayIDs[cell.start.day()]) +
+                    //    RenderDayRow('27DS', dayIDs[cell.start.day()]) +
                        // RenderDayRow('27TS', dayIDs[cell.start.day()]) +
                         //RenderDayRow('27TT', dayIDs[cell.start.day()]) +
                         RenderDayRow('29CA', dayIDs[cell.start.day()]) +
@@ -3732,6 +3733,9 @@
                         RenderDayRow('Arches', dayIDs[cell.start.day()]) +
                         RenderDayRow('Rakes', dayIDs[cell.start.day()]) +
                         RenderDayRow('Customs', dayIDs[cell.start.day()]) +
+                        RenderDayRow('SLIDERS', dayIDs[cell.start.day()]) +
+                        RenderDayRow('CASEMENTS', dayIDs[cell.start.day()]) +
+                        RenderDayRow('VINYL-SWING', dayIDs[cell.start.day()]) +
                         '</tbody>';
                 }
 
@@ -3786,6 +3790,7 @@
                     retValue += '<tbody>' +
                         RenderWeekRow('Windows') +
                         RenderWeekRow('Doors') +
+                        RenderWeekRow('PATIO-DOORS') +
                         RenderWeekRow('Boxes') +
                         RenderWeekRow('Glass') +
                         RenderWeekRow('Rush') +
@@ -3794,7 +3799,7 @@
                         RenderWeekRow('Available_Time') +
                         RenderWeekRow('Available_Staff') +
                         RenderWeekRow('26CA') +
-                        RenderWeekRow('27DS') +
+                     //   RenderWeekRow('27DS') +
                       //  RenderWeekRow('27TS') +
                      //   RenderWeekRow('27TT') +
                         RenderWeekRow('29CA') +
@@ -3807,6 +3812,10 @@
                         RenderWeekRow('Sidelite') +
                         RenderWeekRow('SingleDoor') +
                         RenderWeekRow('DoubleDoor') +
+                        RenderWeekRow('SLIDERS') +
+                        RenderWeekRow('CASEMENTS') +
+                        RenderWeekRow('VINYL-SWING') +
+             
 
                     '</tbody>';
                 }

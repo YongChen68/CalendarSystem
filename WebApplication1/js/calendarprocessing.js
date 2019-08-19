@@ -2151,7 +2151,7 @@ function SetDayValue(key, dayTotals) {
         SetData('Float', dayTotals.day, dayTotals.float.formatMoney(0, "", ",", "."));
 
         //SetData('27DS', dayTotals.day, dayTotals.F27DS);
-        SetData('27DS', dayTotals.day, parseFloat(dayTotals.F27DS).toFixed(2));
+        SetData('VINYL-SWING', dayTotals.day, parseFloat(dayTotals.F27DS).toFixed(2));
 
       //  SetData('27TS', dayTotals.day, dayTotals.F27TS);
 
@@ -2186,6 +2186,11 @@ function SetDayValue(key, dayTotals) {
         SetData('SingleDoor', dayTotals.day, parseFloat(dayTotals.SingleDoor).toFixed(2));
       //  SetData('DoubleDoor', dayTotals.day, dayTotals.DoubleDoor);
         SetData('DoubleDoor', dayTotals.day, parseFloat(dayTotals.DoubleDoor).toFixed(2));
+        SetData('PATIO-DOORS', dayTotals.day, parseFloat(dayTotals.F52PD).toFixed(2));
+
+        SetData('SLIDERS', dayTotals.day, (parseFloat(dayTotals.F68SL) + parseFloat(dayTotals.F68VS)).toFixed(2));
+        SetData('CASEMENTS', dayTotals.day, (parseFloat(dayTotals.F29CM) + parseFloat(dayTotals.F29CA) + parseFloat(dayTotals.F6CA)).toFixed(2));
+
 
         //SetData('Simple', dayTotals.day, dayTotals.Simple);
         //SetData('Complex', dayTotals.day, dayTotals.Complex);
