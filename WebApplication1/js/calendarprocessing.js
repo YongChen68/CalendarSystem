@@ -307,8 +307,8 @@ function ToWDString(event) {
         '26CA: ' + event.F6CA + '\r\n' +
 
         '27DS: ' + event.F27DS + '\r\n' +
-        '27TS: ' + event.F27TS + '\r\n' +
-        '27TT: ' + event.F27TT + '\r\n' +
+     //   '27TS: ' + event.F27TS + '\r\n' +
+    //    '27TT: ' + event.F27TT + '\r\n' +
 
         '29CA: ' + event.F29CA + '\r\n' +
         '29CM: ' + event.F29CM + '\r\n' +
@@ -2155,10 +2155,10 @@ function SetDayValue(key, dayTotals) {
 
       //  SetData('27TS', dayTotals.day, dayTotals.F27TS);
 
-        SetData('27TS', dayTotals.day, parseFloat(dayTotals.F27TS).toFixed(2));
+     //   SetData('27TS', dayTotals.day, parseFloat(dayTotals.F27TS).toFixed(2));
 
        // SetData('27TT', dayTotals.day, dayTotals.F27TT);
-        SetData('27TT', dayTotals.day, parseFloat(dayTotals.F27TT).toFixed(2));
+      //  SetData('27TT', dayTotals.day, parseFloat(dayTotals.F27TT).toFixed(2));
 
        // SetData('29CA', dayTotals.day, dayTotals.F29CA);
         SetData('29CA', dayTotals.day, parseFloat(dayTotals.F29CA).toFixed(2));

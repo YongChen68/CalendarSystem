@@ -3714,8 +3714,8 @@
                         RenderDayRow('Available_Staff', dayIDs[cell.start.day()]) +
                         RenderDayRow('26CA', dayIDs[cell.start.day()]) +
                         RenderDayRow('27DS', dayIDs[cell.start.day()]) +
-                        RenderDayRow('27TS', dayIDs[cell.start.day()]) +
-                        RenderDayRow('27TT', dayIDs[cell.start.day()]) +
+                       // RenderDayRow('27TS', dayIDs[cell.start.day()]) +
+                        //RenderDayRow('27TT', dayIDs[cell.start.day()]) +
                         RenderDayRow('29CA', dayIDs[cell.start.day()]) +
                         RenderDayRow('29CM', dayIDs[cell.start.day()]) +
                         RenderDayRow('68CA', dayIDs[cell.start.day()]) +
@@ -3795,8 +3795,8 @@
                         RenderWeekRow('Available_Staff') +
                         RenderWeekRow('26CA') +
                         RenderWeekRow('27DS') +
-                        RenderWeekRow('27TS') +
-                        RenderWeekRow('27TT') +
+                      //  RenderWeekRow('27TS') +
+                     //   RenderWeekRow('27TT') +
                         RenderWeekRow('29CA') +
                         RenderWeekRow('29CM') +
                         RenderWeekRow('68CA') +
