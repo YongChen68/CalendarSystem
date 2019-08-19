@@ -2089,10 +2089,10 @@ function SetDayValue(key, dayTotals) {
         SetData('Window-LBR', dayTotals.day, parseFloat(dayTotals.subinstallationwindowLBRMIN).toFixed(2)); 
         SetData('Patio-Door-LBR', dayTotals.day, parseFloat(dayTotals.subInstallationPatioDoorLBRMin).toFixed(2));
         SetData('Codel-Door-LBR', dayTotals.day, parseFloat(dayTotals.subExtDoorLBRMIN).toFixed(2));
-        SetData('Total-LBR', dayTotals.day, parseFloat(dayTotals.subTotalInstallationLBRMin).toFixed(2));
+        SetData('Total-LBR', dayTotals.day, (parseFloat(dayTotals.subTotalInstallationLBRMin) + parseFloat(dayTotals.subExtDoorLBRMIN)) .toFixed(2));
         SetData('Installation-Min', dayTotals.day, parseFloat(dayTotals.MinAvailable).toFixed(2));
        // SetData('LBR\+', dayTotals.day, (parseFloat(dayTotals.MinAvailable) - parseFloat(dayTotals.subTotalInstallationLBRMin)).toFixed(2));
-       SetData('LBR-Diff', dayTotals.day, (parseFloat(dayTotals.MinAvailable) - parseFloat(dayTotals.subTotalInstallationLBRMin)).toFixed(2));
+        SetData('LBR-Diff', dayTotals.day, (parseFloat(dayTotals.MinAvailable) - parseFloat(dayTotals.subTotalInstallationLBRMin) - parseFloat(dayTotals.subExtDoorLBRMIN) ).toFixed(2));
     
 
       // SetData('Siding-LBRBudget', dayTotals.day, parseFloat(dayTotals.SidingLBRBudget).toFixed(2));
@@ -2120,7 +2120,7 @@ function SetDayValue(key, dayTotals) {
         SetData('Window-LBR', dayTotals.day, parseFloat(dayTotals.subinstallationwindowLBRMIN).toFixed(2));
         SetData('Patio-Door-LBR', dayTotals.day, parseFloat(dayTotals.subInstallationPatioDoorLBRMin).toFixed(2));
         SetData('Codel-Door-LBR', dayTotals.day, parseFloat(dayTotals.subExtDoorLBRMIN).toFixed(2));
-        SetData('Total-LBR', dayTotals.day, parseFloat(dayTotals.subTotalInstallationLBRMin).toFixed(2));
+        SetData('Total-LBR', dayTotals.day, (parseFloat(dayTotals.subTotalInstallationLBRMin) + parseFloat(dayTotals.subExtDoorLBRMIN)).toFixed(2));
 
         // SetData('Siding-LBRBudget', dayTotals.day, parseFloat(dayTotals.SidingLBRBudget).toFixed(2));
         SetData('Siding-LBRBudget', dayTotals.day, dayTotals.SidingLBRBudget.formatMoney(2, "$", ",", "."));
