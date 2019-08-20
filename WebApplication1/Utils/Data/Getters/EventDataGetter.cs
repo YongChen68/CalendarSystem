@@ -1277,9 +1277,9 @@ x.description, x.type, x.startDateTime, case when datediff(hour, x.startDateTime
 x.doors, x.windows, 'true' as allDay,[PaintIcon],[WindowIcon],[DoorIcon], [M2000Icon], [FlagOrder],[TotalBoxQty], [TotalGlassQty], [TotalPrice], [TotalLBRMin], [F6CA], [F27DS], [F27TS], [F27TT], [F29CA], [F29CM], [F52PD], [F68CA], [F68SL], 
 [F68VS], [Transom], [Sidelite], [SingleDoor], [DoubleDoor],  [BatchNo], Branch, JobType, [CardinalOrderedDate], [CompleteDate], [HighRiskFlag], [CustomFlag], CurrentStateName,NumberOfPatioDoors, Simple, Complex, Over_Size, [Arches], [Rakes], Customs
 from (select p.ActionItemId as id, p.WorkOrderNumber as title, '' as [description], 
-(select min(dateadd(MINUTE, (datepart(hour, pd.ShippingStartTime)*60+DATEPART(minute, pd.ShippingStartTime)), pd.ShippingStartDate)) as date from PlantProduction_ShippingDate pd with(nolock,noexpand) 
+(select min(dateadd(MINUTE, (datepart(hour, pd.ShippingStartTime)*60+DATEPART(minute, pd.ShippingStartTime)),CONVERT(DateTime,pd.ShippingStartDate)))as date from PlantProduction_ShippingDate pd with(nolock,noexpand) 
 where p.RecordId = pd.ParentRecordId) as startDateTime, 
-(select max(dateadd(MINUTE, (datepart(hour, pd.ShippingEndTime)*60+DATEPART(minute, pd.ShippingEndTime)), pd.ShippingStartDate)) as date
+(select max(dateadd(MINUTE, (datepart(hour, pd.ShippingEndTime)*60+DATEPART(minute, pd.ShippingEndTime)), CONVERT(DateTime,pd.ShippingStartDate)))as date
 from PlantProduction_ShippingDate pd with(nolock,noexpand) where p.RecordId = pd.ParentRecordId) as endDateTime, case when p.NumberofDoors is null then 0 else p.NumberofDoors end as doors, case when p.NumberOfPatioDoors is null then 0 else p.NumberOfPatioDoors end as NumberOfPatioDoors,
 case when p.NumberofWindows is null then 0 else p.NumberofWindows end as windows, '' as type, [PaintIcon],[WindowIcon],[DoorIcon],case when [M2000Icon] = 'Yes' then 1 else 0 end as M2000Icon,case when [FlagOrder] = 'Yes' then 1 else 0 end as FlagOrder, 
 [TotalBoxQty], [TotalGlassQty], [TotalPrice], [TotalLBRMin], [F6CA], [F27DS], [F27TS], [F27TT], [F29CA], [F29CM], [F52PD], [F68CA], [F68SL], [F68VS], [Transom], [Sidelite], [SingleDoor], [DoubleDoor], [BatchNo], Branch_display as Branch, JobType, 
@@ -1289,26 +1289,36 @@ where p.currentstatename in ({0}) and p.Branch in ({1}) and p.JobType in ({2}) a
 where p.RecordId = pd.ParentRecordId and pd.ShippingStartDate >= @pStart and pd.ShippingStartDate <= @pEnd and p.CurrentStateName <> 'Duplicated Work Order' and p.CurrentStateName <> 'Completed Reservations'
 )) x", String.Format("'{0}'", String.Join("','", stateList)), String.Format("'{0}'", String.Join("','", branchList)), String.Format("'{0}'", String.Join("','", jobTypeList)), String.Format("'{0}'", String.Join("','", shippingTypeList)));
                 case Generics.Utils.ContentType.Customer:
-                    return String.Format(@"select x.id, x.title +' W:' + cast(x.windows as varchar(max)) + ' D:' + cast(x.doors as varchar(max)) + ' PD:' + cast(x.NumberOfPatioDoors as varchar(max)) + ' - ' + case when x.Branch is null or Len(x.Branch) = 0 then 'NULL' else Left(x.Branch, 3) end + ' ' + x.JobType + case when @pStart = @pEnd then 'Day View stuff' else '' end as title, x.description, x.type, 
-x.startDateTime,x.ScheduledProductionDate, 
+                    return String.Format(@"select x.id, x.title +' W:' + cast(x.windows as varchar(max)) + ' D:' + cast(x.doors as varchar(max)) + ' PD:' + 
+cast(x.NumberOfPatioDoors as varchar(max)) + ' - ' + case when x.Branch is null or Len(x.Branch) = 0 then 'NULL' else Left(x.Branch, 3) end + ' ' + x.JobType + case 
+when @pStart = @pEnd then 'Day View stuff' else '' end as title, x.description, x.type, 
+x.startDateTime,x.endDateTime, 
 case when datediff(hour, x.startDateTime, x.endDateTime) = 0 then DATEADD(HOUR, 1, x.startDateTime) else x.endDateTime end as endDateTime, 
-x.doors, x.windows, 'true' as allDay,[PaintIcon],[WindowIcon],[DoorIcon], [M2000Icon], [FlagOrder],[TotalBoxQty], [TotalGlassQty], [TotalPrice], [TotalLBRMin], [F6CA], [F27DS], [F27TS], [F27TT], [F29CA], [F29CM], [F52PD], [F68CA], [F68SL], [F68VS], [Transom], [Sidelite], [SingleDoor], [DoubleDoor],  [BatchNo], Branch, JobType, [CardinalOrderedDate], [CompleteDate], [HighRiskFlag], [CustomFlag], CurrentStateName,NumberOfPatioDoors, Simple, Complex, Over_Size, [Arches], [Rakes], Customs
+x.doors, x.windows, 'true' as allDay,[PaintIcon],[WindowIcon],[DoorIcon], [M2000Icon], [FlagOrder],[TotalBoxQty], [TotalGlassQty], [TotalPrice], [TotalLBRMin], [F6CA], 
+[F27DS], [F27TS], [F27TT], [F29CA], [F29CM], [F52PD], [F68CA], [F68SL], [F68VS], [Transom], [Sidelite], [SingleDoor], [DoubleDoor],  [BatchNo], Branch, JobType, 
+[CardinalOrderedDate], [CompleteDate], [HighRiskFlag], [CustomFlag], CurrentStateName,NumberOfPatioDoors, Simple, Complex, Over_Size, [Arches], [Rakes], Customs
 from (select p.ActionItemId as id, p.WorkOrderNumber as title, '' as [description], 
-dateadd(MINUTE, (datepart(hour, p.DeliveryDate)*60+DATEPART(minute, p.DeliveryDate)), p.DeliveryDate) as startDateTime, 
-dateadd(MINUTE, (datepart(hour, p.DeliveryDate)*60+DATEPART(minute, p.DeliveryDate)), p.DeliveryDate) as endDateTime, 
+dateadd(MINUTE, (datepart(hour, p.DeliveryDate)*60+DATEPART(minute, p.DeliveryDate)), CONVERT(DateTime,p.DeliveryDate)) as startDateTime, 
+dateadd(MINUTE, (datepart(hour, p.DeliveryDate)*60+DATEPART(minute, p.DeliveryDate)), CONVERT(DateTime,p.DeliveryDate)) as endDateTime, 
 case when p.NumberofDoors is null then 0 else p.NumberofDoors end as doors, case when p.NumberOfPatioDoors is null then 0 else p.NumberOfPatioDoors end as NumberOfPatioDoors,
-case when p.NumberofWindows is null then 0 else p.NumberofWindows end as windows, '' as type, [PaintIcon],[WindowIcon],[DoorIcon],case when [M2000Icon] = 'Yes' then 1 else 0 end as M2000Icon,case when [FlagOrder] = 'Yes' then 1 else 0 end as FlagOrder, 
-[TotalBoxQty], [TotalGlassQty], [TotalPrice], [TotalLBRMin], [F6CA], [F27DS], [F27TS], [F27TT], [F29CA], [F29CM], [F52PD], [F68CA], [F68SL], [F68VS], [Transom], [Sidelite], [SingleDoor], [DoubleDoor], [BatchNo], 
-Branch_display as Branch, JobType, [CardinalOrderedDate], [CompleteDate], [HighRiskFlag], [CustomFlag], CurrentStateName, [SimpleWindows] as Simple, [ComplexWindows] as Complex, [OverSize] as Over_Size, [Arches], [Rakes], [CustomWindows] as Customs
+case when p.NumberofWindows is null then 0 else p.NumberofWindows end as windows, '' as type, [PaintIcon],[WindowIcon],[DoorIcon],case when [M2000Icon] = 'Yes' 
+then 1 else 0 end as M2000Icon,case when [FlagOrder] = 'Yes' then 1 else 0 end as FlagOrder, 
+[TotalBoxQty], [TotalGlassQty], [TotalPrice], [TotalLBRMin], [F6CA], [F27DS], [F27TS], [F27TT], [F29CA], [F29CM], [F52PD], [F68CA], [F68SL], [F68VS], [Transom], [Sidelite], 
+[SingleDoor], [DoubleDoor], [BatchNo], 
+Branch_display as Branch, JobType, [CardinalOrderedDate], [CompleteDate], [HighRiskFlag], [CustomFlag], CurrentStateName, [SimpleWindows] as Simple, [ComplexWindows] as Complex, 
+[OverSize] as Over_Size, [Arches], [Rakes], [CustomWindows] as Customs
  from PlantProduction p with(nolock,noexpand) 
-where p.currentstatename in ({0}) and p.Branch in ({1}) and p.JobType in ({2}) and p.ShippingType in ({3}) and p.DeliveryDate >= @pStart and p.DeliveryDate <= @pEnd and p.CurrentStateName <> 'Duplicated Work Order' and p.CurrentStateName <> 'Completed Reservations') x",
-String.Format("'{0}'", String.Join("','", stateList)), String.Format("'{0}'", String.Join("','", branchList)), String.Format("'{0}'", String.Join("','", jobTypeList)), String.Format("'{0}'", String.Join("','", shippingTypeList)));
+where p.currentstatename in ({0}) and p.Branch in ({1}) and p.JobType in ({2}) and p.ShippingType in ({3}) and p.DeliveryDate >= @pStart and p.DeliveryDate <= @pEnd and 
+p.CurrentStateName <> 'Duplicated Work Order' and p.CurrentStateName <> 'Completed Reservations') x",
+String.Format("'{0}'", String.Join("','", stateList)), String.Format("'{0}'", String.Join("','", branchList)), String.Format("'{0}'", String.Join("','", jobTypeList)), 
+String.Format("'{0}'", String.Join("','", shippingTypeList)));
                 case Generics.Utils.ContentType.Window:
                     return String.Format(@"select x.id, x.title +' W:' + cast(x.windows as varchar(max)) + ' D:' + cast(x.doors as varchar(max)) + ' PD:' + cast(x.NumberOfPatioDoors as varchar(max)) + ' - ' + case when x.Branch is null or Len(x.Branch) = 0 then 'NULL' else  LEft(x.Branch, 3) end + ' ' + x.JobType + case when @pStart = @pEnd then 'Day View stuff' else '' end as title, x.description, x.type, x.startDateTime, case when datediff(hour, x.startDateTime, x.endDateTime) = 0 then DATEADD(HOUR, 1, x.startDateTime) else x.endDateTime end as endDateTime, 
 x.doors, x.windows, /*case when datediff(day, startDateTime, x.endDateTime) > 0 or datepart(hour, x.startDateTime) = 0 then 'true' else 'false' end*/ 'true' as allDay,[PaintIcon],[WindowIcon],[DoorIcon], [M2000Icon], [FlagOrder],[TotalBoxQty], [TotalGlassQty], [TotalPrice], [TotalLBRMin], [F6CA], [F27DS], [F27TS], [F27TT], [F29CA], [F29CM], [F52PD], [F68CA], [F68SL], [F68VS], [Transom], [Sidelite], [SingleDoor], [DoubleDoor],  [BatchNo], Branch, JobType, [CardinalOrderedDate], [CompleteDate], [HighRiskFlag], [CustomFlag], CurrentStateName,NumberOfPatioDoors, Simple, Complex, Over_Size, [Arches], [Rakes], Customs
 from (select p.ActionItemId as id, p.WorkOrderNumber as title, '' as [description], 
-(select min(dateadd(MINUTE, (datepart(hour, pd.StartTime)*60+DATEPART(minute, pd.starttime)), pd.StartDate)) as date from PlantProduction_ProductionDate pd with(nolock,noexpand) where p.RecordId = pd.ParentRecordId) as startDateTime, 
-(select max(dateadd(MINUTE, (datepart(hour, pd.EndTime)*60+DATEPART(minute, pd.EndTime)), pd.StartDate)) as date
+(select min(dateadd(MINUTE, (datepart(hour, pd.StartTime)*60+DATEPART(minute, pd.starttime)),  CONVERT(DateTime,pd.StartDate)))  as date from PlantProduction_ProductionDate pd with(nolock,noexpand) 
+where p.RecordId = pd.ParentRecordId) as startDateTime, 
+(select max(dateadd(MINUTE, (datepart(hour, pd.EndTime)*60+DATEPART(minute, pd.EndTime)),  CONVERT(DateTime,pd.StartDate)))  as date
 from PlantProduction_ProductionDate pd with(nolock,noexpand) where p.RecordId = pd.ParentRecordId) as endDateTime, case when p.NumberofDoors is null then 0 else p.NumberofDoors end as doors, case when p.NumberOfPatioDoors is null then 0 else p.NumberOfPatioDoors end as NumberOfPatioDoors,
 case when p.NumberofWindows is null then 0 else p.NumberofWindows end as windows, '' as type, [PaintIcon],[WindowIcon],[DoorIcon],case when [M2000Icon] = 'Yes' then 1 else 0 end as M2000Icon,case when [FlagOrder] = 'Yes' then 1 else 0 end as FlagOrder, [TotalBoxQty], [TotalGlassQty], [TotalPrice], [TotalLBRMin], [F6CA], [F27DS], [F27TS], [F27TT], [F29CA], [F29CM], [F52PD], [F68CA], [F68SL], [F68VS], [Transom], [Sidelite], [SingleDoor], [DoubleDoor], [BatchNo], Branch_display as Branch, JobType, [CardinalOrderedDate], [CompleteDate], [HighRiskFlag], [CustomFlag], CurrentStateName, [SimpleWindows] as Simple, [ComplexWindows] as Complex, [OverSize] as Over_Size, [Arches], [Rakes], [CustomWindows] as Customs 
  from PlantProduction p with(nolock,noexpand) 
@@ -1326,11 +1336,14 @@ case when p.NumberofWindows is null then 0 else p.NumberofWindows end as windows
 where p.currentstatename in ({0}) and p.Branch in ({1}) and p.JobType in ({2}) and p.ShippingType in ({3}) and p.RecordId in (select pd.ParentRecordId from PlantProduction_ProductionDate1 pd with(nolock,noexpand) where p.RecordId = pd.ParentRecordId and pd.StartDate2 >= @pStart and pd.StartDate2 <= @pEnd and p.NumberOfDoors > 0 and p.CurrentStateName <> 'Duplicated Work Order' and p.CurrentStateName <> 'Completed Reservations'
 )) x", String.Format("'{0}'", String.Join("','", stateList)), String.Format("'{0}'", String.Join("','", branchList)), String.Format("'{0}'", String.Join("','", jobTypeList)), String.Format("'{0}'", String.Join("','", shippingTypeList)));
                 case Generics.Utils.ContentType.Paint:
-                    return String.Format(@"select x.id, x.title +' W:' + cast(x.windows as varchar(max)) + ' D:' + cast(x.doors as varchar(max)) + ' PD:' + cast(x.NumberOfPatioDoors as varchar(max)) + ' - ' + case when x.Branch is null or Len(x.Branch) = 0 then 'NULL' else  LEft(x.Branch, 3) end + ' ' + x.JobType + case when @pStart = @pEnd then 'Day View stuff' else '' end as title, x.description, x.type, x.startDateTime, case when datediff(hour, x.startDateTime, x.endDateTime) = 0 then DATEADD(HOUR, 1, x.startDateTime) else x.endDateTime end as endDateTime, 
+                    return String.Format(@"select x.id, x.title +' W:' + cast(x.windows as varchar(max)) + ' D:' + cast(x.doors as varchar(max)) + ' PD:' +
+cast(x.NumberOfPatioDoors as varchar(max)) + ' - ' + case when x.Branch is null or Len(x.Branch) = 0 then 'NULL' else  LEft(x.Branch, 3) end 
++ ' ' + x.JobType + case when @pStart = @pEnd then 'Day View stuff' else '' end as title, x.description, x.type, x.startDateTime, 
+case when datediff(hour, x.startDateTime, x.endDateTime) = 0 then DATEADD(HOUR, 1, x.startDateTime) else x.endDateTime end as endDateTime, 
 x.doors, x.windows, /*case when datediff(day, startDateTime, x.endDateTime) > 0 or datepart(hour, x.startDateTime) = 0 then 'true' else 'false' end*/ 'true' as allDay,[PaintIcon],[WindowIcon],[DoorIcon], [M2000Icon], [FlagOrder],[TotalBoxQty], [TotalGlassQty], [TotalPrice], [TotalLBRMin], [F6CA], [F27DS], [F27TS], [F27TT], [F29CA], [F29CM], [F52PD], [F68CA], [F68SL], [F68VS], [Transom], [Sidelite], [SingleDoor], [DoubleDoor],  [BatchNo], Branch, JobType, [CardinalOrderedDate], [CompleteDate], [HighRiskFlag], [CustomFlag],  CurrentStateName, NumberOfPatioDoors, Simple, Complex, Over_Size, [Arches], [Rakes], Customs
 from (select p.ActionItemId as id, p.WorkOrderNumber as title, '' as [description], 
-(select min(dateadd(MINUTE, (datepart(hour, pd.StartTime1)*60+DATEPART(minute, pd.StartTime1)), pd.StartDate1)) as date from PlantProduction_PaintDate pd with(nolock,noexpand) where p.RecordId = pd.ParentRecordId) as startDateTime, 
-(select max(dateadd(MINUTE, (datepart(hour, pd.EndTime)*60+DATEPART(minute, pd.EndTime)), pd.StartDate)) as date
+(select min(dateadd(MINUTE, (datepart(hour, pd.StartTime1)*60+DATEPART(minute, pd.StartTime1)), CONVERT(DateTime,pd.StartDate1))) as date from PlantProduction_PaintDate pd with(nolock,noexpand) where p.RecordId = pd.ParentRecordId) as startDateTime, 
+(select max(dateadd(MINUTE, (datepart(hour, pd.EndTime)*60+DATEPART(minute, pd.EndTime)), CONVERT(DateTime,pd.StartDate))) as date
 from PlantProduction_ProductionDate pd with(nolock,noexpand) where p.RecordId = pd.ParentRecordId) as endDateTime, case when p.NumberofDoors is null then 0 else p.NumberofDoors end as doors, case when p.NumberOfPatioDoors is null then 0 else p.NumberOfPatioDoors end as NumberOfPatioDoors,
 case when p.NumberofWindows is null then 0 else p.NumberofWindows end as windows, '' as type, [PaintIcon],[WindowIcon],[DoorIcon],case when [M2000Icon] = 'Yes' then 1 else 0 end as M2000Icon,case when [FlagOrder] = 'Yes' then 1 else 0 end as FlagOrder, [TotalBoxQty], [TotalGlassQty], [TotalPrice], [TotalLBRMin], [F6CA], [F27DS], [F27TS], [F27TT], [F29CA], [F29CM], [F52PD], [F68CA], [F68SL], [F68VS], [Transom], [Sidelite], [SingleDoor], [DoubleDoor],  [BatchNo], Branch_display as Branch, JobType, [CardinalOrderedDate], [CompleteDate], [HighRiskFlag], [CustomFlag], CurrentStateName, [SimpleWindows] as Simple, [ComplexWindows] as Complex, [OverSize] as Over_Size, [Arches], [Rakes], [CustomWindows] as Customs
  from PlantProduction p with(nolock,noexpand) 
