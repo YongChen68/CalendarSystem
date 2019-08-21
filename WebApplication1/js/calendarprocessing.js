@@ -980,13 +980,14 @@ $(document).ready(function () {
                 var eventDate = GetDatefromMoment(event.start);
                 var maxDayLabour = parseInt(FindByValue("max", eventDate).Value);
                 var allocatedDayLabour = GetDayLabourValue($('#calendar').fullCalendar('getView'), eventDate);
-                console.log("eventDrop", "allocated min:", allocatedDayLabour, "event min:", event.TotalLBRMin, "max min:", maxDayLabour);
-                if (allocatedDayLabour + event.TotalLBRMin <= maxDayLabour) {
-                    eventUpdate(event);
-                } else {
-                    ShowWarning(allocatedDayLabour, event.TotalLBRMin, maxDayLabour);
-                    revertFunc();
-                }
+             //   console.log("eventDrop", "allocated min:", allocatedDayLabour, "event min:", event.TotalLBRMin, "max min:", maxDayLabour);
+                //if (allocatedDayLabour + event.TotalLBRMin <= maxDayLabour) {
+                //    eventUpdate(event);
+                //} else {
+                //    ShowWarning(allocatedDayLabour, event.TotalLBRMin, maxDayLabour);
+                //    revertFunc();
+                //}
+                eventUpdate(event);
             }
             {
                 eventUpdate(event);
@@ -1745,14 +1746,15 @@ $(document).ready(function () {
                 var maxDayLabour = parseInt(FindByValue("max", eventDate).Value);
                 var allocatedDayLabour = GetDayLabourValue($('#calendar').fullCalendar('getView'), eventDate) - event.TotalLBRMin;
 
-                console.log("eventReceive", "allocated min:", allocatedDayLabour, "max labour:", maxDayLabour);
-                if (allocatedDayLabour + event.TotalLBRMin <= maxDayLabour) {
-                    sendUpdateToServer(event);
-                } else {
-                    ShowWarning(allocatedDayLabour, event.TotalLBRMin, maxDayLabour);
-                    $('#calendar').fullCalendar('removeEvents', event._id);
-                    AddBufferEvent(0, event);
-                }
+              //  console.log("eventReceive", "allocated min:", allocatedDayLabour, "max labour:", maxDayLabour);
+                //if (allocatedDayLabour + event.TotalLBRMin <= maxDayLabour) {
+                //    sendUpdateToServer(event);
+                //} else {
+                //    ShowWarning(allocatedDayLabour, event.TotalLBRMin, maxDayLabour);
+                //    $('#calendar').fullCalendar('removeEvents', event._id);
+                //    AddBufferEvent(0, event);
+                //}
+                sendUpdateToServer(event);
             }
             else {
                 sendUpdateToServer(event);
@@ -2151,7 +2153,7 @@ function SetDayValue(key, dayTotals) {
         SetData('Float', dayTotals.day, dayTotals.float.formatMoney(0, "", ",", "."));
 
         //SetData('27DS', dayTotals.day, dayTotals.F27DS);
-        SetData('VINYL-SWING', dayTotals.day, parseFloat(dayTotals.F27DS).toFixed(2));
+        SetData('Vinyl-Swing', dayTotals.day, parseFloat(dayTotals.F27DS).toFixed(2));
 
       //  SetData('27TS', dayTotals.day, dayTotals.F27TS);
 
@@ -2180,16 +2182,16 @@ function SetDayValue(key, dayTotals) {
        // SetData('26CA', dayTotals.day, dayTotals.F6CA);
         SetData('26CA', dayTotals.day, parseFloat(dayTotals.F6CA).toFixed(2));
 
-        SetData('Transom', dayTotals.day, dayTotals.Transom);
-        SetData('Sidelite', dayTotals.day, dayTotals.Sidelite);
+      //  SetData('Transom', dayTotals.day, dayTotals.Transom);
+     //   SetData('Sidelite', dayTotals.day, dayTotals.Sidelite);
    //     SetData('SingleDoor', dayTotals.day, dayTotals.SingleDoor);
-        SetData('SingleDoor', dayTotals.day, parseFloat(dayTotals.SingleDoor).toFixed(2));
+      //  SetData('SingleDoor', dayTotals.day, parseFloat(dayTotals.SingleDoor).toFixed(2));
       //  SetData('DoubleDoor', dayTotals.day, dayTotals.DoubleDoor);
-        SetData('DoubleDoor', dayTotals.day, parseFloat(dayTotals.DoubleDoor).toFixed(2));
-        SetData('PATIO-DOORS', dayTotals.day, parseFloat(dayTotals.F52PD).toFixed(2));
+       // SetData('DoubleDoor', dayTotals.day, parseFloat(dayTotals.DoubleDoor).toFixed(2));
+        SetData('Patio-Doors', dayTotals.day, parseFloat(dayTotals.F52PD).toFixed(2));
 
-        SetData('SLIDERS', dayTotals.day, (parseFloat(dayTotals.F68SL) + parseFloat(dayTotals.F68VS)).toFixed(2));
-        SetData('CASEMENTS', dayTotals.day, (parseFloat(dayTotals.F29CM) + parseFloat(dayTotals.F29CA) + parseFloat(dayTotals.F6CA)).toFixed(2));
+        SetData('Sliders', dayTotals.day, (parseFloat(dayTotals.F68SL) + parseFloat(dayTotals.F68VS)).toFixed(2));
+        SetData('Casements', dayTotals.day, (parseFloat(dayTotals.F29CM) + parseFloat(dayTotals.F29CA) + parseFloat(dayTotals.F6CA)).toFixed(2));
 
 
         //SetData('Simple', dayTotals.day, dayTotals.Simple);
@@ -2380,7 +2382,9 @@ function GetDisplayItemList(type) {
 
 // Over Capacity Error
 function ShowWarning(allocatedDayLabour, eventLabourMin, maxDayLabour) {
+   // window.alert("There are already " + allocatedDayLabour + " minutes on the target day. Adding requested event with Labour minutes of " + eventLabourMin \+ " will exceed maximum available minutes (" + maxDayLabour + ") for the day.");
     window.alert("There are already " + allocatedDayLabour + " minutes on the target day. Adding requested event with Labour minutes of " + eventLabourMin + " will exceed maximum available minutes (" + maxDayLabour + ") for the day.");
+
 }
 
 function UpdateReturnedJobSchedule() {

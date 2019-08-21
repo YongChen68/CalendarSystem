@@ -3705,7 +3705,7 @@
                     retValue += '<tbody>' +
                         RenderDayRow('Windows', dayIDs[cell.start.day()]) +
                         RenderDayRow('Doors', dayIDs[cell.start.day()]) +
-                        RenderDayRow('PATIO-DOORS', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Patio-Doors', dayIDs[cell.start.day()]) +
                         RenderDayRow('Boxes', dayIDs[cell.start.day()]) +
                         RenderDayRow('Glass', dayIDs[cell.start.day()]) +
                         RenderDayRow('Rush', dayIDs[cell.start.day()]) +
@@ -3723,19 +3723,19 @@
                         RenderDayRow('68SL', dayIDs[cell.start.day()]) +
                         RenderDayRow('68VS', dayIDs[cell.start.day()]) +
                         RenderDayRow('52PD', dayIDs[cell.start.day()]) +
-                        RenderDayRow('Transom', dayIDs[cell.start.day()]) +
-                        RenderDayRow('Sidelite', dayIDs[cell.start.day()]) +
-                        RenderDayRow('SingleDoor', dayIDs[cell.start.day()]) +
-                        RenderDayRow('DoubleDoor', dayIDs[cell.start.day()]) +
-                        RenderDayRow('Simple', dayIDs[cell.start.day()]) +
-                        RenderDayRow('Complex', dayIDs[cell.start.day()]) +
-                        RenderDayRow('Over_Size', dayIDs[cell.start.day()]) +
-                        RenderDayRow('Arches', dayIDs[cell.start.day()]) +
-                        RenderDayRow('Rakes', dayIDs[cell.start.day()]) +
-                        RenderDayRow('Customs', dayIDs[cell.start.day()]) +
-                        RenderDayRow('SLIDERS', dayIDs[cell.start.day()]) +
-                        RenderDayRow('CASEMENTS', dayIDs[cell.start.day()]) +
-                        RenderDayRow('VINYL-SWING', dayIDs[cell.start.day()]) +
+                     //   RenderDayRow('Transom', dayIDs[cell.start.day()]) +
+                     //   RenderDayRow('Sidelite', dayIDs[cell.start.day()]) +
+                    //    RenderDayRow('SingleDoor', dayIDs[cell.start.day()]) +
+                     //   RenderDayRow('DoubleDoor', dayIDs[cell.start.day()]) +
+                     //   RenderDayRow('Simple', dayIDs[cell.start.day()]) +
+                      //  RenderDayRow('Complex', dayIDs[cell.start.day()]) +
+                      //  RenderDayRow('Over_Size', dayIDs[cell.start.day()]) +
+                      //  RenderDayRow('Arches', dayIDs[cell.start.day()]) +
+                      //  RenderDayRow('Rakes', dayIDs[cell.start.day()]) +
+                      //  RenderDayRow('Customs', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Sliders', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Casements', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Vinyl-Swing', dayIDs[cell.start.day()]) +
                         '</tbody>';
                 }
 
@@ -3790,7 +3790,7 @@
                     retValue += '<tbody>' +
                         RenderWeekRow('Windows') +
                         RenderWeekRow('Doors') +
-                        RenderWeekRow('PATIO-DOORS') +
+                        RenderWeekRow('Patio-Doors') +
                         RenderWeekRow('Boxes') +
                         RenderWeekRow('Glass') +
                         RenderWeekRow('Rush') +
@@ -3808,13 +3808,13 @@
                         RenderWeekRow('68SL') +
                         RenderWeekRow('68VS') +
                         RenderWeekRow('52PD') +
-                        RenderWeekRow('Transom') +
-                        RenderWeekRow('Sidelite') +
-                        RenderWeekRow('SingleDoor') +
-                        RenderWeekRow('DoubleDoor') +
-                        RenderWeekRow('SLIDERS') +
-                        RenderWeekRow('CASEMENTS') +
-                        RenderWeekRow('VINYL-SWING') +
+                      //  RenderWeekRow('Transom') +
+                     //   RenderWeekRow('Sidelite') +
+                     //   RenderWeekRow('SingleDoor') +
+                    //    RenderWeekRow('DoubleDoor') +
+                        RenderWeekRow('Sliders') +
+                        RenderWeekRow('Casements') +
+                        RenderWeekRow('Vinyl-Swing') +
              
 
                     '</tbody>';

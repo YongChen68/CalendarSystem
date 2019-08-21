@@ -386,6 +386,13 @@ drop table #installs
             foreach (InstallationEvent eventx in installationEventList)
             {
                 newEvent = new InstallationEvent();
+                newEvent.Doors = eventx.Doors;
+
+
+                newEvent.detailrecordCount = eventx.detailrecordCount;
+
+                newEvent.Windows = eventx.Windows;
+
                 newEvent.Branch = eventx.Branch;
                 newEvent.CellPhone = eventx.CellPhone;
                 newEvent.City = eventx.City;
