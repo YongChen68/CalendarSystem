@@ -1699,7 +1699,7 @@ where i.WorkOrderNumber = '{0}' ", this.workOrderNumber);
             string SQL = string.Format(@"SELECT [input125] as PictureName
       ,[Picture]
       ,[ParentRecordId]
-      ,[DetailRecordId],WorkOrderNumber,tb.[Picture_thumbnail2] as pic
+      ,[DetailRecordId],WorkOrderNumber,tb.[Picture_bin] as pic
   FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_TakePicture] tp
   inner join  HomeInstallations i on  i.RecordId=tp.ParentRecordId
   inner join [HomeInstallations_TakePicture__binaries] tb on tb.recordid = tp.DetailRecordId

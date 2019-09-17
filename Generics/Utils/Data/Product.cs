@@ -125,15 +125,34 @@ namespace Generics.Utils
         }
 
         [DataMember]
+        public Int64 DetailRecordId
+        {
+            get; set;
+        }
+
+        [DataMember]
         [Lift.Database.DbIgnore]
-        public string picString
+        public string smallpicString
         {
             get
             {
                 if (pic != null)
                 {
-                     return "<img src=\"data:image/jpeg;base64," + Convert.ToBase64String(pic) + "\">";
-                
+                    string str = string.Empty;
+                    str = "document.getElementById('" + DetailRecordId.ToString().Trim() + "').style.display='block'";
+                    return "<img src='data:image/jpeg;base64," + Convert.ToBase64String(pic) +
+                       "' style = \"width:30%;cursor:zoom-in\"  " +
+                          "onclick =" + str + 
+                          
+                     //    "onclick = alert('test') ;" +
+                     //  "onclick = \"document.getElementById(\"" + DetailRecordId + "\").style.display='block'" +
+                     //"</img>";
+                     ">";
+                    //    "' id='" + DetailRecordId + "' " + "style = 'width:30%;cursor:zoom-in'  " +
+                    //   "\">";
+                    //   "onclick = 'document.getElementById('" + DetailRecordId + "').style.display='block'" + "\">";
+                    // return "src=\"data:image/jpeg;base64," + Convert.ToBase64String(pic);
+
                 }
                 else
                 {
@@ -141,6 +160,25 @@ namespace Generics.Utils
                 }
             }
             set {  }
+        }
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public string picString
+        {
+            get
+            {
+                if (pic != null)
+                {
+                    return "<img src='data:image/jpeg;base64," + Convert.ToBase64String(pic) + "' style = 'width:100%;height:80%'  " + ">"; 
+                         
+
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set { }
         }
 
     }
