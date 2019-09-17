@@ -3067,7 +3067,7 @@ function GetWOPicture(workOrder) {
            
             if (data.GetWOPictureResult.length > 0) {
                 noPhoto.style.display = "none";
-                $("#dataTableWOPicture").append("<tr>  <th style = 'text-align:center;' > Picture Name</th ><th style='text-align:center;width:600px;'> Picture</th > ");
+                $("#dataTableWOPicture").append("<tr>  <th style = 'text-align:center;' > Picture Name</th ><th style='text-align:center;'> Picture</th > ");
 
                 for (var i = 0; i < data.GetWOPictureResult.length; i++) {
                     $("#dataTableWOPicture").append("<tr><td>" +
@@ -3079,7 +3079,7 @@ function GetWOPicture(workOrder) {
                         //  " document.getElementById('item').src = '" + data.GetWOPictureResult[0].picString + "'</image></td></tr>");
                         data.GetWOPictureResult[i].smallpicString +
 
-                        " <div id='" + data.GetWOPictureResult[i].DetailRecordId + "' class='w3-modal'" + "style='display:none; position: relative;left: 180px;top: -80px;'" +  " onclick=\"this.style.display ='none'\">" +
+                        " <div id='" + data.GetWOPictureResult[i].DetailRecordId + "' class='w3-modal'" + "style='display:none; position: relative;left: 280px;top: -100px;'" +  " onclick=\"this.style.display ='none'\">" +
                         " <span class='w3-button w3-hover-red w3-xlarge w3-display-topright'></span >" +
                         " <div class='w3-modal-content w3-animate-zoom' >" +
                         data.GetWOPictureResult[i].picString + "</div></div>" + 
