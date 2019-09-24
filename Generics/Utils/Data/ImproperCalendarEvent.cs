@@ -92,6 +92,9 @@ namespace Generics.Utils
         }
 
         [DataMember]
+        public string WoodDropDateAndTime { get; set; }
+
+        [DataMember]
         public int EstInstallerCnt { get; set; }
 
 

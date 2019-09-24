@@ -55,7 +55,7 @@ namespace CalendarSystem.Utils.Data
 
             return String.Format(@"
           SELECT  win.Number_1 as windows	 , win.Number_1 as TotalWindows, door.Number_1 as doors	 ,  door.Number_1 as TotalDoors, '' as SubTradeFlag,
-0 as MinAvailable,0 as SalesTarget,
+0 as MinAvailable,0 as SalesTarget, null as WoodDropOffDate,
 others.Number_1 as others	, others.Number_1 as other, dates.ScheduledDate,dates.ScheduledDate as StartScheduleDate,dates.ScheduledDate as EndScheduleDate,
 ActionItemId as id,0 as SalesAmmount,1 as detailrecordCount,
             0  as TotalSalesAmount,i.EstInstallerCnt,i.Rep_display as SalesRep,i.LeadPaint ,0 as TotalWoodDropOff, 0 as TotalAsbestos,0 as TotalHighRisk
@@ -385,6 +385,11 @@ and  CurrentStateName in ('Ready for ReMeasure', 'Rejected Remeasure')
         }
 
         public List<WindowsCustomer> GetWindowsCustomer()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<WOPicture> GetWOBigPicture(int recordId)
         {
             throw new NotImplementedException();
         }

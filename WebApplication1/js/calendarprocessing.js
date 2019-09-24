@@ -126,8 +126,6 @@ function sendUpdateToServer(event) {
         totalDoors: event.TotalDoors,
         CurrentStateName: event.CurrentStateName,
         EndTime: event.EndRemeasureDate
-        
-
     };
     if (event.end === null) {
         eventToUpdate.end = eventToUpdate.start;
@@ -452,7 +450,7 @@ function AddInstallationBufferEvent(key, val) {
         // title: val.title, id: val.id, description: val.description, doors: val.doors, windows: val.windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
       //  title: val.title, id: val.id, doors: val.Doors, windows: val.Windows, WorkOrderNumber: title.WorkOrderNumber, Branch: val.Branch, City: val.City, CellPhone: val.CellPhone, CrewNames: val.CrewNames, CurrentStateName: val.CurrentStateName, LastName: val.LastName, FirstName: val.FirstName
         title: val.title, id: val.id, doors: val.Doors, City: val.City, windows: val.Windows, WorkOrderNumber: val.WorkOrderNumber, LastName: val.LastName, FirstName: val.FirstName,
-        EstInstallerCnt: val.EstInstallerCnt, WindowState: val.WindowState, DoorState: val.DoorState, TotalWoodDropOff: val.TotalWoodDropOff,
+        EstInstallerCnt: val.EstInstallerCnt, WindowState: val.WindowState, DoorState: val.DoorState, TotalWoodDropOff: val.TotalWoodDropOff, WoodDropOffDate: val.WoodDropOffDate,
         TotalAsbestos: val.TotalAsbestos, LeadPaint: val.LeadPaint,
         TotalHighRisk: val.TotalHighRisk, ReturnedJob: val.ReturnedJob,CurrentStateName:val.CurrentStateName
 
@@ -490,7 +488,7 @@ function AddRemeasureBufferEvent(key, val) {
         // title: val.title, id: val.id, description: val.description, doors: val.doors, windows: val.windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
         //  title: val.title, id: val.id, doors: val.Doors, windows: val.Windows, WorkOrderNumber: title.WorkOrderNumber, Branch: val.Branch, City: val.City, CellPhone: val.CellPhone, CrewNames: val.CrewNames, CurrentStateName: val.CurrentStateName, LastName: val.LastName, FirstName: val.FirstName
         title: val.title, id: val.id, doors: val.Doors, City: val.City, windows: val.Windows, WorkOrderNumber: val.WorkOrderNumber, LastName: val.LastName, FirstName: val.FirstName,
-        EstInstallerCnt: val.EstInstallerCnt, WindowState: val.WindowState, DoorState: val.DoorState, TotalWoodDropOff: val.TotalWoodDropOff,
+        EstInstallerCnt: val.EstInstallerCnt, WindowState: val.WindowState, DoorState: val.DoorState, TotalWoodDropOff: val.TotalWoodDropOff, WoodDropOffDate: val.WoodDropOffDate,
         TotalAsbestos: val.TotalAsbestos, LeadPaint: val.LeadPaint,
         TotalHighRisk: val.TotalHighRisk, ReturnedJob: val.ReturnedJob, CurrentStateName: val.CurrentStateName
 
@@ -1161,14 +1159,21 @@ $(document).ready(function () {
                         $("#Lead-PaintYes").prop("checked", false);
                     }
 
+                    $("#wooddropTime").val('');
+                    $("#wooddropdate").val('');
                     if (event.TotalWoodDropOff == 1) {
                         // 
                         $("#Wood-DropOff-JobsYes").prop("checked", true);
                         $("#Wood-DropOff-JobsNo").prop("checked", false);
+                        $("#divWoodDropOffDate").show();
+                        $("#wooddropdate").val(event.StrWoodDropOffDate.slice(0, -10));
+                        $("#wooddropTime").val(event.StrWoodDropOffTime);
                     }
                     else {
                         $("#Wood-DropOff-JobsNo").prop("checked", true);
                         $("#Wood-DropOff-JobsYes").prop("checked", false);
+                        $("#divWoodDropOffDate").hide();
+                    
                     }
 
                     if (event.TotalHighRisk == 1) {
@@ -2287,6 +2292,17 @@ function ApplyFilters(target) {
     $('#calendar').fullCalendar('rerenderEvents');
 }
 
+function WoodDropOff(isShowing) {
+    if (isShowing == 'show') {
+        $('#divWoodDropOffDate').show();
+    }
+    else if (isShowing == 'hide') {
+        $('#divWoodDropOffDate').hide();
+    } 
+
+
+}
+
 function SelectAll(target) {
     console.log("SelectAll", "target: ", target);
 
@@ -2415,7 +2431,10 @@ function UpdateInstallationEvents() {
    // UpdateEventSchedule();
   //  UpdateEventWeekends();
 
-
+    var WoodDropOffDate, WoodDropOffTime;
+   
+    WoodDropOffDate = $("#wooddropdate").val();
+    WoodDropOffTime = $("#wooddropTime").val();
     var scheduledReturnedJobStartDate = $("#from_date").val();
     if (scheduledReturnedJobStartDate.length != 0) {
         UpdateReturnedJobSchedule();
@@ -2456,6 +2475,8 @@ function UpdateInstallationEvents() {
         url: 'data.svc/UpdateInstallationData?id=' + eventid
             + '&ScheduledStartDate=' + scheduledStartDate + '&scheduledEndDate=' + scheduledEndDate
             + '&Asbestos=' + Asbestos + '&WoodDropOff=' + WoodDropOff
+            + '&woodDropOffDate=' + WoodDropOffDate
+            + '&woodDropOffTime=' + WoodDropOffTime
             + '&HighRisk=' + HighRisk + '&EstInstallerCnt=' + NumOfInstallers
             + '&Saturday=' + isSaturdayChecked + '&Sunday=' + isSundayChecked + '&LeadPaint=' + LeadPaint,
         type: "POST",
@@ -3055,6 +3076,50 @@ function GetSubTradesCount(workOrder) {
 
 }
 
+
+function ShowWOBigPicture(recordid) {
+   // alert(recordid);
+    var workOrder = "773412";
+    var link = document.getElementById(recordid);
+ 
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetWOBigPicture?recordId=' + recordid,
+       // dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetWOBigPicture:");
+         //  alert(recordid);
+         //   window.open("http://www.your-site.com/images/picture.jpg", "Window Title", "width=500, height=450"
+            if (data.GetWOBigPictureResult.length > 0) {
+             
+              //  link.setAttribute("href", "http://www.google.com");
+                var image = new Image();
+                image.src = data.GetWOBigPictureResult[0].picString ;
+
+                var w = window.open(image.src, '_blank');
+               // var w = window.open("", '_blank');
+                w.document.write(image.outerHTML);
+
+            }
+          //  var image = new Image();
+
+          ////  image.src = data.GetWOBigPictureResult[0].picString;
+          //  image.src = $('#idimage').attr('src');
+
+          // // //image.src = $('#idimage').attr('src');
+
+          //  var w = window.open("", '_blank');
+          //  w.document.write(image.outerHTML);
+          //  w.document.close(); 
+         //   window.open(data.GetWOBigPictureResult[0].picString);
+          //  window.open("http://www.google.com");
+           
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+}
 function GetWOPicture(workOrder) {
     $("#dataTableWOPicture tr").remove(); 
     $.ajax({
@@ -3071,18 +3136,18 @@ function GetWOPicture(workOrder) {
 
                 for (var i = 0; i < data.GetWOPictureResult.length; i++) {
                     $("#dataTableWOPicture").append("<tr><td>" +
-                        //data.GetWOPictureResult[i].PictureName + "</td> <td> <a href='https://www.google.com/imgres?imgurl=https%3A%2F%2Fphotos5.appleinsider.com%2Fgallery%2F27879-42410-XS-Max-vs-X-2-l.jpg&imgrefurl=https%3A%2F%2Fappleinsider.com%2Farticles%2F18%2F10%2F01%2Fphoto-shootout----comparing-the-iphone-xs-max-versus-the-iphone-x&docid=iVvUg0mffYFoxM&tbnid=ru4IIxc_SNv4KM%3A&vet=10ahUKEwjdyYrw5ZvjAhXLj1QKHZOkBL0QMwjHASgwMDA..i&w=660&h=371&bih=938&biw=1920&q=iphone%20x%20images&ved=0ahUKEwjdyYrw5ZvjAhXLj1QKHZOkBL0QMwjHASgwMDA&iact=mrc&uact=8' data-toggle='lightbox'> " +
-                        //data.GetWOPictureResult[i].picString + "</a></td></tr>");
+                      
                         data.GetWOPictureResult[i].PictureName + "</td> <td> " +
 
-                        //   $('#item').attr('src', `data:image/jpg;base64,' + hexToBase64{data.GetWOPictureResult[0].pic)  + "</image></td></tr>");
-                        //  " document.getElementById('item').src = '" + data.GetWOPictureResult[0].picString + "'</image></td></tr>");
                         data.GetWOPictureResult[i].smallpicString +
 
-                        " <div id='" + data.GetWOPictureResult[i].DetailRecordId + "' class='w3-modal'" + "style='display:none; position: relative;left: 280px;top: -100px;'" +  " onclick=\"this.style.display ='none'\">" +
-                        " <span class='w3-button w3-hover-red w3-xlarge w3-display-topright'></span >" +
-                        " <div class='w3-modal-content w3-animate-zoom' >" +
-                        data.GetWOPictureResult[i].picString + "</div></div>" + 
+                        //" <div id='" + data.GetWOPictureResult[i].DetailRecordId + "' class='w3-modal'" + "style='display:none; position: absolute;top:0px;left: 0px;'" +  " onclick=\"this.style.display ='none'\">" +
+                        //" <span class='w3-button w3-hover-red w3-xlarge w3-display-topright'></span >" +
+                        //" <div class='w3-modal-content w3-animate-zoom' >" +
+
+                        //" <div>" + " onclick=\"ShowWOBigPicture(" + data.GetWOPictureResult[i].DetailRecordId + ")\">" +
+                        ////data.GetWOPictureResult[i].picString + "</div></div>" + 
+                        //"</div>" + 
                         "</td></tr>");
 
                 }

@@ -49,8 +49,8 @@ namespace CalendarSystem
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "UpdateInstallationData?id={id}&scheduledStartDate={scheduledStartDate}&scheduledEndDate={scheduledEndDate}&Asbestos={Asbestos}" +
-            "&WoodDropOff={WoodDropOff}&HighRisk={HighRisk}&EstInstallerCnt={EstInstallerCnt}&Saturday={Saturday}&Sunday={Sunday}&LeadPaint={LeadPaint}")]
-        bool UpdateInstallationData(string id, string scheduledStartDate, string scheduledEndDate,int Asbestos, int WoodDropOff, int HighRisk, int EstInstallerCnt, string Saturday, string Sunday, string LeadPaint);
+            "&WoodDropOff={WoodDropOff}&woodDropOffDate={woodDropOffDate}&woodDropOffTime={woodDropOffTime}&HighRisk={HighRisk}&EstInstallerCnt={EstInstallerCnt}&Saturday={Saturday}&Sunday={Sunday}&LeadPaint={LeadPaint}")]
+        bool UpdateInstallationData(string id, string scheduledStartDate, string scheduledEndDate,int Asbestos, int WoodDropOff, string woodDropOffDate, string woodDropOffTime, int HighRisk, int EstInstallerCnt, string Saturday, string Sunday, string LeadPaint);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "UpdateRemeasureData?id={id}&remeasureDate={remeasureDate}&remeasureEndDate={remeasureEndDate}&fromPopup={fromPopup}&currentState={currentState}")]
@@ -174,6 +174,13 @@ ResponseFormat = WebMessageFormat.Json,
 BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<WOPicture> GetWOPicture(string workOrderNumber);
 
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetWOBigPicture?recordid={recordid}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<WOPicture> GetWOBigPicture(int recordid);
+
 
 
         [OperationContract]
@@ -189,5 +196,6 @@ BodyStyle = WebMessageBodyStyle.WrappedResponse)]
               ResponseFormat = WebMessageFormat.Json,
               BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<InstallationEvent> GetInstallationDateByWOForNonReturnedJob(string workOrderNumber);
+
     }
 }

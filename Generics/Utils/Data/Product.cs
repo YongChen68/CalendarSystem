@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Runtime.Serialization;
-
+using System.Text;
 using static System.Net.Mime.MediaTypeNames;
 
 namespace Generics.Utils
@@ -138,16 +138,30 @@ namespace Generics.Utils
             {
                 if (pic != null)
                 {
-                    string str = string.Empty;
-                    str = "document.getElementById('" + DetailRecordId.ToString().Trim() + "').style.display='block'";
-                    return "<img src='data:image/jpeg;base64," + Convert.ToBase64String(pic) +
-                       "' style = \"width:30%;cursor:zoom-in\"  " +
-                          "onclick =" + str + 
-                          
-                     //    "onclick = alert('test') ;" +
-                     //  "onclick = \"document.getElementById(\"" + DetailRecordId + "\").style.display='block'" +
-                     //"</img>";
-                     ">";
+                    StringBuilder strBuilder = new StringBuilder();
+                    // str = "document.getElementById('" + DetailRecordId.ToString().Trim() + "').style.display='block'";
+
+                    //str = "ShowWOBigPicture('" + DetailRecordId.ToString().Trim() + "');";
+                    //return "<img src='data:image/jpeg;base64," + Convert.ToBase64String(pic) +
+                    ////   "' style = \"width:30%;cursor:zoom-in\"  " +
+
+                    //      "' onclick =" + str +
+                    //             ">";
+                    //  strBuilder.Append("<a href='data:image/jpeg;base64," + Convert.ToBase64String(pic) + "' data-toggle=\"lightbox\" data-title=\"A random title\" data-footer=\"A custom footer text\">");
+                    //  strBuilder.Append("<a href= javascript:alert('test');" + " data-toggle=\"lightbox\" data-title=\"A random title\" data-footer=\"A custom footer text\">");
+                    //   strBuilder.Append("<a id= '"+ DetailRecordId  + "'  onclick=\"ShowWOBigPicture('" + DetailRecordId + "');\" data-toggle=\"lightbox\" data-title=\"A random title\" data-footer=\"A custom footer text\">");
+                    // strBuilder.Append(" <img src='data:image/jpeg;base64," + Convert.ToBase64String(pic) + "'></a>");
+
+                    strBuilder.Append(" <img src='data:image/jpeg;base64," + Convert.ToBase64String(pic) + "'" + " onclick =\"ShowWOBigPicture('" + DetailRecordId + "');" + "\">");
+                 
+
+                    //  strBuilder.Append(" <img src='data:image/jpeg;base64," + Convert.ToBase64String(pic) + ">");
+
+                    return strBuilder.ToString();
+                    //    "onclick = alert('test') ;" +
+                    //  "onclick = \"document.getElementById(\"" + DetailRecordId + "\").style.display='block'" +
+                    //"</img>";
+
                     //    "' id='" + DetailRecordId + "' " + "style = 'width:30%;cursor:zoom-in'  " +
                     //   "\">";
                     //   "onclick = 'document.getElementById('" + DetailRecordId + "').style.display='block'" + "\">";
@@ -169,8 +183,10 @@ namespace Generics.Utils
             {
                 if (pic != null)
                 {
-                    return "<img src='data:image/jpeg;base64," + Convert.ToBase64String(pic) + "' style = 'width:100%;height:80%'  " + ">"; 
-                         
+                    StringBuilder strBuilder = new StringBuilder();
+                    strBuilder.Append(" data:image/jpeg;base64," + Convert.ToBase64String(pic) );
+                    return strBuilder.ToString();
+
 
                 }
                 else

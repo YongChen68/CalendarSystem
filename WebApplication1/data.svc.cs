@@ -395,6 +395,9 @@ namespace CalendarSystem
                 ,string scheduledEndDate
                 ,int Asbestos
                 , int WoodDropOff
+                , string woodDropOffDate
+                , string woodDropOffTime
+
                 , int HighRisk
                  , int EstInstallerCnt
                 , string Saturday
@@ -418,7 +421,11 @@ namespace CalendarSystem
                 eventData.HighRisk = HighRisk;
                 eventData.LeadPaint = LeadPaint;
                 eventData.EstInstallerCnt = EstInstallerCnt;
-
+                if (woodDropOffDate.Length>1)
+                {
+                    eventData.WoodDropDateAndTime = Convert.ToDateTime(woodDropOffDate + " " + woodDropOffTime).ToString("yyyy-MM-ddTHH:mm:tt.000Z");
+                }
+                
                 eventData.Saturday = Saturday;
                 eventData.Sunday = Sunday;
 
@@ -656,6 +663,23 @@ namespace CalendarSystem
                 Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
                 retValue = getter.GetWOPicture();
                 Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetWOPictureGetWOPicture() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+        List<WOPicture> Idata.GetWOBigPicture(int recordid)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetWOBigPicture({0})", recordid);
+            List<WOPicture> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(recordid);
+                retValue = getter.GetWOBigPicture(recordid);
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetWOBigPicture() = {0}", retValue.Count.ToString());
             }
             catch (Exception ex)
             {

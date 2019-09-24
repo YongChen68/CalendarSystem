@@ -7,6 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
+    <script src="https://cdnjs.com/libraries/ekko-lightbox"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <!-- Optional theme -->
@@ -81,6 +82,10 @@
         var map, mapRemeasure,mapWindows;
         $(function () {
             // $("#from_date").datepicker();
+            $('#wooddropdate').datepicker({
+                dateFormat: "m/d/yy"
+
+            });
             $('#from_date').datepicker({
                 dateFormat: "m/d/yy"
 
@@ -614,16 +619,18 @@
 
 
                                         <div class="container">
+ 
+
                                             <div class="leftcolumn">
                                              <image src="images/delivery.PNG"></image>     <b>Wood-DropOff-Jobs : </b>
 
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="Wood-DropOff-Jobs" id="Wood-DropOff-JobsYes">Yes</label>
+                                                        <input type="radio" name="Wood-DropOff-Jobs" id="Wood-DropOff-JobsYes" onclick="WoodDropOff('show');">Yes</label>
                                                 </div>
                                                 <div class="radio">
                                                     <label>
-                                                        <input type="radio" name="Wood-DropOff-Jobs" id="Wood-DropOff-JobsNo">No</label>
+                                                        <input type="radio" name="Wood-DropOff-Jobs" id="Wood-DropOff-JobsNo" onclick="WoodDropOff('hide');">No</label>
                                                 </div>
                                             </div>
                                             <div class="rightcolumn">
@@ -683,6 +690,40 @@
                                                 </div>
 
                                             </div>
+                                        </div>
+
+                                        <div  id="divWoodDropOffDate" style="display:none;"> 
+                                            <span><b>Wood Drop Off Date:</b></span>
+                                            <div class="form-group" style="width: 800px;" id="WoodDropOffDate">
+                                            <div class="container">
+
+                                                <div class="leftcolumn">
+                                                    <div class="container">
+                                                        <div class="leftcolumn" style="width: 5%; align-items: center;">
+                                                            Start Date:
+                                                        </div>
+                                                        <div class="rightcolumn" style="width: 20%;">
+                                                            <input id="wooddropdate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Date">
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="rightcolumn">
+                                                    <div class="container">
+                                                        <div class="leftcolumn" style="width: 5%; padding-left: 50px;">
+                                                            Time:
+                                                        </div>
+
+                                                        <div class="rightcolumn" style="padding-left: 50px; width: 5%;">
+                                                            <input type="time" id="wooddropTime" name="appt">
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
                                         </div>
                                         <input type="button" name="btnSave" id="btnSave" class="btn btn-success" value="Save" onclick="UpdateInstallationEvents()">
                                     </div>
@@ -988,6 +1029,8 @@
 
             <br>
         </div>
+
+    
         <div id="openviewWeather">
             <a class="weatherwidget-io" href="https://forecast7.com/en/49d28n123d12/vancouver/" data-label_1="Vancouver" data-label_2="Weather" data-font="Roboto" data-icons="Climacons Animated" data-theme="original" data-accent="rgba(1, 1, 1, 0.0)"></a>
         </div>
@@ -1331,7 +1374,10 @@
         
         </div>
     </form>
-
+    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
+                event.preventDefault();
+                $(this).ekkoLightbox();
+            });
 </body>
 </html>
 

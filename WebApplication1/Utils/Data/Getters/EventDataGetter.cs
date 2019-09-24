@@ -12,6 +12,7 @@ namespace CalendarSystem.Utils.Data
     {
         private readonly DateTime startDate;
         private readonly DateTime endDate;
+        private readonly int recordid;
         private readonly List<string> stateList;
         private readonly List<string> branchList;
         private readonly List<string> jobTypeList;
@@ -49,6 +50,12 @@ namespace CalendarSystem.Utils.Data
             this.startDate = DateTime.ParseExact(start.Trim(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
             this.endDate = DateTime.ParseExact(end.Trim(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
         }
+
+        public EventDataGetter(int recordid)
+        {
+            this.recordid = recordid;
+        }
+
 
         public EventDataGetter(string workOrderNumber)
         {
@@ -299,7 +306,7 @@ and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or
 (PlannedInstallWeek >= 1 and PlannedInstallWeek <= 7)) and RecordId not in (select ParentRecordId from #dates d group by ParentRecordId) and 
 Branch in ({2})
 
-select WorkOrderNumber, LastName,FirstName, City,PostCode, Email,SalesRep,LeadPaint,ReturnedJob,StartScheduleDate,EndScheduleDate,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,
+select WorkOrderNumber, LastName,FirstName, WoodDropOffDate,City,PostCode, Email,SalesRep,LeadPaint,ReturnedJob,StartScheduleDate,EndScheduleDate,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,
 TotalDoors,TotalWindows,Windows,Doors,ExtDoors,TotalExtDoors,MinAvailable/detailrecordCount as MinAvailable,SalesTarget/detailrecordCount as SalesTarget,
 DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, 
 installationwindowLBRMIN,InstallationPatioDoorLBRMin,InstallationDoorLBRMin,TotalInstallationLBRMin,
@@ -319,7 +326,7 @@ installationwindowLBRMIN,InstallationPatioDoorLBRMin,InstallationDoorLBRMin,Tota
 i.SalesAmmount/detailrecordCount as SalesAmmount,i.SalesAmmount as TotalSalesAmount,DetailRecordId ,
 ParentRecordId,detailrecordCount,saturday, sunday, jobtype,ActionItemId as id,i.streetAddress, i.EstInstallerCnt,
 i.WorkOrderNumber, i.LastName, i.FirstName,i.City, i.PostalCode as PostCode,i.Email,i.Rep_display as SalesRep,i.LeadPaint ,
-i.CurrentStateName,PlannedInstallWeek,
+i.CurrentStateName,PlannedInstallWeek,WoodDropOffDate,
 SidingLBRBudget,SidingLBRMin,SidingSQF,i.SubTradeFlag,
 dbo.fGetStartScheduleDate(ReturnedJob,RecordId) as StartScheduleDate,
 dbo.fGetEndScheduleDate(ReturnedJob,RecordId) as EndScheduleDate,
@@ -406,6 +413,8 @@ drop table #installs
                 newEvent.end = installationEventList.Where(a => a.WorkOrderNumber == eventx.WorkOrderNumber).Max(b => b.ScheduledDate).
                    ToString();
 
+                newEvent.WoodDropOffDate = eventx.WoodDropOffDate;
+
                 //newEvent.start = GetInstallationEventsByWO(eventx.WorkOrderNumber).Min(b => b.ScheduledDate).
                 //   ToString();
 
@@ -459,6 +468,8 @@ drop table #installs
 
                 newEvent.MinAvailable = eventx.MinAvailable;
                 newEvent.SalesTarget = eventx.SalesTarget;
+
+                newEvent.StrWoodDropOffTime = eventx.StrWoodDropOffTime;
                 // total = GetTotalByWO(eventx.WorkOrderNumber);
 
 
@@ -595,6 +606,9 @@ drop table #installs
 
                 newEvent.SubTradeFlag = returnedEvent.SubTradeFlag;
                 newEvent.SalesAmmount = returnedEvent.SalesAmmount;
+
+                newEvent.WoodDropOffDate = returnedEvent.WoodDropOffDate;
+
                 // newEvent.Other = returnedEvent.Other;
                 //  newEvent.OtherState = returnedEvent.OtherState;
 
@@ -647,7 +661,7 @@ drop table #installs
                 newEvent.Email = returnedEvent.Email;
                 newEvent.SalesRep = returnedEvent.SalesRep;
                 newEvent.LeadPaint = returnedEvent.LeadPaint;
-
+                newEvent.StrWoodDropOffTime = returnedEvent.StrWoodDropOffTime;
                 newEvent.MinAvailable = returnedEvent.MinAvailable;
                 newEvent.SalesTarget = returnedEvent.SalesTarget;
 
@@ -1697,9 +1711,8 @@ where i.WorkOrderNumber = '{0}' ", this.workOrderNumber);
         private string GetWOPictureSQL()
         {
             string SQL = string.Format(@"SELECT [input125] as PictureName
-      ,[Picture]
-      ,[ParentRecordId]
-      ,[DetailRecordId],WorkOrderNumber,tb.[Picture_bin] as pic
+         ,[ParentRecordId]
+      ,[DetailRecordId],WorkOrderNumber,tb.[Picture_thumbnail2] as pic
   FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_TakePicture] tp
   inner join  HomeInstallations i on  i.RecordId=tp.ParentRecordId
   inner join [HomeInstallations_TakePicture__binaries] tb on tb.recordid = tp.DetailRecordId
@@ -1707,6 +1720,28 @@ where WorkOrderNumber = '{0}' ", this.workOrderNumber);
             return SQL;
         }
 
+        private string GetWOBigPictureSQL(int recordId)
+        {
+            string SQL = string.Format(@"SELECT [input125] as PictureName
+         ,[ParentRecordId]
+      ,[DetailRecordId],WorkOrderNumber,
+      tb.[Picture_bin] as pic
+  FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_TakePicture] tp
+  inner join  HomeInstallations i on  i.RecordId=tp.ParentRecordId
+  inner join [HomeInstallations_TakePicture__binaries] tb on tb.recordid = tp.DetailRecordId
+where DetailRecordId = '{0}' ", recordId);
+            return SQL;
+        }
+
+        public List<WOPicture> GetWOBigPicture(int recordId)
+        {
+            string SQL = GetWOBigPictureSQL(recordId);
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("DetailRecordId", recordId));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.WOPicture>(SQL, pars.ToArray());
+        }
         List<InstallationEvent> IGetter.GetInstallationDateByWOForReturnedJob(string wO)
         {
             throw new NotImplementedException();

@@ -53,7 +53,38 @@ namespace Generics.Utils.Data
         [DataMember]
         public DateTime ScheduledDate { get; set; }
 
+        [DataMember]
+        public String WoodDropOffDate {
+            get; set;
+        }
 
+
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public string StrWoodDropOffTime {
+            get
+            {
+                string str = string.Empty;
+                if ((WoodDropOffDate != null) && (WoodDropOffDate.Length > 0))
+                {
+                    str = WoodDropOffDate.Split(' ')[1];
+                }
+                return str;
+            }
+            set { }
+        }
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        //   public string start { get { return FormatDateTime(ScheduledDate); } set { } }
+        public string StrWoodDropOffDate {
+            get {
+                string str = string.Empty;
+                if ((WoodDropOffDate!=null) && (WoodDropOffDate.Length>0))
+                {
+                    str = FormatDateTime(Convert.ToDateTime(WoodDropOffDate.Split(' ')[0]));
+                }
+                return str; }
+            set { } }
         //[DataMember]
         //public DateTime ReturnEventDate { get; set; }
         [DataMember]
