@@ -423,7 +423,8 @@ namespace CalendarSystem
                 eventData.EstInstallerCnt = EstInstallerCnt;
                 if (woodDropOffDate.Length>1)
                 {
-                    eventData.WoodDropDateAndTime = Convert.ToDateTime(woodDropOffDate + " " + woodDropOffTime).ToString("yyyy-MM-ddTHH:mm:tt.000Z");
+                    // eventData.WoodDropDateAndTime = Convert.ToDateTime(woodDropOffDate + " " + woodDropOffTime).ToString("yyyy-MM-ddTHH:mm:tt.000Z");
+                    eventData.WoodDropDateAndTime = Convert.ToDateTime(woodDropOffDate + " " + woodDropOffTime).ToString();
                 }
                 
                 eventData.Saturday = Saturday;

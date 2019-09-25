@@ -1394,7 +1394,8 @@ $(document).ready(function () {
                         $("#Wood-DropOff-JobsYes").prop("checked", true);
                         $("#Wood-DropOff-JobsNo").prop("checked", false);
                         $("#divWoodDropOffDate").show();
-                        $("#wooddropdate").val(event.StrWoodDropOffDate.slice(0, -10));
+                      //  $("#wooddropdate").val(event.StrWoodDropOffDate.slice(0, -10));
+                        $("#wooddropdate").val(event.StrWoodDropOffDate);
                         $("#wooddropTime").val(event.StrWoodDropOffTime);
                     }
                     else {

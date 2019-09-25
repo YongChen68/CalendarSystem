@@ -163,7 +163,9 @@ namespace FlowfinityConnectionHelper
             if (data.WoodDropOff == 1)
             {
                 record.WoodDropOff = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>("Yes");
-                record.WoodDropOffDate = Lift.II.IIUtils.CreateDateTimeValue<FASR.DateTimeValue>(Generics.Utils.Date.DateParser.ParseTime(data.WoodDropDateAndTime));
+                //  DateTime WoodDropOffDate = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(data.WoodDropDateAndTime).ToString("yyyy-MM-ddT00:00:00.000Z"));
+                DateTime WoodDropOffDate = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(data.WoodDropDateAndTime).ToString("yyyy-MM-ddTHH:mm:00.000Z"));
+                record.WoodDropOffDate = Lift.II.IIUtils.CreateDateTimeValue<FASR.DateTimeValue>(WoodDropOffDate);
             }
             else
             {

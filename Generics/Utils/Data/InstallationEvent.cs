@@ -81,7 +81,8 @@ namespace Generics.Utils.Data
                 string str = string.Empty;
                 if ((WoodDropOffDate!=null) && (WoodDropOffDate.Length>0))
                 {
-                    str = FormatDateTime(Convert.ToDateTime(WoodDropOffDate.Split(' ')[0]));
+                 //   str = FormatDateTime(Convert.ToDateTime(WoodDropOffDate.Split(' ')[0]));
+                    str =Convert.ToDateTime(WoodDropOffDate.Split(' ')[0]).ToString("MM/d/yyyy");
                 }
                 return str; }
             set { } }
