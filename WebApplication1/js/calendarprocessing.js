@@ -5,6 +5,7 @@ var debug = true;
 var renderingComplete = false;
 var eventid;
 var eventWO = []; 
+var newWOArray = []; 
 var eventReturnedJobDate1;
 var eventDiff=[];
 var hasSubStrade;
@@ -399,12 +400,13 @@ function LoadInstallationBufferedJobs() {
         success: function (data) {
             if (debug) console.log("events.success", "data.GetInstallationBufferJobsResult:", data.GetInstallationBufferJobsResult === undefined ? "NULL" : data.GetInstallationBufferJobsResult.length);
             var events = [];
-         
+            newWOArray = [];
 
             var found = false;
             var con;
             $.each(data.GetInstallationBufferJobsResult, function (pos, item) {
                 AddInstallationBufferEvent(pos, item);
+                newWOArray.push(item);
             });
            
         }, error: function (error) {
@@ -415,6 +417,228 @@ function LoadInstallationBufferedJobs() {
 
 
    
+}
+
+function NewWOPopup(id) {
+   // alert(val);
+    var index = -1;
+    for (var i = 0; i < newWOArray.length; i++) {
+        if (newWOArray[i].id === id) {
+            index = i;
+            break;
+        }
+    }
+
+    //var elementary = document.getElementById(id);
+  
+    //$(".fc-content").attr('href', 'javascript:void(0);');
+    //$(".fc-content").attr('data-toggle', "modal");
+    //$(".fc-content").attr('data-target', "#eventContent");
+    //$(".fc-content").attr('href', "/details");
+    $("#btnSave").attr("disabled", true); 
+    $("#FirstName").html(newWOArray[index].FirstName);
+    $("#LastName").html(newWOArray[index].LastName);
+    $("#postalCode").html(newWOArray[index].PostCode);
+    $("#workOrder").html(newWOArray[index].WorkOrderNumber);
+    $("#WorkOrderTitle").html(newWOArray[index].WorkOrderNumber);
+    $("#homePhone").html(newWOArray[index].HomePhoneNumber);
+
+
+    $("#workPhone").html(newWOArray[index].WorkPhoneNumber);
+    $("#cellPhone").html(newWOArray[index].CellPhone);
+
+    $("#email").html(newWOArray[index].Email);
+    $("#salesRep").html(newWOArray[index].SalesRep);
+
+    $("#City").html(newWOArray[index].City);
+
+    $("#TotalWindows1").html(newWOArray[index].TotalWindows);
+    $("#TotalDoors1").html(newWOArray[index].TotalDoors);
+    $("#TotalDoors2").html(newWOArray[index].TotalExtDoors);
+
+    if (newWOArray[index].TotalAsbestos == 1) {
+        // 
+        $("#Asbestos-JobsYes").prop("checked", true);
+        $("#Asbestos-JobsNo").prop("checked", false);
+    }
+    else {
+        $("#Asbestos-JobsNo").prop("checked", true);
+        $("#Asbestos-JobsYes").prop("checked", false);
+    }
+
+    if (newWOArray[index].LeadPaint == 'Yes') {
+        // 
+        $("#Lead-PaintYes").prop("checked", true);
+        $("#Lead-PaintNo").prop("checked", false);
+    }
+    else {
+        $("#Lead-PaintNo").prop("checked", true);
+        $("#Lead-PaintYes").prop("checked", false);
+    }
+
+    $("#wooddropTime").val('');
+    $("#wooddropdate").val('');
+
+    if (newWOArray[index].TotalWoodDropOff == 1) {
+        // 
+        $("#Wood-DropOff-JobsYes").prop("checked", true);
+        $("#Wood-DropOff-JobsNo").prop("checked", false);
+        $("#divWoodDropOffDate").show();
+        $("#wooddropdate").val(newWOArray[index].StrWoodDropOffDate.slice(0, -10));
+        $("#wooddropTime").val(newWOArray[index].StrWoodDropOffTime);
+    }
+    else {
+        $("#Wood-DropOff-JobsNo").prop("checked", true);
+        $("#Wood-DropOff-JobsYes").prop("checked", false);
+        $("#divWoodDropOffDate").hide();
+
+    }
+
+    if (newWOArray[index].TotalHighRisk == 1) {
+        // 
+        $("#HighRisk-JobsYes").prop("checked", true);
+        $("HighRisk-JobsNo").prop("checked", false);
+    }
+    else {
+        $("#HighRisk-JobsNo").prop("checked", true);
+        $("#HighRisk-JobsYes").prop("checked", false);
+    }
+    $("#NumOfInstallers").val(newWOArray[index].EstInstallerCnt);
+
+    $("#Address").html(newWOArray[index].StreetAddress);
+    $("#DaysOfWork").html(newWOArray[index].detailrecordCount);
+    $("#SalesAmmount").html(newWOArray[index].TotalSalesAmount.formatMoney(2, "$", ",", "."));
+    $("#DailySalesAmmount").html(newWOArray[index].SalesAmmount.formatMoney(2, "$", ",", "."));
+    $("#SeniorInstaller").html(newWOArray[index].SeniorInstaller != null && newWOArray[index].SeniorInstaller.trim().length > 0 ? newWOArray[index].SeniorInstaller : "Unspecified");
+    $("#CrewNames").html(newWOArray[index].CrewNames != null && newWOArray[index].CrewNames.trim().length > 0 ? newWOArray[index].CrewNames : "Un assigned");
+
+    codeAddress();
+    //$("#ReturnedJob").hide();
+    $("#from_date").val('');
+    $("#end_date").val('');
+
+
+    //if (newWOArray[index].ReturnedJob == 1) {
+    //    // $("#ReturnedJob").show(); 
+    //    $("#from_date").val(new Date(GetDatefromMoment(newWOArray[index].start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+    //    $("#end_date").val(new Date(GetDatefromMoment(newWOArray[index].end + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+    //    if (newWOArray[index].end == null) {
+    //        $("#end_date").val(new Date(GetDatefromMoment(newWOArray[index].start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+    //    }
+
+
+    //    $("#InstallScheduledStartDate").prop("disabled", true);
+    //    $("#InstallScheduledEndDate").prop("disabled", true);
+    //    $("#InstallScheduledStartDate").val(new Date(GetDatefromMoment(newWOArray[index].StartScheduleDate + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+    //    $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(newWOArray[index].EndScheduleDate + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+
+
+    //    $("#NumOfInstallers").prop("disabled", true);
+
+    //    $("#Asbestos-JobsYes").prop("disabled", true);
+    //    $("#Asbestos-JobsNo").prop("disabled", true);
+
+    //    $("#Lead-PaintYes").prop("disabled", true);
+    //    $("#Lead-PaintNo").prop("disabled", true);
+
+    //    $("#Wood-DropOff-JobsYes").prop("disabled", true);
+    //    $("#Wood-DropOff-JobsNo").prop("disabled", true);
+
+    //    $("#HighRisk-JobsYes").prop("disabled", true);
+    //    $("#HighRisk-JobsNo").prop("disabled", true);
+
+    //    document.getElementsByName('saturday')[0].disabled = true;
+    //    document.getElementsByName('sunday')[0].disabled = true;
+
+    //    $("#from_date").prop("disabled", false);
+    //    $("#end_date").prop("disabled", false);
+    //    //etInstallationDateByWOForReturnedJob()
+
+    //    // $("#InstallScheduledStartDate").val(new Date(GetDatefromMoment(newWOArray[index].start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+    //    //  $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(newWOArray[index].end + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+
+    //}
+    //else {
+
+    //    $("#InstallScheduledStartDate").val(new Date(GetDatefromMoment(newWOArray[index].start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+
+    //    if (newWOArray[index].end == null) {
+    //        $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(newWOArray[index].start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+    //    }
+    //    else {
+    //        $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(newWOArray[index].end + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+    //    }
+    //    $("#InstallScheduledStartDate").prop("disabled", false);
+    //    $("#InstallScheduledEndDate").prop("disabled", false);
+
+    //    if (newWOArray[index].StartScheduleDate != null) {
+    //        $("#from_date").prop("disabled", true);
+    //        $("#end_date").prop("disabled", true);
+    //        $("#from_date").val(new Date(GetDatefromMoment(newWOArray[index].StartScheduleDate + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+    //        $("#end_date").val(new Date(GetDatefromMoment(newWOArray[index].EndScheduleDate + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+
+    //    }
+    //    else {
+    //        $("#from_date").prop("disabled", false);
+    //        $("#end_date").prop("disabled", false);
+    //    }
+    //    $("#NumOfInstallers").prop("disabled", false);
+
+    //    $("#Asbestos-JobsYes").prop("disabled", false);
+    //    $("#Asbestos-JobsNo").prop("disabled", false);
+
+    //    $("#Lead-PaintYes").prop("disabled", false);
+    //    $("#Lead-PaintNo").prop("disabled", false);
+
+    //    $("#Wood-DropOff-JobsYes").prop("disabled", false);
+    //    $("#Wood-DropOff-JobsNo").prop("disabled", false);
+
+    //    $("#HighRisk-JobsYes").prop("disabled", false);
+    //    $("#HighRisk-JobsNo").prop("disabled", false);
+
+    //    document.getElementsByName('saturday')[0].disabled = false;
+    //    document.getElementsByName('sunday')[0].disabled = false;
+
+
+
+    //    //    $("#from_date").val('');
+    //    //    $("#end_date").val('');
+
+    //}
+
+    eventid = newWOArray[index].id;
+
+    if (newWOArray[index].Saturday == "Yes") {
+        document.getElementsByName('saturday')[0].checked = true;
+    }
+    else {
+        document.getElementsByName('saturday')[0].checked = false;
+    }
+    if (newWOArray[index].Sunday == "Yes") {
+        document.getElementsByName('sunday')[0].checked = true;
+    }
+    else {
+        document.getElementsByName('sunday')[0].checked = false;
+    }
+
+    //retrieve product info
+    // var ss = GetNonReturnedJobDates(newWOArray[index].WorkOrderNumber);
+    //GetProducts(newWOArray[index].WorkOrderNumber);
+    GetInstallationProducts(newWOArray[index].WorkOrderNumber);
+    GetManufacturingProducts(newWOArray[index].WorkOrderNumber);
+    GetInstallers(newWOArray[index].WorkOrderNumber);
+    GetCalledLog(newWOArray[index].WorkOrderNumber);
+    GetWOPicture(newWOArray[index].WorkOrderNumber);
+    GetSubTrades(newWOArray[index].WorkOrderNumber);
+    // GetJobAnalysys(newWOArray[index].WorkOrderNumber);
+    $("#TotalLBRMin").html(newWOArray[index].TotalInstallationLBRMin);
+
+    $("#eventLink").attr('href', newWOArray[index].url);
+
+
+     
+    //var str = "ss";
+    //str = "dd";
 }
 
 function AddInstallationBufferEvent(key, val) {
@@ -439,8 +663,10 @@ function AddInstallationBufferEvent(key, val) {
       
    // $(element).find(dom).prepend(ret);
 
-    var el = $("<div class='fc-event " + (val.JobType == "RES" ? " reservation" : "") +
-        "' id=\"" + val.id + "\" style=\"background-color:" + val.color + "\">" + ret + "</div>").appendTo('#external-events1');
+    var el = $("<div class='fc-event "   + (val.JobType == "RES" ? " reservation" : "") +
+       "' id=\"" + val.id + "\" onclick=\"NewWOPopup('" + val.id + "');\"" + " data-toggle=\"modal\"" + " data-target=\"#eventContent\"" + " href=\"/details\"" + 
+      //  "' id=\"" + val.id + "\" onclick=\"NewWOPopup('" + val.id + "');\"" + 
+        " style=\"background-color:" + val.color + "\">" + ret + "</div>").appendTo('#external-events1');
     el.draggable({
         zIndex: 996,
         revert: true,
@@ -1112,6 +1338,8 @@ $(document).ready(function () {
                     event.jsEvent.cancelBubble = true;
                     event.jsEvent.preventDefault();
                 }
+
+                $("#btnSave").attr("disabled", false); 
                 if (displayType == "Installation") {
                     
                     element.attr('data-toggle', "modal");
@@ -3078,8 +3306,6 @@ function GetSubTradesCount(workOrder) {
 
 
 function ShowWOBigPicture(recordid) {
-   // alert(recordid);
-    var workOrder = "773412";
     var link = document.getElementById(recordid);
  
     $.ajax({
@@ -3088,11 +3314,8 @@ function ShowWOBigPicture(recordid) {
        // dataType: 'json',
         success: function (data) {
             if (debug) console.log("events.success", "data.GetWOBigPicture:");
-         //  alert(recordid);
-         //   window.open("http://www.your-site.com/images/picture.jpg", "Window Title", "width=500, height=450"
             if (data.GetWOBigPictureResult.length > 0) {
-             
-              //  link.setAttribute("href", "http://www.google.com");
+
                 var image = new Image();
                 image.src = data.GetWOBigPictureResult[0].picString ;
 
@@ -3101,18 +3324,6 @@ function ShowWOBigPicture(recordid) {
                 w.document.write(image.outerHTML);
 
             }
-          //  var image = new Image();
-
-          ////  image.src = data.GetWOBigPictureResult[0].picString;
-          //  image.src = $('#idimage').attr('src');
-
-          // // //image.src = $('#idimage').attr('src');
-
-          //  var w = window.open("", '_blank');
-          //  w.document.write(image.outerHTML);
-          //  w.document.close(); 
-         //   window.open(data.GetWOBigPictureResult[0].picString);
-          //  window.open("http://www.google.com");
            
         }, error: function (error) {
             console.log('Error', error);
