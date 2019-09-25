@@ -3320,6 +3320,10 @@ function ShowWOBigPicture(recordid) {
                 image.src = data.GetWOBigPictureResult[0].picString ;
 
                 var w = window.open(image.src, '_blank');
+                name = "Pictures";
+                w.document.write("<html><head><title>" + name + "</title></head><body>"
+                  
+                    + '</body></html>');
                // var w = window.open("", '_blank');
                 w.document.write(image.outerHTML);
 
