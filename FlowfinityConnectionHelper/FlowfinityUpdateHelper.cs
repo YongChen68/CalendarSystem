@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FlowfinityConnectionHelper.FASR;
+using Generics.RecordUpdate;
 using Generics.Utils;
 
 namespace FlowfinityConnectionHelper
@@ -134,6 +135,14 @@ namespace FlowfinityConnectionHelper
             return record;
         }
 
+
+        private static FASR.HomeInstallationsRecord GetCalledLogRecord(Generics.Utils.ContentType type, List<Generics.Utils.CalledLog> data)
+        {
+            FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
+            record.CallLog = PrepareInstallationCallLogList(data);
+
+            return record;
+        }
         private static FASR.HomeInstallationsRecord GetRecordForStateChanges(Generics.Utils.ContentType type, Generics.Utils.ImproperInstallationEvent data)
         {
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
@@ -255,6 +264,21 @@ namespace FlowfinityConnectionHelper
             return string.Format("{0} {1} {2}", "update", data.id, DateTime.Now.Ticks.ToString());
         }
 
+        private static string PrepareTransactionId(Generics.Utils.CalledLog data)
+        {
+            string returnStr = string.Empty;
+            if (data is null)
+            {
+                returnStr = string.Format("{0} {1} {2}", "update", "", DateTime.Now.Ticks.ToString());
+            }
+            else
+            {
+                returnStr =  string.Format("{0} {1} {2}", "update", data.DetailRecordId, DateTime.Now.Ticks.ToString());
+            }
+            return returnStr;
+        }
+            
+
         private static string PrepareTransactionId(Generics.Utils.InstallationDataEvent data)
         {
             return string.Format("{0} {1} {2}", "update", data.id, DateTime.Now.Ticks.ToString());
@@ -300,6 +324,37 @@ namespace FlowfinityConnectionHelper
                     ScheduledDate = new FASR.DateTimeValue() { Value = start }
                 });
             return returnValue.ToArray();
+        }
+
+
+        private static FASR.HomeInstallations_CallLogRecord[] PrepareInstallationCallLogList(List<Generics.Utils.CalledLog> data)
+        {
+            List<FASR.HomeInstallations_CallLogRecord> returnValue = new List<FASR.HomeInstallations_CallLogRecord>();
+            DateTime calledLogOffDate;
+            if (data ==null)
+            {
+               return null;
+            }
+            else
+            {
+                foreach (Generics.Utils.CalledLog c in data)
+                {
+                    calledLogOffDate = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(c.DateCalled).ToString("yyyy-MM-ddTHH:mm:00.000Z"));
+                    returnValue.Add(new FASR.HomeInstallations_CallLogRecord()
+                    {
+                        CalledMessage = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>(c.CalledMessage),
+                        Notes3 = Lift.II.IIUtils.CreateStringValue<StringValue>(c.Notes3),
+                        DateCalled = Lift.II.IIUtils.CreateDateTimeValue<DateTimeValue>(calledLogOffDate),
+
+                    });
+                }
+                return returnValue.ToArray();
+            }
+
+            
+          
+          
+         
         }
 
         //private static FASR.HomeInstallationsRecord PrepareRemeasureDateList(Generics.Utils.ImproperRemeasureEvent data)
@@ -484,6 +539,40 @@ namespace FlowfinityConnectionHelper
                 Record = GetRecord(type, data)
             };
             return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
+        }
+
+        bool IUpdateHelper.UpdateRecord(ContentType type, InstallationDataEvent data)
+        {
+            throw new NotImplementedException();
+        }
+
+        bool IUpdateHelper.UpdateRecord(ContentType type, List<CalledLog> data)
+        {
+            bool returnValue = true;
+
+            if (data.Count > 0)
+            {
+                FASR.HomeInstallations_EditSold_Call call = new FASR.HomeInstallations_EditSold_Call()
+                {
+                    OnBehalfOf = Owner,
+                    RecordID = data[0].id,
+                    Record = GetCalledLogRecord(type, data)
+                };
+                returnValue = _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data[0])).ReturnValue;
+            }
+            else
+            {
+               CalledLog data1 = null;
+                FASR.HomeInstallations_EditSold_Call call = new FASR.HomeInstallations_EditSold_Call()
+                {
+                    OnBehalfOf = Owner,
+                    RecordID ="",
+                    Record = GetCalledLogRecord(type, null)
+                };
+                returnValue = _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data1)).ReturnValue;
+            }
+           
+           return returnValue;
         }
     }
 }

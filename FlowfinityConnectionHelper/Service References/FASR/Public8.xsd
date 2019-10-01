@@ -923,6 +923,7 @@
       <xs:element minOccurs="0" name="Financing" nillable="true" type="tns:SingleSelection" />
       <xs:element minOccurs="0" name="FirstName" nillable="true" type="tns:StringValue" />
       <xs:element minOccurs="0" name="FollowupNote" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="GeneralNotesList" nillable="true" type="tns:ArrayOfHomeInstallations_.GeneralNotesListRecord" />
       <xs:element minOccurs="0" name="HazardousBudget" nillable="true" type="tns:DecimalValue" />
       <xs:element minOccurs="0" name="HazardousBudgetedLBR" nillable="true" type="tns:DecimalValue" />
       <xs:element minOccurs="0" name="HighRisk" nillable="true" type="tns:SingleSelection" />
@@ -1052,6 +1053,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="HomeInstallations_.FileAttachmentRecord" nillable="true" type="tns:HomeInstallations_.FileAttachmentRecord" />
+  <xs:complexType name="ArrayOfHomeInstallations_.GeneralNotesListRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.GeneralNotesListRecord" nillable="true" type="tns:HomeInstallations_.GeneralNotesListRecord" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHomeInstallations_.GeneralNotesListRecord" nillable="true" type="tns:ArrayOfHomeInstallations_.GeneralNotesListRecord" />
+  <xs:complexType name="HomeInstallations_.GeneralNotesListRecord">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CalledBy1" nillable="true" type="tns:ArrayOfUserLookupRecord" />
+      <xs:element minOccurs="0" name="Category_1" nillable="true" type="tns:SingleSelection" />
+      <xs:element minOccurs="0" name="GeneralNotes" nillable="true" type="tns:StringValue" />
+      <xs:element minOccurs="0" name="GerneralNotesDate" nillable="true" type="tns:DateTimeValue" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HomeInstallations_.GeneralNotesListRecord" nillable="true" type="tns:HomeInstallations_.GeneralNotesListRecord" />
   <xs:complexType name="ArrayOfHomeInstallations_.InstallationDatesRecord">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="HomeInstallations_.InstallationDatesRecord" nillable="true" type="tns:HomeInstallations_.InstallationDatesRecord" />

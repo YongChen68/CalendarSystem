@@ -40,7 +40,7 @@ namespace CalendarSystem.Utils.Data
             this.stateList = stateList;
         }
 
-        public EventDataGetter( List<string> branchList)
+        public EventDataGetter(List<string> branchList)
         {
             this.branchList = branchList;
         }
@@ -66,7 +66,7 @@ namespace CalendarSystem.Utils.Data
         private List<InstallationEvent> GetInstallationEventsByWO(string WO)
         {
             string SQL = GetInstallationSQLForTotal(WO);
-           
+
             var firstDayOfMonth = new DateTime(this.startDate.Year, this.startDate.Month, 1);
             var lastDayOfMonth = new DateTime(this.endDate.Year, this.endDate.Month, 1).AddMonths(1).AddDays(-1);
 
@@ -77,7 +77,7 @@ namespace CalendarSystem.Utils.Data
             pars.Add(new System.Data.SqlClient.SqlParameter("pEnd", lastDayOfMonth));
             Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
             installationEventList = Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.Data.InstallationEvent>(SQL, pars.ToArray());
-          //   installationEventList.Count(bt => bt.WorkOrderNumber == WO &&bt.ReturnedJob!=1);
+            //   installationEventList.Count(bt => bt.WorkOrderNumber == WO &&bt.ReturnedJob!=1);
             return installationEventList.Where(bt => bt.WorkOrderNumber == WO && bt.ReturnedJob != 1).ToList();
         }
         private string GetInstallationSQLForTotal(string WO)
@@ -112,9 +112,9 @@ namespace CalendarSystem.Utils.Data
 
                 //int week = ;
             }
-         
-         
-          
+
+
+
             //drop table #Subtrade", this.startDate.ToString("MM/dd/yyyy"), this.endDate.ToString("MM/dd/yyyy"), branchList, sPlanedCheck);
 
             string SQL = string.Format(@"select d.ScheduledDate1 as ScheduledDate,d.ParentRecordId, d.detailrecordid,count(c.detailrecordid) as detailrecordCount,1 as 'ReturnedJob'
@@ -240,8 +240,8 @@ drop table #installs
 drop table #Windows
 drop table #Doors
 drop table #Other
-drop table #Subtrade", 
-new DateTime(this.startDate.Year, this.startDate.Month, 1).ToShortDateString(), 
+drop table #Subtrade",
+new DateTime(this.startDate.Year, this.startDate.Month, 1).ToShortDateString(),
 new DateTime(this.endDate.Year, this.endDate.Month, 1).AddMonths(1).AddDays(-1).ToShortDateString(),
 "'" + String.Join("','", branchList) + "'", "'" + String.Join("','", stateList) + "'", WO);
             return SQL;
@@ -278,10 +278,10 @@ new DateTime(this.endDate.Year, this.endDate.Month, 1).AddMonths(1).AddDays(-1).
                     cal.GetWeekOfYear(this.startDate, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday),
                     cal.GetWeekOfYear(this.endDate, System.Globalization.CalendarWeekRule.FirstFourDayWeek, DayOfWeek.Sunday));
 
-               
+
             }
-           
-         
+
+
             string SQL = string.Format(@"select d.ScheduledDate1 as ScheduledDate,d.ParentRecordId, d.detailrecordid,count(c.detailrecordid) as detailrecordCount,1 as 'ReturnedJob'
 into #dates 
 from [HomeInstallations_ReturnTrip] d
@@ -870,7 +870,7 @@ and  CurrentStateName in ({3})
 
                 newEvent.LastName = eventx.LastName;
                 newEvent.FirstName = eventx.FirstName;
-     
+
                 newEvent.TotalSalesAmount = eventx.TotalSalesAmount;
                 newEvent.TotalAsbestos = eventx.TotalAsbestos;
                 newEvent.TotalWoodDropOff = eventx.TotalWoodDropOff;
@@ -1002,8 +1002,8 @@ and  CurrentStateName in ({3})
             string SQL = GetInstallationDateByWOSQL(WO);
             List<InstallationEvent> returnList = new List<InstallationEvent>();
 
-            returnList = Lift.LiftManager.DbHelper.ReadObjects<InstallationEvent>(SQL).Where(b=>b.ReturnedJob==1).ToList();
-         
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<InstallationEvent>(SQL).Where(b => b.ReturnedJob == 1).ToList();
+
             return returnList;
         }
 
@@ -1021,8 +1021,8 @@ and  CurrentStateName in ({3})
 
         private string GetInstallationDateByWOSQL(string WO)
         {
-            string SQL=string.Empty ;
-            SQL =  String.Format(@"
+            string SQL = string.Empty;
+            SQL = String.Format(@"
             select d.ScheduledDate1 as ScheduledDate,d.ParentRecordId, d.detailrecordid,1 as 'ReturnedJob'
             from [HomeInstallations_ReturnTrip] d
             join [HomeInstallations_ReturnTrip] c
@@ -1033,8 +1033,8 @@ and  CurrentStateName in ({3})
             from HomeInstallations_InstallationDates d
             join HomeInstallations_InstallationDates c
             on d.ParentRecordId= c.ParentRecordId)
-            where  d.ParentRecordId =(select recordid from HomeInstallations where workordernumber in '{0}')",WO);
-           
+            where  d.ParentRecordId =(select recordid from HomeInstallations where workordernumber in '{0}')", WO);
+
 
             return SQL;
         }
@@ -1331,7 +1331,7 @@ Branch_display as Branch, JobType, [CardinalOrderedDate], [CompleteDate], [HighR
  from PlantProduction p with(nolock,noexpand) 
 where p.currentstatename in ({0}) and p.Branch in ({1}) and p.JobType in ({2}) and p.ShippingType in ({3}) and p.DeliveryDate >= @pStart and p.DeliveryDate <= @pEnd and 
 p.CurrentStateName <> 'Duplicated Work Order' and p.CurrentStateName <> 'Completed Reservations') x",
-String.Format("'{0}'", String.Join("','", stateList)), String.Format("'{0}'", String.Join("','", branchList)), String.Format("'{0}'", String.Join("','", jobTypeList)), 
+String.Format("'{0}'", String.Join("','", stateList)), String.Format("'{0}'", String.Join("','", branchList)), String.Format("'{0}'", String.Join("','", jobTypeList)),
 String.Format("'{0}'", String.Join("','", shippingTypeList)));
                 case Generics.Utils.ContentType.Window:
                     return String.Format(@"select x.id, x.title +' W:' + cast(x.windows as varchar(max)) + ' D:' + cast(x.doors as varchar(max)) + ' PD:' + cast(x.NumberOfPatioDoors as varchar(max)) + ' - ' + case when x.Branch is null or Len(x.Branch) = 0 then 'NULL' else  LEft(x.Branch, 3) end + ' ' + x.JobType + case when @pStart = @pEnd then 'Day View stuff' else '' end as title, x.description, x.type, x.startDateTime, case when datediff(hour, x.startDateTime, x.endDateTime) = 0 then DATEADD(HOUR, 1, x.startDateTime) else x.endDateTime end as endDateTime, 
@@ -1658,8 +1658,9 @@ where p.WorkOrderNumber = '{0}' ", this.workOrderNumber);
             string SQL = string.Format(@"SELECT  [DateCalled]
       ,[CalledMessage]
       ,[Notes3]
-      ,[ParentRecordId]
-      ,[DetailRecordId]
+      ,[ParentRecordId] 
+      ,[DetailRecordId] 
+  ,ActionItemId as id
   FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_CallLog] cl
 
     inner join HomeInstallations i on  i.RecordId=cl.ParentRecordId
@@ -1733,6 +1734,60 @@ where DetailRecordId = '{0}' ", recordId);
             return SQL;
         }
 
+
+        private string GetCallLogByIDSQL(int recordId)
+        {
+            string SQL = string.Format(@"SELECT  [DateCalled]
+      ,[CalledMessage]
+      ,[Notes3]
+      ,[ParentRecordId]
+      ,[DetailRecordId]
+  ,ActionItemId as id
+  FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_CallLog] cl
+
+    inner join HomeInstallations i on  i.RecordId=cl.ParentRecordId
+where DetailRecordId = '{0}' ", recordId);
+            return SQL;
+        }
+
+
+        public List<CalledLog> GetKeepedCalledLog(string recordId)
+        {
+            string SQL = GetCalledLogSQL();
+
+            List<CalledLog> returnList = new List<CalledLog>();
+
+            //    returnList = Lift.LiftManager.DbHelper.ReadObjects<InstallationEvent>(SQL).Where(b => b.ReturnedJob != 1).ToList();
+         
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("WorkOrderNumber", this.workOrderNumber));
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<CalledLog>(SQL, pars.ToArray()).Where(b => b.DetailRecordId != recordId).ToList();
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return returnList;
+        }
+        public List<CalledLog> GetCallLogByID(int recordId)
+        {
+            string SQL = GetCallLogByIDSQL(recordId);
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("DetailRecordId", recordId));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.CalledLog>(SQL, pars.ToArray());
+        }
+
+
+        //public List<CalledLog> GetKeepedCalledLog(int recordid)
+        //{
+        //    string SQL = GetCallLogByIDSQL(recordid);
+
+        //    List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+        //    pars.Add(new System.Data.SqlClient.SqlParameter("DetailRecordId", recordid));
+        //    Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+        //    return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.CalledLog>(SQL, pars.ToArray());
+        //}
+
+
         public List<WOPicture> GetWOBigPicture(int recordId)
         {
             string SQL = GetWOBigPictureSQL(recordId);
@@ -1756,8 +1811,8 @@ where DetailRecordId = '{0}' ", recordId);
         {
             throw new NotImplementedException();
         }
+
+
     }
-
-
 
 }

@@ -44,7 +44,57 @@ namespace Generics.Utils
     public class CalledLog
     {
         [DataMember]
-        public DateTime DateCalled { get; set; }
+        public String DateCalled {
+            //get {
+            //    string str = string.Empty;
+            //    str = DateCalled;
+            //    return str;
+
+            //}
+            //set { }
+            get; set;
+        }
+
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        //   public string start { get { return FormatDateTime(ScheduledDate); } set { } }
+        public string CalledLogDate
+        {
+            get
+            {
+                string str = string.Empty;
+                if ((DateCalled != null) && (DateCalled.ToString().Length > 0))
+                {
+                    //   str = FormatDateTime(Convert.ToDateTime(WoodDropOffDate.Split(' ')[0]));
+                    str = Convert.ToDateTime(DateCalled.ToString().Split(' ')[0]).ToString("MM/d/yyyy");
+                }
+                return str;
+            }
+            set { }
+        }
+
+
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public string StrCalledLogTime
+        {
+            get
+            {
+                string str = string.Empty;
+                if ((DateCalled != null) && (DateCalled.ToString().Length > 0))
+                {
+                    str = Convert.ToDateTime(DateCalled).ToString("M/dd/yyyy HH:mm:ss").Split(' ')[1];
+                }
+                return str;
+            }
+            set { }
+        }
+
+        [DataMember]
+        public string DetailRecordId { get; set; }
+
+        [DataMember]
+        public string ParentRecordId { get; set; }
 
         [DataMember]
         public string CalledMessage { get; set; }
@@ -52,6 +102,9 @@ namespace Generics.Utils
 
         [DataMember]
         public string Notes3  { get; set; }
+
+        [DataMember]
+        public string id { get; set; }
 
 
     }

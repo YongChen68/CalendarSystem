@@ -86,6 +86,10 @@
                 dateFormat: "m/d/yy"
 
             });
+            $('#calledLogDate').datepicker({
+                dateFormat: "m/d/yy"
+
+            });
             $('#from_date').datepicker({
                 dateFormat: "m/d/yy"
 
@@ -467,7 +471,7 @@
 
                                 </li>
                                 <li role="presentation">
-                                    <a href="#SubTradesTab" aria-controls="SubTradesTab" role="tab" data-toggle="tab">SUB TDADES REQUIRED</a>
+                                    <a href="#SubTradesTab" aria-controls="SubTradesTab" role="tab" data-toggle="tab">SUB TDADES</a>
                                 </li>
                                 <li role="presentation">
                                     <a href="#JobAnalysisTab" aria-controls="JobAnalysisTab" role="tab" data-toggle="tab">JOB ANALYSIS</a>
@@ -475,6 +479,11 @@
                                 </li>
                                 <li role="presentation">
                                     <a href="#CalledLogTab" aria-controls="CalledLogTab" role="tab" data-toggle="tab">Called Log</a>
+
+                                </li>
+
+                                    <li role="presentation">
+                                    <a href="#CalledLogTab" aria-controls="NotesTab" role="tab" data-toggle="tab">Notes</a>
 
                                 </li>
                                  <li role="presentation">
@@ -774,7 +783,7 @@
                                         <table id="dataTableSubTrades" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane " id="JobAnalysisTab">
+                                <div role="tabpanel" class="tab-pane " id="JobAnalysisTab"> 
                                      <div id="LBRContent" style="width: 600px; margin-left: 20px; padding-left: 100px;  text-align:left;"">
                                         <br/>
                                         <br/>
@@ -784,8 +793,41 @@
                                 </div>
                                 <div role="tabpanel" class="tab-pane " id="CalledLogTab">
                                      <br/>
+                                    
                                     <div style="overflow: auto;">
                                         <table id="dataTableCalledLog" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                    </div>
+                                    <div id="CalledLogWin" style="text-align:left;" >
+                                        <div class="form-group">
+                                           <span>
+                                             <label for="comment">Dated Called :</label>
+                                                <input id="calledLogDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Date">
+                                               <input type="time" id="CalledLogTime" name="appt">
+                                           </span> 
+                                           
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="comment">Called Message :</label>
+                                             <select id="MessageOption" name="MessageOption">
+                                              <option value="Left Message">Left Message</option>
+                                              <option value="No Answering Machine">No Answering Machine</option>
+                                              <option value="Spoke With Customer">Spoke With Customer</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                              <label for="comment">Notes:</label>
+                                            <textarea class="form-control" rows="5" id="comment"></textarea>
+  
+                                        </div>
+                                        
+                                          <div class="form-group" style="display:none;">
+                                           
+                                            <textarea class="form-control" rows="5" id="callLogRecordID"></textarea>
+  
+                                        </div>
+                                        
+                                         <input type="button" name="btnSaveLog" id="btnSaveLog" class="btn btn-success" value="Save" onclick="UpdateInstallationCallLog()">
                                     </div>
 
                                 </div>

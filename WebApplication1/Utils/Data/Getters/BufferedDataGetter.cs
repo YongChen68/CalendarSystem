@@ -393,5 +393,95 @@ and  CurrentStateName in ('Ready for ReMeasure', 'Rejected Remeasure')
         {
             throw new NotImplementedException();
         }
+
+        //List<InstallationEvent> IGetter.GetInstallationBufferData()
+        //{
+        //    throw new NotImplementedException();
+        //}
+
+        List<RemeasureEvent> IGetter.GetRemeasureData()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<RemeasureEvent> IGetter.GetRemeasureBufferData()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Product> IGetter.GetProducts()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<UnavailableHR> IGetter.GetUnavailableResources()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Product> IGetter.GetProductsDoors()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Product> IGetter.GetManufacturingWindows()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Product> IGetter.GetManufacturingDoors()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<SubTrades> IGetter.GetSubTrades()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Installer> IGetter.GetInstallers()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<CalledLog> IGetter.GetCalledLog()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<WindowsCustomer> IGetter.GetWindowsCustomer()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<WOPicture> IGetter.GetWOPicture()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<WOPicture> IGetter.GetWOBigPicture(int recordId)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<CalledLog> IGetter.GetCallLogByID(int recordId)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<InstallationEvent> IGetter.GetInstallationDateByWOForReturnedJob(string wO)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<InstallationEvent> IGetter.GetInstallationDateByWOForNonReturnedJob(string wO)
+        {
+            throw new NotImplementedException();
+        }
+
+         List<CalledLog> IGetter.GetKeepedCalledLog(string recordid)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

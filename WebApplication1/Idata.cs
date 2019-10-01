@@ -56,7 +56,9 @@ namespace CalendarSystem
         [WebInvoke(Method = "POST", UriTemplate = "UpdateRemeasureData?id={id}&remeasureDate={remeasureDate}&remeasureEndDate={remeasureEndDate}&fromPopup={fromPopup}&currentState={currentState}")]
         bool UpdateRemeasureData(string id, string remeasureDate, string remeasureEndDate, string fromPopup, string currentState);
 
-
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "UpdateCallLogData?id={id}&WO={WO}&recordid={recordid}&callDate={callDate}&callTime={callTime}&calledMessage={calledMessage}&Notes={Notes}")]
+        bool UpdateCallLogData(string id, string WO, string recordid, string callDate, string callTime, string calledMessage, string Notes);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "UpdateInstallationSchedule?id={id}&scheduledStartDate={scheduledStartDate}&scheduledEndDate={scheduledEndDate}")]
@@ -152,6 +154,13 @@ namespace CalendarSystem
     BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<CalledLog> GetCalledLog(string workOrderNumber);
 
+//        [OperationContract]
+//        [WebInvoke(Method = "GET",
+//UriTemplate = "GetKeepedCalledLog?workOrderNumber={workOrderNumber}&recordID={recordID}",
+//ResponseFormat = WebMessageFormat.Json,
+//BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+//        List<CalledLog> GetKeepedCalledLog(string workOrderNumber,int recordID);
+
 
         [OperationContract]
         [WebInvoke(Method = "GET",
@@ -181,6 +190,13 @@ ResponseFormat = WebMessageFormat.Json,
 BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<WOPicture> GetWOBigPicture(int recordid);
 
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetCallLogByID?recordid={recordid}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<CalledLog> GetCallLogByID(int recordid);
+
 
 
         [OperationContract]
@@ -196,6 +212,6 @@ BodyStyle = WebMessageBodyStyle.WrappedResponse)]
               ResponseFormat = WebMessageFormat.Json,
               BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<InstallationEvent> GetInstallationDateByWOForNonReturnedJob(string workOrderNumber);
-
+  
     }
 }

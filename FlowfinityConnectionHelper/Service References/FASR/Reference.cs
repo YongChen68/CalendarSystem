@@ -19651,6 +19651,9 @@ namespace FlowfinityConnectionHelper.FASR {
         private FlowfinityConnectionHelper.FASR.StringValue FollowupNoteField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.HomeInstallations_GeneralNotesListRecord[] GeneralNotesListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private FlowfinityConnectionHelper.FASR.DecimalValue HazardousBudgetField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -20288,6 +20291,19 @@ namespace FlowfinityConnectionHelper.FASR {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.HomeInstallations_GeneralNotesListRecord[] GeneralNotesList {
+            get {
+                return this.GeneralNotesListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GeneralNotesListField, value) != true)) {
+                    this.GeneralNotesListField = value;
+                    this.RaisePropertyChanged("GeneralNotesList");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public FlowfinityConnectionHelper.FASR.DecimalValue HazardousBudget {
             get {
                 return this.HazardousBudgetField;
@@ -20339,7 +20355,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=34)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=35)]
         public FlowfinityConnectionHelper.FASR.SingleSelection HVAC {
             get {
                 return this.HVACField;
@@ -20352,7 +20368,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=35)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=36)]
         public FlowfinityConnectionHelper.FASR.MultiSelection InstallationCheckList {
             get {
                 return this.InstallationCheckListField;
@@ -20365,7 +20381,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=36)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=37)]
         public FlowfinityConnectionHelper.FASR.DateTimeValue InstallationCompletedDate {
             get {
                 return this.InstallationCompletedDateField;
@@ -20378,7 +20394,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=37)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=38)]
         public FlowfinityConnectionHelper.FASR.HomeInstallations_InstallationDatesRecord[] InstallationDates {
             get {
                 return this.InstallationDatesField;
@@ -20391,7 +20407,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=38)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=39)]
         public FlowfinityConnectionHelper.FASR.LongValue InstallationDoorLBRMin {
             get {
                 return this.InstallationDoorLBRMinField;
@@ -20404,7 +20420,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=39)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=40)]
         public FlowfinityConnectionHelper.FASR.LongValue InstallationPatioDoorLBRMin {
             get {
                 return this.InstallationPatioDoorLBRMinField;
@@ -20417,7 +20433,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=40)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=41)]
         public FlowfinityConnectionHelper.FASR.LongValue InstallationWindowLBRMin {
             get {
                 return this.InstallationWindowLBRMinField;
@@ -20430,7 +20446,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=41)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=42)]
         public FlowfinityConnectionHelper.FASR.SingleSelection Installwentwell {
             get {
                 return this.InstallwentwellField;
@@ -20443,7 +20459,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=42)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=43)]
         public FlowfinityConnectionHelper.FASR.SingleSelection Job100Costed {
             get {
                 return this.Job100CostedField;
@@ -20456,7 +20472,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=43)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=44)]
         public FlowfinityConnectionHelper.FASR.SingleSelection JobType {
             get {
                 return this.JobTypeField;
@@ -20469,7 +20485,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=44)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=45)]
         public FlowfinityConnectionHelper.FASR.StringValue LastName {
             get {
                 return this.LastNameField;
@@ -20482,7 +20498,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=45)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=46)]
         public FlowfinityConnectionHelper.FASR.SingleSelection LeadPaint {
             get {
                 return this.LeadPaintField;
@@ -20495,7 +20511,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=46)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=47)]
         public FlowfinityConnectionHelper.FASR.StringValue LumberOrdered {
             get {
                 return this.LumberOrderedField;
@@ -20508,7 +20524,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=47)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=48)]
         public FlowfinityConnectionHelper.FASR.LongValue ManMinutes {
             get {
                 return this.ManMinutesField;
@@ -20521,7 +20537,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=48)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=49)]
         public FlowfinityConnectionHelper.FASR.DecimalValue MarketCommission {
             get {
                 return this.MarketCommissionField;
@@ -20534,7 +20550,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=49)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=50)]
         public FlowfinityConnectionHelper.FASR.Choice Marketer {
             get {
                 return this.MarketerField;
@@ -20547,7 +20563,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=50)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=51)]
         public FlowfinityConnectionHelper.FASR.HomeInstallations_MaterialsUsedRecord[] MaterialsUsed {
             get {
                 return this.MaterialsUsedField;
@@ -20560,7 +20576,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=51)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=52)]
         public FlowfinityConnectionHelper.FASR.HomeInstallations_nestedlist66Record[] nestedlist66 {
             get {
                 return this.nestedlist66Field;
@@ -20573,7 +20589,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=52)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=53)]
         public FlowfinityConnectionHelper.FASR.HomeInstallations_nestedlist76Record[] nestedlist76 {
             get {
                 return this.nestedlist76Field;
@@ -20586,7 +20602,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=53)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=54)]
         public FlowfinityConnectionHelper.FASR.DateTimeValue OriginalContactDate {
             get {
                 return this.OriginalContactDateField;
@@ -20599,7 +20615,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=54)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=55)]
         public FlowfinityConnectionHelper.FASR.DecimalValue OtherCost {
             get {
                 return this.OtherCostField;
@@ -20612,7 +20628,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=55)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=56)]
         public FlowfinityConnectionHelper.FASR.HomeInstallations_OtherInstallationMaterialsRecord[] OtherInstallationMaterials {
             get {
                 return this.OtherInstallationMaterialsField;
@@ -20625,7 +20641,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=56)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=57)]
         public FlowfinityConnectionHelper.FASR.SingleSelection PaintedProduct {
             get {
                 return this.PaintedProductField;
@@ -20638,7 +20654,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=57)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=58)]
         public FlowfinityConnectionHelper.FASR.LongValue PatioDoors {
             get {
                 return this.PatioDoorsField;
@@ -20651,7 +20667,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=58)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=59)]
         public FlowfinityConnectionHelper.FASR.SingleSelection PaymentOption {
             get {
                 return this.PaymentOptionField;
@@ -20664,7 +20680,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=59)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=60)]
         public FlowfinityConnectionHelper.FASR.SingleSelection PaymentStatus {
             get {
                 return this.PaymentStatusField;
@@ -20677,7 +20693,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=60)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=61)]
         public FlowfinityConnectionHelper.FASR.StringValue PendingRecord {
             get {
                 return this.PendingRecordField;
@@ -20690,7 +20706,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=61)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=62)]
         public FlowfinityConnectionHelper.FASR.SingleSelection PlannedinstallWeek {
             get {
                 return this.PlannedinstallWeekField;
@@ -20703,7 +20719,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=62)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=63)]
         public FlowfinityConnectionHelper.FASR.StringValue PostalCode {
             get {
                 return this.PostalCodeField;
@@ -20716,7 +20732,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=63)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=64)]
         public FlowfinityConnectionHelper.FASR.DateTimeValue ProjectedFinishDate {
             get {
                 return this.ProjectedFinishDateField;
@@ -20729,7 +20745,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=64)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=65)]
         public FlowfinityConnectionHelper.FASR.StringValue Reason {
             get {
                 return this.ReasonField;
@@ -20742,7 +20758,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=65)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=66)]
         public FlowfinityConnectionHelper.FASR.StringValue Reason1 {
             get {
                 return this.Reason1Field;
@@ -20755,7 +20771,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=66)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=67)]
         public FlowfinityConnectionHelper.FASR.DecimalValue RemakeCost {
             get {
                 return this.RemakeCostField;
@@ -20768,7 +20784,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=67)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=68)]
         public FlowfinityConnectionHelper.FASR.HomeInstallations_RemakeLogRecord[] RemakeLog {
             get {
                 return this.RemakeLogField;
@@ -20781,7 +20797,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=68)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=69)]
         public FlowfinityConnectionHelper.FASR.DateTimeValue RemeasureDate {
             get {
                 return this.RemeasureDateField;
@@ -20794,7 +20810,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=69)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=70)]
         public FlowfinityConnectionHelper.FASR.DateTimeValue RemeasureEndTime {
             get {
                 return this.RemeasureEndTimeField;
@@ -20807,7 +20823,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=70)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=71)]
         public FlowfinityConnectionHelper.FASR.UserLookupRecord[] remeasureinstaller {
             get {
                 return this.remeasureinstallerField;
@@ -20820,7 +20836,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=71)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=72)]
         public FlowfinityConnectionHelper.FASR.Choice Rep {
             get {
                 return this.RepField;
@@ -20833,7 +20849,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=72)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=73)]
         public FlowfinityConnectionHelper.FASR.HomeInstallations_ReturnTripRecord[] ReturnTrip {
             get {
                 return this.ReturnTripField;
@@ -20846,7 +20862,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=73)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=74)]
         public FlowfinityConnectionHelper.FASR.DecimalValue SalesAmmount {
             get {
                 return this.SalesAmmountField;
@@ -20859,7 +20875,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=74)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=75)]
         public FlowfinityConnectionHelper.FASR.HomeInstallations_SalesClawBackRecord[] SalesClawBack {
             get {
                 return this.SalesClawBackField;
@@ -20872,7 +20888,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=75)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=76)]
         public FlowfinityConnectionHelper.FASR.DecimalValue SalesCommission {
             get {
                 return this.SalesCommissionField;
@@ -20885,7 +20901,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=76)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=77)]
         public FlowfinityConnectionHelper.FASR.DateTimeValue SalesManagersApprovalDate {
             get {
                 return this.SalesManagersApprovalDateField;
@@ -20898,7 +20914,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=77)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=78)]
         public FlowfinityConnectionHelper.FASR.SingleSelection Saturday {
             get {
                 return this.SaturdayField;
@@ -20911,7 +20927,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=78)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=79)]
         public FlowfinityConnectionHelper.FASR.UserLookupRecord[] SeniorInstaller {
             get {
                 return this.SeniorInstallerField;
@@ -20924,7 +20940,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=79)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=80)]
         public FlowfinityConnectionHelper.FASR.DecimalValue SidingBudgetedLBR {
             get {
                 return this.SidingBudgetedLBRField;
@@ -20937,7 +20953,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=80)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=81)]
         public FlowfinityConnectionHelper.FASR.DecimalValue SidingLBRBudget {
             get {
                 return this.SidingLBRBudgetField;
@@ -20950,7 +20966,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=81)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=82)]
         public FlowfinityConnectionHelper.FASR.LongValue SidingLBRMin {
             get {
                 return this.SidingLBRMinField;
@@ -20963,7 +20979,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=82)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=83)]
         public FlowfinityConnectionHelper.FASR.SingleSelection SidingRequired {
             get {
                 return this.SidingRequiredField;
@@ -20976,7 +20992,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=83)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=84)]
         public FlowfinityConnectionHelper.FASR.DecimalValue SidingSQF {
             get {
                 return this.SidingSQFField;
@@ -20989,7 +21005,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=84)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=85)]
         public FlowfinityConnectionHelper.FASR.StringValue Source_1 {
             get {
                 return this.Source_1Field;
@@ -21002,7 +21018,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=85)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=86)]
         public FlowfinityConnectionHelper.FASR.StringValue StreetAddress {
             get {
                 return this.StreetAddressField;
@@ -21015,7 +21031,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=86)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=87)]
         public FlowfinityConnectionHelper.FASR.StringValue SubcontractorBooked {
             get {
                 return this.SubcontractorBookedField;
@@ -21028,7 +21044,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=87)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=88)]
         public FlowfinityConnectionHelper.FASR.StringValue SubTradeFlag {
             get {
                 return this.SubTradeFlagField;
@@ -21041,7 +21057,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=88)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=89)]
         public FlowfinityConnectionHelper.FASR.HomeInstallations_SubtradeReqiredRecord[] SubtradeReqired {
             get {
                 return this.SubtradeReqiredField;
@@ -21054,7 +21070,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=89)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=90)]
         public FlowfinityConnectionHelper.FASR.SingleSelection Sunday {
             get {
                 return this.SundayField;
@@ -21067,7 +21083,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=90)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=91)]
         public FlowfinityConnectionHelper.FASR.HomeInstallations_TakePictureRecord[] TakePicture {
             get {
                 return this.TakePictureField;
@@ -21080,7 +21096,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=91)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=92)]
         public FlowfinityConnectionHelper.FASR.LongValue TotalInstallationLBRMin {
             get {
                 return this.TotalInstallationLBRMinField;
@@ -21093,7 +21109,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=92)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=93)]
         public FlowfinityConnectionHelper.FASR.StringValue TruckNumber {
             get {
                 return this.TruckNumberField;
@@ -21106,7 +21122,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=93)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=94)]
         public FlowfinityConnectionHelper.FASR.HomeInstallations_TypeofWorkRecord[] TypeofWork {
             get {
                 return this.TypeofWorkField;
@@ -21119,7 +21135,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=94)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=95)]
         public FlowfinityConnectionHelper.FASR.UserLookupRecord[] UserResponsible {
             get {
                 return this.UserResponsibleField;
@@ -21132,7 +21148,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=95)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=96)]
         public FlowfinityConnectionHelper.FASR.DecimalValue WindowCost {
             get {
                 return this.WindowCostField;
@@ -21145,7 +21161,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=96)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=97)]
         public FlowfinityConnectionHelper.FASR.HomeInstallations_WindowItemsRecord[] WindowItems {
             get {
                 return this.WindowItemsField;
@@ -21158,7 +21174,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=97)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=98)]
         public FlowfinityConnectionHelper.FASR.DateTimeValue WindowmakerUpdateDate {
             get {
                 return this.WindowmakerUpdateDateField;
@@ -21171,7 +21187,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=98)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=99)]
         public FlowfinityConnectionHelper.FASR.StringValue WindowManufacturingStatus {
             get {
                 return this.WindowManufacturingStatusField;
@@ -21184,7 +21200,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=99)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=100)]
         public FlowfinityConnectionHelper.FASR.LongValue Windows {
             get {
                 return this.WindowsField;
@@ -21197,7 +21213,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=100)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=101)]
         public FlowfinityConnectionHelper.FASR.StringValue WMLinkStatus {
             get {
                 return this.WMLinkStatusField;
@@ -21210,7 +21226,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=101)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=102)]
         public FlowfinityConnectionHelper.FASR.SingleSelection WoodDropOff {
             get {
                 return this.WoodDropOffField;
@@ -21223,7 +21239,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=102)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=103)]
         public FlowfinityConnectionHelper.FASR.DateTimeValue WoodDropOffDate {
             get {
                 return this.WoodDropOffDateField;
@@ -21236,7 +21252,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=103)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=104)]
         public FlowfinityConnectionHelper.FASR.StringValue WorkLeftMaterialsRequired {
             get {
                 return this.WorkLeftMaterialsRequiredField;
@@ -21249,7 +21265,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=104)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=105)]
         public FlowfinityConnectionHelper.FASR.DateTimeValue WorkOrderDate {
             get {
                 return this.WorkOrderDateField;
@@ -21262,7 +21278,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=105)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=106)]
         public FlowfinityConnectionHelper.FASR.HomeInstallations_WorkOrderNotesRecord[] WorkOrderNotes {
             get {
                 return this.WorkOrderNotesField;
@@ -21275,7 +21291,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=106)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=107)]
         public FlowfinityConnectionHelper.FASR.StringValue WorkOrderNumber {
             get {
                 return this.WorkOrderNumberField;
@@ -21288,7 +21304,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=107)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=108)]
         public FlowfinityConnectionHelper.FASR.StringValue WorkPhoneNumber {
             get {
                 return this.WorkPhoneNumberField;
@@ -21301,7 +21317,7 @@ namespace FlowfinityConnectionHelper.FASR {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(Order=108)]
+        [System.Runtime.Serialization.DataMemberAttribute(Order=109)]
         public FlowfinityConnectionHelper.FASR.SingleSelection Zone {
             get {
                 return this.ZoneField;
@@ -21621,6 +21637,99 @@ namespace FlowfinityConnectionHelper.FASR {
                 if ((object.ReferenceEquals(this.Notes5Field, value) != true)) {
                     this.Notes5Field = value;
                     this.RaisePropertyChanged("Notes5");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HomeInstallations_.GeneralNotesListRecord", Namespace="http://flowfinity.com/contract")]
+    [System.SerializableAttribute()]
+    public partial class HomeInstallations_GeneralNotesListRecord : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.UserLookupRecord[] CalledBy1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.SingleSelection Category_1Field;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.StringValue GeneralNotesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private FlowfinityConnectionHelper.FASR.DateTimeValue GerneralNotesDateField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.UserLookupRecord[] CalledBy1 {
+            get {
+                return this.CalledBy1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CalledBy1Field, value) != true)) {
+                    this.CalledBy1Field = value;
+                    this.RaisePropertyChanged("CalledBy1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.SingleSelection Category_1 {
+            get {
+                return this.Category_1Field;
+            }
+            set {
+                if ((object.ReferenceEquals(this.Category_1Field, value) != true)) {
+                    this.Category_1Field = value;
+                    this.RaisePropertyChanged("Category_1");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.StringValue GeneralNotes {
+            get {
+                return this.GeneralNotesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GeneralNotesField, value) != true)) {
+                    this.GeneralNotesField = value;
+                    this.RaisePropertyChanged("GeneralNotes");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public FlowfinityConnectionHelper.FASR.DateTimeValue GerneralNotesDate {
+            get {
+                return this.GerneralNotesDateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GerneralNotesDateField, value) != true)) {
+                    this.GerneralNotesDateField = value;
+                    this.RaisePropertyChanged("GerneralNotesDate");
                 }
             }
         }

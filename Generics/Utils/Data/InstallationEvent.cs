@@ -85,7 +85,8 @@ namespace Generics.Utils.Data
                     str =Convert.ToDateTime(WoodDropOffDate.Split(' ')[0]).ToString("MM/d/yyyy");
                 }
                 return str; }
-            set { } }
+            set { }
+        }
         //[DataMember]
         //public DateTime ReturnEventDate { get; set; }
         [DataMember]

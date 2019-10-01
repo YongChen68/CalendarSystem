@@ -6,11 +6,13 @@ var renderingComplete = false;
 var eventid;
 var eventWO = []; 
 var newWOArray = []; 
+var CalledLogArray = []; 
 var eventReturnedJobDate1;
 var eventDiff=[];
 var hasSubStrade;
 var JobStaffEvent;
-var updateStatus = 0;;
+var updateStatus = 0;
+var WO;
 
 var is_weekend = function (date1) {
     var dt = new Date(date1);
@@ -1352,7 +1354,7 @@ $(document).ready(function () {
                     $("#postalCode").html(event.PostCode);
                     $("#workOrder").html(event.WorkOrderNumber);
                     $("#WorkOrderTitle").html(event.WorkOrderNumber);
-                    
+                    WO = event.WorkOrderNumber;
                                   
                     $("#homePhone").html(event.HomePhoneNumber);
                     $("#workPhone").html(event.WorkPhoneNumber);
@@ -3200,6 +3202,208 @@ function GetInstallers(workOrder) {
 
 }
 
+
+//function UpdateCallLog() {
+   
+//    var id = eventid;
+
+//    var notes;
+//    var callDate,callTime;
+//    var calledMessage ;
+
+//    if (CalledLogArray.length == 0)  //new called log
+//    {
+//        notes = $("#comment").val();
+//        callDate = $("#calledLogDate").val();
+//        callTime = $("#CalledLogTime").val();
+//        calledMessage = $('#MessageOption').val();
+//        $.ajax({
+//            url: 'data.svc/UpdateCallLogData?id=' + id
+//                + '&callDate=' + callDate
+//                + '&callTime=' + callTime
+//                + '&calledMessage=' + calledMessage
+//                + '&Notes=' + notes,
+//            type: "POST",
+//            success: function (data) {
+//                if (debug) console.log("events.success", "data.UpdateInstallationLog:");
+
+//                //  GetCalledLog(WO);
+
+//            }, error: function (error) {
+//                console.log('Error', error);
+//                $('#script-warning').show();
+//            }
+//        });
+//    }
+//    else {
+//        for (var i = 0; i < CalledLogArray.length; i++) {
+//            notes = CalledLogArray[i].Notes3;
+//            callDate = CalledLogArray[i].DateCalled;
+//            calledMessage = CalledLogArray[i].CalledMessage;
+//            $.ajax({
+//                url: 'data.svc/CreateCallLogData?id=' + id
+//                    + '&callDate=' + callDate
+//                    + '&calledMessage=' + calledMessage
+//                    + '&Notes=' + notes,
+//                type: "POST",
+//                success: function (data) {
+//                    if (debug) console.log("events.success", "data.CreateCallLogData:");
+
+//                    //  GetCalledLog(WO);
+
+//                }, error: function (error) {
+//                    console.log('Error', error);
+//                    $('#script-warning').show();
+//                }
+//            });
+//        }
+//    }
+
+
+
+
+//}
+
+//function AddKeepedCalledLog() {
+//    var id = eventid;
+//    if (CalledLogArray.length == 0)  //new called log
+//    {
+//        UpdateCallLog();
+//    }
+//    else {
+//        for (var i = 0; i < CalledLogArray.length; i++) {
+//            var notes = $("#comment").val();
+//            var callDate = $("#calledLogDate").val();
+//            var calledMessage = $('#MessageOption').val();
+//            $.ajax({
+//                url: 'data.svc/CreateCallLogData?id=' + id
+//                    + '&callDate=' + callDate
+//                    + '&calledMessage=' + calledMessage
+//                    + '&Notes=' + notes,
+//                type: "POST",
+//                success: function (data) {
+//                    if (debug) console.log("events.success", "data.CreateCallLogData:");
+
+//                    //  GetCalledLog(WO);
+
+//                }, error: function (error) {
+//                    console.log('Error', error);
+//                    $('#script-warning').show();
+//                }
+//            });
+//        }
+
+       
+//    }
+
+//}
+
+function UpdateInstallationCallLog() {
+    var recordid = $("#callLogRecordID").val();
+    var notes;
+    var callDate, callTime;
+    var calledMessage;
+
+    var id = eventid;
+
+    notes = $("#comment").val();
+    callDate = $("#calledLogDate").val();
+    callTime = $("#CalledLogTime").val();
+    calledMessage = $('#MessageOption').val();
+
+    $.ajax({
+        url: 'data.svc/UpdateCallLogData?id=' + id
+            + '&WO=' + WO 
+            + '&recordid=' + recordid
+            + '&callDate=' + callDate
+            + '&callTime=' + callTime
+            + '&calledMessage=' + calledMessage
+            + '&Notes=' + notes,
+        type: "POST",
+        success: function (data) {
+            if (debug) console.log("events.success", "data.UpdateInstallationLog:");
+            $("#comment").val('');
+            $("#calledLogDate").val('');
+            $("#CalledLogTime").val('');
+            $('#MessageOption').val('');
+            GetCalledLog(WO);
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+}
+
+function CallLogEdit(recordid) {
+    $.ajax({
+        url: 'data.svc/GetCallLogByID?recordId=' + recordid,
+        
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetCallLogByID:");
+            if (data.GetCallLogByIDResult.length > 0) {
+                $("#comment").val(data.GetCallLogByIDResult[0].Notes3);
+                $("#callLogRecordID").val(recordid);
+                
+                //$("#CalledLogWO").val();
+                
+             //   $("#calledLogDate").val(new Date(GetDatefromMoment(data.GetCallLogByIDResult[0].DateCalled)).toLocaleDateString('en-US'));
+
+                $("#calledLogDate").val(data.GetCallLogByIDResult[0].CalledLogDate);
+                $("#CalledLogTime").val(data.GetCallLogByIDResult[0].StrCalledLogTime);
+
+                $('#MessageOption').val(data.GetCallLogByIDResult[0].CalledMessage).attr().add('selected');
+      
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+}
+
+function CallLogDelete(recordid) {
+  
+    var notes = "";
+    var callDate = "";
+    var callTime ="";
+    var calledMessage = "";
+
+    var id = eventid;
+
+    var result = confirm("After click 'OK' button, this log info will be deleted.");
+    if (result) {
+     
+          $.ajax({
+        url: 'data.svc/UpdateCallLogData?id=' + id
+            + '&WO=' + WO
+            + '&recordid=' + recordid
+            + '&callDate=' + callDate
+            + '&callTime=' + callTime
+            + '&calledMessage=' + calledMessage
+            + '&Notes=' + notes,
+        type: "POST",
+        success: function (data) {
+            if (debug) console.log("events.success", "data.UpdateInstallationLog:");
+               GetCalledLog(WO);
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+    }
+
+    //notes = $("#comment").val();
+    //callDate = $("#calledLogDate").val();
+    //callTime = $("#CalledLogTime").val();
+    //calledMessage = $('#MessageOption').val();
+
+
+}
+
+
 function GetCalledLog(workOrder) {
     $("#dataTableCalledLog tr").remove(); 
     $.ajax({
@@ -3216,16 +3420,20 @@ function GetCalledLog(workOrder) {
                 //$("#CalledMessage").html(data.GetCalledLogResult[0].CalledMessage);
                 //$("#CalledLogNotes").html(data.GetCalledLogResult[0].Notes3);
 
-                $("#dataTableCalledLog").append("<tr>  <th style = 'text-align:center;' > Date Called</th ><th style='text-align:center;'> Called Message</th > <th style = 'text-align:center;' > Notes</th >");
+                $("#dataTableCalledLog").append("<tr>  <th style = 'text-align:center;' > Date Called</th ><th style='text-align:center;'> Called Message</th > <th style = 'text-align:center;' > Notes</th ><th style = 'text-align:center;' > </th >");
               
                 for (var i = 0; i < data.GetCalledLogResult.length; i++) {
                     $("#dataTableCalledLog").append("<tr><td>" +
                         new Date(GetDatefromMoment(data.GetCalledLogResult[i].DateCalled)).toLocaleDateString('en-US') + "</td> <td>" +
                         data.GetCalledLogResult[i].CalledMessage + "</td> <td>" +
-                     
-                        data.GetCalledLogResult[i].Notes3 + "</td></tr>");
-                }
+                        data.GetCalledLogResult[i].Notes3 + "</td> <td>" +
+                        "<a href='#'" + " onclick=\"CallLogEdit(" + data.GetCalledLogResult[i].DetailRecordId + ")\"> Edit  </a >" +
+                        " &nbsp;&nbsp;&nbsp;&nbsp;<a href='#'" + " onclick=\"CallLogDelete(" + data.GetCalledLogResult[i].DetailRecordId + ")\"> Delete </a >" +  "</td ></tr > ");
+                        //a href='#'" + onclick > google </a > " + "</td ></tr > ");
 
+                       //"add" + "</td></tr>");
+                }
+                  //" <div>" + " onclick=\"ShowWOBigPicture(" + data.GetWOPictureResult[i].DetailRecordId + ")\">" +
               //  $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
                 //$("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
 
