@@ -802,16 +802,17 @@
                                     <div style="overflow: auto;">
                                         <table id="dataTableCalledLog" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
-                                    <div id="CalledLogWin" style="text-align:left;" >
+                                    <div id="CalledLogWin"  style="width: 800px; text-align:left;">
                                         <div class="form-group">
-                                           <span>
-                                             <label for="comment">Dated Called :</label>
-                                                <input id="calledLogDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Date">
-                                               <input type="time" id="CalledLogTime" name="appt">
-                                           </span> 
-                                           
-                                            
+                                            <label for="calledDate">Called Date :</label>
+                                        <input id="calledLogDate" style="text-align: center;" data-toggle="tooltip" title="Date">
+
+                                         <label for="Time">Time :</label>
+                                         <input type="time" id="CalledLogTime" name="appt"  >
+
+                                             
                                         </div>
+                              
                                         <div class="form-group">
                                             <label for="comment">Called Message :</label>
                                              <select id="MessageOption" name="MessageOption">
@@ -819,6 +820,7 @@
                                               <option value="No Answering Machine">No Answering Machine</option>
                                               <option value="Spoke With Customer">Spoke With Customer</option>
                                             </select>
+                                             
                                         </div>
                                         <div class="form-group">
                                               <label for="comment">Notes:</label>
@@ -845,12 +847,12 @@
                                     </div>
                                     <div id="NotesWin" style="text-align:left;" >
                                         <div class="form-group">
-                                           <span>
-                                             <label for="comment">General Notes Dated:</label>
-                                                <input id="notesDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Date">
-                                               <input type="time" id="notesTime" name="appt">
-                                           </span> 
-                                           
+                                          
+                                           <label for="comment">General Notes Date :</label>
+                                             <input id="notesDate" style="width: 160px; text-align: center;"  data-toggle="tooltip" title="Date">
+
+                                            <label for="Time">Time :</label>
+                                             <input type="time" id="notesTime" name="appt">
                                             
                                         </div>
                                         <div class="form-group">
@@ -1464,10 +1466,7 @@
         
         </div>
     </form>
-    $(document).on('click', '[data-toggle="lightbox"]', function(event) {
-                event.preventDefault();
-                $(this).ekkoLightbox();
-            });
+
 </body>
 </html>
 
