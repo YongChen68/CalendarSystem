@@ -483,5 +483,22 @@ and  CurrentStateName in ('Ready for ReMeasure', 'Rejected Remeasure')
         {
             throw new NotImplementedException();
         }
+
+   
+
+        List<Notes> IGetter.GetNotes()
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Notes> IGetter.GetKeepedNotes(string recordid)
+        {
+            throw new NotImplementedException();
+        }
+
+        List<Notes> IGetter.GetNotesByID(int recordId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

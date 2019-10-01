@@ -143,6 +143,16 @@ namespace FlowfinityConnectionHelper
 
             return record;
         }
+
+
+        private static FASR.HomeInstallationsRecord GetNotesRecord(Generics.Utils.ContentType type, List<Generics.Utils.Notes> data)
+        {
+            FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
+            record.GeneralNotesList = PrepareInstallationNotesList(data);
+
+            return record;
+        }
+
         private static FASR.HomeInstallationsRecord GetRecordForStateChanges(Generics.Utils.ContentType type, Generics.Utils.ImproperInstallationEvent data)
         {
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
@@ -277,7 +287,22 @@ namespace FlowfinityConnectionHelper
             }
             return returnStr;
         }
-            
+
+        private static string PrepareTransactionId(Generics.Utils.Notes data)
+        {
+            string returnStr = string.Empty;
+            if (data is null)
+            {
+                returnStr = string.Format("{0} {1} {2}", "update", "", DateTime.Now.Ticks.ToString());
+            }
+            else
+            {
+                returnStr = string.Format("{0} {1} {2}", "update", data.DetailRecordId, DateTime.Now.Ticks.ToString());
+            }
+            return returnStr;
+        }
+
+
 
         private static string PrepareTransactionId(Generics.Utils.InstallationDataEvent data)
         {
@@ -356,6 +381,37 @@ namespace FlowfinityConnectionHelper
           
          
         }
+
+        private static FASR.HomeInstallations_GeneralNotesListRecord[] PrepareInstallationNotesList(List<Generics.Utils.Notes> data)
+        {
+            List<FASR.HomeInstallations_GeneralNotesListRecord> returnValue = new List<FASR.HomeInstallations_GeneralNotesListRecord>();
+            DateTime notesDate;
+            if (data == null)
+            {
+                return null;
+            }
+            else
+            {
+                foreach (Generics.Utils.Notes c in data)
+                {
+                    notesDate = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(c.NotesDate).ToString("yyyy-MM-ddTHH:mm:00.000Z"));
+                    returnValue.Add(new FASR.HomeInstallations_GeneralNotesListRecord()
+                    {
+                        Category_1 = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>(c.Category),
+                        GeneralNotes = Lift.II.IIUtils.CreateStringValue<StringValue>(c.GeneralNotes),
+                        GerneralNotesDate = Lift.II.IIUtils.CreateDateTimeValue<DateTimeValue>(notesDate),
+
+                    });
+                }
+                return returnValue.ToArray();
+            }
+
+
+
+
+
+        }
+
 
         //private static FASR.HomeInstallationsRecord PrepareRemeasureDateList(Generics.Utils.ImproperRemeasureEvent data)
         //{
@@ -573,6 +629,35 @@ namespace FlowfinityConnectionHelper
             }
            
            return returnValue;
+        }
+
+        bool IUpdateHelper.UpdateRecord(ContentType type, List<Notes> data)
+        {
+            bool returnValue = true;
+
+            if (data.Count > 0)
+            {
+                FASR.HomeInstallations_EditSold_Call call = new FASR.HomeInstallations_EditSold_Call()
+                {
+                    OnBehalfOf = Owner,
+                    RecordID = data[0].id,
+                    Record = GetNotesRecord(type, data)
+                };
+                returnValue = _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data[0])).ReturnValue;
+            }
+            else
+            {
+                Notes data1 = null;
+                FASR.HomeInstallations_EditSold_Call call = new FASR.HomeInstallations_EditSold_Call()
+                {
+                    OnBehalfOf = Owner,
+                    RecordID = "",
+                    Record = GetNotesRecord(type, null)
+                };
+                returnValue = _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data1)).ReturnValue;
+            }
+
+            return returnValue;
         }
     }
 }

@@ -61,6 +61,11 @@ namespace CalendarSystem
         bool UpdateCallLogData(string id, string WO, string recordid, string callDate, string callTime, string calledMessage, string Notes);
 
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "UpdateNotesData?id={id}&WO={WO}&recordid={recordid}&notesDate={notesDate}&notesTime={notesTime}&category={category}&Notes={Notes}")]
+        bool UpdateNotesData(string id, string WO, string recordid, string notesDate, string notesTime, string category, string Notes);
+
+
+        [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "UpdateInstallationSchedule?id={id}&scheduledStartDate={scheduledStartDate}&scheduledEndDate={scheduledEndDate}")]
         bool UpdateInstallationSchedule(string id, string scheduledStartDate, string scheduledEndDate);
 
@@ -154,13 +159,12 @@ namespace CalendarSystem
     BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<CalledLog> GetCalledLog(string workOrderNumber);
 
-//        [OperationContract]
-//        [WebInvoke(Method = "GET",
-//UriTemplate = "GetKeepedCalledLog?workOrderNumber={workOrderNumber}&recordID={recordID}",
-//ResponseFormat = WebMessageFormat.Json,
-//BodyStyle = WebMessageBodyStyle.WrappedResponse)]
-//        List<CalledLog> GetKeepedCalledLog(string workOrderNumber,int recordID);
-
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetNotes?workOrderNumber={workOrderNumber}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<Notes> GetNotes(string workOrderNumber);
 
         [OperationContract]
         [WebInvoke(Method = "GET",
@@ -197,6 +201,12 @@ ResponseFormat = WebMessageFormat.Json,
 BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<CalledLog> GetCallLogByID(int recordid);
 
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetNotesByID?recordid={recordid}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<Notes> GetNotesByID(int recordid);
 
 
         [OperationContract]

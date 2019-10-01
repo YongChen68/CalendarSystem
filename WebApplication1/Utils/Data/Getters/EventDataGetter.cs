@@ -1668,15 +1668,7 @@ where WorkOrderNumber = '{0}' ", this.workOrderNumber);
             return SQL;
         }
 
-        public List<CalledLog> GetCalledLog()
-        {
-            string SQL = GetCalledLogSQL();
 
-            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
-            pars.Add(new System.Data.SqlClient.SqlParameter("WorkOrderNumber", this.workOrderNumber));
-            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
-            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.CalledLog>(SQL, pars.ToArray());
-        }
 
 
         private string GetSubTradesSQL()
@@ -1750,7 +1742,15 @@ where DetailRecordId = '{0}' ", recordId);
             return SQL;
         }
 
+        public List<CalledLog> GetCalledLog()
+        {
+            string SQL = GetCalledLogSQL();
 
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("WorkOrderNumber", this.workOrderNumber));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.CalledLog>(SQL, pars.ToArray());
+        }
         public List<CalledLog> GetKeepedCalledLog(string recordId)
         {
             string SQL = GetCalledLogSQL();
@@ -1777,6 +1777,33 @@ where DetailRecordId = '{0}' ", recordId);
         }
 
 
+
+        public List<Notes> GetNotes()
+        {
+            string SQL = GetNotesSQL();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("WorkOrderNumber", this.workOrderNumber));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.Notes>(SQL, pars.ToArray());
+        }
+
+        private string GetNotesSQL()
+        {
+            string SQL = string.Format(@"select i.[WorkOrderNumber]
+      ,g.[GerneralNotesDate] as NotesDate
+      ,g.[Category_1] as Category
+      ,g.[GeneralNotes]
+      ,g.[ParentRecordId]
+      ,g.[DetailRecordId]
+	  ,ActionItemId as id
+
+  FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_GeneralNotesList] as g INNER JOIN
+          [flowserv_flowfinityapps].[dbo].[HomeInstallations] as i on g.ParentRecordId = i.RecordId
+where i.WorkOrderNumber = '{0}' ", this.workOrderNumber);
+            return SQL;
+        }
+
         //public List<CalledLog> GetKeepedCalledLog(int recordid)
         //{
         //    string SQL = GetCallLogByIDSQL(recordid);
@@ -1786,6 +1813,45 @@ where DetailRecordId = '{0}' ", recordId);
         //    Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
         //    return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.CalledLog>(SQL, pars.ToArray());
         //}
+
+        public List<Notes> GetNotesByID(int recordId)
+        {
+            string SQL = GetNotesByIDSQL(recordId);
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("DetailRecordId", recordId));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.Notes>(SQL, pars.ToArray());
+        }
+
+        private string GetNotesByIDSQL(int recordId)
+        {
+            string SQL = string.Format(@" select i.[WorkOrderNumber]
+      ,g.[GerneralNotesDate]  as NotesDate
+      ,g.[Category_1] as Category
+      ,g.[GeneralNotes]
+      ,g.[ParentRecordId]
+      ,g.[DetailRecordId]
+	  ,ActionItemId as id
+
+  FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_GeneralNotesList] as g INNER JOIN
+          [flowserv_flowfinityapps].[dbo].[HomeInstallations] as i on g.ParentRecordId = i.RecordId
+where DetailRecordId = '{0}' ", recordId);
+            return SQL;
+        }
+
+        public List<Notes> GetKeepedNotes(string recordId)
+        {
+            string SQL = GetNotesSQL();
+
+            List<Notes> returnList = new List<Notes>();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("WorkOrderNumber", this.workOrderNumber));
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<Notes>(SQL, pars.ToArray()).Where(b => b.DetailRecordId != recordId).ToList();
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return returnList;
+        }
 
 
         public List<WOPicture> GetWOBigPicture(int recordId)

@@ -541,6 +541,47 @@ namespace CalendarSystem
             return retValue;
         }
 
+        public bool UpdateNotesData(
+               string id
+             , string WO
+              , string recordID
+               , string notesDate
+               , string notesTime
+               , string category
+               , string Notes
+           )
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateNotesData('{0}')", id);
+            Notes eventData = null;
+            bool retValue = false;
+            try
+            {
+                List<Notes> keepedNotes = GetKeepedNotes(id, WO, recordID);
+                List<Notes> notesList = new List<Notes>();
+                notesList = keepedNotes.ToList();
+                eventData = new Notes();
+                eventData.id = id;
+                eventData.GeneralNotes = Notes;
+                eventData.Category = category;
+                //  eventData.DateCalled = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(callDate).ToString("yyyy-MM-ddTHH:mm:00.000Z")); ;
+                if (notesDate.Length != 0)
+                {
+                    eventData.NotesDate= Convert.ToDateTime(notesDate + " " + notesTime).ToString();
+                    notesList.Add(eventData);
+                }
+                RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
+                retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), notesList);
+
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateNotesData id= {0}", id);
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+
 
         List<Product> Idata.GetProducts(string workOrderNumber)
         {
@@ -647,6 +688,24 @@ namespace CalendarSystem
             return retValue;
         }
 
+        List<Notes> Idata.GetNotes(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetNotes({0})", workOrderNumber);
+            List<Notes> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetNotes();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetNotes() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+
         List<CalledLog> Idata.GetCalledLog(string workOrderNumber)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetCalledLog({0})", workOrderNumber);
@@ -680,6 +739,24 @@ namespace CalendarSystem
             }
             return retValue;
         }
+
+        List<Notes> GetKeepedNotes(string id, string workOrderNumber, string recordID)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetKeepedNotes({0})", workOrderNumber);
+            List<Notes> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetKeepedNotes(recordID);
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetKeepedNotes() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
 
         List<WindowsCustomer> Idata.GetWindowsCustomer(string workOrderNumber)
         {
@@ -758,6 +835,23 @@ namespace CalendarSystem
                 Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(recordid);
                 retValue = getter.GetCallLogByID(recordid);
                 Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetCallLogByID() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+        List<Notes> Idata.GetNotesByID(int recordid)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetNotesByID({0})", recordid);
+            List<Notes> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(recordid);
+                retValue = getter.GetNotesByID(recordid);
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetNotesByID() = {0}", retValue.Count.ToString());
             }
             catch (Exception ex)
             {

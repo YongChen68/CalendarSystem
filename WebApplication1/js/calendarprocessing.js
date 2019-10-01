@@ -630,6 +630,7 @@ function NewWOPopup(id) {
     GetManufacturingProducts(newWOArray[index].WorkOrderNumber);
     GetInstallers(newWOArray[index].WorkOrderNumber);
     GetCalledLog(newWOArray[index].WorkOrderNumber);
+    GetNotes(newWOArray[index].WorkOrderNumber);
     GetWOPicture(newWOArray[index].WorkOrderNumber);
     GetSubTrades(newWOArray[index].WorkOrderNumber);
     // GetJobAnalysys(newWOArray[index].WorkOrderNumber);
@@ -1552,6 +1553,7 @@ $(document).ready(function () {
                     GetManufacturingProducts(event.WorkOrderNumber);
                     GetInstallers(event.WorkOrderNumber);
                     GetCalledLog(event.WorkOrderNumber);
+                    GetNotes(event.WorkOrderNumber);
                     GetWOPicture(event.WorkOrderNumber);
                     GetSubTrades(event.WorkOrderNumber);
                    // GetJobAnalysys(event.WorkOrderNumber);
@@ -3335,6 +3337,43 @@ function UpdateInstallationCallLog() {
     });
 }
 
+function UpdateInstallationNotes() {
+    var recordid = $("#notesRecordID").val();
+    var notes;
+    var notesDate, notesTime;
+    var category;
+
+    var id = eventid;
+
+    notes = $("#notes").val();
+    notesDate = $("#notesDate").val();
+    notesTime = $("#notesTime").val();
+    category = $('#CategoryOption').val();
+
+    $.ajax({
+        url: 'data.svc/UpdateNotesData?id=' + id
+            + '&WO=' + WO
+            + '&recordid=' + recordid
+            + '&notesDate=' + notesDate
+            + '&notesTime=' + notesTime
+            + '&category=' + category
+            + '&Notes=' + notes,
+        type: "POST",
+        success: function (data) {
+            if (debug) console.log("events.success", "data.UpdateNotesData:");
+            $("#notes").val('');
+            $("#notesDate").val('');
+            $("#notesTime").val('');
+            $('#CategoryOption').val('');
+            GetNotes(WO);
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+}
+
 function CallLogEdit(recordid) {
     $.ajax({
         url: 'data.svc/GetCallLogByID?recordId=' + recordid,
@@ -3343,17 +3382,38 @@ function CallLogEdit(recordid) {
             if (debug) console.log("events.success", "data.GetCallLogByID:");
             if (data.GetCallLogByIDResult.length > 0) {
                 $("#comment").val(data.GetCallLogByIDResult[0].Notes3);
+                $("#calledLogDate").val(data.GetCallLogByIDResult[0].CalledLogDate);
+                $("#CalledLogTime").val(data.GetCallLogByIDResult[0].StrCalledLogTime);
                 $("#callLogRecordID").val(recordid);
                 
                 //$("#CalledLogWO").val();
                 
              //   $("#calledLogDate").val(new Date(GetDatefromMoment(data.GetCallLogByIDResult[0].DateCalled)).toLocaleDateString('en-US'));
 
-                $("#calledLogDate").val(data.GetCallLogByIDResult[0].CalledLogDate);
-                $("#CalledLogTime").val(data.GetCallLogByIDResult[0].StrCalledLogTime);
+         
 
-                $('#MessageOption').val(data.GetCallLogByIDResult[0].CalledMessage).attr().add('selected');
-      
+                var linkID;
+                linkID = "#aCalledLog" + recordid;
+
+                //  if  $(linkID).text('Cancel Editing');
+                if ($(linkID).text().trim() == "Edit") {
+                    $(linkID).text('Cancel Editing');
+                    //disable date time
+                    $("#calledLogDate").prop('disabled', true);
+                    $("#CalledLogTime").prop('disabled', true);
+                    $('#MessageOption').val(data.GetCallLogByIDResult[0].CalledMessage).attr().add('selected');
+             
+                }
+                else {
+                    $(linkID).text('Edit');
+                    //disable date time
+                    $("#calledLogDate").prop('disabled', false);
+                    $("#CalledLogTime").prop('disabled', false);
+                    $("#comment").val('');
+                    $("#calledLogDate").val('');
+                    $("#CalledLogTime").val('');
+                    $('#MessageOption').val('');
+                }
             }
 
         }, error: function (error) {
@@ -3403,9 +3463,166 @@ function CallLogDelete(recordid) {
 
 }
 
+function NotesEdit(recordid) {
+
+    $.ajax({
+        url: 'data.svc/GetNotesByID?recordId=' + recordid,
+
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetNotesByID:");
+            if (data.GetNotesByIDResult.length > 0) {
+                $("#notes").val(data.GetNotesByIDResult[0].GeneralNotes);
+                $("#notesDate").val(data.GetNotesByIDResult[0].StrNotesDate);
+                $("#notesTime").val(data.GetNotesByIDResult[0].StrNotesTime);
+                $("#notesRecordID").val(recordid);
+                var linkID;
+                linkID = "#aNotes" + recordid;
+
+                if ($(linkID).text().trim() == "Edit") {
+                    $(linkID).text('Cancel Editing');
+                    //disable date time
+                    $("#notesDate").prop('disabled', true);
+                    $("#notesTime").prop('disabled', true);
+                 
+                    $('#CategoryOption').val(data.GetNotesByIDResult[0].Category).attr().add('selected');
+                }
+                else {
+                    $(linkID).text('Edit');
+                    //disable date time
+                    $("#notesDate").prop('disabled', false);
+                    $("#notesTime").prop('disabled', false);
+                    $("#notesDate").val('');
+                    $("#notesTime").val('');
+                    $('#CategoryOption').val('');
+                    $("#notes").val('');
+                }
+
+
+              //  if  $(linkID).text('Cancel Editing');
+                
+                //$("#CalledLogWO").val();
+
+                //   $("#calledLogDate").val(new Date(GetDatefromMoment(data.GetCallLogByIDResult[0].DateCalled)).toLocaleDateString('en-US'));
+
+          
+        
+
+             
+
+                //if ($(linkID).text().trim() == "Edit") {
+                //    $(linkID).text('Cancel Editing');
+                //    //disable date time
+                //    $("#notesDate").prop('disabled', true);
+                //    $("#notesTime").prop('disabled', true);
+                //}
+                //else {
+                //    $(linkID).text('Edit');
+                //    //disable date time
+                //    $("#notesDate").prop('disabled', false);
+                //    $("#notesTime").prop('disabled', false);
+                //    //$("#notesDate").val('');
+                //    //$("#notesTime").val('');
+                //    //$('#CategoryOption').val('');
+                //    //$("#notes").val('');
+                //}
+
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+}
+
+function NotesDelete(recordid) {
+
+    var notes = "";
+    var notesDate = "";
+    var notesTime = "";
+    var category = "";
+
+    var id = eventid;
+
+    var result = confirm("After click 'OK' button, this note info will be deleted.");
+    if (result) {
+
+        $.ajax({
+            url: 'data.svc/UpdateNotesData?id=' + id
+                + '&WO=' + WO
+                + '&recordid=' + recordid
+                + '&notesDate=' + notesDate
+                + '&notesTime=' + notesTime
+                + '&category=' + category
+                + '&Notes=' + notes,
+            type: "POST",
+            success: function (data) {
+                if (debug) console.log("events.success", "data.UpdateNotesData:");
+                GetNotes(WO);
+
+            }, error: function (error) {
+                console.log('Error', error);
+                $('#script-warning').show();
+            }
+        });
+    }
+
+
+}
+
+function GetNotes(workOrder) {
+    $("#dataTableNotes tr").remove();
+    //enable date time
+    $("#notesDate").prop('disabled', false);
+    $("#notesTime").prop('disabled', false);
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetNotes?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetNotes:");
+
+
+            if (data.GetNotesResult.length > 0) {
+
+                //$("#DateCalled").html(new Date(GetDatefromMoment(data.GetCalledLogResult[0].DateCalled)).toLocaleDateString('en-US'));
+                //$("#CalledMessage").html(data.GetCalledLogResult[0].CalledMessage);
+                //$("#CalledLogNotes").html(data.GetCalledLogResult[0].Notes3);
+
+                $("#dataTableNotes").append("<tr>  <th style = 'text-align:center;' > Date</th ><th style='text-align:center;'> Category</th > <th style = 'text-align:center;' > Notes</th ><th style = 'text-align:center;' > </th >");
+
+                for (var i = 0; i < data.GetNotesResult.length; i++) {
+                    $("#dataTableNotes").append("<tr><td>" +
+                        new Date(GetDatefromMoment(data.GetNotesResult[i].NotesDate)).toLocaleString('en-US') + "</td> <td>" +
+                        data.GetNotesResult[i].Category + "</td> <td>" +
+                        data.GetNotesResult[i].GeneralNotes + "</td> <td>" +
+                        "<a href='#'" + " id='aNotes" + data.GetNotesResult[i].DetailRecordId +  "' onclick=\"NotesEdit(" + data.GetNotesResult[i].DetailRecordId + ")\"> Edit  </a >" +
+                        " &nbsp;&nbsp;&nbsp;&nbsp;<a href='#'" + " onclick=\"NotesDelete(" + data.GetNotesResult[i].DetailRecordId + ")\"> Delete </a >" + "</td ></tr > ");
+                    //a href='#'" + onclick > google </a > " + "</td ></tr > ");
+
+                    //"add" + "</td></tr>");
+                }
+                //" <div>" + " onclick=\"ShowWOBigPicture(" + data.GetWOPictureResult[i].DetailRecordId + ")\">" +
+                //  $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
+                //$("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
+
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
+
+
 
 function GetCalledLog(workOrder) {
     $("#dataTableCalledLog tr").remove(); 
+    //enable date time
+    $("#calledLogDate").prop('disabled', false);
+    $("#CalledLogTime").prop('disabled', false);
     $.ajax({
         //type: "POST",  
         url: 'data.svc/GetCalledLog?workOrderNumber=' + workOrder,
@@ -3424,10 +3641,11 @@ function GetCalledLog(workOrder) {
               
                 for (var i = 0; i < data.GetCalledLogResult.length; i++) {
                     $("#dataTableCalledLog").append("<tr><td>" +
-                        new Date(GetDatefromMoment(data.GetCalledLogResult[i].DateCalled)).toLocaleDateString('en-US') + "</td> <td>" +
+                        new Date(GetDatefromMoment(data.GetCalledLogResult[i].DateCalled)).toLocaleString('en-US') + "</td> <td>" +
                         data.GetCalledLogResult[i].CalledMessage + "</td> <td>" +
                         data.GetCalledLogResult[i].Notes3 + "</td> <td>" +
-                        "<a href='#'" + " onclick=\"CallLogEdit(" + data.GetCalledLogResult[i].DetailRecordId + ")\"> Edit  </a >" +
+                        "<a href='#'" + " id='aCalledLog" + data.GetCalledLogResult[i].DetailRecordId + "' onclick=\"CallLogEdit(" + data.GetCalledLogResult[i].DetailRecordId + ")\"> Edit  </a >" +
+                        // "<a href='#'" + " id='a" + data.GetNotesResult[i].DetailRecordId +  "' onclick=\"NotesEdit(" + data.GetNotesResult[i].DetailRecordId + ")\"> Edit  </a >" +
                         " &nbsp;&nbsp;&nbsp;&nbsp;<a href='#'" + " onclick=\"CallLogDelete(" + data.GetCalledLogResult[i].DetailRecordId + ")\"> Delete </a >" +  "</td ></tr > ");
                         //a href='#'" + onclick > google </a > " + "</td ></tr > ");
 

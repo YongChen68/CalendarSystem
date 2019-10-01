@@ -90,6 +90,11 @@
                 dateFormat: "m/d/yy"
 
             });
+
+            $('#notesDate').datepicker({
+                dateFormat: "m/d/yy"
+
+            });
             $('#from_date').datepicker({
                 dateFormat: "m/d/yy"
 
@@ -482,8 +487,8 @@
 
                                 </li>
 
-                                    <li role="presentation">
-                                    <a href="#CalledLogTab" aria-controls="NotesTab" role="tab" data-toggle="tab">Notes</a>
+                                <li role="presentation">
+                                    <a href="#NotesTab" aria-controls="NotesTab" role="tab" data-toggle="tab">Notes</a>
 
                                 </li>
                                  <li role="presentation">
@@ -832,6 +837,49 @@
 
                                 </div>
 
+                                     <div role="tabpanel" class="tab-pane " id="NotesTab">
+                                     <br/>
+                                    
+                                    <div style="overflow: auto;">
+                                        <table id="dataTableNotes" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                    </div>
+                                    <div id="NotesWin" style="text-align:left;" >
+                                        <div class="form-group">
+                                           <span>
+                                             <label for="comment">General Notes Dated:</label>
+                                                <input id="notesDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Date">
+                                               <input type="time" id="notesTime" name="appt">
+                                           </span> 
+                                           
+                                            
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="comment">Category :</label>
+                                             <select id="CategoryOption" name="CategoryOption">
+                                              <option value="General">General</option>
+                                              <option value="Installation">Installation</option>
+                                              <option value="High Risk">High Risk</option>
+                                              <option value="Re-Measure">Re-Measure</option>
+                                              <option value="Admin">Admin</option>
+                                              <option value="Customer">Customer</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                              <label for="comment">Notes:</label>
+                                            <textarea class="form-control" rows="5" id="notes"></textarea>
+  
+                                        </div>
+                                        
+                                          <div class="form-group" style="display:none;">
+                                           
+                                            <textarea class="form-control" rows="5" id="notesRecordID"></textarea>
+  
+                                        </div>
+                                        
+                                         <input type="button" name="btnSaveNotes" id="btnSaveNotes" class="btn btn-success" value="Save" onclick="UpdateInstallationNotes()">
+                                    </div>
+
+                                </div>
                                 <div role="tabpanel" class="tab-pane " id="WOPictureTab">
                                      <br/>
                                      <div > <span id="noPhoto" style=" text-align:left; display:none;">No photo attached to this job.</span>

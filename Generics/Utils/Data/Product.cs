@@ -110,6 +110,70 @@ namespace Generics.Utils
     }
 
 
+    public class Notes
+    {
+        [DataMember]
+        public String NotesDate
+        {
+            get; set;
+        }
+
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        //   public string start { get { return FormatDateTime(ScheduledDate); } set { } }
+        public string StrNotesDate
+        {
+            get
+            {
+                string str = string.Empty;
+                if ((NotesDate != null) && (NotesDate.ToString().Length > 0))
+                {
+                    //   str = FormatDateTime(Convert.ToDateTime(WoodDropOffDate.Split(' ')[0]));
+                    str = Convert.ToDateTime(NotesDate.ToString().Split(' ')[0]).ToString("MM/d/yyyy");
+                }
+                return str;
+            }
+            set { }
+        }
+
+
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public string StrNotesTime
+        {
+            get
+            {
+                string str = string.Empty;
+                if ((NotesDate != null) && (NotesDate.ToString().Length > 0))
+                {
+                    str = Convert.ToDateTime(NotesDate).ToString("M/dd/yyyy HH:mm:ss").Split(' ')[1];
+                }
+                return str;
+            }
+            set { }
+        }
+
+        [DataMember]
+        public string DetailRecordId { get; set; }
+
+        [DataMember]
+        public string ParentRecordId { get; set; }
+
+        [DataMember]
+        public string Category { get; set; }
+
+
+        [DataMember]
+        public string GeneralNotes { get; set; }
+
+        [DataMember]
+        public string id { get; set; }
+
+        [DataMember]
+        public string WorkOrderNumber { get; set; }
+
+
+    }
     public class WindowsCustomer
     {
         [DataMember]
