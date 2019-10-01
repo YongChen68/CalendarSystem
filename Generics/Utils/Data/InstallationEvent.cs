@@ -153,6 +153,9 @@ namespace Generics.Utils.Data
         public decimal SalesAmmount { get; set; }
 
         [DataMember]
+        public decimal HazardousBudgetedLBR { get; set; }
+
+        [DataMember]
         public decimal TotalSalesAmount { get; set; }
 
         [DataMember]

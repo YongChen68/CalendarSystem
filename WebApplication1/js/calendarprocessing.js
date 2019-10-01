@@ -276,7 +276,7 @@ function GetBlankDayData(day) {
             day: dayName, date: installationDay, doors: 0, windows: 0, ExtDoors:0,
             SalesAmmount: 0, TotalAsbestos: 0, TotalWoodDropOff: 0, TotalHighRisk: 0, TotalLeadPaint: 0, WOCount: 0, installationwindowLBRMIN: 0, TotalInstallationLBRMin: 0, InstallationDoorLBRMin: 0,
             InstallationPatioDoorLBRMin: 0, subinstallationwindowLBRMIN: 0, subInstallationPatioDoorLBRMin: 0, subExtDoorLBRMIN: 0, subTotalInstallationLBRMin: 0,
-            SidingLBRBudget: 0, SidingLBRMin: 0, SidingSQF: 0, MinAvailable: 0, SalesTarget:0
+            SidingLBRBudget: 0, SidingLBRMin: 0, SidingSQF: 0, MinAvailable: 0, SalesTarget: 0, HazardousBudgetedLBR:0
         };
     }
     else if (displayType == "Remeasure")
@@ -2050,6 +2050,7 @@ $(document).ready(function () {
                                 totals[i].SidingSQF += eventWODict[j]["SidingSQF"];
                                 totals[i].MinAvailable += eventWODict[j]["MinAvailable"];
                                 totals[i].SalesTarget += eventWODict[j]["SalesTarget"];
+                                totals[i].HazardousBudgetedLBR += eventWODict[j]["HazardousBudgetedLBR"];
 
                                 if (eventWODict[j]["LeadPaint"] == "Yes") {
                                     totals[i].TotalLeadPaint++;
@@ -2143,9 +2144,10 @@ $(document).ready(function () {
                                     totals[i].subExtDoorLBRMIN += eventRemeasureWODict[j]["subExtDoorLBRMIN"];
                                     totals[i].subTotalInstallationLBRMin += eventRemeasureWODict[j]["subTotalInstallationLBRMin"];
 
-                                    totals[i].SidingLBRBudget += eventRemeasureWODict[j]["SidingLBRBudget"];
+                              
                                     totals[i].SidingLBRMin += eventRemeasureWODict[j]["SidingLBRMin"];
                                     totals[i].SidingSQF += eventRemeasureWODict[j]["SidingSQF"];
+                        
 
 
                                     totals[i].WOCount = WOCount + 1;
@@ -2339,6 +2341,7 @@ function SetDayValue(key, dayTotals) {
         SetData('Siding-LBRBudget', dayTotals.day, dayTotals.SidingLBRBudget.formatMoney(2, "$", ",", "."));
         SetData('Siding-LBRMin', dayTotals.day, parseFloat(dayTotals.SidingLBRMin).toFixed(2));
         SetData('Siding-SQF', dayTotals.day, parseFloat(dayTotals.SidingSQF).toFixed(2));
+        SetData('Hazardous-LBRMin', dayTotals.day, parseFloat(dayTotals.HazardousBudgetedLBR).toFixed(2));
 
        
      
@@ -2366,6 +2369,7 @@ function SetDayValue(key, dayTotals) {
         SetData('Siding-LBRBudget', dayTotals.day, dayTotals.SidingLBRBudget.formatMoney(2, "$", ",", "."));
         SetData('Siding-LBRMin', dayTotals.day, parseFloat(dayTotals.SidingLBRMin).toFixed(2));
         SetData('Siding-SQF', dayTotals.day, parseFloat(dayTotals.SidingSQF).toFixed(2));
+
     }
     else {
         var maxTime = parseInt(FindByValue("max", dayTotals.date).Value);

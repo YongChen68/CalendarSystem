@@ -3681,6 +3681,7 @@
                         RenderDayRow('Siding-LBRBudget', dayIDs[cell.start.day()]) +
                         RenderDayRow('Siding-LBRMin', dayIDs[cell.start.day()]) +
                         RenderDayRow('Siding-SQF', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Hazardous-LBRMin', dayIDs[cell.start.day()]) +
                         '</tbody>';
 
                 }
@@ -3699,6 +3700,7 @@
                         RenderDayRow('Siding-LBRBudget', dayIDs[cell.start.day()]) +
                         RenderDayRow('Siding-LBRMin', dayIDs[cell.start.day()]) +
                         RenderDayRow('Siding-SQF', dayIDs[cell.start.day()]) +
+          
                         '</tbody>';
                 }
                 else {
@@ -3764,6 +3766,8 @@
                         RenderWeekRow('Siding-LBRBudget') +
                         RenderWeekRow('Siding-LBRMin') +
                         RenderWeekRow('Siding-SQF') +
+                        RenderWeekRow('Hazardous-LBRMin') +
+                       
 
                         '</tbody>';
                 }
@@ -3783,7 +3787,7 @@
                         RenderWeekRow('Siding-LBRBudget') +
                         RenderWeekRow('Siding-LBRMin') +
                         RenderWeekRow('Siding-SQF') +
-
+      
                         '</tbody>';
                 }
                 else {
