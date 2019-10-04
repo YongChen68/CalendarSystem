@@ -460,6 +460,7 @@ function NewWOPopup(id) {
     }
     else {
         $("#homeDepotJob").html("No");
+        $("#WorkOrderTitleHeader").attr("style", "background-color: #9FB6CD");
     }
 
     $("#ageOfHome").html(newWOArray[index].AgeOfHome);
@@ -1375,6 +1376,7 @@ $(document).ready(function () {
                     }
                     else {
                         $("#homeDepotJob").html("No");
+                        $("#WorkOrderTitleHeader").attr("style", "background-color:#9FB6CD");
                     }
                     WO = event.WorkOrderNumber;
 
@@ -2924,6 +2926,7 @@ function GetInstallationProducts(workOrder) {
                 noInstallationWindows.style.display = "none";
                 $("#dataTableInstallationWindows").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
                 for (var i = 0; i < data.GetProductsResult.length; i++) {
+                 //   if 
                     $("#dataTableInstallationWindows").append("<tr><td>" +
                         data.GetProductsResult[i].Item + "</td> <td>" +
                         data.GetProductsResult[i].Size + "</td> <td>" +
