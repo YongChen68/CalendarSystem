@@ -2926,14 +2926,20 @@ function GetInstallationProducts(workOrder) {
                 noInstallationWindows.style.display = "none";
                 $("#dataTableInstallationWindows").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
                 for (var i = 0; i < data.GetProductsResult.length; i++) {
-                 //   if 
-                    $("#dataTableInstallationWindows").append("<tr><td>" +
+                    //if (data.GetProductsResult[i].Status == "On Hold") {
+                    var st = "";
+                    if (data.GetProductsResult[i].Status == "On Hold") {
+                        st = " style='background-color:#ff6347;'";
+                    }
+                  
+                   
+                    $("#dataTableInstallationWindows").append("<tr" + st + "><td>" +
                         data.GetProductsResult[i].Item + "</td> <td>" +
                         data.GetProductsResult[i].Size + "</td> <td>" +
                         data.GetProductsResult[i].Quantity + "</td> <td>" +
                         data.GetProductsResult[i].SubQty + "</td> <td>" +
                         data.GetProductsResult[i].System + "</td> <td>" +
-                        data.GetProductsResult[i].Description + "</td> <td>" +
+                        data.GetProductsResult[i].Description + "</td> <td>" + 
                         data.GetProductsResult[i].Status + "</td></tr>");
                 }
             }
@@ -2959,7 +2965,11 @@ function GetInstallationProducts(workOrder) {
                 noInstallationDoors.style.display = "none";
                 $("#dataTableInstallationDoors").append("<tr>  <th style = 'text-align:center;' > Item</th ><th style='text-align:center;'> Size</th ><th style='text-align:center;'>Quantity</th> <th style = 'text-align:center;' > SubQty</th ><th style='text-align:center;' > System</th ><th style='text-align:center;'>Description</th><th style='text-align:center;' > Status</th >  </tr > ");
                 for (var i = 0; i < data.GetProductsDoorsResult.length; i++) {
-                    $("#dataTableInstallationDoors").append("<tr><td>" +
+                    var st = "";
+                    if (data.GetProductsResult[i].Status == "On Hold") {
+                        st = " style='background-color:#ff6347;'";
+                    }
+                    $("#dataTableInstallationDoors").append("<tr" + st + "><td>" +
                         data.GetProductsDoorsResult[i].Item + "</td> <td>" +
                         data.GetProductsDoorsResult[i].Size + "</td> <td>" +
                         data.GetProductsDoorsResult[i].Quantity + "</td> <td>" +
