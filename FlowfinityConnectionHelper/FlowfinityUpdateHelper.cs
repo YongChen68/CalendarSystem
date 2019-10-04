@@ -140,7 +140,13 @@ namespace FlowfinityConnectionHelper
         {
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
             record.CallLog = PrepareInstallationCallLogList(data);
-
+            if (data.Count==1)
+            {
+                if (data[0].DateCalled==null)
+                {
+                    record.CallLog = null;
+                }
+            }
             return record;
         }
 
@@ -597,10 +603,10 @@ namespace FlowfinityConnectionHelper
             return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
         }
 
-        bool IUpdateHelper.UpdateRecord(ContentType type, InstallationDataEvent data)
-        {
-            throw new NotImplementedException();
-        }
+        //bool IUpdateHelper.UpdateRecord(ContentType type, InstallationDataEvent data)
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         bool IUpdateHelper.UpdateRecord(ContentType type, List<CalledLog> data)
         {

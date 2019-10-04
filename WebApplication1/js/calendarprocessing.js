@@ -438,6 +438,8 @@ function NewWOPopup(id) {
     //$(".fc-content").attr('data-target', "#eventContent");
     //$(".fc-content").attr('href', "/details");
     $("#btnSave").attr("disabled", true); 
+    $("#btnSaveLog").attr("disabled", true); 
+    $("#btnSaveNotes").attr("disabled", true); 
     $("#FirstName").html(newWOArray[index].FirstName);
     $("#LastName").html(newWOArray[index].LastName);
     $("#postalCode").html(newWOArray[index].PostCode);
@@ -1343,6 +1345,8 @@ $(document).ready(function () {
                 }
 
                 $("#btnSave").attr("disabled", false); 
+                $("#btnSaveLog").attr("disabled", false);
+                $("#btnSaveNotes").attr("disabled", false); 
                 if (displayType == "Installation") {
                     
                     element.attr('data-toggle', "modal");
