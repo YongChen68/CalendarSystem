@@ -526,6 +526,9 @@
                                         <div><b>Sales Rep: </b><span id="salesRep"></span></div>
                                         <br>
 
+                                        <div><b>Age of Home: </b><span id="ageOfHome"></span></div>
+                                        <br>
+
                                         <div><b>HomeDepot Job: </b><span id="homeDepotJob"></span></div>
                                         <br>
 

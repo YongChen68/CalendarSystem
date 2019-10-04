@@ -462,6 +462,8 @@ function NewWOPopup(id) {
         $("#homeDepotJob").html("No");
     }
 
+    $("#ageOfHome").html(newWOArray[index].AgeOfHome);
+
     $("#City").html(newWOArray[index].City);
 
     $("#TotalWindows1").html(newWOArray[index].TotalWindows);
@@ -1375,6 +1377,8 @@ $(document).ready(function () {
                         $("#homeDepotJob").html("No");
                     }
                     WO = event.WorkOrderNumber;
+
+                    $("#ageOfHome").html(event.AgeOfHome);
                                   
                     $("#homePhone").html(event.HomePhoneNumber);
                     $("#workPhone").html(event.WorkPhoneNumber);
