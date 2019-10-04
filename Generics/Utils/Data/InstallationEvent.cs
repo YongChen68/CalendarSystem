@@ -150,6 +150,13 @@ namespace Generics.Utils.Data
 
 
         [DataMember]
+        public string HomeDepotJob { get; set; }
+
+        [DataMember]
+        public string AgeOfHome { get; set; }
+
+
+        [DataMember]
         public decimal SalesAmmount { get; set; }
 
         [DataMember]

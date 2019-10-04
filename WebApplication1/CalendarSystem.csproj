@@ -82,6 +82,7 @@
     <Content Include="images\color.png" />
     <Content Include="images\door.png" />
     <Content Include="images\flag.png" />
+    <Content Include="images\HD.jpg" />
     <Content Include="images\holiday-icon.png" />
     <Content Include="images\human.png" />
     <Content Include="images\patiodoor.png" />

@@ -446,7 +446,7 @@
             aria-hidden="true" class="modal fade">
             <div class="modal-dialog modal-ku" role="document">
                 <div class="modal-content">
-                    <div class="modal-header ">
+                    <div class="modal-header " id="WorkOrderTitleHeader">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
 
@@ -524,6 +524,9 @@
                                         <div><b>Email: </b><span id="email"></span></div>
                                         <br>
                                         <div><b>Sales Rep: </b><span id="salesRep"></span></div>
+                                        <br>
+
+                                        <div><b>HomeDepot Job: </b><span id="homeDepotJob"></span></div>
                                         <br>
 
                                         <div><b>Total Windows: </b><span id="TotalWindows1"></span></div>

@@ -454,6 +454,14 @@ function NewWOPopup(id) {
     $("#email").html(newWOArray[index].Email);
     $("#salesRep").html(newWOArray[index].SalesRep);
 
+    if (newWOArray[index].HomeDepotJob == "Yes") {
+        $("#WorkOrderTitleHeader").attr("style", "background-color: #fa6304");
+        $("#homeDepotJob").html("Yes");
+    }
+    else {
+        $("#homeDepotJob").html("No");
+    }
+
     $("#City").html(newWOArray[index].City);
 
     $("#TotalWindows1").html(newWOArray[index].TotalWindows);
@@ -1359,6 +1367,13 @@ $(document).ready(function () {
                     $("#postalCode").html(event.PostCode);
                     $("#workOrder").html(event.WorkOrderNumber);
                     $("#WorkOrderTitle").html(event.WorkOrderNumber);
+                    if (event.HomeDepotJob == "Yes") {
+                        $("#WorkOrderTitleHeader").attr("style", "background-color: #fa6304");
+                        $("#homeDepotJob").html("Yes");
+                    }
+                    else {
+                        $("#homeDepotJob").html("No");
+                    }
                     WO = event.WorkOrderNumber;
                                   
                     $("#homePhone").html(event.HomePhoneNumber);
@@ -1747,6 +1762,7 @@ $(document).ready(function () {
                     (event.TotalWoodDropOff == 1 ? "&nbsp;<img src=\"images/delivery.PNG\" />" : "") +
                     //(event.TotalAsbestos == 1 ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
                     ((event.TotalAsbestos == 1) || (event.LeadPaint == 'Yes') ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
+                    (event.HomeDepotJob == "Yes" ? "&nbsp;<img src=\"images/HD.JPG\" />" : "") +
                     (event.TotalHighRisk == 1 ? "&nbsp;<img src=\"images/risk.PNG\" />" : "") +
                     ((event.SubTradeFlag.length > 0) && (event.SubTradeFlag>0) ? "&nbsp;<img src=\"images/subtrade.PNG\" />" : "") +
                     (event.ReturnedJob == 1 ? "&nbsp;<img src=\"images/fire.PNG\" />" : "") +
