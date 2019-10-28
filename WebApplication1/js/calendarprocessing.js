@@ -3451,8 +3451,18 @@ function CallLogEdit(recordid) {
                     $("#calledLogDate").prop('disabled', false);
                     $("#CalledLogTime").prop('disabled', false);
                     $("#comment").val('');
-                    $("#calledLogDate").val('');
-                    $("#CalledLogTime").val('');
+                    //$("#calledLogDate").val('');
+                    //$("#CalledLogTime").val('');
+                    var today = new Date();
+                    var dd = String(today.getDate()).padStart(2, '0');
+                    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                    var yyyy = today.getFullYear();
+
+                    today = mm + '/' + dd + '/' + yyyy;
+                    $("#calledLogDate").val(today);
+                    var time = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false });
+
+                    $("#CalledLogTime").val(time);
                     $('#MessageOption').val('');
                 }
             }
@@ -3532,8 +3542,20 @@ function NotesEdit(recordid) {
                     //disable date time
                     $("#notesDate").prop('disabled', false);
                     $("#notesTime").prop('disabled', false);
-                    $("#notesDate").val('');
-                    $("#notesTime").val('');
+                    //$("#notesDate").val('');
+                    //$("#notesTime").val('');
+
+                    var today = new Date();
+                    var dd = String(today.getDate()).padStart(2, '0');
+                    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                    var yyyy = today.getFullYear();
+
+                    today = mm + '/' + dd + '/' + yyyy;
+                    $("#notesDate").val(today);
+                    var time = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false });
+
+                    $("#notesTime").val(time);
+
                     $('#CategoryOption').val('');
                     $("#notes").val('');
                 }
@@ -3616,6 +3638,18 @@ function GetNotes(workOrder) {
     //enable date time
     $("#notesDate").prop('disabled', false);
     $("#notesTime").prop('disabled', false);
+
+
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = mm + '/' + dd + '/' + yyyy;
+    $("#notesDate").val(today);
+    var time = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false });
+
+    $("#notesTime").val(time);
     $.ajax({
         //type: "POST",  
         url: 'data.svc/GetNotes?workOrderNumber=' + workOrder,
@@ -3664,6 +3698,17 @@ function GetCalledLog(workOrder) {
     //enable date time
     $("#calledLogDate").prop('disabled', false);
     $("#CalledLogTime").prop('disabled', false);
+
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    var yyyy = today.getFullYear();
+
+    today = mm + '/' + dd + '/' + yyyy;
+    $("#calledLogDate").val(today);
+    var time = new Date().toLocaleString('en-US', { hour: 'numeric', minute: 'numeric', hour12: false });
+
+    $("#CalledLogTime").val(time);
     $.ajax({
         //type: "POST",  
         url: 'data.svc/GetCalledLog?workOrderNumber=' + workOrder,
@@ -3695,7 +3740,7 @@ function GetCalledLog(workOrder) {
                   //" <div>" + " onclick=\"ShowWOBigPicture(" + data.GetWOPictureResult[i].DetailRecordId + ")\">" +
               //  $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
                 //$("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
-
+   
             }
 
         }, error: function (error) {

@@ -483,7 +483,7 @@
 
                                 </li>
                                 <li role="presentation">
-                                    <a href="#CalledLogTab" aria-controls="CalledLogTab" role="tab" data-toggle="tab">Called Log</a>
+                                    <a href="#CalledLogTab" aria-controls="CalledLogTab" role="tab" data-toggle="tab">Call Log</a>
 
                                 </li>
 
