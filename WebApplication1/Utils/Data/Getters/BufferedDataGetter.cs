@@ -500,5 +500,15 @@ and  CurrentStateName in ('Ready for ReMeasure', 'Rejected Remeasure')
         {
             throw new NotImplementedException();
         }
+
+        public List<DocumentLibrary> GetDocumentLibrary()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<DocumentFile> GetDocumentFile(int recordId)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

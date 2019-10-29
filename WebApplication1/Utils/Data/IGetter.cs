@@ -34,8 +34,13 @@ namespace CalendarSystem.Utils.Data
 
         List<Generics.Utils.WindowsCustomer> GetWindowsCustomer();
         List<Generics.Utils.WOPicture> GetWOPicture();
+
+        List<Generics.Utils.DocumentLibrary> GetDocumentLibrary();
+
         List<Generics.Utils.WOPicture> GetWOBigPicture(int recordId);
-   
+
+        List<Generics.Utils.DocumentFile> GetDocumentFile(int recordId);
+
         List<Generics.Utils.Data.InstallationEvent> GetInstallationDateByWOForReturnedJob(string wO);
         List<Generics.Utils.Data.InstallationEvent> GetInstallationDateByWOForNonReturnedJob(string wO);
 

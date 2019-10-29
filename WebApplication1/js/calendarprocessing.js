@@ -645,6 +645,7 @@ function NewWOPopup(id) {
     GetCalledLog(newWOArray[index].WorkOrderNumber);
     GetNotes(newWOArray[index].WorkOrderNumber);
     GetWOPicture(newWOArray[index].WorkOrderNumber);
+    GetDocumentLibrary(newWOArray[index].WorkOrderNumber);
     GetSubTrades(newWOArray[index].WorkOrderNumber);
     // GetJobAnalysys(newWOArray[index].WorkOrderNumber);
     $("#TotalLBRMin").html(newWOArray[index].TotalInstallationLBRMin);
@@ -1580,6 +1581,7 @@ $(document).ready(function () {
                     GetCalledLog(event.WorkOrderNumber);
                     GetNotes(event.WorkOrderNumber);
                     GetWOPicture(event.WorkOrderNumber);
+                    GetDocumentLibrary(event.WorkOrderNumber);
                     GetSubTrades(event.WorkOrderNumber);
                    // GetJobAnalysys(event.WorkOrderNumber);
                     $("#TotalLBRMin").html(event.TotalInstallationLBRMin);
@@ -3471,6 +3473,33 @@ function CallLogEdit(recordid) {
             console.log('Error', error);
             $('#script-warning').show();
         }
+    }); 
+}
+
+function ShowDocumentFile(recordid) {
+    var link = document.getElementById(recordid);
+
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetDocumentFile?recordId=' + recordid,
+        // dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetDocumentFile:");
+            if (data.GetDocumentFileResult.length > 0) {
+            
+
+                var pdfWindow = window.open(data.GetDocumentFileResult[0].DocumentFileStr, '_blank');
+               
+             //   pdfWindow.document.write("<iframe width='100%' height='100%' src='data:application/pdf;base64, " + data.GetDocumentFileResult[0].DocumentFileStr + "'></iframe>")
+                pdfWindow.document.write("<iframe width='100%' height='100%' src='" + data.GetDocumentFileResult[0].DocumentFileStr + "'></iframe>")
+
+
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
     });
 }
 
@@ -3884,6 +3913,52 @@ function GetWOPicture(workOrder) {
             }
             else {
                 noPhoto.style.display = "block";
+            }
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
+
+function GetDocumentLibrary(workOrder) {
+    $("#dataTableDocumentLibrary tr").remove();
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetDocumentLibrary?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetDocumentLibrary:");
+            var noDocuments = document.getElementById('noDocuments');
+
+            if (data.GetDocumentLibraryResult.length > 0) {
+                noDocuments.style.display = "none";
+                $("#dataTableDocumentLibrary").append("<tr>  <th style = 'text-align:center;' >Notes</th ><th style='text-align:center;'> File Name</th > ");
+
+                for (var i = 0; i < data.GetDocumentLibraryResult.length; i++) {
+                    $("#dataTableDocumentLibrary").append("<tr><td>" +
+
+                        data.GetDocumentLibraryResult[i].Notes + "</td> <td> " +
+                        "<a href='#'" + " id='aDocumentFile" + data.GetDocumentLibraryResult[i].DetailRecordId + "' onclick=\"ShowDocumentFile(" + data.GetDocumentLibraryResult[i].DetailRecordId + ")\">" + data.GetDocumentLibraryResult[i].FileName  + " </a >" +
+
+                       
+
+                        //" <div id='" + data.GetWOPictureResult[i].DetailRecordId + "' class='w3-modal'" + "style='display:none; position: absolute;top:0px;left: 0px;'" +  " onclick=\"this.style.display ='none'\">" +
+                        //" <span class='w3-button w3-hover-red w3-xlarge w3-display-topright'></span >" +
+                        //" <div class='w3-modal-content w3-animate-zoom' >" +
+
+                        //" <div>" + " onclick=\"ShowWOBigPicture(" + data.GetWOPictureResult[i].DetailRecordId + ")\">" +
+                        ////data.GetWOPictureResult[i].picString + "</div></div>" + 
+                        //"</div>" + 
+                        "</td></tr>");
+
+                }
+
+
+            }
+            else {
+                noDocuments.style.display = "block";
             }
         }, error: function (error) {
             console.log('Error', error);

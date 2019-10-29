@@ -182,10 +182,19 @@ BodyStyle = WebMessageBodyStyle.WrappedResponse)]
 
         [OperationContract]
         [WebInvoke(Method = "GET",
+UriTemplate = "GetDocumentLibrary?workOrderNumber={workOrderNumber}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<DocumentLibrary> GetDocumentLibrary(string workOrderNumber);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
 UriTemplate = "GetWOPicture?workOrderNumber={workOrderNumber}",
 ResponseFormat = WebMessageFormat.Json,
 BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<WOPicture> GetWOPicture(string workOrderNumber);
+
+
 
         [OperationContract]
         [WebInvoke(Method = "GET",
@@ -193,6 +202,15 @@ UriTemplate = "GetWOBigPicture?recordid={recordid}",
 ResponseFormat = WebMessageFormat.Json,
 BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<WOPicture> GetWOBigPicture(int recordid);
+
+
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetDocumentFile?recordid={recordid}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<DocumentFile> GetDocumentFile(int recordid);
 
         [OperationContract]
         [WebInvoke(Method = "GET",

@@ -1699,6 +1699,27 @@ where i.WorkOrderNumber = '{0}' ", this.workOrderNumber);
             Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
             return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.SubTrades>(SQL, pars.ToArray());
         }
+
+        public List<DocumentLibrary> GetDocumentLibrary()
+        {
+            string SQL = GetDocumentLibrarySQL();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("WorkOrderNumber", this.workOrderNumber));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.DocumentLibrary>(SQL, pars.ToArray());
+        }
+
+        private string GetDocumentLibrarySQL()
+        {
+            string SQL = string.Format(@"select FileName as FileNameSource,Notes5 as Notes, [ParentRecordId],[DetailRecordId],WorkOrderNumber
+ FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_FileAttachment] tp
+  inner join  HomeInstallations i on  i.RecordId=tp.ParentRecordId
+where WorkOrderNumber = '{0}' ", this.workOrderNumber);
+            return SQL;
+        }
+
+
         public List<WOPicture> GetWOPicture()
         {
             string SQL = GetWOPictureSQL();
@@ -1732,6 +1753,27 @@ where WorkOrderNumber = '{0}' ", this.workOrderNumber);
   inner join [HomeInstallations_TakePicture__binaries] tb on tb.recordid = tp.DetailRecordId
 where DetailRecordId = '{0}' ", recordId);
             return SQL;
+        }
+
+
+        private string GetDocumentFileSQL(int recordId)
+        {
+            string SQL =  string.Format(@"select FileName as FileNameSource,Notes5 as Notes, FileName_bin as FileSource,[ParentRecordId],[DetailRecordId],WorkOrderNumber
+ FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_FileAttachment] tp
+  inner join  HomeInstallations i on  i.RecordId=tp.ParentRecordId
+  inner join [HomeInstallations_FileAttachment__binaries] tb on tb.recordid = tp.DetailRecordId
+where DetailRecordId = '{0}' ", recordId);
+            return SQL;
+        }
+
+        public List<DocumentFile> GetDocumentFile(int recordId)
+        {
+            string SQL = GetDocumentFileSQL(recordId);
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("DetailRecordId", recordId));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.DocumentFile>(SQL, pars.ToArray());
         }
 
 

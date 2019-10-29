@@ -494,6 +494,9 @@
                                  <li role="presentation">
                                     <a href="#WOPictureTab" aria-controls="WOPictureTab" role="tab" data-toggle="tab">Photo Gallery</a>
                                 </li>
+                                 <li role="presentation">
+                                    <a href="#DocumentLibraryTab" aria-controls="DocumentLibraryTab" role="tab" data-toggle="tab">Document</a>
+                                </li>
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content">
@@ -895,6 +898,16 @@
                                     <div style="overflow: auto; ">
                                         <table id="dataTableWOPicture" class="table table-striped table-bordered table-hover table-condensed"></table>
                                         <img id="ItemPreview" src="" />
+                                    </div>
+
+                                </div>
+                                <div role="tabpanel" class="tab-pane " id="DocumentLibraryTab">
+                                     <br/>
+                                     <div > <span id="noDocuments" style=" text-align:left; display:none;">No documents attached to this job.</span>
+                                    </div>
+                                    <div style="overflow: auto; ">
+                                        <table id="dataTableDocumentLibrary" class="table table-striped table-bordered table-hover table-condensed"></table>
+                                       
                                     </div>
 
                                 </div>

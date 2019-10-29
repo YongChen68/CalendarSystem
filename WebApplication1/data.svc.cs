@@ -809,6 +809,24 @@ namespace CalendarSystem
             return retValue;
         }
 
+        List<DocumentLibrary> Idata.GetDocumentLibrary(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetDocumentLibrary({0})", workOrderNumber);
+            List<DocumentLibrary> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetDocumentLibrary();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetDocumentLibrary() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+
         List<WOPicture> Idata.GetWOBigPicture(int recordid)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetWOBigPicture({0})", recordid);
@@ -825,6 +843,25 @@ namespace CalendarSystem
             }
             return retValue;
         }
+
+        List<DocumentFile> Idata.GetDocumentFile(int recordid)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetDocumentFile({0})", recordid);
+            List<DocumentFile> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(recordid);
+                retValue = getter.GetDocumentFile(recordid);
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetDocumentFile() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+
 
         List<CalledLog> Idata.GetCallLogByID(int recordid)
         {

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Runtime.Serialization;
 using System.Text;
+using System.Web;
 using static System.Net.Mime.MediaTypeNames;
+
 
 namespace Generics.Utils
 {
@@ -38,13 +40,14 @@ namespace Generics.Utils
 
         [DataMember]
         public string CrewNames { get; set; }
-      
+
     }
 
     public class CalledLog
     {
         [DataMember]
-        public String DateCalled {
+        public String DateCalled
+        {
             //get {
             //    string str = string.Empty;
             //    str = DateCalled;
@@ -101,7 +104,7 @@ namespace Generics.Utils
 
 
         [DataMember]
-        public string Notes3  { get; set; }
+        public string Notes3 { get; set; }
 
         [DataMember]
         public string id { get; set; }
@@ -219,7 +222,7 @@ namespace Generics.Utils
 
     public class SubTrades
     {
-     
+
 
         [DataMember]
         public string SubTrade { get; set; }
@@ -231,13 +234,177 @@ namespace Generics.Utils
 
     }
 
+    public class DocumentFile
+    {
+        [DataMember]
+        public Int64 DetailRecordId
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public byte[] FileSource
+        {
+            get; set;
+        }
+
+
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public string DocumentFileStr
+        {
+            get
+            {
+
+                StringBuilder strBuilder = new StringBuilder();
+                // strBuilder.Append(" data:application/pdf;base64," + Convert.ToBase64String(FileSource));
+
+                strBuilder.Append(" data:" + FileNameMime + ";base64," + Convert.ToBase64String(FileSource));
+
+             //    strBuilder.Append(Convert.ToBase64String(FileSource));
+                //  strBuilder.Append(" <embed src='data:image/jpeg;base64," + Convert.ToBase64String(FileSource) + "'" + " onclick =\"ShowWOBigPicture('" + DetailRecordId + "');" + "\">");
+                return strBuilder.ToString();
+
+            }
+            set { }
+
+        }
+
+        [DataMember]
+        public string FileNameSource
+        {
+            get; set;
+        }
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public string FileNameMime
+        {
+            get
+            {
+                if (FileNameSource != null)
+                {
+                    string fileType = FileNameSource.Split(';')[1].Replace("mime-type=", "").Replace("'", "");
+                    return fileType;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set { }
+        }
+
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public string FileName
+        {
+            get
+            {
+                if (FileNameSource != null)
+                {
+                    string fileName = FileNameSource.Split(';')[0].Replace("file-name=", "").Replace("'", "");
+                    return fileName;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set { }
+        }
+
+    }
+        public class DocumentLibrary
+    {
+
+        //string fileName;
+        //string fileType;
+        //string fileEncrpCode;
+
+        [DataMember]
+        public string Notes { get; set; }
+
+        [DataMember]
+        public string FileNameSource
+        {
+            get; set;
+        }
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public string FileNameMime
+        {
+            get
+            {
+                if (FileNameSource != null)
+                {
+                    string fileType = FileNameSource.Split(';')[1].Replace("mime-type=", "").Replace("'", "");
+                    return fileType;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set { }
+        }
+
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public string FileName
+        {
+            get
+            {
+                if (FileNameSource != null)
+                {
+                    string fileName = FileNameSource.Split(';')[0].Replace("file-name=", "").Replace("'", "");
+                    return fileName;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set { }
+        }
+
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public string FileEncrpCode
+        {
+            get
+            {
+                if (FileNameSource != null)
+                {
+                    string fileEncrpCode = FileNameSource.Split(';')[3].Replace("sha1==", "").Replace("'", "");
+                    return fileEncrpCode;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set { }
+        }
+
+
+
+
+
+        [DataMember]
+        public Int64 DetailRecordId
+        {
+            get; set;
+        }
+    }
+
     public class WOPicture
     {
         [DataMember]
         public string PictureName { get; set; }
 
         [DataMember]
-        public byte[] pic {
+        public byte[] pic
+        {
             get; set;
         }
 
@@ -270,7 +437,7 @@ namespace Generics.Utils
                     // strBuilder.Append(" <img src='data:image/jpeg;base64," + Convert.ToBase64String(pic) + "'></a>");
 
                     strBuilder.Append(" <img src='data:image/jpeg;base64," + Convert.ToBase64String(pic) + "'" + " onclick =\"ShowWOBigPicture('" + DetailRecordId + "');" + "\">");
-                 
+
 
                     //  strBuilder.Append(" <img src='data:image/jpeg;base64," + Convert.ToBase64String(pic) + ">");
 
@@ -290,7 +457,7 @@ namespace Generics.Utils
                     return null;
                 }
             }
-            set {  }
+            set { }
         }
         [DataMember]
         [Lift.Database.DbIgnore]
@@ -301,7 +468,7 @@ namespace Generics.Utils
                 if (pic != null)
                 {
                     StringBuilder strBuilder = new StringBuilder();
-                    strBuilder.Append(" data:image/jpeg;base64," + Convert.ToBase64String(pic) );
+                    strBuilder.Append(" data:image/jpeg;base64," + Convert.ToBase64String(pic));
                     return strBuilder.ToString();
 
 
