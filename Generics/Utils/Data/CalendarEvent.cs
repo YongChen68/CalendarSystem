@@ -132,6 +132,18 @@ namespace Generics.Utils
         public int F68VSMin { get; set; }
 
         [DataMember]
+        public int F29CMMin { get; set; }
+
+        [DataMember]
+        public int F29CAMin { get; set; }
+
+        [DataMember]
+        public int F26CAMin { get; set; }
+
+        [DataMember]
+        public int F27DSMin { get; set; }
+
+        [DataMember]
         public int M2000Icon { get; set; }
         [DataMember]
         public int CustomFlag { get; set; }
