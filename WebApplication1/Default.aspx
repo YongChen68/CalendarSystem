@@ -296,13 +296,14 @@
 
         #external-events, #external-events1,#external-eventsRemeasure{
             float: left;
+            overflow-x:hidden;
             width: 200px;
             padding: 0 10px;
             border: 1px solid #ccc;
             background: #eee;
             text-align: left;
             overflow-y: auto;
-            height: 900px;
+            height: 1000px;
         }
 
             #external-events, #external-events1,#external-eventsRemeasure h4 {
@@ -318,6 +319,7 @@
 
             #external-events1 .fc-event {
                 margin: 10px 0;
+            
                 cursor: pointer;
             }
 
@@ -709,6 +711,30 @@
                                                         <div class="rightcolumn" style="padding-left: 50px; width: 5%;">
                                                             <input id="end_date" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
                                                         </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                         <div class="form-group" style="width: 800px;" id="ReturnedJobReason">
+                                            <div class="container">
+
+                                                <div class="leftcolumn">
+                                                    <div class="container">
+                                                        <div class="leftcolumn" style="width: 5%; align-items: center;">
+                                                           Reason:
+                                                        </div>
+                                                        <div class="rightcolumn" style="width: 20%;">
+                                                              <textarea class="form-control" rows="5" id="returnJobReasonID" style="width:400px;"></textarea>
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="rightcolumn">
+                                                    <div class="container">
+                                                       
                                                     </div>
                                                 </div>
 

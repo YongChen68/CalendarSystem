@@ -55,7 +55,7 @@ namespace CalendarSystem.Utils.Data
 
             return String.Format(@"
           SELECT  win.Number_1 as windows	 , win.Number_1 as TotalWindows, door.Number_1 as doors	 ,  door.Number_1 as TotalDoors, '' as SubTradeFlag,0 as HazardousBudgetedLBR,
-0 as MinAvailable,0 as SalesTarget, null as WoodDropOffDate,'No' as HomeDepotJob, 0 as AgeOfHome,
+0 as MinAvailable,0 as SalesTarget, null as WoodDropOffDate,'No' as HomeDepotJob, 0 as AgeOfHome,ReturnTripReason,
 others.Number_1 as others	, others.Number_1 as other, dates.ScheduledDate,dates.ScheduledDate as StartScheduleDate,dates.ScheduledDate as EndScheduleDate,
 ActionItemId as id, SalesAmmount,1 as detailrecordCount,
            SalesAmmount  as TotalSalesAmount,i.EstInstallerCnt,i.Rep_display as SalesRep,i.LeadPaint ,0 as TotalWoodDropOff, 0 as TotalAsbestos,0 as TotalHighRisk

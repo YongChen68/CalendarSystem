@@ -306,7 +306,8 @@ and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or
 (PlannedInstallWeek >= 1 and PlannedInstallWeek <= 7)) and RecordId not in (select ParentRecordId from #dates d group by ParentRecordId) and 
 Branch in ({2})
 
-select WorkOrderNumber, LastName,FirstName,  HomeDepotJob, AgeOfHome,HazardousBudgetedLBR,WoodDropOffDate,City,PostCode, Email,SalesRep,LeadPaint,ReturnedJob,StartScheduleDate,EndScheduleDate,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,
+select WorkOrderNumber, LastName,FirstName,  HomeDepotJob, AgeOfHome,HazardousBudgetedLBR,WoodDropOffDate,City,PostCode, Email,SalesRep,LeadPaint,ReturnedJob,ReturnTripReason,
+StartScheduleDate,EndScheduleDate,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,
 TotalDoors,TotalWindows,Windows,Doors,ExtDoors,TotalExtDoors,MinAvailable/detailrecordCount as MinAvailable,SalesTarget/detailrecordCount as SalesTarget,
 DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, 
 installationwindowLBRMIN,InstallationPatioDoorLBRMin,InstallationDoorLBRMin,TotalInstallationLBRMin,
@@ -321,7 +322,7 @@ jobtype,CurrentStateName,null as Hours, null as hours, HomePhoneNumber, CellPhon
 EstInstallerCnt, StreetAddress, ScheduledDate, case when ScheduledDate is null
 then PlannedInstallWeek else null end as PlannedInstallWeek, PaintedProduct, Branch 
 from (
-SELECT   i.Branch_Display as Branch, i.PaintedProduct, ReturnedJob,HazardousBudgetedLBR, HomeDepotJob, AgeOfHome,
+SELECT   i.Branch_Display as Branch, i.PaintedProduct, ReturnedJob,ReturnTripReason, HazardousBudgetedLBR, HomeDepotJob, AgeOfHome,
 installationwindowLBRMIN,InstallationPatioDoorLBRMin,InstallationDoorLBRMin,TotalInstallationLBRMin,
 i.SalesAmmount/detailrecordCount as SalesAmmount,i.SalesAmmount as TotalSalesAmount,DetailRecordId ,
 ParentRecordId,detailrecordCount,saturday, sunday, jobtype,ActionItemId as id,i.streetAddress, i.EstInstallerCnt,
@@ -665,6 +666,8 @@ drop table #installs
                 newEvent.Sunday = returnedEvent.Sunday;
 
                 newEvent.ReturnedJob = returnedEvent.ReturnedJob;
+                newEvent.ReturnTripReason = returnedEvent.ReturnTripReason;
+
                 newEvent.PostCode = returnedEvent.PostCode;
                 newEvent.Email = returnedEvent.Email;
                 newEvent.SalesRep = returnedEvent.SalesRep;

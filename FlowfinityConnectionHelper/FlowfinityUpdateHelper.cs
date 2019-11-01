@@ -218,6 +218,7 @@ namespace FlowfinityConnectionHelper
         {
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
             record.ReturnTrip = PrepareReturnedInstallationDateList(data);
+            record.ReturnTripReason = Lift.II.IIUtils.CreateStringValue<StringValue>(data.ReturnTripReason);
             return record;
         }
         private static FASR.HomeInstallationsRecord GetRecord(Generics.Utils.ContentType type, Generics.Utils.InstallationEventWeekends data)

@@ -332,7 +332,7 @@ namespace CalendarSystem
             return retValue;
         }
 
-        public bool UpdateReturnedJobSchedule(string id, string scheduledStartDate, string scheduledEndDate)
+        public bool UpdateReturnedJobSchedule(string id, string scheduledStartDate, string scheduledEndDate, string returnTripReason)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateInstallationWeekends('{0}','{1}',{2} )", id, scheduledStartDate, scheduledEndDate);
             ImproperInstallationEvent eventData = null;
@@ -344,6 +344,7 @@ namespace CalendarSystem
 
                 eventData.start = scheduledStartDate;
                 eventData.end = scheduledEndDate;
+                eventData.ReturnTripReason = returnTripReason;
 
                 RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
                 retValue = runner.ProcessUpdateReturnedJob(Utils.ContentTypeParser.GetType("Installation"), eventData);

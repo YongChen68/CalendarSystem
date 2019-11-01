@@ -49,6 +49,8 @@ namespace Generics.Utils.Data
 
         [DataMember]
         public int ReturnedJob { get; set; }
+        [DataMember]
+        public string ReturnTripReason { get; set; }
 
         [DataMember]
         public DateTime ScheduledDate { get; set; }
@@ -58,6 +60,7 @@ namespace Generics.Utils.Data
             get; set;
         }
 
+   
 
         [DataMember]
         [Lift.Database.DbIgnore]

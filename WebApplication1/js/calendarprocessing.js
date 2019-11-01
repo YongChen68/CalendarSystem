@@ -531,6 +531,7 @@ function NewWOPopup(id) {
     //$("#ReturnedJob").hide();
     $("#from_date").val('');
     $("#end_date").val('');
+    $("#returnJobReasonID").val('');
 
 
     //if (newWOArray[index].ReturnedJob == 1) {
@@ -864,7 +865,7 @@ $(document).ready(function () {
         aspectRatio: 1.7,
        // locale: 'es',
        // Duration, default: "00:00:00"
-
+      
         customButtons: {
             changeType: {
                 text: displayType,
@@ -1467,12 +1468,14 @@ $(document).ready(function () {
                        //$("#ReturnedJob").hide();
                     $("#from_date").val('');
                     $("#end_date").val('');
-              
+                    $("#returnJobReasonID").val('');
 
                     if (event.ReturnedJob == 1) {
                         // $("#ReturnedJob").show(); 
                         $("#from_date").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
                         $("#end_date").val(new Date(GetDatefromMoment(event.end + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+
+                        $("#returnJobReasonID").val(event.ReturnTripReason);
                         if (event.end == null) {
                             $("#end_date").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
                         }
@@ -1503,6 +1506,8 @@ $(document).ready(function () {
 
                         $("#from_date").prop("disabled", false);
                         $("#end_date").prop("disabled", false);
+                        $("#returnJobReasonID").prop("disabled", false);
+
                        //etInstallationDateByWOForReturnedJob()
 
                        // $("#InstallScheduledStartDate").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
@@ -1525,13 +1530,15 @@ $(document).ready(function () {
                         if (event.StartScheduleDate != null) {
                             $("#from_date").prop("disabled", true);
                             $("#end_date").prop("disabled", true);
+                            $("#returnJobReasonID").prop("disabled", true);
                             $("#from_date").val(new Date(GetDatefromMoment(event.StartScheduleDate + 24 * 60 * 60000)).toLocaleDateString('en-US'));
                             $("#end_date").val(new Date(GetDatefromMoment(event.EndScheduleDate + 24 * 60 * 60000)).toLocaleDateString('en-US'));
-
+                            $("#returnJobReasonID").val(event.ReturnTripReason);
                         }
                         else {
                             $("#from_date").prop("disabled", false);
                             $("#end_date").prop("disabled", false);
+                            $("#returnJobReasonID").prop("disabled", false);
                         }
                         $("#NumOfInstallers").prop("disabled", false);
 
@@ -2672,8 +2679,9 @@ function UpdateReturnedJobSchedule() {
     var i = eventid;
     var scheduledStartDate = $("#from_date").val();
     var scheduledEndDate = $("#end_date").val();
+    var returnTripReason = $("#returnJobReasonID").val();
     $.ajax({
-        url: 'data.svc/UpdateReturnedJobSchedule?id=' + eventid + '&ScheduledStartDate=' + scheduledStartDate + '&scheduledEndDate=' + scheduledEndDate,
+        url: 'data.svc/UpdateReturnedJobSchedule?id=' + eventid + '&ScheduledStartDate=' + scheduledStartDate + '&scheduledEndDate=' + scheduledEndDate + '&returnTripReason=' + returnTripReason,
         type: "POST",
         success: function (data) {
             if (debug) console.log("events.success", "data.UpdateReturnedJobSchedule:");

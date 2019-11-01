@@ -43,6 +43,9 @@ namespace Generics.Utils
         [DataMember]
         public string CurrentStateName { get; set; }
 
+        [DataMember]
+        public string ReturnTripReason { get; set; }
+
     }
 
     public class ImproperRemeasureEvent
