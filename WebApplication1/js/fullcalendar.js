@@ -3736,8 +3736,11 @@
                       //  RenderDayRow('Rakes', dayIDs[cell.start.day()]) +
                       //  RenderDayRow('Customs', dayIDs[cell.start.day()]) +
                         RenderDayRow('Sliders', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Sliders-Min', dayIDs[cell.start.day()]) +
                         RenderDayRow('Casements', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Casements-Min', dayIDs[cell.start.day()]) +
                         RenderDayRow('Vinyl-Swing', dayIDs[cell.start.day()]) +
+                        RenderDayRow('Vinyl-Swing-Min', dayIDs[cell.start.day()]) +
                         '</tbody>';
                 }
 
@@ -3817,8 +3820,11 @@
                      //   RenderWeekRow('SingleDoor') +
                     //    RenderWeekRow('DoubleDoor') +
                         RenderWeekRow('Sliders') +
+                        RenderWeekRow('Sliders-Min') +
                         RenderWeekRow('Casements') +
+                        RenderWeekRow('Casements-Min') +
                         RenderWeekRow('Vinyl-Swing') +
+                        RenderWeekRow('Vinyl-Swing-Min') +
              
 
                     '</tbody>';

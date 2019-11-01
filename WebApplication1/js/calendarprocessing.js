@@ -292,7 +292,7 @@ function GetBlankDayData(day) {
     }
     else {
       //  return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, boxes: 0, glass: 0, value: 0, min: 0, max: 0, Available_Time: 0, rush: 0, float: 0, TotalBoxQty: 0, TotalGlassQty: 0, TotalPrice: 0, TotalLBRMin: 0, F6CA: 0, F27DS: 0, F27TS: 0, F27TT: 0, F29CA: 0, F29CM: 0, F52PD: 0, F68CA: 0, F68SL: 0, F68VS: 0, Transom: 0, Sidelite: 0, SingleDoor: 0, DoubleDoor: 0, Simple: 0, Complex: 0, Over_Size: 0, Arches: 0, Rakes: 0, Customs: 0, };
-        return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, boxes: 0, glass: 0, value: 0, min: 0, max: 0, Available_Time: 0, rush: 0, float: 0, TotalBoxQty: 0, TotalGlassQty: 0, TotalPrice: 0, TotalLBRMin: 0, F6CA: 0, F27DS: 0, F27TS: 0, F27TT: 0, F29CA: 0, F29CM: 0, F52PD: 0, F68CA: 0, F68SL: 0, F68VS: 0, Transom: 0, Sidelite: 0, SingleDoor: 0, DoubleDoor: 0 };
+        return { day: dayName, date: new Date(day.valueOf()), doors: 0, windows: 0, boxes: 0, glass: 0, value: 0, min: 0, max: 0, Available_Time: 0, rush: 0, float: 0, TotalBoxQty: 0, TotalGlassQty: 0, TotalPrice: 0, TotalLBRMin: 0, F6CA: 0, F27DS: 0, F27TS: 0, F27TT: 0, F29CA: 0, F29CM: 0, F52PD: 0, F68CA: 0, F68SL: 0, F68SLMin: 0, F68VS: 0, F68VSMin: 0,Transom: 0, Sidelite: 0, SingleDoor: 0, DoubleDoor: 0 };
     }
 
 
@@ -814,7 +814,7 @@ function AddBufferEvent(key, val) {
 
     $('#' + val.id).data('event', {
         // title: val.title, id: val.id, description: val.description, doors: val.doors, windows: val.windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
-        title: val.title, id: val.id, description: val.description, doors: val.Doors, windows: val.Windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
+        title: val.title, id: val.id, description: val.description, doors: val.Doors, windows: val.Windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68SLMin: val.F68SLMin, F68VS: val.F68VS, F68VSMin: val.F68VSMin, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
     });
 }
 function JsonDateToDate(dateString) {
@@ -1896,8 +1896,12 @@ $(document).ready(function () {
                         totals[dayId].min += event.TotalLBRMin !== undefined ? event.TotalLBRMin / (diff + 1) : 0;
                         // Windows
                         totals[dayId].F6CA += event.F6CA !== undefined ? event.F6CA / (diff + 1) : 0;
-                        totals[dayId].F68VS += event.F68VS !== undefined ? event.F68VS / (diff + 1): 0;
+                        totals[dayId].F68VS += event.F68VS !== undefined ? event.F68VS / (diff + 1) : 0;
+                        totals[dayId].F68VSMin += event.F68VSMin !== undefined ? event.F68VSMin / (diff + 1) : 0;
+
                         totals[dayId].F68SL += event.F68SL !== undefined ? event.F68SL / (diff + 1) : 0;
+                        totals[dayId].F68SLMin += event.F68SLMin !== undefined ? event.F68SLMin / (diff + 1) : 0;
+
                         totals[dayId].F68CA += event.F68CA !== undefined ? event.F68CA / (diff + 1) : 0;
 
                         totals[dayId].F29CM += event.F29CM !== undefined ? event.F29CM / (diff + 1): 0;
@@ -1929,7 +1933,11 @@ $(document).ready(function () {
                         // Windows
                         totals[dayId].F6CA += event.F6CA !== undefined ? event.F6CA : 0;
                         totals[dayId].F68VS += event.F68VS !== undefined ? event.F68VS : 0;
+                        totals[dayId].F68VSMin += event.F68VSMin !== undefined ? event.F68VSMin : 0;
+
                         totals[dayId].F68SL += event.F68SL !== undefined ? event.F68SL : 0;
+                        totals[dayId].F68SLMin += event.F68SLMin !== undefined ? event.F68SLMin : 0;
+
                         totals[dayId].F68CA += event.F68CA !== undefined ? event.F68CA : 0;
 
                         totals[dayId].F29CM += event.F29CM !== undefined ? event.F29CM : 0;
@@ -1960,7 +1968,11 @@ $(document).ready(function () {
                     // Windows
                     totals[dayId].F6CA += event.F6CA !== undefined ? event.F6CA : 0;
                     totals[dayId].F68VS += event.F68VS !== undefined ? event.F68VS : 0;
+                    totals[dayId].F68VSMin += event.F68VSMin !== undefined ? event.F68VSMin : 0;
+
                     totals[dayId].F68SL += event.F68SL !== undefined ? event.F68SL : 0;
+                    totals[dayId].F68SLMin += event.F68SLMin !== undefined ? event.F68SLMin : 0;
+
                     totals[dayId].F68CA += event.F68CA !== undefined ? event.F68CA : 0;
 
                     totals[dayId].F29CM += event.F29CM !== undefined ? event.F29CM : 0;
@@ -2227,7 +2239,11 @@ $(document).ready(function () {
                             // Windows
                             totals[i + dayId + 1].F6CA = totals[dayId].F6CA;
                             totals[i + dayId + 1].F68VS = totals[dayId].F68VS;
+                            totals[i + dayId + 1].F68VSMin = totals[dayId].F68VSMin;
+
                             totals[i + dayId + 1].F68SL = totals[dayId].F68SL;
+                            totals[i + dayId + 1].F68SLMin = totals[dayId].F68SLMin;
+
                             totals[i + dayId + 1].F68CA = totals[dayId].F68CA;
 
                             totals[i + dayId + 1].F29CM = totals[dayId].F29CM;
@@ -2430,7 +2446,7 @@ function SetDayValue(key, dayTotals) {
         SetData('Float', dayTotals.day, dayTotals.float.formatMoney(0, "", ",", "."));
 
         //SetData('27DS', dayTotals.day, dayTotals.F27DS);
-        SetData('Vinyl-Swing', dayTotals.day, parseFloat(dayTotals.F27DS).toFixed(2));
+
 
       //  SetData('27TS', dayTotals.day, dayTotals.F27TS);
 
@@ -2468,7 +2484,13 @@ function SetDayValue(key, dayTotals) {
         SetData('Patio-Doors', dayTotals.day, parseFloat(dayTotals.F52PD).toFixed(2));
 
         SetData('Sliders', dayTotals.day, (parseFloat(dayTotals.F68SL) + parseFloat(dayTotals.F68VS)).toFixed(2));
+        SetData('Sliders-Min', dayTotals.day, (parseFloat(dayTotals.F68SLMin) + parseFloat(dayTotals.F68VSMin)).toFixed(2));
+
         SetData('Casements', dayTotals.day, (parseFloat(dayTotals.F29CM) + parseFloat(dayTotals.F29CA) + parseFloat(dayTotals.F6CA)).toFixed(2));
+        SetData('Casements-Min', dayTotals.day, 0);
+
+        SetData('Vinyl-Swing', dayTotals.day, parseFloat(dayTotals.F27DS).toFixed(2));
+        SetData('Vinyl-Swing-Min', dayTotals.day,0 );
 
 
         //SetData('Simple', dayTotals.day, dayTotals.Simple);

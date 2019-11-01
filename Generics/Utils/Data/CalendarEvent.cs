@@ -125,7 +125,12 @@ namespace Generics.Utils
         [DataMember]
         public int F68SL { get; set; }
         [DataMember]
+        public int F68SLMin { get; set; }
+        [DataMember]
         public int F68VS { get; set; }
+        [DataMember]
+        public int F68VSMin { get; set; }
+
         [DataMember]
         public int M2000Icon { get; set; }
         [DataMember]
