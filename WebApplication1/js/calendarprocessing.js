@@ -407,6 +407,7 @@ function LoadInstallationBufferedJobs() {
             var found = false;
             var con;
             $.each(data.GetInstallationBufferJobsResult, function (pos, item) {
+               // item.editable = true;
                 AddInstallationBufferEvent(pos, item);
                 newWOArray.push(item);
             });
@@ -686,10 +687,13 @@ function AddInstallationBufferEvent(key, val) {
       //  "' id=\"" + val.id + "\" onclick=\"NewWOPopup('" + val.id + "');\"" + 
         " style=\"background-color:" + val.color + "\">" + ret + "</div>").appendTo('#external-events1');
     el.draggable({
-        zIndex: 996,
+        zIndex: 999,
         revert: true,
         revertDuration: 0  //  original position after the drag
     });
+   // el.editable = (readonly == "True") ? false : true;
+   // el.draggable = (readonly == "True") ? false : true;
+    el.draggable = false;
     $('#' + val.id).data('event', {
         // title: val.title, id: val.id, description: val.description, doors: val.doors, windows: val.windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
       //  title: val.title, id: val.id, doors: val.Doors, windows: val.Windows, WorkOrderNumber: title.WorkOrderNumber, Branch: val.Branch, City: val.City, CellPhone: val.CellPhone, CrewNames: val.CrewNames, CurrentStateName: val.CurrentStateName, LastName: val.LastName, FirstName: val.FirstName
@@ -1769,8 +1773,10 @@ $(document).ready(function () {
                 $(element).find(dom).empty();
 
 
-                var ret2 = "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
-                    event.EstInstallerCnt + "\">" +
+                var ret2 =
+                    (event.EstInstallerCnt != "" ? "<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " + event.EstInstallerCnt + "\">" : "") +
+                    //"<img src=\"images/installer" + event.EstInstallerCnt + ".png\" title=\"Estimated number of installers for the job: " +
+                   // event.EstInstallerCnt + "\">" +
                     (event.TotalWindows != "0" ? "&nbsp;<img title=\"# of Windows: " + event.TotalWindows + "\" src=\"images/window.PNG\" />" : "") +
                     (event.TotalDoors != "0" ? "&nbsp;<img title=\"# of Patio Doors: " + event.TotalDoors + "\" src=\"images/window.PNG\" />" : "") + "&nbsp;" +
                     (event.TotalExtDoors != "0" ? "&nbsp;<img title=\"# of Codel Doors: " + event.TotalExtDoors + "\" src=\"images/door.PNG\" />" : "") + "&nbsp;" +
@@ -1779,7 +1785,9 @@ $(document).ready(function () {
                     ((event.TotalAsbestos == 1) || (event.LeadPaint == 'Yes') ? "&nbsp;<img src=\"images/asbestos.PNG\" />" : "") +
                     (event.HomeDepotJob == "Yes" ? "&nbsp;<img src=\"images/HD.JPG\" />" : "") +
                     (event.TotalHighRisk == 1 ? "&nbsp;<img src=\"images/risk.PNG\" />" : "") +
-                    ((event.SubTradeFlag.length > 0) && (event.SubTradeFlag>0) ? "&nbsp;<img src=\"images/subtrade.PNG\" />" : "") +
+                 //   ((event.SubTradeFlag.length > 0) && (event.SubTradeFlag>0) ? "&nbsp;<img src=\"images/subtrade.PNG\" />" : "") +
+
+                    (event.SubTradeFlag != undefined ? "&nbsp;<img src=\"images/subtrade.PNG\" />" : "") +
                     (event.ReturnedJob == 1 ? "&nbsp;<img src=\"images/fire.PNG\" />" : "") +
                     (" " + event.WorkOrderNumber) + "&nbsp;" +
                     (",Name: " + event.LastName.trim().length > 10 ? event.LastName.trim().Substring(0, 10) : event.LastName.trim()) +
