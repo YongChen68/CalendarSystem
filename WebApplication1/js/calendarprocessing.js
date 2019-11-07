@@ -690,8 +690,23 @@ function AddInstallationBufferEvent(key, val) {
         zIndex: 9999,
         revert: true,
         scroll: false,
+        helper: 'clone',
+        opacity: 0.70,
         revertDuration: 0  //  original position after the drag
     });
+
+    //$("#calendar").droppable({
+    //    classes: {
+    //        "ui-droppable-active": "ui-state-active",
+    //        "ui-droppable-hover": "ui-state-hover"
+    //    },
+    //    drop: function (event, ui) {
+    //        $(this)
+    //            .addClass("ui-state-highlight")
+    //            .find("p")
+    //            .html("Dropped!");
+    //    }
+    //});
    
    // el.editable = (readonly == "True") ? false : true;
    // el.draggable = (readonly == "True") ? false : true;
@@ -733,6 +748,8 @@ function AddRemeasureBufferEvent(key, val) {
         zIndex: 996,
         revert: true,
         scroll: false,
+        helper: 'clone',
+        opacity: 0.70,
         revertDuration: 0  //  original position after the drag
     });
     $('#' + val.id).data('event', {
@@ -814,6 +831,8 @@ function AddBufferEvent(key, val) {
         zIndex: 999,
         revert: true,      // will cause the event to go back to its
         scroll: false,
+        helper: 'clone',
+        opacity: 0.70,
         revertDuration: 0  //  original position after the drag
     });
 
