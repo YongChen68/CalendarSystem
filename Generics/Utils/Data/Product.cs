@@ -335,7 +335,7 @@ namespace Generics.Utils
         {
             get
             {
-                if (FileNameSource != null)
+                if ((FileNameSource != null) && (FileNameSource.Length!=0))
                 {
                     string fileType = FileNameSource.Split(';')[1].Replace("mime-type=", "").Replace("'", "");
                     return fileType;
@@ -371,19 +371,20 @@ namespace Generics.Utils
         [Lift.Database.DbIgnore]
         public string FileEncrpCode
         {
-            get
-            {
-                if (FileNameSource != null)
-                {
-                    string fileEncrpCode = FileNameSource.Split(';')[3].Replace("sha1==", "").Replace("'", "");
-                    return fileEncrpCode;
-                }
-                else
-                {
-                    return null;
-                }
-            }
-            set { }
+            //get
+            //{
+            //    if (FileNameSource != null)
+            //    {
+            //        string fileEncrpCode = FileNameSource.Split(';')[3].Replace("sha1==", "").Replace("'", "");
+            //        return fileEncrpCode;
+            //    }
+            //    else
+            //    {
+            //        return null;
+            //    }
+            //}
+            //set { }
+            get; set;
         }
 
 

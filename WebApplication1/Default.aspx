@@ -286,73 +286,76 @@
         #wrap {
             width: 100%;
             margin: 0 auto;
+            overflow:hidden;
         }
 
         #external-events, #external-events1,#external-eventsRemeasure{
             float: left;
             overflow-x:hidden;
-            width: 150px;
+            width:200px;
             padding: 0 10px;
             border: 1px solid #ccc;
             background: #eee;
             text-align: left;
-        
+            overflow-y:auto;
+            height: 1000px;
         }
 
-            #external-events, #external-events1,#external-eventsRemeasure h4 {
+
+       #external-events, #external-events1,#external-eventsRemeasure h4 {
                 font-size: 16px;
                 margin-top: 0;
                 padding-top: 1em;
-            }
+       }
 
-                #external-events .fc-event {
-                    margin: 10px 0;
-                    cursor: pointer;
-                }
+        #external-events .fc-event {
+            margin: 10px 0;
+            cursor: pointer;
+        }
 
-            #external-events1 .fc-event {
-                margin: 10px 0;
+        #external-events1 .fc-event {
+            margin: 10px 0;
             
-                cursor: pointer;
-            }
+            cursor: pointer;
+        }
 
-            #external-eventsRemeasure .fc-event {
-                margin: 10px 0;
-                cursor: pointer;
-            }
+        #external-eventsRemeasure .fc-event {
+            margin: 10px 0;
+            cursor: pointer;
+        }
 
-            #external-events p {
-                margin: 1.5em 0;
-                font-size: 11px;
-                color: #666;
-            }
+        #external-events p {
+            margin: 1.5em 0;
+            font-size: 11px;
+            color: #666;
+        }
 
-            #external-events1 p {
-                margin: 1.5em 0;
-                font-size: 11px;
-                color: #666;
-            }
+        #external-events1 p {
+            margin: 1.5em 0;
+            font-size: 11px;
+            color: #666;
+        }
 
-            #external-eventsRemeasure p {
-                margin: 1.5em 0;
-                font-size: 11px;
-                color: #666;
-            }
+        #external-eventsRemeasure p {
+            margin: 1.5em 0;
+            font-size: 11px;
+            color: #666;
+        }
 
-            #external-events p input {
-                margin: 0;
-                vertical-align: middle;
-            }
+        #external-events p input {
+            margin: 0;
+            vertical-align: middle;
+        }
 
-            #external-events1 p input {
-                margin: 0;
-                vertical-align: middle;
-            }
+        #external-events1 p input {
+            margin: 0;
+            vertical-align: middle;
+        }
 
-          #external-eventsRemeasure p input {
-                margin: 0;
-                vertical-align: middle;
-            }
+        #external-eventsRemeasure p input {
+            margin: 0;
+            vertical-align: middle;
+        }
 
         #calendar {
             float: right;

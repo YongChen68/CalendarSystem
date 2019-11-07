@@ -687,13 +687,15 @@ function AddInstallationBufferEvent(key, val) {
       //  "' id=\"" + val.id + "\" onclick=\"NewWOPopup('" + val.id + "');\"" + 
         " style=\"background-color:" + val.color + "\">" + ret + "</div>").appendTo('#external-events1');
     el.draggable({
-        zIndex: 999,
+        zIndex: 9999,
         revert: true,
+        scroll: false,
         revertDuration: 0  //  original position after the drag
     });
+   
    // el.editable = (readonly == "True") ? false : true;
    // el.draggable = (readonly == "True") ? false : true;
-    el.draggable = false;
+  
     $('#' + val.id).data('event', {
         // title: val.title, id: val.id, description: val.description, doors: val.doors, windows: val.windows, type: val.type, JobType: val.JobType, boxes: val.boxes, glass: val.glass, value: val.value, min: val.min, max: val.max, rush: val.rush, float: val.float, TotalBoxQty: val.TotalBoxQty, TotalGlassQty: val.TotalGlassQty, TotalPrice: val.TotalPrice, TotalLBRMin: val.TotalLBRMin, F6CA: val.F6CA, F27DS: val.F27DS, F27TS: val.F27TS, F27TT: val.F27TT, F29CA: val.F29CA, F29CM: val.F29CM, F52PD: val.F52PD, F68CA: val.F68CA, F68SL: val.F68SL, F68VS: val.F68VS, DoubleDoor: val.DoubleDoor, Transom: val.Transom, Sidelite: val.Sidelite, SingleDoor: val.SingleDoor
       //  title: val.title, id: val.id, doors: val.Doors, windows: val.Windows, WorkOrderNumber: title.WorkOrderNumber, Branch: val.Branch, City: val.City, CellPhone: val.CellPhone, CrewNames: val.CrewNames, CurrentStateName: val.CurrentStateName, LastName: val.LastName, FirstName: val.FirstName
@@ -730,6 +732,7 @@ function AddRemeasureBufferEvent(key, val) {
     el.draggable({
         zIndex: 996,
         revert: true,
+        scroll: false,
         revertDuration: 0  //  original position after the drag
     });
     $('#' + val.id).data('event', {
@@ -810,6 +813,7 @@ function AddBufferEvent(key, val) {
     el.draggable({
         zIndex: 999,
         revert: true,      // will cause the event to go back to its
+        scroll: false,
         revertDuration: 0  //  original position after the drag
     });
 
