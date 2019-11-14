@@ -120,7 +120,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="BasicHttpBinding_ICHIPurchaseOrderCalloutService_policy">
+  <wsp:Policy wsu:Id="BasicHttpBinding_IServiceReviewCalloutService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
@@ -128,7 +128,7 @@
       </wsp:All>
     </wsp:ExactlyOne>
   </wsp:Policy>
-  <wsp:Policy wsu:Id="BasicHttpBinding_IServiceReviewCalloutService_policy">
+  <wsp:Policy wsu:Id="BasicHttpBinding_ICHIPurchaseOrderCalloutService_policy">
     <wsp:ExactlyOne>
       <wsp:All>
         <wspe:Utf816FFFECharacterEncoding xmlns:wspe="http://schemas.xmlsoap.org/ws/2004/09/policy/encoding">
@@ -311,6 +311,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="Callout_HomeInstallations_GetWindowmaker">
       <soap:operation soapAction="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_GetWindowmaker" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Callout_HomeInstallations_AdminCosting">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_AdminCosting" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -557,12 +566,12 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="BasicHttpBinding_ICHIPurchaseOrderCalloutService" type="i0:ICHIPurchaseOrderCalloutService">
-    <wsp:PolicyReference URI="#BasicHttpBinding_ICHIPurchaseOrderCalloutService_policy">
+  <wsdl:binding name="BasicHttpBinding_IServiceReviewCalloutService" type="i0:IServiceReviewCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_IServiceReviewCalloutService_policy">
     </wsp:PolicyReference>
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Callout_CHIPurchaseOrder_AddRecord">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/ICHIPurchaseOrderCalloutService/Callout_CHIPurchaseOrder_AddRecord" style="document" />
+    <wsdl:operation name="Callout_ServiceReview_AddRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IServiceReviewCalloutService/Callout_ServiceReview_AddRecord" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -571,12 +580,12 @@
       </wsdl:output>
     </wsdl:operation>
   </wsdl:binding>
-  <wsdl:binding name="BasicHttpBinding_IServiceReviewCalloutService" type="i0:IServiceReviewCalloutService">
-    <wsp:PolicyReference URI="#BasicHttpBinding_IServiceReviewCalloutService_policy">
+  <wsdl:binding name="BasicHttpBinding_ICHIPurchaseOrderCalloutService" type="i0:ICHIPurchaseOrderCalloutService">
+    <wsp:PolicyReference URI="#BasicHttpBinding_ICHIPurchaseOrderCalloutService_policy">
     </wsp:PolicyReference>
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="Callout_ServiceReview_AddRecord">
-      <soap:operation soapAction="http://flowfinity.com/ServiceContract/IServiceReviewCalloutService/Callout_ServiceReview_AddRecord" style="document" />
+    <wsdl:operation name="Callout_CHIPurchaseOrder_AddRecord">
+      <soap:operation soapAction="http://flowfinity.com/ServiceContract/ICHIPurchaseOrderCalloutService/Callout_CHIPurchaseOrder_AddRecord" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -631,10 +640,10 @@
     <wsdl:port name="BasicHttpBinding_IInstallationTrackingCalloutService" binding="i0:BasicHttpBinding_IInstallationTrackingCalloutService">
       <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
-    <wsdl:port name="BasicHttpBinding_ICHIPurchaseOrderCalloutService" binding="i0:BasicHttpBinding_ICHIPurchaseOrderCalloutService">
+    <wsdl:port name="BasicHttpBinding_IServiceReviewCalloutService" binding="i0:BasicHttpBinding_IServiceReviewCalloutService">
       <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
-    <wsdl:port name="BasicHttpBinding_IServiceReviewCalloutService" binding="i0:BasicHttpBinding_IServiceReviewCalloutService">
+    <wsdl:port name="BasicHttpBinding_ICHIPurchaseOrderCalloutService" binding="i0:BasicHttpBinding_ICHIPurchaseOrderCalloutService">
       <soap:address location="http://srvvanweb2:8102/fa/integration/Public" />
     </wsdl:port>
   </wsdl:service>

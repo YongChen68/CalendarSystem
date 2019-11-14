@@ -87,6 +87,12 @@
   <wsdl:message name="IHomeInstallationsCalloutService_Callout_HomeInstallations_GetWindowmaker_OutputMessage">
     <wsdl:part name="parameters" element="tns:Callout_HomeInstallations_GetWindowmakerResponse" />
   </wsdl:message>
+  <wsdl:message name="IHomeInstallationsCalloutService_Callout_HomeInstallations_AdminCosting_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_HomeInstallations_AdminCosting" />
+  </wsdl:message>
+  <wsdl:message name="IHomeInstallationsCalloutService_Callout_HomeInstallations_AdminCosting_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_HomeInstallations_AdminCostingResponse" />
+  </wsdl:message>
   <wsdl:message name="IHomeInstallationsCalloutService_Callout_HomeInstallations_EditSold_InputMessage">
     <wsdl:part name="parameters" element="tns:Callout_HomeInstallations_EditSold" />
   </wsdl:message>
@@ -195,17 +201,17 @@
   <wsdl:message name="IInstallationTrackingCalloutService_Callout_InstallationTracking_EditRecord_OutputMessage">
     <wsdl:part name="parameters" element="tns:Callout_InstallationTracking_EditRecordResponse" />
   </wsdl:message>
-  <wsdl:message name="ICHIPurchaseOrderCalloutService_Callout_CHIPurchaseOrder_AddRecord_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_CHIPurchaseOrder_AddRecord" />
-  </wsdl:message>
-  <wsdl:message name="ICHIPurchaseOrderCalloutService_Callout_CHIPurchaseOrder_AddRecord_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_CHIPurchaseOrder_AddRecordResponse" />
-  </wsdl:message>
   <wsdl:message name="IServiceReviewCalloutService_Callout_ServiceReview_AddRecord_InputMessage">
     <wsdl:part name="parameters" element="tns:Callout_ServiceReview_AddRecord" />
   </wsdl:message>
   <wsdl:message name="IServiceReviewCalloutService_Callout_ServiceReview_AddRecord_OutputMessage">
     <wsdl:part name="parameters" element="tns:Callout_ServiceReview_AddRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICHIPurchaseOrderCalloutService_Callout_CHIPurchaseOrder_AddRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_CHIPurchaseOrder_AddRecord" />
+  </wsdl:message>
+  <wsdl:message name="ICHIPurchaseOrderCalloutService_Callout_CHIPurchaseOrder_AddRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_CHIPurchaseOrder_AddRecordResponse" />
   </wsdl:message>
   <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_ADD_InputMessage">
     <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_ADD" />
@@ -344,6 +350,10 @@
       <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_GetWindowmaker" message="tns:IHomeInstallationsCalloutService_Callout_HomeInstallations_GetWindowmaker_InputMessage" />
       <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_GetWindowmakerResponse" message="tns:IHomeInstallationsCalloutService_Callout_HomeInstallations_GetWindowmaker_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="Callout_HomeInstallations_AdminCosting">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_AdminCosting" message="tns:IHomeInstallationsCalloutService_Callout_HomeInstallations_AdminCosting_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_AdminCostingResponse" message="tns:IHomeInstallationsCalloutService_Callout_HomeInstallations_AdminCosting_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="Callout_HomeInstallations_EditSold">
       <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_EditSold" message="tns:IHomeInstallationsCalloutService_Callout_HomeInstallations_EditSold_InputMessage" />
       <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IHomeInstallationsCalloutService/Callout_HomeInstallations_EditSoldResponse" message="tns:IHomeInstallationsCalloutService_Callout_HomeInstallations_EditSold_OutputMessage" />
@@ -430,16 +440,16 @@
       <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IInstallationTrackingCalloutService/Callout_InstallationTracking_EditRecordResponse" message="tns:IInstallationTrackingCalloutService_Callout_InstallationTracking_EditRecord_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:portType msc:usingSession="false" name="ICHIPurchaseOrderCalloutService">
-    <wsdl:operation name="Callout_CHIPurchaseOrder_AddRecord">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/ICHIPurchaseOrderCalloutService/Callout_CHIPurchaseOrder_AddRecord" message="tns:ICHIPurchaseOrderCalloutService_Callout_CHIPurchaseOrder_AddRecord_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/ICHIPurchaseOrderCalloutService/Callout_CHIPurchaseOrder_AddRecordResponse" message="tns:ICHIPurchaseOrderCalloutService_Callout_CHIPurchaseOrder_AddRecord_OutputMessage" />
-    </wsdl:operation>
-  </wsdl:portType>
   <wsdl:portType msc:usingSession="false" name="IServiceReviewCalloutService">
     <wsdl:operation name="Callout_ServiceReview_AddRecord">
       <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IServiceReviewCalloutService/Callout_ServiceReview_AddRecord" message="tns:IServiceReviewCalloutService_Callout_ServiceReview_AddRecord_InputMessage" />
       <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IServiceReviewCalloutService/Callout_ServiceReview_AddRecordResponse" message="tns:IServiceReviewCalloutService_Callout_ServiceReview_AddRecord_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="false" name="ICHIPurchaseOrderCalloutService">
+    <wsdl:operation name="Callout_CHIPurchaseOrder_AddRecord">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/ICHIPurchaseOrderCalloutService/Callout_CHIPurchaseOrder_AddRecord" message="tns:ICHIPurchaseOrderCalloutService_Callout_CHIPurchaseOrder_AddRecord_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/ICHIPurchaseOrderCalloutService/Callout_CHIPurchaseOrder_AddRecordResponse" message="tns:ICHIPurchaseOrderCalloutService_Callout_CHIPurchaseOrder_AddRecord_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

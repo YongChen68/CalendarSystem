@@ -40,6 +40,20 @@ namespace CalendarSystem
         //this method only updates start and end time
         //this is called when a event is dragged or resized in the calendar
         [System.Web.Services.WebMethod(true)]
+        public static bool UploadDocumentFiles(string eventID, string data)
+        {
+            string aa = eventID;
+            string bb = data;
+            //if (eventData.end == eventData.start)
+            //{
+            //    eventData.end = Convert.ToDateTime(eventData.end).AddDays(1).ToString("yyyy-MM-ddT00:00:00.000Z");
+            //}
+            //RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
+            //return runner.ProcessUpdate(Utils.ContentTypeParser.GetType(type), eventData);
+            return true;
+        }
+
+        [System.Web.Services.WebMethod(true)]
         public static bool UpdateEventTime(string type, Generics.Utils.ImproperCalendarEvent eventData)
         {
             if (eventData.end == eventData.start)

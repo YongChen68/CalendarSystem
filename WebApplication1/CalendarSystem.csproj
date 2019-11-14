@@ -85,6 +85,7 @@
     <Content Include="images\HD.jpg" />
     <Content Include="images\holiday-icon.png" />
     <Content Include="images\human.png" />
+    <Content Include="images\installerimage.jpg" />
     <Content Include="images\patiodoor.png" />
     <Content Include="images\m2000.png" />
     <Content Include="images\risk.png" />

@@ -13,6 +13,7 @@ var hasSubStrade;
 var JobStaffEvent;
 var updateStatus = 0;
 var WO;
+var fileByteArray = [];
 
 var is_weekend = function (date1) {
     var dt = new Date(date1);
@@ -831,7 +832,7 @@ function AddBufferEvent(key, val) {
         zIndex: 999,
         revert: true,      // will cause the event to go back to its
         scroll: false,
-        helper: 'clone',
+             helper: 'clone',
         opacity: 0.70,
         revertDuration: 0  //  original position after the drag
     });
@@ -3306,6 +3307,11 @@ function GetRemeasureProducts(workOrder) {
 
 }
 
+function ShowCrews() {
+   // alert("tet");
+
+    $('#installerDiv').show();
+}
 
 function GetInstallers(workOrder) {
     $.ajax({
@@ -3319,7 +3325,17 @@ function GetInstallers(workOrder) {
             if (data.GetInstallersResult.length > 0) {
 
                 $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
-                $("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
+            //    $("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
+             //   $("#CrewNames").html("<a href='https://www.google.com'> text </a> ");
+                if (data.GetInstallersResult[0].CrewNames == null || data.GetInstallersResult[0].CrewNames.trim().length == 0) {
+                    $("#CrewNames").html("Un assigned");
+                }
+                else {
+                    $("#CrewNames").html("<a href='#'" + " id='aCalledLog' onclick=\"ShowCrews()\">"  + data.GetInstallersResult[0].CrewNames +  "</a >");
+                }
+    
+
+             
                
             }
 
@@ -3499,6 +3515,25 @@ function UpdateInstallationNotes() {
             $('#script-warning').show();
         }
     });
+}
+
+function processFile(theFile) {
+    return function (e) {
+        var theBytes = e.target.result; //.split('base64,')[1]; // use with uploadFile2
+        fileByteArray.push(theBytes);
+        document.getElementById('file').innerText = '';
+        for (var i = 0; i < fileByteArray.length; i++) {
+            document.getElementById('file').innerText += fileByteArray[i];
+        }
+    }
+}
+
+
+function UploadDocuments() {
+    //var files = $("#fileUpload").get(0).files[0];
+    //var reader = new FileReader();
+    //reader.onload = processFile(files);
+    //reader.readAsText(files); 
 }
 
 function CallLogEdit(recordid) {
@@ -4018,7 +4053,7 @@ function GetDocumentLibrary(workOrder) {
 
             if (data.GetDocumentLibraryResult.length > 0) {
                 noDocuments.style.display = "none";
-                $("#dataTableDocumentLibrary").append("<tr>  <th style = 'text-align:center;' >Notes</th ><th style='text-align:center;'> File Name</th > ");
+                $("#dataTableDocumentLibrary").append("<tr>  <th style = 'text-align:center;' >File Names</th ><th style='text-align:center;'> File</th > ");
 
                 for (var i = 0; i < data.GetDocumentLibraryResult.length; i++) {
                     $("#dataTableDocumentLibrary").append("<tr><td>" +

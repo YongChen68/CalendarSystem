@@ -550,7 +550,7 @@
                                     </div>
                                 </div>
                                 <div role="tabpanel" class="tab-pane" id="InstallTab">
-                                    <div id="installationContent" style="width: 600px; margin-left: 20px; padding-left: 100px;">
+                                    <div id="installationContent" style="width: 600px; margin-left: 20px; padding-left: 100px; float: left;">
                                         <br>
                                         <br>
                                         <span><b>Installation Scheduled Date:  &nbsp;</b>
@@ -589,9 +589,10 @@
 
                                         <div><b>Senior Installer: </b><span id="SeniorInstaller"></span></div>
                                         <br>
-                                        <div><b>CrewNames: </b><span id="CrewNames"></span></div>
+                                        <div><b>CrewNames: </b><span id="CrewNames"></span> 
+                                       </div>
                                         <br>
-
+                                        
                                         <div class="container">
                                             <div class="leftcolumn">
                                                 <b>Number of Installers: </b>
@@ -772,6 +773,9 @@
                                         </div>
                                         <input type="button" name="btnSave" id="btnSave" class="btn btn-success" value="Save" onclick="UpdateInstallationEvents()">
                                     </div>
+                                    <div >
+                                         <div  id="installerDiv" style="margin-left: 620px; display:none;">  <img src="images/installerimage.jpg" /></div>
+                                    </div>
                                 </div>
 
                                 <div role="tabpanel" class="tab-pane " id="InstallationTab">
@@ -929,7 +933,12 @@
                                     </div>
                                     <div style="overflow: auto; ">
                                         <table id="dataTableDocumentLibrary" class="table table-striped table-bordered table-hover table-condensed"></table>
-                                       
+                                        <%--<label for="documentNotes">File Name:</label>
+                                
+                                        <input id="documentFile" style="text-align: center;" >
+                                        <input id="fileUpload" type="file"  accept=".jpg, .jpeg, .png,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
+                                        <input type="button" name="btnUploadDocuments" id="btnUploadDocuments" class="btn btn-success" value="Save" onclick="UploadDocuments()">
+                                        <span id="file"></span>--%>
                                     </div>
 
                                 </div>

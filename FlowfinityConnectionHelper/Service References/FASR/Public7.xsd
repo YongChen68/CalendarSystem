@@ -25,6 +25,7 @@
       <xs:enumeration value="HomeInstallations_BufferWorkOrder" />
       <xs:enumeration value="HomeInstallations_ScheduleRemeasure" />
       <xs:enumeration value="HomeInstallations_GetWindowmaker" />
+      <xs:enumeration value="HomeInstallations_AdminCosting" />
       <xs:enumeration value="HomeInstallations_ReSchedule" />
       <xs:enumeration value="HomeInstallations_UpdateCrew" />
       <xs:enumeration value="HomeInstallations_EditSold" />
@@ -54,8 +55,8 @@
       <xs:enumeration value="InstallationTracking_DeleteRecord" />
       <xs:enumeration value="InstallationTracking_AddRecord" />
       <xs:enumeration value="InstallationTracking_EditRecord" />
-      <xs:enumeration value="CHIPurchaseOrder_AddRecord" />
       <xs:enumeration value="ServiceReview_AddRecord" />
+      <xs:enumeration value="CHIPurchaseOrder_AddRecord" />
       <xs:enumeration value="BackOrder_Legacy_Add" />
       <xs:enumeration value="BackOrder_Legacy_Edit" />
       <xs:enumeration value="BackOrder_Legacy_Transition" />
@@ -126,16 +127,16 @@
       <xs:enumeration value="InstallationTracking_Legacy_Transition" />
       <xs:enumeration value="InstallationTracking_Legacy_Delete" />
       <xs:enumeration value="InstallationTracking_Legacy_Duplicate" />
-      <xs:enumeration value="CHIPurchaseOrder_Legacy_Add" />
-      <xs:enumeration value="CHIPurchaseOrder_Legacy_Edit" />
-      <xs:enumeration value="CHIPurchaseOrder_Legacy_Transition" />
-      <xs:enumeration value="CHIPurchaseOrder_Legacy_Delete" />
-      <xs:enumeration value="CHIPurchaseOrder_Legacy_Duplicate" />
       <xs:enumeration value="ServiceReview_Legacy_Add" />
       <xs:enumeration value="ServiceReview_Legacy_Edit" />
       <xs:enumeration value="ServiceReview_Legacy_Transition" />
       <xs:enumeration value="ServiceReview_Legacy_Delete" />
       <xs:enumeration value="ServiceReview_Legacy_Duplicate" />
+      <xs:enumeration value="CHIPurchaseOrder_Legacy_Add" />
+      <xs:enumeration value="CHIPurchaseOrder_Legacy_Edit" />
+      <xs:enumeration value="CHIPurchaseOrder_Legacy_Transition" />
+      <xs:enumeration value="CHIPurchaseOrder_Legacy_Delete" />
+      <xs:enumeration value="CHIPurchaseOrder_Legacy_Duplicate" />
     </xs:restriction>
   </xs:simpleType>
   <xs:element name="OperationType" nillable="true" type="tns:OperationType" />
