@@ -73,7 +73,7 @@
 
     <script>
         var geocoder;
-        var map, mapRemeasure,mapWindows;
+        var map, mapRemeasure, mapWindows;
         $(function () {
             // $("#from_date").datepicker();
             $('#wooddropdate').datepicker({
@@ -245,6 +245,7 @@
             float: left;
             width: 45%;
         }
+
         #mapWindows {
             float: left;
             width: 45%;
@@ -266,6 +267,7 @@
             text-align: left;
             padding-left: 20px;
         }
+
         #contentWindows {
             float: left;
             width: 55%;
@@ -273,7 +275,7 @@
             text-align: left;
             padding-left: 20px;
         }
-        
+
 
         #installationContent {
             float: left;
@@ -286,76 +288,75 @@
         #wrap {
             width: 100%;
             margin: 0 auto;
-            overflow:hidden;
+            overflow: hidden;
         }
 
-        #external-events, #external-events1,#external-eventsRemeasure{
+        #external-events, #external-events1, #external-eventsRemeasure {
             float: left;
-            overflow-x:hidden;
-            width:200px;
+            overflow-x: hidden;
+            width: 200px;
             padding: 0 10px;
             border: 1px solid #ccc;
             background: #eee;
             text-align: left;
-            overflow-y:auto;
+            overflow-y: auto;
             height: 1000px;
         }
 
 
-       #external-events, #external-events1,#external-eventsRemeasure h4 {
+            #external-events, #external-events1, #external-eventsRemeasure h4 {
                 font-size: 16px;
                 margin-top: 0;
                 padding-top: 1em;
-       }
+            }
 
-        #external-events .fc-event {
-            margin: 10px 0;
-            cursor: pointer;
-        }
+                #external-events .fc-event {
+                    margin: 10px 0;
+                    cursor: pointer;
+                }
 
-        #external-events1 .fc-event {
-            margin: 10px 0;
-            
-            cursor: pointer;
-        }
+                #external-events1 .fc-event {
+                    margin: 10px 0;
+                    cursor: pointer;
+                }
 
-        #external-eventsRemeasure .fc-event {
-            margin: 10px 0;
-            cursor: pointer;
-        }
+            #external-eventsRemeasure .fc-event {
+                margin: 10px 0;
+                cursor: pointer;
+            }
 
-        #external-events p {
-            margin: 1.5em 0;
-            font-size: 11px;
-            color: #666;
-        }
+            #external-events p {
+                margin: 1.5em 0;
+                font-size: 11px;
+                color: #666;
+            }
 
-        #external-events1 p {
-            margin: 1.5em 0;
-            font-size: 11px;
-            color: #666;
-        }
+            #external-events1 p {
+                margin: 1.5em 0;
+                font-size: 11px;
+                color: #666;
+            }
 
-        #external-eventsRemeasure p {
-            margin: 1.5em 0;
-            font-size: 11px;
-            color: #666;
-        }
+            #external-eventsRemeasure p {
+                margin: 1.5em 0;
+                font-size: 11px;
+                color: #666;
+            }
 
-        #external-events p input {
-            margin: 0;
-            vertical-align: middle;
-        }
+            #external-events p input {
+                margin: 0;
+                vertical-align: middle;
+            }
 
-        #external-events1 p input {
-            margin: 0;
-            vertical-align: middle;
-        }
+            #external-events1 p input {
+                margin: 0;
+                vertical-align: middle;
+            }
 
-        #external-eventsRemeasure p input {
-            margin: 0;
-            vertical-align: middle;
-        }
+            #external-eventsRemeasure p input {
+                margin: 0;
+                vertical-align: middle;
+            }
 
         #calendar {
             float: right;
@@ -370,7 +371,11 @@
             z-index: 214748367;
         }
 
-       #eventContentWindows {
+        #installerEdit {
+            z-index: 214748367;
+        }
+
+        #eventContentWindows {
             z-index: 214748367;
         }
 
@@ -384,6 +389,16 @@
             width: 1600px;
             margin: auto;
         }
+
+        .modal-sm {
+            width: 1200px;
+            padding-top: 100px;
+            margin: auto;
+        }
+
+
+
+
 
 
 
@@ -1172,6 +1187,54 @@
             <br>
         </div>
 
+
+        <div id="installerEdit" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true" class="modal fade">
+            <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+            <div class="modal-header" style="height:80px;">
+                <h4 class="modal-title" id="installerEditTitle"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <table id="dataTableInstallerEdit" class="table table-striped table-bordered table-hover table-condensed"></table>
+                </div>
+                <div id="installerDetail" style="display:none;">
+                    <div style="float: left; padding-left:100px;">
+                       <img id="installerImg" src="" />
+                    </div>
+
+                     <div  style="text-align:left; padding-left:400px;">
+                        <div><b>Name: </b><span id="InstallerNameView"></span></div>
+                        <br>
+                        <div><b>Branch: </b><span id="InstallerBranchView"></span></div>
+                        <br>
+                        <div><b>Department: </b><span id="InstallerDepartmentView"></span></div>
+                        <br>
+                        <div><b>Home Telephone: </b><span id="InstallerTelephoneView"></span></div>
+                        <br>
+                        <div><b>Work Phone Number: </b><span id="InstallerWorkPhoneView"></span></div>
+                        <br>
+                        <div><b>Email: </b><span id="InstallerEmailView"></span></div>
+                        <br>
+                    </div>
+                    
+                 
+                  
+      
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Save changes</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+              </div>
+        </div>
     
         <div id="openviewWeather">
             <a class="weatherwidget-io" href="https://forecast7.com/en/49d28n123d12/vancouver/" data-label_1="Vancouver" data-label_2="Weather" data-font="Roboto" data-icons="Climacons Animated" data-theme="original" data-accent="rgba(1, 1, 1, 0.0)"></a>

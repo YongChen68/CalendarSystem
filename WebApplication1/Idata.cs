@@ -161,6 +161,30 @@ namespace CalendarSystem
 
         [OperationContract]
         [WebInvoke(Method = "GET",
+UriTemplate = "GetInstallerInfoByWorkOrder?workOrderNumber={workOrderNumber}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<InstallerInfo> GetInstallerInfoByWorkOrder(string workOrderNumber);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetInstallerInfoByRecordID?recordid={recordid}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        InstallerInfoWithImage GetInstallerInfoByRecordID(string recordid);
+
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetInstallerInfoExceptWorkOrder?workOrderNumber={workOrderNumber}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<InstallerInfo> GetInstallerInfoExceptWorkOrder(string workOrderNumber);
+
+
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
 UriTemplate = "GetNotes?workOrderNumber={workOrderNumber}",
 ResponseFormat = WebMessageFormat.Json,
 BodyStyle = WebMessageBodyStyle.WrappedResponse)]

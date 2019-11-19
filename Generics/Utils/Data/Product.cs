@@ -43,6 +43,109 @@ namespace Generics.Utils
 
     }
 
+
+
+    public class InstallerInfo
+    {
+        [DataMember]
+        public string Name { get; set; }
+        [DataMember]
+        public string Branch { get; set; }
+        [DataMember]
+        public string Department { get; set; }
+        [DataMember]
+        public string Telephone { get; set; }
+        [DataMember]
+        public string recordid { get; set; }
+        [DataMember]
+        public string WorkPhoneNumber { get; set; }
+        [DataMember]
+        public string InstallerLevel { get; set; }
+        [DataMember]
+        public string WorkOrderNumber { get; set; }
+        [DataMember]
+        public string email { get; set; }
+
+
+    }
+
+    public class InstallerInfoWithImage
+    {
+        [DataMember]
+        public string Name { get; set; }
+        [DataMember]
+        public string Branch { get; set; }
+        [DataMember]
+        public string Department { get; set; }
+        [DataMember]
+        public string Telephone { get; set; }
+        [DataMember]
+        public string recordid { get; set; }
+        [DataMember]
+        public string WorkPhoneNumber { get; set; }
+        [DataMember]
+        public string InstallerLevel { get; set; }
+        [DataMember]
+        public string WorkOrderNumber { get; set; }
+
+        [DataMember]
+        public string email { get; set; }
+
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        public string picString
+        {
+            get
+            {
+                if (pic != null)
+                {
+                    StringBuilder strBuilder = new StringBuilder();
+                    strBuilder.Append(" data:image/jpeg;base64," + Convert.ToBase64String(pic));
+                    return strBuilder.ToString();
+
+
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            set { }
+        }
+
+        //[DataMember]
+        //[Lift.Database.DbIgnore]
+        //public string smallpicString
+        //{
+        //    get
+        //    {
+        //        if (pic != null)
+        //        {
+        //            StringBuilder strBuilder = new StringBuilder();
+
+        //            strBuilder.Append(" <img src='data:image/jpeg;base64," + Convert.ToBase64String(pic) + "'" + " onclick =\"ShowWOBigPicture('" + DetailRecordId + "');" + "\">");
+
+        //            return strBuilder.ToString();
+
+
+        //        }
+        //        else
+        //        {
+        //            return null;
+        //        }
+        //    }
+        //    set { }
+        //}
+
+        [DataMember]
+        public byte[] pic
+        {
+            get; set;
+        }
+
+
+    }
+
     public class CalledLog
     {
         [DataMember]
@@ -424,33 +527,11 @@ namespace Generics.Utils
                 if (pic != null)
                 {
                     StringBuilder strBuilder = new StringBuilder();
-                    // str = "document.getElementById('" + DetailRecordId.ToString().Trim() + "').style.display='block'";
-
-                    //str = "ShowWOBigPicture('" + DetailRecordId.ToString().Trim() + "');";
-                    //return "<img src='data:image/jpeg;base64," + Convert.ToBase64String(pic) +
-                    ////   "' style = \"width:30%;cursor:zoom-in\"  " +
-
-                    //      "' onclick =" + str +
-                    //             ">";
-                    //  strBuilder.Append("<a href='data:image/jpeg;base64," + Convert.ToBase64String(pic) + "' data-toggle=\"lightbox\" data-title=\"A random title\" data-footer=\"A custom footer text\">");
-                    //  strBuilder.Append("<a href= javascript:alert('test');" + " data-toggle=\"lightbox\" data-title=\"A random title\" data-footer=\"A custom footer text\">");
-                    //   strBuilder.Append("<a id= '"+ DetailRecordId  + "'  onclick=\"ShowWOBigPicture('" + DetailRecordId + "');\" data-toggle=\"lightbox\" data-title=\"A random title\" data-footer=\"A custom footer text\">");
-                    // strBuilder.Append(" <img src='data:image/jpeg;base64," + Convert.ToBase64String(pic) + "'></a>");
-
+      
                     strBuilder.Append(" <img src='data:image/jpeg;base64," + Convert.ToBase64String(pic) + "'" + " onclick =\"ShowWOBigPicture('" + DetailRecordId + "');" + "\">");
 
-
-                    //  strBuilder.Append(" <img src='data:image/jpeg;base64," + Convert.ToBase64String(pic) + ">");
-
                     return strBuilder.ToString();
-                    //    "onclick = alert('test') ;" +
-                    //  "onclick = \"document.getElementById(\"" + DetailRecordId + "\").style.display='block'" +
-                    //"</img>";
-
-                    //    "' id='" + DetailRecordId + "' " + "style = 'width:30%;cursor:zoom-in'  " +
-                    //   "\">";
-                    //   "onclick = 'document.getElementById('" + DetailRecordId + "').style.display='block'" + "\">";
-                    // return "src=\"data:image/jpeg;base64," + Convert.ToBase64String(pic);
+                  
 
                 }
                 else

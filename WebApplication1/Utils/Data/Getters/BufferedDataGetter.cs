@@ -510,5 +510,20 @@ and  CurrentStateName in ('Ready for ReMeasure', 'Rejected Remeasure')
         {
             throw new NotImplementedException();
         }
+
+        public List<InstallerInfo> GetInstallerInfoByWorkOrder()
+        {
+            throw new NotImplementedException();
+        }
+
+        public InstallerInfoWithImage GetInstallerInfoByRecordID(string recordid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<InstallerInfo> GetInstallerInfoExceptWorkOrder()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

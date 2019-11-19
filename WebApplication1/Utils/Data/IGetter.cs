@@ -45,6 +45,13 @@ namespace CalendarSystem.Utils.Data
         List<Generics.Utils.Data.InstallationEvent> GetInstallationDateByWOForNonReturnedJob(string wO);
 
         List<Generics.Utils.CalledLog> GetCalledLog();
+
+        List<Generics.Utils.InstallerInfo> GetInstallerInfoByWorkOrder();
+
+        Generics.Utils.InstallerInfoWithImage GetInstallerInfoByRecordID(string recordid);
+
+        List<Generics.Utils.InstallerInfo> GetInstallerInfoExceptWorkOrder();
+
         List<Generics.Utils.CalledLog> GetKeepedCalledLog(string recordid);
         List<Generics.Utils.CalledLog> GetCallLogByID(int recordId);
 

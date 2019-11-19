@@ -16,16 +16,17 @@ namespace CalendarSystem
     {
         public List<CalendarEvent> GetEvents(string start, string end, string type, string states, string branch, string jobType, string shippingType)
         {
-            Lift.LiftManager.Logger.Write(this.GetType().Name, "Entering GetEvents({0},'{1}','{2}','{3}','{4}','{5}', '{6}' )", start, end, type, states??"NULL", branch??"NULL", jobType??"NULL", shippingType??"NULL");
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Entering GetEvents({0},'{1}','{2}','{3}','{4}','{5}', '{6}' )", start, end, type, states ?? "NULL", branch ?? "NULL", jobType ?? "NULL", shippingType ?? "NULL");
             List<CalendarEvent> retValue = null;
             List<Holiday> retValue1 = null;
-            try {
+            try
+            {
                 Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(start, end, new List<string>(states.Split(',')), new List<string>(branch.Split(',')), new List<string>(jobType.Split(',')), new List<string>(shippingType.Split(',')));
                 retValue = getter.GetData(Utils.ContentTypeParser.GetType(type));
 
                 Utils.Data.IGetter getter1 = new Utils.Data.EventDataGetter(start, end);
                 retValue1 = getter1.GetHolidayData();
-              
+
                 CalendarEvent myEvent = null;
                 foreach (Holiday holiday in retValue1)
                 {
@@ -41,25 +42,26 @@ namespace CalendarSystem
                 }
 
                 Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetEvents() = {0}", retValue.Count.ToString());
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
             }
             return retValue;
         }
 
-        public List<InstallationEvent> GetInstallationEvents(string start, string end, string branch,string state)
+        public List<InstallationEvent> GetInstallationEvents(string start, string end, string branch, string state)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Entering InstallationEvent({0},'{1}','{2}' )", start, end, branch ?? "NULL", state ?? "NULL");
             List<InstallationEvent> retValue = null;
             List<Holiday> retValue1 = null;
             List<UnavailableHR> retValue2 = null;
-          //  List<string> unavailableStaffName = new List<string>();
+            //  List<string> unavailableStaffName = new List<string>();
 
             Dictionary<string, string> unavailableStaffList = new Dictionary<string, string>();
             try
             {
-                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(start, end,  new List<string>(branch.Split(',')), new List<string>(state.Split(',')));
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(start, end, new List<string>(branch.Split(',')), new List<string>(state.Split(',')));
                 retValue = getter.GetData();
 
                 Utils.Data.IGetter getter1 = new Utils.Data.EventDataGetter(start, end);
@@ -70,7 +72,7 @@ namespace CalendarSystem
 
                 Utils.Data.IGetter getter2 = new Utils.Data.EventDataGetter(new List<string>(branch.Split(',')));
                 retValue2 = getter.GetUnavailableResources();
-                
+
                 InstallationEvent myEvent = null;
                 foreach (Holiday holiday in retValue1)
                 {
@@ -80,7 +82,7 @@ namespace CalendarSystem
                     myEvent.start = holiday.HolidayDate.ToShortDateString();
                     myEvent.end = holiday.HolidayDate.ToShortDateString();
                     myEvent.HolidayName = holiday.HolidayName;
-                    myEvent.LastName ="";
+                    myEvent.LastName = "";
                     myEvent.City = "";
                     myEvent.title = holiday.HolidayName;
                     myEvent.CurrentStateName = "Rejected Scheduled Work";
@@ -117,7 +119,7 @@ namespace CalendarSystem
                     // myEvent.WorkOrderNumber = un.DateUnavailable;
                     //    myEvent.WorkOrderNumber = un.Name;
 
-                    myEvent.LastName ="";
+                    myEvent.LastName = "";
 
                     myEvent.UnavailableStaff = un.Name;
                     myEvent.City = "";
@@ -204,8 +206,8 @@ namespace CalendarSystem
             {
                 eventData = new InstallationEventWeekends();
                 eventData.id = id;
-                if (SaturdaySunday=="both")
-                { 
+                if (SaturdaySunday == "both")
+                {
                     eventData.Saturday = "Yes";
                     eventData.Sunday = "Yes";
                 }
@@ -224,9 +226,9 @@ namespace CalendarSystem
                     eventData.Saturday = "No";
                     eventData.Sunday = "Yes";
                 }
-                               
+
                 RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
-                retValue =  runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), eventData);
+                retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), eventData);
 
                 Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateInstallationWeekends id= {0}", id);
             }
@@ -254,7 +256,7 @@ namespace CalendarSystem
             return retValue;
         }
 
- 
+
 
         List<Generics.Utils.CalendarEvent> Idata.GetBufferJobs(string type, string branch, string jobType, string shippingType)
         {
@@ -368,7 +370,7 @@ namespace CalendarSystem
             {
                 eventData = new ImproperInstallationEvent();
                 eventData.id = id;
-                
+
                 eventData.start = Convert.ToDateTime(scheduledStartDate).ToString("yyyy-MM-ddT00:00:00.000Z");
                 eventData.end = Convert.ToDateTime(scheduledEndDate).ToString("yyyy-MM-ddT00:00:00.000Z");
 
@@ -391,10 +393,10 @@ namespace CalendarSystem
         /// <param name="scheduledEndDate"></param>
         /// <returns></returns>
         public bool UpdateInstallationData(
-                string id 
-                ,string scheduledStartDate 
-                ,string scheduledEndDate
-                ,int Asbestos
+                string id
+                , string scheduledStartDate
+                , string scheduledEndDate
+                , int Asbestos
                 , int WoodDropOff
                 , string woodDropOffDate
                 , string woodDropOffTime
@@ -422,12 +424,12 @@ namespace CalendarSystem
                 eventData.HighRisk = HighRisk;
                 eventData.LeadPaint = LeadPaint;
                 eventData.EstInstallerCnt = EstInstallerCnt;
-                if (woodDropOffDate.Length>1)
+                if (woodDropOffDate.Length > 1)
                 {
                     // eventData.WoodDropDateAndTime = Convert.ToDateTime(woodDropOffDate + " " + woodDropOffTime).ToString("yyyy-MM-ddTHH:mm:tt.000Z");
                     eventData.WoodDropDateAndTime = Convert.ToDateTime(woodDropOffDate + " " + woodDropOffTime).ToString();
                 }
-                
+
                 eventData.Saturday = Saturday;
                 eventData.Sunday = Sunday;
 
@@ -463,7 +465,7 @@ namespace CalendarSystem
                 eventData.CurrentStateName = currentState;
 
 
-                if (fromPopup=="yes")
+                if (fromPopup == "yes")
                 {
                     // eventData.start = Convert.ToDateTime(remeasureDate).ToString("yyyy-MM-ddT00:00:00.000Z");
                     // eventData.start = Convert.ToDateTime(remeasureDate).ToString("yyyy-MM-ddTHH:mm:ssZ");
@@ -484,10 +486,10 @@ namespace CalendarSystem
                     DateTime dt = Convert.ToDateTime(Convert.ToDateTime(remeasureDate).Date.AddHours(Convert.ToDouble(remeasureEndDate.Split(':')[0])).AddMinutes(Convert.ToDouble(remeasureEndDate.Split(':')[1])));
                     // eventData.end = dt.ToString("yyyy-MM-ddTHH:mm:ssZ");
                     eventData.end = dt.ToString(@"yyyy-MM-dd\THH:mm:ss.fff\Z");
-                    
+
                 }
 
-           
+
                 RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
                 retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Remeasure"), eventData);
 
@@ -504,7 +506,7 @@ namespace CalendarSystem
 
         public bool UpdateCallLogData(
                string id
-             ,  string WO
+             , string WO
               , string recordID
                , string callDate
                , string callTime
@@ -517,7 +519,7 @@ namespace CalendarSystem
             bool retValue = false;
             try
             {
-               List<CalledLog> keepedCalledLog =  GetKeepedCalledLog(id, WO,recordID);
+                List<CalledLog> keepedCalledLog = GetKeepedCalledLog(id, WO, recordID);
                 List<CalledLog> calledLogList = new List<CalledLog>();
                 calledLogList = keepedCalledLog.ToList();
                 eventData = new CalledLog();
@@ -525,7 +527,7 @@ namespace CalendarSystem
                 eventData.Notes3 = Notes;
                 eventData.CalledMessage = calledMessage;
                 //  eventData.DateCalled = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(callDate).ToString("yyyy-MM-ddTHH:mm:00.000Z")); ;
-                if (callDate.Length!=0)
+                if (callDate.Length != 0)
                 {
                     eventData.DateCalled = Convert.ToDateTime(callDate + " " + callTime).ToString();
                     calledLogList.Add(eventData);
@@ -567,7 +569,7 @@ namespace CalendarSystem
                 //  eventData.DateCalled = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(callDate).ToString("yyyy-MM-ddTHH:mm:00.000Z")); ;
                 if (notesDate.Length != 0)
                 {
-                    eventData.NotesDate= Convert.ToDateTime(notesDate + " " + notesTime).ToString();
+                    eventData.NotesDate = Convert.ToDateTime(notesDate + " " + notesTime).ToString();
                     notesList.Add(eventData);
                 }
                 RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
@@ -724,7 +726,7 @@ namespace CalendarSystem
             return retValue;
         }
 
-        List<CalledLog> GetKeepedCalledLog(string id, string workOrderNumber,string recordID)
+        List<CalledLog> GetKeepedCalledLog(string id, string workOrderNumber, string recordID)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetCalledLog({0})", workOrderNumber);
             List<CalledLog> retValue = null;
@@ -845,6 +847,59 @@ namespace CalendarSystem
             return retValue;
         }
 
+        List<InstallerInfo> Idata.GetInstallerInfoByWorkOrder(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetInstallerInfo({0})", workOrderNumber);
+            List<InstallerInfo> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetInstallerInfoByWorkOrder();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetInstallerInfo() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+       InstallerInfoWithImage Idata.GetInstallerInfoByRecordID(string recordid)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetInstallerInfoByRecordID({0})", recordid);
+            InstallerInfoWithImage retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(recordid);
+                retValue = getter.GetInstallerInfoByRecordID(recordid);
+              //  Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetInstallerInfoByRecordID() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+        List<InstallerInfo> Idata.GetInstallerInfoExceptWorkOrder(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetInstallerInfo({0})", workOrderNumber);
+            List<InstallerInfo> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetInstallerInfoExceptWorkOrder();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetInstallerInfo() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+
+
         List<DocumentFile> Idata.GetDocumentFile(int recordid)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetDocumentFile({0})", recordid);
@@ -933,4 +988,5 @@ namespace CalendarSystem
         }
 
     }
+
 }
