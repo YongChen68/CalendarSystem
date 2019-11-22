@@ -65,7 +65,8 @@ namespace Generics.Utils
     }
 
 
-    public class InstallationDataEvent
+
+public class InstallationDataEvent
     {
         [DataMember]
         public string id { get; set; }

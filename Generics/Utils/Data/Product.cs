@@ -43,6 +43,25 @@ namespace Generics.Utils
 
     }
 
+    public class InstallerWithLessInfo
+    {
+        [DataMember]
+        public string ParentRecordid { get; set; }
+
+        [DataMember]
+        public string DetailedRecordid { get; set; }
+
+        [DataMember]
+        public string Userid { get; set; }
+
+        [DataMember]
+        public string Account { get; set; }
+
+
+        [DataMember]
+        public string id { get; set; }
+    }
+
 
 
     public class InstallerInfo
@@ -65,9 +84,13 @@ namespace Generics.Utils
         public string WorkOrderNumber { get; set; }
         [DataMember]
         public string email { get; set; }
-
+        [DataMember]
+        public string DetailRecordId { get; set; }
+        
 
     }
+
+
 
     public class InstallerInfoWithImage
     {

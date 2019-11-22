@@ -60,6 +60,11 @@ namespace CalendarSystem
         [WebInvoke(Method = "POST", UriTemplate = "UpdateCallLogData?id={id}&WO={WO}&recordid={recordid}&callDate={callDate}&callTime={callTime}&calledMessage={calledMessage}&Notes={Notes}")]
         bool UpdateCallLogData(string id, string WO, string recordid, string callDate, string callTime, string calledMessage, string Notes);
 
+
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "UpdateCrewData?recordid={recordid}&WO={WO}")]
+        bool UpdateCrewData(string recordid,string WO);
+
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "UpdateNotesData?id={id}&WO={WO}&recordid={recordid}&notesDate={notesDate}&notesTime={notesTime}&category={category}&Notes={Notes}")]
         bool UpdateNotesData(string id, string WO, string recordid, string notesDate, string notesTime, string category, string Notes);

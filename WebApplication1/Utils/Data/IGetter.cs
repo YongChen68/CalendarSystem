@@ -53,6 +53,9 @@ namespace CalendarSystem.Utils.Data
         List<Generics.Utils.InstallerInfo> GetInstallerInfoExceptWorkOrder();
 
         List<Generics.Utils.CalledLog> GetKeepedCalledLog(string recordid);
+
+        List<Generics.Utils.InstallerWithLessInfo> GetKeepedInstaller(string recordid);
+
         List<Generics.Utils.CalledLog> GetCallLogByID(int recordId);
 
 

@@ -525,5 +525,10 @@ and  CurrentStateName in ('Ready for ReMeasure', 'Rejected Remeasure')
         {
             throw new NotImplementedException();
         }
+
+        public List<InstallerWithLessInfo> GetKeepedInstaller(string recordid)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

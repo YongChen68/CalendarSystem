@@ -1766,7 +1766,7 @@ where WorkOrderNumber = '{0}' ", this.workOrderNumber);
         {
             string SQL = string.Format(@"select InstallerName  as Name,
 --EmployeePicture_bin as pic,
-e.recordid,
+e.recordid,c.DetailRecordId,
 e.Branch_display as branch
 ,e.Department,i.WorkOrderNumber,
 --EmployeePicture,EmployeePicture_thumbnail1,EmployeePicture_thumbnail2,
@@ -1841,7 +1841,7 @@ where e.recordid= '{0}'
         {
             string SQL = string.Format(@"select InstallerName  as Name,EmployeePicture_bin as pic,e.recordid,
 e.Branch_display as branch
-,e.Department,i.WorkOrderNumber,
+,e.Department,i.WorkOrderNumber,c.DetailRecordId,
 --EmployeePicture,EmployeePicture_thumbnail1,EmployeePicture_thumbnail2,
 Telephone,e.WorkPhoneNumber,u.email,InstallerLevel
  FROM 
@@ -1964,6 +1964,51 @@ where DetailRecordId = '{0}' ", recordId);
             Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
             return returnList;
         }
+
+        public List<InstallerWithLessInfo> GetKeepedInstaller(string recordId)
+        {
+            string SQL = GetKeepedInstallerSQL();
+
+            List<InstallerWithLessInfo> returnList = new List<InstallerWithLessInfo>();
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("WorkOrderNumber", this.workOrderNumber));
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<InstallerWithLessInfo>(SQL, pars.ToArray()).Where(b => b.DetailedRecordid != recordId).ToList();
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return returnList;
+        }
+
+        private string GetInstallerCrewDataSQL(string recordId)
+        {
+            string SQL = string.Format(@"select 
+c.ParentRecordId ,e.Account_1 as account,c.DetailRecordId,u.UserId
+,i.RecordId as hid
+ FROM 
+Users AS u
+INNER JOIN HomeInstallations_Crew AS c ON u.UserId = c.userId 
+INNER JOIN Employees AS e ON u.Account = e.Account_1
+inner JOIN HomeInstallations i on c.ParentRecordId = i.RecordId
+where c.DetailRecordId = '{0}' ", recordId);
+            return SQL;
+        }
+
+        private string GetKeepedInstallerSQL()
+        {
+            string SQL = string.Format(@"select 
+c.ParentRecordId ,e.Account_1 as account,c.DetailRecordId as DetailedRecordid,u.UserId
+,i.RecordId as hid,i.ActionItemId as id
+ FROM 
+Users AS u
+INNER JOIN HomeInstallations_Crew AS c ON u.UserId = c.userId 
+INNER JOIN Employees AS e ON u.Account = e.Account_1
+inner JOIN HomeInstallations i on c.ParentRecordId = i.RecordId
+where WorkOrderNumber =  '{0}'
+", this.workOrderNumber);
+            return SQL;
+        }
+
+
+
+
         public List<CalledLog> GetCallLogByID(int recordId)
         {
             string SQL = GetCallLogByIDSQL(recordId);

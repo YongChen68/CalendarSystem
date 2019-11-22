@@ -3317,7 +3317,7 @@ function ShowCrews() {
     $("#InstallerInfoPop").attr('href', "/details");
   
     $("#eventContent").css('opacity', 20);
-
+    $("#installerDetail").hide();  
    
     $.ajax({
         //type: "POST",  
@@ -3338,7 +3338,8 @@ function ShowCrews() {
                         data.GetInstallerInfoByWorkOrderResult[i].email + "</td> <td>" +
                         data.GetInstallerInfoByWorkOrderResult[i].InstallerLevel + "</td> <td>" +
                         "<a href='#'" + " id='aInstaller" + data.GetInstallerInfoByWorkOrderResult[i].recordid + "' onclick=\"InstallerInfoView(" + data.GetInstallerInfoByWorkOrderResult[i].recordid + ")\"> View  </a >" +
-                        " &nbsp;&nbsp;&nbsp;&nbsp;<a href='#'" + " onclick=\"InstallerInfoDelete(" + data.GetInstallerInfoByWorkOrderResult[i].recordid + ")\"> Delete </a >" + "</td ></tr > ");
+                        " &nbsp;&nbsp;&nbsp;&nbsp;<a href='#'" + " onclick=\"InstallerInfoDelete(" + data.GetInstallerInfoByWorkOrderResult[i].DetailRecordId + ")\"> Delete </a >" + "</td ></tr > ");
+                
                     //a href='#'" + onclick > google </a > " + "</td ></tr > ");
 
                     //"add" + "</td></tr>");
@@ -3715,6 +3716,42 @@ function CallLogDelete(recordid) {
 
 
 }
+
+function InstallerInfoDelete(recordid,parentrecordID) {
+    var result = confirm("After click 'OK' button, this installer will be removed from this Work Order '" + WO + "' !");
+    if (result) {
+
+        $.ajax({
+            url: 'data.svc/UpdateCrewData?recordid=' + recordid
+            + '&WO=' + WO,
+            type: "POST",
+            success: function (data) {
+                if (debug) console.log("events.success", "data.UpdateCrewData:");
+               // InstallerInfoView(parentrecordID);
+                $("#installerDetail").hide();
+
+                $("#InstallerNameView").html("");
+                $("#InstallerBranchView").html("");
+                $("#InstallerDepartmentView").html("");
+                $("#InstallerTelephoneView").html("");
+                $("#InstallerWorkPhoneView").html("");
+                $("#InstallerEmailView").html("");
+                ShowCrews();
+                //close the second pop up or reload the table 
+
+            }, error: function (error) {
+                console.log('Error', error);
+                $('#script-warning').show();
+            }
+        });
+    }
+
+    //notes = $("#comment").val();
+    //callDate = $("#calledLogDate").val();
+    //callTime = $("#CalledLogTime").val();
+    //calledMessage = $('#MessageOption').val();
+}
+
 
 function InstallerInfoView(recordid) {
 

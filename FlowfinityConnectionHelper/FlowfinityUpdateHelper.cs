@@ -221,6 +221,15 @@ namespace FlowfinityConnectionHelper
             record.ReturnTripReason = Lift.II.IIUtils.CreateStringValue<StringValue>(data.ReturnTripReason);
             return record;
         }
+
+        private static FASR.HomeInstallationsRecord GetCrewRecord(Generics.Utils.ContentType type, List<Generics.Utils.InstallerWithLessInfo> data)
+        {
+            FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
+            record.Crew = PrepareInstallerCrewData(data);
+        //    record.ReturnTripReason = Lift.II.IIUtils.CreateStringValue<StringValue>(data.ReturnTripReason);
+            return record;
+        }
+
         private static FASR.HomeInstallationsRecord GetRecord(Generics.Utils.ContentType type, Generics.Utils.InstallationEventWeekends data)
         {
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
@@ -295,6 +304,20 @@ namespace FlowfinityConnectionHelper
             return returnStr;
         }
 
+        private static string PrepareTransactionId(Generics.Utils.InstallerWithLessInfo data)
+        {
+            string returnStr = string.Empty;
+            if (data is null)
+            {
+                returnStr = string.Format("{0} {1} {2}", "update", "", DateTime.Now.Ticks.ToString());
+            }
+            else
+            {
+                returnStr = string.Format("{0} {1} {2}", "update", data.DetailedRecordid, DateTime.Now.Ticks.ToString());
+            }
+            return returnStr;
+        }
+
         private static string PrepareTransactionId(Generics.Utils.Notes data)
         {
             string returnStr = string.Empty;
@@ -358,6 +381,27 @@ namespace FlowfinityConnectionHelper
             return returnValue.ToArray();
         }
 
+
+        private static FASR.UserLookupRecord[] PrepareInstallerCrewData(List<Generics.Utils.InstallerWithLessInfo> data)
+        {
+            List<FASR.UserLookupRecord> returnValue = new List<FASR.UserLookupRecord>();
+            
+            if (data == null)
+            {
+                return null;
+            }
+            else
+            {
+                foreach (Generics.Utils.InstallerWithLessInfo c in data)
+                {
+                    returnValue.Add(new FASR.UserLookupRecord()
+                    {
+                        Account = c.Account,
+                    });
+                }
+                return returnValue.ToArray();
+            }
+        }
 
         private static FASR.HomeInstallations_CallLogRecord[] PrepareInstallationCallLogList(List<Generics.Utils.CalledLog> data)
         {
@@ -592,6 +636,20 @@ namespace FlowfinityConnectionHelper
             };
             return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
         }
+
+        bool Generics.RecordUpdate.IUpdateHelper.UpdateInstalltionCrew(Generics.Utils.ContentType type, List<Generics.Utils.InstallerWithLessInfo> data)
+        {
+            //FASR.PlantProduction_UpdateWindowMakerData_Call call = new FASR.PlantProduction_UpdateWindowMakerData_Call()
+            // HomeInstallations_EditSold_Call
+            FASR.HomeInstallations_UpdateCrew_Call call = new FASR.HomeInstallations_UpdateCrew_Call()
+            {
+                OnBehalfOf = Owner,
+                RecordID = data[0].id,
+                Record = GetCrewRecord(type, data)
+            };
+            return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data[0])).ReturnValue;
+        }
+
 
         public bool UpdateRecord(ContentType type, InstallationDataEvent data)
         {
