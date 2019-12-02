@@ -62,8 +62,8 @@ namespace CalendarSystem
 
 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "UpdateCrewData?recordid={recordid}&WO={WO}")]
-        bool UpdateCrewData(string recordid,string WO);
+        [WebInvoke(Method = "POST", UriTemplate = "UpdateCrewData?recordid={recordid}&IsAdd={IsAdd}&WO={WO}")]
+        bool UpdateCrewData(string recordid, int IsAdd,string WO);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "UpdateNotesData?id={id}&WO={WO}&recordid={recordid}&notesDate={notesDate}&notesTime={notesTime}&category={category}&Notes={Notes}")]
@@ -173,18 +173,25 @@ BodyStyle = WebMessageBodyStyle.WrappedResponse)]
 
         [OperationContract]
         [WebInvoke(Method = "GET",
-UriTemplate = "GetInstallerInfoByRecordID?recordid={recordid}",
-ResponseFormat = WebMessageFormat.Json,
-BodyStyle = WebMessageBodyStyle.WrappedResponse)]
-        InstallerInfoWithImage GetInstallerInfoByRecordID(string recordid);
-
-
-        [OperationContract]
-        [WebInvoke(Method = "GET",
 UriTemplate = "GetInstallerInfoExceptWorkOrder?workOrderNumber={workOrderNumber}",
 ResponseFormat = WebMessageFormat.Json,
 BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<InstallerInfo> GetInstallerInfoExceptWorkOrder(string workOrderNumber);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetInstallerInfoByNameExceptWorkOrder?workOrderNumber={workOrderNumber}&name={name}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<InstallerInfo> GetInstallerInfoByNameExceptWorkOrder(string workOrderNumber,string name);
+
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetInstallerInfoByRecordID?recordid={recordid}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        InstallerInfoWithImage GetInstallerInfoByRecordID(string recordid);
 
 
 

@@ -14,6 +14,7 @@ var JobStaffEvent;
 var updateStatus = 0;
 var WO;
 var fileByteArray = [];
+var recordIDArray = [];
 
 var is_weekend = function (date1) {
     var dt = new Date(date1);
@@ -3219,6 +3220,10 @@ function GetManufacturingWindowsProducts(workOrder) {
 
 }
 
+//function SearchByName() {
+//    var name = $("#txtName").val();
+//    alert(name);
+//}
 
 function GetWindowsCustomer(workOrder) {
     //$("#dataTableManufacturingDoors tr").remove();
@@ -3363,6 +3368,173 @@ function ShowCrews() {
   
 }
 
+function AddRecordToList(recordID) {
+    if (recordIDArray.includes(recordID)) {
+        recordIDArray.splice(recordIDArray.indexOf(recordID), 1);
+    }
+    else {
+        recordIDArray.push(recordID);
+    }
+    var str = "tset";
+}
+
+function AddInstallersToEvent() {
+
+    var recordid = recordIDArray;
+
+  
+
+
+        $.ajax({
+            url: 'data.svc/UpdateCrewData?recordid=' + recordid
+                + '&IsAdd=1' 
+                + '&WO=' + WO,
+            type: "POST",
+            success: function (data) {
+                if (debug) console.log("events.success", "data.UpdateCrewData:");
+                // InstallerInfoView(parentrecordID);
+                $("#installerDetail").hide();
+
+                $("#InstallerNameView").html("");
+                $("#InstallerBranchView").html("");
+                $("#InstallerDepartmentView").html("");
+                $("#InstallerTelephoneView").html("");
+                $("#InstallerWorkPhoneView").html("");
+                $("#InstallerEmailView").html("");
+                ShowCrews();
+                GetInstallers(WO);
+                $("#installerAdd .close").click();
+                //close the second pop up or reload the table 
+
+            }, error: function (error) {
+                console.log('Error', error);
+                $('#script-warning').show();
+            }
+        });
+}
+function SearchByName() {
+    //alert($("#txtName").val());
+     var name = $("#txtName").val();
+    $("#dataTableInstallerAdd tr").remove();
+
+    $("#AddInstallersPop").attr('href', 'javascript:void(0);');
+    $("#AddInstallersPop").attr('data-toggle', "modal");
+    $("#AddInstallersPop").attr('data-target', "#installerAdd");
+    $("#AddInstallersPop").attr('href', "/details");
+
+    $("#eventContent").css('opacity', 20);
+    $("#installerAddDetail").hide();
+
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetInstallerInfoByNameExceptWorkOrder?workOrderNumber=' + WO           
+        + '&name=' + name,
+        dataType: 'json',
+        async: false,
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetInstallerInfoByNameExceptWorkOrderResult:");
+          //  $("#installerAddTitle").html(WO + " Installer Add");
+
+            if (data.GetInstallerInfoByNameExceptWorkOrderResult.length > 0) {
+
+               // $("#dataTableInstallerAdd").append("<tr>  <th style = 'text-align:center;' > </th > < th style = 'text-align:center;' > Name</th > <th style='text-align:center;'> Email</th > <th style='text-align:center;' > Installer Level</th > <th style='text-align:center;' > </th >");
+                $("#dataTableInstallerAdd").append("<tr>  <th style = 'text-align:center;' > </th > <th style = 'text-align:center;' > Name</th ><th style='text-align:center;'> Email</th > <th style = 'text-align:center;' > Installer Level</th ><th style = 'text-align:center;' > </th >");
+
+                for (var i = 0; i < data.GetInstallerInfoByNameExceptWorkOrderResult.length; i++) {
+                    $("#dataTableInstallerAdd").append("<tr><td>" +
+                        //<input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+                        "<input type='checkbox'" + " id='chkRecordID" + data.GetInstallerInfoByNameExceptWorkOrderResult[i].recordid +  "' onclick=\"AddRecordToList(" + data.GetInstallerInfoByNameExceptWorkOrderResult[i].recordid + ")\"> " + "</td> <td>" +
+                        data.GetInstallerInfoByNameExceptWorkOrderResult[i].Name + "</td> <td>" +
+                        data.GetInstallerInfoByNameExceptWorkOrderResult[i].email + "</td> <td>" +
+                        data.GetInstallerInfoByNameExceptWorkOrderResult[i].InstallerLevel + "</td> <td>" +
+                        "<a href='#'" + " id='bInstaller" + data.GetInstallerInfoByNameExceptWorkOrderResult[i].recordid + "' onclick=\"InstallerInfoAddView(" + data.GetInstallerInfoByNameExceptWorkOrderResult[i].recordid + ")\"> View  </a >" + "</td ></tr > ");
+
+
+                }
+                
+                //for (var i = 0; i < data.GetInstallerInfoExceptWorkOrderResult.length; i++) {
+                //    $("#dataTableInstallerAdd").append("<tr><td>" +
+                //        "<input type='checkbox'" + " id='chkRecordID" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + "' onclick=\"AddRecordToList(" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + ")\"> " + "</td> <td>" +
+                //        data.GetInstallerInfoExceptWorkOrderResult[i].Name + "</td> <td>" +
+                //        data.GetInstallerInfoExceptWorkOrderResult[i].email + "</td> <td>" +
+                //        data.GetInstallerInfoExceptWorkOrderResult[i].InstallerLevel + "</td> <td>" +
+                //        "<a href='#'" + " id='bInstaller" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + "' onclick=\"InstallerInfoView(" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + ")\"> View  </a >" + "</td ></tr > ");
+
+
+                //    //a href='#'" + onclick > google </a > " + "</td ></tr > ");
+
+                //    //"add" + "</td></tr>");
+                //}
+
+
+
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
+
+function AddInstallers() {
+    var name = $("#txtName").val();
+    $("#dataTableInstallerAdd tr").remove();
+
+    $("#AddInstallersPop").attr('href', 'javascript:void(0);');
+    $("#AddInstallersPop").attr('data-toggle', "modal");
+    $("#AddInstallersPop").attr('data-target', "#installerAdd");
+    $("#AddInstallersPop").attr('href', "/details");
+
+    $("#eventContent").css('opacity', 20);
+    $("#installerAddDetail").hide();
+
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetInstallerInfoExceptWorkOrder?workOrderNumber=' + WO,
+        dataType: 'json',
+        async: false,
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetInstallerInfoExceptWorkOrderResult:");
+            $("#installerAddTitle").html(WO + " Installer Add");
+
+            if (data.GetInstallerInfoExceptWorkOrderResult.length > 0) {
+
+                $("#dataTableInstallerAdd").append("<tr>  <th style = 'text-align:center;' > </th > <th style = 'text-align:center;' > Name</th ><th style='text-align:center;'> Email</th > <th style = 'text-align:center;' > Installer Level</th ><th style = 'text-align:center;' > </th >");
+
+                for (var i = 0; i < data.GetInstallerInfoExceptWorkOrderResult.length; i++) {
+                    $("#dataTableInstallerAdd").append("<tr><td>" +
+                        "<input type='checkbox'" + " id='chkRecordID" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid +  "' onclick=\"AddRecordToList(" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + ")\"> " + "</td> <td>" +
+                        data.GetInstallerInfoExceptWorkOrderResult[i].Name + "</td> <td>" +
+                        data.GetInstallerInfoExceptWorkOrderResult[i].email + "</td> <td>" +
+                        data.GetInstallerInfoExceptWorkOrderResult[i].InstallerLevel + "</td> <td>" +
+                        "<a href='#'" + " id='bInstaller" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + "' onclick=\"InstallerInfoView(" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + ")\"> View  </a >" + "</td ></tr > ");
+                       
+
+                    //a href='#'" + onclick > google </a > " + "</td ></tr > ");
+
+                    //"add" + "</td></tr>");
+                }
+                //" <div>" + " onclick=\"ShowWOBigPicture(" + data.GetWOPictureResult[i].DetailRecordId + ")\">" +
+                //  $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
+                //$("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
+
+
+
+
+
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+
+}
+
 function GetInstallers(workOrder) {
     $.ajax({
         //type: "POST",  
@@ -3377,12 +3549,21 @@ function GetInstallers(workOrder) {
                 $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
             //    $("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
              //   $("#CrewNames").html("<a href='https://www.google.com'> text </a> ");
+                $("#AddCrewNames").html("<a href='#'" + " id='AddInstallersPop' onclick=\"AddInstallers()\"> Add Installers");
                 if (data.GetInstallersResult[0].CrewNames == null || data.GetInstallersResult[0].CrewNames.trim().length == 0) {
                     $("#CrewNames").html("Un assigned");
+                   
+                    $("#ViewDeleteCrewNames").hide();
                 }
                 else {
-                  $("#CrewNames").html("<a href='#'" + " id='InstallerInfoPop' onclick=\"ShowCrews()\">"  + data.GetInstallersResult[0].CrewNames +  "</a >");
-                  //  $("#CrewNames").html("<input  type='button' class='btn' data-toggle='modal' href='#stack2' value='Click me'>" );
+                    $("#ViewDeleteCrewNames").html("<a href='#'" + " id='InstallerInfoPop' onclick=\"ShowCrews()\"> View/Delete Installers");
+                    
+                    
+                  $("#ViewDeleteCrewNames").show();
+                 // $("#CrewNames").html("<a href='#'" + " id='InstallerInfoPop' onclick=\"ShowCrews()\">"  + data.GetInstallersResult[0].CrewNames +  "</a >");
+                  $("#CrewNames").html(data.GetInstallersResult[0].CrewNames);
+
+                    //  $("#CrewNames").html("<input  type='button' class='btn' data-toggle='modal' href='#stack2' value='Click me'>" );
                  
                   //  $('#eventContent').modal('hide');
                  
@@ -3723,6 +3904,7 @@ function InstallerInfoDelete(recordid,parentrecordID) {
 
         $.ajax({
             url: 'data.svc/UpdateCrewData?recordid=' + recordid
+                + '&IsAdd=0'
             + '&WO=' + WO,
             type: "POST",
             success: function (data) {
@@ -3737,6 +3919,9 @@ function InstallerInfoDelete(recordid,parentrecordID) {
                 $("#InstallerWorkPhoneView").html("");
                 $("#InstallerEmailView").html("");
                 ShowCrews();
+                GetInstallers(WO);
+              
+              //  $("#CrewNames").html("123213"); 
                 //close the second pop up or reload the table 
 
             }, error: function (error) {
@@ -3745,11 +3930,6 @@ function InstallerInfoDelete(recordid,parentrecordID) {
             }
         });
     }
-
-    //notes = $("#comment").val();
-    //callDate = $("#calledLogDate").val();
-    //callTime = $("#CalledLogTime").val();
-    //calledMessage = $('#MessageOption').val();
 }
 
 
@@ -3779,6 +3959,38 @@ function InstallerInfoView(recordid) {
         }
     });
     $("#installerDetail").show();
+
+}
+
+
+
+function InstallerInfoAddView(recordid) {
+    
+    $("#txtName").val('');
+    $.ajax({
+        url: 'data.svc/GetInstallerInfoByRecordID?recordid=' + recordid,
+
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetInstallerInfoByRecordID:");
+            if (data.GetInstallerInfoByRecordIDResult != null) {
+                $("#InstallerNameAdd").html(data.GetInstallerInfoByRecordIDResult.Name);
+                $("#InstallerBranchAdd").html(data.GetInstallerInfoByRecordIDResult.Branch);
+                $("#InstallerDepartmentAdd").html(data.GetInstallerInfoByRecordIDResult.Department);
+                $("#InstallerTelephoneAdd").html(data.GetInstallerInfoByRecordIDResult.Telephone);
+                $("#InstallerWorkPhoneAdd").html(data.GetInstallerInfoByRecordIDResult.WorkPhoneNumber);
+                $("#InstallerEmailViewAdd").html(data.GetInstallerInfoByRecordIDResult.email);
+                // $("#installerImg").src = data.GetInstallerInfoByRecordIDResult.picString;
+                $("#AddinstallerImg").attr('src', data.GetInstallerInfoByRecordIDResult.picString);
+                $("#AddinstallerImg").css({ 'width': '250px', 'height': '250px' });
+
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+    $("#installerAddDetail").show();
 
 }
 

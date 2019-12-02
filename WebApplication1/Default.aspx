@@ -375,6 +375,10 @@
             z-index: 214748367;
         }
 
+        #installerAdd {
+            z-index: 214748367;
+        }
+
         #eventContentWindows {
             z-index: 214748367;
         }
@@ -604,8 +608,13 @@
 
                                         <div><b>Senior Installer: </b><span id="SeniorInstaller"></span></div>
                                         <br>
-                                        <div><b>CrewNames: </b><span id="CrewNames"></span> 
+                                        <div><b>CrewNames: </b><span id="CrewNames"></span>
+                                      
                                        </div>
+                                        <div>
+                                             <span id="ViewDeleteCrewNames" style="display:none;padding-left:20px;"> </span>
+                                             <span id="AddCrewNames" style="padding-left:40px;"></span> 
+                                        </div>
                                         <br>
                                         
                                         <div class="container">
@@ -1229,7 +1238,62 @@
                 
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-primary">Save changes</button>
+
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+              </div>
+        </div>
+
+        <div id="installerAdd" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true" class="modal fade">
+            <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+            <div class="modal-header" style="height:80px;">
+                <h4 class="modal-title" id="installerAddTitle"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                  <div>
+                   <!-- Search form -->
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="txtName"  style="width:400px;" 
+                            onkeydown = "if (event.keyCode == 13) document.getElementById('btnSearch').click()">
+                      <input type="button" id="btnSearch" value="Search" onclick="SearchByName();"   style="display:none;"/>
+                </div>
+                <br />
+                <div style="overflow-y:auto;height:200px;">
+                    <table id="dataTableInstallerAdd" class="table table-striped table-bordered table-hover table-condensed" ></table>
+                </div>
+                <div id="installerAddDetail" style="display:none; ">
+                    <div style="float: left; padding-left:100px;">
+                       <img id="AddinstallerImg" src="" />
+                    </div>
+
+                     <div  style="text-align:left; padding-left:400px;">
+                        <div><b>Name: </b><span id="InstallerNameAdd"></span></div>
+                        <br>
+                        <div><b>Branch: </b><span id="InstallerBranchAdd"></span></div>
+                        <br>
+                        <div><b>Department: </b><span id="InstallerDepartmentAdd"></span></div>
+                        <br>
+                        <div><b>Home Telephone: </b><span id="InstallerTelephoneAdd"></span></div>
+                        <br>
+                        <div><b>Work Phone Number: </b><span id="InstallerWorkPhoneAdd"></span></div>
+                        <br>
+                        <div><b>Email: </b><span id="InstallerEmailViewAdd"></span></div>
+                        <br>
+                    </div>
+                    
+                 
+                  
+      
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="AddInstallersToEvent();">Add Installers</button>
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             </div>
             </div>

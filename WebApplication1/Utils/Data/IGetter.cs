@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Generics.Utils;
 using Generics.Utils.Data;
 
 namespace CalendarSystem.Utils.Data
@@ -56,12 +57,16 @@ namespace CalendarSystem.Utils.Data
 
         List<Generics.Utils.InstallerWithLessInfo> GetKeepedInstaller(string recordid);
 
+        string GetActionItemIDByWO();
+
+        Generics.Utils.InstallerWithLessInfo GetAddedInstaller(string recordid);
+
         List<Generics.Utils.CalledLog> GetCallLogByID(int recordId);
 
 
         List<Generics.Utils.Notes> GetNotes();
         List<Generics.Utils.Notes> GetKeepedNotes(string recordid);
         List<Generics.Utils.Notes> GetNotesByID(int recordId);
-
+        List<InstallerInfo> GetInstallerInfoByNameExceptWorkOrder(string name);
     }
 }

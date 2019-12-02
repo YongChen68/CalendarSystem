@@ -546,6 +546,7 @@ namespace CalendarSystem
 
         public bool UpdateCrewData(
              string recordID,
+             int IsAdd,
             string WO
              
               
@@ -554,11 +555,34 @@ namespace CalendarSystem
             Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateCrewData('{0}')", recordID);
           //  InstallerWithLessInfo eventData = null;
             bool retValue = false;
+            List<InstallerWithLessInfo> keepedInstaller = null;
+            List<InstallerWithLessInfo> addedInstaller = new List<InstallerWithLessInfo>();
+            List<InstallerWithLessInfo> crewList = new List<InstallerWithLessInfo>();
+            string ss;
             try
             {
-                List<InstallerWithLessInfo> keepedInstaller = GetKeepedInstaller(WO, recordID);
-                List<InstallerWithLessInfo> crewList = new List<InstallerWithLessInfo>();
-                crewList = keepedInstaller.ToList();
+                keepedInstaller = GetKeepedInstaller(WO, recordID);
+                if (IsAdd==1) //add
+                {
+                    foreach(var s in recordID.Split(','))
+                    {
+                        crewList.Add(GetAddedInstaller(WO, s));
+                    }
+                    
+                }
+
+                foreach (var s in crewList)
+                {
+                    // s.id = "VVU691400";
+                    s.id = GetActionItemIDByWO(WO);
+                }
+                
+                foreach(var dd in keepedInstaller)
+                {
+                    crewList.Add(dd);
+                }
+              
+               
                 //eventData = new InstallerWithLessInfo();
                 //eventData.DetailedRecordid = recordID;
                 //eventData.ParentRecordid= recordID;
@@ -791,6 +815,43 @@ namespace CalendarSystem
             return retValue;
         }
 
+        string GetActionItemIDByWO(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetActionItemIDByWO({0})", workOrderNumber);
+            string retValue = string.Empty;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetActionItemIDByWO();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetCalledLog() = {0}", retValue);
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+        
+
+        InstallerWithLessInfo GetAddedInstaller(string workOrderNumber, string recordID)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetAddedInstaller({0})", workOrderNumber);
+            InstallerWithLessInfo retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetAddedInstaller(recordID);
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetCalledLog() = {0}", retValue.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+
         List<Notes> GetKeepedNotes(string id, string workOrderNumber, string recordID)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetKeepedNotes({0})", workOrderNumber);
@@ -947,6 +1008,22 @@ namespace CalendarSystem
         }
 
 
+        List<InstallerInfo> Idata.GetInstallerInfoByNameExceptWorkOrder(string workOrderNumber, string name)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetInstallerInfo({0})", workOrderNumber);
+            List<InstallerInfo> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetInstallerInfoByNameExceptWorkOrder(name);
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetInstallerInfo() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
 
         List<DocumentFile> Idata.GetDocumentFile(int recordid)
         {
