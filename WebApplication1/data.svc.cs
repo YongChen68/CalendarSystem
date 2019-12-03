@@ -938,6 +938,24 @@ namespace CalendarSystem
             return retValue;
         }
 
+        List<JobReview> Idata.GetJobReview(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetJobReview({0})", workOrderNumber);
+            List<JobReview> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetJobReview();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetJobReview() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+
 
         List<WOPicture> Idata.GetWOBigPicture(int recordid)
         {

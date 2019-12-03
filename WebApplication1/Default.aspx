@@ -390,7 +390,7 @@
         }
 
         .modal-ku {
-            width: 1600px;
+            width: 1800px;
             margin: auto;
         }
 
@@ -493,7 +493,7 @@
 
                                 </li>
                                 <li role="presentation">
-                                    <a href="#SubTradesTab" aria-controls="SubTradesTab" role="tab" data-toggle="tab">SUB TDADES</a>
+                                    <a href="#SubTradesTab" aria-controls="SubTradesTab" role="tab" data-toggle="tab">SUB TRADES</a>
                                 </li>
                                 <li role="presentation">
                                     <a href="#JobAnalysisTab" aria-controls="JobAnalysisTab" role="tab" data-toggle="tab">JOB ANALYSIS</a>
@@ -513,6 +513,9 @@
                                 </li>
                                  <li role="presentation">
                                     <a href="#DocumentLibraryTab" aria-controls="DocumentLibraryTab" role="tab" data-toggle="tab">Document</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#JobReviewTab" aria-controls="JobReviewTab" role="tab" data-toggle="tab">Job Review</a>
                                 </li>
                             </ul>
                             <!-- Tab panes -->
@@ -963,6 +966,15 @@
                                         <input id="fileUpload" type="file"  accept=".jpg, .jpeg, .png,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
                                         <input type="button" name="btnUploadDocuments" id="btnUploadDocuments" class="btn btn-success" value="Save" onclick="UploadDocuments()">
                                         <span id="file"></span>--%>
+                                    </div>
+
+                                </div>
+                                <div role="tabpanel" class="tab-pane " id="JobReviewTab">
+                                     <br/>
+                                     <div > <span id="noJobReview" style=" text-align:left; display:none;">No job-review record to this job.</span>
+                                    </div>
+                                    <div style="overflow-y:auto;height:400px;">
+                                        <table id="dataTableJobReview" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
 
                                 </div>

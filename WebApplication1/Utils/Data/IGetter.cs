@@ -37,7 +37,8 @@ namespace CalendarSystem.Utils.Data
         List<Generics.Utils.WOPicture> GetWOPicture();
 
         List<Generics.Utils.DocumentLibrary> GetDocumentLibrary();
-
+        List<Generics.Utils.JobReview> GetJobReview();
+        
         List<Generics.Utils.WOPicture> GetWOBigPicture(int recordId);
 
         List<Generics.Utils.DocumentFile> GetDocumentFile(int recordId);

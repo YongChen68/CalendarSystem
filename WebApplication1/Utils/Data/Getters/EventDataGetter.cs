@@ -1723,6 +1723,144 @@ where WorkOrderNumber = '{0}' ", this.workOrderNumber);
         }
 
 
+        public List<JobReview> GetJobReview()
+        {
+            string SQL = GetJobReviewSQL();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("WorkOrderNumber", this.workOrderNumber));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.JobReview>(SQL, pars.ToArray());
+        }
+
+        private string GetJobReviewSQL()
+        {
+            string SQL = string.Format(@"
+SELECT
+
+      [WorkOrderNumber_display] AS WorkOrderNumber
+
+
+      ,[jobcomplete] -- Did you have everything to complete your job question
+
+                   --IF NO
+                  ,CASE [WindowProductReady]
+                                when 'Select One' then 'N/A'
+                                when 'NA' then 'N/A' 
+                                else [WindowProductReady]
+                  END AS WindowProductReady
+      
+                  ,CASE [CodelProductReady]
+                                when 'Select One' then 'N/A'
+                                when 'NA' then 'N/A' 
+                                else[CodelProductReady]
+                  END AS CodelProductReady
+
+                 ,CASE [InstallMaterialMissing]
+                                when 'Select One' then 'N/A'
+                                when 'NA' then 'N/A' 
+                                else[InstallMaterialMissing]
+                  END AS InstallMaterialMissing
+
+                  ,[Whatwasmissing]
+
+
+
+                  ,CASE [CentraQuality]
+                                when 'Select One' then '0'
+                                when 'NA' then '0' 
+                                else [CentraQuality] 
+                  END AS CentraQuality
+
+                  ,CASE [CentraQuality]
+                                when 'Select One' then 'N/A'
+                                when 'NA' then 'N/A' 
+                                else [CentraQuality] 
+                  END AS CentraRating
+
+                  ,CASE [CentraQuality]
+                                when 'Select One' then '0'
+                                when 'NA' then '0' 
+                                else '1' 
+                  END AS CentraStarRating
+
+
+                  ,CASE [CodelQuality]
+                                when 'Select One' then '0'
+                                when 'NA' then '0' 
+                                else [CodelQuality]
+                  END AS CodelQuality
+
+                  ,CASE [CodelQuality]
+                                when 'Select One' then 'N/A'
+                                when 'NA' then 'N/A' 
+                                else [CodelQuality]
+                  END AS CodelRating
+                                  
+                  ,CASE [CodelQuality]
+                                when 'Select One' then '0'
+                                when 'NA' then '0' 
+                                else '1'
+                  END AS CodelStarRating
+
+
+
+                  ,CASE [ContractQuality]
+                                when 'Select One' then '0'
+                                when 'NA' then '0'  
+                                else [ContractQuality]
+                  END AS ContractQuality
+
+                  ,CASE [ContractQuality]
+                                when 'Select One' then 'N/A'
+                                when 'NA' then 'N/A'  
+                                else [ContractQuality]
+                  END AS ContractRating
+
+                  
+                  ,CASE [ContractQuality]
+                                when 'Select One' then '0'
+                                when 'NA' then '0'  
+                                else '1'
+                  END AS ContractStarRating
+
+
+      
+                 ,CASE [RemeasureQuality]
+                                when 'Select One' then '0'
+                                when 'NA' then '0' 
+                                else [RemeasureQuality]
+                  END AS RemeasureQuality
+
+                ,CASE [RemeasureQuality]
+                                when 'Select One' then 'N/A'
+                                when 'NA' then 'N/A' 
+                                else [RemeasureQuality]
+                  END AS RemeasureRating
+
+                ,CASE [RemeasureQuality]
+                                when 'Select One' then '0'
+                                when 'NA' then '0' 
+                                else '1'
+                  END AS RemeasureStarRating
+   
+     ,[Notes]
+
+
+
+      ,[ActionItemId]
+      ,[RecordId]
+
+       ,[CreatedAt]
+      ,u.name AS CreatedBy
+      ,[CurrentStateName]
+
+  FROM [flowserv_flowfinityapps].[dbo].[JobSiteReview] INNER JOIN 
+       [flowserv_flowfinityapps].[dbo].[Users] as u on createdby = UserId
+where [WorkOrderNumber_display] = '{0}' ", this.workOrderNumber);
+            return SQL;
+        }
+
         public List<WOPicture> GetWOPicture()
         {
             string SQL = GetWOPictureSQL();

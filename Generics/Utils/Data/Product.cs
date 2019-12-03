@@ -440,6 +440,150 @@ namespace Generics.Utils
         }
 
     }
+
+    public class JobReview
+    {
+
+        //string fileName;
+        //string fileType;
+        //string fileEncrpCode;
+
+        [DataMember]
+        public string WorkOrderNumber { get; set; }
+
+        [DataMember]
+        public string JobComplete
+        {
+            get; set;
+        }
+        [DataMember]
+        public string WindowProductReady
+        {
+            get; set;
+        }
+        [DataMember]
+        public string CodelProductReady
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public string InstallMaterialMissing
+        {
+            get; set;
+        }
+        [DataMember]
+        public string Whatwasmissing
+        {
+            get; set;
+        }
+        [DataMember]
+        public string CentraQuality
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public string CentraRating
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public string CentraStarRating
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public string CodelQuality
+        {
+            get; set;
+        }
+        [DataMember]
+        public string CodelStarRating
+        {
+            get; set;
+        }
+        [DataMember]
+        public string CodelRating
+        {
+            get; set;
+        }
+        [DataMember]
+        public string ContractQuality
+        {
+            get; set;
+        }
+
+
+        [DataMember]
+        public string ContractRating
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public string ContractStarRating
+        {
+            get; set;
+        }
+        [DataMember]
+        public string RemeasureQuality
+        {
+            get; set;
+        }
+        [DataMember]
+        public string RemeasureRating
+        {
+            get; set;
+        }
+        [DataMember]
+        public string RemeasureStarRating
+        {
+            get; set;
+        }
+        [DataMember]
+        public string Notes
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public Int64 RecordId
+        {
+            get; set;
+        }
+
+        [DataMember]
+        public DateTime CreatedAt
+        {
+            get; set;
+        }
+
+        [DataMember]
+        [Lift.Database.DbIgnore]
+        //   public string start { get { return FormatDateTime(ScheduledDate); } set { } }
+        public string StrCreatedAt
+        {
+            get
+            {
+                string str = string.Empty;
+                if ((CreatedAt != null) && (CreatedAt.ToString().Length > 0))
+                {
+                    //   str = FormatDateTime(Convert.ToDateTime(WoodDropOffDate.Split(' ')[0]));
+                    str = Convert.ToDateTime(CreatedAt.ToString().Split(' ')[0]).ToString("MM/d/yyyy");
+                }
+                return str;
+            }
+            set { }
+        }
+        [DataMember]
+        public string CreatedBy
+        {
+            get; set;
+        }
+    }
     public class DocumentLibrary
     {
 

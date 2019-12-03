@@ -545,5 +545,10 @@ and  CurrentStateName in ('Ready for ReMeasure', 'Rejected Remeasure')
         {
             throw new NotImplementedException();
         }
+
+        public List<JobReview> GetJobReview()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

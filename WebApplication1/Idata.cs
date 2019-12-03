@@ -223,6 +223,14 @@ ResponseFormat = WebMessageFormat.Json,
 BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<DocumentLibrary> GetDocumentLibrary(string workOrderNumber);
 
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetJobReview?workOrderNumber={workOrderNumber}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<JobReview> GetJobReview(string workOrderNumber);
+
         [OperationContract]
         [WebInvoke(Method = "GET",
 UriTemplate = "GetWOPicture?workOrderNumber={workOrderNumber}",
