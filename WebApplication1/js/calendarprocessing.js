@@ -1247,24 +1247,32 @@ $(document).ready(function () {
         weekNumbers: true,
         businessHours: { start: '8:00', end: '17:00', dow: [1, 2, 3, 4, 5, 6] },
         eventDrop: function (event, delta, revertFunc) {
-            if ((displayType != "Installation") && (displayType != "Remeasure")){
-                if (debug) console.log('eventDrop', 'event.title=' + event.title, "id: " + event.id, "labour min: " + event.TotalLBRMin, "event date:", GetDatefromMoment(event.start));
-                var eventDate = GetDatefromMoment(event.start);
-                var maxDayLabour = parseInt(FindByValue("max", eventDate).Value);
-                var allocatedDayLabour = GetDayLabourValue($('#calendar').fullCalendar('getView'), eventDate);
-             //   console.log("eventDrop", "allocated min:", allocatedDayLabour, "event min:", event.TotalLBRMin, "max min:", maxDayLabour);
-                //if (allocatedDayLabour + event.TotalLBRMin <= maxDayLabour) {
-                //    eventUpdate(event);
-                //} else {
-                //    ShowWarning(allocatedDayLabour, event.TotalLBRMin, maxDayLabour);
-                //    revertFunc();
-                //}
-                eventUpdate(event);
+
+            var message = "The Work Order '" + event.title + "' was scheduled on " + event.start.toISOString() + ". Are you sure about this change ?";
+            if (!confirm(message)) {
+                revertFunc();
             }
-            {
-                eventUpdate(event);
+            else {
+                if ((displayType != "Installation") && (displayType != "Remeasure")) {
+                    if (debug) console.log('eventDrop', 'event.title=' + event.title, "id: " + event.id, "labour min: " + event.TotalLBRMin, "event date:", GetDatefromMoment(event.start));
+                    var eventDate = GetDatefromMoment(event.start);
+                    var maxDayLabour = parseInt(FindByValue("max", eventDate).Value);
+                    var allocatedDayLabour = GetDayLabourValue($('#calendar').fullCalendar('getView'), eventDate);
+                    //   console.log("eventDrop", "allocated min:", allocatedDayLabour, "event min:", event.TotalLBRMin, "max min:", maxDayLabour);
+                    //if (allocatedDayLabour + event.TotalLBRMin <= maxDayLabour) {
+                    //    eventUpdate(event);
+                    //} else {
+                    //    ShowWarning(allocatedDayLabour, event.TotalLBRMin, maxDayLabour);
+                    //    revertFunc();
+                    //}
+                    eventUpdate(event);
+                }
+                {
+                    eventUpdate(event);
+                }
+                $('#calendar').fullCalendar('refetchEvents');
             }
-            $('#calendar').fullCalendar('refetchEvents');
+        
 
         },//: eventUpdate,
         eventResize: eventUpdate,
@@ -3377,7 +3385,7 @@ function AddRecordToList(recordID) {
     else {
         recordIDArray.push(recordID);
     }
-    var str = "tset";
+   
 }
 
 function AddInstallersToEvent() {
@@ -3538,6 +3546,7 @@ function AddInstallers() {
 }
 
 function GetInstallers(workOrder) {
+    $("#AddCrewNames").html("<a href='#'" + " id='AddInstallersPop' onclick=\"AddInstallers()\"> Add Installers");
     $.ajax({
         //type: "POST",  
         url: 'data.svc/GetInstallers?workOrderNumber=' + workOrder,
@@ -3545,13 +3554,13 @@ function GetInstallers(workOrder) {
         success: function (data) {
             if (debug) console.log("events.success", "data.GetInstallers:");
 
-      
+              
             if (data.GetInstallersResult.length > 0) {
 
                 $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
             //    $("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
              //   $("#CrewNames").html("<a href='https://www.google.com'> text </a> ");
-                $("#AddCrewNames").html("<a href='#'" + " id='AddInstallersPop' onclick=\"AddInstallers()\"> Add Installers");
+            
                 if (data.GetInstallersResult[0].CrewNames == null || data.GetInstallersResult[0].CrewNames.trim().length == 0) {
                     $("#CrewNames").html("Un assigned");
                    
