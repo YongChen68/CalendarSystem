@@ -4449,9 +4449,9 @@ function GetJobReview(workOrder) {
                 noJobReview.style.display = "none";
                 $("#dataTableJobReview").append("<tr>  <th style = 'text-align:center;' >Created At</th ><th style='text-align:center;'> Created By</th>" + 
                    " <th style = 'text-align:center;' > Centra Quality</th> <th style='text-align:center;'> Codel Quality</th> <th style='text-align:center;' > Contract Quality</th >" +
-                  "  <th style='text-align:center;' > Remeasure Quality</th> <th style='text-align:center;'> Did you have Everything</th>"+
+                  "  <th style='text-align:center;' > Remeasure Quality</th>"+
                   "  <th style='text-align:center;'> Windows Ready</th> <th style='text-align:center;'> Codel Ready</th>"+
-                   " <th style='text-align:center;'> Install Material Missing</th> <th style='text-align:left;'> Notes:</th> <th style='text-align:center;'> What Was Missing</th>");
+                   " <th style='text-align:center;'> Install Material Missing</th> <th style='text-align:center;'> Notes:</th> <th style='text-align:center;'> What Was Missing</th>");
 
                 for (var i = 0; i < data.GetJobReviewResult.length; i++) {
                     $("#dataTableJobReview").append("<tr><td>" +
@@ -4459,16 +4459,22 @@ function GetJobReview(workOrder) {
                         data.GetJobReviewResult[i].StrCreatedAt + "</td> <td> " +
 
                         data.GetJobReviewResult[i].CreatedBy + "</td> <td> " +
-                        data.GetJobReviewResult[i].CentraQuality + "</td> <td> " +
-                        data.GetJobReviewResult[i].CodelQuality + "</td> <td> " +
-                        data.GetJobReviewResult[i].ContractQuality + "</td> <td> " +
-                        data.GetJobReviewResult[i].RemeasureQuality + "</td> <td> " +
-                        " yes have " + "</td> <td> " +
-                        " yes ready win " + "</td> <td> " +
-                        " yes ready codel " + "</td> <td> " +
-                        data.GetJobReviewResult[i].InstallMaterialMissing + "</td> <td> " +
+                        data.GetJobReviewResult[i].CentraQuality +
+                        (data.GetJobReviewResult[i].CentraQuality > 3 ? "&nbsp;<img src=\"images/greenface.jpg\" />" : "&nbsp;<img src=\"images/yellowface.jpg\" />") + "</td> <td> " +
+                        //''"<img src='images/installerimage.jpg'/></td> <td> " + 
+                        //(data.GetJobReviewResult[i].CentraQuality > 3 ? "&nbsp;<img src=\"images/greenface.jpg\" />" : "&nbsp;<img src=\"images/yellowface.jpg\" />") + "</td> <td> " +
+                        data.GetJobReviewResult[i].CodelQuality +
+                        (data.GetJobReviewResult[i].CodelQuality > 3 ? "&nbsp;<img src=\"images/greenface.jpg\" />" : "&nbsp;<img src=\"images/yellowface.jpg\" />") + "</td> <td> " +
+                       // data.GetJobReviewResult[i].CodelQuality > 3 ? "&nbsp;<img src=\"images/greenface.jpg\" />" : "") + "</td> <td> " +
+                        data.GetJobReviewResult[i].ContractQuality +
+                        (data.GetJobReviewResult[i].ContractQuality > 3 ? "&nbsp;<img src=\"images/greenface.jpg\" />" : "&nbsp;<img src=\"images/yellowface.jpg\" />") + "</td> <td> " +
+                        data.GetJobReviewResult[i].RemeasureQuality + 
+                        (data.GetJobReviewResult[i].RemeasureQuality > 3 ? "&nbsp;<img src=\"images/greenface.jpg\" />" : "&nbsp;<img src=\"images/yellowface.jpg\" />") + "</td> <td> " +
+                        data.GetJobReviewResult[i].WindowProductReady + "</td> <td> " +
+                        data.GetJobReviewResult[i].CodelProductReady+ "</td> <td> " +
+                        data.GetJobReviewResult[i].InstallMaterialMissing + "</td> <td style='text-align:center;'> " +
                         data.GetJobReviewResult[i].Notes + "</td> <td> " +
-                        " what is missing" + 
+                        data.GetJobReviewResult[i].Whatwasmissing  + 
                         "</td></tr>");
 
                 }
@@ -4476,7 +4482,7 @@ function GetJobReview(workOrder) {
 
             }
             else {
-                noDocuments.style.display = "block";
+                noJobReview.style.display = "block";
             }
         }, error: function (error) {
             console.log('Error', error);

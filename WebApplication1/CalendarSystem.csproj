@@ -82,6 +82,7 @@
     <Content Include="images\color.png" />
     <Content Include="images\door.png" />
     <Content Include="images\flag.png" />
+    <Content Include="images\greenface.jpg" />
     <Content Include="images\HD.jpg" />
     <Content Include="images\holiday-icon.png" />
     <Content Include="images\human.png" />
@@ -94,6 +95,7 @@
     <Content Include="images\timer.png" />
     <Content Include="images\transparent.png" />
     <Content Include="images\window.png" />
+    <Content Include="images\yellowface.jpg" />
     <Content Include="js\calendarprocessing.js" />
     <None Include="js\oldcalendarprocessing.js.old2" />
     <Content Include="images\Custom.png" />

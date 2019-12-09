@@ -146,26 +146,26 @@
             });
 
             //var fileUpload = $("#fileUpload").get(0);
-            var fileDisplayArea = document.getElementById('file');
+            //var fileDisplayArea = document.getElementById('file');
 
 
-            fileUpload.addEventListener('change', function (e) {
-                var file = fileUpload.files[0];
-                var reader = new FileReader();
-                reader.onload = function (e) {
-                    fileDisplayArea.innerHTML = "";
-                    var theBytes = e.target.result; //.split('base64,')[1]; // use with uploadFile2
-                    fileByteArray.push(theBytes);
-                    for (var i = 0; i < fileByteArray.length; i++) {
-                        fileDisplayArea.innerText += fileByteArray[i];
-                    }
-                    //fileDisplayArea.innerText = reader.result;
-                }
+            //fileUpload.addEventListener('change', function (e) {
+            //    var file = fileUpload.files[0];
+            //    var reader = new FileReader();
+            //    reader.onload = function (e) {
+            //        fileDisplayArea.innerHTML = "";
+            //        var theBytes = e.target.result; //.split('base64,')[1]; // use with uploadFile2
+            //        fileByteArray.push(theBytes);
+            //        for (var i = 0; i < fileByteArray.length; i++) {
+            //            fileDisplayArea.innerText += fileByteArray[i];
+            //        }
+            //        //fileDisplayArea.innerText = reader.result;
+            //    }
 
-               // reader.readAsArrayBuffer(file);
-                reader.readAsDataURL(file);
+            //   // reader.readAsArrayBuffer(file);
+            //    reader.readAsDataURL(file);
 
-            });
+            //});
         }
 
 
