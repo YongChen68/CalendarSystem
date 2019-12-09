@@ -74,6 +74,9 @@
     <script>
         var geocoder;
         var map, mapRemeasure, mapWindows;
+
+
+
         $(function () {
             // $("#from_date").datepicker();
             $('#wooddropdate').datepicker({
@@ -141,7 +144,31 @@
                 map: map,
                 title: "location"
             });
+
+            //var fileUpload = $("#fileUpload").get(0);
+            var fileDisplayArea = document.getElementById('file');
+
+
+            fileUpload.addEventListener('change', function (e) {
+                var file = fileUpload.files[0];
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    fileDisplayArea.innerHTML = "";
+                    var theBytes = e.target.result; //.split('base64,')[1]; // use with uploadFile2
+                    fileByteArray.push(theBytes);
+                    for (var i = 0; i < fileByteArray.length; i++) {
+                        fileDisplayArea.innerText += fileByteArray[i];
+                    }
+                    //fileDisplayArea.innerText = reader.result;
+                }
+
+               // reader.readAsArrayBuffer(file);
+                reader.readAsDataURL(file);
+
+            });
         }
+
+
 
         function codeAddress() {
             var address = document.getElementById('Address').innerHTML;
@@ -960,13 +987,24 @@
                                     </div>
                                     <div style="overflow: auto; ">
                                         <table id="dataTableDocumentLibrary" class="table table-striped table-bordered table-hover table-condensed"></table>
-                                        <%--<label for="documentNotes">File Name:</label>
-                                
+                                     </div>
+                                     <div style="margin-left:-1100px;">
+                                        <label for="documentNotes">File Name:</label>
+
                                         <input id="documentFile" style="text-align: center;" >
-                                        <input id="fileUpload" type="file"  accept=".jpg, .jpeg, .png,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
-                                        <input type="button" name="btnUploadDocuments" id="btnUploadDocuments" class="btn btn-success" value="Save" onclick="UploadDocuments()">
-                                        <span id="file"></span>--%>
-                                    </div>
+
+                                     </div>
+                                    <br />
+                                    <div>
+                                         <input id="fileUpload" type="file"  accept=".jpg, .jpeg, .png,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
+                                        <span id="file"></span>
+                                       </div>
+                                     <div style="margin-left:-1100px;">   
+                                    <input type="button" name="btnUploadDocuments" id="btnUploadDocuments" class="btn btn-success" value="Save" onclick="UploadDocuments()">
+                                    
+                                        </div>
+                                      
+                                 
 
                                 </div>
                                 <div role="tabpanel" class="tab-pane " id="JobReviewTab">

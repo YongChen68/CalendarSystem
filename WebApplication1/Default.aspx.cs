@@ -37,19 +37,62 @@ namespace CalendarSystem
             return retValue;
         }
 
+        public static string GetActionItemIDByWO(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write("Getting GetActionItemIDByWO({0})", workOrderNumber);
+            string retValue = string.Empty;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetActionItemIDByWO();
+                Lift.LiftManager.Logger.Write("Leaving GetCalledLog() = {0}", retValue);
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write("Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
         //this method only updates start and end time
         //this is called when a event is dragged or resized in the calendar
         [System.Web.Services.WebMethod(true)]
-        public static bool UploadDocumentFiles(string eventID, string data)
+        public static bool UploadDocumentFiles(string WO, string fileName, string data)
         {
-            string aa = eventID;
+            string aa = fileName;
             string bb = data;
-            //if (eventData.end == eventData.start)
-            //{
-            //    eventData.end = Convert.ToDateTime(eventData.end).AddDays(1).ToString("yyyy-MM-ddT00:00:00.000Z");
-            //}
-            //RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
-            //return runner.ProcessUpdate(Utils.ContentTypeParser.GetType(type), eventData);
+            Lift.LiftManager.Logger.Write( "UploadDocument('{0}')", WO);
+            DocumentFile eventData = null;
+            bool retValue = false;
+            try
+            {
+
+                // List<DocumentFile> keepedFiles = GetKeepedFiles(id, WO, recordID);
+                List<DocumentFile> fileList = new List<DocumentFile>();
+                //  fileList = keepedCalledLog.ToList();
+                eventData = new DocumentFile();
+                eventData.id = GetActionItemIDByWO(WO);
+                eventData.FileName = fileName;
+                eventData.FileSource = System.Convert.FromBase64String(data);
+                fileList.Add(eventData);
+                //eventData.CalledMessage = calledMessage;
+                ////  eventData.DateCalled = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(callDate).ToString("yyyy-MM-ddTHH:mm:00.000Z")); ;
+                //if (callDate.Length != 0)
+                //{
+                //    eventData.DateCalled = Convert.ToDateTime(callDate + " " + callTime).ToString();
+                //    calledLogList.Add(eventData);
+                //}
+
+                RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
+                retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), fileList);
+
+                Lift.LiftManager.Logger.Write("UpdateCallLogData id= {0}", WO);
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write("Error occured: {0}", ex.ToString());
+            }
+            return retValue;
             return true;
         }
 

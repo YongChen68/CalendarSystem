@@ -22,6 +22,14 @@ namespace RuntimeHelper
             return _comHelper.UpdateRecord(type, eventData);
         }
 
+        public bool ProcessUpdate(Generics.Utils.ContentType type, List<Generics.Utils.DocumentFile> eventData)
+        {
+            Generics.RecordUpdate.IUpdateHelper _comHelper = new FlowfinityConnectionHelper.FlowfinityUpdateHelper(Lift.LiftManager.ConfigProvider.GetValue("OnBehlfOf"),
+                new FlowfinityConnectionHelper.Utils.ActionsCommHelperwithLogging());
+            return _comHelper.UpdateRecord(type, eventData);
+        }
+
+
         public bool ProcessUpdate(Generics.Utils.ContentType type, List<Generics.Utils.Notes> eventData)
         {
             Generics.RecordUpdate.IUpdateHelper _comHelper = new FlowfinityConnectionHelper.FlowfinityUpdateHelper(Lift.LiftManager.ConfigProvider.GetValue("OnBehlfOf"),

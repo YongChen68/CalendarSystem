@@ -503,6 +503,42 @@ namespace CalendarSystem
         }
 
 
+        public bool UploadDocument(string workOrderNumber, string fileName, string fileSource)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "UploadDocument('{0}')", workOrderNumber);
+            DocumentFile eventData = null;
+            bool retValue = false;
+            try
+            {
+               
+               // List<DocumentFile> keepedFiles = GetKeepedFiles(id, WO, recordID);
+                List<DocumentFile> fileList = new List<DocumentFile>();
+              //  fileList = keepedCalledLog.ToList();
+                eventData = new DocumentFile();
+                eventData.id = GetActionItemIDByWO(workOrderNumber);
+                eventData.FileName = fileName;
+                eventData.FileSource = System.Convert.FromBase64String(fileSource);
+                fileList.Add(eventData);
+                //eventData.CalledMessage = calledMessage;
+                ////  eventData.DateCalled = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(callDate).ToString("yyyy-MM-ddTHH:mm:00.000Z")); ;
+                //if (callDate.Length != 0)
+                //{
+                //    eventData.DateCalled = Convert.ToDateTime(callDate + " " + callTime).ToString();
+                //    calledLogList.Add(eventData);
+                //}
+
+                RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
+                retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), fileList);
+
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateCallLogData id= {0}", workOrderNumber);
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
 
         public bool UpdateCallLogData(
                string id
@@ -938,6 +974,7 @@ namespace CalendarSystem
             return retValue;
         }
 
+
         List<JobReview> Idata.GetJobReview(string workOrderNumber)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetJobReview({0})", workOrderNumber);
@@ -1131,5 +1168,6 @@ namespace CalendarSystem
         }
 
     }
+    
 
 }

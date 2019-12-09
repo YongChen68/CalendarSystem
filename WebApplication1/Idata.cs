@@ -66,6 +66,11 @@ namespace CalendarSystem
         bool UpdateCrewData(string recordid, int IsAdd,string WO);
 
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "UploadDocument?workOrderNumber={workOrderNumber}&fileName={fileName}&fileSource={fileSource}")]
+        bool UploadDocument(string workOrderNumber, string fileName, string fileSource);
+
+
+        [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "UpdateNotesData?id={id}&WO={WO}&recordid={recordid}&notesDate={notesDate}&notesTime={notesTime}&category={category}&Notes={Notes}")]
         bool UpdateNotesData(string id, string WO, string recordid, string notesDate, string notesTime, string category, string Notes);
 

@@ -16,6 +16,46 @@ var WO;
 var fileByteArray = [];
 var recordIDArray = [];
 
+
+//window.onload = function () {
+//    var fileInput = document.getElementById('fileUpload');
+//  //  var fileDisplayArea = document.getElementById('fileDisplayArea');
+    
+//    fileInput.addEventListener('change', function (e) {
+//      //  var file = fileInput.files[0];  --get(0).files
+//        var file = fileInput.get(0).files[0]; 
+//        var textType = /image.*/;
+
+//        if (file.type.match(textType)) {
+//            var reader = new FileReader();
+
+//            reader.onload = function (e) {
+//               // fileDisplayArea.innerText = reader.result;
+//                var theBytes = e.target.result; //.split('base64,')[1]; // use with uploadFile2
+//                fileByteArray.push(theBytes);
+//                document.getElementById('file').innerText = '';
+//                for (var i = 0; i < fileByteArray.length; i++) {
+//                    document.getElementById('file').innerText += fileByteArray[i];
+//                }
+//            }
+//            reader.readAsArrayBuffer(file);
+//        } else {
+//            fileDisplayArea.innerText = "File not supported!";
+//        }
+//    });
+//$("#btnUploadDocuments").addEventListener("click", function () {
+//    UploadDocuments();
+//}); 
+
+
+
+//window.onload = function () {
+//    var fileInput = document.getElementById('fileUpload');
+//    fileInput.addEventListener("change", function () {
+//        processFile(fileInput);
+//    });
+//}
+
 var is_weekend = function (date1) {
     var dt = new Date(date1);
 
@@ -3545,6 +3585,7 @@ function AddInstallers() {
 
 }
 
+
 function GetInstallers(workOrder) {
     $("#AddCrewNames").html("<a href='#'" + " id='AddInstallersPop' onclick=\"AddInstallers()\"> Add Installers");
     $.ajax({
@@ -3764,23 +3805,25 @@ function UpdateInstallationNotes() {
     });
 }
 
-function processFile(theFile) {
-    return function (e) {
-        var theBytes = e.target.result; //.split('base64,')[1]; // use with uploadFile2
-        fileByteArray.push(theBytes);
-        document.getElementById('file').innerText = '';
-        for (var i = 0; i < fileByteArray.length; i++) {
-            document.getElementById('file').innerText += fileByteArray[i];
-        }
-    }
-}
+//function processFile(theFile) {
+//    return function (e) {
+//        var theBytes = e.target.result; //.split('base64,')[1]; // use with uploadFile2
+//        fileByteArray.push(theBytes);
+//        document.getElementById('file').innerText = '';
+//        for (var i = 0; i < fileByteArray.length; i++) {
+//            document.getElementById('file').innerText += fileByteArray[i];
+//        }
+//    }
+//}
 
 
 function UploadDocuments() {
-    //var files = $("#fileUpload").get(0).files[0];
-    //var reader = new FileReader();
-    //reader.onload = processFile(files);
-    //reader.readAsText(files); 
+   var fileName = $("#documentFile").val();
+   var fileData;
+    fileData = fileByteArray;
+ 
+    PageMethods.UploadDocumentFiles( WO,fileName, fileData.toString());
+   
 }
 
 function CallLogEdit(recordid) {
@@ -3857,7 +3900,7 @@ function ShowDocumentFile(recordid) {
                 var pdfWindow = window.open(data.GetDocumentFileResult[0].DocumentFileStr, '_blank');
                
              //   pdfWindow.document.write("<iframe width='100%' height='100%' src='data:application/pdf;base64, " + data.GetDocumentFileResult[0].DocumentFileStr + "'></iframe>")
-                pdfWindow.document.write("<iframe width='100%' height='100%' src='" + data.GetDocumentFileResult[0].DocumentFileStr + "'></iframe>")
+                pdfWindow.document.write("<iframe width='100%' height='100%' src='" + data.GetDocumentFileResult[0].DocumentFileStr + "'></iframe>");
 
 
             }
@@ -3959,7 +4002,11 @@ function InstallerInfoView(recordid) {
                 $("#InstallerWorkPhoneView").html(data.GetInstallerInfoByRecordIDResult.WorkPhoneNumber);
                 $("#InstallerEmailView").html(data.GetInstallerInfoByRecordIDResult.email);
                // $("#installerImg").src = data.GetInstallerInfoByRecordIDResult.picString;
-                $("#installerImg").attr('src', data.GetInstallerInfoByRecordIDResult.picString);
+                $("#installerImg").attr('src', 'images/installerimage.jpg');
+                if (data.GetInstallerInfoByRecordIDResult.picString != null) {
+                    $("#installerImg").attr('src', data.GetInstallerInfoByRecordIDResult.picString);
+                }
+               
                 $("#installerImg").css({ 'width': '250px', 'height': '250px' });
                
             }
@@ -3991,7 +4038,11 @@ function InstallerInfoAddView(recordid) {
                 $("#InstallerWorkPhoneAdd").html(data.GetInstallerInfoByRecordIDResult.WorkPhoneNumber);
                 $("#InstallerEmailViewAdd").html(data.GetInstallerInfoByRecordIDResult.email);
                 // $("#installerImg").src = data.GetInstallerInfoByRecordIDResult.picString;
-                $("#AddinstallerImg").attr('src', data.GetInstallerInfoByRecordIDResult.picString);
+                $("#AddinstallerImg").attr('src', 'images/installerimage.jpg');
+                if (data.GetInstallerInfoByRecordIDResult.picString != null) {
+                    $("#AddinstallerImg").attr('src', data.GetInstallerInfoByRecordIDResult.picString);
+                }
+              //  $("#AddinstallerImg").attr('src', data.GetInstallerInfoByRecordIDResult.picString);
                 $("#AddinstallerImg").css({ 'width': '250px', 'height': '250px' });
 
             }
@@ -4442,6 +4493,7 @@ function GetDocumentLibrary(workOrder) {
         //type: "POST",  
         url: 'data.svc/GetDocumentLibrary?workOrderNumber=' + workOrder,
         dataType: 'json',
+        async: false,
         success: function (data) {
             if (debug) console.log("events.success", "data.GetDocumentLibrary:");
             var noDocuments = document.getElementById('noDocuments');
@@ -4454,17 +4506,8 @@ function GetDocumentLibrary(workOrder) {
                     $("#dataTableDocumentLibrary").append("<tr><td>" +
 
                         data.GetDocumentLibraryResult[i].Notes + "</td> <td> " +
-                        "<a href='#'" + " id='aDocumentFile" + data.GetDocumentLibraryResult[i].DetailRecordId + "' onclick=\"ShowDocumentFile(" + data.GetDocumentLibraryResult[i].DetailRecordId + ")\">" + data.GetDocumentLibraryResult[i].FileName  + " </a >" +
-
-                       
-
-                        //" <div id='" + data.GetWOPictureResult[i].DetailRecordId + "' class='w3-modal'" + "style='display:none; position: absolute;top:0px;left: 0px;'" +  " onclick=\"this.style.display ='none'\">" +
-                        //" <span class='w3-button w3-hover-red w3-xlarge w3-display-topright'></span >" +
-                        //" <div class='w3-modal-content w3-animate-zoom' >" +
-
-                        //" <div>" + " onclick=\"ShowWOBigPicture(" + data.GetWOPictureResult[i].DetailRecordId + ")\">" +
-                        ////data.GetWOPictureResult[i].picString + "</div></div>" + 
-                        //"</div>" + 
+                        "<a href='#'" + " id='aDocumentFile" + data.GetDocumentLibraryResult[i].DetailRecordId + "' onclick=\"ShowDocumentFile(" + data.GetDocumentLibraryResult[i].DetailRecordId + ")\">" + data.GetDocumentLibraryResult[i].FileName + " </a >" +
+                        "<a href='#'" + " id='bDocumentFile" + data.GetDocumentLibraryResult[i].DetailRecordId + "' onclick=\"DeleteDocumentFile(" + data.GetDocumentLibraryResult[i].DetailRecordId + ")\">" +" Delete" +  " </a >" +
                         "</td></tr>");
 
                 }

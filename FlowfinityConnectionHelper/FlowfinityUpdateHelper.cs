@@ -36,14 +36,14 @@ namespace FlowfinityConnectionHelper
             // HomeInstallations_EditSold_Call
             bool ret;
             bool ret1 = true;
-            FASR.HomeInstallations_EditSold_Call  call = new FASR.HomeInstallations_EditSold_Call()
+            FASR.HomeInstallations_EditSold_Call call = new FASR.HomeInstallations_EditSold_Call()
             {
                 OnBehalfOf = Owner,
                 RecordID = data.id,
-                
+
                 Record = GetRecord(type, data)
             };
-            ret= _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
+            ret = _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
 
             if (data.CurrentStateName == "Unreviewed Work Scheduled")
             {
@@ -119,12 +119,12 @@ namespace FlowfinityConnectionHelper
 
         private static FASR.HomeInstallationsRecord GetRecord(Generics.Utils.ContentType type, Generics.Utils.ImproperRemeasureEvent data)
         {
-          
+
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
             record.RemeasureDate = new FASR.DateTimeValue() { Value = Generics.Utils.Date.DateParser.ParseTime(data.start) };
             record.RemeasureEndTime = new FASR.DateTimeValue() { Value = Generics.Utils.Date.DateParser.ParseTime(data.end) };
             return record;
-            
+
         }
 
 
@@ -140,9 +140,9 @@ namespace FlowfinityConnectionHelper
         {
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
             record.CallLog = PrepareInstallationCallLogList(data);
-            if (data.Count==1)
+            if (data.Count == 1)
             {
-                if (data[0].DateCalled==null)
+                if (data[0].DateCalled == null)
                 {
                     record.CallLog = null;
                 }
@@ -162,7 +162,7 @@ namespace FlowfinityConnectionHelper
         private static FASR.HomeInstallationsRecord GetRecordForStateChanges(Generics.Utils.ContentType type, Generics.Utils.ImproperInstallationEvent data)
         {
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
-           // record.InstallationDates = PrepareInstallationDateList(data);
+            // record.InstallationDates = PrepareInstallationDateList(data);
             return record;
         }
 
@@ -173,8 +173,8 @@ namespace FlowfinityConnectionHelper
             record.Saturday = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>(data.Saturday);
             record.Sunday = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>(data.Sunday);
 
-          //  record.Asbestos= Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>(data.Asbestos.ToString());
-            if (data.Asbestos==1)
+            //  record.Asbestos= Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>(data.Asbestos.ToString());
+            if (data.Asbestos == 1)
             {
                 record.Asbestos = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>("Yes");
             }
@@ -196,8 +196,8 @@ namespace FlowfinityConnectionHelper
             {
                 record.WoodDropOff = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>("No");
             }
-          //  record.WoodDropOff = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>(data.WoodDropOff.ToString());
-           // record.HighRisk = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>(data.HighRisk.ToString());
+            //  record.WoodDropOff = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>(data.WoodDropOff.ToString());
+            // record.HighRisk = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>(data.HighRisk.ToString());
 
             if (data.HighRisk == 1)
             {
@@ -209,7 +209,7 @@ namespace FlowfinityConnectionHelper
             }
 
             record.EstInstallerCnt = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>(data.EstInstallerCnt.ToString());
-            
+
             return record;
         }
 
@@ -226,9 +226,20 @@ namespace FlowfinityConnectionHelper
         {
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
             record.Crew = PrepareInstallerCrewData(data);
-        //    record.ReturnTripReason = Lift.II.IIUtils.CreateStringValue<StringValue>(data.ReturnTripReason);
+            //    record.ReturnTripReason = Lift.II.IIUtils.CreateStringValue<StringValue>(data.ReturnTripReason);
             return record;
         }
+
+
+        private static FASR.HomeInstallationsRecord GetDocumentFileRecord(Generics.Utils.ContentType type, List<Generics.Utils.DocumentFile> data)
+        {
+            FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
+            record.FileAttachment = PrepareInstallerFileData(data);
+            //    record.ReturnTripReason = Lift.II.IIUtils.CreateStringValue<StringValue>(data.ReturnTripReason);
+            return record;
+        }
+
+
 
         private static FASR.HomeInstallationsRecord GetRecord(Generics.Utils.ContentType type, Generics.Utils.InstallationEventWeekends data)
         {
@@ -253,7 +264,7 @@ namespace FlowfinityConnectionHelper
                 record.ShippingDate = PrepareShippingDateList(data);
             return record;
         }
-        
+
 
         private static PlantProduction_ShippingDateRecord[] PrepareShippingDateList(ImproperCalendarEvent data)
         {
@@ -299,7 +310,7 @@ namespace FlowfinityConnectionHelper
             }
             else
             {
-                returnStr =  string.Format("{0} {1} {2}", "update", data.DetailRecordId, DateTime.Now.Ticks.ToString());
+                returnStr = string.Format("{0} {1} {2}", "update", data.DetailRecordId, DateTime.Now.Ticks.ToString());
             }
             return returnStr;
         }
@@ -317,6 +328,22 @@ namespace FlowfinityConnectionHelper
             }
             return returnStr;
         }
+
+
+        private static string PrepareTransactionId(Generics.Utils.DocumentFile data)
+        {
+            string returnStr = string.Empty;
+            if (data is null)
+            {
+                returnStr = string.Format("{0} {1} {2}", "update", "", DateTime.Now.Ticks.ToString());
+            }
+            else
+            {
+                returnStr = string.Format("{0} {1} {2}", "update", data.id, DateTime.Now.Ticks.ToString());
+            }
+            return returnStr;
+        }
+
 
         private static string PrepareTransactionId(Generics.Utils.Notes data)
         {
@@ -385,7 +412,7 @@ namespace FlowfinityConnectionHelper
         private static FASR.UserLookupRecord[] PrepareInstallerCrewData(List<Generics.Utils.InstallerWithLessInfo> data)
         {
             List<FASR.UserLookupRecord> returnValue = new List<FASR.UserLookupRecord>();
-            
+
             if (data == null)
             {
                 return null;
@@ -403,13 +430,40 @@ namespace FlowfinityConnectionHelper
             }
         }
 
+        private static FASR.HomeInstallations_FileAttachmentRecord[] PrepareInstallerFileData(List<Generics.Utils.DocumentFile> data)
+        {
+            List<FASR.HomeInstallations_FileAttachmentRecord> returnValue = new List<FASR.HomeInstallations_FileAttachmentRecord>();
+
+            if (data == null)
+            {
+                return null;
+            }
+            else
+            {
+                foreach (Generics.Utils.DocumentFile c in data)
+                {
+                    //  calledLogOffDate = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(c.DateCalled).ToString("yyyy-MM-ddTHH:mm:00.000Z"));
+                    returnValue.Add(new FASR.HomeInstallations_FileAttachmentRecord()
+                    {
+                        //CalledMessage = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>(c.CalledMessage),
+                        //Notes3 = Lift.II.IIUtils.CreateStringValue<StringValue>(c.Notes3),
+                        //DateCalled = Lift.II.IIUtils.CreateDateTimeValue<DateTimeValue>(calledLogOffDate),
+                        FileName = Lift.II.IIUtils.CreateSingleSelectValue<BinaryValue>(c.FileSource.ToString()),
+                        Notes5 = Lift.II.IIUtils.CreateSingleSelectValue<StringValue>(c.FileName),
+
+                    });
+                }
+                return returnValue.ToArray();
+            }
+        }
+
         private static FASR.HomeInstallations_CallLogRecord[] PrepareInstallationCallLogList(List<Generics.Utils.CalledLog> data)
         {
             List<FASR.HomeInstallations_CallLogRecord> returnValue = new List<FASR.HomeInstallations_CallLogRecord>();
             DateTime calledLogOffDate;
-            if (data ==null)
+            if (data == null)
             {
-               return null;
+                return null;
             }
             else
             {
@@ -426,11 +480,6 @@ namespace FlowfinityConnectionHelper
                 }
                 return returnValue.ToArray();
             }
-
-            
-          
-          
-         
         }
 
         private static FASR.HomeInstallations_GeneralNotesListRecord[] PrepareInstallationNotesList(List<Generics.Utils.Notes> data)
@@ -472,7 +521,7 @@ namespace FlowfinityConnectionHelper
         //    return returnValue;
         //}
 
-        private static FASR.HomeInstallations_ReturnTripRecord [] PrepareReturnedInstallationDateList(Generics.Utils.ImproperInstallationEvent data)
+        private static FASR.HomeInstallations_ReturnTripRecord[] PrepareReturnedInstallationDateList(Generics.Utils.ImproperInstallationEvent data)
         {
             List<FASR.HomeInstallations_ReturnTripRecord> returnValue = new List<FASR.HomeInstallations_ReturnTripRecord>();
             DateTime start = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(data.start).ToString("yyyy-MM-ddT00:00:00.000Z"));
@@ -650,6 +699,18 @@ namespace FlowfinityConnectionHelper
             return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data[0])).ReturnValue;
         }
 
+        bool IUpdateHelper.UpdateRecord(ContentType type, List<DocumentFile> data)
+        {
+            FASR.HomeInstallations_EditSold_Call call = new FASR.HomeInstallations_EditSold_Call()
+            {
+                OnBehalfOf = Owner,
+                RecordID = data[0].id,
+                Record = GetDocumentFileRecord(type, data)
+            };
+            return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data[0])).ReturnValue;
+        }
+
+
 
         public bool UpdateRecord(ContentType type, InstallationDataEvent data)
         {
@@ -683,18 +744,21 @@ namespace FlowfinityConnectionHelper
             }
             else
             {
-               CalledLog data1 = null;
+                CalledLog data1 = null;
                 FASR.HomeInstallations_EditSold_Call call = new FASR.HomeInstallations_EditSold_Call()
                 {
                     OnBehalfOf = Owner,
-                    RecordID ="",
+                    RecordID = "",
                     Record = GetCalledLogRecord(type, null)
                 };
                 returnValue = _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data1)).ReturnValue;
             }
-           
-           return returnValue;
+
+            return returnValue;
         }
+
+
+
 
         bool IUpdateHelper.UpdateRecord(ContentType type, List<Notes> data)
         {
@@ -724,5 +788,6 @@ namespace FlowfinityConnectionHelper
 
             return returnValue;
         }
+
     }
 }

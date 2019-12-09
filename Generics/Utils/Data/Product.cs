@@ -369,6 +369,12 @@ namespace Generics.Utils
         }
 
         [DataMember]
+        public string id
+        {
+            get; set;
+        }
+
+        [DataMember]
         public byte[] FileSource
         {
             get; set;
