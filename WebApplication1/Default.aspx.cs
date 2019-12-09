@@ -73,7 +73,7 @@ namespace CalendarSystem
                 eventData = new DocumentFile();
                 eventData.id = GetActionItemIDByWO(WO);
                 eventData.FileName = fileName;
-                eventData.FileSource = System.Convert.FromBase64String(data);
+                eventData.FileSource = System.Convert.FromBase64String(data.Split(',')[1]);
                 fileList.Add(eventData);
                 //eventData.CalledMessage = calledMessage;
                 ////  eventData.DateCalled = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(callDate).ToString("yyyy-MM-ddTHH:mm:00.000Z")); ;

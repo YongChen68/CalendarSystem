@@ -2073,7 +2073,7 @@ where DetailRecordId = '{0}' ", recordId);
 
         private string GetDocumentFileSQL(int recordId)
         {
-            string SQL =  string.Format(@"select FileName as FileNameSource,Notes5 as Notes, FileName_bin as FileSource,[ParentRecordId],[DetailRecordId],WorkOrderNumber
+            string SQL =  string.Format(@"select FileName as FileNameSource,Notes5 as Notes, FileName_bin as FileSource,[ParentRecordId],[DetailRecordId],WorkOrderNumber,ActionItemId as id
  FROM [flowserv_flowfinityapps].[dbo].[HomeInstallations_FileAttachment] tp
   inner join  HomeInstallations i on  i.RecordId=tp.ParentRecordId
   inner join [HomeInstallations_FileAttachment__binaries] tb on tb.recordid = tp.DetailRecordId

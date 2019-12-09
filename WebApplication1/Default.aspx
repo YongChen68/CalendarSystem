@@ -983,26 +983,25 @@
                                 </div>
                                 <div role="tabpanel" class="tab-pane " id="DocumentLibraryTab">
                                      <br/>
-                                     <div > <span id="noDocuments" style=" text-align:left; display:none;">No documents attached to this job.</span>
+                                     <div > <span id="noDocuments" style=" text-align:left; display:none;"></span>
                                     </div>
                                     <div style="overflow: auto; ">
                                         <table id="dataTableDocumentLibrary" class="table table-striped table-bordered table-hover table-condensed"></table>
                                      </div>
-                                     <div style="margin-left:-1100px;">
+                                    <%-- <div style="margin-left:-1100px;">
                                         <label for="documentNotes">File Name:</label>
 
                                         <input id="documentFile" style="text-align: center;" >
 
-                                     </div>
-                                    <br />
+                                     </div>--%>
+                            <%--        <br />
                                     <div>
                                          <input id="fileUpload" type="file"  accept=".jpg, .jpeg, .png,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
                                         <span id="file"></span>
-                                       </div>
+                                     </div>
                                      <div style="margin-left:-1100px;">   
-                                    <input type="button" name="btnUploadDocuments" id="btnUploadDocuments" class="btn btn-success" value="Save" onclick="UploadDocuments()">
-                                    
-                                        </div>
+                                        <input type="button" name="btnUploadDocuments" id="btnUploadDocuments" class="btn btn-success" value="Save" onclick="UploadDocuments()">
+                                     </div>--%>
                                       
                                  
 
