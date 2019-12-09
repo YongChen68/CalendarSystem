@@ -171,7 +171,7 @@
 
 
         function codeAddress() {
-            var address = document.getElementById('Address').innerHTML;
+            var address = document.getElementById('Address').innerHTML + "," + document.getElementById('City').innerHTML;
             var request = {
                 address: address,
                 componentRestrictions: {
