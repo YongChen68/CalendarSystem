@@ -139,14 +139,22 @@ namespace FlowfinityConnectionHelper
         private static FASR.HomeInstallationsRecord GetCalledLogRecord(Generics.Utils.ContentType type, List<Generics.Utils.CalledLog> data)
         {
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
-            record.CallLog = PrepareInstallationCallLogList(data);
-            if (data.Count == 1)
+            if (data == null)
             {
-                if (data[0].DateCalled == null)
-                {
-                    record.CallLog = null;
-                }
+                record.CallLog = new HomeInstallations_CallLogRecord[0];
             }
+            else
+            {
+                record.CallLog = PrepareInstallationCallLogList(data);
+            }
+            //record.CallLog = PrepareInstallationCallLogList(data);
+            //if (data.Count == 1)
+            //{
+            //    if (data[0].DateCalled == null)
+            //    {
+            //        record.CallLog = null;
+            //    }
+            //}
             return record;
         }
 
@@ -154,7 +162,15 @@ namespace FlowfinityConnectionHelper
         private static FASR.HomeInstallationsRecord GetNotesRecord(Generics.Utils.ContentType type, List<Generics.Utils.Notes> data)
         {
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
-            record.GeneralNotesList = PrepareInstallationNotesList(data);
+            if (data == null)
+            {
+                record.GeneralNotesList = new HomeInstallations_GeneralNotesListRecord[0];
+            }
+            else
+            {
+                record.GeneralNotesList = PrepareInstallationNotesList(data);
+            }
+
 
             return record;
         }
@@ -225,7 +241,15 @@ namespace FlowfinityConnectionHelper
         private static FASR.HomeInstallationsRecord GetCrewRecord(Generics.Utils.ContentType type, List<Generics.Utils.InstallerWithLessInfo> data)
         {
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
-            record.Crew = PrepareInstallerCrewData(data);
+            if (data==null)
+            {
+                record.Crew = new UserLookupRecord[0];
+            }
+           else
+            {
+                record.Crew = PrepareInstallerCrewData(data);
+            }
+           
             //    record.ReturnTripReason = Lift.II.IIUtils.CreateStringValue<StringValue>(data.ReturnTripReason);
             return record;
         }
@@ -686,17 +710,34 @@ namespace FlowfinityConnectionHelper
             return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
         }
 
-        bool Generics.RecordUpdate.IUpdateHelper.UpdateInstalltionCrew(Generics.Utils.ContentType type, List<Generics.Utils.InstallerWithLessInfo> data)
+        bool Generics.RecordUpdate.IUpdateHelper.UpdateInstalltionCrew(Generics.Utils.ContentType type, List<Generics.Utils.InstallerWithLessInfo> data,string parRecordID)
         {
             //FASR.PlantProduction_UpdateWindowMakerData_Call call = new FASR.PlantProduction_UpdateWindowMakerData_Call()
             // HomeInstallations_EditSold_Call
-            FASR.HomeInstallations_UpdateCrew_Call call = new FASR.HomeInstallations_UpdateCrew_Call()
+            if (data.Count > 0)
             {
-                OnBehalfOf = Owner,
-                RecordID = data[0].id,
-                Record = GetCrewRecord(type, data)
-            };
-            return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data[0])).ReturnValue;
+                FASR.HomeInstallations_UpdateCrew_Call call = new FASR.HomeInstallations_UpdateCrew_Call()
+                {
+                    OnBehalfOf = Owner,
+                    RecordID = data[0].id,
+                    Record = GetCrewRecord(type, data)
+                };
+                return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data[0])).ReturnValue;
+            }
+            else
+            {
+                //CalledLog 
+                InstallerWithLessInfo data1 = null;
+                FASR.HomeInstallations_UpdateCrew_Call call = new FASR.HomeInstallations_UpdateCrew_Call()
+                {
+                    OnBehalfOf = Owner,
+                    RecordID = parRecordID,
+                
+                    Record = GetCrewRecord(type, null)
+                };
+                return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data1)).ReturnValue;
+            }
+                
         }
 
         bool IUpdateHelper.UpdateRecord(ContentType type, List<DocumentFile> data)
@@ -728,7 +769,7 @@ namespace FlowfinityConnectionHelper
         //    throw new NotImplementedException();
         //}
 
-        bool IUpdateHelper.UpdateRecord(ContentType type, List<CalledLog> data)
+        bool IUpdateHelper.UpdateRecord(ContentType type, List<CalledLog> data, string parRecordID)
         {
             bool returnValue = true;
 
@@ -748,7 +789,7 @@ namespace FlowfinityConnectionHelper
                 FASR.HomeInstallations_EditSold_Call call = new FASR.HomeInstallations_EditSold_Call()
                 {
                     OnBehalfOf = Owner,
-                    RecordID = "",
+                    RecordID = parRecordID,
                     Record = GetCalledLogRecord(type, null)
                 };
                 returnValue = _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data1)).ReturnValue;
@@ -760,7 +801,7 @@ namespace FlowfinityConnectionHelper
 
 
 
-        bool IUpdateHelper.UpdateRecord(ContentType type, List<Notes> data)
+        bool IUpdateHelper.UpdateRecord(ContentType type, List<Notes> data, string parRecordID)
         {
             bool returnValue = true;
 
@@ -780,7 +821,7 @@ namespace FlowfinityConnectionHelper
                 FASR.HomeInstallations_EditSold_Call call = new FASR.HomeInstallations_EditSold_Call()
                 {
                     OnBehalfOf = Owner,
-                    RecordID = "",
+                    RecordID = parRecordID,
                     Record = GetNotesRecord(type, null)
                 };
                 returnValue = _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data1)).ReturnValue;

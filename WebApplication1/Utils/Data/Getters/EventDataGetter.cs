@@ -1985,12 +1985,22 @@ where e.recordid= '{0}'
             pars.Add(new System.Data.SqlClient.SqlParameter("WorkOrderNumber", this.workOrderNumber));
             Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
 
-
+            List<string> employeeIdList = GetInstallerEmployeeID();
+            List<InstallerInfo> newList = new List<InstallerInfo>();
             List<InstallerInfo> returnList = new List<InstallerInfo>();
             returnList = Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.InstallerInfo>(SQL, pars.ToArray());
             returnList = returnList.GroupBy(o => new { o.recordid})
                             .Select(o => o.FirstOrDefault()).ToList();
-            return returnList;
+
+            foreach (var x in returnList)
+            {
+                if (!employeeIdList.Contains(x.recordid))
+                {
+                    newList.Add(x);
+                }
+
+            }
+            return newList;
         }
 
 
@@ -2027,11 +2037,50 @@ WorkOrderNumber != '{0}'  order by name
             pars.Add(new System.Data.SqlClient.SqlParameter("name", name));
             Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
             returnList = Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.InstallerInfo>(SQL, pars.ToArray());
+            //returnList = Lift.LiftManager.DbHelper.ReadObjects<CalledLog>(SQL, pars.ToArray()).Where(b => b.DetailRecordId != recordId).ToList();
+            //   returnList = returnList.Where(b => b.recordid != "test").ToList();
+            List<string> employeeIdList = GetInstallerEmployeeID();
             returnList = returnList.GroupBy(o => new { o.recordid })
                          .Select(o => o.FirstOrDefault()).ToList();
 
-            return returnList;
+            List<InstallerInfo> newList = new List<InstallerInfo>();
+            foreach (var  x in returnList)
+            {
+                if (!employeeIdList.Contains(x.recordid))
+                {
+                    newList.Add(x);
+                }
+                
+            }
+
+          //  returnList = returnList.Where(p => !employeeIdList.Any(l => p.recordid == l.recordid));
+
+            return newList;
         }
+
+        private List<string> GetInstallerEmployeeID()
+        {
+            string SQL = GetInstallerEmployeeIDSQL();
+            List<string> employeeIdList = new List<string>();
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("WorkOrderNumber", this.workOrderNumber));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            employeeIdList = Lift.LiftManager.DbHelper.ReadObjects<string>(SQL, pars.ToArray());
+
+            return employeeIdList;
+        }
+
+        private string GetInstallerEmployeeIDSQL()
+        {
+            string SQL = string.Format(@"
+select e.RecordId from  HomeInstallations_Crew c inner join HomeInstallations i on  i.RecordId=c.ParentRecordId
+inner join  [flowserv_flowfinityapps].[dbo].[Users] as u on c.userid = u.UserId INNER JOIN
+[flowserv_flowfinityapps].[dbo].[Employees] as e on u.Account = e.Account_1
+where WorkOrderNumber = '{0}'", this.workOrderNumber);
+            return SQL;
+        }
+
+
 
         private string GetInstallerInfoByNameExceptWorkOrderSQL(string name)
         {

@@ -3431,10 +3431,7 @@ function AddRecordToList(recordID) {
 function AddInstallersToEvent() {
 
     var recordid = recordIDArray;
-
-  
-
-
+    
         $.ajax({
             url: 'data.svc/UpdateCrewData?recordid=' + recordid
                 + '&IsAdd=1' 
@@ -3529,6 +3526,7 @@ function SearchByName() {
 }
 
 function AddInstallers() {
+    recordIDArray = [];
     var name = $("#txtName").val();
     $("#dataTableInstallerAdd tr").remove();
 
@@ -3621,10 +3619,9 @@ function GetInstallers(workOrder) {
                  
                  //   $("#CrewNames").html("<a href='#' data-toggle='modal' data-target='#stack2' >Load me" + "</a >");
                 }
-    
+            } else {
+                $("#ViewDeleteCrewNames").hide();
 
-             
-               
             }
 
         }, error: function (error) {

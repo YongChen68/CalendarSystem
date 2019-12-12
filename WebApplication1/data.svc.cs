@@ -553,10 +553,12 @@ namespace CalendarSystem
             Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateCallLogData('{0}')", id);
             CalledLog eventData = null;
             bool retValue = false;
+            string parRecordID = String.Empty;
             try
             {
                 List<CalledLog> keepedCalledLog = GetKeepedCalledLog(id, WO, recordID);
                 List<CalledLog> calledLogList = new List<CalledLog>();
+                parRecordID = GetActionItemIDByWO(WO);
                 calledLogList = keepedCalledLog.ToList();
                 eventData = new CalledLog();
                 eventData.id = id;
@@ -569,7 +571,7 @@ namespace CalendarSystem
                     calledLogList.Add(eventData);
                 }
                 RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
-                retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), calledLogList);
+                retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), calledLogList,parRecordID);
 
                 Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateCallLogData id= {0}", id);
             }
@@ -595,22 +597,25 @@ namespace CalendarSystem
             List<InstallerWithLessInfo> addedInstaller = new List<InstallerWithLessInfo>();
             List<InstallerWithLessInfo> crewList = new List<InstallerWithLessInfo>();
             string ss;
+            string parRecordID = string.Empty;
             try
             {
                 keepedInstaller = GetKeepedInstaller(WO, recordID);
-                if (IsAdd==1) //add
+                parRecordID = GetActionItemIDByWO(WO);
+                if (IsAdd == 1) //add
                 {
-                    foreach(var s in recordID.Split(','))
+                    foreach (var s in recordID.Split(','))
                     {
                         crewList.Add(GetAddedInstaller(WO, s));
                     }
-                    
+
                 }
+
 
                 foreach (var s in crewList)
                 {
                     // s.id = "VVU691400";
-                    s.id = GetActionItemIDByWO(WO);
+                    s.id = parRecordID;
                 }
                 
                 foreach(var dd in keepedInstaller)
@@ -624,7 +629,7 @@ namespace CalendarSystem
                 //eventData.ParentRecordid= recordID;
                 
                 RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
-                retValue = runner.UpdateInstalltionCrew(Utils.ContentTypeParser.GetType("Installation"), crewList);
+                retValue = runner.UpdateInstalltionCrew(Utils.ContentTypeParser.GetType("Installation"), crewList, parRecordID);
 
                 Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateCrewData id= {0}", recordID);
             }
@@ -648,10 +653,12 @@ namespace CalendarSystem
             Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateNotesData('{0}')", id);
             Notes eventData = null;
             bool retValue = false;
+            string parRecordID = string.Empty;
             try
             {
                 List<Notes> keepedNotes = GetKeepedNotes(id, WO, recordID);
                 List<Notes> notesList = new List<Notes>();
+                parRecordID = GetActionItemIDByWO(WO);
                 notesList = keepedNotes.ToList();
                 eventData = new Notes();
                 eventData.id = id;
@@ -664,7 +671,7 @@ namespace CalendarSystem
                     notesList.Add(eventData);
                 }
                 RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
-                retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), notesList);
+                retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), notesList,parRecordID);
 
                 Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateNotesData id= {0}", id);
             }

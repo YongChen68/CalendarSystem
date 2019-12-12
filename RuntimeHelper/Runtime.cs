@@ -15,11 +15,11 @@ namespace RuntimeHelper
             return _comHelper.UpdateRecord(type, eventData);
         }
 
-        public bool ProcessUpdate(Generics.Utils.ContentType type, List<Generics.Utils.CalledLog> eventData)
+        public bool ProcessUpdate(Generics.Utils.ContentType type, List<Generics.Utils.CalledLog> eventData, string parRecordID)
         {
             Generics.RecordUpdate.IUpdateHelper _comHelper = new FlowfinityConnectionHelper.FlowfinityUpdateHelper(Lift.LiftManager.ConfigProvider.GetValue("OnBehlfOf"),
                 new FlowfinityConnectionHelper.Utils.ActionsCommHelperwithLogging());
-            return _comHelper.UpdateRecord(type, eventData);
+            return _comHelper.UpdateRecord(type, eventData, parRecordID);
         }
 
         public bool ProcessUpdate(Generics.Utils.ContentType type, List<Generics.Utils.DocumentFile> eventData)
@@ -30,11 +30,11 @@ namespace RuntimeHelper
         }
 
 
-        public bool ProcessUpdate(Generics.Utils.ContentType type, List<Generics.Utils.Notes> eventData)
+        public bool ProcessUpdate(Generics.Utils.ContentType type, List<Generics.Utils.Notes> eventData, string parRecordID)
         {
             Generics.RecordUpdate.IUpdateHelper _comHelper = new FlowfinityConnectionHelper.FlowfinityUpdateHelper(Lift.LiftManager.ConfigProvider.GetValue("OnBehlfOf"),
                 new FlowfinityConnectionHelper.Utils.ActionsCommHelperwithLogging());
-            return _comHelper.UpdateRecord(type, eventData);
+            return _comHelper.UpdateRecord(type, eventData, parRecordID);
         }
 
 
@@ -78,11 +78,11 @@ namespace RuntimeHelper
         }
 
 
-        public bool UpdateInstalltionCrew(Generics.Utils.ContentType type, List<Generics.Utils.InstallerWithLessInfo> eventData)
+        public bool UpdateInstalltionCrew(Generics.Utils.ContentType type, List<Generics.Utils.InstallerWithLessInfo> eventData,string parRecordID)
         {
             Generics.RecordUpdate.IUpdateHelper _comHelper = new FlowfinityConnectionHelper.FlowfinityUpdateHelper(Lift.LiftManager.ConfigProvider.GetValue("OnBehlfOf"),
                 new FlowfinityConnectionHelper.Utils.ActionsCommHelperwithLogging());
-            return _comHelper.UpdateInstalltionCrew(type, eventData);
+            return _comHelper.UpdateInstalltionCrew(type, eventData, parRecordID);
         }
     }
 }
