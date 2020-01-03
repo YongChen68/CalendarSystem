@@ -3460,74 +3460,69 @@ function AddInstallersToEvent() {
         });
 }
 function SearchByName() {
-    //alert($("#txtName").val());
-     var name = $("#txtName").val();
-    $("#dataTableInstallerAdd tr").remove();
+  // alert($("#txtName").val());
+    var name = $("#txtName").val();
+    if (name.length >= 2) {
+        $("#dataTableInstallerAdd tr").remove();
 
-    $("#AddInstallersPop").attr('href', 'javascript:void(0);');
-    $("#AddInstallersPop").attr('data-toggle', "modal");
-    $("#AddInstallersPop").attr('data-target', "#installerAdd");
-    $("#AddInstallersPop").attr('href', "/details");
+        $("#AddInstallersPop").attr('href', 'javascript:void(0);');
+        $("#AddInstallersPop").attr('data-toggle', "modal");
+        $("#AddInstallersPop").attr('data-target', "#installerAdd");
+        $("#AddInstallersPop").attr('href', "/details");
 
-    $("#eventContent").css('opacity', 20);
-    $("#installerAddDetail").hide();
+        $("#eventContent").css('opacity', 20);
+        $("#installerAddDetail").hide();
 
-    $.ajax({
-        //type: "POST",  
-        url: 'data.svc/GetInstallerInfoByNameExceptWorkOrder?workOrderNumber=' + WO           
-        + '&name=' + name,
-        dataType: 'json',
-        async: false,
-        success: function (data) {
-            if (debug) console.log("events.success", "data.GetInstallerInfoByNameExceptWorkOrderResult:");
-          //  $("#installerAddTitle").html(WO + " Installer Add");
+        $.ajax({
+            //type: "POST",  
+            url: 'data.svc/GetInstallerInfoByNameExceptWorkOrder?workOrderNumber=' + WO
+                + '&name=' + name,
+            dataType: 'json',
+            async: false,
+            success: function (data) {
+                if (debug) console.log("events.success", "data.GetInstallerInfoByNameExceptWorkOrderResult:");
+                //  $("#installerAddTitle").html(WO + " Installer Add");
 
-            if (data.GetInstallerInfoByNameExceptWorkOrderResult.length > 0) {
+                if (data.GetInstallerInfoByNameExceptWorkOrderResult.length > 0) {
 
-               // $("#dataTableInstallerAdd").append("<tr>  <th style = 'text-align:center;' > </th > < th style = 'text-align:center;' > Name</th > <th style='text-align:center;'> Email</th > <th style='text-align:center;' > Installer Level</th > <th style='text-align:center;' > </th >");
-                $("#dataTableInstallerAdd").append("<tr>  <th style = 'text-align:center;' > </th > <th style = 'text-align:center;' > Name</th ><th style='text-align:center;'> Email</th > <th style = 'text-align:center;' > Installer Level</th ><th style = 'text-align:center;' > </th >");
-
-                for (var i = 0; i < data.GetInstallerInfoByNameExceptWorkOrderResult.length; i++) {
-                    $("#dataTableInstallerAdd").append("<tr><td>" +
-                        //<input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
-                        "<input type='checkbox'" + " id='chkRecordID" + data.GetInstallerInfoByNameExceptWorkOrderResult[i].recordid +  "' onclick=\"AddRecordToList(" + data.GetInstallerInfoByNameExceptWorkOrderResult[i].recordid + ")\"> " + "</td> <td>" +
-                        data.GetInstallerInfoByNameExceptWorkOrderResult[i].Name + "</td> <td>" +
-                        data.GetInstallerInfoByNameExceptWorkOrderResult[i].email + "</td> <td>" +
-                        data.GetInstallerInfoByNameExceptWorkOrderResult[i].InstallerLevel + "</td> <td>" +
-                        "<a href='#'" + " id='bInstaller" + data.GetInstallerInfoByNameExceptWorkOrderResult[i].recordid + "' onclick=\"InstallerInfoAddView(" + data.GetInstallerInfoByNameExceptWorkOrderResult[i].recordid + ")\"> View  </a >" + "</td ></tr > ");
-
-
+                    // $("#dataTableInstallerAdd").append("<tr>  <th style = 'text-align:center;' > </th > < th style = 'text-align:center;' > Name</th > <th style='text-align:center;'> Email</th > <th style='text-align:center;' > Installer Level</th > <th style='text-align:center;' > </th >");
+                    $("#dataTableInstallerAdd").append("<tr>  <th style = 'text-align:center;' > </th > <th style = 'text-align:center;' > Name</th ><th style='text-align:center;'> Email</th > <th style = 'text-align:center;' > Installer Level</th ><th style = 'text-align:center;' > </th >");
+                    var count = data.GetInstallerInfoByNameExceptWorkOrderResult.length;
+                    for (var i = 0; i < data.GetInstallerInfoByNameExceptWorkOrderResult.length; i++) {
+                        $("#dataTableInstallerAdd").append("<tr><td>" +
+                            //<input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+                            "<input type='checkbox'" + " id='chkRecordID" + data.GetInstallerInfoByNameExceptWorkOrderResult[i].recordid + "' onclick=\"AddRecordToList(" + data.GetInstallerInfoByNameExceptWorkOrderResult[i].recordid + ")\"> " + "</td> <td>" +
+                            data.GetInstallerInfoByNameExceptWorkOrderResult[i].Name + "</td> <td>" +
+                            data.GetInstallerInfoByNameExceptWorkOrderResult[i].email + "</td> <td>" +
+                            data.GetInstallerInfoByNameExceptWorkOrderResult[i].InstallerLevel + "</td> <td>" +
+                            "<a href='#'" + " id='bInstaller" + data.GetInstallerInfoByNameExceptWorkOrderResult[i].recordid + "' onclick=\"InstallerInfoAddView(" + data.GetInstallerInfoByNameExceptWorkOrderResult[i].recordid + ")\"> View  </a >" + "</td ></tr > ");
+                        if (count > 30) {
+                            $('#bInstaller' + data.GetInstallerInfoByNameExceptWorkOrderResult[i].recordid).addClass('disabled');
+                        }
+                    }
                 }
-                
-                //for (var i = 0; i < data.GetInstallerInfoExceptWorkOrderResult.length; i++) {
-                //    $("#dataTableInstallerAdd").append("<tr><td>" +
-                //        "<input type='checkbox'" + " id='chkRecordID" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + "' onclick=\"AddRecordToList(" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + ")\"> " + "</td> <td>" +
-                //        data.GetInstallerInfoExceptWorkOrderResult[i].Name + "</td> <td>" +
-                //        data.GetInstallerInfoExceptWorkOrderResult[i].email + "</td> <td>" +
-                //        data.GetInstallerInfoExceptWorkOrderResult[i].InstallerLevel + "</td> <td>" +
-                //        "<a href='#'" + " id='bInstaller" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + "' onclick=\"InstallerInfoView(" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + ")\"> View  </a >" + "</td ></tr > ");
 
-
-                //    //a href='#'" + onclick > google </a > " + "</td ></tr > ");
-
-                //    //"add" + "</td></tr>");
-                //}
-
-
-
+            }, error: function (error) {
+                console.log('Error', error);
+                $('#script-warning').show();
             }
+        });
 
-        }, error: function (error) {
-            console.log('Error', error);
-            $('#script-warning').show();
-        }
-    });
+    }
+   
+}
+
+function ClearSearch() {
+   // $("#txtName").val('');
+    AddInstallers();
 
 }
 
 function AddInstallers() {
     recordIDArray = [];
-    var name = $("#txtName").val();
+   // var name = $("#txtName").val();
+    $("#txtName").val('');
+    
     $("#dataTableInstallerAdd tr").remove();
 
     $("#AddInstallersPop").attr('href', 'javascript:void(0);');
@@ -3550,7 +3545,7 @@ function AddInstallers() {
             if (data.GetInstallerInfoExceptWorkOrderResult.length > 0) {
 
                 $("#dataTableInstallerAdd").append("<tr>  <th style = 'text-align:center;' > </th > <th style = 'text-align:center;' > Name</th ><th style='text-align:center;'> Email</th > <th style = 'text-align:center;' > Installer Level</th ><th style = 'text-align:center;' > </th >");
-
+                var count = data.GetInstallerInfoExceptWorkOrderResult.length;
                 for (var i = 0; i < data.GetInstallerInfoExceptWorkOrderResult.length; i++) {
                     $("#dataTableInstallerAdd").append("<tr><td>" +
                         "<input type='checkbox'" + " id='chkRecordID" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid +  "' onclick=\"AddRecordToList(" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + ")\"> " + "</td> <td>" +
@@ -3559,7 +3554,9 @@ function AddInstallers() {
                         data.GetInstallerInfoExceptWorkOrderResult[i].InstallerLevel + "</td> <td>" +
                         "<a href='#'" + " id='bInstaller" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + "' onclick=\"InstallerInfoView(" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + ")\"> View  </a >" + "</td ></tr > ");
                        
-
+                    if (count > 30) {
+                        $('#bInstaller' + data.GetInstallerInfoExceptWorkOrderResult[i].recordid).addClass('disabled');
+                    }
                     //a href='#'" + onclick > google </a > " + "</td ></tr > ");
 
                     //"add" + "</td></tr>");

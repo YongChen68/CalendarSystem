@@ -1307,9 +1307,12 @@
             <div class="modal-body">
                   <div>
                    <!-- Search form -->
-                        <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="txtName"  style="width:400px;" 
-                            onkeydown = "if (event.keyCode == 13) document.getElementById('btnSearch').click()">
-                      <input type="button" id="btnSearch" value="Search" onclick="SearchByName();"   style="display:none;"/>
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="txtName"  style="width:300px;" onkeyup="SearchByName()" />
+                     
+                      
+                </div>
+                <div  style="overflow-y:auto;margin-left:-150px;margin-top:-20px;">
+                      <a  href="#" onclick="ClearSearch()"  >Clear Search</a>
                 </div>
                 <br />
                 <div style="overflow-y:auto;height:200px;">
