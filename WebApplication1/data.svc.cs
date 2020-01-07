@@ -806,6 +806,24 @@ namespace CalendarSystem
             return retValue;
         }
 
+        List<string> Idata.GetRemeasurerName(string workOrderNumber)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetRemeasurerName({0})", workOrderNumber);
+            List<string> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter(workOrderNumber);
+                retValue = getter.GetRemeasurerName();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetRemeasurerName() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+
 
         List<CalledLog> Idata.GetCalledLog(string workOrderNumber)
         {

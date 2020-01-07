@@ -550,5 +550,10 @@ and  CurrentStateName in ('Ready for ReMeasure', 'Rejected Remeasure')
         {
             throw new NotImplementedException();
         }
+
+        public List<string> GetRemeasurerName()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

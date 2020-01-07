@@ -145,27 +145,27 @@
                 title: "location"
             });
 
-            //var fileUpload = $("#fileUpload").get(0);
-            //var fileDisplayArea = document.getElementById('file');
+            var fileUpload = $("#fileUpload").get(0);
+            var fileDisplayArea = document.getElementById('file');
 
 
-            //fileUpload.addEventListener('change', function (e) {
-            //    var file = fileUpload.files[0];
-            //    var reader = new FileReader();
-            //    reader.onload = function (e) {
-            //        fileDisplayArea.innerHTML = "";
-            //        var theBytes = e.target.result; //.split('base64,')[1]; // use with uploadFile2
-            //        fileByteArray.push(theBytes);
-            //        for (var i = 0; i < fileByteArray.length; i++) {
-            //            fileDisplayArea.innerText += fileByteArray[i];
-            //        }
-            //        //fileDisplayArea.innerText = reader.result;
-            //    }
+            fileUpload.addEventListener('change', function (e) {
+                var file = fileUpload.files[0];
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    fileDisplayArea.innerHTML = "";
+                    var theBytes = e.target.result; //.split('base64,')[1]; // use with uploadFile2
+                    fileByteArray.push(theBytes);
+                    for (var i = 0; i < fileByteArray.length; i++) {
+                        fileDisplayArea.innerText += fileByteArray[i];
+                    }
+                    //fileDisplayArea.innerText = reader.result;
+                }
 
-            //   // reader.readAsArrayBuffer(file);
-            //    reader.readAsDataURL(file);
+               // reader.readAsArrayBuffer(file);
+                reader.readAsDataURL(file);
 
-            //});
+            });
         }
 
 
@@ -646,6 +646,9 @@
                                              <span id="AddCrewNames" style="padding-left:40px;"></span> 
                                         </div>
                                         <br>
+
+                                        <div><b>Remeasurer: </b><span id="Remeasurer"></span></div>
+                                        <br>
                                         
                                         <div class="container">
                                             <div class="leftcolumn">
@@ -988,20 +991,20 @@
                                     <div style="overflow: auto; ">
                                         <table id="dataTableDocumentLibrary" class="table table-striped table-bordered table-hover table-condensed"></table>
                                      </div>
-                                    <%-- <div style="margin-left:-1100px;">
+                                    <div style="margin-left:-1100px;">
                                         <label for="documentNotes">File Name:</label>
 
                                         <input id="documentFile" style="text-align: center;" >
 
-                                     </div>--%>
-                            <%--        <br />
+                                     </div>
+                                  <br />
                                     <div>
                                          <input id="fileUpload" type="file"  accept=".jpg, .jpeg, .png,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
                                         <span id="file"></span>
                                      </div>
                                      <div style="margin-left:-1100px;">   
                                         <input type="button" name="btnUploadDocuments" id="btnUploadDocuments" class="btn btn-success" value="Save" onclick="UploadDocuments()">
-                                     </div>--%>
+                                     </div>
                                       
                                  
 

@@ -2298,6 +2298,29 @@ where e.RecordId =  '{0}'
             return Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.Notes>(SQL, pars.ToArray());
         }
 
+
+
+        public List<string> GetRemeasurerName()
+        {
+            string SQL = GetRemeasurerNameSQL();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("WorkOrderNumber", this.workOrderNumber));
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return Lift.LiftManager.DbHelper.ReadObjects<string>(SQL, pars.ToArray());
+        }
+
+        private string GetRemeasurerNameSQL()
+        {
+            string SQL = string.Format(@"select u.Name from 
+HomeInstallations i inner join HomeInstallations_remeasureinstaller r on i.RecordId=r.ParentRecordId
+inner join Users u on r.userid=u.UserId
+where i.WorkOrderNumber = '{0}' ", this.workOrderNumber);
+            return SQL;
+        }
+
+
+
         private string GetNotesSQL()
         {
             string SQL = string.Format(@"select i.[WorkOrderNumber]

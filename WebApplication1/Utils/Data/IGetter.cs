@@ -66,6 +66,8 @@ namespace CalendarSystem.Utils.Data
 
 
         List<Generics.Utils.Notes> GetNotes();
+
+        List<string> GetRemeasurerName();
         List<Generics.Utils.Notes> GetKeepedNotes(string recordid);
         List<Generics.Utils.Notes> GetNotesByID(int recordId);
         List<InstallerInfo> GetInstallerInfoByNameExceptWorkOrder(string name);

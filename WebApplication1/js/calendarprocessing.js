@@ -692,6 +692,7 @@ function NewWOPopup(id) {
     GetJobReview(newWOArray[index].WorkOrderNumber);
     GetDocumentLibrary(newWOArray[index].WorkOrderNumber);
     GetSubTrades(newWOArray[index].WorkOrderNumber);
+    GetRemeasurerName(newWOArray[index].WorkOrderNumber);
     // GetJobAnalysys(newWOArray[index].WorkOrderNumber);
     $("#TotalLBRMin").html(newWOArray[index].TotalInstallationLBRMin);
 
@@ -1669,6 +1670,7 @@ $(document).ready(function () {
                     GetJobReview(event.WorkOrderNumber);
                     GetDocumentLibrary(event.WorkOrderNumber);
                     GetSubTrades(event.WorkOrderNumber);
+                    GetRemeasurerName(event.WorkOrderNumber);
                    // GetJobAnalysys(event.WorkOrderNumber);
                     $("#TotalLBRMin").html(event.TotalInstallationLBRMin);
 
@@ -4228,6 +4230,29 @@ function GetNotes(workOrder) {
 }
 
 
+
+function GetRemeasurerName(workOrder) {
+   
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetRemeasurerName?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetNotes:");
+
+
+            if (data.GetRemeasurerNameResult.length > 0) {
+
+                $("#Remeasurer").html(data.GetRemeasurerNameResult[i]);
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
 
 function GetCalledLog(workOrder) {
     $("#dataTableCalledLog tr").remove(); 

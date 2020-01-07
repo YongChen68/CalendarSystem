@@ -209,6 +209,14 @@ BodyStyle = WebMessageBodyStyle.WrappedResponse)]
 
         [OperationContract]
         [WebInvoke(Method = "GET",
+UriTemplate = "GetRemeasurerName?workOrderNumber={workOrderNumber}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<string> GetRemeasurerName(string workOrderNumber);
+
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
     UriTemplate = "GetWindowsCustomer?workOrderNumber={workOrderNumber}",
     ResponseFormat = WebMessageFormat.Json,
     BodyStyle = WebMessageBodyStyle.WrappedResponse)]
