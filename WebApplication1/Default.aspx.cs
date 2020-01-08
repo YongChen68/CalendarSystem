@@ -67,21 +67,13 @@ namespace CalendarSystem
             try
             {
 
-                // List<DocumentFile> keepedFiles = GetKeepedFiles(id, WO, recordID);
+             
                 List<DocumentFile> fileList = new List<DocumentFile>();
-                //  fileList = keepedCalledLog.ToList();
                 eventData = new DocumentFile();
                 eventData.id = GetActionItemIDByWO(WO);
                 eventData.FileName = fileName;
                 eventData.FileSource = System.Convert.FromBase64String(data.Split(',')[1]);
                 fileList.Add(eventData);
-                //eventData.CalledMessage = calledMessage;
-                ////  eventData.DateCalled = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(callDate).ToString("yyyy-MM-ddTHH:mm:00.000Z")); ;
-                //if (callDate.Length != 0)
-                //{
-                //    eventData.DateCalled = Convert.ToDateTime(callDate + " " + callTime).ToString();
-                //    calledLogList.Add(eventData);
-                //}
 
                 RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
                 retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), fileList);
