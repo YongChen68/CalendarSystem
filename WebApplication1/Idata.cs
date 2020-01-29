@@ -66,6 +66,11 @@ namespace CalendarSystem
         bool UpdateCrewData(string recordid, int IsAdd,string WO);
 
         [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "UpdateTruckInstalltionCrew?recordid={recordid}&IsAdd={IsAdd}&detailedRecordID={detailedRecordID}")]
+        bool UpdateTruckInstalltionCrew(string recordid, int IsAdd, string detailedRecordID);
+
+
+        [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "UploadDocument?workOrderNumber={workOrderNumber}&fileName={fileName}&fileSource={fileSource}")]
         bool UploadDocument(string workOrderNumber, string fileName, string fileSource);
 
@@ -185,6 +190,20 @@ BodyStyle = WebMessageBodyStyle.WrappedResponse)]
 
         [OperationContract]
         [WebInvoke(Method = "GET",
+UriTemplate = "GetResources?workOrderNumber={workOrderNumber}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<InstallerInfo> GetResources(string workOrderNumber);
+        //
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetTruckList",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<Truck> GetTruckList();
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
 UriTemplate = "GetInstallerInfoByNameExceptWorkOrder?workOrderNumber={workOrderNumber}&name={name}",
 ResponseFormat = WebMessageFormat.Json,
 BodyStyle = WebMessageBodyStyle.WrappedResponse)]
@@ -197,6 +216,28 @@ UriTemplate = "GetInstallerInfoByRecordID?recordid={recordid}",
 ResponseFormat = WebMessageFormat.Json,
 BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         InstallerInfoWithImage GetInstallerInfoByRecordID(string recordid);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetInstallerListByTruck?recordid={recordid}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<InstallerInfo> GetInstallerListByTruck(string recordid);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetUserIdListByTruckRecordID?recordid={recordid}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<string> GetUserIdListByTruckRecordID(string recordid);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetTruckInstallersExcludeUserIDs?userID={userID}&name={name}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<InstallerInfo> GetTruckInstallersExcludeUserIDs(string userID,string name);
+
 
 
 

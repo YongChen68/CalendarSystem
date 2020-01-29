@@ -123,6 +123,18 @@
   <wsdl:message name="IManufacturerTrackingCalloutService_Callout_ManufacturerTracking_AddRecord_OutputMessage">
     <wsdl:part name="parameters" element="tns:Callout_ManufacturerTracking_AddRecordResponse" />
   </wsdl:message>
+  <wsdl:message name="ITruckDictionaryCalloutService_Callout_TruckDictionary_AddRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_TruckDictionary_AddRecord" />
+  </wsdl:message>
+  <wsdl:message name="ITruckDictionaryCalloutService_Callout_TruckDictionary_AddRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_TruckDictionary_AddRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="ITruckDictionaryCalloutService_Callout_TruckDictionary_EditRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_TruckDictionary_EditRecord" />
+  </wsdl:message>
+  <wsdl:message name="ITruckDictionaryCalloutService_Callout_TruckDictionary_EditRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_TruckDictionary_EditRecordResponse" />
+  </wsdl:message>
   <wsdl:message name="IInventoryManagerCalloutService_Callout_InventoryManager_GetBOMItems_InputMessage">
     <wsdl:part name="parameters" element="tns:Callout_InventoryManager_GetBOMItems" />
   </wsdl:message>
@@ -201,17 +213,17 @@
   <wsdl:message name="IInstallationTrackingCalloutService_Callout_InstallationTracking_EditRecord_OutputMessage">
     <wsdl:part name="parameters" element="tns:Callout_InstallationTracking_EditRecordResponse" />
   </wsdl:message>
-  <wsdl:message name="IServiceReviewCalloutService_Callout_ServiceReview_AddRecord_InputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_ServiceReview_AddRecord" />
-  </wsdl:message>
-  <wsdl:message name="IServiceReviewCalloutService_Callout_ServiceReview_AddRecord_OutputMessage">
-    <wsdl:part name="parameters" element="tns:Callout_ServiceReview_AddRecordResponse" />
-  </wsdl:message>
   <wsdl:message name="ICHIPurchaseOrderCalloutService_Callout_CHIPurchaseOrder_AddRecord_InputMessage">
     <wsdl:part name="parameters" element="tns:Callout_CHIPurchaseOrder_AddRecord" />
   </wsdl:message>
   <wsdl:message name="ICHIPurchaseOrderCalloutService_Callout_CHIPurchaseOrder_AddRecord_OutputMessage">
     <wsdl:part name="parameters" element="tns:Callout_CHIPurchaseOrder_AddRecordResponse" />
+  </wsdl:message>
+  <wsdl:message name="IServiceReviewCalloutService_Callout_ServiceReview_AddRecord_InputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_ServiceReview_AddRecord" />
+  </wsdl:message>
+  <wsdl:message name="IServiceReviewCalloutService_Callout_ServiceReview_AddRecord_OutputMessage">
+    <wsdl:part name="parameters" element="tns:Callout_ServiceReview_AddRecordResponse" />
   </wsdl:message>
   <wsdl:message name="IStationTargetCalloutService_Callout_StationTarget_Legacy_ADD_InputMessage">
     <wsdl:part name="parameters" element="tns:Callout_StationTarget_Legacy_ADD" />
@@ -378,6 +390,16 @@
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:portType msc:usingSession="false" name="IMaterialsInformationCalloutService" />
+  <wsdl:portType msc:usingSession="false" name="ITruckDictionaryCalloutService">
+    <wsdl:operation name="Callout_TruckDictionary_AddRecord">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/ITruckDictionaryCalloutService/Callout_TruckDictionary_AddRecord" message="tns:ITruckDictionaryCalloutService_Callout_TruckDictionary_AddRecord_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/ITruckDictionaryCalloutService/Callout_TruckDictionary_AddRecordResponse" message="tns:ITruckDictionaryCalloutService_Callout_TruckDictionary_AddRecord_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Callout_TruckDictionary_EditRecord">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/ITruckDictionaryCalloutService/Callout_TruckDictionary_EditRecord" message="tns:ITruckDictionaryCalloutService_Callout_TruckDictionary_EditRecord_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/ITruckDictionaryCalloutService/Callout_TruckDictionary_EditRecordResponse" message="tns:ITruckDictionaryCalloutService_Callout_TruckDictionary_EditRecord_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
   <wsdl:portType msc:usingSession="false" name="IInventoryManagerCalloutService">
     <wsdl:operation name="Callout_InventoryManager_GetBOMItems">
       <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IInventoryManagerCalloutService/Callout_InventoryManager_GetBOMItems" message="tns:IInventoryManagerCalloutService_Callout_InventoryManager_GetBOMItems_InputMessage" />
@@ -440,16 +462,16 @@
       <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IInstallationTrackingCalloutService/Callout_InstallationTracking_EditRecordResponse" message="tns:IInstallationTrackingCalloutService_Callout_InstallationTracking_EditRecord_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
-  <wsdl:portType msc:usingSession="false" name="IServiceReviewCalloutService">
-    <wsdl:operation name="Callout_ServiceReview_AddRecord">
-      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IServiceReviewCalloutService/Callout_ServiceReview_AddRecord" message="tns:IServiceReviewCalloutService_Callout_ServiceReview_AddRecord_InputMessage" />
-      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IServiceReviewCalloutService/Callout_ServiceReview_AddRecordResponse" message="tns:IServiceReviewCalloutService_Callout_ServiceReview_AddRecord_OutputMessage" />
-    </wsdl:operation>
-  </wsdl:portType>
   <wsdl:portType msc:usingSession="false" name="ICHIPurchaseOrderCalloutService">
     <wsdl:operation name="Callout_CHIPurchaseOrder_AddRecord">
       <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/ICHIPurchaseOrderCalloutService/Callout_CHIPurchaseOrder_AddRecord" message="tns:ICHIPurchaseOrderCalloutService_Callout_CHIPurchaseOrder_AddRecord_InputMessage" />
       <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/ICHIPurchaseOrderCalloutService/Callout_CHIPurchaseOrder_AddRecordResponse" message="tns:ICHIPurchaseOrderCalloutService_Callout_CHIPurchaseOrder_AddRecord_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType msc:usingSession="false" name="IServiceReviewCalloutService">
+    <wsdl:operation name="Callout_ServiceReview_AddRecord">
+      <wsdl:input wsa10:Action="http://flowfinity.com/ServiceContract/IServiceReviewCalloutService/Callout_ServiceReview_AddRecord" message="tns:IServiceReviewCalloutService_Callout_ServiceReview_AddRecord_InputMessage" />
+      <wsdl:output wsa10:Action="http://flowfinity.com/ServiceContract/IServiceReviewCalloutService/Callout_ServiceReview_AddRecordResponse" message="tns:IServiceReviewCalloutService_Callout_ServiceReview_AddRecord_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
 </wsdl:definitions>

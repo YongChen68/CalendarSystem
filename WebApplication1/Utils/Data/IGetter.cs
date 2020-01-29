@@ -58,9 +58,17 @@ namespace CalendarSystem.Utils.Data
 
         List<Generics.Utils.InstallerWithLessInfo> GetKeepedInstaller(string recordid);
 
+        List<Generics.Utils.InstallerWithLessInfo> GetKeepedTruckInstaller(string recordid,string detailedRecordID);
+
         string GetActionItemIDByWO();
 
+        string GetActionItemIDByRecordID(string recordid);
+
         Generics.Utils.InstallerWithLessInfo GetAddedInstaller(string recordid);
+
+       Generics.Utils.InstallerWithLessInfo GetTruckAddedInstaller(string recordid);
+
+        Generics.Utils.InstallerWithLessInfo GetTruckCrewsByUserID(string userID);
 
         List<Generics.Utils.CalledLog> GetCallLogByID(int recordId);
 
@@ -71,5 +79,14 @@ namespace CalendarSystem.Utils.Data
         List<Generics.Utils.Notes> GetKeepedNotes(string recordid);
         List<Generics.Utils.Notes> GetNotesByID(int recordId);
         List<InstallerInfo> GetInstallerInfoByNameExceptWorkOrder(string name);
+        List<InstallerInfo> GetResources();
+
+        List<Truck> GetTruckList();
+
+        List<InstallerInfo> GetInstallerListByTruck(string recordid);
+
+        List<string> GetUserIdListByTruckRecordID(string recordid);
+
+        List<InstallerInfo> GetTruckInstallersExcludeUserIDs(string userID,string name);
     }
 }

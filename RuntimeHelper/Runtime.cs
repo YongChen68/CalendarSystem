@@ -84,5 +84,12 @@ namespace RuntimeHelper
                 new FlowfinityConnectionHelper.Utils.ActionsCommHelperwithLogging());
             return _comHelper.UpdateInstalltionCrew(type, eventData, parRecordID);
         }
+
+        public bool UpdateTruckInstalltionCrew(Generics.Utils.ContentType type, List<Generics.Utils.InstallerWithLessInfo> eventData, string parRecordID)
+        {
+            Generics.RecordUpdate.IUpdateHelper _comHelper = new FlowfinityConnectionHelper.FlowfinityUpdateHelper(Lift.LiftManager.ConfigProvider.GetValue("OnBehlfOf"),
+                new FlowfinityConnectionHelper.Utils.ActionsCommHelperwithLogging());
+            return _comHelper.UpdateTruckInstalltionCrew(type, eventData, parRecordID);
+        }
     }
 }

@@ -20,7 +20,7 @@ namespace CalendarSystem.Utils.Data
 
         private readonly string workOrderNumber;
 
-        private EventDataGetter() { }
+        public EventDataGetter() { }
 
         public EventDataGetter(string start, string end, List<string> stateList, List<string> branchList, List<string> jobType, List<string> shippingType)
         {
@@ -32,6 +32,7 @@ namespace CalendarSystem.Utils.Data
             this.shippingTypeList = shippingType;
         }
 
+      
         public EventDataGetter(string start, string end, List<string> branchList, List<string> stateList)
         {
             this.startDate = DateTime.ParseExact(start.Trim(), "yyyy-MM-dd", CultureInfo.InvariantCulture);
@@ -2003,6 +2004,152 @@ where e.recordid= '{0}'
             return newList;
         }
 
+        public List<InstallerInfo> GetResources()
+        {
+            string SQL = GetInstallersSQL();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+
+            List<string> employeeIdList = GetInstallerEmployeeID();
+            List<InstallerInfo> newList = new List<InstallerInfo>();
+            List<InstallerInfo> returnList = new List<InstallerInfo>();
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.InstallerInfo>(SQL);
+            returnList = returnList.GroupBy(o => new { o.recordid })
+                            .Select(o => o.FirstOrDefault()).ToList();
+
+            foreach (var x in returnList)
+            {
+                if (!employeeIdList.Contains(x.recordid))
+                {
+                    newList.Add(x);
+                }
+
+            }
+            return newList;
+        }
+
+
+        public List<Truck> GetTruckList()
+        {
+            string SQL = GetTruckListSQL();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+
+            List<Truck> returnList = new List<Truck>();
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.Truck>(SQL);
+            return returnList;
+        }
+
+
+        private string GetTruckListSQL()
+        {
+            string SQL = string.Format(@" select TruckName, VIN, Make,Model, Year_1 as Year, t.recordid, 
+Plate,dbo.fGetTruckCrewNames(t.recordid) as TruckCrewNameList
+ from dbo.TruckDictionary t
+ ");
+            return SQL;
+        }
+
+        public List<InstallerInfo> GetInstallerListByTruck(string recordid)
+        {
+            string SQL = GetInstallerListByTruckSQL(recordid);
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+
+            List<InstallerInfo> returnList = new List<InstallerInfo>();
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.InstallerInfo>(SQL);
+            return returnList;
+        }
+
+        public List<InstallerInfo> GetTruckInstallersExcludeUserIDs(string userID, string name)
+        {
+            string SQL = GetTruckInstallersExcludeUserIDsSQL(userID,name);
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+
+            List<InstallerInfo> returnList = new List<InstallerInfo>();
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<InstallerInfo>(SQL);
+
+            List<string> userIDList = userID.Split(',').ToList();
+
+            List<InstallerInfo> newList = new List<InstallerInfo>();
+            foreach (var x in returnList)
+            {
+                if (!userIDList.Contains(x.recordid))
+                {
+                    newList.Add(x);
+                }
+
+            }
+
+            return returnList;
+        }
+
+        private string GetTruckInstallersExcludeUserIDsSQL(string recordid,string name)
+        {
+            string SQL = string.Format(@"   select u.Name,u.Email,e.InstallerLevel,u.UserId,e.Branch_display as branch
+,e.Department,Telephone,e.WorkPhoneNumber,'' as recordid, '' as WorkOrderNumber,'' as DetailRecordId
+ from Users u 
+inner join Employees AS e ON u.Account = e.Account_1
+where EmploymentStatus='active' and 
+Department ='Installations'  and Position_1='installer'  and 
+name like '%{0}%' 
+order by u.Name", name);
+            return SQL;
+        }
+
+
+
+        public List<string> GetUserIdListByTruckRecordID(string recordid)
+        {
+            string SQL = GetUserIdListByTruckRecordIDSQL(recordid);
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+
+            List<string> returnList = new List<string>();
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<String>(SQL);
+            //returnList = Lift.LiftManager.DbHelper.ReadObjects<CalledLog>(SQL, pars.ToArray()).Where(b => b.DetailRecordId != recordId).ToList();
+            //   returnList = returnList.Where(b => b.recordid != "test").ToList();
+            
+       
+            return returnList;
+        }
+
+
+        private string GetUserIdListByTruckRecordIDSQL(string recordid)
+        {
+            string SQL = string.Format(@"  select c.UserId
+ from dbo.TruckDictionary t 
+ inner join  TruckDictionary_CrewAssigned c on c.ParentRecordId = t.RecordId
+INNER JOIN  Users  u on u.UserId = c.userId
+inner join Employees AS e ON u.Account = e.Account_1
+where t.recordid= '{0}' order by u.Name
+ ", recordid);
+            return SQL;
+        }
+
+
+        private string GetInstallerListByTruckSQL(string recordid)
+        {
+            string SQL = string.Format(@"select u.Name,u.Email,e.InstallerLevel,u.UserId,
+e.Branch_display as branch
+,e.Department,Telephone,e.WorkPhoneNumber,t.recordid, '' as WorkOrderNumber,c.DetailRecordId
+ from dbo.TruckDictionary t 
+ inner join  TruckDictionary_CrewAssigned c on c.ParentRecordId = t.RecordId
+INNER JOIN  Users  u on u.UserId = c.userId
+inner join Employees AS e ON u.Account = e.Account_1
+where t.recordid= '{0}' order by u.Name
+ ", recordid);
+            return SQL;
+        }
+
+
+
 
         private string GetInstallerInfoExceptWorkOrderSQL()
         {
@@ -2025,6 +2172,28 @@ WorkOrderNumber != '{0}'  order by name
  ", this.workOrderNumber);
             return SQL;
         }
+
+        private string GetInstallersSQL()
+        {
+            string SQL = string.Format(@"select  InstallerName  as Name,
+--EmployeePicture_bin as pic,
+e.recordid,
+e.Branch_display as branch
+,e.Department,i.WorkOrderNumber,c.DetailRecordId,
+--EmployeePicture,EmployeePicture_thumbnail1,EmployeePicture_thumbnail2,
+Telephone,e.WorkPhoneNumber,u.email,InstallerLevel
+ FROM 
+Users AS u
+INNER JOIN HomeInstallations_Crew AS c ON u.UserId = c.userId 
+INNER JOIN Employees AS e ON u.Account = e.Account_1
+inner JOIN HomeInstallations i on c.ParentRecordId = i.RecordId
+where EmploymentStatus='active' and 
+Department ='Installations'  and Position_1='installer' 
+--Department ='IT'  order by name
+ ");
+            return SQL;
+        }
+
 
 
 
@@ -2193,6 +2362,39 @@ where DetailRecordId = '{0}' ", recordId);
             return returnList;
         }
 
+        public List<InstallerWithLessInfo> GetKeepedTruckInstaller(string recordId, string detailedRecordId)
+        {
+            string SQL = GetKeepedTruckInstallerSQL(recordId);
+
+            List<InstallerWithLessInfo> returnList = new List<InstallerWithLessInfo>();
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<InstallerWithLessInfo>(SQL, pars.ToArray()).Where(b => b.DetailedRecordid != detailedRecordId).ToList();
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return returnList;
+        }
+
+        public string GetActionItemIDByRecordID(string recordID)
+        {
+            string SQL = GetActionItemIDByRecordIDSQL(recordID);
+
+            string returnvalue = string.Empty;
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            pars.Add(new System.Data.SqlClient.SqlParameter("recordID", recordID));
+            returnvalue = Lift.LiftManager.DbHelper.ReadObjects<string>(SQL, pars.ToArray())[0];
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return returnvalue;
+        }
+
+        private string GetActionItemIDByRecordIDSQL(string recordID)
+        {
+            string SQL = string.Format(@"
+select  ActionItemId    from dbo.TruckDictionary  where recordid=  '{0}'
+", recordID);
+            return SQL;
+        }
+
+
+
         public string GetActionItemIDByWO()
         {
             string SQL = GetActionItemIDByWOSQL();
@@ -2227,6 +2429,29 @@ where WorkOrderNumber =  '{0}'
             Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
             return returnList[0];
         }
+        public InstallerWithLessInfo GetTruckAddedInstaller(string recordId)
+        {
+            string SQL = GetAddedTruckInstallerSQL(recordId); 
+
+            List<InstallerWithLessInfo> returnList = new List<InstallerWithLessInfo>();
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<InstallerWithLessInfo>(SQL);
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return returnList[0];
+        }
+
+        public InstallerWithLessInfo GetTruckCrewsByUserID(string userID)
+        {
+            string SQL = GetTruckCrewsByUserIDSQL(userID);
+
+            List<InstallerWithLessInfo> returnList = new List<InstallerWithLessInfo>();
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<InstallerWithLessInfo>(SQL);
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            return returnList[0];
+        }
+
+
 
         private string GetInstallerCrewDataSQL(string recordId)
         {
@@ -2257,6 +2482,20 @@ where WorkOrderNumber =  '{0}'
             return SQL;
         }
 
+
+        private string GetKeepedTruckInstallerSQL(string recordID)
+        {
+            string SQL = string.Format(@"select t.RecordId as ParentRecordid ,c.detailrecordid as DetailedRecordid,c.UserId,e.Account_1 as account,t.ActionItemId as id
+ from dbo.TruckDictionary t 
+ inner join  TruckDictionary_CrewAssigned c on c.ParentRecordId = t.RecordId
+INNER JOIN  Users  u on u.UserId = c.userId
+inner join Employees AS e ON u.Account = e.Account_1
+where t.RecordId =  '{0}'
+", recordID);
+            return SQL;
+        }
+
+
         private string GetAddedInstallerSQL(string recordID)
         {
             string SQL = string.Format(@"select 
@@ -2268,6 +2507,35 @@ INNER JOIN HomeInstallations_Crew AS c ON u.UserId = c.userId
 INNER JOIN Employees AS e ON u.Account = e.Account_1
 inner JOIN HomeInstallations i on c.ParentRecordId = i.RecordId
 where e.RecordId =  '{0}'
+", recordID);
+            return SQL;
+        }
+
+        private string GetTruckCrewsByUserIDSQL(string userID)
+        {
+            string SQL = string.Format(@"select 
+e.Account_1 as account,u.UserId, '' as ParentRecordid, '' as DetailedRecordid,'' as id
+ FROM 
+Users AS u
+INNER JOIN Employees AS e ON u.Account = e.Account_1
+where u.UserId =  '{0}'
+", userID);
+            return SQL;
+        }
+
+
+
+        private string GetAddedTruckInstallerSQL(string recordID)
+        {
+            string SQL = string.Format(@"select 
+c.ParentRecordId ,e.Account_1 as account,c.DetailRecordId as DetailedRecordid,u.UserId
+,t.RecordId as hid,t.ActionItemId as id
+ FROM 
+Users AS u
+INNER JOIN TruckDictionary_CrewAssigned AS c ON u.UserId = c.userId 
+INNER JOIN Employees AS e ON u.Account = e.Account_1
+inner join dbo.TruckDictionary t on c.ParentRecordId = t.RecordId
+where t.RecordId =  '{0}'
 ", recordID);
             return SQL;
         }

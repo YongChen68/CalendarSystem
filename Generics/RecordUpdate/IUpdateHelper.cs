@@ -22,6 +22,8 @@ namespace Generics.RecordUpdate
 
        bool UpdateInstalltionCrew(Generics.Utils.ContentType type, List<Generics.Utils.InstallerWithLessInfo> eventData,string parRecordID);
 
+        bool UpdateTruckInstalltionCrew(Generics.Utils.ContentType type, List<Generics.Utils.InstallerWithLessInfo> eventData, string parRecordID);
+
     }
 }
 

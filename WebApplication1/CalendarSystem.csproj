@@ -79,7 +79,10 @@
     <Content Include="data.svc" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="images\client.png" />
     <Content Include="images\color.png" />
+    <Content Include="images\desc.png" />
+    <Content Include="images\desc1.png" />
     <Content Include="images\door.png" />
     <Content Include="images\flag.png" />
     <Content Include="images\greenface.jpg" />
@@ -93,8 +96,10 @@
     <Content Include="images\subtrade.png" />
     <Content Include="images\target5x5.png" />
     <Content Include="images\timer.png" />
+    <Content Include="images\timer2.png" />
     <Content Include="images\transparent.png" />
     <Content Include="images\window.png" />
+    <Content Include="images\wo.png" />
     <Content Include="images\yellowface.jpg" />
     <Content Include="js\calendarprocessing.js" />
     <None Include="js\oldcalendarprocessing.js.old2" />

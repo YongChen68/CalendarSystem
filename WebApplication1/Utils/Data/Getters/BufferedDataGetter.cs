@@ -555,5 +555,50 @@ and  CurrentStateName in ('Ready for ReMeasure', 'Rejected Remeasure')
         {
             throw new NotImplementedException();
         }
+
+        public List<InstallerInfo> GetResources()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<Truck> GetTruckList()
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<InstallerInfo> GetInstallerListByTruck(string recordid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<string> GetUserIdListByTruckRecordID(string recordid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<InstallerInfo> GetTruckInstallersExcludeUserIDs(string userID,string name)
+        {
+            throw new NotImplementedException();
+        }
+
+        public string GetActionItemIDByRecordID(string recordid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<InstallerWithLessInfo> GetKeepedTruckInstaller(string recordid, string detailedRecordID)
+        {
+            throw new NotImplementedException();
+        }
+
+        public InstallerWithLessInfo GetTruckAddedInstaller(string recordid)
+        {
+            throw new NotImplementedException();
+        }
+
+        public InstallerWithLessInfo GetTruckCrewsByUserID(string userID)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

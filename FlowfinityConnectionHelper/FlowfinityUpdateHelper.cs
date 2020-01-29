@@ -254,6 +254,23 @@ namespace FlowfinityConnectionHelper
             return record;
         }
 
+        private static FASR.TruckDictionaryRecord GetTruckCrewRecord(Generics.Utils.ContentType type, List<Generics.Utils.InstallerWithLessInfo> data)
+        {
+            FASR.TruckDictionaryRecord record = new FASR.TruckDictionaryRecord();
+            if (data == null)
+            {
+                record.CrewAssigned = new UserLookupRecord[0];
+            }
+            else
+            {
+                record.CrewAssigned = PrepareTruckInstallerData(data);
+            }
+
+            //    record.ReturnTripReason = Lift.II.IIUtils.CreateStringValue<StringValue>(data.ReturnTripReason);
+            return record;
+        }
+
+
 
         private static FASR.HomeInstallationsRecord GetDocumentFileRecord(Generics.Utils.ContentType type, List<Generics.Utils.DocumentFile> data)
         {
@@ -453,6 +470,28 @@ namespace FlowfinityConnectionHelper
                 return returnValue.ToArray();
             }
         }
+
+        private static FASR.UserLookupRecord[] PrepareTruckInstallerData(List<Generics.Utils.InstallerWithLessInfo> data)
+        {
+            List<FASR.UserLookupRecord> returnValue = new List<FASR.UserLookupRecord>();
+
+            if (data == null)
+            {
+                return null;
+            }
+            else
+            {
+                foreach (Generics.Utils.InstallerWithLessInfo c in data)
+                {
+                    returnValue.Add(new FASR.UserLookupRecord()
+                    {
+                        Account = c.Account,
+                    });
+                }
+                return returnValue.ToArray();
+            }
+        }
+
 
         private static FASR.HomeInstallations_FileAttachmentRecord[] PrepareInstallerFileData(List<Generics.Utils.DocumentFile> data)
         {
@@ -738,6 +777,36 @@ namespace FlowfinityConnectionHelper
                 return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data1)).ReturnValue;
             }
                 
+        }
+
+        bool Generics.RecordUpdate.IUpdateHelper.UpdateTruckInstalltionCrew(Generics.Utils.ContentType type, List<Generics.Utils.InstallerWithLessInfo> data, string parRecordID)
+        {
+            //FASR.PlantProduction_UpdateWindowMakerData_Call call = new FASR.PlantProduction_UpdateWindowMakerData_Call()
+            // HomeInstallations_EditSold_Call
+            if (data.Count > 0)
+            {
+                FASR.TruckDictionary_EditRecord_Call call = new TruckDictionary_EditRecord_Call()
+                {
+                    OnBehalfOf = Owner,
+                    RecordID = data[0].id,
+                    Record = GetTruckCrewRecord(type, data)
+                };
+                return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data[0])).ReturnValue;
+            }
+            else
+            {
+                //CalledLog 
+                InstallerWithLessInfo data1 = null;
+                FASR.TruckDictionary_EditRecord_Call call = new FASR.TruckDictionary_EditRecord_Call()
+                {
+                    OnBehalfOf = Owner,
+                    RecordID = parRecordID,
+
+                    Record = GetTruckCrewRecord(type, null)
+                };
+                return _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data1)).ReturnValue;
+            }
+
         }
 
         bool IUpdateHelper.UpdateRecord(ContentType type, List<DocumentFile> data)

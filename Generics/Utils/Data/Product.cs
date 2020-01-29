@@ -86,7 +86,9 @@ namespace Generics.Utils
         public string email { get; set; }
         [DataMember]
         public string DetailRecordId { get; set; }
-        
+        [DataMember]
+        public string UserId { get; set; }
+
 
     }
 

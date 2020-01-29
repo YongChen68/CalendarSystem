@@ -16,6 +16,7 @@
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link href='js/fullcalendar.css' rel='stylesheet' />
+    <link href='js/scheduler.css' rel='stylesheet' />
     <link href='css/application.css' rel='stylesheet' />
 
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -34,6 +35,7 @@
     <script src='lib/jquery-ui.custom.min.js'></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src='js/fullcalendar.js'></script>
+    <script src='js/scheduler.js'></script>
     <script src="js/calendarprocessing.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhsQnBPh07vYae9Oakwczkyv8gTDY9j-U"></script>
 
@@ -398,6 +400,11 @@
             z-index: 214748367;
         }
 
+        #taskModal {
+            z-index: 214748367;
+        }
+
+
         #installerEdit {
             z-index: 214748367;
         }
@@ -406,6 +413,12 @@
             z-index: 214748367;
         }
 
+        
+        #TruckPop {
+            z-index: 214748366;
+        }
+
+
         #eventContentWindows {
             z-index: 214748367;
         }
@@ -413,6 +426,12 @@
         .modal-header {
             background-color: #9FB6CD;
             color: white;
+            font-weight: 400;
+        }
+
+        .task-modal-header {
+            background-color: white;
+            color:black;
             font-weight: 400;
         }
 
@@ -427,6 +446,15 @@
             margin: auto;
         }
 
+
+
+        
+        .modal-task {
+            width: 800px;
+            height:500px;
+            padding-top: 100px;
+            margin: auto;
+        }
 
 
 
@@ -1354,7 +1382,85 @@
             </div>
               </div>
         </div>
-    
+
+       <div id="TruckPop" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true" class="modal fade">
+            <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+            <div class="modal-header" style="height:80px;">
+                <h4 class="modal-title" id="TruckPopTitle"></h4>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <table id="dataTableTruck" class="table table-striped table-bordered table-hover table-condensed"></table>
+                </div>  
+                <div>
+                   <!-- Search form -->
+                        <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="txtTruckCrewName"  style="width:300px;" onkeyup="SearchByTruckCrewName()" />
+                     
+                      
+                </div>
+                <div  style="overflow-y:auto;margin-left:-150px;margin-top:-20px;">
+                      <a  href="#" onclick="ClearTruckCrewSearch()" >Clear Search</a>
+                </div>
+                <br />
+                <div style="overflow-y:auto;height:200px;">
+                    <table id="dataTableTruckInstallerAdd" class="table table-striped table-bordered table-hover table-condensed" ></table>
+                </div>
+
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="AddCrewsToTruck();">Add Truck Crews</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+            </div>
+              </div>
+        </div>
+        <div id="taskModal" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true" class="modal fade">
+            <div class="modal-dialog modal-task" role="document">
+                <div class="modal-content">
+                    <div class="task-modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="false">&times;</span>
+
+                        </button>
+                     
+
+                    </div>
+
+                    <div class="modal-body">
+                            <div>
+                                <div><input id="AddTitle" style="text-align: left;  border-top:none;border-left:none; border-right:none;width:300px; margin-left:-200px; height:60px; font-size:larger;"  placeholder="Add Title" ></div>
+                                <br />
+                                <div style="margin-left:-350px;"><img src="images/timer2.png"  style="width:2%;height:2%;"/>  &nbsp;  &nbsp;  <input id="TaskTime" placeholder="Jan 15, 2020 1:30 pm"  style="border:hidden;" ></div>
+                                 <br />
+                                <div style="margin-left:-350px;"><img src="images/wo.png" style="width:2%;height:2%;" />  &nbsp;  &nbsp;  <input id="AddWO" placeholder="Assign to Work Order"  style="border:hidden;"  ></div>
+                                 <br />
+                                <div style="margin-left:-350px;"><img src="images/client.png"  style="width:2%;height:2%;"/>  &nbsp;  &nbsp;  <input id="AddClient" placeholder="Assign to Client"  style="border:hidden;" ></div>
+                                 <br />
+                                <div style="margin-left:-350px;"><img src="images/desc1.png" style="width:2%;height:2%;" />  &nbsp;  &nbsp;   <input id="AddDesc" placeholder="Assign to Client"  style="border:hidden;"></div>
+                  
+                            </div>
+                            
+                    </div>
+
+
+                    <div class="modal-footer">
+						 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+        </div>
+      
+
+
         <div id="openviewWeather">
             <a class="weatherwidget-io" href="https://forecast7.com/en/49d28n123d12/vancouver/" data-label_1="Vancouver" data-label_2="Weather" data-font="Roboto" data-icons="Climacons Animated" data-theme="original" data-accent="rgba(1, 1, 1, 0.0)"></a>
         </div>

@@ -53,7 +53,24 @@ namespace CalendarSystem
             }
             return retValue;
         }
+        //GetActionItemIDByRecordID
 
+        public static string GetActionItemIDByRecordID(string recordID)
+        {
+            Lift.LiftManager.Logger.Write("Getting GetActionItemIDByRecordID({0})", recordID);
+            string retValue = string.Empty;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter();
+                retValue = getter.GetActionItemIDByRecordID(recordID);
+                Lift.LiftManager.Logger.Write("Leaving GetActionItemIDByRecordID() = {0}", retValue);
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write("Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
         //this method only updates start and end time
         //this is called when a event is dragged or resized in the calendar
         [System.Web.Services.WebMethod(true)]
