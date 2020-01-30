@@ -1080,6 +1080,22 @@ $(document).ready(function () {
             timelineDay: 'time'
            
         },
+
+        //eventClick: function (event, jsEvent, view) {
+
+        //    let currentClick = jsEvent.clientX;
+        //    let widthEl = $(this).outerWidth();
+        //    let leftPoint = $(this).offset().left;
+        //    let slotWidth = view.slotWidth;
+        //    let slotDuration = view.slotDuration._milliseconds / 60000;
+        //    let widthEvent = currentClick - leftPoint;
+
+        //    let stopMinute = widthEvent / slotWidth * slotDuration;
+
+        //    console.log(stopMinute);
+
+        //},
+
         dayClick: function (date, jsEvent, view, resourceObj) {
 
             if (view.name == "timelineDay") {
@@ -1101,10 +1117,13 @@ $(document).ready(function () {
              
                 //alert('Date: ' + date.format());
                 //alert('Resource id: ' + resourceObj.id);
-                $(this).attr('href', 'javascript:void(0);');
-                $(this).attr('data-toggle', "modal");
-                $(this).attr('data-target', "#taskModal");
-                $(this).attr('href', "/details");
+               // $(this).attr('href', 'javascript:void(0);');
+                //$(this).attr('data-toggle', "modal");
+                //$(this).attr('data-target', "#taskModal");
+                
+                //$(this).attr('href', "/details");
+
+                $('#taskModal').modal('show');
         
             }
            
@@ -1157,7 +1176,7 @@ $(document).ready(function () {
             labelTds.on('click', function (resourceObj, bodyTds) {
                 //alert(resourceObj.title);
              //   TruckCrewEdit(resourceObj);
-                $(this).attr('href', 'javascript:void(0);');
+               // $(this).attr('href', 'javascript:void(0);');
                 $(this).attr('data-toggle', "modal");
                 $(this).attr('data-target', "#TruckPop");
                 $(this).attr('href', "/details");
@@ -2338,7 +2357,7 @@ $(document).ready(function () {
                 var WOCount;
                 var xDate, xDateSat, xDateSun;
 
-                if (displayType == "Installation") {
+                if (displayType == "Installation")  {
                     for (var i = 0; i < totals.length; i++) {
                         date1 = new Date(totals[i]["date"]).toLocaleDateString('en-US');
                         WOCount = 0; //ReturnedJob
