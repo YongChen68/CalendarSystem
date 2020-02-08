@@ -204,6 +204,14 @@ BodyStyle = WebMessageBodyStyle.WrappedResponse)]
 
         [OperationContract]
         [WebInvoke(Method = "GET",
+UriTemplate = "GetTruckListWithWO",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<TruckWithWO> GetTruckListWithWO();
+
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
 UriTemplate = "GetInstallerInfoByNameExceptWorkOrder?workOrderNumber={workOrderNumber}&name={name}",
 ResponseFormat = WebMessageFormat.Json,
 BodyStyle = WebMessageBodyStyle.WrappedResponse)]
@@ -300,6 +308,13 @@ UriTemplate = "GetWOBigPicture?recordid={recordid}",
 ResponseFormat = WebMessageFormat.Json,
 BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<WOPicture> GetWOBigPicture(int recordid);
+
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetTruckInstallationEvent",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<TruckInstallationEvent> GetTruckInstallationEvent();
 
 
 

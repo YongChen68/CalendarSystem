@@ -53,6 +53,14 @@ namespace Generics.Utils.Data
         public string ReturnTripReason { get; set; }
 
         [DataMember]
+        public string ResourceID { get; set; }
+
+        [DataMember]
+        public string ParentRecordId { get; set; }
+
+        
+
+        [DataMember]
         public DateTime ScheduledDate { get; set; }
 
         [DataMember]

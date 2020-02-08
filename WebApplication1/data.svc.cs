@@ -1057,6 +1057,24 @@ namespace CalendarSystem
         }
 
 
+       public  List<TruckInstallationEvent> GetTruckInstallationEvent()
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetTruckInstallationEventSQL({0})");
+            List<TruckInstallationEvent> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter();
+                retValue = getter.GetTruckInstallationEvent();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetTruckInstallationEvent() = {0}", retValue.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+
         List<WindowsCustomer> Idata.GetWindowsCustomer(string workOrderNumber)
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetWindowsCustomer({0})", workOrderNumber);
@@ -1300,6 +1318,24 @@ namespace CalendarSystem
             }
             return retValue;
         }
+
+        List<TruckWithWO> Idata.GetTruckListWithWO()
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetTruckListWithWO({0})");
+            List<TruckWithWO> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter();
+                retValue = getter.GetTruckListWithWO();
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetTruckListWithWO() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
 
 
         List<InstallerInfo> Idata.GetInstallerInfoByNameExceptWorkOrder(string workOrderNumber, string name)

@@ -307,7 +307,7 @@ and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or
 (PlannedInstallWeek >= 1 and PlannedInstallWeek <= 7)) and RecordId not in (select ParentRecordId from #dates d group by ParentRecordId) and 
 Branch in ({2})
 
-select WorkOrderNumber, LastName,FirstName,  HomeDepotJob, AgeOfHome,HazardousBudgetedLBR,WoodDropOffDate,City,PostCode, Email,SalesRep,LeadPaint,ReturnedJob,ReturnTripReason,
+select WorkOrderNumber, LastName,FirstName,  HomeDepotJob, AgeOfHome,ResourceID,HazardousBudgetedLBR,WoodDropOffDate,City,PostCode, Email,SalesRep,LeadPaint,ReturnedJob,ReturnTripReason,
 StartScheduleDate,EndScheduleDate,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,
 TotalDoors,TotalWindows,Windows,Doors,ExtDoors,TotalExtDoors,MinAvailable/detailrecordCount as MinAvailable,SalesTarget/detailrecordCount as SalesTarget,
 DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, 
@@ -332,6 +332,7 @@ i.CurrentStateName,PlannedInstallWeek,WoodDropOffDate,
 SidingLBRBudget,SidingLBRMin,SidingSQF,i.SubTradeFlag,
 dbo.fGetStartScheduleDate(ReturnedJob,RecordId) as StartScheduleDate,
 dbo.fGetEndScheduleDate(ReturnedJob,RecordId) as EndScheduleDate,
+dbo.fGetTruckLookup(RecordId) as ResourceID,
 dbo.fGetMinAvaiable(ScheduledDate,Branch) as MinAvailable,
 dbo.fGetSalesTarget(ScheduledDate,Branch) as SalesTarget,
 round(i.Windows/detailrecordCount,2) as Windows, round(i. PatioDoors/detailrecordCount,2) as Doors,round(i. ExtDoors/detailrecordCount,2) as ExtDoors,
@@ -395,11 +396,14 @@ drop table #installs
             foreach (InstallationEvent eventx in installationEventList)
             {
                 newEvent = new InstallationEvent();
+                newEvent.ResourceID = eventx.ResourceID;
                 newEvent.Doors = eventx.Doors;
                 newEvent.HazardousBudgetedLBR= eventx.HazardousBudgetedLBR;
 
 
                 newEvent.detailrecordCount = eventx.detailrecordCount;
+
+                newEvent.ParentRecordId = eventx.ParentRecordId;
 
                 newEvent.Windows = eventx.Windows;
 
@@ -590,11 +594,15 @@ drop table #installs
             {
                 newEvent = new InstallationEvent();
                 newEvent.Branch = returnedEvent.Branch;
+                newEvent.ResourceID = returnedEvent.ResourceID;
                 newEvent.CellPhone = returnedEvent.CellPhone;
                 newEvent.City = returnedEvent.City;
                 // newEvent.CrewNames = returnedEvent.CrewNames;
                 newEvent.CurrentStateName = returnedEvent.CurrentStateName;
                 newEvent.Doors = returnedEvent.Doors;
+
+                newEvent.ParentRecordId = returnedEvent.ParentRecordId;
+
                 // newEvent.DoorState = returnedEvent.DoorState;
                 newEvent.detailrecordCount = returnedEvent.detailrecordCount;
                 newEvent.start = returnedEventList.Where(a => a.WorkOrderNumber == returnedEvent.WorkOrderNumber).Min(b => b.ScheduledDate).
@@ -1903,7 +1911,7 @@ where WorkOrderNumber = '{0}' ", this.workOrderNumber);
 
         private string GetInstallerInfoByWorkOrderSQL()
         {
-            string SQL = string.Format(@"select InstallerName  as Name,
+            string SQL = string.Format(@"select InstallerName  as Name,u.UserId,
 --EmployeePicture_bin as pic,
 e.recordid,c.DetailRecordId,
 e.Branch_display as branch
@@ -2029,6 +2037,63 @@ where e.recordid= '{0}'
             return newList;
         }
 
+        public List<TruckWithWO> GetTruckListWithWO()
+        {
+            string SQL = GetTruckListWithWOSQL();
+
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+
+            List<TruckWithWO> returnList = new List<TruckWithWO>();
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.TruckWithWO>(SQL);
+            return returnList;
+        }
+
+        //public List<Truck> GetTruckListWithWO()
+        //{
+        //    string SQL = GetTruckListWithWOSQL();
+
+        //    List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+        //    Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+
+        //    List<Truck> returnList = new List<Truck>();
+        //    returnList = Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.Truck>(SQL);
+        //    return returnList;
+        //}
+        private string GetTruckListWithWOSQL()
+        {
+            //            string SQL = string.Format(@" select i.WorkOrderNumber
+            //         ,td.RecordId     
+            //		 ,td.TruckName         -- Unique to WO
+            //         ,t.[TruckLookup]
+            //      ,t.[TruckLookup_display]
+            //      ,t.[ParentRecordId]
+            //      ,t.[DetailRecordId]
+            //	  ,VIN, Make,Model, Year_1 as Year, 
+            //Plate,dbo.fGetTruckCrewNames(td.recordid) as TruckCrewNameList
+            //  FROM [TruckDictionary] td left join [dbo].[HomeInstallations_AssignTruck] as t
+            //   on td.ActionItemId = t.TruckLookup
+            //   left JOIN
+            //       [flowserv_flowfinityapps].[dbo].[HomeInstallations] as i on t.ParentRecordId = i.RecordId
+            // ");
+            //           string SQL = string.Format(@"  
+            //   select id.ScheduledDate, id.EndTime,i.RecordId ,i.ActionItemId,td.RecordId as TruckID,i.WorkOrderNumber,dbo.fGetTruckCrewNames(td.recordid) as TruckCrews,TruckName
+            // from   [TruckDictionary] td left join [dbo].[HomeInstallations_AssignTruck] as t
+            //  on td.ActionItemId = t.TruckLookup
+            //  left JOIN
+            //      [flowserv_flowfinityapps].[dbo].[HomeInstallations] as i on t.ParentRecordId = i.RecordId
+            //   left JOIN  [flowserv_flowfinityapps].[dbo].[HomeInstallations_InstallationDates] id on id.ParentRecordId = i.RecordId
+            //");
+            string SQL = string.Format(@"  
+	 	   	   select i.RecordId ,td.RecordId as TruckID,i.WorkOrderNumber,TruckName,TruckLookup
+  from   [TruckDictionary] td  left join [dbo].[HomeInstallations_AssignTruck] as t    on td.ActionItemId = t.TruckLookup
+    left JOIN
+       [flowserv_flowfinityapps].[dbo].[HomeInstallations] as i on t.ParentRecordId = i.RecordId
+ ");
+            return SQL;
+        }
+
+
 
         public List<Truck> GetTruckList()
         {
@@ -2045,8 +2110,7 @@ where e.recordid= '{0}'
 
         private string GetTruckListSQL()
         {
-            string SQL = string.Format(@" select TruckName, VIN, Make,Model, Year_1 as Year, t.recordid, 
-Plate,dbo.fGetTruckCrewNames(t.recordid) as TruckCrewNameList
+            string SQL = string.Format(@" select TruckName,  t.recordid,VIN, Make,Model, Year_1 as Year, Plate
  from dbo.TruckDictionary t
  ");
             return SQL;
@@ -2125,7 +2189,7 @@ order by u.Name", name);
         {
             string SQL = string.Format(@"  select c.UserId
  from dbo.TruckDictionary t 
- inner join  TruckDictionary_CrewAssigned c on c.ParentRecordId = t.RecordId
+ inner join  TruckDictionary_Crew c on c.ParentRecordId = t.RecordId
 INNER JOIN  Users  u on u.UserId = c.userId
 inner join Employees AS e ON u.Account = e.Account_1
 where t.recordid= '{0}' order by u.Name
@@ -2140,7 +2204,7 @@ where t.recordid= '{0}' order by u.Name
 e.Branch_display as branch
 ,e.Department,Telephone,e.WorkPhoneNumber,t.recordid, '' as WorkOrderNumber,c.DetailRecordId
  from dbo.TruckDictionary t 
- inner join  TruckDictionary_CrewAssigned c on c.ParentRecordId = t.RecordId
+ inner join  TruckDictionary_Crew c on c.ParentRecordId = t.RecordId
 INNER JOIN  Users  u on u.UserId = c.userId
 inner join Employees AS e ON u.Account = e.Account_1
 where t.recordid= '{0}' order by u.Name
@@ -2487,7 +2551,7 @@ where WorkOrderNumber =  '{0}'
         {
             string SQL = string.Format(@"select t.RecordId as ParentRecordid ,c.detailrecordid as DetailedRecordid,c.UserId,e.Account_1 as account,t.ActionItemId as id
  from dbo.TruckDictionary t 
- inner join  TruckDictionary_CrewAssigned c on c.ParentRecordId = t.RecordId
+ inner join  TruckDictionary_Crew c on c.ParentRecordId = t.RecordId
 INNER JOIN  Users  u on u.UserId = c.userId
 inner join Employees AS e ON u.Account = e.Account_1
 where t.RecordId =  '{0}'
@@ -2532,7 +2596,7 @@ c.ParentRecordId ,e.Account_1 as account,c.DetailRecordId as DetailedRecordid,u.
 ,t.RecordId as hid,t.ActionItemId as id
  FROM 
 Users AS u
-INNER JOIN TruckDictionary_CrewAssigned AS c ON u.UserId = c.userId 
+INNER JOIN TruckDictionary_Crew AS c ON u.UserId = c.userId 
 INNER JOIN Employees AS e ON u.Account = e.Account_1
 inner join dbo.TruckDictionary t on c.ParentRecordId = t.RecordId
 where t.RecordId =  '{0}'
@@ -2679,7 +2743,35 @@ where DetailRecordId = '{0}' ", recordId);
             throw new NotImplementedException();
         }
 
-      
+        public List<TruckInstallationEvent> GetTruckInstallationEvent()
+        {
+            string SQL = GetTruckInstallationEventSQL();
+            List<TruckInstallationEvent> returnList = new List<TruckInstallationEvent>();
+
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<TruckInstallationEvent>(SQL);
+
+            return returnList;
+        }
+
+        private string GetTruckInstallationEventSQL()
+        {
+            string SQL = string.Empty;
+            SQL = String.Format(@"
+              				   select id.ScheduledDate, id.EndTime,i.RecordId ,i.ActionItemId,TruckName,id.DetailRecordId
+  from   [TruckDictionary] td left join [dbo].[HomeInstallations_AssignTruck] as t
+   on td.ActionItemId = t.TruckLookup
+   left JOIN
+       [flowserv_flowfinityapps].[dbo].[HomeInstallations] as i on t.ParentRecordId = i.RecordId
+	   left JOIN  [flowserv_flowfinityapps].[dbo].[HomeInstallations_InstallationDates] id on id.ParentRecordId = i.RecordId");
+            return SQL;
+
+
+        }
+
+
+
+
+
     }
 
 }

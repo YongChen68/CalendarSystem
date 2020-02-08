@@ -1,4 +1,5 @@
 ﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="CalendarSystem._Default" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,15 +12,15 @@
 
     <!-- Optional theme -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link href='js/fullcalendar.css' rel='stylesheet' />
     <link href='js/scheduler.css' rel='stylesheet' />
     <link href='css/application.css' rel='stylesheet' />
 
- 
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
 
 
@@ -28,7 +29,7 @@
 
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src='lib/jquery-ui.custom.min.js'></script>
-       <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     <script src='lib/moment.min.js'></script>
     <script src='js/fullcalendar.js'></script>
@@ -91,6 +92,17 @@
                 dateFormat: "m/d/yy"
 
             });
+
+            $('#TruckStartDate').datepicker({
+                dateFormat: "m/d/yy"
+
+            });
+
+            $('#TruckEndDate').datepicker({
+                dateFormat: "m/d/yy"
+
+            });
+
             $('#from_date').datepicker({
                 dateFormat: "m/d/yy"
 
@@ -447,7 +459,7 @@
 
         
         .modal-task {
-            width: 800px;
+            width: 1000px;
             height:500px;
             padding-top: 100px;
             margin: auto;
@@ -560,10 +572,10 @@
                                     <a href="#NotesTab" aria-controls="NotesTab" role="tab" data-toggle="tab">Notes</a>
 
                                 </li>
-                                 <li role="presentation">
+                                <li role="presentation">
                                     <a href="#WOPictureTab" aria-controls="WOPictureTab" role="tab" data-toggle="tab">Photo Gallery</a>
                                 </li>
-                                 <li role="presentation">
+                                <li role="presentation">
                                     <a href="#DocumentLibraryTab" aria-controls="DocumentLibraryTab" role="tab" data-toggle="tab">Document</a>
                                 </li>
                                 <li role="presentation">
@@ -618,7 +630,7 @@
                                         <div><b>Total Sales Amount: </b><span id="SalesAmmount"></span></div>
 
                                         <br>
-                                         <div><b>Daily Sales Amount: </b><span id="DailySalesAmmount"></span></div>
+                                        <div><b>Daily Sales Amount: </b><span id="DailySalesAmmount"></span></div>
 
                                         <br>
                                     </div>
@@ -628,7 +640,7 @@
                                         <br>
                                         <br>
                                         <span><b>Installation Scheduled Date:  &nbsp;</b>
-                                            <span  id="DaysOfWork"></span>  &nbsp; days
+                                            <span id="DaysOfWork"></span>&nbsp; days
                                          
                                         </span>
                                         <div class="container">
@@ -663,18 +675,19 @@
 
                                         <div><b>Senior Installer: </b><span id="SeniorInstaller"></span></div>
                                         <br>
-                                        <div><b>CrewNames: </b><span id="CrewNames"></span>
-                                      
-                                       </div>
                                         <div>
-                                             <span id="ViewDeleteCrewNames" style="display:none;padding-left:20px;"> </span>
-                                             <span id="AddCrewNames" style="padding-left:40px;"></span> 
+                                            <b>CrewNames: </b><span id="CrewNames"></span>
+
+                                        </div>
+                                        <div>
+                                            <span id="ViewDeleteCrewNames" style="display: none; padding-left: 20px;"></span>
+                                            <span id="AddCrewNames" style="padding-left: 40px;"></span>
                                         </div>
                                         <br>
 
                                         <div><b>Remeasurer: </b><span id="Remeasurer"></span></div>
                                         <br>
-                                        
+
                                         <div class="container">
                                             <div class="leftcolumn">
                                                 <b>Number of Installers: </b>
@@ -695,7 +708,8 @@
 
                                         <div class="container">
                                             <div class="leftcolumn">
-                                                    <image src="images/asbestos.PNG"></image>  <b>Asbestos-Jobs: </b>
+                                                <image src="images/asbestos.PNG"></image>
+                                                <b>Asbestos-Jobs: </b>
 
                                                 <div class="radio">
                                                     <label>
@@ -707,7 +721,8 @@
                                                 </div>
                                             </div>
                                             <div class="rightcolumn">
-                                        <image src="images/asbestos.PNG"></image>   <b>Lead-Paint : </b>
+                                                <image src="images/asbestos.PNG"></image>
+                                                <b>Lead-Paint : </b>
 
                                                 <div class="radio">
                                                     <label>
@@ -723,10 +738,11 @@
 
 
                                         <div class="container">
- 
+
 
                                             <div class="leftcolumn">
-                                             <image src="images/delivery.PNG"></image>     <b>Wood-DropOff-Jobs : </b>
+                                                <image src="images/delivery.PNG"></image>
+                                                <b>Wood-DropOff-Jobs : </b>
 
                                                 <div class="radio">
                                                     <label>
@@ -738,7 +754,8 @@
                                                 </div>
                                             </div>
                                             <div class="rightcolumn">
-                                            <image src="images/risk.PNG"></image>     <b>HighRisk-Jobs : </b>
+                                                <image src="images/risk.PNG"></image>
+                                                <b>HighRisk-Jobs : </b>
 
                                                 <div class="radio">
                                                     <label>
@@ -753,8 +770,8 @@
                                         </div>
                                         <br>
 
-                                        <span style="display:none;"><b>Weekends Setting: </b></span>
-                                        <div style="width: 800px;display:none;" class="container" >
+                                        <span style="display: none;"><b>Weekends Setting: </b></span>
+                                        <div style="width: 800px; display: none;" class="container">
                                             <div class="leftcolumn">
                                                 Saturday:
                                                 <input type="checkbox" name="saturday" disabled="disabled">
@@ -763,7 +780,7 @@
                                                 Sunday: &nbsp;&nbsp;<input type="checkbox" name="sunday" disabled="disabled">
                                             </div>
                                         </div>
-                                     
+
                                         <span><b>Return Scheduled Date:</b></span>
                                         <div class="form-group" style="width: 800px;" id="ReturnedJob">
                                             <div class="container">
@@ -795,16 +812,16 @@
 
                                             </div>
                                         </div>
-                                         <div class="form-group" style="width: 800px;" id="ReturnedJobReason">
+                                        <div class="form-group" style="width: 800px;" id="ReturnedJobReason">
                                             <div class="container">
 
                                                 <div class="leftcolumn">
                                                     <div class="container">
                                                         <div class="leftcolumn" style="width: 5%; align-items: center;">
-                                                           Reason:
+                                                            Reason:
                                                         </div>
                                                         <div class="rightcolumn" style="width: 20%;">
-                                                              <textarea class="form-control" rows="5" id="returnJobReasonID" style="width:400px;"></textarea>
+                                                            <textarea class="form-control" rows="5" id="returnJobReasonID" style="width: 400px;"></textarea>
                                                         </div>
 
                                                     </div>
@@ -813,232 +830,239 @@
 
                                                 <div class="rightcolumn">
                                                     <div class="container">
-                                                       
                                                     </div>
                                                 </div>
 
                                             </div>
                                         </div>
 
-                                        <div  id="divWoodDropOffDate" style="display:none;"> 
+                                        <div id="divWoodDropOffDate" style="display: none;">
                                             <span><b>Wood Drop Off Date:</b></span>
                                             <div class="form-group" style="width: 800px;" id="WoodDropOffDate">
-                                            <div class="container">
+                                                <div class="container">
 
-                                                <div class="leftcolumn">
-                                                    <div class="container">
-                                                        <div class="leftcolumn" style="width: 5%; align-items: center;">
-                                                            Start Date:
-                                                        </div>
-                                                        <div class="rightcolumn" style="width: 20%;">
-                                                            <input id="wooddropdate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Date">
+                                                    <div class="leftcolumn">
+                                                        <div class="container">
+                                                            <div class="leftcolumn" style="width: 5%; align-items: center;">
+                                                                Start Date:
+                                                            </div>
+                                                            <div class="rightcolumn" style="width: 20%;">
+                                                                <input id="wooddropdate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Date">
+                                                            </div>
+
                                                         </div>
 
                                                     </div>
 
-                                                </div>
+                                                    <div class="rightcolumn">
+                                                        <div class="container">
+                                                            <div class="leftcolumn" style="width: 5%; padding-left: 50px;">
+                                                                Time:
+                                                            </div>
 
-                                                <div class="rightcolumn">
-                                                    <div class="container">
-                                                        <div class="leftcolumn" style="width: 5%; padding-left: 50px;">
-                                                            Time:
-                                                        </div>
-
-                                                        <div class="rightcolumn" style="padding-left: 50px; width: 5%;">
-                                                            <input type="time" id="wooddropTime" name="appt">
+                                                            <div class="rightcolumn" style="padding-left: 50px; width: 5%;">
+                                                                <input type="time" id="wooddropTime" name="appt">
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
 
+                                                </div>
                                             </div>
-                                        </div>
                                         </div>
                                         <input type="button" name="btnSave" id="btnSave" class="btn btn-success" value="Save" onclick="UpdateInstallationEvents()">
                                     </div>
-                                    <div >
-                                         <div  id="installerDiv" style="margin-left: 620px; display:none;">  <img src="images/installerimage.jpg" /></div>
+                                    <div>
+                                        <div id="installerDiv" style="margin-left: 620px; display: none;">
+                                            <img src="images/installerimage.jpg" />
+                                        </div>
                                     </div>
                                 </div>
 
                                 <div role="tabpanel" class="tab-pane " id="InstallationTab">
                                     <br />
-                                    <div style=" text-align:left;"><b> <span id="installationWindows" >WINDOWS</span></b>
+                                    <div style="text-align: left;">
+                                        <b><span id="installationWindows">WINDOWS</span></b>
                                     </div>
-                                    <div > <span id="noInstallationWindows" style=" text-align:left; display:none;">This order does not contain any windows.</span>
+                                    <div>
+                                        <span id="noInstallationWindows" style="text-align: left; display: none;">This order does not contain any windows.</span>
                                     </div>
-                                    <div style="overflow: auto; ">
+                                    <div style="overflow: auto;">
                                         <table id="dataTableInstallationWindows" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
                                     <br />
-                                    <div style=" text-align:left;"> <b> <span id="installationDoors">DOORS</span></b>  </div>
-                                    <div > <span id="noInstallationDoors" style=" text-align:left; display:none;">This order does not contain any doors.</span>
+                                    <div style="text-align: left;"><b><span id="installationDoors">DOORS</span></b>  </div>
+                                    <div>
+                                        <span id="noInstallationDoors" style="text-align: left; display: none;">This order does not contain any doors.</span>
                                     </div>
-                                    <div style="overflow: auto; ">
+                                    <div style="overflow: auto;">
                                         <table id="dataTableInstallationDoors" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
 
                                 </div>
 
-                                 <div role="tabpanel" class="tab-pane " id="ManufacturingTab">
+                                <div role="tabpanel" class="tab-pane " id="ManufacturingTab">
                                     <br />
-                                    <div style=" text-align:left;"><b> <span id="manufacturingWindows" >WINDOWS</span></b>
+                                    <div style="text-align: left;">
+                                        <b><span id="manufacturingWindows">WINDOWS</span></b>
                                     </div>
-                                    <div > <span id="noManufacturingWindows" style=" text-align:left; display:none;">This order does not contain any windows.</span>
+                                    <div>
+                                        <span id="noManufacturingWindows" style="text-align: left; display: none;">This order does not contain any windows.</span>
                                     </div>
-                                    <div style="overflow: auto; ">
+                                    <div style="overflow: auto;">
                                         <table id="dataTableManufacturingWindows" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
                                     <br />
-                                    <div style=" text-align:left;"> <b> <span id="manufacturinDoors">DOORS</span></b>  </div>
-                                    <div > <span id="noManufacturingDoors" style=" text-align:left; display:none;">This order does not contain any doors.</span>
+                                    <div style="text-align: left;"><b><span id="manufacturinDoors">DOORS</span></b>  </div>
+                                    <div>
+                                        <span id="noManufacturingDoors" style="text-align: left; display: none;">This order does not contain any doors.</span>
                                     </div>
-                                    <div style="overflow: auto; ">
+                                    <div style="overflow: auto;">
                                         <table id="dataTableManufacturingDoors" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
 
                                 </div>
                                 <div role="tabpanel" class="tab-pane " id="SubTradesTab">
-                                     <br/>
-                                    <div > <span id="noSubTrades" style=" text-align:left; display:none;">No Sub Trades required for this job.</span>
+                                    <br />
+                                    <div>
+                                        <span id="noSubTrades" style="text-align: left; display: none;">No Sub Trades required for this job.</span>
                                     </div>
-                                    <div style="overflow: auto; ">
+                                    <div style="overflow: auto;">
                                         <table id="dataTableSubTrades" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
                                 </div>
-                                <div role="tabpanel" class="tab-pane " id="JobAnalysisTab"> 
-                                     <div id="LBRContent" style="width: 600px; margin-left: 20px; padding-left: 100px;  text-align:left;"">
-                                        <br/>
-                                        <br/>
-                                         <b>Total LBR Mins: </b><span id="TotalLBRMin"></span>
+                                <div role="tabpanel" class="tab-pane " id="JobAnalysisTab">
+                                    <div id="LBRContent" style="width: 600px; margin-left: 20px; padding-left: 100px; text-align: left;">
+                                        <br />
+                                        <br />
+                                        <b>Total LBR Mins: </b><span id="TotalLBRMin"></span>
                                     </div>
 
                                 </div>
                                 <div role="tabpanel" class="tab-pane " id="CalledLogTab">
-                                     <br/>
-                                    
+                                    <br />
+
                                     <div style="overflow: auto;">
                                         <table id="dataTableCalledLog" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
-                                    <div id="CalledLogWin"  style="width: 800px; text-align:left;">
+                                    <div id="CalledLogWin" style="width: 800px; text-align: left;">
                                         <div class="form-group">
                                             <label for="calledDate">Called Date :</label>
-                                        <input id="calledLogDate" style="text-align: center;" data-toggle="tooltip" title="Date">
+                                            <input id="calledLogDate" style="text-align: center;" data-toggle="tooltip" title="Date">
 
-                                         <label for="Time">Time :</label>
-                                         <input type="time" id="CalledLogTime" name="appt"  >
-
-                                             
+                                            <label for="Time">Time :</label>
+                                            <input type="time" id="CalledLogTime" name="appt">
                                         </div>
-                              
+
                                         <div class="form-group">
                                             <label for="comment">Called Message :</label>
-                                             <select id="MessageOption" name="MessageOption">
-                                              <option value="Left Message">Left Message</option>
-                                              <option value="No Answering Machine">No Answering Machine</option>
-                                              <option value="Spoke With Customer">Spoke With Customer</option>
+                                            <select id="MessageOption" name="MessageOption">
+                                                <option value="Left Message">Left Message</option>
+                                                <option value="No Answering Machine">No Answering Machine</option>
+                                                <option value="Spoke With Customer">Spoke With Customer</option>
                                             </select>
-                                             
+
                                         </div>
                                         <div class="form-group">
-                                              <label for="comment">Notes:</label>
+                                            <label for="comment">Notes:</label>
                                             <textarea class="form-control" rows="5" id="comment"></textarea>
-  
+
                                         </div>
-                                        
-                                          <div class="form-group" style="display:none;">
-                                           
+
+                                        <div class="form-group" style="display: none;">
+
                                             <textarea class="form-control" rows="5" id="callLogRecordID"></textarea>
-  
+
                                         </div>
-                                        
-                                         <input type="button" name="btnSaveLog" id="btnSaveLog" class="btn btn-success" value="Save" onclick="UpdateInstallationCallLog()">
+
+                                        <input type="button" name="btnSaveLog" id="btnSaveLog" class="btn btn-success" value="Save" onclick="UpdateInstallationCallLog()">
                                     </div>
 
                                 </div>
 
-                                     <div role="tabpanel" class="tab-pane " id="NotesTab">
-                                     <br/>
-                                    
+                                <div role="tabpanel" class="tab-pane " id="NotesTab">
+                                    <br />
+
                                     <div style="overflow: auto;">
                                         <table id="dataTableNotes" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
-                                    <div id="NotesWin" style="text-align:left;" >
+                                    <div id="NotesWin" style="text-align: left;">
                                         <div class="form-group">
-                                          
-                                           <label for="comment">General Notes Date :</label>
-                                             <input id="notesDate" style="width: 160px; text-align: center;"  data-toggle="tooltip" title="Date">
+
+                                            <label for="comment">General Notes Date :</label>
+                                            <input id="notesDate" style="width: 160px; text-align: center;" data-toggle="tooltip" title="Date">
 
                                             <label for="Time">Time :</label>
-                                             <input type="time" id="notesTime" name="appt">
-                                            
+                                            <input type="time" id="notesTime" name="appt">
                                         </div>
                                         <div class="form-group">
                                             <label for="comment">Category :</label>
-                                             <select id="CategoryOption" name="CategoryOption">
-                                              <option value="General">General</option>
-                                              <option value="Installation">Installation</option>
-                                              <option value="High Risk">High Risk</option>
-                                              <option value="Re-Measure">Re-Measure</option>
-                                              <option value="Admin">Admin</option>
-                                              <option value="Customer">Customer</option>
+                                            <select id="CategoryOption" name="CategoryOption">
+                                                <option value="General">General</option>
+                                                <option value="Installation">Installation</option>
+                                                <option value="High Risk">High Risk</option>
+                                                <option value="Re-Measure">Re-Measure</option>
+                                                <option value="Admin">Admin</option>
+                                                <option value="Customer">Customer</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                              <label for="comment">Notes:</label>
+                                            <label for="comment">Notes:</label>
                                             <textarea class="form-control" rows="5" id="notes"></textarea>
-  
+
                                         </div>
-                                        
-                                          <div class="form-group" style="display:none;">
-                                           
+
+                                        <div class="form-group" style="display: none;">
+
                                             <textarea class="form-control" rows="5" id="notesRecordID"></textarea>
-  
+
                                         </div>
-                                        
-                                         <input type="button" name="btnSaveNotes" id="btnSaveNotes" class="btn btn-success" value="Save" onclick="UpdateInstallationNotes()">
+
+                                        <input type="button" name="btnSaveNotes" id="btnSaveNotes" class="btn btn-success" value="Save" onclick="UpdateInstallationNotes()">
                                     </div>
 
                                 </div>
                                 <div role="tabpanel" class="tab-pane " id="WOPictureTab">
-                                     <br/>
-                                     <div > <span id="noPhoto" style=" text-align:left; display:none;">No photo attached to this job.</span>
+                                    <br />
+                                    <div>
+                                        <span id="noPhoto" style="text-align: left; display: none;">No photo attached to this job.</span>
                                     </div>
-                                    <div style="overflow: auto; ">
+                                    <div style="overflow: auto;">
                                         <table id="dataTableWOPicture" class="table table-striped table-bordered table-hover table-condensed"></table>
                                         <img id="ItemPreview" src="" />
                                     </div>
 
                                 </div>
                                 <div role="tabpanel" class="tab-pane " id="DocumentLibraryTab">
-                                     <br/>
-                                     <div > <span id="noDocuments" style=" text-align:left; display:none;"></span>
+                                    <br />
+                                    <div>
+                                        <span id="noDocuments" style="text-align: left; display: none;"></span>
                                     </div>
-                                    <div style="overflow: auto; ">
+                                    <div style="overflow: auto;">
                                         <table id="dataTableDocumentLibrary" class="table table-striped table-bordered table-hover table-condensed"></table>
-                                     </div>
-                                    <div style="margin-left:-1100px;">
+                                    </div>
+                                    <div style="margin-left: -1100px;">
                                         <label for="documentNotes">File Name:</label>
 
-                                        <input id="documentFile" style="text-align: center;" >
-
-                                     </div>
-                                  <br />
+                                        <input id="documentFile" style="text-align: center;">
+                                    </div>
+                                    <br />
                                     <div>
-                                         <input id="fileUpload" type="file"  accept=".jpg, .jpeg, .png,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"/>
+                                        <input id="fileUpload" type="file" accept=".jpg, .jpeg, .png,.doc,.docx,.xml,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document" />
                                         <span id="file"></span>
-                                     </div>
-                                     <div style="margin-left:-1100px;">   
+                                    </div>
+                                    <div style="margin-left: -1100px;">
                                         <input type="button" name="btnUploadDocuments" id="btnUploadDocuments" class="btn btn-success" value="Save" onclick="UploadDocuments()">
-                                     </div>
-                                      
-                                 
+                                    </div>
+
+
 
                                 </div>
                                 <div role="tabpanel" class="tab-pane " id="JobReviewTab">
-                                     <br/>
-                                     <div > <span id="noJobReview" style=" text-align:left; display:none;">No job-review record to this job.</span>
+                                    <br />
+                                    <div>
+                                        <span id="noJobReview" style="text-align: left; display: none;">No job-review record to this job.</span>
                                     </div>
-                                    <div style="overflow-y:auto;height:400px;">
+                                    <div style="overflow-y: auto; height: 400px;">
                                         <table id="dataTableJobReview" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
 
@@ -1056,124 +1080,121 @@
             <br>
         </div>
         <div id="eventRemeasureContent" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true" class="modal fade">
-        <div class="modal-dialog modal-ku" role="document">
-            <div class="modal-content">
-                <div class="modal-header ">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+            aria-hidden="true" class="modal fade">
+            <div class="modal-dialog modal-ku" role="document">
+                <div class="modal-content">
+                    <div class="modal-header ">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
 
-                    </button>
-                    <h4 class="modal-title" id="WorkOrderTitleRemeasure"></h4>
+                        </button>
+                        <h4 class="modal-title" id="WorkOrderTitleRemeasure"></h4>
 
-                </div>
+                    </div>
 
-                <div class="modal-body">
+                    <div class="modal-body">
 
-                    <div role="tabpanel">
-                        <!-- Nav tabs -->
-                        <ul class="nav nav-tabs" role="tablist">
-                            <li role="presentation" class="active">
-                                <a href="#CustomerTabRemeasure" aria-controls="customerTab" role="tab" data-toggle="tab">CUSTOMER</a>
+                        <div role="tabpanel">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active">
+                                    <a href="#CustomerTabRemeasure" aria-controls="customerTab" role="tab" data-toggle="tab">CUSTOMER</a>
 
-                            </li>
-                            <li role="presentation">
-                                <a href="#RemeasureTab" aria-controls="remeasureTab" role="tab" data-toggle="tab">REMEASURE</a>
+                                </li>
+                                <li role="presentation">
+                                    <a href="#RemeasureTab" aria-controls="remeasureTab" role="tab" data-toggle="tab">REMEASURE</a>
 
-                            </li>
-                <%--            <li role="presentation">
+                                </li>
+                                <%--            <li role="presentation">
                                 <a href="#ProductTabRemeasure" aria-controls="productTab" role="tab" data-toggle="tab">PRODUCT</a>
 
                             </li>--%>
-
-
-                        </ul>
-                        <!-- Tab panes -->
-                        <div class="tab-content">
-                            <div role="tabpanel" class="tab-pane active" id="CustomerTabRemeasure">
-                                <div id="mapRemeasure" style="height:500px;margin-top:20px;">
-
-                                </div>
-
-                                <div id="contentRemeasure">
-                                    <br>
-                                    <br>
-                                    <div><b>First Name: </b><span id="FirstNameRemeasure"></span></div>
-                                    <br>
-                                    <div><b>Last Name: </b><span id="LastNameRemeasure"></span></div>
-                                    <br>
-                                    <div><b>Work Order: </b><span id="workOrderRemeasure"></span></div>
-                                    <br>
-                                    <div><b>Street Address: </b><span id="AddressRemeasure"></span></div>
-                                    <br>
-                                    <div><b>City: </b><span id="CityRemeasure"></span></div>
-                                    <br>
-                                    <div><b>Postal Code: </b><span id="postalCodeRemeasure"></span></div>
-                                    <br>
-                                    <div><b>Home Phone: </b><span id="homePhoneRemeasure"></span></div>
-                                    <br>
-                                    <div><b>Work Phone: </b><span id="workPhoneRemeasure"></span></div>
-                                    <br>
-                                    <div><b>Cell Phone: </b><span id="cellPhoneRemeasure"></span></div>
-                                    <br>
-                                    <div><b>Email: </b><span id="emailRemeasure"></span></div>
-                                    <br>
-                                    <div><b>Sales Rep: </b><span id="salesRepRemeasure"></span></div>
-                                    <br>
-
-                                    <div><b>Total Windows: </b><span id="TotalWindows1Remeasure"></span></div>
-
-                                    <br>
-                                    <div><b>Total Patio Doors: </b><span id="TotalDoors1Remeasure"></span></div>
-                                    <br>
-
-                                    <div><b>Total Codel Doors: </b><span id="TotalDoors2Remeasure"></span></div>
-                                    <br>
-                                    <div><b>Sales Amount: </b><span id="SalesAmmountRemeasure"></span></div>
-
-                                    <br>
-                                </div>
-                            </div>
-
-                            <div role="tabpanel" class="tab-pane" id="RemeasureTab">
-                                <div id="RemeasureContent" style="width: 600px; margin-left: 0px; padding-left: 0px;">
-                                    <br>
-                                    <br>
-                                    <div style="margin-left:-160px;"><b>Remeasure Date & Time: </b>
-                                         <input type="datetime-local"  id="RemeasureDate" style="width: 250px; text-align: center;">  
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="CustomerTabRemeasure">
+                                    <div id="mapRemeasure" style="height: 500px; margin-top: 20px;">
                                     </div>
-                                    <br>
-                                    <div style="margin-left:-210px;"><b>End Time: </b>
-       <%--                                  <input type="datetime-local"  id="EndRemeasureDate" style="width: 250px; text-align: center;">--%>
-                                        <input type="time" id="EndRemeasureDate" name="appt">
-                                    </div>
-                                  
-                                    <br>
-                                 
 
-                                <input type="button" name="btnSave" id="btnRemeasureSave" class="btn btn-success" value="Save" style="margin-left:-450px; " onclick="UpdateRemeasureEventsFromPopup()">
+                                    <div id="contentRemeasure">
+                                        <br>
+                                        <br>
+                                        <div><b>First Name: </b><span id="FirstNameRemeasure"></span></div>
+                                        <br>
+                                        <div><b>Last Name: </b><span id="LastNameRemeasure"></span></div>
+                                        <br>
+                                        <div><b>Work Order: </b><span id="workOrderRemeasure"></span></div>
+                                        <br>
+                                        <div><b>Street Address: </b><span id="AddressRemeasure"></span></div>
+                                        <br>
+                                        <div><b>City: </b><span id="CityRemeasure"></span></div>
+                                        <br>
+                                        <div><b>Postal Code: </b><span id="postalCodeRemeasure"></span></div>
+                                        <br>
+                                        <div><b>Home Phone: </b><span id="homePhoneRemeasure"></span></div>
+                                        <br>
+                                        <div><b>Work Phone: </b><span id="workPhoneRemeasure"></span></div>
+                                        <br>
+                                        <div><b>Cell Phone: </b><span id="cellPhoneRemeasure"></span></div>
+                                        <br>
+                                        <div><b>Email: </b><span id="emailRemeasure"></span></div>
+                                        <br>
+                                        <div><b>Sales Rep: </b><span id="salesRepRemeasure"></span></div>
+                                        <br>
+
+                                        <div><b>Total Windows: </b><span id="TotalWindows1Remeasure"></span></div>
+
+                                        <br>
+                                        <div><b>Total Patio Doors: </b><span id="TotalDoors1Remeasure"></span></div>
+                                        <br>
+
+                                        <div><b>Total Codel Doors: </b><span id="TotalDoors2Remeasure"></span></div>
+                                        <br>
+                                        <div><b>Sales Amount: </b><span id="SalesAmmountRemeasure"></span></div>
+
+                                        <br>
+                                    </div>
                                 </div>
-                            </div>
-     <%--                       <div role="tabpanel" class="tab-pane " id="ProductTabRemeasure">
+
+                                <div role="tabpanel" class="tab-pane" id="RemeasureTab">
+                                    <div id="RemeasureContent" style="width: 600px; margin-left: 0px; padding-left: 0px;">
+                                        <br>
+                                        <br>
+                                        <div style="margin-left: -160px;">
+                                            <b>Remeasure Date & Time: </b>
+                                            <input type="datetime-local" id="RemeasureDate" style="width: 250px; text-align: center;">
+                                        </div>
+                                        <br>
+                                        <div style="margin-left: -210px;">
+                                            <b>End Time: </b>
+                                            <%--                                  <input type="datetime-local"  id="EndRemeasureDate" style="width: 250px; text-align: center;">--%>
+                                            <input type="time" id="EndRemeasureDate" name="appt">
+                                        </div>
+
+                                        <br>
+
+
+                                        <input type="button" name="btnSave" id="btnRemeasureSave" class="btn btn-success" value="Save" style="margin-left: -450px;" onclick="UpdateRemeasureEventsFromPopup()">
+                                    </div>
+                                </div>
+                                <%--                       <div role="tabpanel" class="tab-pane " id="ProductTabRemeasure">
                                 <div style="overflow: auto; height: 600px;">
                                     <table id="dataTableRemeasure" class="table table-striped table-bordered table-hover table-condensed"></table>
                                 </div>
 
                             </div>--%>
-
-
+                            </div>
                         </div>
                     </div>
-                </div>
 
 
-                <div class="modal-footer">
+                    <div class="modal-footer">
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <br>
-    </div>
+            <br>
+        </div>
 
 
         <div id="eventContentWindows" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -1201,20 +1222,20 @@
                                     <a href="#WindowItemsTab" aria-controls="uploadTab" role="tab" data-toggle="tab">Windows Items</a>
 
                                 </li>
-              
+
 
                             </ul>
                             <!-- Tab panes -->
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="CustomerTabWindows">
-                                    <div id="mapWindows" style="height:500px;margin-top:20px;"></div>
+                                    <div id="mapWindows" style="height: 500px; margin-top: 20px;"></div>
 
                                     <div id="contentWindows">
                                         <br>
                                         <br>
-                                    
+
                                         <div><b>Work Order: </b><span id="workOrderWindows"></span></div>
-                                         <br>
+                                        <br>
                                         <div><b>Customer Name: </b><span id="CustomerNameWindows"></span></div>
                                         <br>
                                         <div><b>Branch: </b><span id="BranchWindows"></span></div>
@@ -1222,39 +1243,42 @@
                                         <div><b>Shipping Type: </b><span id="ShippingTypeWindows"></span></div>
                                         <br>
                                         <div><b>Street Address: </b><span id="AddressWindows"></span></div>
-                                         <br>
+                                        <br>
                                         <div><b>Email: </b><span id="emailWindows"></span></div>
                                         <br>
                                         <div><b>Total Windows: </b><span id="TotalWindows"></span></div>
-                                       
+
                                         <br>
                                         <div><b>Total Patio Doors: </b><span id="TotalPatioDoors"></span></div>
-                                         <br>
-                              
+                                        <br>
+
                                         <div><b>Total Doors: </b><span id="TotalDoors"></span></div>
                                         <br>
                                         <div><b>Total Price: </b><span id="TotalPrice"></span></div>
-                                     
-                                      
-                                       <br>
+
+
+                                        <br>
                                     </div>
                                 </div>
-                     
+
 
                                 <div role="tabpanel" class="tab-pane " id="WindowItemsTab">
                                     <br />
-                                    <div style=" text-align:left;"><b> <span id="ProductnWindows" >WINDOWS</span></b>
+                                    <div style="text-align: left;">
+                                        <b><span id="ProductnWindows">WINDOWS</span></b>
                                     </div>
-                                    <div > <span id="noProductWindows" style=" text-align:left; display:none;">This order does not contain any windows.</span>
+                                    <div>
+                                        <span id="noProductWindows" style="text-align: left; display: none;">This order does not contain any windows.</span>
                                     </div>
-                                    <div style="overflow: auto; ">
+                                    <div style="overflow: auto;">
                                         <table id="dataTableProductWindows" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
                                     <br />
-                                    <div style=" text-align:left;"> <b> <span id="ProductDoors">DOORS</span></b>  </div>
-                                    <div > <span id="noProductDoors" style=" text-align:left; display:none;">This order does not contain any doors.</span>
+                                    <div style="text-align: left;"><b><span id="ProductDoors">DOORS</span></b>  </div>
+                                    <div>
+                                        <span id="noProductDoors" style="text-align: left; display: none;">This order does not contain any doors.</span>
                                     </div>
-                                    <div style="overflow: auto; ">
+                                    <div style="overflow: auto;">
                                         <table id="dataTableProductDoors" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
 
@@ -1275,147 +1299,147 @@
 
 
         <div id="installerEdit" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true" class="modal fade">
+            aria-hidden="true" class="modal fade">
             <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-            <div class="modal-header" style="height:80px;">
-                <h4 class="modal-title" id="installerEditTitle"></h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div>
-                    <table id="dataTableInstallerEdit" class="table table-striped table-bordered table-hover table-condensed"></table>
-                </div>
-                <div id="installerDetail" style="display:none;">
-                    <div style="float: left; padding-left:100px;">
-                       <img id="installerImg" src="" />
+                <div class="modal-content">
+                    <div class="modal-header" style="height: 80px;">
+                        <h4 class="modal-title" id="installerEditTitle"></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
+                    <div class="modal-body">
+                        <div>
+                            <table id="dataTableInstallerEdit" class="table table-striped table-bordered table-hover table-condensed"></table>
+                        </div>
+                        <div id="installerDetail" style="display: none;">
+                            <div style="float: left; padding-left: 100px;">
+                                <img id="installerImg" src="" />
+                            </div>
 
-                     <div  style="text-align:left; padding-left:400px;">
-                        <div><b>Name: </b><span id="InstallerNameView"></span></div>
-                        <br>
-                        <div><b>Branch: </b><span id="InstallerBranchView"></span></div>
-                        <br>
-                        <div><b>Department: </b><span id="InstallerDepartmentView"></span></div>
-                        <br>
-                        <div><b>Home Telephone: </b><span id="InstallerTelephoneView"></span></div>
-                        <br>
-                        <div><b>Work Phone Number: </b><span id="InstallerWorkPhoneView"></span></div>
-                        <br>
-                        <div><b>Email: </b><span id="InstallerEmailView"></span></div>
-                        <br>
+                            <div style="text-align: left; padding-left: 400px;">
+                                <div><b>Name: </b><span id="InstallerNameView"></span></div>
+                                <br>
+                                <div><b>Branch: </b><span id="InstallerBranchView"></span></div>
+                                <br>
+                                <div><b>Department: </b><span id="InstallerDepartmentView"></span></div>
+                                <br>
+                                <div><b>Home Telephone: </b><span id="InstallerTelephoneView"></span></div>
+                                <br>
+                                <div><b>Work Phone Number: </b><span id="InstallerWorkPhoneView"></span></div>
+                                <br>
+                                <div><b>Email: </b><span id="InstallerEmailView"></span></div>
+                                <br>
+                            </div>
+
+
+
+
+                        </div>
+
                     </div>
-                    
-                 
-                  
-      
-                </div>
-                
-            </div>
-            <div class="modal-footer">
+                    <div class="modal-footer">
 
-                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
-            </div>
-              </div>
         </div>
 
         <div id="installerAdd" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true" class="modal fade">
+            aria-hidden="true" class="modal fade">
             <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-            <div class="modal-header" style="height:80px;">
-                <h4 class="modal-title" id="installerAddTitle"></h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                  <div>
-                   <!-- Search form -->
-                        <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="txtName"  style="width:300px;" onkeyup="SearchByName()" />
-                     
-                      
-                </div>
-                <div  style="overflow-y:auto;margin-left:-150px;margin-top:-20px;">
-                      <a  href="#" onclick="ClearSearch()"  >Clear Search</a>
-                </div>
-                <br />
-                <div style="overflow-y:auto;height:200px;">
-                    <table id="dataTableInstallerAdd" class="table table-striped table-bordered table-hover table-condensed" ></table>
-                </div>
-                <div id="installerAddDetail" style="display:none; ">
-                    <div style="float: left; padding-left:100px;">
-                       <img id="AddinstallerImg" src="" />
+                <div class="modal-content">
+                    <div class="modal-header" style="height: 80px;">
+                        <h4 class="modal-title" id="installerAddTitle"></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
+                    <div class="modal-body">
+                        <div>
+                            <!-- Search form -->
+                            <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="txtName" style="width: 300px;" onkeyup="SearchByName()" />
 
-                     <div  style="text-align:left; padding-left:400px;">
-                        <div><b>Name: </b><span id="InstallerNameAdd"></span></div>
-                        <br>
-                        <div><b>Branch: </b><span id="InstallerBranchAdd"></span></div>
-                        <br>
-                        <div><b>Department: </b><span id="InstallerDepartmentAdd"></span></div>
-                        <br>
-                        <div><b>Home Telephone: </b><span id="InstallerTelephoneAdd"></span></div>
-                        <br>
-                        <div><b>Work Phone Number: </b><span id="InstallerWorkPhoneAdd"></span></div>
-                        <br>
-                        <div><b>Email: </b><span id="InstallerEmailViewAdd"></span></div>
-                        <br>
+
+                        </div>
+                        <div style="overflow-y: auto; margin-left: -150px; margin-top: -20px;">
+                            <a href="#" onclick="ClearSearch()">Clear Search</a>
+                        </div>
+                        <br />
+                        <div style="overflow-y: auto; height: 200px;">
+                            <table id="dataTableInstallerAdd" class="table table-striped table-bordered table-hover table-condensed"></table>
+                        </div>
+                        <div id="installerAddDetail" style="display: none;">
+                            <div style="float: left; padding-left: 100px;">
+                                <img id="AddinstallerImg" src="" />
+                            </div>
+
+                            <div style="text-align: left; padding-left: 400px;">
+                                <div><b>Name: </b><span id="InstallerNameAdd"></span></div>
+                                <br>
+                                <div><b>Branch: </b><span id="InstallerBranchAdd"></span></div>
+                                <br>
+                                <div><b>Department: </b><span id="InstallerDepartmentAdd"></span></div>
+                                <br>
+                                <div><b>Home Telephone: </b><span id="InstallerTelephoneAdd"></span></div>
+                                <br>
+                                <div><b>Work Phone Number: </b><span id="InstallerWorkPhoneAdd"></span></div>
+                                <br>
+                                <div><b>Email: </b><span id="InstallerEmailViewAdd"></span></div>
+                                <br>
+                            </div>
+
+
+
+
+                        </div>
+
                     </div>
-                    
-                 
-                  
-      
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="AddInstallersToEvent();">Add Installers</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
                 </div>
-                
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="AddInstallersToEvent();">Add Installers</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-            </div>
-              </div>
         </div>
 
-       <div id="TruckPop" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true" class="modal fade">
+        <div id="TruckPop" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true" class="modal fade">
             <div class="modal-dialog modal-sm" role="document">
-            <div class="modal-content">
-            <div class="modal-header" style="height:80px;">
-                <h4 class="modal-title" id="TruckPopTitle"></h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div>
-                    <table id="dataTableTruck" class="table table-striped table-bordered table-hover table-condensed"></table>
-                </div>  
-                <div>
-                   <!-- Search form -->
-                        <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="txtTruckCrewName"  style="width:300px;" onkeyup="SearchByTruckCrewName()" />
-                     
-                      
-                </div>
-                <div  style="overflow-y:auto;margin-left:-150px;margin-top:-20px;">
-                      <a  href="#" onclick="ClearTruckCrewSearch()" >Clear Search</a>
-                </div>
-                <br />
-                <div style="overflow-y:auto;height:200px;">
-                    <table id="dataTableTruckInstallerAdd" class="table table-striped table-bordered table-hover table-condensed" ></table>
-                </div>
+                <div class="modal-content">
+                    <div class="modal-header" style="height: 80px;">
+                        <h4 class="modal-title" id="TruckPopTitle"></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div>
+                            <table id="dataTableTruck" class="table table-striped table-bordered table-hover table-condensed"></table>
+                        </div>
+                        <div>
+                            <!-- Search form -->
+                            <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="txtTruckCrewName" style="width: 300px;" onkeyup="SearchByTruckCrewName()" />
 
-                
+
+                        </div>
+                        <div style="overflow-y: auto; margin-left: -150px; margin-top: -20px;">
+                            <a href="#" onclick="ClearTruckCrewSearch()">Clear Search</a>
+                        </div>
+                        <br />
+                        <div style="overflow-y: auto; height: 200px;">
+                            <table id="dataTableTruckInstallerAdd" class="table table-striped table-bordered table-hover table-condensed"></table>
+                        </div>
+
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="AddCrewsToTruck();">Add Truck Crews</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-primary" onclick="AddCrewsToTruck();">Add Truck Crews</button>
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            </div>
-            </div>
-              </div>
         </div>
         <div id="taskModal" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true" class="modal fade">
@@ -1426,36 +1450,63 @@
                             <span aria-hidden="false">&times;</span>
 
                         </button>
-                     
+
 
                     </div>
 
                     <div class="modal-body">
+                        <div>
                             <div>
-                                <div><input id="AddTitle" style="text-align: left;  border-top:none;border-left:none; border-right:none;width:300px; margin-left:-200px; height:60px; font-size:larger;"  placeholder="Add Title" ></div>
-                                <br />
-                                <div style="margin-left:-350px;"><img src="images/timer2.png"  style="width:2%;height:2%;"/>  &nbsp;  &nbsp;  <input id="TaskTime" placeholder="Jan 15, 2020 1:30 pm"  style="border:hidden;" ></div>
-                                 <br />
-                                <div style="margin-left:-350px;"><img src="images/wo.png" style="width:2%;height:2%;" />  &nbsp;  &nbsp;  <input id="AddWO" placeholder="Assign to Work Order"  style="border:hidden;"  ></div>
-                                 <br />
-                                <div style="margin-left:-350px;"><img src="images/client.png"  style="width:2%;height:2%;"/>  &nbsp;  &nbsp;  <input id="AddClient" placeholder="Assign to Client"  style="border:hidden;" ></div>
-                                 <br />
-                                <div style="margin-left:-350px;"><img src="images/desc1.png" style="width:2%;height:2%;" />  &nbsp;  &nbsp;   <input id="AddDesc" placeholder="Assign to Client"  style="border:hidden;"></div>
-                  
+                                <input id="AddTitle" style="text-align: left; border-top: none; border-left: none; border-right: none; width: 300px; margin-left: -200px; height: 60px; font-size: larger;" placeholder="Add Title">
                             </div>
-                            
+                            <br />
+                            <div style="margin-left: -40px;">
+                                <img src="images/timer2.png" style="width:3%; height: 3%;" />
+                                &nbsp;  &nbsp; 
+                                    <input id="TruckStartDate" style="text-align: center; border:0; width:80px; " data-toggle="tooltip" title="Date"> &nbsp; 
+
+                                    <input type="time" id="TruckStartTime" name="appt" style="border:0;width:100px;">   -
+
+                                    <input type="time" id="TruckEndTime" name="appt" style="border:0;width:100px;">   &nbsp; 
+
+                                    <input id="TruckEndDate" style="text-align: center;border:0;width:80px;" data-toggle="tooltip" title="Date"> &nbsp;
+                                    
+                                   <input type="checkbox" name="state" value="All day" id="IsTruckAllDay" onclick="IsTruckAlldayChecked();" >&nbsp; All day
+                            </div>
+                            <br />
+                            <div style="margin-left: -350px;">
+                                <img src="images/wo.png" style="width: 2%; height: 2%;" />
+                                &nbsp;  &nbsp; 
+                                <input id="AddWO" placeholder="Assign to Work Order" style="border: hidden;">
+                            </div>
+                            <br />
+                            <div style="margin-left: -350px;">
+                                <img src="images/client.png" style="width: 2%; height: 2%;" />
+                                &nbsp;  &nbsp; 
+                                <input id="AddClient" placeholder="Assign to Client" style="border: hidden;">
+                            </div>
+                            <br />
+                            <div style="margin-left: -350px;">
+                                <img src="images/desc1.png" style="width: 2%; height: 2%;" />
+                                &nbsp;  &nbsp;  
+                                <input id="AddDesc" placeholder="Assign to Client" style="border: hidden;">
+                            </div>
+
+                        </div>
+
                     </div>
 
 
                     <div class="modal-footer">
-						 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" onclick="SaveTruckModal();">Save</button>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                     </div>
                 </div>
             </div>
 
             <br>
         </div>
-      
+
 
 
         <div id="openviewWeather">
@@ -1520,40 +1571,59 @@
 
 
 
-                                   <span class="dot" style="background-color: #a5d6a7; "></span><input type="checkbox" name="InstallationState" value="Install in Progress" checked>Install in Progress
+                                <span class="dot" style="background-color: #a5d6a7;"></span>
+                                <input type="checkbox" name="InstallationState" value="Install in Progress" checked>Install in Progress
                              
                                 <br />
-                                <span class="dot" style="background-color: #4890e2; "> </span><input type="checkbox" name="InstallationState" value="Installation Confirmed" checked>Installation Confirmed<br />
-                                <span class="dot" style="background-color: #ffc966; "> </span><input type="checkbox" name="InstallationState" value="Install Completed" checked>Install Completed<br />
-                                  <span class="dot" style="background-color: #ff6347; "> </span><input type="checkbox" name="InstallationState" value="Installation inprogress rejected" checked>Installation inprogress rejected<br />
-                                  <span class="dot" style="background-color: #ffc966; "> </span> <input type="checkbox" name="InstallationState" value="Installation Manager Review" checked>Installation Manager Review<br />
+                                <span class="dot" style="background-color: #4890e2;"></span>
+                                <input type="checkbox" name="InstallationState" value="Installation Confirmed" checked>Installation Confirmed<br />
+                                <span class="dot" style="background-color: #ffc966;"></span>
+                                <input type="checkbox" name="InstallationState" value="Install Completed" checked>Install Completed<br />
+                                <span class="dot" style="background-color: #ff6347;"></span>
+                                <input type="checkbox" name="InstallationState" value="Installation inprogress rejected" checked>Installation inprogress rejected<br />
+                                <span class="dot" style="background-color: #ffc966;"></span>
+                                <input type="checkbox" name="InstallationState" value="Installation Manager Review" checked>Installation Manager Review<br />
 
-                                  <span class="dot" style="background-color: #ffc966; "> </span> <input type="checkbox" name="InstallationState" value="Job Completed" checked>Job Completed<br />
-                                <span class="dot" style="background-color: #ffc966; "> </span>  <input type="checkbox" name="InstallationState" value="Job Costing" checked>Job Costing<br />
-                                <span class="dot" style="background-color: #ff6347; "> </span>  <input type="checkbox" name="InstallationState" value="Pending Install Completion" checked>Pending Install Completion<br />
+                                <span class="dot" style="background-color: #ffc966;"></span>
+                                <input type="checkbox" name="InstallationState" value="Job Completed" checked>Job Completed<br />
+                                <span class="dot" style="background-color: #ffc966;"></span>
+                                <input type="checkbox" name="InstallationState" value="Job Costing" checked>Job Costing<br />
+                                <span class="dot" style="background-color: #ff6347;"></span>
+                                <input type="checkbox" name="InstallationState" value="Pending Install Completion" checked>Pending Install Completion<br />
 
-                                <span class="dot" style="background-color: #ffc966; "> </span>   <input type="checkbox" name="InstallationState" value="Ready for Invoicing" checked>Ready for Invoicing<br />
-
-
-                                <span class="dot" style="background-color: #9FB6CD; "> </span> <input type="checkbox" name="InstallationState" value="ReMeasure Scheduled" checked>ReMeasure Scheduled<br />
-
-
-
-
-                               <span class="dot" style="background-color: #ff6347; "> </span>   <input type="checkbox" name="InstallationState" value="Rejected Installation" checked>Rejected Installation<br />
-                                 <span class="dot" style="background-color: #ff6347; "> </span>  <input type="checkbox" name="InstallationState" value="Rejected Job Costing" checked>Rejected Job Costing<br />
-                                 <span class="dot" style="background-color: #ff6347; "> </span>  <input type="checkbox" name="InstallationState" value="Rejected Manager Review" checked>Rejected Manager Review<br />
-                                 <span class="dot" style="background-color: #ff6347; "> </span>    <input type="checkbox" name="InstallationState" value="Rejected Remeasure" checked>Rejected Remeasure<br />
-                               <span class="dot" style="background-color: #ff6347; "> </span>   <input type="checkbox" name="InstallationState" value="Rejected Scheduled Work" checked>Rejected Scheduled Work<br />
+                                <span class="dot" style="background-color: #ffc966;"></span>
+                                <input type="checkbox" name="InstallationState" value="Ready for Invoicing" checked>Ready for Invoicing<br />
 
 
+                                <span class="dot" style="background-color: #9FB6CD;"></span>
+                                <input type="checkbox" name="InstallationState" value="ReMeasure Scheduled" checked>ReMeasure Scheduled<br />
 
-                                <span class="dot" style="background-color: #ffc966; "> </span>  <input type="checkbox" name="InstallationState" value="Unreviewed Job Costing" checked>Unreviewed Job Costing<br />
 
-                                 <span class="dot" style="background-color: #9FB6CD; "> </span>  <input type="checkbox" name="InstallationState" value="Unreviewed Work Scheduled" checked>Unreviewed Work Scheduled<br />
-                                <span class="dot" style="background-color: #ffc966; "> </span>  <input type="checkbox" name="InstallationState" value="VP Installation Approval" checked>VP Installation Approval<br />
 
-                               <span class="dot" style="background-color: #9FB6CD; "> </span>  <input type="checkbox" name="InstallationState" value="Work Scheduled" checked>Work Scheduled
+
+                                <span class="dot" style="background-color: #ff6347;"></span>
+                                <input type="checkbox" name="InstallationState" value="Rejected Installation" checked>Rejected Installation<br />
+                                <span class="dot" style="background-color: #ff6347;"></span>
+                                <input type="checkbox" name="InstallationState" value="Rejected Job Costing" checked>Rejected Job Costing<br />
+                                <span class="dot" style="background-color: #ff6347;"></span>
+                                <input type="checkbox" name="InstallationState" value="Rejected Manager Review" checked>Rejected Manager Review<br />
+                                <span class="dot" style="background-color: #ff6347;"></span>
+                                <input type="checkbox" name="InstallationState" value="Rejected Remeasure" checked>Rejected Remeasure<br />
+                                <span class="dot" style="background-color: #ff6347;"></span>
+                                <input type="checkbox" name="InstallationState" value="Rejected Scheduled Work" checked>Rejected Scheduled Work<br />
+
+
+
+                                <span class="dot" style="background-color: #ffc966;"></span>
+                                <input type="checkbox" name="InstallationState" value="Unreviewed Job Costing" checked>Unreviewed Job Costing<br />
+
+                                <span class="dot" style="background-color: #9FB6CD;"></span>
+                                <input type="checkbox" name="InstallationState" value="Unreviewed Work Scheduled" checked>Unreviewed Work Scheduled<br />
+                                <span class="dot" style="background-color: #ffc966;"></span>
+                                <input type="checkbox" name="InstallationState" value="VP Installation Approval" checked>VP Installation Approval<br />
+
+                                <span class="dot" style="background-color: #9FB6CD;"></span>
+                                <input type="checkbox" name="InstallationState" value="Work Scheduled" checked>Work Scheduled
                                 
 
                             </td>
@@ -1582,48 +1652,69 @@
                             <td width="25%" style="text-align: left;">
 
 
-                          <%--      <input type="checkbox" name="RemeasureState" value="Allocated Work Order" checked>Allocated Work Order<br />
+                                <%--      <input type="checkbox" name="RemeasureState" value="Allocated Work Order" checked>Allocated Work Order<br />
                                 <input type="checkbox" name="RemeasureState" value="Cancelled" checked>Cancelled<br />--%>
 
-                              <span class="dot" style="background-color: #4890e2; "> </span>  <input type="checkbox" name="RemeasureState" value="Installation Confirmed" checked>Installation Confirmed<br />
-                                  <span class="dot" style="background-color: #a5d6a7; "></span><input type="checkbox" name="RemeasureState" value="Install in Progress" checked>Install in Progress<br />
-                             <span class="dot" style="background-color: #ffc966; "> </span>   <input type="checkbox" name="RemeasureState" value="Install Completed" checked>Install Completed<br />
+                                <span class="dot" style="background-color: #4890e2;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Installation Confirmed" checked>Installation Confirmed<br />
+                                <span class="dot" style="background-color: #a5d6a7;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Install in Progress" checked>Install in Progress<br />
+                                <span class="dot" style="background-color: #ffc966;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Install Completed" checked>Install Completed<br />
 
-                              <span class="dot" style="background-color: #ff6347; "> </span>    <input type="checkbox" name="RemeasureState" value="Installation inprogress rejected" checked>Installation inprogress rejected<br />
-                               <span class="dot" style="background-color: #ffc966; "> </span>      <input type="checkbox" name="RemeasureState" value="Installation Manager Review" checked>Installation Manager Review<br />
+                                <span class="dot" style="background-color: #ff6347;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Installation inprogress rejected" checked>Installation inprogress rejected<br />
+                                <span class="dot" style="background-color: #ffc966;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Installation Manager Review" checked>Installation Manager Review<br />
 
-                                <span class="dot" style="background-color: #ffc966; "> </span>   <input type="checkbox" name="RemeasureState" value="Job Completed" checked>Job Completed<br />
-                             <span class="dot" style="background-color: #ffc966; "> </span>    <input type="checkbox" name="RemeasureState" value="Job Costing" checked>Job Costing<br />
-                            <span class="dot" style="background-color: #ff6347; "> </span>     <input type="checkbox" name="RemeasureState" value="Pending Install Completion" checked>Pending Install Completion<br />
+                                <span class="dot" style="background-color: #ffc966;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Job Completed" checked>Job Completed<br />
+                                <span class="dot" style="background-color: #ffc966;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Job Costing" checked>Job Costing<br />
+                                <span class="dot" style="background-color: #ff6347;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Pending Install Completion" checked>Pending Install Completion<br />
 
-                             <span class="dot" style="background-color: #ffc966; "> </span>      <input type="checkbox" name="RemeasureState" value="Ready for Invoicing" checked>Ready for Invoicing<br />
-                            <span class="dot" style="background-color: #9FB6CD; "> </span>    <input type="checkbox" name="RemeasureState" value="Ready for ReMeasure" checked>Ready for ReMeasure<br />
+                                <span class="dot" style="background-color: #ffc966;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Ready for Invoicing" checked>Ready for Invoicing<br />
+                                <span class="dot" style="background-color: #9FB6CD;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Ready for ReMeasure" checked>Ready for ReMeasure<br />
 
-                          <span class="dot" style="background-color: #9FB6CD; "> </span>             <input type="checkbox" name="RemeasureState" value="ReMeasure Scheduled" checked>ReMeasure Scheduled<br />
-                      <span class="dot" style="background-color: #ff6347; "> </span>  <input type="checkbox" name="RemeasureState" value="Rejected Installation" checked>Rejected Installation<br />
-                           <span class="dot" style="background-color: #ff6347; "> </span>       <input type="checkbox" name="RemeasureState" value="Rejected Job Costing" checked>Rejected Job Costing<br />
-                            <span class="dot" style="background-color: #ff6347; "> </span>         <input type="checkbox" name="RemeasureState" value="Rejected Manager Review" checked>Rejected Manager Review<br />
-                            <span class="dot" style="background-color: #ff6347; "> </span>      <input type="checkbox" name="RemeasureState" value="Rejected New Work Order" checked>Rejected New Work Order<br />
+                                <span class="dot" style="background-color: #9FB6CD;"></span>
+                                <input type="checkbox" name="RemeasureState" value="ReMeasure Scheduled" checked>ReMeasure Scheduled<br />
+                                <span class="dot" style="background-color: #ff6347;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Rejected Installation" checked>Rejected Installation<br />
+                                <span class="dot" style="background-color: #ff6347;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Rejected Job Costing" checked>Rejected Job Costing<br />
+                                <span class="dot" style="background-color: #ff6347;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Rejected Manager Review" checked>Rejected Manager Review<br />
+                                <span class="dot" style="background-color: #ff6347;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Rejected New Work Order" checked>Rejected New Work Order<br />
 
-                             <span class="dot" style="background-color: #ff6347; "> </span>     <input type="checkbox" name="RemeasureState" value="Rejected Remeasure" checked>Rejected Remeasure<br />
-                          
+                                <span class="dot" style="background-color: #ff6347;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Rejected Remeasure" checked>Rejected Remeasure<br />
 
-                                <span class="dot" style="background-color: #ff6347; "> </span>                <input type="checkbox" name="RemeasureState" value="Rejected Scheduled Work" checked>Rejected Scheduled Work<br />
-                                
 
-<%--                                <input type="checkbox" name="RemeasureState" value="Sold" checked>Sold<br />
+                                <span class="dot" style="background-color: #ff6347;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Rejected Scheduled Work" checked>Rejected Scheduled Work<br />
+
+
+                                <%--                                <input type="checkbox" name="RemeasureState" value="Sold" checked>Sold<br />
 
                                  <input type="checkbox" name="RemeasureState" value="System Duplicated" checked>System Duplicated<br />
                               
                                      <input type="checkbox" name="RemeasureState" value="Unreviewed Job Costing" checked>Unreviewed Job Costing<br />--%>
-                 
-          <%--                      <input type="checkbox" name="RemeasureState" value="Unreviewed Buffered Work" checked>Unreviewed Buffered Work<br />--%>
-                                <span class="dot" style="background-color: #ffc966; "> </span>  <input type="checkbox" name="RemeasureState" value="Unreviewed Job Costing" checked>Unreviewed Job Costing<br />
-                                <span class="dot" style="background-color: #ffc966; "> </span>            <input type="checkbox" name="RemeasureState" value="VP Installation Approval" checked>VP Installation Approval<br />
-                             <span class="dot" style="background-color: #9FB6CD; "> </span>     <input type="checkbox" name="RemeasureState" value="Unreviewed Work Scheduled" checked>Unreviewed Work Scheduled<br />
-                     
 
-                            <span class="dot" style="background-color: #9FB6CD; "> </span>     <input type="checkbox" name="RemeasureState" value="Work Scheduled" checked>Work Scheduled
+                                <%--                      <input type="checkbox" name="RemeasureState" value="Unreviewed Buffered Work" checked>Unreviewed Buffered Work<br />--%>
+                                <span class="dot" style="background-color: #ffc966;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Unreviewed Job Costing" checked>Unreviewed Job Costing<br />
+                                <span class="dot" style="background-color: #ffc966;"></span>
+                                <input type="checkbox" name="RemeasureState" value="VP Installation Approval" checked>VP Installation Approval<br />
+                                <span class="dot" style="background-color: #9FB6CD;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Unreviewed Work Scheduled" checked>Unreviewed Work Scheduled<br />
+
+
+                                <span class="dot" style="background-color: #9FB6CD;"></span>
+                                <input type="checkbox" name="RemeasureState" value="Work Scheduled" checked>Work Scheduled
                                 
 
                             </td>
@@ -1713,18 +1804,19 @@
 
         </div>
         <div id="JobStaffFilter" class="modal hidden">
-                      <div class="modal-content">'
+            <div class="modal-content">
+                '
                             <div class="dropdown">
-                                  <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                                     Dropdown button
-                                  </button>
-                                      <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="#">Link 1</a>
-                                        <a class="dropdown-item" href="#">Link 2</a>
-                                        <a class="dropdown-item" href="#">Link 3</a>
-                                      </div>
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="#">Link 1</a>
+                                    <a class="dropdown-item" href="#">Link 2</a>
+                                    <a class="dropdown-item" href="#">Link 3</a>
+                                </div>
                             </div>
-                    </div>
+            </div>
         </div>
         <div id='wrap'>
 
@@ -1734,7 +1826,7 @@
             <div id='external-events1'>
                 <h4>New Work Orders</h4>
             </div>
-             <div id='external-eventsRemeasure'>
+            <div id='external-eventsRemeasure'>
                 <h4>New Work Orders</h4>
             </div>
 
@@ -1798,7 +1890,6 @@
 
         </div>
         <div>
-        
         </div>
     </form>
 

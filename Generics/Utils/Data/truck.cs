@@ -33,12 +33,76 @@ namespace Generics.Utils
 
         //[DataMember]
         //public string TruckLocation { get; set; }
-        [DataMember]
-        public string TruckCrewNameList { get; set; }
+        //[DataMember]
+        //public string TruckCrewNameList { get; set; }
 
         [DataMember]
         public string RecordID { get; set; }
 
 
+        //[DataMember]
+        //public string WorkOrderNumber { get; set; }
+
+        //[DataMember]
+        //public string ParentRecordId { get; set; }
+
+
+
     }
+
+    public class TruckWithWO
+    {
+
+        [DataMember]
+        public string TruckID { get; set; }
+
+        [DataMember]
+        public string TruckLookup { get; set; }
+
+
+        //[DataMember]
+        //public List<InstallerWithLessInfo>  TruckCrews { get; set; }
+
+        [DataMember]
+        public string RecordID { get; set; }
+
+
+        [DataMember]
+        public string WorkOrderNumber { get; set; }
+
+        //[DataMember]
+        //public string ParentRecordId { get; set; }
+
+        //[DataMember]
+        //public Datetime ScheduledDate { get; set; }
+
+        //[DataMember]
+        //public Datetime EndTime { get; set; }
+        [DataMember]
+        public string TruckName { get; set; }
+
+    }
+
+    public class TruckInstallationEvent
+    {
+        [DataMember]
+        public string DetailRecordId { get; set; }
+
+
+        [DataMember]
+        public string ActionItemId { get; set; }
+
+
+        [DataMember]
+        public string ScheduledDate { get; set; }
+        [DataMember]
+        public string endtime { get; set; }
+
+        //[DataMember]
+        //public Datetime title { get; set; }
+        [DataMember]
+        public string RecordID { get; set; }
+
+    }
+
 }

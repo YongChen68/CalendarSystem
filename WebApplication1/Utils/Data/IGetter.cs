@@ -77,11 +77,15 @@ namespace CalendarSystem.Utils.Data
 
         List<string> GetRemeasurerName();
         List<Generics.Utils.Notes> GetKeepedNotes(string recordid);
+
+        List<TruckInstallationEvent> GetTruckInstallationEvent();
+
         List<Generics.Utils.Notes> GetNotesByID(int recordId);
         List<InstallerInfo> GetInstallerInfoByNameExceptWorkOrder(string name);
         List<InstallerInfo> GetResources();
 
         List<Truck> GetTruckList();
+        List<TruckWithWO> GetTruckListWithWO();
 
         List<InstallerInfo> GetInstallerListByTruck(string recordid);
 

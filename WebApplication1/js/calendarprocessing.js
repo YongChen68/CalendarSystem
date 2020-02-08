@@ -18,6 +18,8 @@ var recordIDArray = [];
 
 var dataArray = new Array();
 
+var truckScheduledArray = new Array();
+
 var truckRecordID;
 
 
@@ -1122,7 +1124,12 @@ $(document).ready(function () {
                 //$(this).attr('data-target', "#taskModal");
                 
                 //$(this).attr('href', "/details");
+                $("#TruckStartDate").val(moment().format('MM/DD/ YYYY'));
+                $("#TruckEndDate").val(moment().format('MM/DD/ YYYY'));
+                $("#TruckStartTime").val(moment().format('HH:mm'));
 
+                $("#TruckEndTime").val(moment().add(2, 'hours').format('HH:mm'));
+                
                 $('#taskModal').modal('show');
         
             }
@@ -1137,23 +1144,53 @@ $(document).ready(function () {
        // GetResources();
         resourceLabelText: 'Resources',
         resourceAreaWidth: '200px',
+        //resource: [
+        //    { id: '1', resourceId: '17658388', start: '2020-02-04T12:00:00', end: '2020-02-04T12:05:00', title: 'Carico su camion', id_evento_collegato: [2, 3, 4, 5, 6, 7] },
+        //    { id: '2', resourceId: '17658388', start: '2020-02-04T13:00:00', end: '2020-02-04T14:00:00', title: 'Viaggio', id_evento_collegato: [1, 3, 4, 5, 6, 7], editable: false, backgroundColor: "red" }
 
-        resources: function (callback) {
+        //],
+       resourceGroupField: 'groupId',
+      
+        refetchResourcesOnNavigate: true,
+        resources: function (callback,start, end, timezone) {
             dataArray = [];
             $.ajax({
                 //type: "POST",  
-                url: 'data.svc/GetTruckList',
+                url: 'data.svc/GetTruckListWithWO',
                 dataType: 'json',
                 async: false,
                 success: function (data) {
                     if (debug) console.log("events.success", "data.GetTruckList:");
 
-                    if (data.GetTruckListResult.length > 0) {
+                    if (data.GetTruckListWithWOResult.length > 0) {
 
-                        for (var i = 0; i < data.GetTruckListResult.length; i++) {
+                        for (var i = 0; i < data.GetTruckListWithWOResult.length; i++) {
                             var re = {};
-                            re["id"] = data.GetTruckListResult[i].RecordID;
-                            re["title"] = data.GetTruckListResult[i].TruckName + ' ( Click to edit Crews) ';
+                            if (data.GetTruckListWithWOResult[i].RecordID.length == 0) {
+                                re["id"] = data.GetTruckListWithWOResult[i].TruckName;
+                                re["title"] = data.GetTruckListWithWOResult[i].TruckName + " (Empty)";
+                              //  re["groupId"] = data.GetTruckListWithWOResult[i].TruckName;
+                            }
+                            else {
+                                re["id"] = data.GetTruckListWithWOResult[i].RecordID + data.GetTruckListWithWOResult[i].TruckLookup;
+                                re["groupId"] = data.GetTruckListWithWOResult[i].TruckName;
+                               // re["parentId"] = data.GetTruckListWithWOResult[i].TruckName;
+                                re["title"] = data.GetTruckListWithWOResult[i].WorkOrderNumber;
+                            }
+                            
+                            re["start"] = moment().format('MM/DD/ YYYY HH:mm');
+
+                            re["end"] = moment().add(2, 'hours').format('MM/DD/ YYYY HH:mm');
+                            
+                   
+                           
+                            //if (data.GetTruckListWithWOResult[i].WorkOrderNumber.length!=0) {
+                            //    re["title"] = data.GetTruckListWithWOResult[i].TruckName + ' ' + data.GetTruckListWithWOResult[i].WorkOrderNumber;
+                            //}
+                            //else {
+                            //    re["title"] = data.GetTruckListWithWOResult[i].TruckName + ' (Without WorkOrders) ';
+                            //}
+                            
 
                             //re["title"] = " <span style='color: blue'>" + data.GetTruckListResult[i].TruckName + " ( Click to edit Crews) " +  "</span >";
                           //  re["title"] =   $("#AddCrewNames").html("<a href='#'" + " id='AddInstallersPop' onclick=\"AddInstallers()\"> Add Installers");
@@ -1184,85 +1221,9 @@ $(document).ready(function () {
                 $("#txtTruckCrewName").val('');
                 $("#dataTableTruckInstallerAdd tr").remove();
                 LoadTruckCrews(truckRecordID, labelTds[0].textContent.replace(' ( Click to edit Crews)', ''));
-                //$.ajax({
-                //    //type: "POST",  
-                //    url: 'data.svc/GetInstallerListByTruck?recordid=' + truckRecordID,
-                //    dataType: 'json',
-                //    async: false,
-                //    success: function (data) {
-                //        if (debug) console.log("events.success", "data.GetInstallerInfoExceptWorkOrderResult:");
-                //        $("#TruckPopTitle").html(" Truck " + labelTds[0].textContent);
-                //        $("#dataTableTruck tr").remove(); 
-
-                //        if (data.GetInstallerListByTruckResult.length > 0) {
-                //            recordIDArray = [];
-                //            $("#dataTableTruck").append("<tr> <th style = 'text-align:center;' > Name</th ><th style='text-align:center;'> Email</th > <th style = 'text-align:center;' > Installer Level</th ><th style = 'text-align:center;' > </th >");
-                //            var count = data.GetInstallerListByTruckResult.length;
-                //            for (var i = 0; i < data.GetInstallerListByTruckResult.length; i++) {
-                //                $("#dataTableTruck").append("<tr><td>" +
-                //                 //   "<input type='checkbox'" + " id='chkRecordID" + data.GetInstallerListByTruckResult[i].recordid + "' onclick=\"AddRecordToList(" + data.GetInstallerListByTruckResult[i].recordid + ")\"> " + "</td> <td>" +
-                //                    data.GetInstallerListByTruckResult[i].Name + "</td> <td>" +
-                //                    data.GetInstallerListByTruckResult[i].email + "</td> <td>" +
-                //                    data.GetInstallerListByTruckResult[i].InstallerLevel + "</td> <td>" +
-                //                    "<a href='#'" + " id='bInstaller" + data.GetInstallerListByTruckResult[i].recordid + "' onclick=\"DeleteTruckInstallers(" + labelTds.prevObject[0].innerText.replace(' ( Click to edit Crews)', '') + "," + data.GetInstallerListByTruckResult[i].recordid + "," + data.GetInstallerListByTruckResult[i].DetailRecordId + ")\"> Delete  </a >" + "</td ></tr > ");
-
-                //                //if (count > 30) {
-                //                //    $('#bInstaller' + data.GetInstallerListByTruckResult[i].recordid).addClass('disabled');
-                //                //}
-                //                //a href='#'" + onclick > google </a > " + "</td ></tr > ");
-
-                //                //"add" + "</td></tr>");
-                //            }
-                //            //" <div>" + " onclick=\"ShowWOBigPicture(" + data.GetWOPictureResult[i].DetailRecordId + ")\">" +
-                //            //  $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
-                //            //$("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
-
-
-
-
-
-                //        }
-
-                //    }, error: function (error) {
-                //        console.log('Error', error);
-                //        $('#script-warning').show();
-                //    }
-                //});
-
+               
             });
         },
-        //resources: [
-        //    {
-        //        id: 'a',
-        //        title: 'Room A'
-        //    },
-        //    {
-        //        id: 'a1',
-        //        parentId: 'a',
-        //        title: 'Room A1'
-        //    },
-        //    {
-        //        id: 'a2',
-        //        parentId: 'a',
-        //        title: 'Room A2'
-        //    }
-        //],
-
-
-        //resources: [
-        //    { id: 'a', title: 'Kyle' },
-        //    { id: 'b', title: 'Steve', eventColor: 'green' },
-        //    { id: 'c', title: 'Yong', eventColor: 'orange' },
-        //    {
-        //        id: 'd', title: 'IT', children: [
-        //            { id: 'd1', title: 'Kyle' },
-        //            { id: 'd3', title: 'Yong' }
-        //        ]
-        //    }
-
-        //],
-
-
 
        //hiddenDays: [0, 6],
 
@@ -1271,7 +1232,7 @@ $(document).ready(function () {
         events: function (start, end, timezone, callback) {
             if (debug) console.log("events", "start:", start.format(), "end:", end.format());
             LoadGlobalValues(start, end);
-
+                        
             var states = [];
             $.each($("input[name='state']:checked"), function () {
                 states.push($(this).val());
@@ -1343,6 +1304,7 @@ $(document).ready(function () {
                 $.ajax({
                     url: 'data.svc/GetInstallationEvents',
                     dataType: 'json',
+                    async: false,
                     data: { start: start.format(), end: end.format(), branch: branches.join(","), installationStates: installationStates.join(",") },
                     success: function (data) {
                         if (debug) console.log("events.success", "data.GetInstallationEventsResult:", data.GetInstallationEventsResult === undefined ? "NULL" : data.GetInstallationEventsResult.length);
@@ -1351,6 +1313,10 @@ $(document).ready(function () {
                         var con;
                         $.each(data.GetInstallationEventsResult, function (pos, item) {
                             item.allDay = true;
+                            //if (item.WorkOrderNumber == "YongTest7") {
+                            item.resourceId = item.ParentRecordId + item.ResourceID;
+                            //}
+                            
                          //   item.editable = (item.ReturnedJob == 1) ? false : true;
 
                            
@@ -1371,6 +1337,7 @@ $(document).ready(function () {
                     }
                 });
 
+            
       
             }
             else if (displayType == "Remeasure")
@@ -2343,7 +2310,7 @@ $(document).ready(function () {
         eventAfterAllRender: function (view) {
             if (debug) console.log("eventAfterAllRender", "view.start:", view.start.format(), "view.intervalStart:", view.intervalStart.format(), "view.end:", view.end.format(), "view.intervalEnd:", view.intervalEnd.format());
             renderingComplete = true;
-            if (view.name !== "agendaMonth" && view.name !== "month") {
+            if (view.name !== "agendaMonth" && view.name !== "month" && view.name !=="timelineDay") {
                 if (debug) console.log("eventAfterAllRender", "view configuration:", view.title, view.intervalStart._d);
                 var startDate = view.start._d;
                 var endDate = view.end._d;
@@ -2590,6 +2557,51 @@ $(document).ready(function () {
             if (view.type == 'agendaWeek') {
                 $('#calendar').fullCalendar('refetchEvents');
             }
+            else if (view.type == 'timelineDay') {
+                var month = new Array();
+
+                var monthSource = new Object();
+                monthSource.id = "1";
+                monthSource.resourceId = "16398921TruckName049";
+
+                monthSource.title = 'MONTH'; // this should be string
+                monthSource.start = '2020-02-06T12:00:00'; // this should be date object
+                monthSource.end = '2020-02-06T12:05:00';
+
+                
+                month[0] = monthSource;
+
+               // month = { id: '1', resourceId: '16398921', start: '2020-02-06T12:00:00', end: '2020-02-06T12:05:00', title: 'Carico su camion', id_evento_collegato: [2, 3, 4, 5, 6, 7] };
+                //events1: [
+                //    { id: '1', resourceId: '16398921', start: '2020-02-06T12:00:00', end: '2020-02-06T12:05:00', title: 'Carico su camion', id_evento_collegato: [2, 3, 4, 5, 6, 7] },
+                //    { id: '2', resourceId: '16398917', start: '2020-02-06T13:00:00', end: '2020-02-06T14:00:00', title: 'Viaggio', id_evento_collegato: [1, 3, 4, 5, 6, 7], editable: false, backgroundColor: "red" }
+
+                //];
+                //event1
+             //   $('#calendar').fullCalendar('addEventSource', month);
+                //$('#calendar').fullCalendar('removeResource', '16398921TruckName049');
+                //$('#calendar').fullCalendar('removeResource', '16398917TruckName049');
+                //$('#calendar').fullCalendar('removeResource', '16398917TruckName070');
+                //$('#calendar').fullCalendar('removeResource', '072');
+
+              //  $('#calendar').fullCalendar(resources, '16398921TruckName049');
+                //$('#calendar').fullCalendar('addResource', {
+                //    id: 'e',
+                //    title: 'Room E'
+                
+                //});
+
+                //var resource = $("#calendar").fullCalendar("getResourceById", "e");
+              //  $(element).find(".fc-content").append("<div>" + resource.title + "</div>");
+              
+             //   $('#calendar').fullCalendar('renderEvents');
+              
+                
+                
+
+
+            }
+            
                    
         }
     });
@@ -4583,6 +4595,22 @@ function NotesEdit(recordid) {
     });
 }
 
+function IsTruckAlldayChecked() {
+    var IsTruckAllDay = $("#IsTruckAllDay");
+    $("#TruckStartTime").show();
+    $("#TruckEndTime").show();
+    if (IsTruckAllDay[0].checked) {
+
+        $("#TruckStartTime").hide();
+        $("#TruckEndTime").hide();
+    }
+   
+}
+
+function SaveTruckModal() {
+    var titile = $("#AddTitle").val();
+
+}
 function NotesDelete(recordid) {
 
     var notes = "";

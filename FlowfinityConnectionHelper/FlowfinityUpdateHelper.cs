@@ -259,11 +259,11 @@ namespace FlowfinityConnectionHelper
             FASR.TruckDictionaryRecord record = new FASR.TruckDictionaryRecord();
             if (data == null)
             {
-                record.CrewAssigned = new UserLookupRecord[0];
+                record.Crew = new UserLookupRecord[0];
             }
             else
             {
-                record.CrewAssigned = PrepareTruckInstallerData(data);
+                record.Crew = PrepareTruckInstallerData(data);
             }
 
             //    record.ReturnTripReason = Lift.II.IIUtils.CreateStringValue<StringValue>(data.ReturnTripReason);
