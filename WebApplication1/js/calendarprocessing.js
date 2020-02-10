@@ -1168,7 +1168,7 @@ $(document).ready(function () {
                             var re = {};
                             if (data.GetTruckListWithWOResult[i].RecordID.length == 0) {
                                 re["id"] = data.GetTruckListWithWOResult[i].TruckName;
-                                re["title"] = data.GetTruckListWithWOResult[i].TruckName + " (Empty)";
+                                re["title"] = data.GetTruckListWithWOResult[i].TruckName + " (Add WorkOrder)";
                               //  re["groupId"] = data.GetTruckListWithWOResult[i].TruckName;
                             }
                             else {
@@ -1177,25 +1177,7 @@ $(document).ready(function () {
                                // re["parentId"] = data.GetTruckListWithWOResult[i].TruckName;
                                 re["title"] = data.GetTruckListWithWOResult[i].WorkOrderNumber;
                             }
-                            
-                            re["start"] = moment().format('MM/DD/ YYYY HH:mm');
-
-                            re["end"] = moment().add(2, 'hours').format('MM/DD/ YYYY HH:mm');
-                            
-                   
-                           
-                            //if (data.GetTruckListWithWOResult[i].WorkOrderNumber.length!=0) {
-                            //    re["title"] = data.GetTruckListWithWOResult[i].TruckName + ' ' + data.GetTruckListWithWOResult[i].WorkOrderNumber;
-                            //}
-                            //else {
-                            //    re["title"] = data.GetTruckListWithWOResult[i].TruckName + ' (Without WorkOrders) ';
-                            //}
-                            
-
-                            //re["title"] = " <span style='color: blue'>" + data.GetTruckListResult[i].TruckName + " ( Click to edit Crews) " +  "</span >";
-                          //  re["title"] =   $("#AddCrewNames").html("<a href='#'" + " id='AddInstallersPop' onclick=\"AddInstallers()\"> Add Installers");
-
-
+                  
                             dataArray.push(re);
                         }
                      
