@@ -80,8 +80,8 @@ namespace CalendarSystem
         bool UpdateNotesData(string id, string WO, string recordid, string notesDate, string notesTime, string category, string Notes);
 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "UpdateTruckWithWo?ActionItemId={ActionItemId}&TruckID={TruckID}")]
-        bool UpdateTruckWithWo(string ActionItemId, string TruckID);
+        [WebInvoke(Method = "POST", UriTemplate = "UpdateTruckWithWo?ActionItemId={ActionItemId}&TruckName={TruckName}&TruckID={TruckID}")]
+        bool UpdateTruckWithWo(string ActionItemId,string TruckName, string TruckID);
 
 
         [OperationContract]

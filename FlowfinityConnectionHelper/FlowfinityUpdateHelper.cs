@@ -67,7 +67,7 @@ namespace FlowfinityConnectionHelper
             //FASR.PlantProduction_UpdateWindowMakerData_Call call = new FASR.PlantProduction_UpdateWindowMakerData_Call()
             // HomeInstallations_EditSold_Call
             bool ret;
-            bool ret1 = true;
+          
             FASR.HomeInstallations_EditSold_Call call = new FASR.HomeInstallations_EditSold_Call()
             {
                 OnBehalfOf = Owner,
@@ -504,7 +504,11 @@ namespace FlowfinityConnectionHelper
                     //CalledMessage = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>(c.CalledMessage),
                     //Notes3 = Lift.II.IIUtils.CreateStringValue<StringValue>(c.Notes3),
                     //DateCalled = Lift.II.IIUtils.CreateDateTimeValue<DateTimeValue>(calledLogOffDate),
-                    TruckLookup = Lift.II.IIUtils.CreateChoiceValue<Choice>(data.TruckID, data.TruckID),
+                    // TruckLookup = Lift.II.IIUtils.CreateChoiceValue<Choice>(data.id, data.id),
+                    TruckLookup = Lift.II.IIUtils.CreateChoiceValue<Choice>(data.TruckName, data.TruckID),
+                    //    TruckLookup = Lift.II.IIUtils.CreateChoiceValue<Choice>(data.id, data.TruckID),
+                  //  TruckLookup = Lift.II.IIUtils.CreateChoiceValue<Choice>(data.TruckID, data.TruckID),
+
                     //FileName = Lift.II.IIUtils.CreateSingleSelectValue<BinaryValue>(c.FileSource.ToString()),
                     //Notes5 = Lift.II.IIUtils.CreateSingleSelectValue<StringValue>(c.FileName),
 

@@ -741,6 +741,7 @@ namespace CalendarSystem
 
         public bool UpdateTruckWithWo(
               string ActionItemId
+             , string TruckName
             , string TruckID
           )
         {
@@ -781,7 +782,7 @@ namespace CalendarSystem
             {
                 eventData = new ImproperTruckInstallationEvent();
                 eventData.id = ActionItemId;
-
+                eventData.TruckName = TruckName;
                 eventData.TruckID = TruckID;
 
                 RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();

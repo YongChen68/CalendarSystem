@@ -1169,7 +1169,7 @@ $(document).ready(function () {
                         for (var i = 0; i < data.GetTruckListWithWOResult.length; i++) {
                             var re = {};
                             if (data.GetTruckListWithWOResult[i].RecordID.length == 0) {
-                                re["id"] = data.GetTruckListWithWOResult[i].TruckID;
+                                re["id"] = data.GetTruckListWithWOResult[i].ActionItemId;
                                re["title"] = data.GetTruckListWithWOResult[i].TruckName + " (Add WorkOrder)";
                               //  re["title"] = data.GetTruckListWithWOResult[i].TruckName ;
                               //  re["groupId"] = data.GetTruckListWithWOResult[i].TruckName;
@@ -1177,7 +1177,7 @@ $(document).ready(function () {
                             else {
                                 re["id"] = data.GetTruckListWithWOResult[i].RecordID + data.GetTruckListWithWOResult[i].TruckLookup;
                                 re["title"] = data.GetTruckListWithWOResult[i].WorkOrderNumber;
-                                re["parentId"] = data.GetTruckListWithWOResult[i].TruckID;
+                                re["parentId"] = data.GetTruckListWithWOResult[i].ActionItemId;
                               //  re["id"] = data.GetTruckListWithWOResult[i].RecordID + data.GetTruckListWithWOResult[i].TruckLookup;
                                // re["groupId"] = data.GetTruckListWithWOResult[i].TruckName;
                                //// re["parentId"] = data.GetTruckListWithWOResult[i].TruckName;
@@ -3828,7 +3828,8 @@ function AssignTruckToWO() {
 
     $.ajax({
         url: 'data.svc/UpdateTruckWithWo?ActionItemId=' + AssignedTruckWithWO
-            + '&TruckID=' + truckName.replace("(Add WorkOrder)", "").trim(),
+            + '&TruckName=' + truckName.replace("(Add WorkOrder)", "").trim()
+            + '&TruckID=' + truckRecordID,
        type: "POST",
         success: function (data) {
             if (debug) console.log("events.success", "data.UpdateTruckWithWo:");
@@ -3837,6 +3838,12 @@ function AssignTruckToWO() {
             //$("#notesTime").val('');
             //$('#CategoryOption').val('');
             //GetNotes(WO);
+            $("#TruckWorkOrderPop .close").click();
+            $('#calendar').fullCalendar('refetchResources');
+            $('#calendar').fullCalendar('rerenderResources');
+           // var view = $('#calendar').fullCalendar('getView');
+          
+            $('#calendar').fullCalendar('changeView', 'timelineDay');
 
         }, error: function (error) {
             console.log('Error', error);

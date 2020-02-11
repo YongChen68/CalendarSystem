@@ -53,6 +53,10 @@ namespace Generics.Utils
     public class TruckWithWO
     {
 
+
+        [DataMember]
+        public string ActionItemId { get; set; }
+
         [DataMember]
         public string TruckID { get; set; }
 

@@ -70,6 +70,9 @@ namespace Generics.Utils
         [DataMember]
         public string TruckID { get; set; }
 
+        [DataMember]
+        public string TruckName { get; set; }
+
 
     }
 
