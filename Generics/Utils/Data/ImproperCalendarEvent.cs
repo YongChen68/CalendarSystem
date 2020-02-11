@@ -48,6 +48,32 @@ namespace Generics.Utils
 
     }
 
+    public class ImproperTruckInstallationEvent
+    {
+        [DataMember]
+        public string id { get; set; }
+
+        [DataMember]
+        public string start { get; set; }
+        [DataMember]
+        public string end { get; set; }
+
+        [DataMember]
+        public string CurrentStateName { get; set; }
+
+        [DataMember]
+        public string WorkOrderNumber { get; set; }
+
+        [DataMember]
+        public string ActionItemId { get; set; }
+
+        [DataMember]
+        public string TruckID { get; set; }
+
+
+    }
+
+
     public class ImproperRemeasureEvent
     {
         [DataMember]

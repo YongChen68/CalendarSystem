@@ -9,6 +9,9 @@ namespace Generics.RecordUpdate
     public interface IUpdateHelper
     {
         bool UpdateRecord(Utils.ContentType type, Utils.InstallationDataEvent data);
+
+        bool UpdateRecord(Utils.ContentType type, Utils.ImproperTruckInstallationEvent data);
+
         bool UpdateRecord(Utils.ContentType type, List<Utils.CalledLog> data, string parRecordID);
 
         bool UpdateRecord(Utils.ContentType type, List<Utils.DocumentFile> data);

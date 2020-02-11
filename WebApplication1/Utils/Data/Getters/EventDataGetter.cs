@@ -249,6 +249,27 @@ new DateTime(this.endDate.Year, this.endDate.Month, 1).AddMonths(1).AddDays(-1).
 
         }
 
+        private string GetSearchWorkOrderSQL(string WO)
+        {
+            string SQL = string.Format(@"
+ select d.ScheduledDate as [start],d.endtime as [end], i.CurrentStateName,i.RecordId as id, i.WorkOrderNumber,i.ActionItemId,'' as TruckID
+  from [HomeInstallations] i inner join HomeInstallations_InstallationDates  d on i.RecordId = d.ParentRecordId
+where  i.WorkOrderNumber like '%{0}%'", WO);
+            return SQL;
+        }
+
+        public List<ImproperTruckInstallationEvent> GetTruckInstallationEventsByWO(string WO)
+        {
+            string SQL = GetSearchWorkOrderSQL(WO);
+            List<System.Data.SqlClient.SqlParameter> pars = new List<System.Data.SqlClient.SqlParameter>();
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "About to execute: {0}", SQL);
+            pars.Add(new System.Data.SqlClient.SqlParameter("WO", WO));
+
+            List<ImproperTruckInstallationEvent> returnList = new List<ImproperTruckInstallationEvent>();
+            returnList = Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.ImproperTruckInstallationEvent>(SQL, pars.ToArray());
+            return returnList;
+
+        }
         private string GetInstallationSQL()
         {
 
@@ -2085,10 +2106,13 @@ where e.recordid= '{0}'
             //   left JOIN  [flowserv_flowfinityapps].[dbo].[HomeInstallations_InstallationDates] id on id.ParentRecordId = i.RecordId
             //");
             string SQL = string.Format(@"  
-	 	   	   select i.RecordId ,td.RecordId as TruckID,i.WorkOrderNumber,TruckName,TruckLookup
-  from   [TruckDictionary] td  left join [dbo].[HomeInstallations_AssignTruck] as t    on td.ActionItemId = t.TruckLookup
-    left JOIN
+	 	   	  	   select CAST(i.RecordId as varchar(500)) as RecordId,td.RecordId as TruckID,i.WorkOrderNumber,TruckName,TruckLookup
+  from   [TruckDictionary] td  inner join [dbo].[HomeInstallations_AssignTruck] as t    on td.ActionItemId = t.TruckLookup
+    inner JOIN
        [flowserv_flowfinityapps].[dbo].[HomeInstallations] as i on t.ParentRecordId = i.RecordId
+ union all
+ select  '' as RecordId,RecordId as TruckID,'' as WorkOrderNumber,TruckName,'' as TruckLookup  from [TruckDictionary] 
+
  ");
             return SQL;
         }

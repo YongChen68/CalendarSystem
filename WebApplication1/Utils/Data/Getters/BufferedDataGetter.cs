@@ -611,5 +611,10 @@ and  CurrentStateName in ('Ready for ReMeasure', 'Rejected Remeasure')
         {
             throw new NotImplementedException();
         }
+
+        public List<ImproperTruckInstallationEvent> GetTruckInstallationEventsByWO(string WO)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -79,6 +79,10 @@ namespace CalendarSystem
         [WebInvoke(Method = "POST", UriTemplate = "UpdateNotesData?id={id}&WO={WO}&recordid={recordid}&notesDate={notesDate}&notesTime={notesTime}&category={category}&Notes={Notes}")]
         bool UpdateNotesData(string id, string WO, string recordid, string notesDate, string notesTime, string category, string Notes);
 
+        [OperationContract]
+        [WebInvoke(Method = "POST", UriTemplate = "UpdateTruckWithWo?ActionItemId={ActionItemId}&TruckID={TruckID}")]
+        bool UpdateTruckWithWo(string ActionItemId, string TruckID);
+
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "UpdateInstallationSchedule?id={id}&scheduledStartDate={scheduledStartDate}&scheduledEndDate={scheduledEndDate}")]
@@ -217,6 +221,12 @@ ResponseFormat = WebMessageFormat.Json,
 BodyStyle = WebMessageBodyStyle.WrappedResponse)]
         List<InstallerInfo> GetInstallerInfoByNameExceptWorkOrder(string workOrderNumber,string name);
 
+        [OperationContract]
+        [WebInvoke(Method = "GET",
+UriTemplate = "GetTruckInstallationEventsByWO?WO={WO}",
+ResponseFormat = WebMessageFormat.Json,
+BodyStyle = WebMessageBodyStyle.WrappedResponse)]
+        List<ImproperTruckInstallationEvent> GetTruckInstallationEventsByWO(string WO);
 
         [OperationContract]
         [WebInvoke(Method = "GET",

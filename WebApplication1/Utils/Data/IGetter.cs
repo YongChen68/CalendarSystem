@@ -85,6 +85,9 @@ namespace CalendarSystem.Utils.Data
         List<InstallerInfo> GetResources();
 
         List<Truck> GetTruckList();
+
+        List<ImproperTruckInstallationEvent> GetTruckInstallationEventsByWO(string WO);
+
         List<TruckWithWO> GetTruckListWithWO();
 
         List<InstallerInfo> GetInstallerListByTruck(string recordid);

@@ -62,6 +62,25 @@ namespace FlowfinityConnectionHelper
         }
 
 
+        bool Generics.RecordUpdate.IUpdateHelper.UpdateRecord(Generics.Utils.ContentType type, Generics.Utils.ImproperTruckInstallationEvent data)
+        {
+            //FASR.PlantProduction_UpdateWindowMakerData_Call call = new FASR.PlantProduction_UpdateWindowMakerData_Call()
+            // HomeInstallations_EditSold_Call
+            bool ret;
+            bool ret1 = true;
+            FASR.HomeInstallations_EditSold_Call call = new FASR.HomeInstallations_EditSold_Call()
+            {
+                OnBehalfOf = Owner,
+                RecordID = data.id,
+
+                Record = GetRecord(type, data)
+            };
+            ret = _helper.Send(new FASR.OperationCall[] { call }, PrepareTransactionId(data)).ReturnValue;
+            return ret ;
+
+        }
+
+
         bool Generics.RecordUpdate.IUpdateHelper.UpdateRecord(Generics.Utils.ContentType type, Generics.Utils.ImproperRemeasureEvent data)
         {
             bool ret;
@@ -134,6 +153,14 @@ namespace FlowfinityConnectionHelper
             record.InstallationDates = PrepareInstallationDateList(data);
             return record;
         }
+
+        private static FASR.HomeInstallationsRecord GetRecord(Generics.Utils.ContentType type, Generics.Utils.ImproperTruckInstallationEvent data)
+        {
+            FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
+            record.AssignTruck = PreparTruckList(data);
+            return record;
+        }
+
 
 
         private static FASR.HomeInstallationsRecord GetCalledLogRecord(Generics.Utils.ContentType type, List<Generics.Utils.CalledLog> data)
@@ -342,6 +369,11 @@ namespace FlowfinityConnectionHelper
             return string.Format("{0} {1} {2}", "update", data.id, DateTime.Now.Ticks.ToString());
         }
 
+        private static string PrepareTransactionId(Generics.Utils.ImproperTruckInstallationEvent data)
+        {
+            return string.Format("{0} {1} {2}", "update", data.id, DateTime.Now.Ticks.ToString());
+        }
+
         private static string PrepareTransactionId(Generics.Utils.CalledLog data)
         {
             string returnStr = string.Empty;
@@ -447,6 +479,39 @@ namespace FlowfinityConnectionHelper
                     ScheduledDate = new FASR.DateTimeValue() { Value = start }
                 });
             return returnValue.ToArray();
+        }
+
+        private static FASR.HomeInstallations_AssignTruckRecord[] PreparTruckList(Generics.Utils.ImproperTruckInstallationEvent data)
+        {
+            //List<FASR.HomeInstallations_AssignTruckRecord> returnValue = new List<FASR.HomeInstallations_AssignTruckRecord>();
+            //HomeInstallations_AssignTruckRecord newRecord = new HomeInstallations_AssignTruckRecord();
+            //newRecord.TruckLookup = data.TruckLookUp;
+            //returnValue.Add(newRecord)
+
+            //return returnValue.ToArray();
+            List<FASR.HomeInstallations_AssignTruckRecord> returnValue = new List<FASR.HomeInstallations_AssignTruckRecord>();
+
+            if (data == null)
+            {
+                return null;
+            }
+            else
+            {
+
+                //  calledLogOffDate = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(c.DateCalled).ToString("yyyy-MM-ddTHH:mm:00.000Z"));
+                returnValue.Add(new FASR.HomeInstallations_AssignTruckRecord()
+                {
+                    //CalledMessage = Lift.II.IIUtils.CreateSingleSelectValue<SingleSelection>(c.CalledMessage),
+                    //Notes3 = Lift.II.IIUtils.CreateStringValue<StringValue>(c.Notes3),
+                    //DateCalled = Lift.II.IIUtils.CreateDateTimeValue<DateTimeValue>(calledLogOffDate),
+                    TruckLookup = Lift.II.IIUtils.CreateChoiceValue<Choice>(data.TruckID, data.TruckID),
+                    //FileName = Lift.II.IIUtils.CreateSingleSelectValue<BinaryValue>(c.FileSource.ToString()),
+                    //Notes5 = Lift.II.IIUtils.CreateSingleSelectValue<StringValue>(c.FileName),
+
+                });
+               
+                return returnValue.ToArray();
+            }
         }
 
 

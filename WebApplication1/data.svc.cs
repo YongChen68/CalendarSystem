@@ -739,6 +739,64 @@ namespace CalendarSystem
         }
 
 
+        public bool UpdateTruckWithWo(
+              string ActionItemId
+            , string TruckID
+          )
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateTruckWithWo('{0}')", ActionItemId);
+            //Notes eventData = null;
+            //bool retValue = false;
+            //string parRecordID = string.Empty;
+            ImproperTruckInstallationEvent eventData = null;
+
+            //try
+            //{
+            //    List<Notes> keepedNotes = GetKeepedNotes(id, WO, recordID);
+            //    List<Notes> notesList = new List<Notes>();
+            //    parRecordID = GetActionItemIDByWO(WO);
+            //    notesList = keepedNotes.ToList();
+            //    eventData = new Notes();
+            //    eventData.id = id;
+            //    eventData.GeneralNotes = Notes;
+            //    eventData.Category = category;
+            //    //  eventData.DateCalled = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(callDate).ToString("yyyy-MM-ddTHH:mm:00.000Z")); ;
+            //    if (notesDate.Length != 0)
+            //    {
+            //        eventData.NotesDate = Convert.ToDateTime(notesDate + " " + notesTime).ToString();
+            //        notesList.Add(eventData);
+            //    }
+            //    RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
+            //    retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), notesList, parRecordID);
+
+            //    Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateNotesData id= {0}", id);
+            //}
+            //catch (Exception ex)
+            //{
+            //    Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            //}
+            //return retValue;
+            bool retValue = false;
+            try
+            {
+                eventData = new ImproperTruckInstallationEvent();
+                eventData.id = ActionItemId;
+
+                eventData.TruckID = TruckID;
+
+                RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
+                retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), eventData);
+
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateTruckWithWo id= {0}", ActionItemId);
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+
 
         List<Product> Idata.GetProducts(string workOrderNumber)
         {
@@ -1328,6 +1386,23 @@ namespace CalendarSystem
                 Utils.Data.IGetter getter = new Utils.Data.EventDataGetter();
                 retValue = getter.GetTruckListWithWO();
                 Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetTruckListWithWO() = {0}", retValue.Count.ToString());
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
+        List<ImproperTruckInstallationEvent> Idata.GetTruckInstallationEventsByWO(string WO)
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "Getting GetTruckInstallationEventsByWO({0})");
+            List<ImproperTruckInstallationEvent> retValue = null;
+            try
+            {
+                Utils.Data.IGetter getter = new Utils.Data.EventDataGetter();
+                retValue = getter.GetTruckInstallationEventsByWO(WO);
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Leaving GetTruckInstallationEventsByWO() = {0}", retValue.Count.ToString());
             }
             catch (Exception ex)
             {

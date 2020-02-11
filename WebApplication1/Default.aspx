@@ -173,7 +173,7 @@
                     //fileDisplayArea.innerText = reader.result;
                 }
 
-               // reader.readAsArrayBuffer(file);
+                // reader.readAsArrayBuffer(file);
                 reader.readAsDataURL(file);
 
             });
@@ -422,11 +422,14 @@
             z-index: 214748367;
         }
 
-        
+
         #TruckPop {
             z-index: 214748366;
         }
 
+        #TruckWorkOrderPop {
+            z-index: 214748366;
+        }
 
         #eventContentWindows {
             z-index: 214748367;
@@ -440,7 +443,7 @@
 
         .task-modal-header {
             background-color: white;
-            color:black;
+            color: black;
             font-weight: 400;
         }
 
@@ -457,10 +460,10 @@
 
 
 
-        
+
         .modal-task {
             width: 1000px;
-            height:500px;
+            height: 500px;
             padding-top: 100px;
             margin: auto;
         }
@@ -1435,7 +1438,79 @@
 
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-primary" onclick="AddCrewsToTruck();">Add Truck Crews</button>
+                        <button type="button" class="btn btn-primary" onclick="AddCrewsToTruck();">Save</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="TruckWorkOrderPop" style="display: none;" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true" class="modal fade">
+            <div class="modal-dialog modal-sm" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="height: 80px;">
+                        <h4 class="modal-title" id="TruckWorkOrderPopTitle"></h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <div>
+                            <!-- Search form -->
+                            <input class="form-control" type="text" placeholder="Search" aria-label="Search" id="txtWorkOrderSearch" style="width: 300px;" onkeyup="SearchByWorkOrderNumber()" />
+                        </div>
+                        <div style="overflow-y: auto; margin-left: -150px; margin-top: -20px;">
+                            <a href="#" onclick="ClearWorkOrderSearch()">Clear Search</a>
+                        </div>
+                        <br />
+
+                        <div>
+                            <table id="dataTableTruckWO" class="table table-striped table-bordered table-hover table-condensed"></table>
+                        </div>
+                        <div id="dvDateAndCrews"  style="display:none;">
+                            <div>
+                                
+                            </div>
+                            <div>
+                                <div class="leftcolumn" style="width: 5%; align-items: center;">
+                                    Start Date:
+                                </div>
+                                <div class="rightcolumn" style="width: 20%;">
+                                    <input id="TruckInstallScheduledStartDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
+                                </div>
+                                <div class="leftcolumn" style="width: 5%; padding-left: 50px;">
+                                    End Date:
+                                </div>
+
+                                <div class="rightcolumn" style="padding-left: 50px; width: 5%;">
+                                    <input id="TruckInstallScheduledEndDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
+                                </div>
+
+                            </div>
+                            <br />
+                                  <div style="margin-top:40px;margin-left:-650px;" >
+
+                                <div>
+                                    <b>CrewNames: </b><span id="TruckWorkOrderCrewNames"></span>
+
+                                </div>
+                                <div>
+                                    <span id="ViewDeleteTruckWOCrewNames" style="display: none; padding-left: 20px;"></span>
+                                    <span id="AddTruckWOCrewNames" style="padding-left: 40px;"></span>
+                                </div>
+                                <br>
+                            </div>
+                          
+                        </div>
+
+                    
+
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" onclick="AssignTruckToWO();">Save</button>
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
@@ -1461,17 +1536,21 @@
                             </div>
                             <br />
                             <div style="margin-left: -40px;">
-                                <img src="images/timer2.png" style="width:3%; height: 3%;" />
+                                <img src="images/timer2.png" style="width: 3%; height: 3%;" />
                                 &nbsp;  &nbsp; 
-                                    <input id="TruckStartDate" style="text-align: center; border:0; width:80px; " data-toggle="tooltip" title="Date"> &nbsp; 
+                                    <input id="TruckStartDate" style="text-align: center; border: 0; width: 80px;" data-toggle="tooltip" title="Date">
+                                &nbsp; 
 
-                                    <input type="time" id="TruckStartTime" name="appt" style="border:0;width:100px;">   -
+                                    <input type="time" id="TruckStartTime" name="appt" style="border: 0; width: 100px;">
+                                -
 
-                                    <input type="time" id="TruckEndTime" name="appt" style="border:0;width:100px;">   &nbsp; 
+                                    <input type="time" id="TruckEndTime" name="appt" style="border: 0; width: 100px;">
+                                &nbsp; 
 
-                                    <input id="TruckEndDate" style="text-align: center;border:0;width:80px;" data-toggle="tooltip" title="Date"> &nbsp;
+                                    <input id="TruckEndDate" style="text-align: center; border: 0; width: 80px;" data-toggle="tooltip" title="Date">
+                                &nbsp;
                                     
-                                   <input type="checkbox" name="state" value="All day" id="IsTruckAllDay" onclick="IsTruckAlldayChecked();" >&nbsp; All day
+                                   <input type="checkbox" name="state" value="All day" id="IsTruckAllDay" onclick="IsTruckAlldayChecked();">&nbsp; All day
                             </div>
                             <br />
                             <div style="margin-left: -350px;">
