@@ -1469,43 +1469,60 @@
                         <div>
                             <table id="dataTableTruckWO" class="table table-striped table-bordered table-hover table-condensed"></table>
                         </div>
-                        <div id="dvDateAndCrews"  style="display:none;">
-                            <div>
-                                
+                        <div id="dvDateAndCrews" style="display: none;">
+                            <%-- <div>
+                                <b>Work Order: </b><span id="TruckWorkOrder"></span>
+                            </div>--%>
+
+                            <div class="form-group" style="margin-left: -750px;">
+                                <label for="TruckWorkOrder">Work Order: :</label>
+                                <span id="TruckWorkOrder"></span>
+
+
                             </div>
+
+                            <%--                            <div class="form-group">
+                                Start Date :
+                                   <input id="TruckInstallScheduledStartDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
+
+                               End Date :
+                                <input id="TruckInstallScheduledEndDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
+                            </div>--%>
+
                             <div>
-                                <div class="leftcolumn" style="width: 5%; align-items: center;">
-                                    Start Date:
+                                <div class="leftcolumn" style="width: 8%; align-items: center;">
+                                  <b>  Start Date:</b>
                                 </div>
-                                <div class="rightcolumn" style="width: 20%;">
-                                    <input id="TruckInstallScheduledStartDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
+                                <div class="rightcolumn" style="width: 25%;">
+                                    <input id="TruckInstallScheduledStartDate" style="width: 200px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
                                 </div>
-                                <div class="leftcolumn" style="width: 5%; padding-left: 50px;">
-                                    End Date:
+                                <div class="leftcolumn" style="width: 8%; padding-left: 50px;">
+                                   <b>  End Date:</b>
                                 </div>
 
                                 <div class="rightcolumn" style="padding-left: 50px; width: 5%;">
-                                    <input id="TruckInstallScheduledEndDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
+                                    <input id="TruckInstallScheduledEndDate" style="width: 200px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
                                 </div>
 
                             </div>
-                            <br />
-                                  <div style="margin-top:40px;margin-left:-650px;" >
 
-                                <div>
+                            <br />
+                            <div style="padding-top: 40px; ">
+
+                                <div class="leftcolumn" style="width: 100%; align-items: center;position :fixed;margin-left: -420px;">
                                     <b>CrewNames: </b><span id="TruckWorkOrderCrewNames"></span>
 
                                 </div>
-                                <div>
+                                <div style=" padding-top: 20px; margin-left: -270px;">
                                     <span id="ViewDeleteTruckWOCrewNames" style="display: none; padding-left: 20px;"></span>
                                     <span id="AddTruckWOCrewNames" style="padding-left: 40px;"></span>
                                 </div>
                                 <br>
                             </div>
-                          
+
                         </div>
 
-                    
+
 
                     </div>
 

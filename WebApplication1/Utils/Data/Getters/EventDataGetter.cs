@@ -2243,7 +2243,7 @@ where t.recordid= '{0}' order by u.Name
         {
             string SQL = string.Format(@"select InstallerName  as Name,
 --EmployeePicture_bin as pic,
-e.recordid,
+e.recordid,c.userId,
 e.Branch_display as branch
 ,e.Department,i.WorkOrderNumber,c.DetailRecordId,
 --EmployeePicture,EmployeePicture_thumbnail1,EmployeePicture_thumbnail2,

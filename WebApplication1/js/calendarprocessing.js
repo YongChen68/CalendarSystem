@@ -3570,11 +3570,12 @@ function ShowCrews() {
    
     $("#dataTableInstallerEdit tr").remove();
 
-    $("#InstallerInfoPop").attr('href', 'javascript:void(0);');
-    $("#InstallerInfoPop").attr('data-toggle', "modal");
-    $("#InstallerInfoPop").attr('data-target', "#installerEdit");
-    $("#InstallerInfoPop").attr('href', "/details");
-  
+    //$("#InstallerInfoPop").attr('href', 'javascript:void(0);');
+    //$("#InstallerInfoPop").attr('data-toggle', "modal");
+    //$("#InstallerInfoPop").attr('data-target', "#installerEdit");
+    //$("#InstallerInfoPop").attr('href', "/details");
+
+    $('#installerEdit').modal('show');
     $("#eventContent").css('opacity', 20);
     $("#installerDetail").hide();  
    
@@ -3681,6 +3682,7 @@ function AddInstallersToEvent() {
                 $("#InstallerEmailView").html("");
                 ShowCrews();
                 GetInstallers(WO);
+                GetTruckInstallers(WO);
                 $("#installerAdd .close").click();
                 //close the second pop up or reload the table 
 
@@ -3793,7 +3795,7 @@ function SearchByWorkOrderNumber() {
                             data.GetTruckInstallationEventsByWOResult[i].WorkOrderNumber + "</td> <td>" +
                             data.GetTruckInstallationEventsByWOResult[i].start + "</td> <td>" +
                             data.GetTruckInstallationEventsByWOResult[i].end + "</td> <td>" +
-                            "<a href='#'" + " id='bWOSelected" + data.GetTruckInstallationEventsByWOResult[i].id + "' onclick=\"WOSelected('" + data.GetTruckInstallationEventsByWOResult[i].ActionItemId + "')\"> Select  </a >" + "</td ></tr > ");
+                            "<a href='#'" + " id='bWOSelected" + data.GetTruckInstallationEventsByWOResult[i].id + "' onclick=\"WOSelected('" + data.GetTruckInstallationEventsByWOResult[i].ActionItemId + "','" + data.GetTruckInstallationEventsByWOResult[i].WorkOrderNumber +  "')\"> Select  </a >" + "</td ></tr > ");
                     }
                 }
 
@@ -3808,22 +3810,134 @@ function SearchByWorkOrderNumber() {
 
 }
 
-function WOSelected(ActionItemId) {
+function WOSelected(ActionItemId,TruckWO) {
   //  var searchWO = $("#txtWorkOrderSearch").val();
     $("#dataTableTruckWO tr").remove();
     AssignedTruckWithWO = ActionItemId;
+    WO = TruckWO;
+    $("#TruckWorkOrder").html(TruckWO);
+
     $("#TruckInstallScheduledStartDate").val("2/11/2020 1:00:00 PM");
 
     $("#TruckInstallScheduledEndDate").val("2/11/2020 1:30:00 PM");
 
-    $("#TruckWorkOrderCrewNames").html("Kyle Wowk,Stephen Wilkins");
+   // $("#TruckWorkOrderCrewNames").html("Kyle Wowk,Stephen Wilkins");
    // $("#dvDateAndCrews").style.display = "block";
     
     document.getElementById('dvDateAndCrews').style.display = "block";
+    GetTruckInstallers(TruckWO);
   
 }
 
+function GetTruckInstallers(workOrder) {
+    $("#AddTruckWOCrewNames").html("<a href='#'" + " id='AddInstallersPop' onclick=\"AddInstallers()\"> Add Installers");
+    $.ajax({
+        //type: "POST",  
+        url: 'data.svc/GetInstallers?workOrderNumber=' + workOrder,
+        dataType: 'json',
+        success: function (data) {
+            if (debug) console.log("events.success", "data.GetInstallers:");
 
+
+            if (data.GetInstallersResult.length > 0) {
+
+               // $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
+                //    $("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
+                //   $("#CrewNames").html("<a href='https://www.google.com'> text </a> ");
+
+                if (data.GetInstallersResult[0].CrewNames == null || data.GetInstallersResult[0].CrewNames.trim().length == 0) {
+                    $("#TruckWorkOrderCrewNames").html("Un assigned");
+
+                    $("#ViewDeleteTruckWOCrewNames").hide();
+                }
+                else {
+                    $("#ViewDeleteTruckWOCrewNames").html("<a href='#'" + " id='InstallerInfoPop' onclick=\"ShowCrews()\"> View/Delete Installers");
+
+
+                    $("#ViewDeleteTruckWOCrewNames").show();
+                    // $("#CrewNames").html("<a href='#'" + " id='InstallerInfoPop' onclick=\"ShowCrews()\">"  + data.GetInstallersResult[0].CrewNames +  "</a >");
+                    $("#TruckWorkOrderCrewNames").html(data.GetInstallersResult[0].CrewNames);
+
+                    //  $("#CrewNames").html("<input  type='button' class='btn' data-toggle='modal' href='#stack2' value='Click me'>" );
+
+                    //  $('#eventContent').modal('hide');
+
+                    //   $("#CrewNames").html("<a href='#' data-toggle='modal' data-target='#stack2' >Load me" + "</a >");
+                }
+            } else {
+                $("#ViewDeleteTruckWOCrewNames").hide();
+
+            }
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+}
+
+//function AddTruckInstallers() {
+//    recordIDArray = [];
+//    // var name = $("#txtName").val();
+//    $("#txtName").val('');
+
+//    $("#dataTableInstallerAdd tr").remove();
+
+//    $("#AddInstallersPop").attr('href', 'javascript:void(0);');
+//    $("#AddInstallersPop").attr('data-toggle', "modal");
+//    $("#AddInstallersPop").attr('data-target', "#installerAdd");
+//    $("#AddInstallersPop").attr('href', "/details");
+
+//    $("#eventContent").css('opacity', 20);
+//    $("#installerAddDetail").hide();
+
+//    $.ajax({
+//        //type: "POST",  
+//        url: 'data.svc/GetInstallerInfoExceptWorkOrder?workOrderNumber=' + WO,
+//        dataType: 'json',
+//        async: false,
+//        success: function (data) {
+//            if (debug) console.log("events.success", "data.GetInstallerInfoExceptWorkOrderResult:");
+//            $("#installerAddTitle").html(WO + " Installer Add");
+
+//            if (data.GetInstallerInfoExceptWorkOrderResult.length > 0) {
+//                recordIDArray = [];
+//                $("#dataTableInstallerAdd").append("<tr>  <th style = 'text-align:center;' > </th > <th style = 'text-align:center;' > Name</th ><th style='text-align:center;'> Email</th > <th style = 'text-align:center;' > Installer Level</th ><th style = 'text-align:center;' > </th >");
+//                var count = data.GetInstallerInfoExceptWorkOrderResult.length;
+//                for (var i = 0; i < data.GetInstallerInfoExceptWorkOrderResult.length; i++) {
+//                    $("#dataTableInstallerAdd").append("<tr><td>" +
+//                        "<input type='checkbox'" + " id='chkRecordID" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + "' onclick=\"AddRecordToList(" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + ")\"> " + "</td> <td>" +
+//                        data.GetInstallerInfoExceptWorkOrderResult[i].Name + "</td> <td>" +
+//                        data.GetInstallerInfoExceptWorkOrderResult[i].email + "</td> <td>" +
+//                        data.GetInstallerInfoExceptWorkOrderResult[i].InstallerLevel + "</td> <td>" +
+//                        "<a href='#'" + " id='bInstaller" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + "' onclick=\"InstallerInfoView(" + data.GetInstallerInfoExceptWorkOrderResult[i].recordid + ")\"> View  </a >" + "</td ></tr > ");
+
+//                    if (count > 30) {
+//                        $('#bInstaller' + data.GetInstallerInfoExceptWorkOrderResult[i].recordid).addClass('disabled');
+//                    }
+//                    //a href='#'" + onclick > google </a > " + "</td ></tr > ");
+
+//                    //"add" + "</td></tr>");
+//                }
+//                //" <div>" + " onclick=\"ShowWOBigPicture(" + data.GetWOPictureResult[i].DetailRecordId + ")\">" +
+//                //  $("#SeniorInstaller").html(data.GetInstallersResult[0].SeniorInstaller != null && data.GetInstallersResult[0].SeniorInstaller.trim().length > 0 ? data.GetInstallersResult[0].SeniorInstaller : "Unspecified");
+//                //$("#CrewNames").html(data.GetInstallersResult[0].CrewNames != null && data.GetInstallersResult[0].CrewNames.trim().length > 0 ? data.GetInstallersResult[0].CrewNames : "Un assigned");
+
+
+
+
+
+//            }
+
+//        }, error: function (error) {
+//            console.log('Error', error);
+//            $('#script-warning').show();
+//        }
+//    });
+
+
+//}
 function AssignTruckToWO() {
 
     $.ajax({
@@ -3833,16 +3947,11 @@ function AssignTruckToWO() {
        type: "POST",
         success: function (data) {
             if (debug) console.log("events.success", "data.UpdateTruckWithWo:");
-            //$("#notes").val('');
-            //$("#notesDate").val('');
-            //$("#notesTime").val('');
-            //$('#CategoryOption').val('');
-            //GetNotes(WO);
+           
             $("#TruckWorkOrderPop .close").click();
             $('#calendar').fullCalendar('refetchResources');
             $('#calendar').fullCalendar('rerenderResources');
-           // var view = $('#calendar').fullCalendar('getView');
-          
+                 
             $('#calendar').fullCalendar('changeView', 'timelineDay');
 
         }, error: function (error) {
@@ -3980,10 +4089,12 @@ function AddInstallers() {
     
     $("#dataTableInstallerAdd tr").remove();
 
-    $("#AddInstallersPop").attr('href', 'javascript:void(0);');
-    $("#AddInstallersPop").attr('data-toggle', "modal");
-    $("#AddInstallersPop").attr('data-target', "#installerAdd");
-    $("#AddInstallersPop").attr('href', "/details");
+    //$("#AddInstallersPop").attr('href', 'javascript:void(0);');
+    //$("#AddInstallersPop").attr('data-toggle', "modal");
+    //$("#AddInstallersPop").attr('data-target', "#installerAdd");
+    //$("#AddInstallersPop").attr('href', "/details");
+
+    $('#installerAdd').modal('show');
 
     $("#eventContent").css('opacity', 20);
     $("#installerAddDetail").hide();
@@ -4522,6 +4633,7 @@ function InstallerInfoDelete(recordid,parentrecordID) {
                 $("#InstallerEmailView").html("");
                 ShowCrews();
                 GetInstallers(WO);
+                GetTruckInstallers(WO);
               
               //  $("#CrewNames").html("123213"); 
                 //close the second pop up or reload the table 
