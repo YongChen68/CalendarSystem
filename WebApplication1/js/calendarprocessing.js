@@ -1314,6 +1314,17 @@ $(document).ready(function () {
                         //    if (item.WorkOrderNumber == "YongTest7") {
                              item.resourceId = item.ParentRecordId + item.ResourceID;
                         //   }
+                        
+                            if (item.WorkOrderNumber == "YongTest7") {
+                                //item.start = moment().add(0, 'hours').format('HH:mm');
+                                //item.end = moment().add(4, 'hours').format('HH:mm');
+                                //item.start = moment().add(0, 'hours').format("YYYY-MM-DD HH:mm");
+                                //item.end = moment().add(2, 'hours').format("YYYY-MM-DDTHH:mm");
+                            }
+
+                            if (item.ResourceID.length > 0) {
+
+                            }
                             
                          //   item.editable = (item.ReturnedJob == 1) ? false : true;
 
@@ -3680,9 +3691,10 @@ function AddInstallersToEvent() {
                 $("#InstallerTelephoneView").html("");
                 $("#InstallerWorkPhoneView").html("");
                 $("#InstallerEmailView").html("");
-                ShowCrews();
+              //  ShowCrews();
                 GetInstallers(WO);
                 GetTruckInstallers(WO);
+              
                 $("#installerAdd .close").click();
                 //close the second pop up or reload the table 
 
@@ -3795,7 +3807,7 @@ function SearchByWorkOrderNumber() {
                             data.GetTruckInstallationEventsByWOResult[i].WorkOrderNumber + "</td> <td>" +
                             data.GetTruckInstallationEventsByWOResult[i].start + "</td> <td>" +
                             data.GetTruckInstallationEventsByWOResult[i].end + "</td> <td>" +
-                            "<a href='#'" + " id='bWOSelected" + data.GetTruckInstallationEventsByWOResult[i].id + "' onclick=\"WOSelected('" + data.GetTruckInstallationEventsByWOResult[i].ActionItemId + "','" + data.GetTruckInstallationEventsByWOResult[i].WorkOrderNumber +  "')\"> Select  </a >" + "</td ></tr > ");
+                            "<a href='#'" + " id='bWOSelected" + data.GetTruckInstallationEventsByWOResult[i].id + "' onclick=\"WOSelected('" + data.GetTruckInstallationEventsByWOResult[i].ActionItemId + "','" + data.GetTruckInstallationEventsByWOResult[i].WorkOrderNumber + "','" + data.GetTruckInstallationEventsByWOResult[i].start + "','" + data.GetTruckInstallationEventsByWOResult[i].end + "')\"> Select  </a >" + "</td ></tr > ");
                     }
                 }
 
@@ -3810,16 +3822,25 @@ function SearchByWorkOrderNumber() {
 
 }
 
-function WOSelected(ActionItemId,TruckWO) {
+function WOSelected(ActionItemId,TruckWO,start, end) {
   //  var searchWO = $("#txtWorkOrderSearch").val();
     $("#dataTableTruckWO tr").remove();
     AssignedTruckWithWO = ActionItemId;
     WO = TruckWO;
     $("#TruckWorkOrder").html(TruckWO);
 
-    $("#TruckInstallScheduledStartDate").val("2/11/2020 1:00:00 PM");
+    //$("#TruckInstallScheduledStartDate").val(moment(start, 'MM/DD/YYYY'));
 
-    $("#TruckInstallScheduledEndDate").val("2/11/2020 1:30:00 PM");
+    $("#TruckInstallScheduledStartDate").val(new Date(GetDatefromMoment(start)).toLocaleDateString('en-US'));
+    $("#TruckInstallScheduledStartTime").val(moment(start).add(0, 'hours').format('HH:mm'));
+
+
+    
+   // $("#TruckInstallScheduledEndDate").val(moment(end, 'MM/DD/YYYY'));
+    $("#TruckInstallScheduledEndDate").val(new Date(GetDatefromMoment(end)).toLocaleDateString('en-US'));
+    
+    $("#TruckInstallScheduledEndTime").val(moment(end).add(0, 'hours').format('HH:mm'));
+
 
    // $("#TruckWorkOrderCrewNames").html("Kyle Wowk,Stephen Wilkins");
    // $("#dvDateAndCrews").style.display = "block";
@@ -3939,19 +3960,55 @@ function GetTruckInstallers(workOrder) {
 
 //}
 function AssignTruckToWO() {
-
+  
     $.ajax({
         url: 'data.svc/UpdateTruckWithWo?ActionItemId=' + AssignedTruckWithWO
             + '&TruckName=' + truckName.replace("(Add WorkOrder)", "").trim()
             + '&TruckID=' + truckRecordID,
-       type: "POST",
+        type: "POST",
         success: function (data) {
             if (debug) console.log("events.success", "data.UpdateTruckWithWo:");
-           
+
             $("#TruckWorkOrderPop .close").click();
             $('#calendar').fullCalendar('refetchResources');
             $('#calendar').fullCalendar('rerenderResources');
-                 
+
+            $('#calendar').fullCalendar('refetchEvents');
+            $('#calendar').fullCalendar('rerenderEvents');
+
+            $('#calendar').fullCalendar('changeView', 'timelineDay');
+
+        }, error: function (error) {
+            console.log('Error', error);
+            $('#script-warning').show();
+        }
+    });
+
+    SaveTruckInstallationSchedule();
+}
+
+function SaveTruckInstallationSchedule() {
+
+    var startDate = $("#TruckInstallScheduledStartDate").val();
+    var startTime = $("#TruckInstallScheduledStartTime").val();
+
+    var endDate = $("#TruckInstallScheduledEndDate").val();
+    var endTime = $("#TruckInstallScheduledEndTime").val();
+
+    $.ajax({
+        url: 'data.svc/UpdateTruckInstallationSchedule?ActionItemId=' + AssignedTruckWithWO
+            + '&startDate=' + startDate
+            + '&startTime=' + startTime
+            + '&endDate=' + endDate
+            + '&endTime=' + endTime,
+        type: "POST",
+        success: function (data) {
+            if (debug) console.log("events.success", "data.UpdateTruckWithWo:");
+
+            $("#TruckWorkOrderPop .close").click();
+            $('#calendar').fullCalendar('refetchResources');
+            $('#calendar').fullCalendar('rerenderResources');
+
             $('#calendar').fullCalendar('changeView', 'timelineDay');
 
         }, error: function (error) {

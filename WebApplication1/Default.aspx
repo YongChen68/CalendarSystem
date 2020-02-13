@@ -103,6 +103,17 @@
 
             });
 
+            $('#TruckInstallScheduledStartDate').datepicker({
+                dateFormat: "m/d/yy"
+
+            });
+
+            $('#TruckInstallScheduledEndDate').datepicker({
+                dateFormat: "m/d/yy"
+
+            });
+
+
             $('#from_date').datepicker({
                 dateFormat: "m/d/yy"
 
@@ -1489,7 +1500,7 @@
                                 <input id="TruckInstallScheduledEndDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
                             </div>--%>
 
-                            <div>
+                     <%--       <div>
                                 <div class="leftcolumn" style="width: 8%; align-items: center;">
                                   <b>  Start Date:</b>
                                 </div>
@@ -1504,13 +1515,32 @@
                                     <input id="TruckInstallScheduledEndDate" style="width: 200px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
                                 </div>
 
+                            </div>--%>
+
+                              <div style="margin-left: -340px;">
+                                <img src="images/timer2.png" style="width: 2%; height: 2%;" />
+                                &nbsp;  &nbsp; 
+                                    <input id="TruckInstallScheduledStartDate" style="text-align: center; border: 0; width: 80px;" data-toggle="tooltip" title="Date">
+                                &nbsp;   &nbsp; 
+
+                                    <input type="time" id="TruckInstallScheduledStartTime" name="appt" style="border: 0; width: 100px;">
+                                -
+
+                                    <input type="time" id="TruckInstallScheduledEndTime" name="appt" style="border: 0; width: 100px;">
+                                &nbsp; 
+
+                                    <input id="TruckInstallScheduledEndDate" style="text-align: center; border: 0; width: 80px;" data-toggle="tooltip" title="Date">
+                                &nbsp;  &nbsp; 
+                                    
+                                   <input type="checkbox" name="state" value="All day" id="IsTruckAllDay1" onclick="IsTruckAlldayChecked();">&nbsp; All day
                             </div>
 
-                            <br />
-                            <div style="padding-top: 40px; ">
+                      
+                            <div style="padding-top: 20px; ">
 
                                 <div class="leftcolumn" style="width: 100%; align-items: center;position :fixed;margin-left: -420px;">
-                                    <b>CrewNames: </b><span id="TruckWorkOrderCrewNames"></span>
+                                  <img src="images/client.png" style="width: 2%; height: 2%;" />
+                                &nbsp;  &nbsp; <span id="TruckWorkOrderCrewNames"></span>
 
                                 </div>
                                 <div style=" padding-top: 20px; margin-left: -270px;">

@@ -746,37 +746,9 @@ namespace CalendarSystem
           )
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateTruckWithWo('{0}')", ActionItemId);
-            //Notes eventData = null;
-            //bool retValue = false;
-            //string parRecordID = string.Empty;
+          
             ImproperTruckInstallationEvent eventData = null;
 
-            //try
-            //{
-            //    List<Notes> keepedNotes = GetKeepedNotes(id, WO, recordID);
-            //    List<Notes> notesList = new List<Notes>();
-            //    parRecordID = GetActionItemIDByWO(WO);
-            //    notesList = keepedNotes.ToList();
-            //    eventData = new Notes();
-            //    eventData.id = id;
-            //    eventData.GeneralNotes = Notes;
-            //    eventData.Category = category;
-            //    //  eventData.DateCalled = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(callDate).ToString("yyyy-MM-ddTHH:mm:00.000Z")); ;
-            //    if (notesDate.Length != 0)
-            //    {
-            //        eventData.NotesDate = Convert.ToDateTime(notesDate + " " + notesTime).ToString();
-            //        notesList.Add(eventData);
-            //    }
-            //    RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
-            //    retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), notesList, parRecordID);
-
-            //    Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateNotesData id= {0}", id);
-            //}
-            //catch (Exception ex)
-            //{
-            //    Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
-            //}
-            //return retValue;
             bool retValue = false;
             try
             {
@@ -796,6 +768,49 @@ namespace CalendarSystem
             }
             return retValue;
         }
+
+        public bool UpdateTruckInstallationSchedule(
+           string ActionItemId
+          , string startDate
+         , string startTime
+         , string endDate
+         , string endTime
+       )
+        {
+            Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateTruckInstallationSchedule('{0}')", ActionItemId);
+
+            ImproperInstallationEvent eventData = null;
+
+            bool retValue = false;
+            try
+            {
+                eventData = new ImproperInstallationEvent();
+                eventData.id = ActionItemId;
+                eventData.start = Convert.ToDateTime(startDate + " " + startTime).ToString("yyyy-MM-ddTHH:mm:00.000Z");
+                //if (startTime.Length!=0)
+                //{
+                //    eventData.start = startDate + " " + startTime;
+                //}
+                // calledLogOffDate = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(startDate).ToString("yyyy-MM-ddTHH:mm:00.000Z"));
+                eventData.end = Convert.ToDateTime(endDate + " " + endTime).ToString("yyyy-MM-ddTHH:mm:00.000Z");
+
+                //if (endTime.Length != 0)
+                //{
+                //    eventData.end = endDate + " " + endTime;
+                //}
+
+                RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
+                retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), eventData);
+
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateTruckInstallationSchedule id= {0}", ActionItemId);
+            }
+            catch (Exception ex)
+            {
+                Lift.LiftManager.Logger.Write(this.GetType().Name, "Error occured: {0}", ex.ToString());
+            }
+            return retValue;
+        }
+
 
 
 

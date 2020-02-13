@@ -466,9 +466,17 @@ namespace FlowfinityConnectionHelper
                 end = end.AddDays(1);
                 while ((end - start).TotalDays >= 1)
                 {
+                    //returnValue.Add(new FASR.HomeInstallations_InstallationDatesRecord()
+                    //{
+                    //    ScheduledDate = new FASR.DateTimeValue() { Value = start },
+                    //    EndTime = new FASR.DateTimeValue() { Value = end }
+
+                    //});
                     returnValue.Add(new FASR.HomeInstallations_InstallationDatesRecord()
                     {
                         ScheduledDate = new FASR.DateTimeValue() { Value = start }
+                  
+
                     });
                     start = start.AddDays(1);
                 }
@@ -476,7 +484,11 @@ namespace FlowfinityConnectionHelper
             else
                 returnValue.Add(new FASR.HomeInstallations_InstallationDatesRecord()
                 {
-                    ScheduledDate = new FASR.DateTimeValue() { Value = start }
+                    //ScheduledDate = new FASR.DateTimeValue() { Value = start },
+                    //EndTime = new FASR.DateTimeValue() { Value = end }
+                    ScheduledDate = new FASR.DateTimeValue() { Value = start },
+                    EndTime = new FASR.DateTimeValue() { Value = end }
+
                 });
             return returnValue.ToArray();
         }
