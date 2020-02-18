@@ -1312,19 +1312,40 @@ $(document).ready(function () {
                         $.each(data.GetInstallationEventsResult, function (pos, item) {
                             item.allDay = true;
                         //    if (item.WorkOrderNumber == "YongTest7") {
+
+                            if ((item.ResourceID == undefined) || (item.ResourceID==null)) {
+                            //    item.end = moment(item.EndTime).toDate().format("M/dd/yyyy HH:mm");
+                                 // item.end = item.start;
+                            }
+                            else if (item.ResourceID.length>1)
+                            {
+                                item.end = moment(item.EndTime).toDate().format("M/dd/yyyy HH:mm");
+                                item.allDay = false;
+                            }
+                            //if (item.WorkOrderNumber == "YongTest7") {
+
+                            //   // item.end = "4:00 PM";
+                            //    //       item.start = moment().add(0, 'hours').format('HH:mm');
+                            //    //item.end = moment().add(4, 'hours').format('HH:mm');
+                            //    //item.start = moment().add(0, 'hours').format("YYYY-MM-DD HH:mm");
+                            //  //  item.start = "2020-02-14T14:30:00";
+                            //    item.end = item.end = moment(item.EndTime).toDate().format("M/dd/yyyy HH:mm");
+                             
+                                
+                            //    //item.end = moment().add(2, 'hours').format("YYYY-MM-DDTHH:mm");
+                            //}
+                             
                              item.resourceId = item.ParentRecordId + item.ResourceID;
                         //   }
                         
-                            if (item.WorkOrderNumber == "YongTest7") {
-                                //item.start = moment().add(0, 'hours').format('HH:mm');
-                                //item.end = moment().add(4, 'hours').format('HH:mm');
-                                //item.start = moment().add(0, 'hours').format("YYYY-MM-DD HH:mm");
-                                //item.end = moment().add(2, 'hours').format("YYYY-MM-DDTHH:mm");
-                            }
+                            //if (item.WorkOrderNumber == "YongTest7") {
+                            //    item.start = moment().add(0, 'hours').format('HH:mm');
+                            //    item.end = moment().add(4, 'hours').format('HH:mm');
+                            //    //item.start = moment().add(0, 'hours').format("YYYY-MM-DD HH:mm");
+                            //    //item.end = moment().add(2, 'hours').format("YYYY-MM-DDTHH:mm");
+                            //}
 
-                            if (item.ResourceID.length > 0) {
-
-                            }
+                     
                             
                          //   item.editable = (item.ReturnedJob == 1) ? false : true;
 
@@ -3960,11 +3981,13 @@ function GetTruckInstallers(workOrder) {
 
 //}
 function AssignTruckToWO() {
-  
+
+
     $.ajax({
         url: 'data.svc/UpdateTruckWithWo?ActionItemId=' + AssignedTruckWithWO
             + '&TruckName=' + truckName.replace("(Add WorkOrder)", "").trim()
             + '&TruckID=' + truckRecordID,
+          
         type: "POST",
         success: function (data) {
             if (debug) console.log("events.success", "data.UpdateTruckWithWo:");
@@ -3988,7 +4011,11 @@ function AssignTruckToWO() {
 }
 
 function SaveTruckInstallationSchedule() {
-
+    var IsTruckAllDay = $("#IsTruckAllDay");
+    var isAllDayChecked = "";
+    if ($("#IsTruckAllDay")[0].checked) {
+        isAllDayChecked = "Yes";
+    }
     var startDate = $("#TruckInstallScheduledStartDate").val();
     var startTime = $("#TruckInstallScheduledStartTime").val();
 
@@ -4000,7 +4027,8 @@ function SaveTruckInstallationSchedule() {
             + '&startDate=' + startDate
             + '&startTime=' + startTime
             + '&endDate=' + endDate
-            + '&endTime=' + endTime,
+            + '&endTime=' + endTime
+            + '&isAllDayChecked=' + isAllDayChecked,
         type: "POST",
         success: function (data) {
             if (debug) console.log("events.success", "data.UpdateTruckWithWo:");
@@ -4008,6 +4036,9 @@ function SaveTruckInstallationSchedule() {
             $("#TruckWorkOrderPop .close").click();
             $('#calendar').fullCalendar('refetchResources');
             $('#calendar').fullCalendar('rerenderResources');
+
+            $('#calendar').fullCalendar('refetchEvents');
+            $('#calendar').fullCalendar('rerenderEvents');
 
             $('#calendar').fullCalendar('changeView', 'timelineDay');
 
@@ -4859,12 +4890,12 @@ function NotesEdit(recordid) {
 
 function IsTruckAlldayChecked() {
     var IsTruckAllDay = $("#IsTruckAllDay");
-    $("#TruckStartTime").show();
-    $("#TruckEndTime").show();
+    $("#TruckInstallScheduledStartTime").show();
+    $("#TruckInstallScheduledEndTime").show();
     if (IsTruckAllDay[0].checked) {
 
-        $("#TruckStartTime").hide();
-        $("#TruckEndTime").hide();
+        $("#TruckInstallScheduledStartTime").hide();
+        $("#TruckInstallScheduledEndTime").hide();
     }
    
 }

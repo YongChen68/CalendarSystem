@@ -84,8 +84,8 @@ namespace CalendarSystem
         bool UpdateTruckWithWo(string ActionItemId,string TruckName, string TruckID);
 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "UpdateTruckInstallationSchedule?ActionItemId={ActionItemId}&startDate={startDate}&startTime={startTime}&endDate={endDate}&endTime={endTime}")]
-        bool UpdateTruckInstallationSchedule(string ActionItemId, string startDate, string startTime,string endDate, string endTime);
+        [WebInvoke(Method = "POST", UriTemplate = "UpdateTruckInstallationSchedule?ActionItemId={ActionItemId}&startDate={startDate}&startTime={startTime}&endDate={endDate}&endTime={endTime}&isAllDayChecked={isAllDayChecked}")]
+        bool UpdateTruckInstallationSchedule(string ActionItemId, string startDate, string startTime,string endDate, string endTime,string isAllDayChecked);
 
 
 

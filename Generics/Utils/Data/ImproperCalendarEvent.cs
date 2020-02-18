@@ -44,6 +44,10 @@ namespace Generics.Utils
         public string CurrentStateName { get; set; }
 
         [DataMember]
+        public string AllDay { get; set; }
+
+
+        [DataMember]
         public string ReturnTripReason { get; set; }
 
     }

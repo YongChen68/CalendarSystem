@@ -151,6 +151,7 @@ namespace FlowfinityConnectionHelper
         {
             FASR.HomeInstallationsRecord record = new FASR.HomeInstallationsRecord();
             record.InstallationDates = PrepareInstallationDateList(data);
+          
             return record;
         }
 
@@ -460,11 +461,12 @@ namespace FlowfinityConnectionHelper
 
             DateTime start = Generics.Utils.Date.DateParser.ParseTime(data.start);
             DateTime end = Generics.Utils.Date.DateParser.ParseTime(data.end);
-
+            DateTime end1;
+            FASR.HomeInstallations_InstallationDatesRecord newRecord ;
             if ((end - start).TotalDays >= 1)
             {
-                end = end.AddDays(1);
-                while ((end - start).TotalDays >= 1)
+                end1 = end.AddDays(1);// -- changed on Feb  18,2020
+                while ((end1 - start).TotalDays >= 1)
                 {
                     //returnValue.Add(new FASR.HomeInstallations_InstallationDatesRecord()
                     //{
@@ -472,24 +474,42 @@ namespace FlowfinityConnectionHelper
                     //    EndTime = new FASR.DateTimeValue() { Value = end }
 
                     //});
-                    returnValue.Add(new FASR.HomeInstallations_InstallationDatesRecord()
-                    {
-                        ScheduledDate = new FASR.DateTimeValue() { Value = start }
-                  
+                    //  returnValue[0]
+                    newRecord = new FASR.HomeInstallations_InstallationDatesRecord();
+                    newRecord.AllDayEvent = new FASR.MultiSelection();
+                    newRecord.AllDayEvent.Selection = new String[] { data.AllDay.ToString() };
+                    newRecord.ScheduledDate = new FASR.DateTimeValue() { Value = start };
+                    newRecord.EndTime = new FASR.DateTimeValue() { Value = end };
+                    returnValue.Add(newRecord);
+                    //returnValue.Add(new FASR.HomeInstallations_InstallationDatesRecord()
+                    //{
+                    //    ScheduledDate = new FASR.DateTimeValue() { Value = start },
+                    // //   AllDayEvent = new FASR.MultiSelection().Selection
+                    ////AllDayEvent.sele. = Lift.II.IIUtils.CreateSingleSelectValue<StringValue>(data.AllDay)
 
-                    });
+                    ////CreateSingleSelectValue<StringValue>(c.FileName),
+
+                    //});
                     start = start.AddDays(1);
                 }
             }
             else
-                returnValue.Add(new FASR.HomeInstallations_InstallationDatesRecord()
-                {
-                    //ScheduledDate = new FASR.DateTimeValue() { Value = start },
-                    //EndTime = new FASR.DateTimeValue() { Value = end }
-                    ScheduledDate = new FASR.DateTimeValue() { Value = start },
-                    EndTime = new FASR.DateTimeValue() { Value = end }
+            {
+                newRecord = new FASR.HomeInstallations_InstallationDatesRecord();
+                newRecord.ScheduledDate = new FASR.DateTimeValue() { Value = start };
+                newRecord.EndTime = new FASR.DateTimeValue() { Value = end };
+                newRecord.AllDayEvent = new FASR.MultiSelection();
+                newRecord.AllDayEvent.Selection = new String[] { data.AllDay.ToString() };
+                returnValue.Add(newRecord);
+            }
+            //returnValue.Add(new FASR.HomeInstallations_InstallationDatesRecord()
+            //{
+            //    //ScheduledDate = new FASR.DateTimeValue() { Value = start },
+            //    //EndTime = new FASR.DateTimeValue() { Value = end }
+            //    ScheduledDate = new FASR.DateTimeValue() { Value = start },
+            //    EndTime = new FASR.DateTimeValue() { Value = end }
 
-                });
+            //});
             return returnValue.ToArray();
         }
 

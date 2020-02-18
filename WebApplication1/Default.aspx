@@ -1532,7 +1532,7 @@
                                     <input id="TruckInstallScheduledEndDate" style="text-align: center; border: 0; width: 80px;" data-toggle="tooltip" title="Date">
                                 &nbsp;  &nbsp; 
                                     
-                                   <input type="checkbox" name="state" value="All day" id="IsTruckAllDay1" onclick="IsTruckAlldayChecked();">&nbsp; All day
+                                   <input type="checkbox" name="state" value="All day" id="IsTruckAllDay" onclick="IsTruckAlldayChecked();">&nbsp; All day
                             </div>
 
                       
@@ -1597,7 +1597,7 @@
                                     <input id="TruckEndDate" style="text-align: center; border: 0; width: 80px;" data-toggle="tooltip" title="Date">
                                 &nbsp;
                                     
-                                   <input type="checkbox" name="state" value="All day" id="IsTruckAllDay" onclick="IsTruckAlldayChecked();">&nbsp; All day
+                                   <input type="checkbox" name="state" value="All day" id="IsTruckAllDay1" onclick="IsTruckAlldayChecked();">&nbsp; All day
                             </div>
                             <br />
                             <div style="margin-left: -350px;">

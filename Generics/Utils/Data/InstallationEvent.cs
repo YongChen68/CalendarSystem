@@ -64,6 +64,9 @@ namespace Generics.Utils.Data
         public DateTime ScheduledDate { get; set; }
 
         [DataMember]
+        public DateTime EndTime { get; set; }
+
+        [DataMember]
         public String WoodDropOffDate {
             get; set;
         }

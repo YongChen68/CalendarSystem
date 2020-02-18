@@ -266,8 +266,33 @@ where  i.WorkOrderNumber like '%{0}%'", WO);
             pars.Add(new System.Data.SqlClient.SqlParameter("WO", WO));
 
             List<ImproperTruckInstallationEvent> returnList = new List<ImproperTruckInstallationEvent>();
+
             returnList = Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.ImproperTruckInstallationEvent>(SQL, pars.ToArray());
-            return returnList;
+
+            return returnList.GroupBy(o => new { o.WorkOrderNumber })
+                              .Select(o => o.FirstOrDefault()).ToList();
+            //.Select(o=>o.ActionItemId).Select(y => y.First());
+            // return returnEventList.GroupBy(x => x.WorkOrderNumber).Select(y=>y.First());
+            //return returnEventList.GroupBy(x => x.WorkOrderNumber).Select(y => y.First())
+
+            //List<ImproperTruckInstallationEvent> tempList = new List<ImproperTruckInstallationEvent>();
+            //ImproperTruckInstallationEvent returnEvent = new ImproperTruckInstallationEvent();
+
+            //tempList = Lift.LiftManager.DbHelper.ReadObjects<Generics.Utils.ImproperTruckInstallationEvent>(SQL, pars.ToArray());
+
+            //foreach(ImproperTruckInstallationEvent mp in tempList)
+            //{
+            //    returnEvent.ActionItemId = mp.ActionItemId;
+            //    returnEvent.CurrentStateName =  mp.CurrentStateName;
+            //    returnEvent.start = tempList.Where(a => a.WorkOrderNumber == WO).Max(b => b.start);
+            //    returnEvent.end = tempList.Where(a => a.WorkOrderNumber == WO).Max(b => b.start);
+            //    returnEvent.CurrentStateName = mp.CurrentStateName;
+            //    returnEvent.CurrentStateName = mp.CurrentStateName;
+            //}
+
+            ////  newEvent.end = installationEventList.Where(a => a.WorkOrderNumber == eventx.WorkOrderNumber).Max(b => b.ScheduledDate).
+            //ToString();
+
 
         }
         private string GetInstallationSQL()
@@ -304,7 +329,7 @@ where  i.WorkOrderNumber like '%{0}%'", WO);
             }
 
 
-            string SQL = string.Format(@"select d.ScheduledDate1 as ScheduledDate,d.ParentRecordId, d.detailrecordid,count(c.detailrecordid) as detailrecordCount,1 as 'ReturnedJob'
+            string SQL = string.Format(@"select d.ScheduledDate1 as ScheduledDate,1 as EndTime,d.ParentRecordId, d.detailrecordid,count(c.detailrecordid) as detailrecordCount,1 as 'ReturnedJob'
 into #dates 
 from [HomeInstallations_ReturnTrip] d
 join [HomeInstallations_ReturnTrip] c
@@ -312,12 +337,12 @@ on d.ParentRecordId= c.ParentRecordId
 where d.ScheduledDate1 >= '{0} ' and d.ScheduledDate1 <= '{1} '
 group by d.ScheduledDate1,d.ParentRecordId, d.detailrecordid
 union all
-select d.ScheduledDate,d.ParentRecordId, d.detailrecordid,count(c.detailrecordid) as detailrecordCount,0 as 'ReturnedJob'
+select d.ScheduledDate,d.EndTime,d.ParentRecordId, d.detailrecordid,count(c.detailrecordid) as detailrecordCount,0 as 'ReturnedJob'
 from HomeInstallations_InstallationDates d
 join HomeInstallations_InstallationDates c
 on d.ParentRecordId= c.ParentRecordId
 where d.ScheduledDate >= '{0} ' and d.ScheduledDate <= '{1} '
-group by d.ScheduledDate,d.ParentRecordId, d.detailrecordid
+group by d.ScheduledDate,d.EndTime,d.ParentRecordId, d.detailrecordid
 
 
 select i.* into #installs from HomeInstallations i 
@@ -328,7 +353,7 @@ and  (((PlannedInstallWeek >= 53) and PlannedInstallWeek <= 53) or
 (PlannedInstallWeek >= 1 and PlannedInstallWeek <= 7)) and RecordId not in (select ParentRecordId from #dates d group by ParentRecordId) and 
 Branch in ({2})
 
-select WorkOrderNumber, LastName,FirstName,  HomeDepotJob, AgeOfHome,ResourceID,HazardousBudgetedLBR,WoodDropOffDate,City,PostCode, Email,SalesRep,LeadPaint,ReturnedJob,ReturnTripReason,
+select WorkOrderNumber, LastName,FirstName,  HomeDepotJob, AgeOfHome,IIF (ResourceID  is null , '''',ResourceID ) AS ResourceID,HazardousBudgetedLBR,WoodDropOffDate,City,PostCode, Email,SalesRep,LeadPaint,ReturnedJob,ReturnTripReason,
 StartScheduleDate,EndScheduleDate,SalesAmmount,TotalSalesAmount,TotalAsbestos,TotalWoodDropOff,TotalHighRisk,
 TotalDoors,TotalWindows,Windows,Doors,ExtDoors,TotalExtDoors,MinAvailable/detailrecordCount as MinAvailable,SalesTarget/detailrecordCount as SalesTarget,
 DetailRecordId,ParentRecordId,id,detailrecordCount,saturday, sunday, 
@@ -341,7 +366,7 @@ SidingLBRBudget,SidingLBRMin,SidingSQF,SubTradeFlag,
 
 jobtype,CurrentStateName,null as Hours, null as hours, HomePhoneNumber, CellPhone, WorkPhoneNumber, 
 
-EstInstallerCnt, StreetAddress, ScheduledDate, case when ScheduledDate is null
+EstInstallerCnt, StreetAddress, ScheduledDate, EndTime,case when ScheduledDate is null
 then PlannedInstallWeek else null end as PlannedInstallWeek, PaintedProduct, Branch 
 from (
 SELECT   i.Branch_Display as Branch, i.PaintedProduct, ReturnedJob,ReturnTripReason, HazardousBudgetedLBR, HomeDepotJob, AgeOfHome,
@@ -359,7 +384,7 @@ dbo.fGetSalesTarget(ScheduledDate,Branch) as SalesTarget,
 round(i.Windows/detailrecordCount,2) as Windows, round(i. PatioDoors/detailrecordCount,2) as Doors,round(i. ExtDoors/detailrecordCount,2) as ExtDoors,
 i.Windows as TotalWindows, i.PatioDoors as TotalDoors,  i.ExtDoors as TotalExtDoors,
 
-						   d.ScheduledDate, 
+						   d.ScheduledDate, d.EndTime,
                          
 (SELECT count(*) 
           FROM HomeInstallations
@@ -421,6 +446,9 @@ drop table #installs
                 newEvent.Doors = eventx.Doors;
                 newEvent.HazardousBudgetedLBR= eventx.HazardousBudgetedLBR;
 
+                
+
+
 
                 newEvent.detailrecordCount = eventx.detailrecordCount;
 
@@ -440,6 +468,8 @@ drop table #installs
 
                 newEvent.end = installationEventList.Where(a => a.WorkOrderNumber == eventx.WorkOrderNumber).Max(b => b.ScheduledDate).
                    ToString();
+
+                newEvent.EndTime = installationEventList.Where(a => a.WorkOrderNumber == eventx.WorkOrderNumber).Min(b => b.EndTime);
 
                 newEvent.WoodDropOffDate = eventx.WoodDropOffDate;
 
@@ -623,7 +653,7 @@ drop table #installs
                 newEvent.Doors = returnedEvent.Doors;
 
                 newEvent.ParentRecordId = returnedEvent.ParentRecordId;
-
+             //   newEvent.EndTime = returnedEvent.EndTime;
                 // newEvent.DoorState = returnedEvent.DoorState;
                 newEvent.detailrecordCount = returnedEvent.detailrecordCount;
                 newEvent.start = returnedEventList.Where(a => a.WorkOrderNumber == returnedEvent.WorkOrderNumber).Min(b => b.ScheduledDate).
@@ -631,6 +661,9 @@ drop table #installs
 
                 newEvent.end = returnedEventList.Where(a => a.WorkOrderNumber == returnedEvent.WorkOrderNumber).Max(b => b.ScheduledDate).
                    ToString();
+
+
+               newEvent.EndTime = returnedEventList.Where(a => a.WorkOrderNumber == returnedEvent.WorkOrderNumber).Min(b => b.EndTime);
 
                 newEvent.HomeDepotJob = returnedEvent.HomeDepotJob;
                 newEvent.AgeOfHome = returnedEvent.AgeOfHome;

@@ -756,6 +756,7 @@ namespace CalendarSystem
                 eventData.id = ActionItemId;
                 eventData.TruckName = TruckName;
                 eventData.TruckID = TruckID;
+                
 
                 RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
                 retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), eventData);
@@ -775,6 +776,7 @@ namespace CalendarSystem
          , string startTime
          , string endDate
          , string endTime
+         , string isAllDayChecked
        )
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateTruckInstallationSchedule('{0}')", ActionItemId);
@@ -782,23 +784,26 @@ namespace CalendarSystem
             ImproperInstallationEvent eventData = null;
 
             bool retValue = false;
+            string timeGap = " 00:00";
             try
             {
                 eventData = new ImproperInstallationEvent();
                 eventData.id = ActionItemId;
+                eventData.AllDay = isAllDayChecked;
+
                 eventData.start = Convert.ToDateTime(startDate + " " + startTime).ToString("yyyy-MM-ddTHH:mm:00.000Z");
-                //if (startTime.Length!=0)
-                //{
-                //    eventData.start = startDate + " " + startTime;
-                //}
-                // calledLogOffDate = Generics.Utils.Date.DateParser.ParseTime(Convert.ToDateTime(startDate).ToString("yyyy-MM-ddTHH:mm:00.000Z"));
                 eventData.end = Convert.ToDateTime(endDate + " " + endTime).ToString("yyyy-MM-ddTHH:mm:00.000Z");
 
-                //if (endTime.Length != 0)
-                //{
-                //    eventData.end = endDate + " " + endTime;
-                //}
-
+                if (startDate== endDate)
+                {
+                    timeGap = " 23:59";
+                }
+                if (isAllDayChecked=="Yes")
+                {
+                    eventData.start = Convert.ToDateTime(startDate + " 00:00").ToString("yyyy-MM-ddTHH:mm:00.000Z");
+                    eventData.end = Convert.ToDateTime(endDate + timeGap).ToString("yyyy-MM-ddTHH:mm:00.000Z");
+                }
+        
                 RuntimeHelper.Runtime runner = new RuntimeHelper.Runtime();
                 retValue = runner.ProcessUpdate(Utils.ContentTypeParser.GetType("Installation"), eventData);
 
