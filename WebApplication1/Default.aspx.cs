@@ -121,6 +121,13 @@ namespace CalendarSystem
         {
             // eventData.end =Convert.ToDateTime(eventData.end).AddDays(-1).ToShortDateString();
             //eventData.end = Convert.ToDateTime(eventData.end).AddDays(0).ToString("yyyy-MM-ddT00:00:00.000Z");
+            eventData.AllDay = "Yes";
+            if (DateTime.Parse(eventData.start).ToUniversalTime().Hour>0)
+            {
+                eventData.AllDay = "";
+
+            }
+
             if (eventData.end== eventData.start)
             {
                 eventData.end = Convert.ToDateTime(eventData.end).AddDays(1).ToString("yyyy-MM-ddT00:00:00.000Z");
