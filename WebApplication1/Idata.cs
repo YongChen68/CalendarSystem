@@ -48,9 +48,9 @@ namespace CalendarSystem
         bool UpdateReturnedJobSchedule(string id, string scheduledStartDate, string scheduledEndDate, string returnTripReason);
 
         [OperationContract]
-        [WebInvoke(Method = "POST", UriTemplate = "UpdateInstallationData?id={id}&scheduledStartDate={scheduledStartDate}&scheduledEndDate={scheduledEndDate}&Asbestos={Asbestos}" +
-            "&WoodDropOff={WoodDropOff}&woodDropOffDate={woodDropOffDate}&woodDropOffTime={woodDropOffTime}&HighRisk={HighRisk}&EstInstallerCnt={EstInstallerCnt}&Saturday={Saturday}&Sunday={Sunday}&LeadPaint={LeadPaint}")]
-        bool UpdateInstallationData(string id, string scheduledStartDate, string scheduledEndDate,int Asbestos, int WoodDropOff, string woodDropOffDate, string woodDropOffTime, int HighRisk, int EstInstallerCnt, string Saturday, string Sunday, string LeadPaint);
+        [WebInvoke(Method = "POST", UriTemplate = "UpdateInstallationData?id={id}&scheduledStartDate={scheduledStartDate}&scheduledEndDate={scheduledEndDate}&Asbestos={Asbestos}&startTime={startTime}&endTime={endTime}" +
+            "&WoodDropOff={WoodDropOff}&woodDropOffDate={woodDropOffDate}&woodDropOffTime={woodDropOffTime}&HighRisk={HighRisk}&EstInstallerCnt={EstInstallerCnt}&Saturday={Saturday}&Sunday={Sunday}&LeadPaint={LeadPaint}&isAllDayChecked={isAllDayChecked}")]
+        bool UpdateInstallationData(string id, string scheduledStartDate, string scheduledEndDate, string startTime, string endTime, int Asbestos, int WoodDropOff, string woodDropOffDate, string woodDropOffTime, int HighRisk, int EstInstallerCnt, string Saturday, string Sunday, string LeadPaint, string isAllDayChecked);
 
         [OperationContract]
         [WebInvoke(Method = "POST", UriTemplate = "UpdateRemeasureData?id={id}&remeasureDate={remeasureDate}&remeasureEndDate={remeasureEndDate}&fromPopup={fromPopup}&currentState={currentState}")]

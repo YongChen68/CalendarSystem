@@ -1310,7 +1310,7 @@ $(document).ready(function () {
                         eventWODict = [];
                         var con;
                         $.each(data.GetInstallationEventsResult, function (pos, item) {
-                            item.allDay = true;
+                        //    item.allDay = true;
                         //    if (item.WorkOrderNumber == "YongTest7") {
 
                             if ((item.ResourceID == undefined) || (item.ResourceID==null)) {
@@ -1319,8 +1319,9 @@ $(document).ready(function () {
                             }
                             else if (item.ResourceID.length>1)
                             {
-                                item.end = moment(item.EndTime).toDate().format("M/dd/yyyy HH:mm");
-                                item.allDay = false;
+                              // item.end = moment(item.EndTime).toDate().format("M/dd/yyyy HH:mm");
+                                item.end =   moment(item.end).add(24, 'hours').format("YYYY-MM-DD HH:mm");
+                               // item.allDay = false;
                             }
                             //if (item.WorkOrderNumber == "YongTest7") {
 
@@ -1744,8 +1745,12 @@ $(document).ready(function () {
                         }
 
                      
-                            $("#InstallScheduledStartDate").prop("disabled", true);
-                            $("#InstallScheduledEndDate").prop("disabled", true);
+                        $("#InstallScheduledStartDate").prop("disabled", true);
+                        $("#InstallScheduledStartTime").prop("disabled", true);
+
+                        $("#InstallScheduledEndDate").prop("disabled", true);
+                        $("#InstallScheduledEndTime").prop("disabled", true);
+
                         $("#InstallScheduledStartDate").val(new Date(GetDatefromMoment(event.StartScheduleDate + 24 * 60 * 60000)).toLocaleDateString('en-US'));
                         $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(event.EndScheduleDate + 24 * 60 * 60000)).toLocaleDateString('en-US'));
 
@@ -1779,16 +1784,28 @@ $(document).ready(function () {
                     }
                     else {
                
-                        $("#InstallScheduledStartDate").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+                     //   $("#InstallScheduledStartDate").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+                        //$("#InstallScheduledStartDate").val(new Date(GetDatefromMoment(event.start)).toLocaleDateString('en-US'));
+                        $("#InstallScheduledStartDate").val(moment(event.start).add(0, 'hours').format('MM/DD/YYYY'));
+
+                        $("#InstallScheduledStartTime").val(moment(event.start).add(0, 'hours').format('HH:mm'));
 
                     if (event.end == null) {
-                        $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+                       // $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(event.start + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+                      //  $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(event.start )).toLocaleDateString('en-US'));
+                        $("#InstallScheduledEndDate").val(moment(event.start).add(0, 'hours').format('MM/DD/YYYY'));
                     }
                     else {
-                        $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(event.end + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+                      //  $("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(event.end + 24 * 60 * 60000)).toLocaleDateString('en-US'));
+                        //$("#InstallScheduledEndDate").val(new Date(GetDatefromMoment(event.end )).toLocaleDateString('en-US'));
+                        $("#InstallScheduledEndDate").val(moment(event.end).add(-24, 'hours').format('MM/DD/YYYY'));
+                        $("#InstallScheduledEndTime").val(moment(event.EndTime).add(0, 'hours').format('HH:mm'));
                     }
                         $("#InstallScheduledStartDate").prop("disabled", false);
                         $("#InstallScheduledEndDate").prop("disabled", false);
+
+                        $("#InstallScheduledStartTime").prop("disabled", false);
+                        $("#InstallScheduledEndTime").prop("disabled", false);
 
                         if (event.StartScheduleDate != null) {
                             $("#from_date").prop("disabled", true);
@@ -3077,11 +3094,24 @@ function UpdateInstallationEvents() {
         UpdateReturnedJobSchedule();
     }
 
+    //if ($("#IsTruckAllDay")[0].checked) {
+    //    isAllDayChecked = "Yes";
+    //}
+    var isAllDayChecked = "";
+    if ($("#IsAllDay")[0].checked) {
+        isAllDayChecked = "Yes";
+    }
+
+    
 
     var i = eventid;
     var scheduledStartDate, scheduledEndDate;
     scheduledStartDate = $("#InstallScheduledStartDate").val();
     scheduledEndDate = $("#InstallScheduledEndDate").val();
+    var startTime = $("#InstallScheduledStartTime").val();
+    var endTime = $("#InstallScheduledEndTime").val();
+    
+
 
     var Asbestos = 0, WoodDropOff = 0, HighRisk = 0;
     var LeadPaint = 'No'; 
@@ -3111,11 +3141,13 @@ function UpdateInstallationEvents() {
     $.ajax({
         url: 'data.svc/UpdateInstallationData?id=' + eventid
             + '&ScheduledStartDate=' + scheduledStartDate + '&scheduledEndDate=' + scheduledEndDate
+            + '&startTime=' + startTime + '&endTime=' + endTime
             + '&Asbestos=' + Asbestos + '&WoodDropOff=' + WoodDropOff
             + '&woodDropOffDate=' + WoodDropOffDate
             + '&woodDropOffTime=' + WoodDropOffTime
             + '&HighRisk=' + HighRisk + '&EstInstallerCnt=' + NumOfInstallers
-            + '&Saturday=' + isSaturdayChecked + '&Sunday=' + isSundayChecked + '&LeadPaint=' + LeadPaint,
+            + '&Saturday=' + isSaturdayChecked + '&Sunday=' + isSundayChecked + '&LeadPaint=' + LeadPaint
+            + '&isAllDayChecked=' + isAllDayChecked,
         type: "POST",
         success: function (data) {
             if (debug) console.log("events.success", "data.UpdateInstallationEvents:");
@@ -4011,7 +4043,6 @@ function AssignTruckToWO() {
 }
 
 function SaveTruckInstallationSchedule() {
-    var IsTruckAllDay = $("#IsTruckAllDay");
     var isAllDayChecked = "";
     if ($("#IsTruckAllDay")[0].checked) {
         isAllDayChecked = "Yes";
@@ -4890,14 +4921,38 @@ function NotesEdit(recordid) {
 
 function IsTruckAlldayChecked() {
     var IsTruckAllDay = $("#IsTruckAllDay");
-    $("#TruckInstallScheduledStartTime").show();
-    $("#TruckInstallScheduledEndTime").show();
+    //$("#TruckInstallScheduledStartTime").show();
+    //$("#TruckInstallScheduledEndTime").show();
+
+    document.getElementById("TruckInstallScheduledStartTime").style.visibility = "visible";
+    document.getElementById("TruckInstallScheduledEndTime").style.visibility = "visible";
+
     if (IsTruckAllDay[0].checked) {
 
-        $("#TruckInstallScheduledStartTime").hide();
-        $("#TruckInstallScheduledEndTime").hide();
+        //$("#TruckInstallScheduledStartTime").hide();
+        //$("#TruckInstallScheduledEndTime").hide();
+        document.getElementById("TruckInstallScheduledStartTime").style.visibility = "hidden";
+        document.getElementById("TruckInstallScheduledEndTime").style.visibility = "hidden";
     }
    
+}
+
+function IsAllDayChecked() {
+    var IsAllDay = $("#IsAllDay");
+    //$("#TruckInstallScheduledStartTime").show();
+    //$("#TruckInstallScheduledEndTime").show();
+
+    document.getElementById("InstallScheduledStartTime").style.visibility = "visible";
+    document.getElementById("InstallScheduledEndTime").style.visibility = "visible";
+
+    if (IsAllDay[0].checked) {
+
+        //$("#TruckInstallScheduledStartTime").hide();
+        //$("#TruckInstallScheduledEndTime").hide();
+        document.getElementById("InstallScheduledStartTime").style.visibility = "hidden";
+        document.getElementById("InstallScheduledEndTime").style.visibility = "hidden";
+    }
+
 }
 
 function SaveTruckModal() {

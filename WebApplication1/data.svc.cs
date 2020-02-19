@@ -77,7 +77,7 @@ namespace CalendarSystem
                 foreach (Holiday holiday in retValue1)
                 {
                     myEvent = new InstallationEvent();
-                    myEvent.allDay = true;
+                    myEvent.allDay = "Yes";
                     myEvent.HolidayDate = holiday.HolidayDate;
                     myEvent.start = holiday.HolidayDate.ToShortDateString();
                     myEvent.end = holiday.HolidayDate.ToShortDateString();
@@ -111,7 +111,7 @@ namespace CalendarSystem
                 foreach (UnavailableHR un in retValue2)
                 {
                     myEvent = new InstallationEvent();
-                    myEvent.allDay = true;
+                    myEvent.allDay = "Yes";
                     myEvent.start = un.DateUnavailable;
                     myEvent.end = un.DateUnavailable;
                     myEvent.WorkOrderNumber = un.Name + un.DateUnavailable;
@@ -396,28 +396,45 @@ namespace CalendarSystem
                 string id
                 , string scheduledStartDate
                 , string scheduledEndDate
+                 , string startTime
+                , string endTime
                 , int Asbestos
                 , int WoodDropOff
                 , string woodDropOffDate
                 , string woodDropOffTime
-
                 , int HighRisk
                  , int EstInstallerCnt
                 , string Saturday
                  , string Sunday
                 , string LeadPaint
+                , string isAllDayChecked
+
             )
         {
             Lift.LiftManager.Logger.Write(this.GetType().Name, "UpdateInstallationData('{0}')", id);
             InstallationDataEvent eventData = null;
             bool retValue = false;
+            string timeGap = " 00:00";
             try
             {
                 eventData = new InstallationDataEvent();
                 eventData.id = id;
 
-                eventData.start = Convert.ToDateTime(scheduledStartDate).ToString("yyyy-MM-ddT00:00:00.000Z");
-                eventData.end = Convert.ToDateTime(scheduledEndDate).ToString("yyyy-MM-ddT00:00:00.000Z");
+                eventData.AllDay = isAllDayChecked;
+                               
+                eventData.start = Convert.ToDateTime(scheduledStartDate + " " + startTime).ToString("yyyy-MM-ddTHH:mm:00.000Z");
+                eventData.end = Convert.ToDateTime(scheduledEndDate + " " + endTime).ToString("yyyy-MM-ddTHH:mm:00.000Z");
+
+                if (scheduledStartDate == scheduledEndDate)
+                {
+                    timeGap = " 23:59";
+                }
+                if (isAllDayChecked == "Yes")
+                {
+                    eventData.start = Convert.ToDateTime(scheduledStartDate + " 00:00").ToString("yyyy-MM-ddTHH:mm:00.000Z");
+                    eventData.end = Convert.ToDateTime(scheduledEndDate + timeGap).ToString("yyyy-MM-ddTHH:mm:00.000Z");
+                }
+
 
                 eventData.Asbestos = Asbestos;
                 eventData.WoodDropOff = WoodDropOff;

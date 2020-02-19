@@ -515,12 +515,12 @@
 
         .leftcolumn {
             float: left;
-            width: 20%;
+            width: 30%;
         }
 
         .rightcolumn {
             float: left;
-            width: 80%;
+            width: 70%;
         }
 
         /* Clear floats after the columns */
@@ -662,10 +662,20 @@
                                             <div class="leftcolumn">
                                                 <div class="container">
                                                     <div class="leftcolumn" style="width: 5%; align-items: center;">
-                                                        Start Date:
+                                                       
                                                     </div>
-                                                    <div class="rightcolumn" style="width: 20%;">
-                                                        <input id="InstallScheduledStartDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
+                                                    <div class="rightcolumn" style="width: 95%;">
+                                                        <div class="container">
+                                                                <div class="leftcolumn" style="width: 15%; align-items: center;">
+                                                                      <input id="InstallScheduledStartDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="Start Date">
+                                                                </div>
+                                                             <div class="rightcolumn" style="width: 85%; align-items: center; margin-top:8px;">
+                                                                 <input type="time" id="InstallScheduledStartTime" name="appt" style="border: 0; width: 100px;">
+                                                                </div>
+
+                                                        </div>
+                                                      
+                                                        
                                                     </div>
 
                                                 </div>
@@ -673,12 +683,22 @@
                                             </div>
                                             <div class="rightcolumn">
                                                 <div class="container">
-                                                    <div class="leftcolumn" style="width: 5%; padding-left: 50px;">
-                                                        End Date:
+                                                    <div class="leftcolumn" style="width: 5%; padding-left: 250px;">
+                                                       
                                                     </div>
 
                                                     <div class="rightcolumn" style="padding-left: 50px; width: 5%;">
-                                                        <input id="InstallScheduledEndDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
+                                                          <div class="container">
+                                                                <div class="leftcolumn" style="width: 15%; align-items: center;margin-top:8px;">
+                                                                     <input type="time" id="InstallScheduledEndTime" name="appt" style="border: 0; width: 100px;">
+                                                                </div>
+                                                               <div  class="rightcolumn" style="width: 85%; align-items: center; ">
+                                                                   <input id="InstallScheduledEndDate" style="width: 160px; text-align: center;" class="form-control" data-toggle="tooltip" title="End Date">
+                                                                </div>
+                                                              <input type="checkbox" name="state" value="All day" id="IsAllDay" onclick="IsAllDayChecked();">&nbsp; All day
+                                                          </div>
+                                                        
+                                                        
                                                     </div>
                                                 </div>
                                             </div>

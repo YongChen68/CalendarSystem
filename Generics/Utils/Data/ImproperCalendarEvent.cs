@@ -141,6 +141,8 @@ public class InstallationDataEvent
         {
             get; set;
         }
+        [DataMember]
+        public string AllDay { get; set; }
 
 
     }

@@ -329,7 +329,7 @@ where  i.WorkOrderNumber like '%{0}%'", WO);
             }
 
 
-            string SQL = string.Format(@"select d.ScheduledDate1 as ScheduledDate,1 as EndTime,d.ParentRecordId, d.detailrecordid,count(c.detailrecordid) as detailrecordCount,1 as 'ReturnedJob'
+            string SQL = string.Format(@"select d.ScheduledDate1 as ScheduledDate,1 as EndTime,'''' as AllDayEvent,d.ParentRecordId, d.detailrecordid,count(c.detailrecordid) as detailrecordCount,1 as 'ReturnedJob'
 into #dates 
 from [HomeInstallations_ReturnTrip] d
 join [HomeInstallations_ReturnTrip] c
@@ -337,12 +337,12 @@ on d.ParentRecordId= c.ParentRecordId
 where d.ScheduledDate1 >= '{0} ' and d.ScheduledDate1 <= '{1} '
 group by d.ScheduledDate1,d.ParentRecordId, d.detailrecordid
 union all
-select d.ScheduledDate,d.EndTime,d.ParentRecordId, d.detailrecordid,count(c.detailrecordid) as detailrecordCount,0 as 'ReturnedJob'
+select d.ScheduledDate,d.EndTime,d.AllDayEvent,d.ParentRecordId, d.detailrecordid,count(c.detailrecordid) as detailrecordCount,0 as 'ReturnedJob'
 from HomeInstallations_InstallationDates d
 join HomeInstallations_InstallationDates c
 on d.ParentRecordId= c.ParentRecordId
 where d.ScheduledDate >= '{0} ' and d.ScheduledDate <= '{1} '
-group by d.ScheduledDate,d.EndTime,d.ParentRecordId, d.detailrecordid
+group by d.ScheduledDate,d.EndTime,d.AllDayEvent,d.ParentRecordId, d.detailrecordid
 
 
 select i.* into #installs from HomeInstallations i 
@@ -366,7 +366,7 @@ SidingLBRBudget,SidingLBRMin,SidingSQF,SubTradeFlag,
 
 jobtype,CurrentStateName,null as Hours, null as hours, HomePhoneNumber, CellPhone, WorkPhoneNumber, 
 
-EstInstallerCnt, StreetAddress, ScheduledDate, EndTime,case when ScheduledDate is null
+EstInstallerCnt, StreetAddress, ScheduledDate, EndTime,AllDayEvent as allDay,case when ScheduledDate is null
 then PlannedInstallWeek else null end as PlannedInstallWeek, PaintedProduct, Branch 
 from (
 SELECT   i.Branch_Display as Branch, i.PaintedProduct, ReturnedJob,ReturnTripReason, HazardousBudgetedLBR, HomeDepotJob, AgeOfHome,
@@ -384,7 +384,7 @@ dbo.fGetSalesTarget(ScheduledDate,Branch) as SalesTarget,
 round(i.Windows/detailrecordCount,2) as Windows, round(i. PatioDoors/detailrecordCount,2) as Doors,round(i. ExtDoors/detailrecordCount,2) as ExtDoors,
 i.Windows as TotalWindows, i.PatioDoors as TotalDoors,  i.ExtDoors as TotalExtDoors,
 
-						   d.ScheduledDate, d.EndTime,
+						   d.ScheduledDate, d.EndTime,d.AllDayEvent,
                          
 (SELECT count(*) 
           FROM HomeInstallations
@@ -635,6 +635,7 @@ drop table #installs
                 newEvent.Email = eventx.Email;
                 newEvent.SalesRep = eventx.SalesRep;
                 newEvent.LeadPaint = eventx.LeadPaint;
+                newEvent.allDay = eventx.allDay;
 
                 woList.Add(eventx.WorkOrderNumber);
                 returnEventList.Add(newEvent);
@@ -738,6 +739,7 @@ drop table #installs
                 newEvent.StrWoodDropOffTime = returnedEvent.StrWoodDropOffTime;
                 newEvent.MinAvailable = returnedEvent.MinAvailable;
                 newEvent.SalesTarget = returnedEvent.SalesTarget;
+                newEvent.allDay = returnedEvent.allDay;
 
                 woList.Add(returnedEvent.WorkOrderNumber);
                 returnEventList.Add(newEvent);

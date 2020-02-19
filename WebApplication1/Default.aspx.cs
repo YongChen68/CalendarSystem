@@ -117,20 +117,28 @@ namespace CalendarSystem
         }
 
         [System.Web.Services.WebMethod(true)]
-        public static bool UpdateInstallationEventTime(string type, Generics.Utils.ImproperInstallationEvent eventData)
+        public static bool UpdateInstallationEventTime(string type, Generics.Utils.ImproperInstallationEvent parEventData)
         {
             // eventData.end =Convert.ToDateTime(eventData.end).AddDays(-1).ToShortDateString();
             //eventData.end = Convert.ToDateTime(eventData.end).AddDays(0).ToString("yyyy-MM-ddT00:00:00.000Z");
+            ImproperInstallationEvent eventData = new ImproperInstallationEvent();
+            //if (Convert.ToDateTime(parEventData.start).AddDays(1) == Convert.ToDateTime(parEventData.end))
+            //{
+            //    eventData.end = Convert.ToDateTime(parEventData.end).AddDays(-1).ToString("yyyy-MM-ddT00:00:00.000Z");
+            //}
+            eventData = parEventData;
+            eventData.end = Convert.ToDateTime(parEventData.end).ToString("yyyy-MM-ddT00:00:00.000Z");
             eventData.AllDay = "Yes";
-            if (DateTime.Parse(eventData.start).ToUniversalTime().Hour>0)
-            {
-                eventData.AllDay = "";
 
-            }
+            //if (DateTime.Parse(parEventData.start).ToUniversalTime().Hour>0)
+            //{
+            //    eventData.AllDay = "";
 
-            if (eventData.end== eventData.start)
+            //}
+            eventData.start = Convert.ToDateTime(parEventData.end).ToString("yyyy-MM-ddT00:00:00.000Z");
+            if (parEventData.end== parEventData.start)
             {
-                eventData.end = Convert.ToDateTime(eventData.end).AddDays(1).ToString("yyyy-MM-ddT00:00:00.000Z");
+                eventData.end = Convert.ToDateTime(parEventData.end).AddDays(1).ToString("yyyy-MM-ddT00:00:00.000Z");
             }
             else
             {

@@ -193,9 +193,14 @@ namespace Generics.Utils.Data
         public string EstInstallerCnt { get; set; }
 
 
+        //[DataMember]
+        //[Lift.Database.DbIgnore]
+        //public bool allDay { get; set; }
+
+
+
         [DataMember]
-        [Lift.Database.DbIgnore]
-        public bool allDay { get; set; }
+        public string allDay { get; set; }
 
         [DataMember]
         public decimal Windows
