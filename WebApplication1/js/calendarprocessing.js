@@ -1702,7 +1702,7 @@ $(document).ready(function () {
                     if (event.TotalHighRisk == 1) {
                         // 
                         $("#HighRisk-JobsYes").prop("checked", true);
-                        $("HighRisk-JobsNo").prop("checked", false);
+                        $("HighRisk-JobsNo").prop("checked", false); 
                     }
                     else {
                         $("#HighRisk-JobsNo").prop("checked", true);

@@ -193,7 +193,9 @@
 
 
         function codeAddress() {
+          //  alert(document.getElementById('City').innerHTML);
             var address = document.getElementById('Address').innerHTML + "," + document.getElementById('City').innerHTML;
+          //  alert(address);
             var request = {
                 address: address,
                 componentRestrictions: {
@@ -599,7 +601,7 @@
                             <!-- Tab panes -->
                             <div class="tab-content">
                                 <div role="tabpanel" class="tab-pane active" id="CustomerTab">
-                                    <div id="map"></div>
+                                    <div id="map" style="height: 500px; margin-top: 20px;"></div>
 
                                     <div id="content">
                                         <br>
