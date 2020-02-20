@@ -353,6 +353,7 @@
             overflow-y: auto;
             height: 1000px;
         }
+    
 
 
             #external-events, #external-events1, #external-eventsRemeasure h4 {
@@ -364,18 +365,24 @@
                 #external-events .fc-event {
                     margin: 10px 0;
                     cursor: pointer;
+                    color:black;
                 }
 
                 #external-events1 .fc-event {
                     margin: 10px 0;
                     cursor: pointer;
+                    color:black;
                 }
 
             #external-eventsRemeasure .fc-event {
                 margin: 10px 0;
                 cursor: pointer;
+                 color:black;
             }
 
+            #calendar .fc-event .fc-time {
+                color: black;
+             }
             #external-events p {
                 margin: 1.5em 0;
                 font-size: 11px;
@@ -412,6 +419,7 @@
         #calendar {
             float: right;
             width: 85%;
+          
         }
 
         #eventContent {
@@ -1076,7 +1084,8 @@
                                     <div style="overflow: auto;">
                                         <table id="dataTableDocumentLibrary" class="table table-striped table-bordered table-hover table-condensed"></table>
                                     </div>
-                                    <div style="margin-left: -1100px;">
+                                    <div style="                                            margin-left: -1100px;
+                                    ">
                                         <label for="documentNotes">File Name:</label>
 
                                         <input id="documentFile" style="text-align: center;">

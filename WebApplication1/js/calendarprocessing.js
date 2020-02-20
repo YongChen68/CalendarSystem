@@ -1141,7 +1141,14 @@ $(document).ready(function () {
         header: {
             left: 'prev,next today, changeType,applyFilters,applyInstallationFilters,applyRemeasureFilters,changeBranch,changeJobType,changeShippingType',
             center: 'title',
-            right: 'ShowKelownaBranch,ShowLowerMainlandBranch,ShowNanaimoBranch,ShowVictoriaBranch,ShowWIP,month,agendaWeek,agendaDay,timelineDay'
+            right: 'ShowKelownaBranch,ShowLowerMainlandBranch,ShowNanaimoBranch,ShowVictoriaBranch,ShowWIP,month,agendaWeek,agendaOneDay,timelineDay'
+        },
+        views: {
+            agendaOneDay: {
+                type: 'agenda',
+                duration: { days: 1 },
+                buttonText: 'day1'
+            }
         },
        // GetResources();
         resourceLabelText: 'Resources',
@@ -1503,7 +1510,9 @@ $(document).ready(function () {
         },//: eventUpdate,
         eventResize: eventUpdate,
         eventRender: function (event, element, view) {
-          
+            element.css({
+                'color': 'black'
+            });
 
             if (renderingComplete) {
                 renderingComplete = false;
@@ -2593,7 +2602,8 @@ $(document).ready(function () {
         //    else if (day >= offsets.length) {
         //        return offsets[offsets.length - 1] + 1;
         //    }
-        //    else {
+        //    else {agendaWeek
+
         //        return offsets[day];
         //    }
         //},
@@ -2603,50 +2613,13 @@ $(document).ready(function () {
             ControlHeaderVisibility(GetDisplayItemList(displayType));
             if (view.type == 'agendaWeek') {
                 $('#calendar').fullCalendar('refetchEvents');
+                $('#calendar').fullCalendar('changeView', 'agendaWeek');
             }
             else if (view.type == 'timelineDay') {
-                //var month = new Array();
-
-                //var monthSource = new Object();
-                //monthSource.id = "1";
-                //monthSource.resourceId = "16398921TruckName049";
-
-                //monthSource.title = 'MONTH'; // this should be string
-                //monthSource.start = '2020-02-06T12:00:00'; // this should be date object
-                //monthSource.end = '2020-02-06T12:05:00';
-
-                
-                //month[0] = monthSource;
-
-               // month = { id: '1', resourceId: '16398921', start: '2020-02-06T12:00:00', end: '2020-02-06T12:05:00', title: 'Carico su camion', id_evento_collegato: [2, 3, 4, 5, 6, 7] };
-                //events1: [
-                //    { id: '1', resourceId: '16398921', start: '2020-02-06T12:00:00', end: '2020-02-06T12:05:00', title: 'Carico su camion', id_evento_collegato: [2, 3, 4, 5, 6, 7] },
-                //    { id: '2', resourceId: '16398917', start: '2020-02-06T13:00:00', end: '2020-02-06T14:00:00', title: 'Viaggio', id_evento_collegato: [1, 3, 4, 5, 6, 7], editable: false, backgroundColor: "red" }
-
-                //];
-                //event1
-             //   $('#calendar').fullCalendar('addEventSource', month);
-                //$('#calendar').fullCalendar('removeResource', '16398921TruckName049');
-                //$('#calendar').fullCalendar('removeResource', '16398917TruckName049');
-                //$('#calendar').fullCalendar('removeResource', '16398917TruckName070');
-                //$('#calendar').fullCalendar('removeResource', '072');
-
-              //  $('#calendar').fullCalendar(resources, '16398921TruckName049');
-                //$('#calendar').fullCalendar('addResource', {
-                //    id: 'e',
-                //    title: 'Room E'
-                
-                //});
-
-                //var resource = $("#calendar").fullCalendar("getResourceById", "e");
-              //  $(element).find(".fc-content").append("<div>" + resource.title + "</div>");
-              
-             //   $('#calendar').fullCalendar('renderEvents');
-              
-                
-                
-
-
+                $('#calendar').fullCalendar('changeView', 'timelineDay');
+            }
+            else if (view.type == 'agendaDay') {
+                $('#calendar').fullCalendar('changeView', 'agendaDay');
             }
             
                    
