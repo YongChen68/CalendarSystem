@@ -72,7 +72,6 @@ var is_weekend = function (date1) {
     }
 }
 
-
 var is_saturday = function (date1) {
     var dt = new Date(date1);
 
@@ -1132,7 +1131,7 @@ $(document).ready(function () {
 
                 $("#TruckEndTime").val(moment().add(2, 'hours').format('HH:mm'));
                 
-                $('#taskModal').modal('show');
+            //    $('#taskModal').modal('show');
         
             }
            
@@ -1141,15 +1140,16 @@ $(document).ready(function () {
         header: {
             left: 'prev,next today, changeType,applyFilters,applyInstallationFilters,applyRemeasureFilters,changeBranch,changeJobType,changeShippingType',
             center: 'title',
-            right: 'ShowKelownaBranch,ShowLowerMainlandBranch,ShowNanaimoBranch,ShowVictoriaBranch,ShowWIP,month,agendaWeek,agendaOneDay,timelineDay'
+            right: 'ShowKelownaBranch,ShowLowerMainlandBranch,ShowNanaimoBranch,ShowVictoriaBranch,ShowWIP,month,basicWeek,agendaDay,timelineDay'
         },
-        views: {
-            agendaOneDay: {
-                type: 'agenda',
-                duration: { days: 1 },
-                buttonText: 'day1'
-            }
-        },
+        //views: {
+        //    customDay: {
+        //        type: 'agenda',
+        //        duration: { days: 1 },
+        //        slotDuration: { hours:24 },
+        //        buttonText: 'customDay'
+        //    }
+        //},
        // GetResources();
         resourceLabelText: 'Resources',
         resourceAreaWidth: '200px',
@@ -1160,7 +1160,7 @@ $(document).ready(function () {
         //],
        resourceGroupField: 'groupId',
       
-        refetchResourcesOnNavigate: true,
+        refetchResourcesOnNavigate: false,
         resources: function (callback,start, end, timezone) {
             dataArray = [];
             $.ajax({
@@ -1294,6 +1294,8 @@ $(document).ready(function () {
                // $('.fc-changeJobStaff-button').show();
 
                 $('.fc-ShowWIP-button').show();
+                $('.fc-timelineDay-button').show();
+                $('.fc-ShowWIP-button').show();
                 $('.fc-applyFilters-button').hide();
                 $('.fc-changeJobType-button').hide();
                 $('.fc-changeShippingType-button').hide();
@@ -1385,7 +1387,7 @@ $(document).ready(function () {
                 $('#JobStaff').hide();
                 $('.fc-applyInstallationFilters-button').hide();
                 $('.fc-ShowWIP-button').hide();
-                
+                $('.fc-timelineDay-button').hide();
                 //$('.fc-changeJobStaff-button').hide();
                 $('.fc-ShowKelownaBranch-button').hide();
                 $('.fc-ShowLowerMainlandBranch-button').hide();
@@ -1427,6 +1429,7 @@ $(document).ready(function () {
                 $('.fc-applyInstallationFilters-button').hide();
                 $('.fc-ShowWIP-button').hide();
                 $('#JobStaff').hide();
+                $('.fc-timelineDay-button').hide();
                 $('.fc-applyRemeasureFilters-button').hide();
              //   $('.fc-changeJobStaff-button').hide();
                 $('.fc-ShowKelownaBranch-button').hide();
@@ -2611,9 +2614,9 @@ $(document).ready(function () {
             if (debug) console.log("viewRender", "view configuration:", view.title, view.intervalStart._d);
             totals = getBlankTotal();
             ControlHeaderVisibility(GetDisplayItemList(displayType));
-            if (view.type == 'agendaWeek') {
+            if (view.type == 'basicWeek') {
                 $('#calendar').fullCalendar('refetchEvents');
-                $('#calendar').fullCalendar('changeView', 'agendaWeek');
+                $('#calendar').fullCalendar('changeView', 'basicWeek');
             }
             else if (view.type == 'timelineDay') {
                 $('#calendar').fullCalendar('changeView', 'timelineDay');
@@ -2871,8 +2874,8 @@ function UpdateEventWeekends() {
             //$('#calendar').fullCalendar('refetchEvents');
             //$('#calendar').fullCalendar('rerenderEvents');
             var view = $('#calendar').fullCalendar('getView');
-            if (view.type == 'agendaWeek') {
-                $('#calendar').fullCalendar('changeView', 'agendaWeek');
+            if (view.type == 'basicWeek') {
+                $('#calendar').fullCalendar('changeView', 'basicWeek');
             }
             }, error: function (error) {
                 console.log('Error', error);
@@ -5249,6 +5252,8 @@ function GetWOPicture(workOrder) {
     });
 
 }
+
+
 
 function GetJobReview(workOrder) {
     $("#dataTableJobReview tr").remove();
